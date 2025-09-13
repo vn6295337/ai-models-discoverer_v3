@@ -55,6 +55,8 @@ jobs:
         name: processed-data
         path: |
           *.json
+          *-report.txt
+          Q-db-data-quality-report.txt
           !**/node_modules/**
         retention-days: 7
 
