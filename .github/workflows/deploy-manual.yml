@@ -18,6 +18,8 @@ jobs:
   manual-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: write  # Allow writing to repository
 
     steps:
     - name: Checkout repository
