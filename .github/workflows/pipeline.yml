@@ -62,10 +62,13 @@ jobs:
           !**/node_modules/**
         retention-days: 7
 
-    - name: Prepare processed data for artifacts
+    - name: Commit processed data to repository
       if: success()
       run: |
-        # Create output directory for artifacts
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        # Create output directory
         mkdir -p pipeline-outputs
 
         # Copy processed files to output directory
@@ -76,10 +79,17 @@ jobs:
         # Add timestamp file
         echo "Pipeline completed: $(date -u)" > pipeline-outputs/last-run.txt
         echo "Workflow run: ${{ github.run_number }}" >> pipeline-outputs/last-run.txt
-        echo "View these files in the pipeline-outputs artifact" >> pipeline-outputs/last-run.txt
+        echo "Repository: ${{ github.repository }}" >> pipeline-outputs/last-run.txt
 
-        echo "✅ Processed data prepared for artifact download"
-        ls -la pipeline-outputs/
+        # Commit if there are changes
+        git add pipeline-outputs/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Pipeline output: Run #${{ github.run_number }} $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git push origin main
+          echo "✅ Processed data committed to repository"
+        fi
 
     - name: Upload organized processed data
       uses: actions/upload-artifact@v4
