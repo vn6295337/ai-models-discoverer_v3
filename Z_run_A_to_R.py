@@ -44,8 +44,10 @@ def run_script(script_name: str) -> Tuple[bool, str]:
             return True, f"Success in {duration:.1f}s"
         else:
             print(f"❌ {script_name} failed with return code {result.returncode}")
-            print(f"   Error output: {result.stderr[:200]}")
-            return False, f"Failed: {result.stderr[:200]}"
+            print(f"   Error output: {result.stderr[:1000]}")
+            if result.stdout:
+                print(f"   Standard output: {result.stdout[-500:]}")
+            return False, f"Failed: {result.stderr[:1000]}"
             
     except subprocess.TimeoutExpired:
         print(f"⏰ {script_name} timed out after 10 minutes")
