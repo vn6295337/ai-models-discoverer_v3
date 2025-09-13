@@ -7,8 +7,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - '**.py'
-      - 'requirements.txt'
+      - 'openrouter_pipeline/**.py'
+      - 'openrouter_pipeline/requirements.txt'
       - '.github/workflows/**'
 
 jobs:
@@ -29,16 +29,19 @@ jobs:
         cache: 'pip'
 
     - name: Install dependencies
+      working-directory: openrouter_pipeline
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Create .env file
+      working-directory: openrouter_pipeline
       run: |
         echo "SUPABASE_URL=https://atilxlecbaqcksnrgzav.supabase.co" >> .env
         echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog" >> .env
 
     - name: Run complete pipeline
+      working-directory: openrouter_pipeline
       run: |
         python Z_run_A_to_R.py
 
@@ -47,7 +50,7 @@ jobs:
       if: always()
       with:
         name: pipeline-execution-report
-        path: Z-pipeline-execution-report.txt
+        path: openrouter_pipeline/Z-pipeline-execution-report.txt
         retention-days: 30
 
     - name: Upload processed data
@@ -56,9 +59,9 @@ jobs:
       with:
         name: processed-data
         path: |
-          *.json
-          *-report.txt
-          Q-db-data-quality-report.txt
+          openrouter_pipeline/*.json
+          openrouter_pipeline/*-report.txt
+          openrouter_pipeline/Q-db-data-quality-report.txt
           !**/node_modules/**
         retention-days: 7
 
@@ -68,25 +71,27 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
 
-        # Create output directory
-        mkdir -p pipeline-outputs
+        # Create output directory in openrouter_pipeline
+        mkdir -p openrouter_pipeline/pipeline-outputs
 
         # Copy processed files to output directory
+        cd openrouter_pipeline
         cp *.json pipeline-outputs/ 2>/dev/null || true
         cp *-report.txt pipeline-outputs/ 2>/dev/null || true
         cp Q-db-data-quality-report.txt pipeline-outputs/ 2>/dev/null || true
+        cd ..
 
         # Add timestamp file
-        echo "Pipeline completed: $(date -u)" > pipeline-outputs/last-run.txt
-        echo "Workflow run: ${{ github.run_number }}" >> pipeline-outputs/last-run.txt
-        echo "Repository: ${{ github.repository }}" >> pipeline-outputs/last-run.txt
+        echo "Pipeline completed: $(date -u)" > openrouter_pipeline/pipeline-outputs/last-run.txt
+        echo "Workflow run: ${{ github.run_number }}" >> openrouter_pipeline/pipeline-outputs/last-run.txt
+        echo "Repository: ${{ github.repository }}" >> openrouter_pipeline/pipeline-outputs/last-run.txt
 
         # Commit if there are changes
-        git add pipeline-outputs/
+        git add openrouter_pipeline/pipeline-outputs/
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
-          git commit -m "Pipeline output: Run #${{ github.run_number }} $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "OpenRouter pipeline output: Run #${{ github.run_number }} $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           git push origin main
           echo "✅ Processed data committed to repository"
         fi
@@ -96,7 +101,7 @@ jobs:
       if: success()
       with:
         name: pipeline-outputs
-        path: pipeline-outputs/
+        path: openrouter_pipeline/pipeline-outputs/
         retention-days: 30
 
     - name: Show failure summary

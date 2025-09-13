@@ -32,23 +32,27 @@ jobs:
         cache: 'pip'
 
     - name: Install dependencies
+      working-directory: openrouter_pipeline
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Create .env file
+      working-directory: openrouter_pipeline
       run: |
         echo "SUPABASE_URL=https://atilxlecbaqcksnrgzav.supabase.co" >> .env
         echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog" >> .env
 
     - name: Run S_refresh_supabase_working_version.py
       if: ${{ inputs.run_s_script == true }}
+      working-directory: openrouter_pipeline
       run: |
         echo "🔄 Running S_refresh_supabase_working_version.py..."
         python -u S_refresh_supabase_working_version.py
 
     - name: Run T_deploy_to_ai_models_main.py
       if: ${{ inputs.run_t_script == true }}
+      working-directory: openrouter_pipeline
       run: |
         echo "🚀 Running T_deploy_to_ai_models_main.py..."
         python -u T_deploy_to_ai_models_main.py
@@ -59,10 +63,10 @@ jobs:
       with:
         name: deployment-logs
         path: |
-          *.log
-          *-deployment-*.txt
-          S-*.txt
-          T-*.txt
+          openrouter_pipeline/*.log
+          openrouter_pipeline/*-deployment-*.txt
+          openrouter_pipeline/S-*.txt
+          openrouter_pipeline/T-*.txt
         retention-days: 7
 
     - name: Show completion summary
