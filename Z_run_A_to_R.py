@@ -249,7 +249,7 @@ def main():
         "N_extract_raw_modalities.py", 
         "O_standardize_raw_modalities.py",
         "P_enrich_provider_info.py",
-        "Q_create_db_schema.py",
+        "Q_create_db_data.py",
         "R_finalize_db_data.py"
     ]
     
