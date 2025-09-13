@@ -118,10 +118,11 @@ def generate_iso_timestamp() -> str:
     """Generate ISO timestamp in the format specified by 10_timestamp_patterns.json"""
     return datetime.now().isoformat() + '+00:00'
 
-def create_database_record(provider_model: Dict[str, Any], 
+def create_database_record(provider_model: Dict[str, Any],
                           modality_data: Dict[str, Any],
                           license_data: Dict[str, Any],
-                          api_config: Dict[str, Any]) -> Dict[str, Any]:
+                          api_config: Dict[str, Any],
+                          field_mapping: Dict[str, Any]) -> Dict[str, Any]:
     """Create a single database record from merged data sources"""
     
     # Get timestamp
