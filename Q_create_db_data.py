@@ -101,6 +101,19 @@ def load_database_schema() -> Dict[str, Any]:
         print(f"ERROR: Failed to load database schema from {schema_file}: {error}")
         return {}
 
+def load_field_mapping() -> Dict[str, Any]:
+    """Load field mapping configuration"""
+    mapping_file = '10_field_mapping.json'
+
+    try:
+        with open(mapping_file, 'r', encoding='utf-8') as f:
+            mapping = json.load(f)
+        print(f"✓ Loaded field mapping from: {mapping_file}")
+        return mapping
+    except (FileNotFoundError, json.JSONDecodeError) as error:
+        print(f"ERROR: Failed to load field mapping from {mapping_file}: {error}")
+        return {}
+
 def generate_iso_timestamp() -> str:
     """Generate ISO timestamp in the format specified by 10_timestamp_patterns.json"""
     return datetime.now().isoformat() + '+00:00'
