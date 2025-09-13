@@ -72,7 +72,7 @@ def main():
     print("Loading stage-E license info data...")
     
     # Load the JSON data
-    with open('/home/km_project/ai-models-discoverer_v2/openrouter_pipeline/E-other-license-info-urls-from-hf.json', 'r') as f:
+    with open('E-other-license-info-urls-from-hf.json', 'r') as f:
         data = json.load(f)
     
     # Filter models with HuggingFace IDs, excluding Google/Meta
@@ -113,13 +113,13 @@ def main():
         time.sleep(1)
     
     # Write results to JSON file
-    json_output_file = '/home/km_project/ai-models-discoverer_v2/openrouter_pipeline/F-other-license-names-from-hf.json'
+    json_output_file = 'F-other-license-names-from-hf.json'
     
     with open(json_output_file, 'w') as f:
         json.dump(results, f, indent=2)
     
     # Write human-readable report
-    report_output_file = '/home/km_project/ai-models-discoverer_v2/openrouter_pipeline/F-other-license-names-from-hf-report.txt'
+    report_output_file = 'F-other-license-names-from-hf-report.txt'
     
     with open(report_output_file, 'w') as f:
         # Header
