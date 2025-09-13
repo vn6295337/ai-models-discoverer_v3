@@ -1,4 +1,4 @@
-name: OpenRouter Pipeline
+name: OpenRouter Pipeline (A-R)
 
 on:
   schedule:

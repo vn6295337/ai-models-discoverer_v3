@@ -231,8 +231,10 @@ def main():
     execution_log = []
     
     # Sequential Pipeline Execution: A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R
+    # Note: S and T scripts are manual-only and run via separate workflow
     print("\n📍 SEQUENTIAL PIPELINE EXECUTION")
     print("Flow: A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R")
+    print("Note: S & T deployment scripts available via manual workflow trigger")
     
     pipeline_scripts = [
         "A_api_models_fetch.py",
