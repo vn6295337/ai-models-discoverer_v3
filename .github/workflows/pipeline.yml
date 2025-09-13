@@ -61,9 +61,10 @@ jobs:
     - name: Show failure summary
       if: failure()
       run: |
-        echo "❌ Pipeline failed at script: D_extract_meta_licenses.py"
+        echo "❌ Pipeline execution failed"
         echo "Check the pipeline report artifact for detailed error information"
-        echo "Common issues:"
-        echo "  - Network connectivity to Meta/Hugging Face APIs"
-        echo "  - Rate limiting or API quota exceeded"
-        echo "  - Missing or invalid model data"
+        echo "The report contains:"
+        echo "  - Specific script that failed"
+        echo "  - Detailed error messages"
+        echo "  - Stage-by-stage execution status"
+        echo "  - Timing information"
