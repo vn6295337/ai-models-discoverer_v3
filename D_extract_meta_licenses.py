@@ -265,7 +265,7 @@ def load_stage1_data() -> List[Dict[str, Any]]:
         json.JSONDecodeError: If JSON file is malformed
     """
     
-    stage1_file = '/home/km_project/ai-models-discoverer_v2/openrouter_pipeline/B-filtered-models.json'
+    stage1_file = 'B-filtered-models.json'
     
     print(f"Loading Stage-B data from: {stage1_file}")
     
@@ -297,7 +297,7 @@ def save_meta_licensing_results(licensed_models: List[Dict[str, Any]]) -> str:
         str: Output filename
     """
     
-    output_file = '/home/km_project/ai-models-discoverer_v2/openrouter_pipeline/D-meta-licenses.json'
+    output_file = 'D-meta-licenses.json'
     
     # Standardize models to match unified structure
     standardized_models = []
@@ -335,7 +335,7 @@ def generate_meta_licenses_report(licensed_models: List[Dict[str, Any]]) -> str:
         str: Report filename
     """
     
-    report_file = '/home/km_project/ai-models-discoverer_v2/openrouter_pipeline/D-meta-licenses-report.txt'
+    report_file = 'D-meta-licenses-report.txt'
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
