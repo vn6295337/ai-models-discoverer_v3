@@ -60,6 +60,33 @@ jobs:
           !**/node_modules/**
         retention-days: 7
 
+    - name: Commit processed data to repository
+      if: success()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        # Create output directory
+        mkdir -p pipeline-outputs
+
+        # Copy processed files to output directory
+        cp *.json pipeline-outputs/ 2>/dev/null || true
+        cp *-report.txt pipeline-outputs/ 2>/dev/null || true
+        cp Q-db-data-quality-report.txt pipeline-outputs/ 2>/dev/null || true
+
+        # Add timestamp file
+        echo "Pipeline completed: $(date -u)" > pipeline-outputs/last-run.txt
+        echo "Workflow run: ${{ github.run_number }}" >> pipeline-outputs/last-run.txt
+
+        # Commit if there are changes
+        git add pipeline-outputs/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Pipeline output: Run #${{ github.run_number }} $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git push
+        fi
+
     - name: Show failure summary
       if: failure()
       run: |
