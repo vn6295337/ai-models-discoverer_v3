@@ -2,7 +2,7 @@
 """
 Database Data Finalizer
 Removes models specified in removal configuration file from database-ready data
-Input: Q-created-db-schema.json (database-ready models)
+Input: Q-created-db-data.json (database-ready models)
 Config: 11_remove_models.json (models to remove with reasons)
 Output: R-finalized-db-data.json + removal report
 """
@@ -15,7 +15,7 @@ from typing import Any, Dict, List
 
 def load_database_data() -> List[Dict[str, Any]]:
     """Load database-ready data from Stage-Q"""
-    input_file = 'Q-created-db-schema.json'
+    input_file = 'Q-created-db-data.json'
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -196,7 +196,7 @@ def generate_removal_report(finalized_models: List[Dict[str, Any]], removed_mode
             f.write(f"  Input models         : {len(finalized_models) + len(removed_models)}\n")
             f.write(f"  Models kept          : {len(finalized_models)}\n")
             f.write(f"  Models removed       : {len(removed_models)}\n")
-            f.write(f"  Input                : Q-created-db-schema.json\n")
+            f.write(f"  Input                : Q-created-db-data.json\n")
             f.write(f"  Config               : 11_remove_models.json\n")
             f.write(f"  Processor            : R_finalize_db_data.py\n")
             f.write(f"  Output               : R-finalized-db-data.json\n\n")

@@ -216,7 +216,7 @@ def create_final_database_data(provider_models: List[Dict[str, Any]],
 
 def save_database_json(database_records: List[Dict[str, Any]]) -> str:
     """Save database records to JSON file"""
-    output_file = 'Q-created-db-schema.json'
+    output_file = 'Q-created-db-data.json'
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -229,7 +229,7 @@ def save_database_json(database_records: List[Dict[str, Any]]) -> str:
 
 def save_database_csv(database_records: List[Dict[str, Any]], db_schema: Dict[str, Any]) -> str:
     """Save database records to CSV file using schema field order"""
-    output_file = 'Q-created-db-schema.csv'
+    output_file = 'Q-created-db-data.csv'
     
     try:
         schema_fields = db_schema.get('schema_fields', [])
@@ -253,7 +253,7 @@ def save_database_csv(database_records: List[Dict[str, Any]], db_schema: Dict[st
 
 def save_database_txt(database_records: List[Dict[str, Any]]) -> str:
     """Save database records to human-readable TXT file with data quality analysis"""
-    output_file = 'Q-db-schema-quality-report.txt'
+    output_file = 'Q-db-data-quality-report.txt'
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -558,16 +558,14 @@ def main():
     
     # Save outputs
     json_success = save_database_json(database_records)
-    csv_success = save_database_csv(database_records, db_schema)
     txt_success = save_database_txt(database_records)
     report_success = generate_database_report(database_records)
-    
-    if json_success and csv_success and txt_success and report_success:
+
+    if json_success and txt_success and report_success:
         print("="*60)
         print("FINAL DATABASE SCHEMA CREATION COMPLETE")
         print(f"Total records created: {len(database_records)}")
         print(f"JSON output: {json_success}")
-        print(f"CSV output: {csv_success}")
         print(f"TXT output: {txt_success}")
         print(f"Report output: {report_success}")
         print(f"Completed at: {datetime.now().isoformat()}")
