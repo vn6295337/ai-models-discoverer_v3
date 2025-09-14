@@ -127,25 +127,43 @@ def main():
     """Main execution function"""
     print("Starting field comparison...")
 
-    # Load pipeline data
-    pipeline_data = load_pipeline_data()
-    if not pipeline_data:
-        print("No pipeline data loaded")
+    try:
+        # Load pipeline data
+        pipeline_data = load_pipeline_data()
+        if not pipeline_data:
+            print("No pipeline data loaded")
+            return False
+
+        # Connect to Supabase and load data
+        client = get_supabase_client()
+        if not client:
+            print("Failed to connect to Supabase - creating report with pipeline data only")
+            # Create report with pipeline data only
+            create_comparison_report(pipeline_data, [])
+            print(f"Comparison report (pipeline-only) saved to: {REPORT_FILE}")
+            return True
+
+        supabase_data = load_supabase_data(client)
+
+        # Generate comparison report
+        create_comparison_report(pipeline_data, supabase_data)
+
+        print(f"Comparison report saved to: {REPORT_FILE}")
+        return True
+
+    except Exception as e:
+        print(f"Error in main execution: {e}")
+        # Try to create a basic report even if there's an error
+        try:
+            with open(REPORT_FILE, 'w', encoding='utf-8') as f:
+                f.write("FIELD COMPARISON REPORT: PIPELINE vs SUPABASE\n")
+                f.write("=" * 80 + "\n\n")
+                f.write(f"ERROR: Script failed with error: {e}\n")
+                f.write(f"Generated at: {__import__('datetime').datetime.now()}\n")
+            print(f"Error report saved to: {REPORT_FILE}")
+        except Exception as write_error:
+            print(f"Failed to write error report: {write_error}")
         return False
-
-    # Connect to Supabase and load data
-    client = get_supabase_client()
-    if not client:
-        print("Failed to connect to Supabase")
-        return False
-
-    supabase_data = load_supabase_data(client)
-
-    # Generate comparison report
-    create_comparison_report(pipeline_data, supabase_data)
-
-    print(f"Comparison report saved to: {REPORT_FILE}")
-    return True
 
 if __name__ == "__main__":
     main()
