@@ -31,7 +31,7 @@ except ImportError:
 PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "R_filtered_db_data.json"
 REPORT_FILE = Path(__file__).parent / "S-field-comparison-report.txt"
 SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
+SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY") or os.getenv("SUPABASE_KEY")
 TABLE_NAME = "working_version"
 INFERENCE_PROVIDER = "OpenRouter"
 
@@ -62,9 +62,20 @@ def load_pipeline_data() -> List[Dict[str, Any]]:
 def load_supabase_data(client: Client) -> List[Dict[str, Any]]:
     """Load OpenRouter data from Supabase working_version table"""
     try:
+        print(f"Querying Supabase table '{TABLE_NAME}' for inference_provider='{INFERENCE_PROVIDER}'")
         response = client.table(TABLE_NAME).select("*").eq("inference_provider", INFERENCE_PROVIDER).execute()
         data = response.data if response.data else []
         print(f"Loaded {len(data)} models from Supabase")
+
+        # Debug: Check if table exists but has no OpenRouter data
+        if len(data) == 0:
+            print("No OpenRouter data found. Checking total table count...")
+            total_response = client.table(TABLE_NAME).select("*").limit(5).execute()
+            total_data = total_response.data if total_response.data else []
+            print(f"Total rows in table (first 5): {len(total_data)}")
+            if total_data:
+                print(f"Sample inference_provider values: {[row.get('inference_provider', 'None') for row in total_data]}")
+
         return data
     except Exception as e:
         print(f"Failed to load Supabase data: {e}")
