@@ -1,4 +1,4 @@
-name: Manual Deploy (S & T Scripts)
+name: OpenRouter Pipeline (S & T Scripts)
 
 on:
   workflow_dispatch:  # Manual trigger only
@@ -15,7 +15,7 @@ on:
         type: boolean
 
 jobs:
-  manual-deploy:
+  openrouter-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -61,7 +61,7 @@ jobs:
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: deployment-logs
+        name: openrouter-deployment-logs
         path: |
           openrouter_pipeline/*.log
           openrouter_pipeline/*-deployment-*.txt
@@ -72,7 +72,7 @@ jobs:
     - name: Show completion summary
       if: success()
       run: |
-        echo "✅ Manual deployment completed successfully"
+        echo "✅ OpenRouter pipeline deployment completed successfully"
         echo "S script run: ${{ inputs.run_s_script }}"
         echo "T script run: ${{ inputs.run_t_script }}"
         echo "Check deployment logs artifact for detailed output"
