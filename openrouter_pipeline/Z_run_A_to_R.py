@@ -101,7 +101,7 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
             # Pipeline flow diagram
             f.write("PIPELINE FLOW DIAGRAM:\n")
             f.write("=" * 80 + "\n")
-            f.write("A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R\n\n")
+            f.write("A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R → S\n\n")
             
             # Final status
             if failed_stages == 0:
@@ -230,11 +230,11 @@ def main():
     start_time = time.time()
     execution_log = []
     
-    # Sequential Pipeline Execution: A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R
-    # Note: S and T scripts are manual-only and run via separate workflow
+    # Sequential Pipeline Execution: A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R → S
+    # Note: T and U scripts are manual-only and run via separate workflow
     print("\n📍 SEQUENTIAL PIPELINE EXECUTION")
-    print("Flow: A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R")
-    print("Note: S & T deployment scripts available via manual workflow trigger")
+    print("Flow: A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R → S")
+    print("Note: T & U deployment scripts available via manual workflow trigger")
     
     pipeline_scripts = [
         "A_api_models_fetch.py",
@@ -254,11 +254,12 @@ def main():
         "O_standardize_raw_modalities.py",
         "P_enrich_provider_info.py",
         "Q_create_db_data.py",
-        "R_filter_db_data.py"
+        "R_filter_db_data.py",
+        "S_compare_pipeline_with_supabase.py"
     ]
     
     for i, script in enumerate(pipeline_scripts, 1):
-        print(f"\n📍 STAGE {i:2d}/18: {script}")
+        print(f"\n📍 STAGE {i:2d}/19: {script}")
         success, message = run_script(script)
         execution_log.append((script, success, message))
         if not success:
