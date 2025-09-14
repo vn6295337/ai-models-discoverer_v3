@@ -1,12 +1,12 @@
 ================================================================================
 OPENROUTER PIPELINE EXECUTION REPORT
-Generated: 2025-09-14 07:06:45
+Generated: 2025-09-14 07:12:29
 ================================================================================
 
 EXECUTION SUMMARY:
-  Total execution time : 70.1 seconds (1.2 minutes)
-  Total stages         : 18
-  Successful stages    : 18
+  Total execution time : 78.2 seconds (1.3 minutes)
+  Total stages         : 19
+  Successful stages    : 19
   Failed stages        : 0
   Success rate         : 100.0%
 
@@ -14,7 +14,7 @@ STAGE-BY-STAGE RESULTS:
 ================================================================================
 Stage  1: A_api_models_fetch.py
   Status: ✅ SUCCESS
-  Details: Success in 6.2s
+  Details: Success in 4.9s
 
 Stage  2: B_models_filter.py
   Status: ✅ SUCCESS
@@ -30,11 +30,11 @@ Stage  4: D_extract_meta_licenses.py
 
 Stage  5: E_fetch_other_license_info_urls_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 11.2s
+  Details: Success in 14.4s
 
 Stage  6: F_fetch_other_license_names_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 50.2s
+  Details: Success in 54.5s
 
 Stage  7: G_standardize_other_license_names_from_hf.py
   Status: ✅ SUCCESS
@@ -50,7 +50,7 @@ Stage  9: I_opensource_license_urls.py
 
 Stage 10: J_custom_license_urls.py
   Status: ✅ SUCCESS
-  Details: Success in 2.1s
+  Details: Success in 3.6s
 
 Stage 11: K_collate_opensource_licenses.py
   Status: ✅ SUCCESS
@@ -84,9 +84,13 @@ Stage 18: R_filter_db_data.py
   Status: ✅ SUCCESS
   Details: Success in 0.0s
 
+Stage 19: S_compare_pipeline_with_supabase.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.5s
+
 PIPELINE FLOW DIAGRAM:
 ================================================================================
-A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R
+A → B → C → D → E → F → G → H → I → J → K → L → M → N → O → P → Q → R → S
 
 🎉 PIPELINE COMPLETED SUCCESSFULLY!
 All stages executed without errors. Data is ready for deployment.
