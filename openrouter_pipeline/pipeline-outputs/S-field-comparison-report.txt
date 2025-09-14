@@ -7,6 +7,7 @@ SUMMARY STATISTICS
 1. OVERALL STATISTICS:
    • Total models processed: 51
    • Models in both systems: 51
+   • Models with differences: 2
    • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 0
 
@@ -42,8 +43,8 @@ SUMMARY STATISTICS
      - Exact matches: 49
      - Differences: 2
      - Specific differences:
-       * Qwen2.5 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
        * Qwen2.5 VL 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
+       * Qwen2.5 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
    • license_url:
      - Exact matches: 51
      - Differences: 0
@@ -55,8 +56,8 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • Existing models with differences: 18
-     Models: Gemma 2 9B, Gemma 3 12B, Gemma 3 27B, Gemma 3 4B, Gemma 3n 2B ... and 13 more
+   • Existing models with differences: 2
+     Models: Qwen2.5 72B Instruct, Qwen2.5 VL 72B Instruct
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
