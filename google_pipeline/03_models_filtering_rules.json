@@ -1,0 +1,49 @@
+{
+  "filtering_criteria": {
+    "description": "Google Models filtering configuration based on production readiness, documentation compliance, and billing requirements"
+  },
+  "exclude_keywords": [
+    "experimental",
+    "preview", 
+    "exp",
+    "beta"
+  ],
+  "exclude_descriptions": [
+    "Access to this model requires billing to be enabled on the associated Google Cloud Platform account",
+    "requires billing to be enabled",
+    "billing to be enabled"
+  ],
+  "exclude_reasons": {
+    "experimental": "Experimental/Preview model - production-ready models only",
+    "preview": "Experimental/Preview model - production-ready models only",
+    "exp": "Experimental/Preview model - production-ready models only", 
+    "beta": "Experimental/Preview model - production-ready models only",
+    "billing_required": "Model requires billing/payment - free models only"
+  },
+  "include_patterns": {
+    "embedding_models": [
+      "embedding",
+      "embed"
+    ],
+    "image_generation": [
+      "imagen", 
+      "image",
+      "img"
+    ],
+    "video_generation": [
+      "veo",
+      "video",
+      "vid"
+    ],
+    "specialized_ai": [
+      "aqa",
+      "learnlm"
+    ]
+  },
+  "include_descriptions": {
+    "embedding_models": "Models containing 'embedding' or 'embed' - text embedding models for semantic search and similarity",
+    "image_generation": "Models containing 'imagen', 'image', or 'img' - image generation and processing models",
+    "video_generation": "Models containing 'veo', 'video', or 'vid' - video generation and processing models", 
+    "specialized_ai": "Models containing 'aqa' or 'learnlm' - specialized AI models (AQA for question answering, LearnLM for learning)"
+  }
+}
