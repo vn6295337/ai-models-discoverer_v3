@@ -163,10 +163,30 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
         f.write("SUMMARY STATISTICS\n")
         f.write("-" * 80 + "\n\n")
 
+        # Calculate models with differences for overall statistics
+        models_with_differences_count = 0
+        if models_in_both:
+            for model_name in models_in_both:
+                pipeline_model = pipeline_lookup[model_name]
+                supabase_model = supabase_lookup[model_name]
+                has_differences = False
+                for field in fields_to_compare:
+                    pipeline_value = str(pipeline_model.get(field, '')).strip()
+                    # Handle Supabase NULL values properly
+                    supabase_raw = supabase_model.get(field, '')
+                    supabase_value = '' if supabase_raw is None else str(supabase_raw).strip()
+                    if pipeline_value != supabase_value:
+                        has_differences = True
+                        break
+                if has_differences:
+                    models_with_differences_count += 1
+
         # Overall Statistics
         f.write("1. OVERALL STATISTICS:\n")
         f.write(f"   • Total models processed: {len(all_model_names)}\n")
         f.write(f"   • Models in both systems: {len(models_in_both)}\n")
+        if models_in_both:
+            f.write(f"   • Models with differences: {models_with_differences_count}\n")
         f.write(f"   • Models in pipeline only (not in Supabase): {len(models_pipeline_only)}\n")
         f.write(f"   • Models in Supabase only (not in pipeline): {len(models_supabase_only)}\n\n")
 
@@ -198,11 +218,7 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
 
         if models_pipeline_only:
             f.write(f"   • New models (pipeline only): {len(models_pipeline_only)}\n")
-            f.write("     Models: " + ", ".join(sorted(models_pipeline_only)[:5]))
-            if len(models_pipeline_only) > 5:
-                f.write(f" ... and {len(models_pipeline_only) - 5} more\n")
-            else:
-                f.write("\n")
+            f.write("     Models: " + ", ".join(sorted(models_pipeline_only)) + "\n")
 
         if models_in_both:
             # Count models with differences
@@ -213,7 +229,9 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
                 has_differences = False
                 for field in fields_to_compare:
                     pipeline_value = str(pipeline_model.get(field, '')).strip()
-                    supabase_value = str(supabase_model.get(field, '')).strip()
+                    # Handle Supabase NULL values properly
+                    supabase_raw = supabase_model.get(field, '')
+                    supabase_value = '' if supabase_raw is None else str(supabase_raw).strip()
                     if pipeline_value != supabase_value:
                         has_differences = True
                         break
@@ -222,19 +240,11 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
 
             f.write(f"   • Existing models with differences: {len(models_with_differences)}\n")
             if models_with_differences:
-                f.write("     Models: " + ", ".join(sorted(models_with_differences)[:5]))
-                if len(models_with_differences) > 5:
-                    f.write(f" ... and {len(models_with_differences) - 5} more\n")
-                else:
-                    f.write("\n")
+                f.write("     Models: " + ", ".join(sorted(models_with_differences)) + "\n")
 
         if models_supabase_only:
             f.write(f"   • Deprecated models (Supabase only): {len(models_supabase_only)}\n")
-            f.write("     Models: " + ", ".join(sorted(models_supabase_only)[:5]))
-            if len(models_supabase_only) > 5:
-                f.write(f" ... and {len(models_supabase_only) - 5} more\n")
-            else:
-                f.write("\n")
+            f.write("     Models: " + ", ".join(sorted(models_supabase_only)) + "\n")
 
         f.write("\n" + "=" * 80 + "\n")
         f.write("DETAILED COMPARISON BY MODEL\n")

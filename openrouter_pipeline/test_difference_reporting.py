@@ -126,10 +126,30 @@ def create_test_comparison_report():
     report_content.append("-" * 80)
     report_content.append("")
 
+    # Calculate models with differences for overall statistics
+    models_with_differences_count = 0
+    if models_in_both:
+        for model_name in models_in_both:
+            pipeline_model = pipeline_lookup[model_name]
+            supabase_model = supabase_lookup[model_name]
+            has_differences = False
+            for field in fields_to_compare:
+                pipeline_value = str(pipeline_model.get(field, '')).strip()
+                # Handle Supabase NULL values properly
+                supabase_raw = supabase_model.get(field, '')
+                supabase_value = '' if supabase_raw is None else str(supabase_raw).strip()
+                if pipeline_value != supabase_value:
+                    has_differences = True
+                    break
+            if has_differences:
+                models_with_differences_count += 1
+
     # Overall Statistics
     report_content.append("1. OVERALL STATISTICS:")
     report_content.append(f"   • Total models processed: {len(all_model_names)}")
     report_content.append(f"   • Models in both systems: {len(models_in_both)}")
+    if models_in_both:
+        report_content.append(f"   • Models with differences: {models_with_differences_count}")
     report_content.append(f"   • Models in pipeline only (not in Supabase): {len(models_pipeline_only)}")
     report_content.append(f"   • Models in Supabase only (not in pipeline): {len(models_supabase_only)}")
     report_content.append("")
