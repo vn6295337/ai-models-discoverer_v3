@@ -1,9 +1,12 @@
 name: Google Pipeline (A-E)
 
 on:
-  schedule:
-    - cron: '0 6 * * *'  # Run daily at 6 AM UTC (different from OpenRouter to avoid conflicts)
-  workflow_dispatch:  # Allow manual trigger
+  workflow_dispatch:  # Allow manual trigger (primary trigger from OpenRouter pipeline)
+  workflow_run:  # Trigger after OpenRouter pipeline completes successfully
+    workflows: ["OpenRouter Pipeline (A-R)"]
+    types:
+      - completed
+    branches: [ main ]
   push:
     branches: [ main ]
     paths:
@@ -17,8 +20,18 @@ jobs:
     timeout-minutes: 180  # 3 hours max
     permissions:
       contents: write  # Allow writing to repository
+    # Only run if manually triggered or if OpenRouter pipeline succeeded
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
 
     steps:
+    - name: Show trigger information
+      run: |
+        echo "🚀 Google Pipeline triggered by: ${{ github.event_name }}"
+        if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+          echo "📋 OpenRouter pipeline status: ${{ github.event.workflow_run.conclusion }}"
+          echo "🔗 OpenRouter run URL: ${{ github.event.workflow_run.html_url }}"
+        fi
+
     - name: Checkout repository
       uses: actions/checkout@v4
 

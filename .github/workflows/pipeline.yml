@@ -104,6 +104,21 @@ jobs:
         path: openrouter_pipeline/pipeline-outputs/
         retention-days: 30
 
+    - name: Trigger Google pipeline
+      if: success()
+      uses: actions/github-script@v7
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        script: |
+          console.log('🚀 OpenRouter pipeline completed successfully, triggering Google pipeline...');
+          await github.rest.actions.createWorkflowDispatch({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            workflow_id: 'google-pipeline.yml',
+            ref: 'main'
+          });
+          console.log('✅ Google pipeline triggered');
+
     - name: Show failure summary
       if: failure()
       run: |
