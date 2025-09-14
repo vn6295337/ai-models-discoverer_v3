@@ -1,0 +1,109 @@
+name: Google Pipeline (A-E)
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Run daily at 6 AM UTC (different from OpenRouter to avoid conflicts)
+  workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [ main ]
+    paths:
+      - 'google_pipeline/**.py'
+      - 'google_pipeline/requirements.txt'
+      - '.github/workflows/google-pipeline.yml'
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 180  # 3 hours max
+    permissions:
+      contents: write  # Allow writing to repository
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+
+    - name: Install dependencies
+      working-directory: google_pipeline
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Create .env file
+      working-directory: google_pipeline
+      run: |
+        echo "SUPABASE_URL=https://atilxlecbaqcksnrgzav.supabase.co" >> .env
+        echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog" >> .env
+
+    - name: Run complete pipeline
+      working-directory: google_pipeline
+      run: |
+        python Z_run_complete_pipeline.py
+
+    - name: Upload pipeline report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: google-pipeline-execution-report
+        path: google_pipeline/pipeline-outputs/Z-run-complete-pipeline-report.txt
+        retention-days: 30
+
+    - name: Upload processed data
+      uses: actions/upload-artifact@v4
+      if: success()
+      with:
+        name: google-processed-data
+        path: |
+          google_pipeline/pipeline-outputs/*.json
+          google_pipeline/pipeline-outputs/*-report.txt
+          google_pipeline/pipeline-outputs/*.csv
+          !**/node_modules/**
+        retention-days: 7
+
+    - name: Commit processed data to repository
+      if: success()
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+
+        # Ensure pipeline-outputs directory exists
+        mkdir -p google_pipeline/pipeline-outputs
+
+        # Add timestamp file
+        echo "Google Pipeline completed: $(date -u)" > google_pipeline/pipeline-outputs/last-run.txt
+        echo "Workflow run: ${{ github.run_number }}" >> google_pipeline/pipeline-outputs/last-run.txt
+        echo "Repository: ${{ github.repository }}" >> google_pipeline/pipeline-outputs/last-run.txt
+
+        # Commit if there are changes
+        git add google_pipeline/pipeline-outputs/
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "Google pipeline output: Run #${{ github.run_number }} $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git push origin main
+          echo "✅ Google pipeline data committed to repository"
+        fi
+
+    - name: Upload organized processed data
+      uses: actions/upload-artifact@v4
+      if: success()
+      with:
+        name: google-pipeline-outputs
+        path: google_pipeline/pipeline-outputs/
+        retention-days: 30
+
+    - name: Show failure summary
+      if: failure()
+      run: |
+        echo "❌ Google Pipeline execution failed"
+        echo "Check the google-pipeline-execution-report artifact for detailed error information"
+        echo "The report contains:"
+        echo "  - Specific script that failed"
+        echo "  - Detailed error messages"
+        echo "  - Stage-by-stage execution status"
+        echo "  - Timing information"
