@@ -148,13 +148,11 @@ def create_test_comparison_report():
             # Show detailed differences for each field
             if stats['difference_details']:
                 report_content.append(f"     - Specific differences:")
-                for diff in stats['difference_details'][:5]:  # Show first 5 differences
+                for diff in stats['difference_details']:  # Show all differences
                     model_name = diff['model'][:30] + "..." if len(diff['model']) > 30 else diff['model']
                     pipeline_val = diff['pipeline_value'][:20] + "..." if len(diff['pipeline_value']) > 20 else diff['pipeline_value']
                     supabase_val = diff['supabase_value'][:20] + "..." if len(diff['supabase_value']) > 20 else diff['supabase_value']
                     report_content.append(f"       * {model_name}: Pipeline='{pipeline_val}' vs Supabase='{supabase_val}'")
-                if len(stats['difference_details']) > 5:
-                    report_content.append(f"       * ... and {len(stats['difference_details']) - 5} more differences")
         report_content.append("")
 
     return '\n'.join(report_content)

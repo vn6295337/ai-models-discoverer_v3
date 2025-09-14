@@ -184,13 +184,11 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
                 # Show detailed differences for each field
                 if stats['difference_details']:
                     f.write(f"     - Specific differences:\n")
-                    for diff in stats['difference_details'][:5]:  # Show first 5 differences
+                    for diff in stats['difference_details']:  # Show all differences
                         model_name = diff['model'][:30] + "..." if len(diff['model']) > 30 else diff['model']
                         pipeline_val = diff['pipeline_value'][:20] + "..." if len(diff['pipeline_value']) > 20 else diff['pipeline_value']
                         supabase_val = diff['supabase_value'][:20] + "..." if len(diff['supabase_value']) > 20 else diff['supabase_value']
                         f.write(f"       * {model_name}: Pipeline='{pipeline_val}' vs Supabase='{supabase_val}'\n")
-                    if len(stats['difference_details']) > 5:
-                        f.write(f"       * ... and {len(stats['difference_details']) - 5} more differences\n")
             f.write("\n")
 
         # Categorized Breakdown
