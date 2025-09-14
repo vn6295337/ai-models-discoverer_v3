@@ -1,6 +1,66 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
 ================================================================================
 
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+
+1. OVERALL STATISTICS:
+   • Total models processed: 51
+   • Models in both systems: 51
+   • Models in pipeline only (not in Supabase): 0
+   • Models in Supabase only (not in pipeline): 0
+
+2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
+   • inference_provider:
+     - Exact matches: 51
+     - Differences: 0
+   • model_provider:
+     - Exact matches: 51
+     - Differences: 0
+   • human_readable_name:
+     - Exact matches: 51
+     - Differences: 0
+   • model_provider_country:
+     - Exact matches: 51
+     - Differences: 0
+   • official_url:
+     - Exact matches: 51
+     - Differences: 0
+   • input_modalities:
+     - Exact matches: 51
+     - Differences: 0
+   • output_modalities:
+     - Exact matches: 51
+     - Differences: 0
+   • license_info_text:
+     - Exact matches: 33
+     - Differences: 18
+     - Missing in pipeline: 18
+   • license_info_url:
+     - Exact matches: 33
+     - Differences: 18
+     - Missing in pipeline: 18
+   • license_name:
+     - Exact matches: 49
+     - Differences: 2
+   • license_url:
+     - Exact matches: 51
+     - Differences: 0
+   • rate_limits:
+     - Exact matches: 51
+     - Differences: 0
+   • provider_api_access:
+     - Exact matches: 51
+     - Differences: 0
+
+3. CATEGORIZED BREAKDOWN:
+   • Existing models with differences: 18
+     Models: Gemma 2 9B, Gemma 3 12B, Gemma 3 27B, Gemma 3 4B, Gemma 3n 2B ... and 13 more
+
+================================================================================
+DETAILED COMPARISON BY MODEL
+================================================================================
+
 MODEL: DeepSeek R1T Chimera
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
