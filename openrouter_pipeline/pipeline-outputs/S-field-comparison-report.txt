@@ -36,13 +36,30 @@ SUMMARY STATISTICS
      - Exact matches: 33
      - Differences: 18
      - Missing in pipeline: 18
+     - Specific differences:
+       * Llama 3.3 8B Instruct: Pipeline='' vs Supabase='None'
+       * Hunyuan A13B Instruct: Pipeline='' vs Supabase='None'
+       * Kimi K2 0711: Pipeline='' vs Supabase='None'
+       * Gemma 3n 4B: Pipeline='' vs Supabase='None'
+       * Gemma 3 12B: Pipeline='' vs Supabase='None'
+       * ... and 13 more differences
    • license_info_url:
      - Exact matches: 33
      - Differences: 18
      - Missing in pipeline: 18
+     - Specific differences:
+       * Llama 3.3 8B Instruct: Pipeline='' vs Supabase='None'
+       * Hunyuan A13B Instruct: Pipeline='' vs Supabase='None'
+       * Kimi K2 0711: Pipeline='' vs Supabase='None'
+       * Gemma 3n 4B: Pipeline='' vs Supabase='None'
+       * Gemma 3 12B: Pipeline='' vs Supabase='None'
+       * ... and 13 more differences
    • license_name:
      - Exact matches: 49
      - Differences: 2
+     - Specific differences:
+       * Qwen2.5 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
+       * Qwen2.5 VL 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
    • license_url:
      - Exact matches: 51
      - Differences: 0
