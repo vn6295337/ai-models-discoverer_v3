@@ -12,7 +12,7 @@ Secure API key management client for accessing provider APIs through Supabase Ed
 
 ### Environment Variables
 - `SUPABASE_FUNCTIONS_URL` - Base URL for Supabase functions (optional)
-- `SUPABASE_ANON_KEY` - Supabase anonymous key (optional, has fallback)
+- `SUPABASE_KEY` - Supabase anonymous key (optional, has fallback)
 - `INTERNAL_API_KEY` - Internal API key for authenticated requests
 
 ### Usage
