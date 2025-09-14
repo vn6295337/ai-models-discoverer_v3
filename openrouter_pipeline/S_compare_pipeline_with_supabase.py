@@ -29,7 +29,7 @@ except ImportError:
 
 # Configuration
 PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "R_filtered_db_data.json"
-REPORT_FILE = Path(__file__).parent / "field_comparison_report.txt"
+REPORT_FILE = Path(__file__).parent / "pipeline-outputs" / "S-field-comparison-report.txt"
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY")
 TABLE_NAME = "working_version"
