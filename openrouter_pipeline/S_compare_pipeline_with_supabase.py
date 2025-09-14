@@ -11,9 +11,11 @@ from pathlib import Path
 
 try:
     from supabase import create_client, Client
+    SUPABASE_AVAILABLE = True
 except ImportError:
-    print("Error: supabase package not found. Install with: pip install supabase")
-    exit(1)
+    print("Warning: supabase package not found. Running in pipeline-only mode.")
+    Client = None
+    SUPABASE_AVAILABLE = False
 
 try:
     from dotenv import load_dotenv
@@ -37,6 +39,10 @@ INFERENCE_PROVIDER = "OpenRouter"
 
 def get_supabase_client() -> Optional[Client]:
     """Initialize Supabase client"""
+    if not SUPABASE_AVAILABLE:
+        print("Supabase not available - running in pipeline-only mode")
+        return None
+
     if not SUPABASE_URL or not SUPABASE_ANON_KEY:
         print("Missing SUPABASE_URL or SUPABASE_ANON_KEY environment variables")
         return None
@@ -109,8 +115,110 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
         'provider_api_access'
     ]
 
+    # Calculate statistics
+    models_in_both = []
+    models_pipeline_only = []
+    models_supabase_only = []
+    field_stats = {field: {'exact_matches': 0, 'differences': 0, 'pipeline_missing': 0, 'supabase_missing': 0} for field in fields_to_compare}
+
+    for model_name in all_model_names:
+        pipeline_model = pipeline_lookup.get(model_name, {})
+        supabase_model = supabase_lookup.get(model_name, {})
+
+        if pipeline_model and supabase_model:
+            models_in_both.append(model_name)
+            # Compare fields for models in both systems
+            for field in fields_to_compare:
+                pipeline_value = str(pipeline_model.get(field, '')).strip()
+                supabase_value = str(supabase_model.get(field, '')).strip()
+
+                if pipeline_value == supabase_value:
+                    field_stats[field]['exact_matches'] += 1
+                else:
+                    field_stats[field]['differences'] += 1
+                    if not pipeline_value:
+                        field_stats[field]['pipeline_missing'] += 1
+                    if not supabase_value:
+                        field_stats[field]['supabase_missing'] += 1
+        elif pipeline_model:
+            models_pipeline_only.append(model_name)
+        elif supabase_model:
+            models_supabase_only.append(model_name)
+
     with open(REPORT_FILE, 'w', encoding='utf-8') as f:
         f.write("FIELD COMPARISON REPORT: PIPELINE vs SUPABASE\n")
+        f.write("=" * 80 + "\n\n")
+
+        # Summary Statistics
+        f.write("SUMMARY STATISTICS\n")
+        f.write("-" * 80 + "\n\n")
+
+        # Overall Statistics
+        f.write("1. OVERALL STATISTICS:\n")
+        f.write(f"   • Total models processed: {len(all_model_names)}\n")
+        f.write(f"   • Models in both systems: {len(models_in_both)}\n")
+        f.write(f"   • Models in pipeline only (not in Supabase): {len(models_pipeline_only)}\n")
+        f.write(f"   • Models in Supabase only (not in pipeline): {len(models_supabase_only)}\n\n")
+
+        # Field-by-Field Analysis (only if there are models in both systems)
+        if models_in_both:
+            f.write("2. FIELD-BY-FIELD ANALYSIS (for models in both systems):\n")
+            for field in fields_to_compare:
+                stats = field_stats[field]
+                f.write(f"   • {field}:\n")
+                f.write(f"     - Exact matches: {stats['exact_matches']}\n")
+                f.write(f"     - Differences: {stats['differences']}\n")
+                if stats['pipeline_missing'] > 0:
+                    f.write(f"     - Missing in pipeline: {stats['pipeline_missing']}\n")
+                if stats['supabase_missing'] > 0:
+                    f.write(f"     - Missing in Supabase: {stats['supabase_missing']}\n")
+            f.write("\n")
+
+        # Categorized Breakdown
+        f.write("3. CATEGORIZED BREAKDOWN:\n")
+
+        if models_pipeline_only:
+            f.write(f"   • New models (pipeline only): {len(models_pipeline_only)}\n")
+            f.write("     Models: " + ", ".join(sorted(models_pipeline_only)[:5]))
+            if len(models_pipeline_only) > 5:
+                f.write(f" ... and {len(models_pipeline_only) - 5} more\n")
+            else:
+                f.write("\n")
+
+        if models_in_both:
+            # Count models with differences
+            models_with_differences = []
+            for model_name in models_in_both:
+                pipeline_model = pipeline_lookup[model_name]
+                supabase_model = supabase_lookup[model_name]
+                has_differences = False
+                for field in fields_to_compare:
+                    pipeline_value = str(pipeline_model.get(field, '')).strip()
+                    supabase_value = str(supabase_model.get(field, '')).strip()
+                    if pipeline_value != supabase_value:
+                        has_differences = True
+                        break
+                if has_differences:
+                    models_with_differences.append(model_name)
+
+            f.write(f"   • Existing models with differences: {len(models_with_differences)}\n")
+            if models_with_differences:
+                f.write("     Models: " + ", ".join(sorted(models_with_differences)[:5]))
+                if len(models_with_differences) > 5:
+                    f.write(f" ... and {len(models_with_differences) - 5} more\n")
+                else:
+                    f.write("\n")
+
+        if models_supabase_only:
+            f.write(f"   • Deprecated models (Supabase only): {len(models_supabase_only)}\n")
+            f.write("     Models: " + ", ".join(sorted(models_supabase_only)[:5]))
+            if len(models_supabase_only) > 5:
+                f.write(f" ... and {len(models_supabase_only) - 5} more\n")
+            else:
+                f.write("\n")
+
+        f.write("\n" + "=" * 80 + "\n")
+        f.write("DETAILED COMPARISON BY MODEL\n")
         f.write("=" * 80 + "\n\n")
 
         for model_name in sorted(all_model_names):
