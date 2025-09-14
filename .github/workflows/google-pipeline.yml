@@ -1,18 +1,12 @@
 name: Google Pipeline (A-E)
 
 on:
-  workflow_dispatch:  # Allow manual trigger (primary trigger from OpenRouter pipeline)
-  workflow_run:  # Trigger after OpenRouter pipeline completes successfully
+  workflow_dispatch:  # Manual trigger only
+  workflow_run:  # Sequential trigger from OpenRouter pipeline
     workflows: ["OpenRouter Pipeline (A-R)"]
     types:
       - completed
     branches: [ main ]
-  push:
-    branches: [ main ]
-    paths:
-      - 'google_pipeline/**.py'
-      - 'google_pipeline/requirements.txt'
-      - '.github/workflows/google-pipeline.yml'
 
 jobs:
   run-pipeline:
@@ -21,7 +15,7 @@ jobs:
     permissions:
       contents: write  # Allow writing to repository
     # Only run if manually triggered or if OpenRouter pipeline succeeded
-    if: ${{ github.event_name == 'workflow_dispatch' || github.event_name == 'push' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
 
     steps:
     - name: Show trigger information
