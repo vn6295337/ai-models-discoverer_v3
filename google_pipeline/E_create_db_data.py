@@ -2,9 +2,9 @@
 """
 Google Models Data Normalization - Stage 5
 
-This script handles Stage 5: Database Schema Normalization from D-enriched-modalities.json.
-It normalizes enriched model data and outputs E-normalization-report.csv and
-E-normalization-report.txt for final database insertion.
+This script handles Stage 5: Database Schema Normalization from pipeline-outputs/D-enriched-modalities.json.
+It normalizes enriched model data and outputs pipeline-outputs/E-created-db-data.json and
+pipeline-outputs/E-created-db-data-report.txt for final database insertion.
 """
 
 import json
@@ -516,17 +516,17 @@ class GoogleNormalizationPipeline:
         self.normalized_models = []
         
     def load_enriched_data(self) -> bool:
-        """Load enriched model data from D-enriched-modalities.json"""
+        """Load enriched model data from pipeline-outputs/D-enriched-modalities.json"""
         try:
-            with open('D-enriched-modalities.json', 'r') as f:
+            with open('pipeline-outputs/D-enriched-modalities.json', 'r') as f:
                 self.enriched_models = json.load(f)
                 print(f"✅ Loaded {len(self.enriched_models)} enriched models")
                 return True
         except FileNotFoundError:
-            print("❌ D-enriched-modalities.json not found")
+            print("❌ pipeline-outputs/D-enriched-modalities.json not found")
             return False
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing D-enriched-modalities.json: {e}")
+            print(f"❌ Error parsing pipeline-outputs/D-enriched-modalities.json: {e}")
             return False
     
     def normalize_models(self) -> None:
@@ -568,29 +568,20 @@ class GoogleNormalizationPipeline:
         
         print(f"✅ Successfully normalized {len(self.normalized_models)} models")
     
-    def save_csv_output(self) -> None:
-        """Save normalized data to CSV file"""
+    def save_json_output(self) -> None:
+        """Save normalized data to JSON file"""
         if not self.normalized_models:
             print("❌ No normalized models to save")
             return
             
         try:
-            with open('E-normalization-report.csv', 'w', newline='', encoding='utf-8') as f:
-                # Get fieldnames from first model
-                fieldnames = list(self.normalized_models[0].keys())
-                writer = csv.DictWriter(f, fieldnames=fieldnames)
-                
-                # Write header
-                writer.writeheader()
-                
-                # Write data
-                for model in self.normalized_models:
-                    writer.writerow(model)
-            
-            print(f"✅ Saved {len(self.normalized_models)} normalized models to E-normalization-report.csv")
+            with open('pipeline-outputs/E-created-db-data.json', 'w', encoding='utf-8') as f:
+                json.dump(self.normalized_models, f, indent=2, ensure_ascii=False)
+
+            print(f"✅ Saved {len(self.normalized_models)} normalized models to pipeline-outputs/E-created-db-data.json")
             
         except Exception as e:
-            print(f"❌ Error saving CSV file: {e}")
+            print(f"❌ Error saving JSON file: {e}")
     
     def generate_report(self) -> None:
         """Generate human-readable normalization report"""
@@ -631,9 +622,9 @@ class GoogleNormalizationPipeline:
         
         # Save report
         try:
-            with open('E-normalization-report.txt', 'w') as f:
+            with open('pipeline-outputs/E-created-db-data-report.txt', 'w') as f:
                 f.write('\n'.join(report_content))
-            print(f"✅ Normalization report saved to E-normalization-report.txt")
+            print(f"✅ Normalization report saved to pipeline-outputs/E-created-db-data-report.txt")
         except Exception as e:
             print(f"❌ Error saving report: {e}")
     
@@ -652,15 +643,15 @@ class GoogleNormalizationPipeline:
         self.normalize_models()
         
         # Save outputs
-        self.save_csv_output()
+        self.save_json_output()
         self.generate_report()
         
         print("\n" + "="*80)
         print("STAGE 5 COMPLETE - DATA NORMALIZATION")
         print("="*80)
-        print(f"Input: D-enriched-modalities.json ({len(self.enriched_models)} models)")
-        print(f"Output: E-normalization-report.csv ({len(self.normalized_models)} models)")
-        print(f"Report: E-normalization-report.txt")
+        print(f"Input: pipeline-outputs/D-enriched-modalities.json ({len(self.enriched_models)} models)")
+        print(f"Output: pipeline-outputs/E-created-db-data.json ({len(self.normalized_models)} models)")
+        print(f"Report: pipeline-outputs/E-created-db-data-report.txt")
         print("="*80)
 
 

@@ -31,8 +31,8 @@ except ImportError:
     pass
 
 # Configuration
-PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "E-db-schema-normalize.csv"
-REPORT_FILE = Path(__file__).parent / "pipeline-outputs" / "S-field-comparison-report.txt"
+PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "E-created-db-data.json"
+REPORT_FILE = Path(__file__).parent / "pipeline-outputs" / "F-comparison-report.txt"
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY") or os.getenv("SUPABASE_KEY")
 TABLE_NAME = "working_version"

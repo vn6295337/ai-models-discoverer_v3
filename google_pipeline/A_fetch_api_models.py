@@ -1,24 +1,8 @@
 #!/usr/bin/env python3
 """
-Google Models Data Loading - Stage 1 Only
+Google Models Data Loading - Stage 1
 
-This script handles Stage 1: Loading existing model data from A-api-models-fetch.json.
-It loads the complete model list and generates a human-readable report.
-
-SPECIALIZED PIPELINE APPROACH:
-- Stage 1: Data Loading (THIS SCRIPT)
-- Stage 2: Model Filtering → B_models_filter.py
-- Stage 3: Modality Scraping → C_modalities_scrape.py
-- Stage 4: Modality Enrichment → D_modalities_enrich.py
-- Stage 5: Database Normalization → E_db_schema_normalize.py
-
-Use Z_run_complete_pipeline.py for orchestrated execution of all stages.
-
-DOCUMENTATION SOURCES:
-- API Reference: https://ai.google.dev/api/generate-text
-- Rate Limits: https://ai.google.dev/gemini-api/docs/rate-limits  
-- Official Model URLs: https://deepmind.google/models/[gemini|gemma|imagen|veo]
-- License Terms: https://ai.google.dev/[gemini-api|gemma]/terms
+Fetches Google AI models from the API and saves to JSON file.
 """
 import json
 import os
@@ -43,7 +27,7 @@ load_dotenv()
 PIPELINE_CONFIG = {
     # Core pipeline file outputs
     'output_files': {
-        'stage_1': 'pipeline-outputs/A-api-models-fetch.json',
+        'stage_1': 'pipeline-outputs/A-api-models.json',
     },
     
     # AUTHORITATIVE SOURCE: Google Official Documentation URLs
@@ -219,7 +203,7 @@ def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
         return raw_data  # Return data even if save failed
     
     # Generate human-readable text version
-    txt_filename = 'A-api-models-fetch-report.txt'
+    txt_filename = 'pipeline-outputs/A-api-models-report.txt'
     try:
         with open(txt_filename, 'w') as f:
             f.write(f"Total Models: {len(raw_data)}\n\n")
@@ -262,11 +246,6 @@ def run_google_stage_1():
         print("="*80)
         print(f"Loaded {len(raw_data)} models from existing JSON file")
         print(f"Source: {PIPELINE_CONFIG['output_files']['stage_1']}")
-        print("\nNote: Stages 2-4 are now handled by specialized scripts:")
-        print("  - Stage 2: B_models_filter.py")
-        print("  - Stage 3: C_modalities_scrape.py")
-        print("  - Stage 4: D_modalities_enrich.py")
-        print("  - Use Z_run_complete_pipeline.py for full orchestration")
         print("="*80)
         
         return True

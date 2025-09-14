@@ -790,7 +790,7 @@ class GoogleModalityScraper:
             return key.replace("Gemma 3N (gemma-3n)", "gemma-3n")
         return key
 
-    def save_modality_mapping(self, output_file: str = "C-scrapped-modalities.json"):
+    def save_modality_mapping(self, output_file: str = "pipeline-outputs/C-scrapped-modalities.json"):
         """Save modality mapping to JSON file with normalized Gemma names"""
         modality_mapping = self.generate_modality_mapping()
         

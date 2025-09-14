@@ -6,7 +6,7 @@ Supabase Google Data Refresh Script
 
 This script refreshes Google data in Supabase by:
 1. Deleting existing Google records from working_version table
-2. Loading normalized data from E-normalization-report.csv
+2. Loading normalized data from pipeline-outputs/E-created-db-data.json
 3. Inserting fresh Google data into Supabase
 
 Features:
@@ -23,7 +23,7 @@ Last Updated: 2025-09-06
 
 import os
 import sys
-import csv
+import json
 import json
 import logging
 from datetime import datetime
@@ -53,7 +53,7 @@ except ImportError:
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-CSV_FILE = SCRIPT_DIR / "E-normalization-report.csv"
+JSON_FILE = SCRIPT_DIR / "pipeline-outputs" / "E-created-db-data.json"
 LOG_FILE = SCRIPT_DIR / "refresh-supabase-working-version-report.txt"
 
 # Supabase configuration
@@ -288,77 +288,81 @@ def restore_backup_data(client: Client, backup_data: List[Dict[str, Any]]) -> bo
 
 def load_normalized_csv() -> Optional[List[Dict[str, Any]]]:
     """
-    Load and validate normalized CSV data from E-normalization-report.csv.
-    CSV contains only Google records with perfect schema match to Supabase.
+    Load and validate normalized JSON data from E-created-db-data.json.
+    JSON contains only Google records with perfect schema match to Supabase.
     
     Returns:
         List[Dict]: List of model records as dictionaries
         None: If file not found or invalid
     """
-    logger.info(f"📁 Loading normalized CSV data from {CSV_FILE}...")
+    logger.info(f"📁 Loading normalized JSON data from {JSON_FILE}...")
     
-    if not CSV_FILE.exists():
-        logger.error(f"❌ CSV file not found: {CSV_FILE}")
+    if not JSON_FILE.exists():
+        logger.error(f"❌ JSON file not found: {JSON_FILE}")
         return None
     
     try:
-        models = []
-        with open(CSV_FILE, 'r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            
-            # Expected CSV headers (matches Supabase schema exactly)
+        with open(JSON_FILE, 'r', encoding='utf-8') as file:
+            models = json.load(file)
+
+            # Expected fields (matches Supabase schema exactly)
             expected_fields = {
-                'id', 'inference_provider', 'model_provider', 'human_readable_name', 
-                'model_provider_country', 'official_url', 'input_modalities', 
+                'id', 'inference_provider', 'model_provider', 'human_readable_name',
+                'model_provider_country', 'official_url', 'input_modalities',
                 'output_modalities', 'license_info_text', 'license_info_url',
                 'license_name', 'license_url', 'rate_limits', 'provider_api_access',
                 'created_at', 'updated_at'
             }
-            
-            actual_fields = set(reader.fieldnames or [])
-            missing_fields = expected_fields - actual_fields
+
+            # Validate first model fields
+            if models:
+                actual_fields = set(models[0].keys())
+                missing_fields = expected_fields - actual_fields
             
             if missing_fields:
-                logger.error(f"❌ Missing required CSV fields: {missing_fields}")
+                logger.error(f"❌ Missing required JSON fields: {missing_fields}")
                 return None
-            
-            # Load all records (no filtering needed - CSV contains only Google)
-            for row_num, row in enumerate(reader, start=2):  # Start at 2 (after header)
+
+            # Validate each model record
+            valid_models = []
+            for idx, model in enumerate(models):
                 # Validate required fields (nulls allowed only for license_info_text and license_info_url)
                 required_fields = [
                     'inference_provider', 'model_provider', 'human_readable_name',
-                    'model_provider_country', 'official_url', 'input_modalities', 
-                    'output_modalities', 'license_name', 'license_url', 
+                    'model_provider_country', 'official_url', 'input_modalities',
+                    'output_modalities', 'license_name', 'license_url',
                     'rate_limits', 'provider_api_access'
                 ]
-                
-                missing_data = [field for field in required_fields if not row.get(field, '').strip()]
-                
+
+                missing_data = [field for field in required_fields if not str(model.get(field, '')).strip()]
+
                 if missing_data:
-                    logger.error(f"❌ Row {row_num}: Missing required data in fields: {missing_data}")
+                    logger.error(f"❌ Model {idx + 1}: Missing required data in fields: {missing_data}")
                     continue
-                
-                models.append(row)
+
+                valid_models.append(model)
+
+            models = valid_models
         
         if not models:
-            logger.error(f"❌ No valid models found in CSV")
+            logger.error(f"❌ No valid models found in JSON")
             return None
             
-        logger.info(f"✅ Loaded {len(models)} Google models from CSV")
+        logger.info(f"✅ Loaded {len(models)} Google models from JSON")
         return models
         
     except Exception as e:
-        logger.error(f"❌ Failed to load CSV data: {str(e)}")
+        logger.error(f"❌ Failed to load JSON data: {str(e)}")
         return None
 
 
 def prepare_data_for_insert(models: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     """
-    Prepare CSV data for Supabase insertion by removing id column and handling nulls.
-    CSV schema matches Supabase perfectly - minimal transformation needed.
+    Prepare JSON data for Supabase insertion by removing id column and handling nulls.
+    JSON schema matches Supabase perfectly - minimal transformation needed.
     
     Args:
-        models: List of model dictionaries from CSV
+        models: List of model dictionaries from JSON
         
     Returns:
         List[Dict]: Cleaned data ready for Supabase insertion
@@ -378,7 +382,7 @@ def prepare_data_for_insert(models: List[Dict[str, Any]]) -> List[Dict[str, Any]
             if field in clean_model and clean_model[field] is not None and not clean_model[field].strip():
                 clean_model[field] = None
         
-        # All models from CSV are already validated - no additional validation needed
+        # All models from JSON are already validated - no additional validation needed
         prepared_models.append(clean_model)
     
     logger.info(f"✅ Prepared {len(prepared_models)} models for insertion")
@@ -512,10 +516,10 @@ def main():
             logger.error("❌ REFRESH FAILED: Could not query initial state")
             return False
         
-        # Step 3: Load CSV data
+        # Step 3: Load JSON data
         models = load_normalized_csv()
         if not models:
-            logger.error("❌ REFRESH FAILED: Could not load CSV data")
+            logger.error("❌ REFRESH FAILED: Could not load JSON data")
             return False
         
         # Step 4: Prepare data for insertion

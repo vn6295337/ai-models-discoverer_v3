@@ -4,14 +4,14 @@ Google Models Pipeline Orchestrator
 ===================================
 
 Master script that executes the Google models discovery pipeline
-in the correct logical order from Stage 1 through Stage 5 (complete normalized file creation).
+in the correct logical order from Stage 1 through Stage 6 (complete pipeline with comparison).
 
 Pipeline Flow:
 1. Stage 1: API Data Extraction (A_fetch_api_models.py)
 2. Stage 2: Model Filtering (B_filter_models.py)
 3. Stage 3: Modality Scraping (C_scrape_modalities.py)
 4. Stage 4: Modality Enrichment (D_enrich_modalities.py)
-5. Stage 5: Data Normalization (E_normalize_per_db_schema.py)
+5. Stage 5: Data Normalization (E_create_db_data.py)
 
 Final Output: E-normalization-report.csv (ready for database upload)
 
@@ -44,21 +44,21 @@ class GooglePipelineOrchestrator:
             {
                 'stage': 'Stage 1',
                 'name': 'API Data Extraction',
-                'script': 'A_api_models_fetch.py',
+                'script': 'A_fetch_api_models.py',
                 'description': 'Extract comprehensive model list from Google API',
                 'outputs': [
-                    'pipeline-outputs/A-api-models-fetch.json'
+                    'pipeline-outputs/A-api-models.json'
                 ]
             },
             {
                 'stage': 'Stage 2',
                 'name': 'Model Filtering',
-                'script': 'B_models_filter.py', 
+                'script': 'B_filter_models.py', 
                 'description': 'Filter models based on production criteria',
-                'inputs': ['A-api-models-fetch.json'],
+                'inputs': ['pipeline-outputs/A-api-models.json'],
                 'outputs': [
-                    'B-filtered-models.json',
-                    'B-filtered-models-report.txt'
+                    'pipeline-outputs/B-filtered-models.json',
+                    'pipeline-outputs/B-filtered-models-report.txt'
                 ]
             },
             {
@@ -66,7 +66,7 @@ class GooglePipelineOrchestrator:
                 'name': 'Modality Scraping',
                 'script': 'C_scrape_modalities.py',
                 'description': 'Scrape modalities from Google documentation',
-                'outputs': ['C-scrapped-modalities.json']
+                'outputs': ['pipeline-outputs/C-scrapped-modalities.json']
             },
             {
                 'stage': 'Stage 4', 
@@ -74,25 +74,37 @@ class GooglePipelineOrchestrator:
                 'script': 'D_enrich_modalities.py',
                 'description': 'Enrich models with modality data and patterns',
                 'inputs': [
-                    'B-filtered-models.json',
-                    'C-scrapped-modalities.json'
+                    'pipeline-outputs/B-filtered-models.json',
+                    'pipeline-outputs/C-scrapped-modalities.json'
                 ],
                 'outputs': [
-                    'D-enriched-modalities.json',
-                    'D-enriched-modalities-report.txt'
+                    'pipeline-outputs/D-enriched-modalities.json',
+                    'pipeline-outputs/D-enriched-modalities-report.txt'
                 ]
             },
             {
                 'stage': 'Stage 5',
                 'name': 'Data Normalization',
-                'script': 'E_normalize_per_db_schema.py',
+                'script': 'E_create_db_data.py',
                 'description': 'Normalize data for database schema compliance',
                 'inputs': [
-                    'D-enriched-modalities.json'
+                    'pipeline-outputs/D-enriched-modalities.json'
                 ],
                 'outputs': [
-                    'E-normalization-report.csv',
-                    'E-normalization-report.txt'
+                    'pipeline-outputs/E-created-db-data.json',
+                    'pipeline-outputs/E-created-db-data-report.txt'
+                ]
+            },
+            {
+                'stage': 'Stage 6',
+                'name': 'Pipeline Comparison',
+                'script': 'F_compare_pipeline_with_supabase.py',
+                'description': 'Compare pipeline output with Supabase data',
+                'inputs': [
+                    'pipeline-outputs/E-created-db-data.json'
+                ],
+                'outputs': [
+                    'pipeline-outputs/F-comparison-report.txt'
                 ]
             }
         ]
@@ -273,11 +285,12 @@ class GooglePipelineOrchestrator:
             print(f"\n❌ Pipeline FAILED at {self.failed_stage} (Total time: {total_duration:.1f}s)")
             return False
         else:
-            print(f"\n🎉 Pipeline completed successfully! Normalized files ready. (Total time: {total_duration:.1f}s)")
+            print(f"\n🎉 Pipeline completed successfully! All stages complete. (Total time: {total_duration:.1f}s)")
             print(f"\n📄 Final outputs:")
-            print(f"   • E-normalization-report.csv (database-ready)")
-            print(f"   • E-normalization-report.txt (human-readable)")
-            print(f"📊 Ready for database upload using F_refresh_supabase_working_version.py")
+            print(f"   • pipeline-outputs/E-created-db-data.json (database-ready)")
+            print(f"   • pipeline-outputs/E-created-db-data-report.txt (human-readable)")
+            print(f"   • pipeline-outputs/F-comparison-report.txt (pipeline vs supabase comparison)")
+            print(f"📊 Ready for database upload using G_refresh_supabase_working_version.py")
             return True
 
     def generate_pipeline_report(self) -> None:
@@ -343,13 +356,13 @@ def main():
     import argparse
     
     parser = argparse.ArgumentParser(
-        description='Google Models Pipeline Orchestrator (Stages 1-5: Complete Normalized File Creation)',
+        description='Google Models Pipeline Orchestrator (Stages 1-6: Complete Pipeline with Comparison)',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python Z_run_complete_pipeline.py                    # Run complete pipeline (Stages 1-5)
-  python Z_run_complete_pipeline.py --start "Stage 3"  # Start from Stage 3
-  python Z_run_complete_pipeline.py --list             # List all stages
+  python Z_run_A_to_F.py                    # Run complete pipeline (Stages 1-6)
+  python Z_run_A_to_F.py --start "Stage 3"  # Start from Stage 3
+  python Z_run_A_to_F.py --list             # List all stages
         """
     )
     

@@ -2,7 +2,7 @@
 """
 Google Models Filter Script
 Filters A-api-models-fetch.json through criteria in 03_model_filtering.json
-and outputs to B-filtered-models.json
+and outputs to pipeline-outputs/B-filtered-models.json
 """
 
 import json
@@ -32,15 +32,15 @@ class GoogleModelsFilter:
     def load_input_models(self) -> List[Dict[str, Any]]:
         """Load models from A-api-models-fetch.json"""
         try:
-            with open('pipeline-outputs/A-api-models-fetch.json', 'r') as f:
+            with open('pipeline-outputs/A-api-models.json', 'r') as f:
                 models = json.load(f)
-                print(f"✅ Loaded {len(models)} models from pipeline-outputs/A-api-models-fetch.json")
+                print(f"✅ Loaded {len(models)} models from pipeline-outputs/A-api-models.json")
                 return models
         except FileNotFoundError:
-            print("❌ pipeline-outputs/A-api-models-fetch.json not found")
+            print("❌ pipeline-outputs/A-api-models.json not found")
             return []
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing pipeline-outputs/A-api-models-fetch.json: {e}")
+            print(f"❌ Error parsing pipeline-outputs/A-api-models.json: {e}")
             return []
 
     def should_exclude_model(self, model: Dict[str, Any]) -> tuple[bool, str]:
@@ -150,14 +150,14 @@ class GoogleModelsFilter:
         return filtered_models, excluded_models
 
     def save_filtered_models(self, filtered_models: List[Dict[str, Any]]) -> None:
-        """Save filtered models to B-filtered-models.json"""
+        """Save filtered models to pipeline-outputs/B-filtered-models.json"""
         # Extract just the model data without filtering metadata
         models_data = [item['model'] for item in filtered_models]
         
         try:
-            with open('pipeline-outputs/B-models-filter.json', 'w') as f:
+            with open('pipeline-outputs/B-filtered-models.json', 'w') as f:
                 json.dump(models_data, f, indent=2)
-            print(f"\n✅ Saved {len(models_data)} filtered models to pipeline-outputs/B-models-filter.json")
+            print(f"\n✅ Saved {len(models_data)} filtered models to pipeline-outputs/B-filtered-models.json")
         except Exception as e:
             print(f"❌ Error saving filtered models: {e}")
 
@@ -238,9 +238,9 @@ class GoogleModelsFilter:
         
         # Write to file
         try:
-            with open('pipeline-outputs/B-models-filter-report.txt', 'w') as f:
+            with open('pipeline-outputs/B-filtered-models-report.txt', 'w') as f:
                 f.write('\n'.join(report_content))
-            print(f"\n✅ Detailed filtering report saved to: pipeline-outputs/B-models-filter-report.txt")
+            print(f"\n✅ Detailed filtering report saved to: pipeline-outputs/B-filtered-models-report.txt")
         except Exception as e:
             print(f"❌ Error saving filtering report: {e}")
 

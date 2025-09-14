@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Google Models Modality Enrichment Script
-Links B-filtered-models.json with C-scrapped-modalities.json
-to produce D-enriched-modalities.json with input/output modalities
+Links pipeline-outputs/B-filtered-models.json with pipeline-outputs/C-scrapped-modalities.json
+to produce pipeline-outputs/D-enriched-modalities.json with input/output modalities
 """
 
 import json
@@ -32,26 +32,26 @@ class ModalityEnrichment:
         """Load both input JSON files"""
         # Load filtered models
         try:
-            with open('B-filtered-models.json', 'r') as f:
+            with open('pipeline-outputs/B-filtered-models.json', 'r') as f:
                 self.filtered_models = json.load(f)
                 print(f"✅ Loaded {len(self.filtered_models)} filtered models")
         except FileNotFoundError:
-            print("❌ B-filtered-models.json not found")
+            print("❌ pipeline-outputs/B-filtered-models.json not found")
             return False
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing B-filtered-models.json: {e}")
+            print(f"❌ Error parsing pipeline-outputs/B-filtered-models.json: {e}")
             return False
             
         # Load scraped modalities
         try:
-            with open('C-scrapped-modalities.json', 'r') as f:
+            with open('pipeline-outputs/C-scrapped-modalities.json', 'r') as f:
                 self.scraped_modalities = json.load(f)
                 print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries")
         except FileNotFoundError:
-            print("❌ C-scrapped-modalities.json not found")
+            print("❌ pipeline-outputs/C-scrapped-modalities.json not found")
             return False
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing C-scrapped-modalities.json: {e}")
+            print(f"❌ Error parsing pipeline-outputs/C-scrapped-modalities.json: {e}")
             return False
             
         # Load embedding models configuration
@@ -420,9 +420,9 @@ class ModalityEnrichment:
     def save_enriched_models(self) -> None:
         """Save enriched models to JSON file"""
         try:
-            with open('D-enriched-modalities.json', 'w') as f:
+            with open('pipeline-outputs/D-enriched-modalities.json', 'w') as f:
                 json.dump(self.enriched_models, f, indent=2)
-            print(f"\n✅ Saved {len(self.enriched_models)} enriched models to D-enriched-modalities.json")
+            print(f"\n✅ Saved {len(self.enriched_models)} enriched models to pipeline-outputs/D-enriched-modalities.json")
         except Exception as e:
             print(f"❌ Error saving enriched models: {e}")
 
@@ -514,9 +514,9 @@ class ModalityEnrichment:
         
         # Save report
         try:
-            with open('D-enriched-modalities-report.txt', 'w') as f:
+            with open('pipeline-outputs/D-enriched-modalities-report.txt', 'w') as f:
                 f.write('\n'.join(report_content))
-            print(f"✅ Enrichment report saved to D-enriched-modalities-report.txt")
+            print(f"✅ Enrichment report saved to pipeline-outputs/D-enriched-modalities-report.txt")
         except Exception as e:
             print(f"❌ Error saving enrichment report: {e}")
 
