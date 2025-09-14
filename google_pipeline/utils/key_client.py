@@ -7,17 +7,13 @@ import requests
 import os
 from typing import Optional
 import json
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 class KeyClient:
     """Client for accessing API keys through Supabase Edge Functions"""
     
     def __init__(self):
-        self.base_url = os.getenv('SUPABASE_FUNCTIONS_URL', "https://atilxlecbaqcksnrgzav.supabase.co/functions/v1")
-        self.anon_key = os.getenv('SUPABASE_KEY', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog")
+        self.base_url = "https://atilxlecbaqcksnrgzav.supabase.co/functions/v1"
+        self.anon_key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog"
         # Get internal API key from environment
         internal_key = os.getenv('INTERNAL_API_KEY')
             
