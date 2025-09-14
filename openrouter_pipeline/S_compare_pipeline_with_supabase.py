@@ -119,7 +119,7 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
     models_in_both = []
     models_pipeline_only = []
     models_supabase_only = []
-    field_stats = {field: {'exact_matches': 0, 'differences': 0, 'pipeline_missing': 0, 'supabase_missing': 0} for field in fields_to_compare}
+    field_stats = {field: {'exact_matches': 0, 'differences': 0, 'pipeline_missing': 0, 'supabase_missing': 0, 'difference_details': []} for field in fields_to_compare}
 
     for model_name in all_model_names:
         pipeline_model = pipeline_lookup.get(model_name, {})
@@ -136,6 +136,14 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
                     field_stats[field]['exact_matches'] += 1
                 else:
                     field_stats[field]['differences'] += 1
+                    # Store detailed difference information
+                    diff_detail = {
+                        'model': model_name,
+                        'pipeline_value': pipeline_value,
+                        'supabase_value': supabase_value
+                    }
+                    field_stats[field]['difference_details'].append(diff_detail)
+
                     if not pipeline_value:
                         field_stats[field]['pipeline_missing'] += 1
                     if not supabase_value:
@@ -172,6 +180,17 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
                     f.write(f"     - Missing in pipeline: {stats['pipeline_missing']}\n")
                 if stats['supabase_missing'] > 0:
                     f.write(f"     - Missing in Supabase: {stats['supabase_missing']}\n")
+
+                # Show detailed differences for each field
+                if stats['difference_details']:
+                    f.write(f"     - Specific differences:\n")
+                    for diff in stats['difference_details'][:5]:  # Show first 5 differences
+                        model_name = diff['model'][:30] + "..." if len(diff['model']) > 30 else diff['model']
+                        pipeline_val = diff['pipeline_value'][:20] + "..." if len(diff['pipeline_value']) > 20 else diff['pipeline_value']
+                        supabase_val = diff['supabase_value'][:20] + "..." if len(diff['supabase_value']) > 20 else diff['supabase_value']
+                        f.write(f"       * {model_name}: Pipeline='{pipeline_val}' vs Supabase='{supabase_val}'\n")
+                    if len(stats['difference_details']) > 5:
+                        f.write(f"       * ... and {len(stats['difference_details']) - 5} more differences\n")
             f.write("\n")
 
         # Categorized Breakdown
