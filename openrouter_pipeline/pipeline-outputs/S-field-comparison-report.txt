@@ -43,8 +43,8 @@ SUMMARY STATISTICS
      - Exact matches: 49
      - Differences: 2
      - Specific differences:
-       * Qwen2.5 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
        * Qwen2.5 VL 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
+       * Qwen2.5 72B Instruct: Pipeline='QWEN' vs Supabase='Qwen'
    • license_url:
      - Exact matches: 51
      - Differences: 0
