@@ -1,4 +1,4 @@
-name: OpenRouter Pipeline (S & T Scripts)
+name: Google Pipeline (G & H Scripts)
 
 on:
   workflow_dispatch:  # Manual trigger only
@@ -10,11 +10,11 @@ on:
         type: choice
         options:
         - 'none'
-        - 'run_s'
-        - 'run_t'
+        - 'run_g'
+        - 'run_h'
 
 jobs:
-  openrouter-deploy:
+  google-deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 60
     permissions:
@@ -31,65 +31,65 @@ jobs:
         cache: 'pip'
 
     - name: Install dependencies
-      working-directory: openrouter_pipeline
+      working-directory: google_pipeline
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
 
     - name: Create .env file
-      working-directory: openrouter_pipeline
+      working-directory: google_pipeline
       run: |
         echo "SUPABASE_URL=https://atilxlecbaqcksnrgzav.supabase.co" >> .env
         echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog" >> .env
 
     - name: Show execution plan
       run: |
-        echo "🎯 OpenRouter Pipeline Execution Plan:"
+        echo "🎯 Google Pipeline Execution Plan:"
         echo "Selected option: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "run_s" ]]; then
-          echo "Will execute: T_refresh_supabase_working_version.py (Refresh Working Version)"
-        elif [[ "${{ inputs.script_choice }}" == "run_t" ]]; then
-          echo "Will execute: U_deploy_to_ai_models_main.py (Deploy to Production)"
+        if [[ "${{ inputs.script_choice }}" == "run_g" ]]; then
+          echo "Will execute: G_refresh_supabase_working_version.py (Refresh Working Version)"
+        elif [[ "${{ inputs.script_choice }}" == "run_h" ]]; then
+          echo "Will execute: H_deploy_to_supabase_ai_models_main.py (Deploy to Production)"
         else
           echo "No script will be executed (none selected)"
         fi
 
-    - name: Run T_refresh_supabase_working_version.py
-      if: ${{ inputs.script_choice == 'run_s' }}
-      working-directory: openrouter_pipeline
+    - name: Run G_refresh_supabase_working_version.py
+      if: ${{ inputs.script_choice == 'run_g' }}
+      working-directory: google_pipeline
       run: |
-        echo "🔄 Running T_refresh_supabase_working_version.py..."
-        echo "⚠️  This will refresh the Supabase working_version table with OpenRouter pipeline data"
-        python -u T_refresh_supabase_working_version.py
+        echo "🔄 Running G_refresh_supabase_working_version.py..."
+        echo "⚠️  This will refresh the Supabase working_version table with Google pipeline data"
+        python -u G_refresh_supabase_working_version.py
 
-    - name: Run U_deploy_to_ai_models_main.py
-      if: ${{ inputs.script_choice == 'run_t' }}
-      working-directory: openrouter_pipeline
+    - name: Run H_deploy_to_supabase_ai_models_main.py
+      if: ${{ inputs.script_choice == 'run_h' }}
+      working-directory: google_pipeline
       run: |
-        echo "🚀 Running U_deploy_to_ai_models_main.py..."
+        echo "🚀 Running H_deploy_to_supabase_ai_models_main.py..."
         echo "⚠️  This will deploy from working_version to the main ai_models table"
-        python -u U_deploy_to_ai_models_main.py
+        python -u H_deploy_to_supabase_ai_models_main.py
 
     - name: Upload deployment logs
       uses: actions/upload-artifact@v4
       if: always()
       with:
-        name: openrouter-deployment-logs
+        name: google-deployment-logs
         path: |
-          openrouter_pipeline/*.log
-          openrouter_pipeline/*-deployment-*.txt
-          openrouter_pipeline/T-*.txt
-          openrouter_pipeline/U-*.txt
+          google_pipeline/pipeline-outputs/*.log
+          google_pipeline/pipeline-outputs/*-deployment-*.txt
+          google_pipeline/pipeline-outputs/G-*.txt
+          google_pipeline/pipeline-outputs/H-*.txt
         retention-days: 7
 
     - name: Show completion summary
       if: success()
       run: |
-        echo "✅ OpenRouter pipeline deployment completed successfully"
+        echo "✅ Google pipeline deployment completed successfully"
         echo "Script executed: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "run_s" ]]; then
-          echo "✅ Working version table refreshed with OpenRouter data"
-        elif [[ "${{ inputs.script_choice }}" == "run_t" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "run_g" ]]; then
+          echo "✅ Working version table refreshed with Google data"
+        elif [[ "${{ inputs.script_choice }}" == "run_h" ]]; then
           echo "✅ Data deployed to main ai_models table"
         else
           echo "ℹ️  No script was executed"
@@ -99,6 +99,6 @@ jobs:
     - name: Show failure summary
       if: failure()
       run: |
-        echo "❌ OpenRouter pipeline deployment failed"
+        echo "❌ Google pipeline deployment failed"
         echo "Script that failed: ${{ inputs.script_choice }}"
         echo "Check deployment logs artifact for error details"
