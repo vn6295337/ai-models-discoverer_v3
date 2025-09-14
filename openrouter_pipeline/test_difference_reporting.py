@@ -43,7 +43,7 @@ supabase_data = [
     {
         "human_readable_name": "Test Model B",
         "license_name": "Apache-2.0",
-        "license_info_text": "None",  # Different from pipeline
+        "license_info_text": None,  # NULL value from Supabase (should match empty string in pipeline)
         "model_provider": "Google",
         "input_modalities": "Text, Image"
     },
@@ -90,7 +90,9 @@ def create_test_comparison_report():
             # Compare fields for models in both systems
             for field in fields_to_compare:
                 pipeline_value = str(pipeline_model.get(field, '')).strip()
-                supabase_value = str(supabase_model.get(field, '')).strip()
+                # Handle Supabase NULL values properly - convert None to empty string
+                supabase_raw = supabase_model.get(field, '')
+                supabase_value = '' if supabase_raw is None else str(supabase_raw).strip()
 
                 if pipeline_value == supabase_value:
                     field_stats[field]['exact_matches'] += 1
