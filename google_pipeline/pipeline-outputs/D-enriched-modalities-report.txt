@@ -1,0 +1,181 @@
+=== GOOGLE MODELS MODALITY ENRICHMENT REPORT ===
+
+Generated: 2025-09-14 15:47:46
+
+=== SUMMARY ===
+Total Models: 32
+Priority 1 Matches (Exact): 9
+Priority 2 Matches (Normalized): 12
+Embedding Matches: 4
+Gemma Pattern Matches: 6
+Unique Model Matches: 1
+No Matches: 0
+Overall Match Rate: 100.0%
+
+=== PRIORITY 1 MATCHES (EXACT) ===
+
+ 1. gemini-1.5-pro
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 2. gemini-1.5-flash
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 3. gemini-1.5-flash-8b
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 4. gemini-2.5-flash
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 5. gemini-2.5-pro
+    Input: Text, Image, Audio, Video, PDF
+    Output: Text
+
+ 6. gemini-2.0-flash
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 7. gemini-2.0-flash-lite
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 8. gemini-2.5-flash-lite
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 9. gemini-2.0-flash-live-001
+    Input: Text, Audio, Video
+    Output: Text, Audio
+
+=== PRIORITY 2 MATCHES (NORMALIZED) ===
+
+ 1. gemini-1.5-pro-latest
+    Filtered model's API ID normalized: 'gemini-1.5-pro'
+    Scraped model's API ID normalized: 'gemini-1.5-pro'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 2. gemini-1.5-pro-002
+    Filtered model's API ID normalized: 'gemini-1.5-pro'
+    Scraped model's API ID normalized: 'gemini-1.5-pro'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 3. gemini-1.5-flash-latest
+    Filtered model's API ID normalized: 'gemini-1.5-flash'
+    Scraped model's API ID normalized: 'gemini-1.5-flash'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 4. gemini-1.5-flash-002
+    Filtered model's API ID normalized: 'gemini-1.5-flash'
+    Scraped model's API ID normalized: 'gemini-1.5-flash'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 5. gemini-1.5-flash-8b-001
+    Filtered model's API ID normalized: 'gemini-1.5-flash-8b'
+    Scraped model's API ID normalized: 'gemini-1.5-flash-8b'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 6. gemini-1.5-flash-8b-latest
+    Filtered model's API ID normalized: 'gemini-1.5-flash-8b'
+    Scraped model's API ID normalized: 'gemini-1.5-flash-8b'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 7. gemini-2.0-flash-001
+    Filtered model's API ID normalized: 'gemini-2-flash'
+    Scraped model's API ID normalized: 'gemini-2-flash'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 8. gemini-2.0-flash-lite-001
+    Filtered model's API ID normalized: 'gemini-2-flash-lite'
+    Scraped model's API ID normalized: 'gemini-2-flash-lite'
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 9. imagen-3.0-generate-002
+    Filtered model's API ID normalized: 'imagen-3'
+    Scraped model's API ID normalized: 'imagen-3'
+    Input: Text
+    Output: Image
+
+10. imagen-4.0-generate-001
+    Filtered model's API ID normalized: 'imagen-4'
+    Scraped model's API ID normalized: 'imagen-4'
+    Input: Text
+    Output: Image
+
+11. imagen-4.0-ultra-generate-001
+    Filtered model's API ID normalized: 'imagen-4'
+    Scraped model's API ID normalized: 'imagen-4'
+    Input: Text
+    Output: Image
+
+12. imagen-4.0-fast-generate-001
+    Filtered model's API ID normalized: 'imagen-4'
+    Scraped model's API ID normalized: 'imagen-4'
+    Input: Text
+    Output: Image
+
+=== EMBEDDING MATCHES ===
+
+ 1. embedding-gecko-001
+    Input: Text
+    Output: Text Embeddings
+
+ 2. embedding-001
+    Input: Text
+    Output: Text Embeddings
+
+ 3. text-embedding-004
+    Input: Text
+    Output: Text Embeddings
+
+ 4. gemini-embedding-001
+    Input: Text
+    Output: Text Embeddings
+
+=== GEMMA PATTERN MATCHES ===
+
+ 1. gemma-3-1b-it
+    Pattern: gemma-3
+    Input: Text, Image
+    Output: Text
+
+ 2. gemma-3-4b-it
+    Pattern: gemma-3
+    Input: Text, Image
+    Output: Text
+
+ 3. gemma-3-12b-it
+    Pattern: gemma-3
+    Input: Text, Image
+    Output: Text
+
+ 4. gemma-3-27b-it
+    Pattern: gemma-3
+    Input: Text, Image
+    Output: Text
+
+ 5. gemma-3n-e4b-it
+    Pattern: gemma-3n
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 6. gemma-3n-e2b-it
+    Pattern: gemma-3n
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+=== UNIQUE MODEL MATCHES ===
+
+ 1. aqa
+    Input: Text
+    Output: Text

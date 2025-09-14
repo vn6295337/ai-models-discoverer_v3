@@ -1,0 +1,81 @@
+=== GOOGLE MODELS FILTERING REPORT ===
+Generated: 2025-09-14 15:47:42
+
+=== SUMMARY ===
+Total Input Models: 65
+Models Included: 32
+Models Excluded: 33
+Filtering Success Rate: 49.2%
+
+=== EXCLUDED MODELS ===
+ 1. gemini-2.5-pro-preview-03-25
+ 2. gemini-2.5-flash-preview-05-20
+ 3. gemini-2.5-flash-lite-preview-06-17
+ 4. gemini-2.5-pro-preview-05-06
+ 5. gemini-2.5-pro-preview-06-05
+ 6. gemini-2.0-flash-exp
+ 7. gemini-2.0-flash-exp-image-generation
+ 8. gemini-2.0-flash-preview-image-generation
+ 9. gemini-2.0-flash-lite-preview-02-05
+10. gemini-2.0-flash-lite-preview
+11. gemini-2.0-pro-exp
+12. gemini-2.0-pro-exp-02-05
+13. gemini-exp-1206
+14. gemini-2.0-flash-thinking-exp-01-21
+15. gemini-2.0-flash-thinking-exp
+16. gemini-2.0-flash-thinking-exp-1219
+17. gemini-2.5-flash-preview-tts
+18. gemini-2.5-pro-preview-tts
+19. learnlm-2.0-flash-experimental
+20. gemini-2.5-flash-image-preview
+21. gemini-embedding-exp-03-07
+22. gemini-embedding-exp
+23. imagen-4.0-generate-preview-06-06
+24. imagen-4.0-ultra-generate-preview-06-06
+25. veo-2.0-generate-001
+26. veo-3.0-generate-preview
+27. veo-3.0-fast-generate-preview
+28. veo-3.0-generate-001
+29. veo-3.0-fast-generate-001
+30. gemini-2.5-flash-preview-native-audio-dialog
+31. gemini-2.5-flash-exp-native-audio-thinking-dialog
+32. gemini-live-2.5-flash-preview
+33. gemini-2.5-flash-live-preview
+
+=== INCLUDED MODELS ===
+ 1. embedding-gecko-001
+ 2. gemini-1.5-pro-latest
+ 3. gemini-1.5-pro-002
+ 4. gemini-1.5-pro
+ 5. gemini-1.5-flash-latest
+ 6. gemini-1.5-flash
+ 7. gemini-1.5-flash-002
+ 8. gemini-1.5-flash-8b
+ 9. gemini-1.5-flash-8b-001
+10. gemini-1.5-flash-8b-latest
+11. gemini-2.5-flash
+12. gemini-2.5-pro
+13. gemini-2.0-flash
+14. gemini-2.0-flash-001
+15. gemini-2.0-flash-lite-001
+16. gemini-2.0-flash-lite
+17. gemma-3-1b-it
+18. gemma-3-4b-it
+19. gemma-3-12b-it
+20. gemma-3-27b-it
+21. gemma-3n-e4b-it
+22. gemma-3n-e2b-it
+23. gemini-2.5-flash-lite
+24. embedding-001
+25. text-embedding-004
+26. gemini-embedding-001
+27. aqa
+28. imagen-3.0-generate-002
+29. imagen-4.0-generate-001
+30. imagen-4.0-ultra-generate-001
+31. imagen-4.0-fast-generate-001
+32. gemini-2.0-flash-live-001
+
+=== EXCLUSION BREAKDOWN ===
+32 models: Experimental/Preview model - production-ready models only
+ 1 models: Model requires billing/payment - free models only
