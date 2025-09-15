@@ -154,22 +154,48 @@ class GooglePipelineOrchestrator:
         return True
 
     def validate_stage_outputs(self, stage_config: Dict) -> bool:
-        """Validate that expected output files were created"""
+        """Validate that expected output files were created and are valid"""
         if not stage_config['outputs']:
             return True  # No file outputs to validate (e.g., database operations)
-            
+
         missing_outputs = []
+        invalid_outputs = []
+
         for output_file in stage_config['outputs']:
-            if not Path(output_file).exists():
+            file_path = Path(output_file)
+
+            # Check if file exists
+            if not file_path.exists():
                 missing_outputs.append(output_file)
-        
+                continue
+
+            # Check file size (empty files are suspicious)
+            if file_path.stat().st_size == 0:
+                invalid_outputs.append(f"{output_file} (empty file)")
+                continue
+
+            # For JSON files, try to validate JSON structure
+            if output_file.endswith('.json'):
+                try:
+                    with open(file_path, 'r') as f:
+                        json.load(f)
+                except (json.JSONDecodeError, Exception) as e:
+                    invalid_outputs.append(f"{output_file} (invalid JSON: {str(e)})")
+
+        issues_found = False
         if missing_outputs:
             print(f"⚠️  {stage_config['stage']} - Missing expected output files:")
             for output_file in missing_outputs:
                 print(f"   - {output_file}")
-            return False
-            
-        return True
+            issues_found = True
+
+        if invalid_outputs:
+            print(f"⚠️  {stage_config['stage']} - Invalid output files:")
+            for issue in invalid_outputs:
+                print(f"   - {issue}")
+            issues_found = True
+
+        return not issues_found
 
     def execute_script(self, script_name: str, stage_config: Dict) -> Tuple[bool, float, str]:
         """Execute a Python script and return success status, duration, and output"""
@@ -200,14 +226,18 @@ class GooglePipelineOrchestrator:
             
             if result.returncode == 0:
                 print(f"✅ {stage_config['stage']} completed successfully ({duration:.1f}s)")
-                
+
                 # Validate outputs after successful execution
                 if self.validate_stage_outputs(stage_config):
                     print(f"✅ All expected outputs created for {stage_config['stage']}")
+                    return True, duration, result.stdout
                 else:
-                    print(f"⚠️  Some outputs missing for {stage_config['stage']} (execution succeeded)")
-                
-                return True, duration, result.stdout
+                    error_msg = f"Script completed but failed to generate expected output files"
+                    print(f"❌ {stage_config['stage']} failed: {error_msg}")
+                    if result.stderr:
+                        print("Script stderr:")
+                        print(result.stderr)
+                    return False, duration, error_msg
             else:
                 error_msg = f"Script failed with return code {result.returncode}"
                 print(f"❌ {stage_config['stage']} failed: {error_msg}")
@@ -237,7 +267,11 @@ class GooglePipelineOrchestrator:
         if not self.validate_dependencies():
             print("\n❌ Pipeline aborted due to missing dependencies")
             return False
-        
+
+        # Clean output directory if starting from Stage 1
+        if start_from_stage is None or start_from_stage.lower() == "stage 1":
+            self.clean_output_directory()
+
         self.pipeline_start_time = time.time()
         start_index = 0
         
@@ -361,6 +395,45 @@ class GooglePipelineOrchestrator:
             print(f"✅ Completion timestamp saved to: {timestamp_file}")
         except Exception as e:
             print(f"⚠️  Could not save completion timestamp: {e}")
+
+    def clean_output_directory(self) -> None:
+        """Clean pipeline-outputs directory of old output files"""
+        output_dir = Path("pipeline-outputs")
+
+        try:
+            if not output_dir.exists():
+                print("📁 Creating pipeline-outputs directory")
+                output_dir.mkdir(exist_ok=True)
+                return
+
+            # Files to clean (keep .gitkeep)
+            files_to_remove = []
+            patterns_to_clean = [
+                "A-api-models.json", "A-api-models-report.txt",
+                "B-filtered-models.json", "B-filtered-models-report.txt",
+                "C-scrapped-modalities.json", "C-scrapped-modalities-report.txt",
+                "D-enriched-modalities.json", "D-enriched-modalities-report.txt",
+                "E-created-db-data.json", "E-created-db-data-report.txt",
+                "F-comparison-report.txt",
+                "last-run.txt", "Z-pipeline-report.txt"
+            ]
+
+            for pattern in patterns_to_clean:
+                file_path = output_dir / pattern
+                if file_path.exists():
+                    files_to_remove.append(file_path)
+
+            if files_to_remove:
+                print(f"🧹 Cleaning {len(files_to_remove)} old output files from pipeline-outputs/")
+                for file_path in files_to_remove:
+                    file_path.unlink()
+                    print(f"   Removed: {file_path.name}")
+            else:
+                print("✅ pipeline-outputs directory is clean")
+
+        except Exception as e:
+            print(f"⚠️  Could not clean output directory: {e}")
+            print("Continuing with pipeline execution...")
 
     def list_stages(self) -> None:
         """List all available pipeline stages"""
