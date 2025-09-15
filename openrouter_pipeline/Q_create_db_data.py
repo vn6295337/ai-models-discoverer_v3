@@ -387,143 +387,6 @@ def save_database_txt(database_records: List[Dict[str, Any]]) -> str:
         print(f"ERROR: Failed to save TXT to {output_file}: {error}")
         return ""
 
-def generate_database_report(database_records: List[Dict[str, Any]]) -> str:
-    """Generate human readable report for database records"""
-    report_file = get_output_file_path('Q-created-db-schema-report.txt')
-    
-    try:
-        with open(report_file, 'w', encoding='utf-8') as f:
-            # Header
-            f.write("=" * 80 + "\n")
-            f.write("CREATED DATABASE SCHEMA REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
-            f.write("=" * 80 + "\n\n")
-            
-            # Summary
-            f.write(f"SUMMARY:\n")
-            f.write(f"  Total database records: {len(database_records)}\n")
-            f.write(f"  Input sources:\n")
-            f.write(f"    - P-provider-enriched.json (primary data)\n")
-            f.write(f"    - O-standardized-modalities.json (modalities)\n")
-            f.write(f"    - M-final-license-list.json (licenses)\n")
-            f.write(f"    - 01_api_configuration.json (API metadata)\n")
-            f.write(f"  Processor: Q_create_db_schema.py\n")
-            f.write(f"  Output: Q-created-db-schema.json + CSV\n\n")
-            
-            # Field distribution analysis
-            provider_counts = {}
-            country_counts = {}
-            license_counts = {}
-            modality_input_counts = {}
-            modality_output_counts = {}
-            
-            for record in database_records:
-                # Provider distribution
-                provider = record.get('model_provider', '')
-                provider_counts[provider] = provider_counts.get(provider, 0) + 1
-                
-                # Country distribution
-                country = record.get('model_provider_country', '')
-                country_counts[country] = country_counts.get(country, 0) + 1
-                
-                # License distribution
-                license_name = record.get('license_name', '')
-                license_counts[license_name] = license_counts.get(license_name, 0) + 1
-                
-                # Input modalities
-                input_mod = record.get('input_modalities', '')
-                modality_input_counts[input_mod] = modality_input_counts.get(input_mod, 0) + 1
-                
-                # Output modalities
-                output_mod = record.get('output_modalities', '')
-                modality_output_counts[output_mod] = modality_output_counts.get(output_mod, 0) + 1
-            
-            # Provider distribution
-            f.write(f"MODEL PROVIDER DISTRIBUTION:\n")
-            sorted_providers = sorted(provider_counts.items(), key=lambda x: (-x[1], x[0]))
-            for provider, count in sorted_providers:
-                display_provider = provider if provider else "(empty)"
-                f.write(f"  {count:2d} models: {display_provider}\n")
-            f.write(f"\nTotal unique providers: {len(provider_counts)}\n\n")
-            
-            # Country distribution
-            f.write(f"COUNTRY DISTRIBUTION:\n")
-            sorted_countries = sorted(country_counts.items(), key=lambda x: (-x[1], x[0]))
-            for country, count in sorted_countries:
-                display_country = country if country else "(empty)"
-                f.write(f"  {count:2d} models: {display_country}\n")
-            f.write(f"\nTotal unique countries: {len(country_counts)}\n\n")
-            
-            # License distribution
-            f.write(f"LICENSE DISTRIBUTION:\n")
-            sorted_licenses = sorted(license_counts.items(), key=lambda x: (-x[1], x[0]))
-            for license_name, count in sorted_licenses:
-                display_license = license_name if license_name else "(empty)"
-                f.write(f"  {count:2d} models: {display_license}\n")
-            f.write(f"\nTotal unique licenses: {len(license_counts)}\n\n")
-            
-            # Input modalities distribution
-            f.write(f"INPUT MODALITIES DISTRIBUTION:\n")
-            sorted_input_mods = sorted(modality_input_counts.items(), key=lambda x: (-x[1], x[0]))
-            for modality, count in sorted_input_mods:
-                display_modality = modality if modality else "(empty)"
-                f.write(f"  {count:2d} models: {display_modality}\n")
-            f.write(f"\nTotal unique input modality types: {len(modality_input_counts)}\n\n")
-            
-            # Output modalities distribution
-            f.write(f"OUTPUT MODALITIES DISTRIBUTION:\n")
-            sorted_output_mods = sorted(modality_output_counts.items(), key=lambda x: (-x[1], x[0]))
-            for modality, count in sorted_output_mods:
-                display_modality = modality if modality else "(empty)"
-                f.write(f"  {count:2d} models: {display_modality}\n")
-            f.write(f"\nTotal unique output modality types: {len(modality_output_counts)}\n\n")
-            
-            # Detailed model listings
-            f.write("DETAILED CREATED DATABASE SCHEMA:\n")
-            f.write("=" * 80 + "\n\n")
-            
-            # Sort models by provider, then name
-            sorted_models = sorted(
-                database_records,
-                key=lambda x: (x.get('model_provider', ''),
-                              x.get('human_readable_name', ''))
-            )
-            
-            for i, record in enumerate(sorted_models, 1):
-                f.write(f"RECORD {i}: {record.get('human_readable_name', 'Unknown')}\n")
-                f.write("-" * 50 + "\n")
-                
-                # Database schema field order
-                f.write(f"  ID: {record.get('id', '')}\n")
-                f.write(f"  Inference Provider: {record.get('inference_provider', '')}\n")
-                f.write(f"  Model Provider: {record.get('model_provider', '')}\n")
-                f.write(f"  Human Readable Name: {record.get('human_readable_name', '')}\n")
-                f.write(f"  Model Provider Country: {record.get('model_provider_country', '')}\n")
-                f.write(f"  Official URL: {record.get('official_url', '')}\n")
-                f.write(f"  Input Modalities: {record.get('input_modalities', '')}\n")
-                f.write(f"  Output Modalities: {record.get('output_modalities', '')}\n")
-                f.write(f"  License Info Text: {record.get('license_info_text', '')}\n")
-                f.write(f"  License Info URL: {record.get('license_info_url', '')}\n")
-                f.write(f"  License Name: {record.get('license_name', '')}\n")
-                f.write(f"  License URL: {record.get('license_url', '')}\n")
-                f.write(f"  Rate Limits: {record.get('rate_limits', '')}\n")
-                f.write(f"  Provider API Access: {record.get('provider_api_access', '')}\n")
-                f.write(f"  Created At: {record.get('created_at', '')}\n")
-                f.write(f"  Updated At: {record.get('updated_at', '')}\n")
-                
-                # Add separator between models
-                if i < len(sorted_models):
-                    f.write("\n" + "=" * 80 + "\n\n")
-                else:
-                    f.write("\n")
-        
-        print(f"✓ Database report saved to: {report_file}")
-        return report_file
-        
-    except (IOError, TypeError) as error:
-        print(f"ERROR: Failed to save report to {report_file}: {error}")
-        return ""
-
 def main():
     """Main execution function"""
     
@@ -566,15 +429,15 @@ def main():
     # Save outputs
     json_success = save_database_json(database_records)
     txt_success = save_database_txt(database_records)
-    report_success = generate_database_report(database_records)
+    # Database schema report generation removed
 
-    if json_success and txt_success and report_success:
+    if json_success and txt_success:
         print("="*60)
         print("FINAL DATABASE SCHEMA CREATION COMPLETE")
         print(f"Total records created: {len(database_records)}")
         print(f"JSON output: {json_success}")
         print(f"TXT output: {txt_success}")
-        print(f"Report output: {report_success}")
+        # Database schema report generation removed
         print(f"Completed at: {datetime.now().isoformat()}")
         return True
     else:
