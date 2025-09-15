@@ -19,9 +19,6 @@ except ImportError:
 
 try:
     from dotenv import load_dotenv
-
-# Import output utilities
-from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
     env_path = Path(__file__).parent.parent / ".env"
     if env_path.exists():
         load_dotenv(env_path)
@@ -31,6 +28,9 @@ from output_utils import get_output_file_path, get_input_file_path, ensure_outpu
             load_dotenv(current_env)
 except ImportError:
     pass
+
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
 
 # Configuration
 PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "R_filtered_db_data.json"
