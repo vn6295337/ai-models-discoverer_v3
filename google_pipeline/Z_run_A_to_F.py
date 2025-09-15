@@ -286,6 +286,10 @@ class GooglePipelineOrchestrator:
             return False
         else:
             print(f"\n🎉 Pipeline completed successfully! All stages complete. (Total time: {total_duration:.1f}s)")
+
+            # Create timestamp tracking file
+            self.create_completion_timestamp()
+
             print(f"\n📄 Final outputs:")
             print(f"   • pipeline-outputs/E-created-db-data.json (database-ready)")
             print(f"   • pipeline-outputs/E-created-db-data-report.txt (human-readable)")
@@ -341,6 +345,22 @@ class GooglePipelineOrchestrator:
             print(f"📄 Pipeline report saved to: {report_filename}")
         except Exception as e:
             print(f"⚠️  Could not save pipeline report: {e}")
+
+    def create_completion_timestamp(self) -> None:
+        """Create timestamp file to track pipeline completion"""
+        timestamp_file = "pipeline-outputs/last-run.txt"
+        try:
+            # Ensure pipeline-outputs directory exists
+            Path("pipeline-outputs").mkdir(exist_ok=True)
+
+            with open(timestamp_file, 'w') as f:
+                f.write(f"Google Pipeline completed: {datetime.now().strftime('%a %b %d %H:%M:%S UTC %Y')}\n")
+                f.write(f"Local execution: {datetime.now().isoformat()}\n")
+                f.write(f"Pipeline duration: {time.time() - self.pipeline_start_time:.1f} seconds\n")
+
+            print(f"✅ Completion timestamp saved to: {timestamp_file}")
+        except Exception as e:
+            print(f"⚠️  Could not save completion timestamp: {e}")
 
     def list_stages(self) -> None:
         """List all available pipeline stages"""

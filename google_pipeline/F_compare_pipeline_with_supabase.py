@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """
 Google Pipeline vs Supabase Field Comparison
-Compares field values between E-db-schema-normalize.csv and Supabase working_version table
+Compares field values between E-created-db-data.json and Supabase working_version table
 """
 
 import json
 import os
-import csv
 from typing import Dict, List, Optional, Any
 from pathlib import Path
 
@@ -56,13 +55,16 @@ def get_supabase_client() -> Optional[Client]:
         return None
 
 def load_pipeline_data() -> List[Dict[str, Any]]:
-    """Load pipeline data from E-db-schema-normalize.csv"""
+    """Load pipeline data from E-created-db-data.json"""
     try:
-        data = []
         with open(PIPELINE_DATA_FILE, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                data.append(row)
+            data = json.load(f)
+
+        # Ensure data is a list
+        if not isinstance(data, list):
+            print(f"Expected list, got {type(data)}")
+            return []
+
         print(f"Loaded {len(data)} models from pipeline data")
         return data
     except Exception as e:
