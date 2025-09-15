@@ -11,6 +11,9 @@ from typing import Any, Dict, List
 
 import requests
 
+# Import output utilities
+from output_utils import get_output_file_path, ensure_output_dir_exists, clean_output_directory
+
 # Add utils directory to path for key_client import
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 try:
@@ -194,10 +197,16 @@ def main():
     print("OpenRouter API Models Fetcher")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)
-    
-    # Output filenames
-    json_filename = "A-api-models.json"
-    report_filename = "A-api-models-report.txt"
+
+    # Clean output directory (only for first stage of pipeline)
+    clean_output_directory()
+
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
+    # Output filenames with full paths
+    json_filename = get_output_file_path("A-api-models.json")
+    report_filename = get_output_file_path("A-api-models-report.txt")
     
     # Fetch all models from API
     models = fetch_all_openrouter_models()

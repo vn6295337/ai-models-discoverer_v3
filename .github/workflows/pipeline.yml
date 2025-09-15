@@ -50,7 +50,7 @@ jobs:
       if: always()
       with:
         name: pipeline-execution-report
-        path: openrouter_pipeline/Z-pipeline-execution-report.txt
+        path: openrouter_pipeline/pipeline-outputs/Z-pipeline-execution-report.txt
         retention-days: 30
 
     - name: Upload processed data
@@ -59,9 +59,9 @@ jobs:
       with:
         name: processed-data
         path: |
-          openrouter_pipeline/*.json
-          openrouter_pipeline/*-report.txt
-          openrouter_pipeline/Q-db-data-quality-report.txt
+          openrouter_pipeline/pipeline-outputs/*.json
+          openrouter_pipeline/pipeline-outputs/*-report.txt
+          openrouter_pipeline/pipeline-outputs/last-run.txt
           !**/node_modules/**
         retention-days: 7
 
@@ -71,20 +71,14 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
 
-        # Create output directory in openrouter_pipeline
-        mkdir -p openrouter_pipeline/pipeline-outputs
-
-        # Copy processed files to output directory
-        cd openrouter_pipeline
-        cp *.json pipeline-outputs/ 2>/dev/null || true
-        cp *-report.txt pipeline-outputs/ 2>/dev/null || true
-        cp Q-db-data-quality-report.txt pipeline-outputs/ 2>/dev/null || true
-        cd ..
-
-        # Add timestamp file
+        # Add timestamp file to pipeline-outputs (scripts already write directly there)
         echo "Pipeline completed: $(date -u)" > openrouter_pipeline/pipeline-outputs/last-run.txt
         echo "Workflow run: ${{ github.run_number }}" >> openrouter_pipeline/pipeline-outputs/last-run.txt
         echo "Repository: ${{ github.repository }}" >> openrouter_pipeline/pipeline-outputs/last-run.txt
+
+        # Verify files exist in pipeline-outputs
+        echo "📁 Files in pipeline-outputs directory:"
+        ls -la openrouter_pipeline/pipeline-outputs/ || echo "No files found"
 
         # Commit if there are changes
         git add openrouter_pipeline/pipeline-outputs/

@@ -15,6 +15,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple
 
+# Import output utilities
+from output_utils import get_output_file_path
+
 def run_script(script_name: str) -> Tuple[bool, str]:
     """
     Run a pipeline script and return success status and output
@@ -65,7 +68,7 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
         execution_log: List of (stage, success, message) tuples
         total_time: Total pipeline execution time in seconds
     """
-    report_file = "Z-pipeline-execution-report.txt"
+    report_file = get_output_file_path("Z-pipeline-execution-report.txt")
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
