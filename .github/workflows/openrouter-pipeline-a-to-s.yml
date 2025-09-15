@@ -1,4 +1,4 @@
-name: OpenRouter Pipeline (A-R)
+name: OpenRouter Pipeline (A-S)
 
 on:
   schedule:
@@ -43,7 +43,7 @@ jobs:
     - name: Run complete pipeline
       working-directory: openrouter_pipeline
       run: |
-        python Z_run_A_to_R.py
+        python Z_run_A_to_S.py
 
     - name: Upload pipeline report
       uses: actions/upload-artifact@v4

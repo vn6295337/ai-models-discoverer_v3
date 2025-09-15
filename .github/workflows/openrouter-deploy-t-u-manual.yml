@@ -10,8 +10,8 @@ on:
         type: choice
         options:
         - 'none'
-        - 'run_s'
         - 'run_t'
+        - 'run_u'
 
 jobs:
   openrouter-deploy:
@@ -46,16 +46,16 @@ jobs:
       run: |
         echo "🎯 OpenRouter Pipeline Execution Plan:"
         echo "Selected option: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "run_s" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "run_t" ]]; then
           echo "Will execute: T_refresh_supabase_working_version.py (Refresh Working Version)"
-        elif [[ "${{ inputs.script_choice }}" == "run_t" ]]; then
+        elif [[ "${{ inputs.script_choice }}" == "run_u" ]]; then
           echo "Will execute: U_deploy_to_ai_models_main.py (Deploy to Production)"
         else
           echo "No script will be executed (none selected)"
         fi
 
     - name: Run T_refresh_supabase_working_version.py
-      if: ${{ inputs.script_choice == 'run_s' }}
+      if: ${{ inputs.script_choice == 'run_t' }}
       working-directory: openrouter_pipeline
       run: |
         echo "🔄 Running T_refresh_supabase_working_version.py..."
@@ -63,7 +63,7 @@ jobs:
         python -u T_refresh_supabase_working_version.py
 
     - name: Run U_deploy_to_ai_models_main.py
-      if: ${{ inputs.script_choice == 'run_t' }}
+      if: ${{ inputs.script_choice == 'run_u' }}
       working-directory: openrouter_pipeline
       run: |
         echo "🚀 Running U_deploy_to_ai_models_main.py..."
@@ -87,9 +87,9 @@ jobs:
       run: |
         echo "✅ OpenRouter pipeline deployment completed successfully"
         echo "Script executed: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "run_s" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "run_t" ]]; then
           echo "✅ Working version table refreshed with OpenRouter data"
-        elif [[ "${{ inputs.script_choice }}" == "run_t" ]]; then
+        elif [[ "${{ inputs.script_choice }}" == "run_u" ]]; then
           echo "✅ Data deployed to main ai_models table"
         else
           echo "ℹ️  No script was executed"
