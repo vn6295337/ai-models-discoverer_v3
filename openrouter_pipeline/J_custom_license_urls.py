@@ -10,9 +10,13 @@ Outputs: J-custom-license-urls.json + report with URL mappings
 import json
 import os
 import sys
+import time
 import requests
 from datetime import datetime
 from typing import Any, Dict, List, Tuple
+
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
 
 def load_custom_models() -> List[Dict[str, Any]]:
     """Load custom models from Stage-H"""
@@ -98,10 +102,6 @@ def enrich_models_with_license_urls(models: List[Dict[str, Any]]) -> List[Dict[s
         
         # Small delay to be respectful to HuggingFace
         if i % 10 == 0:
-            import time
-
-# Import output utilities
-from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
             time.sleep(1)
     
     return enriched_models
