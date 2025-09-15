@@ -9,6 +9,9 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Tuple
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_filtering_config() -> Dict[str, Any]:
     """Load filtering configuration from JSON file"""
     config_file = "02_models_filtering_rules.json"
@@ -276,15 +279,18 @@ def main():
     print("OpenRouter Models Filter")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)
-    
+
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     # Load filtering configuration
     config = load_filtering_config()
-    
-    # Input and output filenames
-    input_filename = "A-api-models.json"
-    output_filename = "B-filtered-models.json"
-    report_filename = "B-filtered-models-report.txt"
-    
+
+    # Input and output filenames with full paths
+    input_filename = get_input_file_path("A-api-models.json")
+    output_filename = get_output_file_path("B-filtered-models.json")
+    report_filename = get_output_file_path("B-filtered-models-report.txt")
+
     # Load all models
     all_models = load_models_from_json(input_filename)
     

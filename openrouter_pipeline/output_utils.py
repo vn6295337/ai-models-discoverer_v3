@@ -34,6 +34,19 @@ def get_output_file_path(filename: str) -> str:
     """
     return os.path.join(get_output_dir(), filename)
 
+def get_input_file_path(filename: str) -> str:
+    """
+    Get the full path for an input file from previous pipeline stages
+    Input files are read from pipeline-outputs directory
+
+    Args:
+        filename: Name of the input file
+
+    Returns:
+        str: Full path to the input file in pipeline-outputs directory
+    """
+    return os.path.join(get_output_dir(), filename)
+
 def ensure_output_dir_exists():
     """
     Ensure the pipeline-outputs directory exists
