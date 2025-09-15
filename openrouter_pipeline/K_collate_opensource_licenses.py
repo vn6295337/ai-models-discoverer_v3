@@ -15,6 +15,9 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def extract_model_name(full_name: str) -> str:
     """Extract clean model name from full name"""
     # Remove provider prefix like "Google:", "Meta:", etc.
@@ -57,19 +60,19 @@ def collate_license_information() -> List[Dict[str, Any]]:
     
     # Stage E: License info URLs from HF
     stage_e_models = load_json_file(
-        'E-other-license-info-urls-from-hf.json',
+        get_input_file_path('E-other-license-info-urls-from-hf.json'),
         'license info URLs'
     )
     
     # Stage H: Opensource license names only
     opensource_names = load_json_file(
-        'H-opensource-license-names.json',
+        get_input_file_path('H-opensource-license-names.json'),
         'opensource license names'
     )
     
     # Stage I: Opensource URLs
     opensource_urls = load_json_file(
-        'I-opensource-license-urls.json',
+        get_input_file_path('I-opensource-license-urls.json'),
         'opensource license URLs'
     )
     
@@ -139,7 +142,7 @@ def collate_license_information() -> List[Dict[str, Any]]:
 
 def save_collated_data(collated_models: List[Dict[str, Any]]) -> str:
     """Save collated data to JSON file"""
-    output_file = 'K-collated-opensource-licenses.json'
+    output_file = get_input_file_path('K-collated-opensource-licenses.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -152,7 +155,7 @@ def save_collated_data(collated_models: List[Dict[str, Any]]) -> str:
 
 def generate_collation_report(collated_models: List[Dict[str, Any]]) -> str:
     """Generate comprehensive collation report"""
-    report_file = 'K-collated-opensource-licenses-report.txt'
+    report_file = get_output_file_path('K-collated-opensource-licenses-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -176,7 +179,7 @@ def generate_collation_report(collated_models: List[Dict[str, Any]]) -> str:
                 'stage_i': 0
             }
             
-            stage_e_index = create_canonical_slug_index(load_json_file('E-other-license-info-urls-from-hf.json', 'temp'))
+            stage_e_index = create_canonical_slug_index(load_json_file(get_input_file_path('E-other-license-info-urls-from-hf.json'), 'temp'))
             
             for model in collated_models:
                 canonical_slug = model.get('canonical_slug', '')
@@ -243,6 +246,10 @@ def generate_collation_report(collated_models: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Opensource License Information Collator")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

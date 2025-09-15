@@ -13,6 +13,9 @@ from typing import Dict, List, Any
 from datetime import datetime
 import requests
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 
 def check_url_accessible(url: str) -> bool:
     """Check if a URL is accessible with a HEAD request"""
@@ -57,7 +60,7 @@ def get_huggingface_license_info(hf_id: str) -> str:
 
 def load_models_data() -> List[Dict[str, Any]]:
     """Load models data from B-filtered-models.json"""
-    input_file = 'B-filtered-models.json'
+    input_file = get_input_file_path('B-filtered-models.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -116,7 +119,7 @@ def process_models_for_license_info(models: List[Dict[str, Any]]) -> List[Dict[s
 
 def save_license_info_json(processed_models: List[Dict[str, str]]) -> str:
     """Save processed models to JSON file"""
-    output_file = 'E-other-license-info-urls-from-hf.json'
+    output_file = get_output_file_path('E-other-license-info-urls-from-hf.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -129,7 +132,7 @@ def save_license_info_json(processed_models: List[Dict[str, str]]) -> str:
 
 def generate_license_info_report(processed_models: List[Dict[str, str]]) -> str:
     """Generate human-readable report"""
-    report_file = 'E-other-license-info-urls-from-hf-report.txt'
+    report_file = get_output_file_path('E-other-license-info-urls-from-hf-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -217,7 +220,10 @@ def main():
     print("Other License Info URLs Fetcher from HuggingFace")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)
-    
+
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     # Load models data
     models = load_models_data()
     if not models:

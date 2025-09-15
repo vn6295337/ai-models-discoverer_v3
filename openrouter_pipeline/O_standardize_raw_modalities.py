@@ -26,9 +26,12 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_raw_modalities() -> List[Dict[str, Any]]:
     """Load raw modalities from Stage-N"""
-    input_file = 'N-raw-modalities.json'
+    input_file = get_input_file_path('N-raw-modalities.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -186,7 +189,7 @@ def process_standardized_modalities(models: List[Dict[str, Any]], config: Dict[s
 
 def save_standardized_modalities_json(processed_models: List[Dict[str, Any]]) -> str:
     """Save standardized modalities to JSON file using standardized flat array structure"""
-    output_file = 'O-standardized-modalities.json'
+    output_file = get_input_file_path('O-standardized-modalities.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -199,7 +202,7 @@ def save_standardized_modalities_json(processed_models: List[Dict[str, Any]]) ->
 
 def generate_standardized_modalities_report(processed_models: List[Dict[str, Any]]) -> str:
     """Generate human readable report"""
-    report_file = 'O-standardized-modalities-report.txt'
+    report_file = get_output_file_path('O-standardized-modalities-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -323,6 +326,10 @@ def generate_standardized_modalities_report(processed_models: List[Dict[str, Any
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Raw Modality Standardization")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

@@ -13,9 +13,12 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Tuple
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_license_names_data() -> List[Dict[str, Any]]:
     """Load extracted license names from Stage-F"""
-    input_file = 'F-other-license-names-from-hf.json'
+    input_file = get_input_file_path('F-other-license-names-from-hf.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -138,7 +141,7 @@ def process_license_standardization(license_data: List[Dict[str, Any]],
 
 def save_standardized_licenses_json(processed_models: List[Dict[str, Any]]) -> str:
     """Save processed models with standardized license names to JSON file"""
-    output_file = 'G-standardized-other-license-names-from-hf.json'
+    output_file = get_input_file_path('G-standardized-other-license-names-from-hf.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -151,7 +154,7 @@ def save_standardized_licenses_json(processed_models: List[Dict[str, Any]]) -> s
 
 def generate_standardization_report(processed_models: List[Dict[str, Any]]) -> str:
     """Generate human-readable report"""
-    report_file = 'G-standardized-other-license-names-from-hf-report.txt'
+    report_file = get_output_file_path('G-standardized-other-license-names-from-hf-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -274,6 +277,10 @@ def generate_standardization_report(processed_models: List[Dict[str, Any]]) -> s
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Other License Names Standardizer")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

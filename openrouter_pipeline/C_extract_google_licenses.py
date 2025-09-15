@@ -14,9 +14,12 @@ import re
 from datetime import datetime
 from typing import Any, Dict, List
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_filtered_models() -> List[Dict[str, Any]]:
     """Load filtered models from Stage-B"""
-    input_file = 'B-filtered-models.json'
+    input_file = get_input_file_path('B-filtered-models.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -134,7 +137,7 @@ def process_google_models(models: List[Dict[str, Any]], config: Dict[str, Any]) 
 
 def save_google_licenses_json(google_models: List[Dict[str, Any]]) -> str:
     """Save Google models with licensing to JSON file using standardized flat array structure"""
-    output_file = 'C-google-licenses.json'
+    output_file = get_output_file_path('C-google-licenses.json')
     
     # Standardize models to match unified structure
     standardized_models = []
@@ -163,7 +166,7 @@ def save_google_licenses_json(google_models: List[Dict[str, Any]]) -> str:
 
 def generate_google_licenses_report(google_models: List[Dict[str, Any]]) -> str:
     """Generate human readable report"""
-    report_file = 'C-google-licenses-report.txt'
+    report_file = get_output_file_path('C-google-licenses-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -236,7 +239,10 @@ def main():
     print("Google Models License Extraction")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)
-    
+
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     # Load filtered models from Stage-B
     models = load_filtered_models()
     if not models:

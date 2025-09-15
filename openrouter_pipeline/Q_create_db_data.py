@@ -20,9 +20,12 @@ import csv
 from datetime import datetime
 from typing import Any, Dict, List
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_provider_data() -> List[Dict[str, Any]]:
     """Load provider enriched data from Stage-P"""
-    input_file = 'P-provider-enriched.json'
+    input_file = get_input_file_path('P-provider-enriched.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -35,7 +38,7 @@ def load_provider_data() -> List[Dict[str, Any]]:
 
 def load_modality_data() -> Dict[str, Dict[str, Any]]:
     """Load standardized modality data from Stage-O"""
-    input_file = 'O-standardized-modalities.json'
+    input_file = get_input_file_path('O-standardized-modalities.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -56,7 +59,7 @@ def load_modality_data() -> Dict[str, Dict[str, Any]]:
 
 def load_license_data() -> Dict[str, Dict[str, Any]]:
     """Load license data from Stage-M"""
-    input_file = 'M-final-license-list.json'
+    input_file = get_input_file_path('M-final-license-list.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -216,7 +219,7 @@ def create_final_database_data(provider_models: List[Dict[str, Any]],
 
 def save_database_json(database_records: List[Dict[str, Any]]) -> str:
     """Save database records to JSON file"""
-    output_file = 'Q-created-db-data.json'
+    output_file = get_input_file_path('Q-created-db-data.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -253,7 +256,7 @@ def save_database_csv(database_records: List[Dict[str, Any]], db_schema: Dict[st
 
 def save_database_txt(database_records: List[Dict[str, Any]]) -> str:
     """Save database records to human-readable TXT file with data quality analysis"""
-    output_file = 'Q-db-data-quality-report.txt'
+    output_file = get_output_file_path('Q-db-data-quality-report.txt')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -386,7 +389,7 @@ def save_database_txt(database_records: List[Dict[str, Any]]) -> str:
 
 def generate_database_report(database_records: List[Dict[str, Any]]) -> str:
     """Generate human readable report for database records"""
-    report_file = 'Q-created-db-schema-report.txt'
+    report_file = get_output_file_path('Q-created-db-schema-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -523,6 +526,10 @@ def generate_database_report(database_records: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Final Database Schema Creation")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

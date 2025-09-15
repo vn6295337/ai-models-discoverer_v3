@@ -40,6 +40,9 @@ except ImportError:
 # Load environment variables from .env file
 try:
     from dotenv import load_dotenv
+
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
     # Look for .env file in root directory (ai-models-discoverer_v2)
     env_path = Path(__file__).parent.parent / ".env"
     if env_path.exists():
@@ -60,7 +63,7 @@ except ImportError:
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-JSON_FILE = SCRIPT_DIR / "R-finalized-db-data.json"
+JSON_FILE = SCRIPT_DIR / get_input_file_path("R-finalized-db-data.json")
 LOG_FILE = SCRIPT_DIR / "S-supabase-refresh-report.txt"
 
 # Supabase configuration

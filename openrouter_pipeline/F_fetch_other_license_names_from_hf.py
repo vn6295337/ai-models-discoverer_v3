@@ -13,6 +13,9 @@ import re
 from datetime import datetime
 from typing import List, Dict
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 
 def extract_license_from_hf_page(hf_id: str) -> str:
     """Extract license from HuggingFace page"""
@@ -68,11 +71,14 @@ def should_skip_model(name: str) -> bool:
 
 def main():
     """Extract licenses from HuggingFace pages for non-Google/Meta models"""
-    
+
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Loading stage-E license info data...")
     
     # Load the JSON data
-    with open('E-other-license-info-urls-from-hf.json', 'r') as f:
+    with open(get_input_file_path('E-other-license-info-urls-from-hf.json'), 'r') as f:
         data = json.load(f)
     
     # Filter models with HuggingFace IDs, excluding Google/Meta
@@ -113,13 +119,13 @@ def main():
         time.sleep(1)
     
     # Write results to JSON file
-    json_output_file = 'F-other-license-names-from-hf.json'
+    json_output_file = get_output_file_path('F-other-license-names-from-hf.json')
     
     with open(json_output_file, 'w') as f:
         json.dump(results, f, indent=2)
     
     # Write human-readable report
-    report_output_file = 'F-other-license-names-from-hf-report.txt'
+    report_output_file = get_output_file_path('F-other-license-names-from-hf-report.txt')
     
     with open(report_output_file, 'w') as f:
         # Header

@@ -16,6 +16,9 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_json_file(filename: str, description: str) -> List[Dict[str, Any]]:
     """Load JSON file with error handling - all files now use standardized flat array structure"""
     try:
@@ -51,25 +54,25 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
     
     # Google licenses (Stage C)
     google_models = load_json_file(
-        'C-google-licenses.json',
+        get_input_file_path('C-google-licenses.json'),
         'Google licenses'
     )
     
     # Meta licenses (Stage D)
     meta_models = load_json_file(
-        'D-meta-licenses.json',
+        get_input_file_path('D-meta-licenses.json'),
         'Meta licenses'
     )
     
     # Opensource licenses (Stage K)
     opensource_models = load_json_file(
-        'K-collated-opensource-licenses.json',
+        get_input_file_path('K-collated-opensource-licenses.json'),
         'Opensource licenses'
     )
     
     # Custom licenses (Stage L)
     custom_models = load_json_file(
-        'L-collated-custom-licenses.json',
+        get_input_file_path('L-collated-custom-licenses.json'),
         'Custom licenses'
     )
     
@@ -164,7 +167,7 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
 
 def save_final_data(final_models: List[Dict[str, Any]]) -> str:
     """Save final consolidated data to JSON file"""
-    output_file = 'M-final-license-list.json'
+    output_file = get_input_file_path('M-final-license-list.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -177,7 +180,7 @@ def save_final_data(final_models: List[Dict[str, Any]]) -> str:
 
 def generate_final_report(final_models: List[Dict[str, Any]]) -> str:
     """Generate comprehensive final report"""
-    report_file = 'M-final-license-list-report.txt'
+    report_file = get_output_file_path('M-final-license-list-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -261,6 +264,10 @@ def generate_final_report(final_models: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Final License List Consolidator")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

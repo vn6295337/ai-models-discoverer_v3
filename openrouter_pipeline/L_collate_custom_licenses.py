@@ -13,6 +13,9 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Optional
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def extract_model_name(full_name: str) -> str:
     """Extract clean model name from full name"""
     # Remove provider prefix like "Google:", "Meta:", etc.
@@ -55,13 +58,13 @@ def collate_custom_license_information() -> List[Dict[str, Any]]:
     
     # Stage J: Custom license URLs from HF
     custom_models = load_json_file(
-        'J-custom-license-urls.json',
+        get_input_file_path('J-custom-license-urls.json'),
         'custom license URLs'
     )
     
     # Stage E: Original names for all models
     stage_e_models = load_json_file(
-        'E-other-license-info-urls-from-hf.json',
+        get_input_file_path('E-other-license-info-urls-from-hf.json'),
         'license info URLs (for original names)'
     )
     
@@ -108,7 +111,7 @@ def collate_custom_license_information() -> List[Dict[str, Any]]:
 
 def save_collated_data(collated_models: List[Dict[str, Any]]) -> str:
     """Save collated data to JSON file"""
-    output_file = 'L-collated-custom-licenses.json'
+    output_file = get_input_file_path('L-collated-custom-licenses.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -121,7 +124,7 @@ def save_collated_data(collated_models: List[Dict[str, Any]]) -> str:
 
 def generate_collation_report(collated_models: List[Dict[str, Any]]) -> str:
     """Generate comprehensive collation report"""
-    report_file = 'L-collated-custom-licenses-report.txt'
+    report_file = get_output_file_path('L-collated-custom-licenses-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -219,6 +222,10 @@ def generate_collation_report(collated_models: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Custom License Information Collator")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

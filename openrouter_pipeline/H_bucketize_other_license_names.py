@@ -13,9 +13,12 @@ import sys
 from datetime import datetime
 from typing import Any, Dict, List, Set, Tuple
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 def load_standardized_license_data() -> List[Dict[str, Any]]:
     """Load standardized license data from Stage-G"""
-    input_file = 'G-standardized-other-license-names-from-hf.json'
+    input_file = get_input_file_path('G-standardized-other-license-names-from-hf.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -111,7 +114,7 @@ def bucketize_licenses(license_data: List[Dict[str, Any]],
 
 def save_opensource_bucket(opensource_models: List[Dict[str, Any]]) -> str:
     """Save opensource models to JSON file"""
-    output_file = 'H-opensource-license-names.json'
+    output_file = get_input_file_path('H-opensource-license-names.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -124,7 +127,7 @@ def save_opensource_bucket(opensource_models: List[Dict[str, Any]]) -> str:
 
 def save_custom_bucket(custom_models: List[Dict[str, Any]]) -> str:
     """Save custom licensed models to JSON file"""
-    output_file = 'H-custom-license-names.json'
+    output_file = get_input_file_path('H-custom-license-names.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -137,7 +140,7 @@ def save_custom_bucket(custom_models: List[Dict[str, Any]]) -> str:
 
 def generate_opensource_report(opensource_models: List[Dict[str, Any]]) -> str:
     """Generate opensource models report"""
-    report_file = 'H-opensource-license-names-report.txt'
+    report_file = get_output_file_path('H-opensource-license-names-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -202,7 +205,7 @@ def generate_opensource_report(opensource_models: List[Dict[str, Any]]) -> str:
 
 def generate_custom_report(custom_models: List[Dict[str, Any]]) -> str:
     """Generate custom licensed models report"""
-    report_file = 'H-custom-license-names-report.txt'
+    report_file = get_output_file_path('H-custom-license-names-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -267,6 +270,10 @@ def generate_custom_report(custom_models: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Other License Names Bucketizer")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)

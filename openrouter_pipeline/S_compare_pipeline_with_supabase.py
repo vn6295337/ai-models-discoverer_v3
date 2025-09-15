@@ -19,6 +19,9 @@ except ImportError:
 
 try:
     from dotenv import load_dotenv
+
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
     env_path = Path(__file__).parent.parent / ".env"
     if env_path.exists():
         load_dotenv(env_path)
@@ -273,6 +276,10 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Starting field comparison...")
 
     try:

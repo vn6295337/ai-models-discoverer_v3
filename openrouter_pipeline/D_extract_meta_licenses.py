@@ -27,6 +27,9 @@ import re
 from typing import Dict, List, Tuple, Any
 from datetime import datetime
 
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+
 # =============================================================================
 # META LICENSE PROCESSING FUNCTIONS
 # =============================================================================
@@ -265,7 +268,7 @@ def load_stage1_data() -> List[Dict[str, Any]]:
         json.JSONDecodeError: If JSON file is malformed
     """
     
-    stage1_file = 'B-filtered-models.json'
+    stage1_file = get_input_file_path('B-filtered-models.json')
     
     print(f"Loading Stage-B data from: {stage1_file}")
     
@@ -297,7 +300,7 @@ def save_meta_licensing_results(licensed_models: List[Dict[str, Any]]) -> str:
         str: Output filename
     """
     
-    output_file = 'D-meta-licenses.json'
+    output_file = get_output_file_path('D-meta-licenses.json')
     
     # Standardize models to match unified structure
     standardized_models = []
@@ -335,7 +338,7 @@ def generate_meta_licenses_report(licensed_models: List[Dict[str, Any]]) -> str:
         str: Report filename
     """
     
-    report_file = 'D-meta-licenses-report.txt'
+    report_file = get_output_file_path('D-meta-licenses-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -427,7 +430,10 @@ def main():
     print("=" * 80)
     print(f"Started at: {datetime.now().isoformat()}")
     print()
-    
+
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     try:
         # Step 1: Load Stage-1 data
         print("STEP 1: Loading Stage-1 API data...")

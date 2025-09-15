@@ -16,7 +16,7 @@ from typing import Any, Dict, List, Tuple
 
 def load_custom_models() -> List[Dict[str, Any]]:
     """Load custom models from Stage-H"""
-    input_file = 'H-custom-license-names.json'
+    input_file = get_input_file_path('H-custom-license-names.json')
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
@@ -99,13 +99,16 @@ def enrich_models_with_license_urls(models: List[Dict[str, Any]]) -> List[Dict[s
         # Small delay to be respectful to HuggingFace
         if i % 10 == 0:
             import time
+
+# Import output utilities
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
             time.sleep(1)
     
     return enriched_models
 
 def save_enriched_models_json(enriched_models: List[Dict[str, Any]]) -> str:
     """Save enriched models to JSON file"""
-    output_file = 'J-custom-license-urls.json'
+    output_file = get_input_file_path('J-custom-license-urls.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -118,7 +121,7 @@ def save_enriched_models_json(enriched_models: List[Dict[str, Any]]) -> str:
 
 def generate_license_urls_report(enriched_models: List[Dict[str, Any]]) -> str:
     """Generate comprehensive report"""
-    report_file = 'J-custom-license-urls-report.txt'
+    report_file = get_output_file_path('J-custom-license-urls-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -232,6 +235,10 @@ def generate_license_urls_report(enriched_models: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
+    
+    # Ensure output directory exists
+    ensure_output_dir_exists()
+
     print("Custom License URLs Enricher")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)
