@@ -171,7 +171,7 @@ def finalize_database_data(models: List[Dict[str, Any]], removal_index: Dict[str
 
 def save_finalized_data(finalized_models: List[Dict[str, Any]]) -> str:
     """Save finalized database data to JSON file"""
-    output_file = 'R_filtered_db_data.json'
+    output_file = get_output_file_path('R_filtered_db_data.json')
     
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
@@ -184,7 +184,7 @@ def save_finalized_data(finalized_models: List[Dict[str, Any]]) -> str:
 
 def generate_removal_report(finalized_models: List[Dict[str, Any]], removed_models: List[Dict[str, Any]], removal_config: Dict[str, Any]) -> str:
     """Generate comprehensive removal report"""
-    report_file = 'R_filtered_db_data-report.txt'
+    report_file = get_output_file_path('R_filtered_db_data-report.txt')
     
     try:
         with open(report_file, 'w', encoding='utf-8') as f:

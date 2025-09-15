@@ -33,8 +33,8 @@ except ImportError:
 from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
 
 # Configuration
-PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "R_filtered_db_data.json"
-REPORT_FILE = Path(__file__).parent / "S-field-comparison-report.txt"
+PIPELINE_DATA_FILE = get_input_file_path("R_filtered_db_data.json")
+REPORT_FILE = get_output_file_path("S-field-comparison-report.txt")
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY") or os.getenv("SUPABASE_KEY")
 TABLE_NAME = "working_version"
