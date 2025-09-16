@@ -1,0 +1,140 @@
+================================================================================
+COLLATED CUSTOM LICENSE INFORMATION REPORT
+Generated: 2025-09-16 14:20:29
+================================================================================
+
+SUMMARY:
+  Total models        : 8
+  Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
+  Processor           : L_collate_custom_licenses.py
+  Output              : L-collated-custom-licenses.json
+
+CUSTOM LICENSE DISTRIBUTION:
+   2 models: QWEN
+   2 models: Unknown
+   1 models: Modified MIT
+   1 models: NVIDIA
+   1 models: Tencent
+   1 models: llama3.3
+
+Total unique license types: 6
+
+LICENSE URL TYPE DISTRIBUTION:
+   4 models: LICENSE file
+   4 models: README.md file
+
+Total URL types: 2
+
+DETAILED CUSTOM MODEL INFORMATION:
+================================================================================
+
+MODEL 1: moonshotai/kimi-k2
+--------------------------------------------------
+  ID: moonshotai/kimi-k2:free
+  Original Name: MoonshotAI: Kimi K2 0711 (free)
+  HuggingFace ID: moonshotai/Kimi-K2-Instruct
+  Canonical Slug: moonshotai/kimi-k2
+  Clean Model Name: Kimi K2 0711
+  License Info Text: 
+  License Info URL: 
+  License Name: Modified MIT
+  License URL: https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE
+
+================================================================================
+
+MODEL 2: nvidia/nemotron-nano-9b-v2
+--------------------------------------------------
+  ID: nvidia/nemotron-nano-9b-v2:free
+  Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-Nano-9B-v2
+  Canonical Slug: nvidia/nemotron-nano-9b-v2
+  Clean Model Name: Nemotron Nano 9B V2
+  License Info Text: 
+  License Info URL: 
+  License Name: NVIDIA
+  License URL: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md
+
+================================================================================
+
+MODEL 3: qwen/qwen-2.5-72b-instruct
+--------------------------------------------------
+  ID: qwen/qwen-2.5-72b-instruct:free
+  Original Name: Qwen2.5 72B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-72B-Instruct
+  Canonical Slug: qwen/qwen-2.5-72b-instruct
+  Clean Model Name: Qwen2.5 72B Instruct
+  License Info Text: 
+  License Info URL: 
+  License Name: QWEN
+  License URL: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
+
+================================================================================
+
+MODEL 4: qwen/qwen2.5-vl-72b-instruct
+--------------------------------------------------
+  ID: qwen/qwen2.5-vl-72b-instruct:free
+  Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-VL-72B-Instruct
+  Canonical Slug: qwen/qwen2.5-vl-72b-instruct
+  Clean Model Name: Qwen2.5 VL 72B Instruct
+  License Info Text: 
+  License Info URL: 
+  License Name: QWEN
+  License URL: https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/blob/main/LICENSE
+
+================================================================================
+
+MODEL 5: tencent/hunyuan-a13b-instruct
+--------------------------------------------------
+  ID: tencent/hunyuan-a13b-instruct:free
+  Original Name: Tencent: Hunyuan A13B Instruct (free)
+  HuggingFace ID: tencent/Hunyuan-A13B-Instruct
+  Canonical Slug: tencent/hunyuan-a13b-instruct
+  Clean Model Name: Hunyuan A13B Instruct
+  License Info Text: 
+  License Info URL: 
+  License Name: Tencent
+  License URL: https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
+
+================================================================================
+
+MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
+--------------------------------------------------
+  ID: cognitivecomputations/dolphin3.0-mistral-24b:free
+  Original Name: Dolphin3.0 Mistral 24B (free)
+  HuggingFace ID: cognitivecomputations/Dolphin3.0-Mistral-24B
+  Canonical Slug: cognitivecomputations/dolphin3.0-mistral-24b
+  Clean Model Name: Dolphin3.0 Mistral 24B
+  License Info Text: 
+  License Info URL: 
+  License Name: Unknown
+  License URL: https://huggingface.co/cognitivecomputations/Dolphin3.0-Mistral-24B/blob/main/README.md
+
+================================================================================
+
+MODEL 7: cognitivecomputations/dolphin3.0-r1-mistral-24b
+--------------------------------------------------
+  ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
+  Original Name: Dolphin3.0 R1 Mistral 24B (free)
+  HuggingFace ID: cognitivecomputations/Dolphin3.0-R1-Mistral-24B
+  Canonical Slug: cognitivecomputations/dolphin3.0-r1-mistral-24b
+  Clean Model Name: Dolphin3.0 R1 Mistral 24B
+  License Info Text: 
+  License Info URL: 
+  License Name: Unknown
+  License URL: https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md
+
+================================================================================
+
+MODEL 8: shisa-ai/shisa-v2-llama3.3-70b
+--------------------------------------------------
+  ID: shisa-ai/shisa-v2-llama3.3-70b:free
+  Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
+  HuggingFace ID: shisa-ai/shisa-v2-llama3.3-70b
+  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
+  Clean Model Name: Shisa V2 Llama 3.3 70B
+  License Info Text: 
+  License Info URL: 
+  License Name: llama3.3
+  License URL: https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md
+

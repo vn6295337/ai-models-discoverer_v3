@@ -1,0 +1,794 @@
+================================================================================
+STANDARDIZED MODALITIES REPORT
+Generated: 2025-09-16 14:20:30
+================================================================================
+
+SUMMARY:
+  Total models : 54
+  Input        : N-raw-modalities.json
+  Config       : 06_modality_standardization.json
+  Processor    : O_standardize_raw_modalities.py
+  Output       : O-standardized-modalities.json
+
+STANDARDIZED INPUT MODALITIES DISTRIBUTION:
+  40 models: Text
+  12 models: Text, Image
+   2 models: Text, Image, Audio, Video
+
+Total unique input types: 3
+
+STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
+  54 models: Text
+
+Total unique output types: 1
+
+STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
+  40 models: Text → Text
+  12 models: Text, Image → Text
+   2 models: Text, Image, Audio, Video → Text
+
+Total unique combinations: 3
+
+STANDARDIZATION IMPACT ANALYSIS:
+  Input modalities changed: 54 models
+  Output modalities changed: 54 models
+  Input modalities unchanged: 0 models
+  Output modalities unchanged: 0 models
+
+DETAILED STANDARDIZED MODALITY MODEL INFORMATION:
+================================================================================
+
+MODEL 1: tngtech/deepseek-r1t-chimera
+--------------------------------------------------
+  ID: tngtech/deepseek-r1t-chimera:free
+  Original Name: TNG: DeepSeek R1T Chimera (free)
+  HuggingFace ID: tngtech/DeepSeek-R1T-Chimera
+  Canonical Slug: tngtech/deepseek-r1t-chimera
+  Clean Model Name: DeepSeek R1T Chimera
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 2: tngtech/deepseek-r1t2-chimera
+--------------------------------------------------
+  ID: tngtech/deepseek-r1t2-chimera:free
+  Original Name: TNG: DeepSeek R1T2 Chimera (free)
+  HuggingFace ID: tngtech/DeepSeek-TNG-R1T2-Chimera
+  Canonical Slug: tngtech/deepseek-r1t2-chimera
+  Clean Model Name: DeepSeek R1T2 Chimera
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 3: deepseek/deepseek-chat-v3-0324
+--------------------------------------------------
+  ID: deepseek/deepseek-chat-v3-0324:free
+  Original Name: DeepSeek: DeepSeek V3 0324 (free)
+  HuggingFace ID: deepseek-ai/DeepSeek-V3-0324
+  Canonical Slug: deepseek/deepseek-chat-v3-0324
+  Clean Model Name: DeepSeek V3 0324
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 4: deepseek/deepseek-chat-v3.1
+--------------------------------------------------
+  ID: deepseek/deepseek-chat-v3.1:free
+  Original Name: DeepSeek: DeepSeek V3.1 (free)
+  HuggingFace ID: deepseek-ai/DeepSeek-V3.1
+  Canonical Slug: deepseek/deepseek-chat-v3.1
+  Clean Model Name: DeepSeek V3.1
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 5: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
+  Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
+  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
+  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
+  Clean Model Name: Deepseek R1 0528 Qwen3 8B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 6: mistralai/devstral-small-2505
+--------------------------------------------------
+  ID: mistralai/devstral-small-2505:free
+  Original Name: Mistral: Devstral Small 2505 (free)
+  HuggingFace ID: mistralai/Devstral-Small-2505
+  Canonical Slug: mistralai/devstral-small-2505
+  Clean Model Name: Devstral Small 2505
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 7: cognitivecomputations/dolphin3.0-mistral-24b
+--------------------------------------------------
+  ID: cognitivecomputations/dolphin3.0-mistral-24b:free
+  Original Name: Dolphin3.0 Mistral 24B (free)
+  HuggingFace ID: cognitivecomputations/Dolphin3.0-Mistral-24B
+  Canonical Slug: cognitivecomputations/dolphin3.0-mistral-24b
+  Clean Model Name: Dolphin3.0 Mistral 24B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 8: cognitivecomputations/dolphin3.0-r1-mistral-24b
+--------------------------------------------------
+  ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
+  Original Name: Dolphin3.0 R1 Mistral 24B (free)
+  HuggingFace ID: cognitivecomputations/Dolphin3.0-R1-Mistral-24B
+  Canonical Slug: cognitivecomputations/dolphin3.0-r1-mistral-24b
+  Clean Model Name: Dolphin3.0 R1 Mistral 24B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 9: rekaai/reka-flash-3
+--------------------------------------------------
+  ID: rekaai/reka-flash-3:free
+  Original Name: Reka: Flash 3 (free)
+  HuggingFace ID: RekaAI/reka-flash-3
+  Canonical Slug: rekaai/reka-flash-3
+  Clean Model Name: Flash 3
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 10: z-ai/glm-4.5-air
+--------------------------------------------------
+  ID: z-ai/glm-4.5-air:free
+  Original Name: Z.AI: GLM 4.5 Air (free)
+  HuggingFace ID: zai-org/GLM-4.5-Air
+  Canonical Slug: z-ai/glm-4.5-air
+  Clean Model Name: GLM 4.5 Air
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 11: google/gemma-2-9b-it
+--------------------------------------------------
+  ID: google/gemma-2-9b-it:free
+  Original Name: Google: Gemma 2 9B (free)
+  HuggingFace ID: google/gemma-2-9b-it
+  Canonical Slug: google/gemma-2-9b-it
+  Clean Model Name: Gemma 2 9B IT
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 12: tencent/hunyuan-a13b-instruct
+--------------------------------------------------
+  ID: tencent/hunyuan-a13b-instruct:free
+  Original Name: Tencent: Hunyuan A13B Instruct (free)
+  HuggingFace ID: tencent/Hunyuan-A13B-Instruct
+  Canonical Slug: tencent/hunyuan-a13b-instruct
+  Clean Model Name: Hunyuan A13B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 13: moonshotai/kimi-dev-72b
+--------------------------------------------------
+  ID: moonshotai/kimi-dev-72b:free
+  Original Name: MoonshotAI: Kimi Dev 72B (free)
+  HuggingFace ID: moonshotai/Kimi-Dev-72B
+  Canonical Slug: moonshotai/kimi-dev-72b
+  Clean Model Name: Kimi Dev 72B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 14: moonshotai/kimi-k2
+--------------------------------------------------
+  ID: moonshotai/kimi-k2:free
+  Original Name: MoonshotAI: Kimi K2 0711 (free)
+  HuggingFace ID: moonshotai/Kimi-K2-Instruct
+  Canonical Slug: moonshotai/kimi-k2
+  Clean Model Name: Kimi K2 0711
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 15: meta-llama/llama-3.1-405b-instruct
+--------------------------------------------------
+  ID: meta-llama/llama-3.1-405b-instruct:free
+  Original Name: Meta: Llama 3.1 405B Instruct (free)
+  HuggingFace ID: meta-llama/Meta-Llama-3.1-405B-Instruct
+  Canonical Slug: meta-llama/llama-3.1-405b-instruct
+  Clean Model Name: Llama 3.1 405B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 16: meta-llama/llama-3.2-3b-instruct
+--------------------------------------------------
+  ID: meta-llama/llama-3.2-3b-instruct:free
+  Original Name: Meta: Llama 3.2 3B Instruct (free)
+  HuggingFace ID: meta-llama/Llama-3.2-3B-Instruct
+  Canonical Slug: meta-llama/llama-3.2-3b-instruct
+  Clean Model Name: Llama 3.2 3B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 17: meta-llama/llama-3.3-70b-instruct
+--------------------------------------------------
+  ID: meta-llama/llama-3.3-70b-instruct:free
+  Original Name: Meta: Llama 3.3 70B Instruct (free)
+  HuggingFace ID: meta-llama/Llama-3.3-70B-Instruct
+  Canonical Slug: meta-llama/llama-3.3-70b-instruct
+  Clean Model Name: Llama 3.3 70B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 18: meta-llama/llama-3.3-8b-instruct
+--------------------------------------------------
+  ID: meta-llama/llama-3.3-8b-instruct:free
+  Original Name: Meta: Llama 3.3 8B Instruct (free)
+  HuggingFace ID: 
+  Canonical Slug: meta-llama/llama-3.3-8b-instruct
+  Clean Model Name: Llama 3.3 8B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 19: microsoft/mai-ds-r1
+--------------------------------------------------
+  ID: microsoft/mai-ds-r1:free
+  Original Name: Microsoft: MAI DS R1 (free)
+  HuggingFace ID: microsoft/MAI-DS-R1
+  Canonical Slug: microsoft/mai-ds-r1
+  Clean Model Name: MAI DS R1
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 20: mistralai/mistral-7b-instruct
+--------------------------------------------------
+  ID: mistralai/mistral-7b-instruct:free
+  Original Name: Mistral: Mistral 7B Instruct (free)
+  HuggingFace ID: mistralai/Mistral-7B-Instruct-v0.3
+  Canonical Slug: mistralai/mistral-7b-instruct
+  Clean Model Name: Mistral 7B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 21: mistralai/mistral-nemo
+--------------------------------------------------
+  ID: mistralai/mistral-nemo:free
+  Original Name: Mistral: Mistral Nemo (free)
+  HuggingFace ID: mistralai/Mistral-Nemo-Instruct-2407
+  Canonical Slug: mistralai/mistral-nemo
+  Clean Model Name: Mistral Nemo
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 22: mistralai/mistral-small-24b-instruct-2501
+--------------------------------------------------
+  ID: mistralai/mistral-small-24b-instruct-2501:free
+  Original Name: Mistral: Mistral Small 3 (free)
+  HuggingFace ID: mistralai/Mistral-Small-24B-Instruct-2501
+  Canonical Slug: mistralai/mistral-small-24b-instruct-2501
+  Clean Model Name: Mistral Small 3
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 23: nvidia/nemotron-nano-9b-v2
+--------------------------------------------------
+  ID: nvidia/nemotron-nano-9b-v2:free
+  Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-Nano-9B-v2
+  Canonical Slug: nvidia/nemotron-nano-9b-v2
+  Clean Model Name: Nemotron Nano 9B V2
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 24: qwen/qwq-32b
+--------------------------------------------------
+  ID: qwen/qwq-32b:free
+  Original Name: Qwen: QwQ 32B (free)
+  HuggingFace ID: Qwen/QwQ-32B
+  Canonical Slug: qwen/qwq-32b
+  Clean Model Name: QwQ 32B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 25: arliai/qwq-32b-arliai-rpr-v1
+--------------------------------------------------
+  ID: arliai/qwq-32b-arliai-rpr-v1:free
+  Original Name: ArliAI: QwQ 32B RpR v1 (free)
+  HuggingFace ID: ArliAI/QwQ-32B-ArliAI-RpR-v1
+  Canonical Slug: arliai/qwq-32b-arliai-rpr-v1
+  Clean Model Name: QwQ 32B RpR v1
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 26: qwen/qwen-2.5-72b-instruct
+--------------------------------------------------
+  ID: qwen/qwen-2.5-72b-instruct:free
+  Original Name: Qwen2.5 72B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-72B-Instruct
+  Canonical Slug: qwen/qwen-2.5-72b-instruct
+  Clean Model Name: Qwen2.5 72B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 27: qwen/qwen-2.5-coder-32b-instruct
+--------------------------------------------------
+  ID: qwen/qwen-2.5-coder-32b-instruct:free
+  Original Name: Qwen2.5 Coder 32B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-Coder-32B-Instruct
+  Canonical Slug: qwen/qwen-2.5-coder-32b-instruct
+  Clean Model Name: Qwen2.5 Coder 32B Instruct
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 28: qwen/qwen3-14b-04-28
+--------------------------------------------------
+  ID: qwen/qwen3-14b:free
+  Original Name: Qwen: Qwen3 14B (free)
+  HuggingFace ID: Qwen/Qwen3-14B
+  Canonical Slug: qwen/qwen3-14b-04-28
+  Clean Model Name: Qwen3 14B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 29: qwen/qwen3-235b-a22b-04-28
+--------------------------------------------------
+  ID: qwen/qwen3-235b-a22b:free
+  Original Name: Qwen: Qwen3 235B A22B (free)
+  HuggingFace ID: Qwen/Qwen3-235B-A22B
+  Canonical Slug: qwen/qwen3-235b-a22b-04-28
+  Clean Model Name: Qwen3 235B A22B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 30: qwen/qwen3-30b-a3b-04-28
+--------------------------------------------------
+  ID: qwen/qwen3-30b-a3b:free
+  Original Name: Qwen: Qwen3 30B A3B (free)
+  HuggingFace ID: Qwen/Qwen3-30B-A3B
+  Canonical Slug: qwen/qwen3-30b-a3b-04-28
+  Clean Model Name: Qwen3 30B A3B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 31: qwen/qwen3-4b-04-28
+--------------------------------------------------
+  ID: qwen/qwen3-4b:free
+  Original Name: Qwen: Qwen3 4B (free)
+  HuggingFace ID: Qwen/Qwen3-4B
+  Canonical Slug: qwen/qwen3-4b-04-28
+  Clean Model Name: Qwen3 4B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 32: qwen/qwen3-8b-04-28
+--------------------------------------------------
+  ID: qwen/qwen3-8b:free
+  Original Name: Qwen: Qwen3 8B (free)
+  HuggingFace ID: Qwen/Qwen3-8B
+  Canonical Slug: qwen/qwen3-8b-04-28
+  Clean Model Name: Qwen3 8B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 33: qwen/qwen3-coder-480b-a35b-07-25
+--------------------------------------------------
+  ID: qwen/qwen3-coder:free
+  Original Name: Qwen: Qwen3 Coder 480B A35B (free)
+  HuggingFace ID: Qwen/Qwen3-Coder-480B-A35B-Instruct
+  Canonical Slug: qwen/qwen3-coder-480b-a35b-07-25
+  Clean Model Name: Qwen3 Coder 480B A35B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 34: deepseek/deepseek-r1
+--------------------------------------------------
+  ID: deepseek/deepseek-r1:free
+  Original Name: DeepSeek: R1 (free)
+  HuggingFace ID: deepseek-ai/DeepSeek-R1
+  Canonical Slug: deepseek/deepseek-r1
+  Clean Model Name: R1
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 35: deepseek/deepseek-r1-0528
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-0528:free
+  Original Name: DeepSeek: R1 0528 (free)
+  HuggingFace ID: deepseek-ai/DeepSeek-R1-0528
+  Canonical Slug: deepseek/deepseek-r1-0528
+  Clean Model Name: R1 0528
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 36: deepseek/deepseek-r1-distill-llama-70b
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-distill-llama-70b:free
+  Original Name: DeepSeek: R1 Distill Llama 70B (free)
+  HuggingFace ID: deepseek-ai/DeepSeek-R1-Distill-Llama-70B
+  Canonical Slug: deepseek/deepseek-r1-distill-llama-70b
+  Clean Model Name: R1 Distill Llama 70B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 37: shisa-ai/shisa-v2-llama3.3-70b
+--------------------------------------------------
+  ID: shisa-ai/shisa-v2-llama3.3-70b:free
+  Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
+  HuggingFace ID: shisa-ai/shisa-v2-llama3.3-70b
+  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
+  Clean Model Name: Shisa V2 Llama 3.3 70B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 38: venice/uncensored
+--------------------------------------------------
+  ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
+  Original Name: Venice: Uncensored (free)
+  HuggingFace ID: cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition
+  Canonical Slug: venice/uncensored
+  Clean Model Name: Uncensored
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 39: openai/gpt-oss-120b
+--------------------------------------------------
+  ID: openai/gpt-oss-120b:free
+  Original Name: OpenAI: gpt-oss-120b (free)
+  HuggingFace ID: openai/gpt-oss-120b
+  Canonical Slug: openai/gpt-oss-120b
+  Clean Model Name: gpt-oss-120b
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 40: openai/gpt-oss-20b
+--------------------------------------------------
+  ID: openai/gpt-oss-20b:free
+  Original Name: OpenAI: gpt-oss-20b (free)
+  HuggingFace ID: openai/gpt-oss-20b
+  Canonical Slug: openai/gpt-oss-20b
+  Clean Model Name: gpt-oss-20b
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 41: google/gemma-3-12b-it
+--------------------------------------------------
+  ID: google/gemma-3-12b-it:free
+  Original Name: Google: Gemma 3 12B (free)
+  HuggingFace ID: google/gemma-3-12b-it
+  Canonical Slug: google/gemma-3-12b-it
+  Clean Model Name: Gemma 3 12B IT
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 42: google/gemma-3-27b-it
+--------------------------------------------------
+  ID: google/gemma-3-27b-it:free
+  Original Name: Google: Gemma 3 27B (free)
+  HuggingFace ID: 
+  Canonical Slug: google/gemma-3-27b-it
+  Clean Model Name: Gemma 3 27B IT
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 43: google/gemma-3-4b-it
+--------------------------------------------------
+  ID: google/gemma-3-4b-it:free
+  Original Name: Google: Gemma 3 4B (free)
+  HuggingFace ID: google/gemma-3-4b-it
+  Canonical Slug: google/gemma-3-4b-it
+  Clean Model Name: Gemma 3 4B IT
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 44: moonshotai/kimi-vl-a3b-thinking
+--------------------------------------------------
+  ID: moonshotai/kimi-vl-a3b-thinking:free
+  Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
+  HuggingFace ID: moonshotai/Kimi-VL-A3B-Thinking
+  Canonical Slug: moonshotai/kimi-vl-a3b-thinking
+  Clean Model Name: Kimi VL A3B Thinking
+  Raw Input Modalities: image, text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 45: meta-llama/llama-4-maverick-17b-128e-instruct
+--------------------------------------------------
+  ID: meta-llama/llama-4-maverick:free
+  Original Name: Meta: Llama 4 Maverick (free)
+  HuggingFace ID: meta-llama/Llama-4-Maverick-17B-128E-Instruct
+  Canonical Slug: meta-llama/llama-4-maverick-17b-128e-instruct
+  Clean Model Name: Llama 4 Maverick
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 46: meta-llama/llama-4-scout-17b-16e-instruct
+--------------------------------------------------
+  ID: meta-llama/llama-4-scout:free
+  Original Name: Meta: Llama 4 Scout (free)
+  HuggingFace ID: meta-llama/Llama-4-Scout-17B-16E-Instruct
+  Canonical Slug: meta-llama/llama-4-scout-17b-16e-instruct
+  Clean Model Name: Llama 4 Scout
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 47: mistralai/mistral-small-3.1-24b-instruct-2503
+--------------------------------------------------
+  ID: mistralai/mistral-small-3.1-24b-instruct:free
+  Original Name: Mistral: Mistral Small 3.1 24B (free)
+  HuggingFace ID: mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  Canonical Slug: mistralai/mistral-small-3.1-24b-instruct-2503
+  Clean Model Name: Mistral Small 3.1 24B
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 48: mistralai/mistral-small-3.2-24b-instruct-2506
+--------------------------------------------------
+  ID: mistralai/mistral-small-3.2-24b-instruct:free
+  Original Name: Mistral: Mistral Small 3.2 24B (free)
+  HuggingFace ID: mistralai/Mistral-Small-3.2-24B-Instruct-2506
+  Canonical Slug: mistralai/mistral-small-3.2-24b-instruct-2506
+  Clean Model Name: Mistral Small 3.2 24B
+  Raw Input Modalities: image, text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 49: qwen/qwen2.5-vl-32b-instruct
+--------------------------------------------------
+  ID: qwen/qwen2.5-vl-32b-instruct:free
+  Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-VL-32B-Instruct
+  Canonical Slug: qwen/qwen2.5-vl-32b-instruct
+  Clean Model Name: Qwen2.5 VL 32B Instruct
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 50: qwen/qwen2.5-vl-72b-instruct
+--------------------------------------------------
+  ID: qwen/qwen2.5-vl-72b-instruct:free
+  Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-VL-72B-Instruct
+  Canonical Slug: qwen/qwen2.5-vl-72b-instruct
+  Clean Model Name: Qwen2.5 VL 72B Instruct
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 51: openrouter/sonoma-dusk-alpha
+--------------------------------------------------
+  ID: openrouter/sonoma-dusk-alpha
+  Original Name: Sonoma Dusk Alpha
+  HuggingFace ID: 
+  Canonical Slug: openrouter/sonoma-dusk-alpha
+  Clean Model Name: Sonoma Dusk Alpha
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 52: openrouter/sonoma-sky-alpha
+--------------------------------------------------
+  ID: openrouter/sonoma-sky-alpha
+  Original Name: Sonoma Sky Alpha
+  HuggingFace ID: 
+  Canonical Slug: openrouter/sonoma-sky-alpha
+  Clean Model Name: Sonoma Sky Alpha
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 53: google/gemma-3n-e2b-it
+--------------------------------------------------
+  ID: google/gemma-3n-e2b-it:free
+  Original Name: Google: Gemma 3n 2B (free)
+  HuggingFace ID: google/gemma-3n-E2B-it
+  Canonical Slug: google/gemma-3n-e2b-it
+  Clean Model Name: Gemma 3n E2B IT
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image, Audio, Video
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 54: google/gemma-3n-e4b-it
+--------------------------------------------------
+  ID: google/gemma-3n-e4b-it:free
+  Original Name: Google: Gemma 3n 4B (free)
+  HuggingFace ID: google/gemma-3n-E4B-it
+  Canonical Slug: google/gemma-3n-e4b-it
+  Clean Model Name: Gemma 3n E4B IT
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image, Audio, Video
+  Standardized Output Modalities: Text
+

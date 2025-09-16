@@ -1,0 +1,632 @@
+================================================================================
+CREATED DATABASE SCHEMA - DATA QUALITY REPORT
+Generated: 2025-09-16 14:20:30
+================================================================================
+
+DATA QUALITY ISSUES:
+==================================================
+
+MISSING OR EMPTY VALUES:
+------------------------------
+
+LICENSE INFO TEXT (22 models):
+  - Dolphin3.0 Mistral 24B
+  - Dolphin3.0 R1 Mistral 24B
+  - Gemma 2 9B IT
+  - Gemma 3 12B IT
+  - Gemma 3 27B IT
+  - Gemma 3 4B IT
+  - Gemma 3n E2B IT
+  - Gemma 3n E4B IT
+  - Hunyuan A13B Instruct
+  - Kimi K2 0711
+  - Llama 3.1 405B Instruct
+  - Llama 3.2 3B Instruct
+  - Llama 3.3 70B Instruct
+  - Llama 3.3 8B Instruct
+  - Llama 4 Maverick
+  - Llama 4 Scout
+  - Nemotron Nano 9B V2
+  - Qwen2.5 72B Instruct
+  - Qwen2.5 VL 72B Instruct
+  - Shisa V2 Llama 3.3 70B
+  - Sonoma Dusk Alpha
+  - Sonoma Sky Alpha
+
+LICENSE INFO URL (22 models):
+  - Dolphin3.0 Mistral 24B
+  - Dolphin3.0 R1 Mistral 24B
+  - Gemma 2 9B IT
+  - Gemma 3 12B IT
+  - Gemma 3 27B IT
+  - Gemma 3 4B IT
+  - Gemma 3n E2B IT
+  - Gemma 3n E4B IT
+  - Hunyuan A13B Instruct
+  - Kimi K2 0711
+  - Llama 3.1 405B Instruct
+  - Llama 3.2 3B Instruct
+  - Llama 3.3 70B Instruct
+  - Llama 3.3 8B Instruct
+  - Llama 4 Maverick
+  - Llama 4 Scout
+  - Nemotron Nano 9B V2
+  - Qwen2.5 72B Instruct
+  - Qwen2.5 VL 72B Instruct
+  - Shisa V2 Llama 3.3 70B
+  - Sonoma Dusk Alpha
+  - Sonoma Sky Alpha
+
+LICENSE NAME (2 models):
+  - Sonoma Dusk Alpha
+  - Sonoma Sky Alpha
+
+LICENSE URL (2 models):
+  - Sonoma Dusk Alpha
+  - Sonoma Sky Alpha
+
+UNKNOWN OR 'NOT FOUND' VALUES:
+------------------------------
+
+MODEL PROVIDER (2 models):
+  - Sonoma Dusk Alpha
+  - Sonoma Sky Alpha
+
+LICENSE NAME (2 models):
+  - Dolphin3.0 Mistral 24B
+  - Dolphin3.0 R1 Mistral 24B
+
+DATA QUALITY SUMMARY:
+------------------------------
+Total models: 54
+Missing license info text: 22 (40.7%)
+Missing license info url: 22 (40.7%)
+Missing license name: 2 (3.7%)
+Missing license url: 2 (3.7%)
+Unknown model provider: 2 (3.7%)
+Unknown license name: 2 (3.7%)
+
+================================================================================
+
+COMPLETE MODEL RECORDS:
+==================================================
+
+  1. QwQ 32B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  2. Qwen2.5 72B Instruct
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : QWEN
+     License Info       : 
+     License URL        : https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  3. Qwen2.5 Coder 32B Instruct
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  4. Qwen2.5 VL 32B Instruct
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text, Image → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  5. Qwen2.5 VL 72B Instruct
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text, Image → Text
+     License            : QWEN
+     License Info       : 
+     License URL        : https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/blob/main/LICENSE
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  6. Qwen3 14B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  7. Qwen3 235B A22B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  8. Qwen3 30B A3B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+  9. Qwen3 4B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 10. Qwen3 8B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 11. Qwen3 Coder 480B A35B
+     Provider           : Alibaba Cloud (China)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://alibabacloud.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 12. QwQ 32B RpR v1
+     Provider           : ArliAI (United States)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://arliai.com
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 13. Dolphin3.0 Mistral 24B
+     Provider           : Cognitive Computations (United States)
+     Modalities         : Text → Text
+     License            : Unknown
+     License Info       : 
+     License URL        : https://huggingface.co/cognitivecomputations/Dolphin3.0-Mistral-24B/blob/main/README.md
+     Official URL       : https://dphn.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 14. Dolphin3.0 R1 Mistral 24B
+     Provider           : Cognitive Computations (United States)
+     Modalities         : Text → Text
+     License            : Unknown
+     License Info       : 
+     License URL        : https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md
+     Official URL       : https://dphn.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 15. Uncensored
+     Provider           : Cognitive Computations (United States)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://dphn.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 16. DeepSeek V3 0324
+     Provider           : DeepSeek (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://deepseek.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 17. DeepSeek V3.1
+     Provider           : DeepSeek (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://deepseek.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 18. Deepseek R1 0528 Qwen3 8B
+     Provider           : DeepSeek (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://deepseek.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 19. R1
+     Provider           : DeepSeek (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://deepseek.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 20. R1 0528
+     Provider           : DeepSeek (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://deepseek.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 21. R1 Distill Llama 70B
+     Provider           : DeepSeek (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://deepseek.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 22. Gemma 2 9B IT
+     Provider           : Google (United States)
+     Modalities         : Text → Text
+     License            : Gemma
+     License Info       : 
+     License URL        : https://ai.google.dev/gemma/terms
+     Official URL       : https://ai.google.dev/gemma
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 23. Gemma 3 12B IT
+     Provider           : Google (United States)
+     Modalities         : Text, Image → Text
+     License            : Gemma
+     License Info       : 
+     License URL        : https://ai.google.dev/gemma/terms
+     Official URL       : https://ai.google.dev/gemma
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 24. Gemma 3 27B IT
+     Provider           : Google (United States)
+     Modalities         : Text, Image → Text
+     License            : Gemma
+     License Info       : 
+     License URL        : https://ai.google.dev/gemma/terms
+     Official URL       : https://ai.google.dev/gemma
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 25. Gemma 3 4B IT
+     Provider           : Google (United States)
+     Modalities         : Text, Image → Text
+     License            : Gemma
+     License Info       : 
+     License URL        : https://ai.google.dev/gemma/terms
+     Official URL       : https://ai.google.dev/gemma
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 26. Gemma 3n E2B IT
+     Provider           : Google (United States)
+     Modalities         : Text, Image, Audio, Video → Text
+     License            : Gemma
+     License Info       : 
+     License URL        : https://ai.google.dev/gemma/terms
+     Official URL       : https://ai.google.dev/gemma
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 27. Gemma 3n E4B IT
+     Provider           : Google (United States)
+     Modalities         : Text, Image, Audio, Video → Text
+     License            : Gemma
+     License Info       : 
+     License URL        : https://ai.google.dev/gemma/terms
+     Official URL       : https://ai.google.dev/gemma
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 28. Llama 3.1 405B Instruct
+     Provider           : Meta (United States)
+     Modalities         : Text → Text
+     License            : Llama-3.1
+     License Info       : 
+     License URL        : https://www.llama.com/llama3_1/license/
+     Official URL       : https://llama.meta.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 29. Llama 3.2 3B Instruct
+     Provider           : Meta (United States)
+     Modalities         : Text → Text
+     License            : Llama-3.2
+     License Info       : 
+     License URL        : https://www.llama.com/llama3_2/license/
+     Official URL       : https://llama.meta.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 30. Llama 3.3 70B Instruct
+     Provider           : Meta (United States)
+     Modalities         : Text → Text
+     License            : Llama-3.3
+     License Info       : 
+     License URL        : https://www.llama.com/llama3_3/license/
+     Official URL       : https://llama.meta.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 31. Llama 3.3 8B Instruct
+     Provider           : Meta (United States)
+     Modalities         : Text → Text
+     License            : Llama-3.3
+     License Info       : 
+     License URL        : https://www.llama.com/llama3_3/license/
+     Official URL       : https://llama.meta.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 32. Llama 4 Maverick
+     Provider           : Meta (United States)
+     Modalities         : Text, Image → Text
+     License            : Llama-4
+     License Info       : 
+     License URL        : https://www.llama.com/llama4/license/
+     Official URL       : https://llama.meta.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 33. Llama 4 Scout
+     Provider           : Meta (United States)
+     Modalities         : Text, Image → Text
+     License            : Llama-4
+     License Info       : 
+     License URL        : https://www.llama.com/llama4/license/
+     Official URL       : https://llama.meta.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 34. MAI DS R1
+     Provider           : Microsoft (United States)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://microsoft.com
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 35. Devstral Small 2505
+     Provider           : Mistral AI (France)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://mistral.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 36. Mistral 7B Instruct
+     Provider           : Mistral AI (France)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://mistral.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 37. Mistral Nemo
+     Provider           : Mistral AI (France)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://mistral.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 38. Mistral Small 3
+     Provider           : Mistral AI (France)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://mistral.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 39. Mistral Small 3.1 24B
+     Provider           : Mistral AI (France)
+     Modalities         : Text, Image → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://mistral.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 40. Mistral Small 3.2 24B
+     Provider           : Mistral AI (France)
+     Modalities         : Text, Image → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://mistral.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 41. Kimi Dev 72B
+     Provider           : Moonshot AI (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://www.moonshot.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 42. Kimi K2 0711
+     Provider           : Moonshot AI (China)
+     Modalities         : Text → Text
+     License            : Modified MIT
+     License Info       : 
+     License URL        : https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE
+     Official URL       : https://www.moonshot.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 43. Kimi VL A3B Thinking
+     Provider           : Moonshot AI (China)
+     Modalities         : Text, Image → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://www.moonshot.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 44. Nemotron Nano 9B V2
+     Provider           : NVIDIA (United States)
+     Modalities         : Text → Text
+     License            : NVIDIA
+     License Info       : 
+     License URL        : https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md
+     Official URL       : https://build.nvidia.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 45. gpt-oss-120b
+     Provider           : OpenAI (United States)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://openai.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 46. gpt-oss-20b
+     Provider           : OpenAI (United States)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://openai.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 47. Flash 3
+     Provider           : Reka AI (Singapore)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://reka.ai
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 48. Shisa V2 Llama 3.3 70B
+     Provider           : Shisa AI (Japan)
+     Modalities         : Text → Text
+     License            : llama3.3
+     License Info       : 
+     License URL        : https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md
+     Official URL       : https://shisa.ai/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 49. DeepSeek R1T Chimera
+     Provider           : TNG Technology (Germany)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://tngtech.com
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 50. DeepSeek R1T2 Chimera
+     Provider           : TNG Technology (Germany)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://tngtech.com
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 51. Hunyuan A13B Instruct
+     Provider           : Tencent (China)
+     Modalities         : Text → Text
+     License            : Tencent
+     License Info       : 
+     License URL        : https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
+     Official URL       : https://hunyuan.tencent.com
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 52. Sonoma Dusk Alpha
+     Provider           : Unknown (Unknown)
+     Modalities         : Text, Image → Text
+     License            : 
+     License Info       : 
+     License URL        : 
+     Official URL       : Unknown
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 53. Sonoma Sky Alpha
+     Provider           : Unknown (Unknown)
+     Modalities         : Text, Image → Text
+     License            : 
+     License Info       : 
+     License URL        : 
+     Official URL       : Unknown
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 54. GLM 4.5 Air
+     Provider           : Z.AI (China)
+     Modalities         : Text → Text
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
+     Official URL       : https://zhipuai.cn/en/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
