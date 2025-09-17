@@ -288,10 +288,12 @@ class GooglePipelineOrchestrator:
                 print(f"✅ Output directory exists: {output_dir}")
 
             # Check requirements.txt (optional for Google pipeline)
-            if os.path.exists("../requirements.txt"):
-                print("✅ Requirements file found")
+            script_dir = Path(__file__).parent
+            requirements_file = script_dir.parent / "03_configs" / "requirements.txt"
+            if requirements_file.exists():
+                print(f"✅ Requirements file found: {requirements_file}")
             else:
-                print("⚠️ No requirements.txt found, skipping dependency installation")
+                print(f"⚠️ No requirements.txt found at {requirements_file}, skipping dependency installation")
 
             print("\n🎉 Environment setup completed successfully!")
             return True
