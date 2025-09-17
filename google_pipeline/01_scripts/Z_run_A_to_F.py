@@ -111,28 +111,18 @@ class GooglePipelineOrchestrator:
 
     def validate_dependencies(self) -> bool:
         """Validate that all required configuration files exist"""
-        # Handle both execution contexts: from 01_scripts/ and from google_pipeline/
-        current_dir = Path.cwd()
-        print(f"DEBUG: Current working directory: {current_dir}")
-        print(f"DEBUG: Current directory name: {current_dir.name}")
-
-        if current_dir.name == "01_scripts":
-            # Running from 01_scripts/ directory
-            config_base = "../03_configs"
-        else:
-            # Running from google_pipeline/ directory (or parent)
-            config_base = "03_configs"
-
-        print(f"DEBUG: Using config_base: {config_base}")
+        # Use absolute path relative to script location, not current working directory
+        script_dir = Path(__file__).parent  # This is always 01_scripts/
+        config_dir = script_dir.parent / "03_configs"  # This is always google_pipeline/03_configs/
 
         required_configs = [
-            f'{config_base}/01_google_models_licenses.json',
-            f'{config_base}/02_modality_standardization.json',
-            f'{config_base}/03_models_filtering_rules.json',
-            f'{config_base}/05_timestamp_patterns.json',
-            f'{config_base}/04_embedding_models.json',
-            f'{config_base}/06_unique_models_modalities.json',
-            f'{config_base}/07_name_standardization_rules.json'
+            config_dir / "01_google_models_licenses.json",
+            config_dir / "02_modality_standardization.json",
+            config_dir / "03_models_filtering_rules.json",
+            config_dir / "05_timestamp_patterns.json",
+            config_dir / "04_embedding_models.json",
+            config_dir / "06_unique_models_modalities.json",
+            config_dir / "07_name_standardization_rules.json"
         ]
         
         missing_configs = []
