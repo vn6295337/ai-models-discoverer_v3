@@ -299,23 +299,25 @@ class GooglePipelineOrchestrator:
         print("=" * 60)
 
         try:
-            # Check if we're in the right directory
-            if not os.path.exists("../03_configs"):
+            # Check if we're in the right directory using dynamic path resolution
+            script_dir = Path(__file__).parent
+            config_dir = script_dir.parent / "03_configs"
+            output_dir = script_dir.parent / "02_outputs"
+
+            if not config_dir.exists():
                 print("⚠️ Config directory not found, but continuing...")
             else:
                 print("✅ Configuration directory found")
 
             # Check if output directory exists
-            output_dir = "../02_outputs"
-            if not os.path.exists(output_dir):
-                os.makedirs(output_dir, exist_ok=True)
+            if not output_dir.exists():
+                output_dir.mkdir(parents=True, exist_ok=True)
                 print(f"📁 Created output directory: {output_dir}")
             else:
                 print(f"✅ Output directory exists: {output_dir}")
 
             # Check requirements.txt (optional for Google pipeline)
-            script_dir = Path(__file__).parent
-            requirements_file = script_dir.parent / "03_configs" / "requirements.txt"
+            requirements_file = config_dir / "requirements.txt"
             if requirements_file.exists():
                 print(f"✅ Requirements file found: {requirements_file}")
             else:
