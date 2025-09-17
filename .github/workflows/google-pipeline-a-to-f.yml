@@ -29,6 +29,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
+    - name: Clean output directory for fresh pipeline run
+      working-directory: google_pipeline
+      run: |
+        echo "🧹 Force cleaning output directory for fresh pipeline execution"
+        rm -rf 02_outputs/*
+        # Keep .gitkeep if it exists
+        touch 02_outputs/.gitkeep
+        echo "✅ Output directory cleaned - pipeline will generate fresh files"
+
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
       with:
