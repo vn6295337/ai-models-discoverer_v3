@@ -66,7 +66,8 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
         execution_log: List of (stage, success, message) tuples
         total_time: Total pipeline execution time in seconds
     """
-    report_file = "../02_outputs/Z-pipeline-report.txt"
+    script_dir = Path(__file__).parent
+    report_file = script_dir.parent / "02_outputs" / "Z-pipeline-report.txt"
 
     try:
         with open(report_file, 'w', encoding='utf-8') as f:
@@ -128,15 +129,18 @@ def setup_environment() -> bool:
     print("=" * 80)
 
     try:
+        # Use script directory as reference point for consistent path resolution
+        script_dir = Path(__file__).parent  # 01_scripts
+        config_dir = script_dir.parent / "03_configs"  # google_pipeline/03_configs
+        output_dir = script_dir.parent / "02_outputs"  # google_pipeline/02_outputs
+
         # Check configuration directory
-        config_dir = Path("../03_configs")
         if not config_dir.exists():
             print("❌ Configuration directory not found")
             return False
         print("✅ Configuration directory found")
 
         # Check output directory
-        output_dir = Path("../02_outputs")
         if not output_dir.exists():
             output_dir.mkdir(exist_ok=True)
             print("✅ Output directory created")
@@ -159,7 +163,8 @@ def setup_environment() -> bool:
 
 def clean_output_directory() -> None:
     """Clean ../02_outputs directory of old output files"""
-    output_dir = Path("../02_outputs")
+    script_dir = Path(__file__).parent
+    output_dir = script_dir.parent / "02_outputs"
 
     try:
         print("🧹 Cleaning output directory...")
@@ -365,7 +370,9 @@ def main():
 
     # Save completion timestamp
     try:
-        with open("../02_outputs/last-run.txt", "w") as f:
+        script_dir = Path(__file__).parent
+        last_run_file = script_dir.parent / "02_outputs" / "last-run.txt"
+        with open(last_run_file, "w") as f:
             f.write(f"Google Pipeline completed: {datetime.now().strftime('%a %b %d %H:%M:%S %Z %Y')}\n")
             f.write(f"Local execution: {datetime.now().isoformat()}\n")
             f.write(f"Pipeline duration: {total_time:.1f} seconds\n")
