@@ -215,6 +215,12 @@ class GooglePipelineOrchestrator:
         script_dir = Path(__file__).parent  # This is always 01_scripts/
         script_path = script_dir / script_name
 
+        print(f"DEBUG: Script dir: {script_dir}")
+        print(f"DEBUG: Script name: {script_name}")
+        print(f"DEBUG: Script path: {script_path}")
+        print(f"DEBUG: Script exists: {script_path.exists()}")
+        print(f"DEBUG: Current working dir: {Path.cwd()}")
+
         if not script_path.exists():
             error_msg = f"Script {script_path} not found"
             print(f"❌ {error_msg}")
