@@ -1,6 +1,6 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-09-16 14:18:17
+Generated: 2025-09-17 14:30:29
 ================================================================================
 
 SUMMARY:
@@ -51,7 +51,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini
     - o4-mini-high
 
-  Qwen         :  35 models
+  Qwen         :  37 models
     - qwen-2.5-vl-7b-instruct
     - qwen-max
     - qwen-plus
@@ -80,6 +80,8 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-8b:free
     - qwen3-coder
     - qwen3-coder-30b-a3b-instruct
+    - qwen3-coder-flash
+    - qwen3-coder-plus
     - qwen3-coder:free
     - qwen3-max
     - qwen3-next-80b-a3b-instruct
@@ -214,16 +216,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - command-r-plus-08-2024
     - command-r7b-12-2024
 
-  xAI          :   8 models
-    - grok-2-1212
-    - grok-2-vision-1212
-    - grok-3
-    - grok-3-beta
-    - grok-3-mini
-    - grok-3-mini-beta
-    - grok-4
-    - grok-code-fast-1
-
   Microsoft    :   8 models
     - mai-ds-r1
     - mai-ds-r1:free
@@ -243,6 +235,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - kimi-vl-a3b-thinking
     - kimi-vl-a3b-thinking:free
 
+  xAI          :   6 models
+    - grok-3
+    - grok-3-beta
+    - grok-3-mini
+    - grok-3-mini-beta
+    - grok-4
+    - grok-code-fast-1
+
   Nous         :   6 models
     - deephermes-3-llama-3-8b-preview:free
     - deephermes-3-mistral-24b-preview
@@ -258,6 +258,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - sonar-pro
     - sonar-reasoning
     - sonar-reasoning-pro
+
+  Arcee AI     :   5 models
+    - afm-4.5b
+    - coder-large
+    - maestro-reasoning
+    - spotlight
+    - virtuoso-large
 
   Z.AI         :   5 models
     - glm-4-32b
@@ -284,12 +291,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - ernie-4.5-300b-a47b
     - ernie-4.5-vl-28b-a3b
     - ernie-4.5-vl-424b-a47b
-
-  Arcee AI     :   4 models
-    - coder-large
-    - maestro-reasoning
-    - spotlight
-    - virtuoso-large
 
   TNG          :   3 models
     - deepseek-r1t-chimera
@@ -388,9 +389,6 @@ PROVIDER BREAKDOWN (Descending Order):
   AlfredPros   :   1 models
     - codellama-7b-instruct-solidity
 
-  Reka         :   1 models
-    - reka-flash-3:free
-
   Sao10k       :   1 models
     - l3-euryale-70b
 
@@ -400,4 +398,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer       :   1 models
     - weaver
 
-Total providers: 47
+Total providers: 46

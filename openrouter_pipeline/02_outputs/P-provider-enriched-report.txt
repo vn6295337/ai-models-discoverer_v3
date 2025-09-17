@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-09-16 14:20:30
+Generated: 2025-09-17 14:31:26
 ================================================================================
 
 SUMMARY:
-  Total models      : 54
+  Total models      : 53
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -37,12 +37,11 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: ArliAI
    1 models: Microsoft
    1 models: NVIDIA
-   1 models: Reka AI
    1 models: Shisa AI
    1 models: Tencent
    1 models: Z.AI
 
-Total unique model providers: 17
+Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   22 models: China
@@ -51,9 +50,8 @@ MODEL PROVIDER COUNTRY DISTRIBUTION:
    2 models: Germany
    2 models: Unknown
    1 models: Japan
-   1 models: Singapore
 
-Total unique countries: 7
+Total unique countries: 6
 
 MODEL FAMILY DISTRIBUTION:
   11 models: alibaba cloud
@@ -69,12 +67,11 @@ MODEL FAMILY DISTRIBUTION:
    1 models: arliai
    1 models: microsoft
    1 models: nvidia
-   1 models: reka ai
    1 models: shisa ai
    1 models: tencent
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 16
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -701,7 +698,7 @@ MODEL 45: openai/gpt-oss-120b
   Original Name: OpenAI: gpt-oss-120b (free)
   HuggingFace ID: openai/gpt-oss-120b
   Canonical Slug: openai/gpt-oss-120b
-  Clean Model Name: gpt-oss-120b
+  Clean Model Name: GPT OSS 120B
   Model Provider: OpenAI
   Model Provider Country: United States
   Model Family: openai
@@ -715,7 +712,7 @@ MODEL 46: openai/gpt-oss-20b
   Original Name: OpenAI: gpt-oss-20b (free)
   HuggingFace ID: openai/gpt-oss-20b
   Canonical Slug: openai/gpt-oss-20b
-  Clean Model Name: gpt-oss-20b
+  Clean Model Name: GPT OSS 20B
   Model Provider: OpenAI
   Model Provider Country: United States
   Model Family: openai
@@ -751,21 +748,7 @@ MODEL 48: openrouter/sonoma-sky-alpha
 
 ================================================================================
 
-MODEL 49: rekaai/reka-flash-3
---------------------------------------------------
-  ID: rekaai/reka-flash-3:free
-  Original Name: Reka: Flash 3 (free)
-  HuggingFace ID: RekaAI/reka-flash-3
-  Canonical Slug: rekaai/reka-flash-3
-  Clean Model Name: Flash 3
-  Model Provider: Reka AI
-  Model Provider Country: Singapore
-  Model Family: reka ai
-  Official URL: https://reka.ai
-
-================================================================================
-
-MODEL 50: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 49: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
@@ -779,7 +762,7 @@ MODEL 50: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 51: tencent/hunyuan-a13b-instruct
+MODEL 50: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -793,7 +776,7 @@ MODEL 51: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 52: tngtech/deepseek-r1t-chimera
+MODEL 51: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -807,7 +790,7 @@ MODEL 52: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 53: tngtech/deepseek-r1t2-chimera
+MODEL 52: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -821,7 +804,7 @@ MODEL 53: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 54: z-ai/glm-4.5-air
+MODEL 53: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

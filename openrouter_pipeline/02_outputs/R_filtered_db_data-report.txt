@@ -1,11 +1,11 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-09-16 14:20:30
+Generated: 2025-09-17 14:31:26
 ================================================================================
 
 SUMMARY:
-  Input models         : 54
-  Models kept          : 49
+  Input models         : 53
+  Models kept          : 48
   Models removed       : 5
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
@@ -96,13 +96,12 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Cognitive Computations
    1 models: Microsoft
    1 models: NVIDIA
-   1 models: Reka AI
    1 models: Tencent
    1 models: Z.AI
 
-Total providers: 15
+Total providers: 14
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  49 models: Unknown
+  48 models: Unknown
 
 Total families: 1

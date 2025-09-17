@@ -1,17 +1,17 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-09-16 14:19:01
+Generated: 2025-09-17 14:30:37
 ================================================================================
 
 SUMMARY:
-  Total models : 40
+  Total models : 39
   Input        : B-filtered-models.json
   Processor    : E_fetch_other_license_info_urls_from_hf.py
   Output       : E-other-license-info-urls-from-hf.json
 
 LICENSE INFO URL BREAKDOWN:
   21 models: LICENSE file
-  19 models: README.md file
+  18 models: README.md file
 
 Total categories: 2
 
@@ -324,16 +324,7 @@ MODEL 34: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 35: rekaai/reka-flash-3
---------------------------------------------------
-  ID              : rekaai/reka-flash-3:free
-  Canonical Slug  : rekaai/reka-flash-3
-  HuggingFace ID  : RekaAI/reka-flash-3
-  License Info URL: https://huggingface.co/RekaAI/reka-flash-3/blob/main/README.md
-
-================================================================================
-
-MODEL 36: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 35: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID              : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b
@@ -342,7 +333,7 @@ MODEL 36: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 37: tngtech/deepseek-r1t-chimera
+MODEL 36: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -351,7 +342,7 @@ MODEL 37: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 38: tngtech/deepseek-r1t2-chimera
+MODEL 37: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -360,7 +351,7 @@ MODEL 38: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 39: venice/uncensored
+MODEL 38: venice/uncensored
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug  : venice/uncensored
@@ -369,7 +360,7 @@ MODEL 39: venice/uncensored
 
 ================================================================================
 
-MODEL 40: z-ai/glm-4.5-air
+MODEL 39: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air

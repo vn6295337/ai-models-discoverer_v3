@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-09-16 14:20:29
+Generated: 2025-09-17 14:31:26
 ================================================================================
 
 SUMMARY:
-  Total models        : 52
+  Total models        : 51
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,10 +13,10 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 8 models
   Google: 6 models
   Meta: 6 models
-  Opensource: 32 models
+  Opensource: 31 models
 
 FINAL LICENSE DISTRIBUTION:
-  20 models: Apache-2.0
+  19 models: Apache-2.0
   12 models: MIT
    6 models: Gemma
    2 models: Llama-3.3
@@ -446,7 +446,7 @@ MODEL 28: openai/gpt-oss-120b
   Original Name: OpenAI: gpt-oss-120b (free)
   HuggingFace ID: openai/gpt-oss-120b
   Canonical Slug: openai/gpt-oss-120b
-  Clean Model Name: gpt-oss-120b
+  Clean Model Name: GPT OSS 120B
   License Info Text: info
   License Info URL: https://huggingface.co/openai/gpt-oss-120b/blob/main/LICENSE
   License Name: Apache-2.0
@@ -461,7 +461,7 @@ MODEL 29: openai/gpt-oss-20b
   Original Name: OpenAI: gpt-oss-20b (free)
   HuggingFace ID: openai/gpt-oss-20b
   Canonical Slug: openai/gpt-oss-20b
-  Clean Model Name: gpt-oss-20b
+  Clean Model Name: GPT OSS 20B
   License Info Text: info
   License Info URL: https://huggingface.co/openai/gpt-oss-20b/blob/main/LICENSE
   License Name: Apache-2.0
@@ -605,22 +605,7 @@ MODEL 38: qwen/qwq-32b
 
 ================================================================================
 
-MODEL 39: rekaai/reka-flash-3
---------------------------------------------------
-  ID: rekaai/reka-flash-3:free
-  Original Name: Reka: Flash 3 (free)
-  HuggingFace ID: RekaAI/reka-flash-3
-  Canonical Slug: rekaai/reka-flash-3
-  Clean Model Name: Flash 3
-  License Info Text: info
-  License Info URL: https://huggingface.co/RekaAI/reka-flash-3/blob/main/README.md
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 40: venice/uncensored
+MODEL 39: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -635,7 +620,7 @@ MODEL 40: venice/uncensored
 
 ================================================================================
 
-MODEL 41: deepseek/deepseek-chat-v3-0324
+MODEL 40: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -650,7 +635,7 @@ MODEL 41: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 42: deepseek/deepseek-chat-v3.1
+MODEL 41: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
@@ -665,7 +650,7 @@ MODEL 42: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 43: deepseek/deepseek-r1
+MODEL 42: deepseek/deepseek-r1
 --------------------------------------------------
   ID: deepseek/deepseek-r1:free
   Original Name: DeepSeek: R1 (free)
@@ -680,7 +665,7 @@ MODEL 43: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 44: deepseek/deepseek-r1-0528
+MODEL 43: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -695,7 +680,7 @@ MODEL 44: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 45: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 44: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
   Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
@@ -710,7 +695,7 @@ MODEL 45: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 46: deepseek/deepseek-r1-distill-llama-70b
+MODEL 45: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -725,7 +710,7 @@ MODEL 46: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 47: microsoft/mai-ds-r1
+MODEL 46: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -740,7 +725,7 @@ MODEL 47: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 48: moonshotai/kimi-dev-72b
+MODEL 47: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID: moonshotai/kimi-dev-72b:free
   Original Name: MoonshotAI: Kimi Dev 72B (free)
@@ -755,7 +740,7 @@ MODEL 48: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 49: moonshotai/kimi-vl-a3b-thinking
+MODEL 48: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID: moonshotai/kimi-vl-a3b-thinking:free
   Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
@@ -770,7 +755,7 @@ MODEL 49: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 50: tngtech/deepseek-r1t-chimera
+MODEL 49: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -785,7 +770,7 @@ MODEL 50: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 51: tngtech/deepseek-r1t2-chimera
+MODEL 50: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -800,7 +785,7 @@ MODEL 51: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 52: z-ai/glm-4.5-air
+MODEL 51: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

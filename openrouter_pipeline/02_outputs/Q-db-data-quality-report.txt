@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-09-16 14:20:30
+Generated: 2025-09-17 14:31:26
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -78,13 +78,13 @@ LICENSE NAME (2 models):
 
 DATA QUALITY SUMMARY:
 ------------------------------
-Total models: 54
-Missing license info text: 22 (40.7%)
-Missing license info url: 22 (40.7%)
-Missing license name: 2 (3.7%)
-Missing license url: 2 (3.7%)
-Unknown model provider: 2 (3.7%)
-Unknown license name: 2 (3.7%)
+Total models: 53
+Missing license info text: 22 (41.5%)
+Missing license info url: 22 (41.5%)
+Missing license name: 2 (3.8%)
+Missing license url: 2 (3.8%)
+Unknown model provider: 2 (3.8%)
+Unknown license name: 2 (3.8%)
 
 ================================================================================
 
@@ -531,7 +531,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 45. gpt-oss-120b
+ 45. GPT OSS 120B
      Provider           : OpenAI (United States)
      Modalities         : Text → Text
      License            : Apache-2.0
@@ -541,7 +541,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 46. gpt-oss-20b
+ 46. GPT OSS 20B
      Provider           : OpenAI (United States)
      Modalities         : Text → Text
      License            : Apache-2.0
@@ -551,17 +551,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 47. Flash 3
-     Provider           : Reka AI (Singapore)
-     Modalities         : Text → Text
-     License            : Apache-2.0
-     License Info       : info
-     License URL        : https://www.apache.org/licenses/LICENSE-2.0
-     Official URL       : https://reka.ai
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 48. Shisa V2 Llama 3.3 70B
+ 47. Shisa V2 Llama 3.3 70B
      Provider           : Shisa AI (Japan)
      Modalities         : Text → Text
      License            : llama3.3
@@ -571,7 +561,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 49. DeepSeek R1T Chimera
+ 48. DeepSeek R1T Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -581,7 +571,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 50. DeepSeek R1T2 Chimera
+ 49. DeepSeek R1T2 Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -591,7 +581,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 51. Hunyuan A13B Instruct
+ 50. Hunyuan A13B Instruct
      Provider           : Tencent (China)
      Modalities         : Text → Text
      License            : Tencent
@@ -601,7 +591,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 52. Sonoma Dusk Alpha
+ 51. Sonoma Dusk Alpha
      Provider           : Unknown (Unknown)
      Modalities         : Text, Image → Text
      License            : 
@@ -611,7 +601,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 53. Sonoma Sky Alpha
+ 52. Sonoma Sky Alpha
      Provider           : Unknown (Unknown)
      Modalities         : Text, Image → Text
      License            : 
@@ -621,7 +611,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 54. GLM 4.5 Air
+ 53. GLM 4.5 Air
      Provider           : Z.AI (China)
      Modalities         : Text → Text
      License            : MIT

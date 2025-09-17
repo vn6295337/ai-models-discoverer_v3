@@ -1,17 +1,17 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-09-16 14:20:18
+Generated: 2025-09-17 14:31:21
 ================================================================================
 
 SUMMARY:
-  Total models : 40
+  Total models : 39
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
 
 LICENSE DISTRIBUTION:
   Unknown: 2
-  apache-2.0: 20
+  apache-2.0: 19
   llama3.3: 1
   mit: 12
   modified-mit: 1
@@ -276,16 +276,7 @@ MODEL 28: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 29: rekaai/reka-flash-3
---------------------------------------------------
-  ID               : rekaai/reka-flash-3:free
-  Canonical Slug   : rekaai/reka-flash-3
-  HuggingFace ID   : RekaAI/reka-flash-3
-  Extracted License: apache-2.0
-
-================================================================================
-
-MODEL 30: qwen/qwq-32b
+MODEL 29: qwen/qwq-32b
 --------------------------------------------------
   ID               : qwen/qwq-32b:free
   Canonical Slug   : qwen/qwq-32b
@@ -294,7 +285,7 @@ MODEL 30: qwen/qwq-32b
 
 ================================================================================
 
-MODEL 31: cognitivecomputations/dolphin3.0-r1-mistral-24b
+MODEL 30: cognitivecomputations/dolphin3.0-r1-mistral-24b
 --------------------------------------------------
   ID               : cognitivecomputations/dolphin3.0-r1-mistral-24b:free
   Canonical Slug   : cognitivecomputations/dolphin3.0-r1-mistral-24b
@@ -303,7 +294,7 @@ MODEL 31: cognitivecomputations/dolphin3.0-r1-mistral-24b
 
 ================================================================================
 
-MODEL 32: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 31: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID               : cognitivecomputations/dolphin3.0-mistral-24b:free
   Canonical Slug   : cognitivecomputations/dolphin3.0-mistral-24b
@@ -312,7 +303,7 @@ MODEL 32: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 33: qwen/qwen2.5-vl-72b-instruct
+MODEL 32: qwen/qwen2.5-vl-72b-instruct
 --------------------------------------------------
   ID               : qwen/qwen2.5-vl-72b-instruct:free
   Canonical Slug   : qwen/qwen2.5-vl-72b-instruct
@@ -321,7 +312,7 @@ MODEL 33: qwen/qwen2.5-vl-72b-instruct
 
 ================================================================================
 
-MODEL 34: mistralai/mistral-small-24b-instruct-2501
+MODEL 33: mistralai/mistral-small-24b-instruct-2501
 --------------------------------------------------
   ID               : mistralai/mistral-small-24b-instruct-2501:free
   Canonical Slug   : mistralai/mistral-small-24b-instruct-2501
@@ -330,7 +321,7 @@ MODEL 34: mistralai/mistral-small-24b-instruct-2501
 
 ================================================================================
 
-MODEL 35: deepseek/deepseek-r1-distill-llama-70b
+MODEL 34: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID               : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug   : deepseek/deepseek-r1-distill-llama-70b
@@ -339,7 +330,7 @@ MODEL 35: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 36: deepseek/deepseek-r1
+MODEL 35: deepseek/deepseek-r1
 --------------------------------------------------
   ID               : deepseek/deepseek-r1:free
   Canonical Slug   : deepseek/deepseek-r1
@@ -348,7 +339,7 @@ MODEL 36: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 37: qwen/qwen-2.5-coder-32b-instruct
+MODEL 36: qwen/qwen-2.5-coder-32b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-coder-32b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-coder-32b-instruct
@@ -357,7 +348,7 @@ MODEL 37: qwen/qwen-2.5-coder-32b-instruct
 
 ================================================================================
 
-MODEL 38: qwen/qwen-2.5-72b-instruct
+MODEL 37: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-72b-instruct
@@ -366,7 +357,7 @@ MODEL 38: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 39: mistralai/mistral-nemo
+MODEL 38: mistralai/mistral-nemo
 --------------------------------------------------
   ID               : mistralai/mistral-nemo:free
   Canonical Slug   : mistralai/mistral-nemo
@@ -375,7 +366,7 @@ MODEL 39: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 40: mistralai/mistral-7b-instruct
+MODEL 39: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct

@@ -1,34 +1,34 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-09-16 14:18:17
+Generated: 2025-09-17 14:30:29
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
   Total models processed: 327
-  Models passed all filters: 54
-  Models excluded: 273
-  Success rate: 16.5%
+  Models passed all filters: 53
+  Models excluded: 274
+  Success rate: 16.2%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
     Input: 327 models
-    Excluded: 270 models (non-free pricing)
-    Remaining: 57 models
+    Excluded: 271 models (non-free pricing)
+    Remaining: 56 models
 
   Step 2 - Billing Description Filter:
-    Input: 57 models
+    Input: 56 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 57 models
+    Remaining: 56 models
 
   Step 3 - Keyword Filter:
-    Input: 57 models
+    Input: 56 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 54 models
+    Final: 53 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 270 models with non-free pricing (details omitted due to volume)
+Excluded 271 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -317,19 +317,12 @@ PROVIDER: ARLIAI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: REKA (1 models)
---------------------------------------------------
-   1. Reka: Flash 3 (free)
-      ID: rekaai/reka-flash-3:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 19
-  Total models passed all filters: 54
-  Models excluded by pricing: 270
+  Total providers: 18
+  Total models passed all filters: 53
+  Models excluded by pricing: 271
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 273
+  Total exclusions: 274
   ✓ All filtered models accounted for

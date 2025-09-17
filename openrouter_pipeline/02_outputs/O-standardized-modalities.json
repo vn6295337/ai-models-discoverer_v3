@@ -60,7 +60,7 @@
     "canonical_slug": "openai/gpt-oss-120b",
     "original_name": "OpenAI: gpt-oss-120b (free)",
     "hugging_face_id": "openai/gpt-oss-120b",
-    "clean_model_name": "gpt-oss-120b",
+    "clean_model_name": "GPT OSS 120B",
     "raw_input_modalities": "text",
     "raw_output_modalities": "text",
     "enhanced_input_modalities": "text",
@@ -74,7 +74,7 @@
     "canonical_slug": "openai/gpt-oss-20b",
     "original_name": "OpenAI: gpt-oss-20b (free)",
     "hugging_face_id": "openai/gpt-oss-20b",
-    "clean_model_name": "gpt-oss-20b",
+    "clean_model_name": "GPT OSS 20B",
     "raw_input_modalities": "text",
     "raw_output_modalities": "text",
     "enhanced_input_modalities": "text",
@@ -516,20 +516,6 @@
     "standardized_input_modalities": "Text, Image",
     "standardized_output_modalities": "Text",
     "google_enhancement_status": "google_enhanced"
-  },
-  {
-    "id": "rekaai/reka-flash-3:free",
-    "canonical_slug": "rekaai/reka-flash-3",
-    "original_name": "Reka: Flash 3 (free)",
-    "hugging_face_id": "RekaAI/reka-flash-3",
-    "clean_model_name": "Flash 3",
-    "raw_input_modalities": "text",
-    "raw_output_modalities": "text",
-    "enhanced_input_modalities": "text",
-    "enhanced_output_modalities": "text",
-    "standardized_input_modalities": "Text",
-    "standardized_output_modalities": "Text",
-    "google_enhancement_status": "no_google_model"
   },
   {
     "id": "google/gemma-3-27b-it:free",

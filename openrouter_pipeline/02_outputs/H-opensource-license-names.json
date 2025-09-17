@@ -168,13 +168,6 @@
     "license_name": "Apache-2.0"
   },
   {
-    "id": "rekaai/reka-flash-3:free",
-    "canonical_slug": "rekaai/reka-flash-3",
-    "name": "Reka: Flash 3 (free)",
-    "hugging_face_id": "RekaAI/reka-flash-3",
-    "license_name": "Apache-2.0"
-  },
-  {
     "id": "qwen/qwq-32b:free",
     "canonical_slug": "qwen/qwq-32b",
     "name": "Qwen: QwQ 32B (free)",

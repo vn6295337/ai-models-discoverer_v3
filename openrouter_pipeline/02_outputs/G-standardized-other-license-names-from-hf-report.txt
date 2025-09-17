@@ -1,22 +1,22 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-09-16 14:20:18
+Generated: 2025-09-17 14:31:21
 ================================================================================
 
 SUMMARY:
-  Total models : 40
+  Total models : 39
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
   Output       : G-standardized-other-license-names-from-hf.json
 
 STANDARDIZATION RESULTS:
-  Models with license transformations: 37
+  Models with license transformations: 36
   Models unchanged: 3
-  Transformation rate: 92.5%
+  Transformation rate: 92.3%
 
 STANDARDIZED LICENSE DISTRIBUTION:
-  Apache-2.0: 20 models
+  Apache-2.0: 19 models
   MIT: 12 models
   Modified MIT: 1 models
   NVIDIA: 1 models
@@ -225,17 +225,7 @@ MODEL 18: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 19: rekaai/reka-flash-3
---------------------------------------------------
-  ID                     : rekaai/reka-flash-3:free
-  Canonical Slug         : rekaai/reka-flash-3
-  HuggingFace ID         : RekaAI/reka-flash-3
-  Raw License            : apache-2.0
-  Standardized License   : Apache-2.0
-
-================================================================================
-
-MODEL 20: venice/uncensored
+MODEL 19: venice/uncensored
 --------------------------------------------------
   ID                     : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug         : venice/uncensored
@@ -245,7 +235,7 @@ MODEL 20: venice/uncensored
 
 ================================================================================
 
-MODEL 21: deepseek/deepseek-chat-v3-0324
+MODEL 20: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID                     : deepseek/deepseek-chat-v3-0324:free
   Canonical Slug         : deepseek/deepseek-chat-v3-0324
@@ -255,7 +245,7 @@ MODEL 21: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 22: deepseek/deepseek-chat-v3.1
+MODEL 21: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID                     : deepseek/deepseek-chat-v3.1:free
   Canonical Slug         : deepseek/deepseek-chat-v3.1
@@ -265,7 +255,7 @@ MODEL 22: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 22: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1-0528-qwen3-8b:free
   Canonical Slug         : deepseek/deepseek-r1-0528-qwen3-8b
@@ -275,7 +265,7 @@ MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 24: deepseek/deepseek-r1
+MODEL 23: deepseek/deepseek-r1
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1:free
   Canonical Slug         : deepseek/deepseek-r1
@@ -285,7 +275,7 @@ MODEL 24: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 25: deepseek/deepseek-r1-0528
+MODEL 24: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1-0528:free
   Canonical Slug         : deepseek/deepseek-r1-0528
@@ -295,7 +285,7 @@ MODEL 25: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 26: deepseek/deepseek-r1-distill-llama-70b
+MODEL 25: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug         : deepseek/deepseek-r1-distill-llama-70b
@@ -305,7 +295,7 @@ MODEL 26: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 27: microsoft/mai-ds-r1
+MODEL 26: microsoft/mai-ds-r1
 --------------------------------------------------
   ID                     : microsoft/mai-ds-r1:free
   Canonical Slug         : microsoft/mai-ds-r1
@@ -315,7 +305,7 @@ MODEL 27: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-dev-72b
+MODEL 27: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID                     : moonshotai/kimi-dev-72b:free
   Canonical Slug         : moonshotai/kimi-dev-72b
@@ -325,7 +315,7 @@ MODEL 28: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 29: moonshotai/kimi-vl-a3b-thinking
+MODEL 28: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID                     : moonshotai/kimi-vl-a3b-thinking:free
   Canonical Slug         : moonshotai/kimi-vl-a3b-thinking
@@ -335,7 +325,7 @@ MODEL 29: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t-chimera
+MODEL 29: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t-chimera
@@ -345,7 +335,7 @@ MODEL 30: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 31: tngtech/deepseek-r1t2-chimera
+MODEL 30: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t2-chimera
@@ -355,7 +345,7 @@ MODEL 31: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 32: z-ai/glm-4.5-air
+MODEL 31: z-ai/glm-4.5-air
 --------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
   Canonical Slug         : z-ai/glm-4.5-air
@@ -365,7 +355,7 @@ MODEL 32: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 33: moonshotai/kimi-k2
+MODEL 32: moonshotai/kimi-k2
 --------------------------------------------------
   ID                     : moonshotai/kimi-k2:free
   Canonical Slug         : moonshotai/kimi-k2
@@ -375,7 +365,7 @@ MODEL 33: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 34: nvidia/nemotron-nano-9b-v2
+MODEL 33: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -385,7 +375,7 @@ MODEL 34: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 35: qwen/qwen-2.5-72b-instruct
+MODEL 34: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug         : qwen/qwen-2.5-72b-instruct
@@ -395,7 +385,7 @@ MODEL 35: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 36: qwen/qwen2.5-vl-72b-instruct
+MODEL 35: qwen/qwen2.5-vl-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen2.5-vl-72b-instruct:free
   Canonical Slug         : qwen/qwen2.5-vl-72b-instruct
@@ -405,7 +395,7 @@ MODEL 36: qwen/qwen2.5-vl-72b-instruct
 
 ================================================================================
 
-MODEL 37: tencent/hunyuan-a13b-instruct
+MODEL 36: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID                     : tencent/hunyuan-a13b-instruct:free
   Canonical Slug         : tencent/hunyuan-a13b-instruct
