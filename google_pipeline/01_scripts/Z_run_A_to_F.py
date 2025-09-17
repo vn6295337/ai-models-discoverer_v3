@@ -1,683 +1,386 @@
 #!/usr/bin/env python3
 """
-Google Models Pipeline Orchestrator
-===================================
-
-Master script that executes the Google models discovery pipeline
-in the correct logical order from Stage 1 through Stage 6 (complete pipeline with comparison).
+Google Pipeline Orchestrator
+Executes the complete Google AI models discovery pipeline from A to F
 
 Pipeline Flow:
-1. Stage 1: API Data Extraction (A_fetch_api_models.py)
-2. Stage 2: Model Filtering (B_filter_models.py)
-3. Stage 3: Modality Scraping (C_scrape_modalities.py)
-4. Stage 4: Modality Enrichment (D_enrich_modalities.py)
-5. Stage 5: Data Normalization (E_create_db_data.py)
-
-Final Output: E-normalization-report.csv (ready for database upload)
-
-Features:
-- Sequential execution with dependency validation
-- Error handling and pipeline interruption on failures
-- Progress tracking and detailed logging
-- File existence validation between stages
-- Execution time measurement per stage
-- Comprehensive summary reporting
+A → B → C → D → E → F
 """
 
-import os
-import sys
 import subprocess
+import sys
 import time
-import json
+import os
 from datetime import datetime
 from pathlib import Path
-from typing import List, Dict, Tuple, Optional
+from typing import List, Tuple
 
-class GooglePipelineOrchestrator:
-    def __init__(self):
-        self.pipeline_start_time = None
-        self.stage_results = []
-        self.failed_stage = None
+def run_script(script_name: str) -> Tuple[bool, str]:
+    """
+    Run a pipeline script and return success status and output
 
-        # Dynamic path resolution for both execution contexts
-        self.script_dir = Path(__file__).parent
-        self.output_dir = self.script_dir.parent / "02_outputs"
+    Args:
+        script_name: Name of the script to run
 
-        # Pipeline configuration
-        self.pipeline_stages = [
-            {
-                'stage': 'Stage 1',
-                'name': 'API Data Extraction',
-                'script': 'A_fetch_api_models.py',
-                'description': 'Extract comprehensive model list from Google API',
-                'outputs': [
-                    '../02_outputs/A-fetched-api-models.json'
-                ]
-            },
-            {
-                'stage': 'Stage 2',
-                'name': 'Model Filtering',
-                'script': 'B_filter_models.py', 
-                'description': 'Filter models based on production criteria',
-                'inputs': ['../02_outputs/A-fetched-api-models.json'],
-                'outputs': [
-                    '../02_outputs/B-filtered-models.json',
-                    '../02_outputs/B-filtered-models-report.txt'
-                ]
-            },
-            {
-                'stage': 'Stage 3',
-                'name': 'Modality Scraping',
-                'script': 'C_scrape_modalities.py',
-                'description': 'Scrape modalities from Google documentation',
-                'outputs': ['../02_outputs/C-scrapped-modalities.json']
-            },
-            {
-                'stage': 'Stage 4', 
-                'name': 'Modality Enrichment',
-                'script': 'D_enrich_modalities.py',
-                'description': 'Enrich models with modality data and patterns',
-                'inputs': [
-                    '../02_outputs/B-filtered-models.json',
-                    '../02_outputs/C-scrapped-modalities.json'
-                ],
-                'outputs': [
-                    '../02_outputs/D-enriched-modalities.json',
-                    '../02_outputs/D-enriched-modalities-report.txt'
-                ]
-            },
-            {
-                'stage': 'Stage 5',
-                'name': 'Data Normalization',
-                'script': 'E_create_db_data.py',
-                'description': 'Normalize data for database schema compliance',
-                'inputs': [
-                    '../02_outputs/D-enriched-modalities.json'
-                ],
-                'outputs': [
-                    '../02_outputs/E-created-db-data.json',
-                    '../02_outputs/E-created-db-data-report.txt'
-                ]
-            },
-            {
-                'stage': 'Stage 6',
-                'name': 'Pipeline Comparison',
-                'script': 'F_compare_pipeline_with_supabase.py',
-                'description': 'Compare pipeline output with Supabase data',
-                'inputs': [
-                    '../02_outputs/E-created-db-data.json'
-                ],
-                'outputs': [
-                    '../02_outputs/F-comparison-report.txt'
-                ]
-            }
-        ]
-
-    def validate_dependencies(self) -> bool:
-        """Validate that all required configuration files exist"""
-        # Use absolute path relative to script location for reliable resolution
-        script_dir = Path(__file__).parent  # Always points to 01_scripts/
-        config_dir = script_dir.parent / "03_configs"  # Always points to google_pipeline/03_configs/
-
-        print(f"DEBUG: Script dir: {script_dir}")
-        print(f"DEBUG: Config dir: {config_dir}")
-        print(f"DEBUG: Config dir exists: {config_dir.exists()}")
-
-        required_configs = [
-            config_dir / "01_google_models_licenses.json",
-            config_dir / "02_modality_standardization.json",
-            config_dir / "03_models_filtering_rules.json",
-            config_dir / "05_timestamp_patterns.json",
-            config_dir / "04_embedding_models.json",
-            config_dir / "06_unique_models_modalities.json",
-            config_dir / "07_name_standardization_rules.json"
-        ]
-        
-        missing_configs = []
-        for config in required_configs:
-            if not Path(config).exists():
-                missing_configs.append(config)
-        
-        if missing_configs:
-            print("❌ Missing required configuration files:")
-            for config in missing_configs:
-                print(f"   - {config}")
-            return False
-        
-        print("✅ All configuration files present")
-        return True
-
-    def validate_stage_inputs(self, stage_config: Dict) -> bool:
-        """Validate that required input files exist for a stage"""
-        if 'inputs' not in stage_config:
-            return True
-            
-        missing_inputs = []
-        for input_file in stage_config['inputs']:
-            if not Path(input_file).exists():
-                missing_inputs.append(input_file)
-        
-        if missing_inputs:
-            print(f"❌ {stage_config['stage']} - Missing required input files:")
-            for input_file in missing_inputs:
-                print(f"   - {input_file}")
-            return False
-            
-        return True
-
-    def validate_stage_outputs(self, stage_config: Dict) -> bool:
-        """Validate that expected output files were created and are valid"""
-        if not stage_config['outputs']:
-            return True  # No file outputs to validate (e.g., database operations)
-
-        missing_outputs = []
-        invalid_outputs = []
-
-        for output_file in stage_config['outputs']:
-            file_path = Path(output_file)
-
-            # Check if file exists
-            if not file_path.exists():
-                missing_outputs.append(output_file)
-                continue
-
-            # Check file size (empty files are suspicious)
-            if file_path.stat().st_size == 0:
-                invalid_outputs.append(f"{output_file} (empty file)")
-                continue
-
-            # For JSON files, try to validate JSON structure
-            if output_file.endswith('.json'):
-                try:
-                    with open(file_path, 'r') as f:
-                        json.load(f)
-                except (json.JSONDecodeError, Exception) as e:
-                    invalid_outputs.append(f"{output_file} (invalid JSON: {str(e)})")
-
-        issues_found = False
-        if missing_outputs:
-            print(f"⚠️  {stage_config['stage']} - Missing expected output files:")
-            for output_file in missing_outputs:
-                print(f"   - {output_file}")
-            issues_found = True
-
-        if invalid_outputs:
-            print(f"⚠️  {stage_config['stage']} - Invalid output files:")
-            for issue in invalid_outputs:
-                print(f"   - {issue}")
-            issues_found = True
-
-        return not issues_found
-
-    def execute_script(self, script_name: str, stage_config: Dict) -> Tuple[bool, float, str]:
-        """Execute a Python script and return success status, duration, and output"""
-        print(f"\n🔄 Executing {stage_config['stage']}: {stage_config['name']}")
-        print(f"   Script: {script_name}")
-        print(f"   Description: {stage_config['description']}")
-
-        # Determine the full script path - handle both execution contexts
-        script_dir = Path(__file__).parent  # This is always 01_scripts/
-        script_path = script_dir / script_name
-
-        # If that doesn't work, try relative to current working directory
-        if not script_path.exists():
-            current_dir = Path.cwd()
-            alt_script_path = current_dir / "01_scripts" / script_name
-            if alt_script_path.exists():
-                script_path = alt_script_path
-                print(f"DEBUG: Using alternative path: {script_path}")
-            else:
-                # Try one more approach - relative to where the script thinks it is
-                alt_script_path2 = Path(script_name)
-                if alt_script_path2.exists():
-                    script_path = alt_script_path2
-                    print(f"DEBUG: Using relative path: {script_path}")
-
-        print(f"DEBUG: Final script path: {script_path}")
-        print(f"DEBUG: Script exists: {script_path.exists()}")
-
-        if not script_path.exists():
-            error_msg = f"Script {script_path} not found"
-            print(f"❌ {error_msg}")
-            return False, 0.0, error_msg
-        
-        # Validate inputs before execution
-        if not self.validate_stage_inputs(stage_config):
-            error_msg = f"Input validation failed for {stage_config['stage']}"
-            return False, 0.0, error_msg
-        
+    Returns:
+        Tuple of (success, output_message)
+    """
+    try:
+        print(f"🔄 Running {script_name}...")
         start_time = time.time()
-        try:
-            result = subprocess.run(
-                [sys.executable, str(script_path)],
-                capture_output=True,
-                text=True,
-                timeout=1800,  # 30 minutes timeout
-                cwd=self.script_dir  # Run from 01_scripts directory
-            )
-            
-            duration = time.time() - start_time
-            
-            if result.returncode == 0:
-                print(f"✅ {stage_config['stage']} completed successfully ({duration:.1f}s)")
 
-                # Show script output for debugging
-                if result.stdout:
-                    print("Script output:")
-                    print(result.stdout[-1000:])  # Last 1000 chars
-                if result.stderr:
-                    print("Script stderr:")
-                    print(result.stderr)
+        result = subprocess.run(
+            [sys.executable, script_name],
+            capture_output=True,
+            text=True,
+            timeout=900,  # 15 minute timeout per script
+            cwd=os.path.dirname(__file__)  # Run from 01_scripts directory
+        )
 
-                # Validate outputs after successful execution
-                if self.validate_stage_outputs(stage_config):
-                    print(f"✅ All expected outputs created for {stage_config['stage']}")
-                    return True, duration, result.stdout
-                else:
-                    error_msg = f"Script completed but failed to generate expected output files"
-                    print(f"❌ {stage_config['stage']} failed: {error_msg}")
-                    return False, duration, error_msg
-            else:
-                error_msg = f"Script failed with return code {result.returncode}"
-                print(f"❌ {stage_config['stage']} failed: {error_msg}")
-                if result.stderr:
-                    print("Error output:")
-                    print(result.stderr)
-                return False, duration, error_msg
-                
-        except subprocess.TimeoutExpired:
-            duration = time.time() - start_time
-            error_msg = f"Script timed out after {duration:.1f} seconds"
-            print(f"❌ {stage_config['stage']} failed: {error_msg}")
-            return False, duration, error_msg
-            
-        except Exception as e:
-            duration = time.time() - start_time
-            error_msg = f"Execution error: {str(e)}"
-            print(f"❌ {stage_config['stage']} failed: {error_msg}")
-            return False, duration, error_msg
+        end_time = time.time()
+        duration = end_time - start_time
 
-    def setup_environment(self) -> bool:
-        """Setup local development environment"""
-        print("\n" + "=" * 60)
-        print("🔧 ENVIRONMENT SETUP")
-        print("=" * 60)
-
-        try:
-            # Check if we're in the right directory using dynamic path resolution
-            script_dir = Path(__file__).parent
-            config_dir = script_dir.parent / "03_configs"
-            output_dir = script_dir.parent / "02_outputs"
-
-            if not config_dir.exists():
-                print("⚠️ Config directory not found, but continuing...")
-            else:
-                print("✅ Configuration directory found")
-
-            # Check if output directory exists
-            if not output_dir.exists():
-                output_dir.mkdir(parents=True, exist_ok=True)
-                print(f"📁 Created output directory: {output_dir}")
-            else:
-                print(f"✅ Output directory exists: {output_dir}")
-
-            # Check requirements.txt (optional for Google pipeline)
-            requirements_file = config_dir / "requirements.txt"
-            if requirements_file.exists():
-                print(f"✅ Requirements file found: {requirements_file}")
-            else:
-                print(f"⚠️ No requirements.txt found at {requirements_file}, skipping dependency installation")
-
-            print("\n🎉 Environment setup completed successfully!")
-            return True
-
-        except Exception as e:
-            print(f"💥 Environment setup failed: {str(e)}")
-            return False
-
-    def get_user_script_selection(self) -> List[Dict]:
-        """Get user selection for which scripts to run"""
-        script_map = {chr(65 + i): stage for i, stage in enumerate(self.pipeline_stages)}
-
-        print("\n" + "=" * 60)
-        print("📋 SCRIPT SELECTION MENU")
-        print("=" * 60)
-        print("Available scripts:")
-        for i, stage in enumerate(self.pipeline_stages):
-            letter = chr(65 + i)  # A, B, C, etc.
-            print(f"  {letter}: {stage['script']}")
-
-        print("\nExecution options:")
-        print("  1. Run all scripts (A to F)")
-        print("  2. Run script range (e.g., C to E)")
-        print("  3. Run specific scripts (e.g., A, C, F)")
-
-        while True:
-            choice = input("\nEnter your choice (1/2/3): ").strip()
-
-            if choice == "1":
-                return self.pipeline_stages
-
-            elif choice == "2":
-                while True:
-                    range_input = input("Enter range (e.g., 'C E' for C to E): ").strip().upper()
-                    try:
-                        start_letter, end_letter = range_input.split()
-                        start_idx = ord(start_letter) - 65
-                        end_idx = ord(end_letter) - 65
-
-                        if 0 <= start_idx <= end_idx < len(self.pipeline_stages):
-                            selected = self.pipeline_stages[start_idx:end_idx + 1]
-                            print(f"Selected scripts: {[chr(65 + start_idx + i) for i in range(len(selected))]}")
-                            return selected
-                        else:
-                            print("Invalid range. Please try again.")
-                    except ValueError:
-                        print("Invalid format. Use format like 'C E' for range.")
-
-            elif choice == "3":
-                while True:
-                    scripts_input = input("Enter script letters (e.g., 'A C F' or 'B D'): ").strip().upper()
-                    try:
-                        letters = scripts_input.split()
-                        selected = []
-                        indices = []
-
-                        for letter in letters:
-                            if letter in script_map:
-                                idx = ord(letter) - 65
-                                indices.append(idx)
-                                selected.append(script_map[letter])
-                            else:
-                                print(f"Invalid script letter: {letter}")
-                                break
-                        else:
-                            # Sort by original pipeline order
-                            sorted_pairs = sorted(zip(indices, selected))
-                            selected = [script for _, script in sorted_pairs]
-                            print(f"Selected scripts: {[chr(65 + idx) for idx, _ in sorted_pairs]}")
-                            return selected
-                    except ValueError:
-                        print("Invalid format. Use format like 'A C F' for specific scripts.")
-            else:
-                print("Invalid choice. Please enter 1, 2, or 3.")
-
-    def run_pipeline(self, start_from_stage: Optional[str] = None, interactive: bool = True) -> bool:
-        """Execute the complete pipeline or start from a specific stage"""
-        print("=" * 60)
-        print("🚀 GOOGLE PIPELINE ORCHESTRATOR")
-        print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        print("=" * 60)
-
-        # ===============================================
-        # ENVIRONMENT SETUP SECTION
-        # ===============================================
-        print("\n🔧 Setting up local development environment...")
-        if not self.setup_environment():
-            print("💥 Pipeline aborted due to environment setup failure")
-            return False
-
-        # ===============================================
-        # PIPELINE EXECUTION SECTION
-        # ===============================================
-        print("\n📍 SEQUENTIAL PIPELINE EXECUTION")
-        print("Flow: A → B → C → D → E → F")
-        print("Note: G & H deployment scripts available via manual workflow trigger")
-
-        # Validate dependencies
-        if not self.validate_dependencies():
-            print("\n❌ Pipeline aborted due to missing dependencies")
-            return False
-
-        # Get user selection for which scripts to run
-        selected_stages = self.get_user_script_selection()
-
-        # Display selected scripts and ask for confirmation
-        print(f"\n📋 SELECTED SCRIPTS ({len(selected_stages)} total):")
-        for i, stage in enumerate(selected_stages, 1):
-            original_idx = self.pipeline_stages.index(stage) + 1
-            letter = chr(64 + original_idx)  # A, B, C, etc.
-            print(f"  {i:2d}. {letter}: {stage['script']}")
-
-        # Ask for confirmation
-        while True:
-            confirm = input(f"\nProceed with executing {len(selected_stages)} script(s)? (y/n): ").strip().lower()
-            if confirm in ['y', 'yes']:
-                break
-            elif confirm in ['n', 'no']:
-                print("Pipeline execution cancelled.")
-                return False
-            else:
-                print("Please enter 'y' or 'n'.")
-
-        # Clean output directory if starting from Stage 1
-        if selected_stages and selected_stages[0]['stage'] == 'Stage 1':
-            self.clean_output_directory()
-
-        self.pipeline_start_time = time.time()
-
-        # Execute selected scripts
-        total_stages = len(selected_stages)
-        for i, stage_config in enumerate(selected_stages, 1):
-            original_idx = self.pipeline_stages.index(stage_config) + 1
-            letter = chr(64 + original_idx)  # A, B, C, etc.
-            print(f"\n📍 STAGE {i:2d}/{total_stages}: {letter} - {stage_config['script']}")
-
-            success, duration, output = self.execute_script(
-                stage_config['script'],
-                stage_config
-            )
-
-            # Record stage result
-            stage_result = {
-                'stage': stage_config['stage'],
-                'name': stage_config['name'],
-                'script': stage_config['script'],
-                'success': success,
-                'duration': duration,
-                'output': output[:500] + "..." if len(output) > 500 else output
-            }
-            self.stage_results.append(stage_result)
-
-            if not success:
-                self.failed_stage = stage_config['stage']
-                print(f"\n💥 Pipeline stopped due to failure in {stage_config['script']}")
-                break
-
-        # Generate final report
-        self.generate_pipeline_report()
-
-        total_duration = time.time() - self.pipeline_start_time
-        if self.failed_stage:
-            print(f"\n❌ Pipeline FAILED at {self.failed_stage} (Total time: {total_duration:.1f}s)")
-            return False
+        if result.returncode == 0:
+            print(f"✅ {script_name} completed successfully ({duration:.1f}s)")
+            return True, f"Success in {duration:.1f}s"
         else:
-            print("\n" + "=" * 60)
-            print("🎉 PIPELINE COMPLETED SUCCESSFULLY!")
-            print(f"Total execution time: {total_duration:.1f} seconds ({total_duration/60:.1f} minutes)")
-            print(f"All {len(self.stage_results)} selected scripts executed successfully")
-            if len(selected_stages) == len(self.pipeline_stages):
-                print("Full pipeline (A to F) completed")
-            else:
-                executed_letters = [chr(64 + self.pipeline_stages.index(stage) + 1) for stage in selected_stages]
-                print(f"Executed scripts: {', '.join(executed_letters)}")
-            print(f"Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-            print("=" * 60)
+            print(f"❌ {script_name} failed with return code {result.returncode}")
+            print(f"   Error output: {result.stderr[:1000]}")
+            if result.stdout:
+                print(f"   Standard output: {result.stdout[-500:]}")
+            return False, f"Failed: {result.stderr[:1000]}"
 
-            # Create timestamp tracking file
-            self.create_completion_timestamp()
+    except subprocess.TimeoutExpired:
+        print(f"⏰ {script_name} timed out after 15 minutes")
+        return False, "Timed out after 15 minutes"
+    except Exception as e:
+        print(f"💥 {script_name} crashed: {str(e)}")
+        return False, f"Crashed: {str(e)}"
 
-            print(f"\n📄 Final outputs:")
-            print(f"   • ../02_outputs/E-created-db-data.json (database-ready)")
-            print(f"   • ../02_outputs/E-created-db-data-report.txt (human-readable)")
-            print(f"   • ../02_outputs/F-comparison-report.txt (pipeline vs supabase comparison)")
-            print(f"📊 Ready for database upload using G_refresh_supabase_working_version.py")
-            return True
 
-    def generate_pipeline_report(self) -> None:
-        """Generate comprehensive pipeline execution report"""
-        report_content = []
-        
-        # Header
-        report_content.append("=== GOOGLE MODELS PIPELINE EXECUTION REPORT ===")
-        report_content.append(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        
-        if self.pipeline_start_time:
-            total_duration = time.time() - self.pipeline_start_time
-            report_content.append(f"Total Pipeline Duration: {total_duration:.1f} seconds")
-        
-        report_content.append("")
-        
-        # Summary
-        successful_stages = sum(1 for result in self.stage_results if result['success'])
-        total_stages = len(self.stage_results)
-        
-        report_content.append("=== EXECUTION SUMMARY ===")
-        report_content.append(f"Stages Executed: {total_stages}")
-        report_content.append(f"Successful: {successful_stages}")
-        report_content.append(f"Failed: {total_stages - successful_stages}")
-        
-        if self.failed_stage:
-            report_content.append(f"Failed At: {self.failed_stage}")
-        
-        report_content.append("")
-        
-        # Stage Details
-        report_content.append("=== STAGE EXECUTION DETAILS ===")
-        for result in self.stage_results:
-            status = "✅ SUCCESS" if result['success'] else "❌ FAILED"
-            report_content.append(f"{result['stage']}: {result['name']}")
-            report_content.append(f"  Script: {result['script']}")
-            report_content.append(f"  Status: {status}")
-            report_content.append(f"  Duration: {result['duration']:.1f}s")
-            if not result['success']:
-                report_content.append(f"  Error: {result['output']}")
-            report_content.append("")
-        
-        # Save report
-        report_filename = "Z-pipeline-report.txt"
-        try:
-            with open(report_filename, 'w') as f:
-                f.write('\n'.join(report_content))
-            print(f"📄 Pipeline report saved to: {report_filename}")
-        except Exception as e:
-            print(f"⚠️  Could not save pipeline report: {e}")
+def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_time: float) -> None:
+    """
+    Generate comprehensive pipeline execution report
 
-    def create_completion_timestamp(self) -> None:
-        """Create timestamp file to track pipeline completion"""
-        timestamp_file = "../02_outputs/last-run.txt"
-        try:
-            # Ensure ../02_outputs directory exists
-            Path("../02_outputs").mkdir(exist_ok=True)
+    Args:
+        execution_log: List of (stage, success, message) tuples
+        total_time: Total pipeline execution time in seconds
+    """
+    report_file = "../02_outputs/Z-pipeline-report.txt"
 
-            with open(timestamp_file, 'w') as f:
-                f.write(f"Google Pipeline completed: {datetime.now().strftime('%a %b %d %H:%M:%S UTC %Y')}\n")
-                f.write(f"Local execution: {datetime.now().isoformat()}\n")
-                f.write(f"Pipeline duration: {time.time() - self.pipeline_start_time:.1f} seconds\n")
+    try:
+        with open(report_file, 'w', encoding='utf-8') as f:
+            # Header
+            f.write("=" * 80 + "\n")
+            f.write("GOOGLE MODELS PIPELINE EXECUTION REPORT\n")
+            f.write(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Total Pipeline Duration: {total_time:.1f} seconds\n")
+            f.write("\n")
 
-            print(f"✅ Completion timestamp saved to: {timestamp_file}")
-        except Exception as e:
-            print(f"⚠️  Could not save completion timestamp: {e}")
+            # Summary
+            total_stages = len(execution_log)
+            successful_stages = sum(1 for _, success, _ in execution_log if success)
+            failed_stages = total_stages - successful_stages
 
-    def clean_output_directory(self) -> None:
-        """Clean ../02_outputs directory of old output files"""
+            f.write("=== EXECUTION SUMMARY ===\n")
+            f.write(f"Stages Executed: {total_stages}\n")
+            f.write(f"Successful: {successful_stages}\n")
+            f.write(f"Failed: {failed_stages}\n")
+            f.write("\n")
+
+            # Stage-by-stage results
+            f.write("=== STAGE EXECUTION DETAILS ===\n")
+            stage_names = {
+                "A_fetch_api_models.py": "API Data Extraction",
+                "B_filter_models.py": "Model Filtering",
+                "C_scrape_modalities.py": "Modality Scraping",
+                "D_enrich_modalities.py": "Modality Enrichment",
+                "E_create_db_data.py": "Data Normalization",
+                "F_compare_pipeline_with_supabase.py": "Pipeline Comparison"
+            }
+
+            for i, (stage, success, message) in enumerate(execution_log, 1):
+                status = "✅ SUCCESS" if success else "❌ FAILED"
+                stage_name = stage_names.get(stage, "Unknown")
+                duration = message.split()[-1] if "Success in" in message else "N/A"
+
+                f.write(f"Stage {i}: {stage_name}\n")
+                f.write(f"  Script: {stage}\n")
+                f.write(f"  Status: {status}\n")
+                if "Success in" in message:
+                    f.write(f"  Duration: {duration}\n")
+                f.write(f"\n")
+
+        print(f"📄 Pipeline report saved to: {report_file}")
+
+    except Exception as e:
+        print(f"❌ Failed to generate pipeline report: {e}")
+
+def setup_environment() -> bool:
+    """
+    Setup local development environment
+
+    Returns:
+        bool: True if setup successful, False otherwise
+    """
+    print("\n" + "=" * 80)
+    print("🔧 ENVIRONMENT SETUP")
+    print("=" * 80)
+
+    try:
+        # Check configuration directory
+        config_dir = Path("../03_configs")
+        if not config_dir.exists():
+            print("❌ Configuration directory not found")
+            return False
+        print("✅ Configuration directory found")
+
+        # Check output directory
         output_dir = Path("../02_outputs")
+        if not output_dir.exists():
+            output_dir.mkdir(exist_ok=True)
+            print("✅ Output directory created")
+        else:
+            print(f"✅ Output directory exists: {output_dir.resolve()}")
 
-        try:
-            if not output_dir.exists():
-                print("📁 Creating ../02_outputs directory")
-                output_dir.mkdir(exist_ok=True)
-                return
+        # Check requirements file
+        requirements_file = config_dir / "requirements.txt"
+        if requirements_file.exists():
+            print(f"✅ Requirements file found: {requirements_file}")
+        else:
+            print("⚠️  No requirements.txt found")
 
-            # Files to clean (keep .gitkeep)
-            files_to_remove = []
-            patterns_to_clean = [
-                "A-fetched-api-models.json", "A-fetched-api-models-report.txt",
-                "B-filtered-models.json", "B-filtered-models-report.txt",
-                "C-scrapped-modalities.json", "C-scrapped-modalities-report.txt",
-                "D-enriched-modalities.json", "D-enriched-modalities-report.txt",
-                "E-created-db-data.json", "E-created-db-data-report.txt",
-                "F-comparison-report.txt",
-                "last-run.txt", "Z-pipeline-report.txt"
-            ]
+        print("\n🎉 Environment setup completed successfully!")
+        return True
 
-            for pattern in patterns_to_clean:
-                file_path = output_dir / pattern
-                if file_path.exists():
-                    files_to_remove.append(file_path)
+    except Exception as e:
+        print(f"💥 Environment setup failed: {str(e)}")
+        return False
 
-            if files_to_remove:
-                print(f"🧹 Cleaning {len(files_to_remove)} old output files from ../02_outputs/")
-                for file_path in files_to_remove:
-                    file_path.unlink()
-                    print(f"   Removed: {file_path.name}")
-            else:
-                print("✅ ../02_outputs directory is clean")
+def clean_output_directory() -> None:
+    """Clean ../02_outputs directory of old output files"""
+    output_dir = Path("../02_outputs")
 
-        except Exception as e:
-            print(f"⚠️  Could not clean output directory: {e}")
-            print("Continuing with pipeline execution...")
+    try:
+        print("🧹 Cleaning output directory...")
 
-    def list_stages(self) -> None:
-        """List all available pipeline stages"""
-        print("=== Available Pipeline Stages ===")
-        for stage_config in self.pipeline_stages:
-            print(f"{stage_config['stage']}: {stage_config['name']}")
-            print(f"  Script: {stage_config['script']}")
-            print(f"  Description: {stage_config['description']}")
-            print()
+        if not output_dir.exists():
+            output_dir.mkdir(exist_ok=True)
+            print("✅ Output directory created")
+            return
+
+        # Files to clean (keep .gitkeep)
+        files_to_remove = []
+        patterns_to_clean = [
+            "A-fetched-api-models.json", "A-fetched-api-models-report.txt",
+            "B-filtered-models.json", "B-filtered-models-report.txt",
+            "C-scrapped-modalities.json", "C-scrapped-modalities-report.txt",
+            "D-enriched-modalities.json", "D-enriched-modalities-report.txt",
+            "E-created-db-data.json", "E-created-db-data-report.txt",
+            "F-comparison-report.txt",
+            "last-run.txt", "Z-pipeline-report.txt"
+        ]
+
+        for pattern in patterns_to_clean:
+            file_path = output_dir / pattern
+            if file_path.exists():
+                files_to_remove.append(file_path)
+
+        if files_to_remove:
+            print(f"   Found {len(files_to_remove)} files to remove:")
+            for file_path in files_to_remove:
+                file_path.unlink()
+                print(f"   Removed: {file_path.name}")
+        else:
+            print("✅ ../02_outputs directory is clean")
+
+    except Exception as e:
+        print(f"⚠️  Could not clean output directory: {e}")
+        print("Continuing with pipeline execution...")
+
+def get_user_script_selection(pipeline_scripts: List[str]) -> List[str]:
+    """
+    Get user selection for which scripts to run
+
+    Args:
+        pipeline_scripts: List of all available pipeline scripts
+
+    Returns:
+        List of selected scripts to execute
+    """
+    script_map = {chr(65 + i): script for i, script in enumerate(pipeline_scripts)}
+
+    print("\n" + "=" * 80)
+    print("📋 SCRIPT SELECTION MENU")
+    print("=" * 80)
+    print("Available scripts:")
+    for i, script in enumerate(pipeline_scripts):
+        letter = chr(65 + i)  # A, B, C, etc.
+        print(f"  {letter}: {script}")
+
+    print("\nExecution options:")
+    print("  1. Run all scripts (A to F)")
+    print("  2. Run script range (e.g., C to E)")
+    print("  3. Run specific scripts (e.g., A, C, F)")
+
+    while True:
+        choice = input("\nEnter your choice (1/2/3): ").strip()
+
+        if choice == "1":
+            return pipeline_scripts
+
+        elif choice == "2":
+            while True:
+                range_input = input("Enter range (e.g., 'C E' for C to E): ").strip().upper()
+                try:
+                    start_letter, end_letter = range_input.split()
+                    start_idx = ord(start_letter) - 65
+                    end_idx = ord(end_letter) - 65
+
+                    if 0 <= start_idx <= end_idx < len(pipeline_scripts):
+                        selected = pipeline_scripts[start_idx:end_idx + 1]
+                        print(f"Selected scripts: {[chr(65 + start_idx + i) for i in range(len(selected))]}")
+                        return selected
+                    else:
+                        print("Invalid range. Please try again.")
+                except ValueError:
+                    print("Invalid format. Use format like 'C E' for range.")
+
+        elif choice == "3":
+            while True:
+                scripts_input = input("Enter script letters (e.g., 'A C F'): ").strip().upper()
+                try:
+                    letters = scripts_input.split()
+                    selected = []
+                    indices = []
+
+                    for letter in letters:
+                        if letter in script_map:
+                            idx = ord(letter) - 65
+                            indices.append(idx)
+                            selected.append(script_map[letter])
+                        else:
+                            print(f"Invalid script letter: {letter}")
+                            break
+                    else:
+                        # Sort by original pipeline order
+                        sorted_pairs = sorted(zip(indices, selected))
+                        selected = [script for _, script in sorted_pairs]
+                        print(f"Selected scripts: {[chr(65 + idx) for idx, _ in sorted_pairs]}")
+                        return selected
+                except ValueError:
+                    print("Invalid format. Use format like 'A C F' for specific scripts.")
+        else:
+            print("Invalid choice. Please enter 1, 2, or 3.")
 
 def main():
-    """Main execution function with command line argument support"""
-    import argparse
+    """Main pipeline orchestrator"""
+    print("=" * 80)
+    print("🚀 GOOGLE PIPELINE ORCHESTRATOR")
+    print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 80)
 
-    parser = argparse.ArgumentParser(
-        description='Google Models Pipeline Orchestrator (Stages 1-6: Complete Pipeline with Comparison)',
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-        epilog="""
-Examples:
-  python Z_run_A_to_F.py                    # Run complete pipeline (Stages 1-6)
-  python Z_run_A_to_F.py --interactive      # Interactive stage selection
-  python Z_run_A_to_F.py --start "Stage 3"  # Start from Stage 3
-  python Z_run_A_to_F.py --list             # List all stages
-        """
-    )
+    # ===============================================
+    # ENVIRONMENT SETUP SECTION
+    # ===============================================
+    print("\n🔧 Setting up local development environment...")
+    if not setup_environment():
+        print("💥 Pipeline aborted due to environment setup failure")
+        return False
 
-    parser.add_argument(
-        '--start',
-        type=str,
-        help='Start pipeline from specific stage (e.g., "Stage 2", "Stage 4")'
-    )
+    start_time = time.time()
+    execution_log = []
 
-    parser.add_argument(
-        '--interactive', '-i',
-        action='store_true',
-        help='Interactive mode for stage selection'
-    )
+    # Sequential Pipeline Execution: A → B → C → D → E → F
+    # Note: G & H deployment scripts available via manual workflow trigger
+    print("\n📍 SEQUENTIAL PIPELINE EXECUTION")
+    print("Flow: A → B → C → D → E → F")
+    print("Note: G & H deployment scripts available via manual workflow trigger")
 
-    parser.add_argument(
-        '--list',
-        action='store_true',
-        help='List all available pipeline stages and exit'
-    )
+    pipeline_scripts = [
+        "A_fetch_api_models.py",
+        "B_filter_models.py",
+        "C_scrape_modalities.py",
+        "D_enrich_modalities.py",
+        "E_create_db_data.py",
+        "F_compare_pipeline_with_supabase.py"
+    ]
 
-    args = parser.parse_args()
+    # Get user selection for which scripts to run
+    selected_scripts = get_user_script_selection(pipeline_scripts)
 
-    orchestrator = GooglePipelineOrchestrator()
+    # Display selected scripts and ask for confirmation
+    print(f"\n📋 SELECTED SCRIPTS ({len(selected_scripts)} total):")
+    for i, script in enumerate(selected_scripts, 1):
+        original_idx = pipeline_scripts.index(script) + 1
+        letter = chr(64 + original_idx)  # A, B, C, etc.
+        print(f"  {i:2d}. {letter}: {script}")
 
-    if args.list:
-        orchestrator.list_stages()
-        return
+    # Ask for confirmation
+    while True:
+        confirm = input(f"\nProceed with executing {len(selected_scripts)} script(s)? (y/n): ").strip().lower()
+        if confirm in ['y', 'yes']:
+            break
+        elif confirm in ['n', 'no']:
+            print("Pipeline execution cancelled.")
+            return False
+        else:
+            print("Please enter 'y' or 'n'.")
 
-    if args.interactive or (not args.start and not args.list):
-        # Default to interactive mode if no specific args provided
-        success = orchestrator.run_pipeline(interactive=True)
+    # Clean output directory if starting from Stage 1 (Script A)
+    if selected_scripts and selected_scripts[0] == "A_fetch_api_models.py":
+        clean_output_directory()
+
+    # Execute selected scripts
+    total_stages = len(selected_scripts)
+    for i, script in enumerate(selected_scripts, 1):
+        original_idx = pipeline_scripts.index(script) + 1
+        letter = chr(64 + original_idx)  # A, B, C, etc.
+        print(f"\n📍 STAGE {i:2d}/{total_stages}: {letter} - {script}")
+        success, message = run_script(script)
+        execution_log.append((script, success, message))
+        if not success:
+            print(f"💥 Pipeline stopped due to failure in {script}")
+            generate_pipeline_report(execution_log, time.time() - start_time)
+            return False
+
+    # Pipeline completed successfully
+    end_time = time.time()
+    total_time = end_time - start_time
+
+    print("\n" + "=" * 80)
+    print("🎉 PIPELINE COMPLETED SUCCESSFULLY!")
+    print(f"Total execution time: {total_time:.1f} seconds ({total_time/60:.1f} minutes)")
+    print(f"All {len(execution_log)} selected stages executed successfully")
+    if len(selected_scripts) == len(pipeline_scripts):
+        print("Full pipeline (A to F) completed")
     else:
-        success = orchestrator.run_pipeline(
-            start_from_stage=args.start,
-            interactive=False
-        )
-    sys.exit(0 if success else 1)
+        executed_letters = [chr(64 + pipeline_scripts.index(script) + 1) for script in selected_scripts]
+        print(f"Executed scripts: {', '.join(executed_letters)}")
+    print(f"Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print("=" * 80)
+
+    # Generate final report
+    generate_pipeline_report(execution_log, total_time)
+
+    # Save completion timestamp
+    try:
+        with open("../02_outputs/last-run.txt", "w") as f:
+            f.write(f"Google Pipeline completed: {datetime.now().strftime('%a %b %d %H:%M:%S %Z %Y')}\n")
+            f.write(f"Local execution: {datetime.now().isoformat()}\n")
+            f.write(f"Pipeline duration: {total_time:.1f} seconds\n")
+    except Exception as e:
+        print(f"⚠️  Could not save completion timestamp: {e}")
+
+    return True
 
 if __name__ == "__main__":
-    main()
+    try:
+        success = main()
+        sys.exit(0 if success else 1)
+    except KeyboardInterrupt:
+        print("\n🛑 Pipeline interrupted by user")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n💥 Pipeline crashed: {e}")
+        sys.exit(1)
