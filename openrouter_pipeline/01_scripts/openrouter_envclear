@@ -1,0 +1,24 @@
+#!/bin/bash
+# OpenRouter Environment Cleanup Script
+echo "🧹 Cleaning OpenRouter environment..."
+
+# Remove virtual environment
+if [ -d "openrouter_env" ]; then
+    echo "  Removing virtual environment..."
+    rm -rf openrouter_env
+    echo "  ✅ Virtual environment removed"
+fi
+
+# Remove Python cache
+if [ -d "__pycache__" ]; then
+    echo "  Removing Python cache..."
+    rm -rf __pycache__
+    echo "  ✅ Python cache removed"
+fi
+
+# Remove any .pyc files
+echo "  Removing .pyc files..."
+find . -name "*.pyc" -delete
+echo "  ✅ .pyc files removed"
+
+echo "🎉 Environment cleanup completed!"

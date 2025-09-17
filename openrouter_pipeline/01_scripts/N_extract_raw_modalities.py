@@ -15,6 +15,17 @@ from typing import Any, Dict, List
 # Import output utilities
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
 
+def load_special_mappings() -> Dict[str, str]:
+    """Load GPT OSS special mappings from config file"""
+    config_path = os.path.join(os.path.dirname(__file__), "..", "03_configs", "08_provider_enrichment.json")
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+        return config.get('special_mappings', {}).get('oss_models', {})
+    except (FileNotFoundError, json.JSONDecodeError) as error:
+        print(f"WARNING: Failed to load special mappings from {config_path}: {error}")
+        return {}
+
 def load_filtered_models() -> List[Dict[str, Any]]:
     """Load filtered models from Stage-B"""
     input_file = get_input_file_path('B-filtered-models.json')
@@ -29,7 +40,7 @@ def load_filtered_models() -> List[Dict[str, Any]]:
         return []
 
 def extract_model_name(full_name: str, canonical_slug: str = '') -> str:
-    """Extract clean model name from full name with enhanced Google Gemma support"""
+    """Extract clean model name from full name with enhanced Google Gemma support and GPT OSS mappings"""
     # Check if this is a Google model - handle specially for Gemma canonical slug processing
     if ':' in full_name:
         provider_part, model_part = full_name.split(':', 1)
@@ -45,6 +56,13 @@ def extract_model_name(full_name: str, canonical_slug: str = '') -> str:
     # Remove (free) suffix if present
     if model_part.endswith(' (free)'):
         model_part = model_part[:-7].strip()
+
+    # Load special mappings for GPT OSS models
+    special_mappings = load_special_mappings()
+
+    # Check if this model has a special mapping
+    if model_part.lower() in special_mappings:
+        return special_mappings[model_part.lower()]
 
     return model_part
 
