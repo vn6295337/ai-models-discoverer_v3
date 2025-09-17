@@ -6,6 +6,8 @@ Provides centralized path management for pipeline outputs
 import os
 import shutil
 from pathlib import Path
+from datetime import datetime
+import pytz
 
 def get_output_dir() -> str:
     """
@@ -99,3 +101,25 @@ def should_clean_on_pipeline_start() -> bool:
         del frame
 
     return False
+
+def get_ist_timestamp() -> str:
+    """
+    Get current timestamp in IST timezone formatted as YYYY-MM-DD HH:MM AM/PM
+
+    Returns:
+        str: Formatted timestamp in IST timezone
+    """
+    ist_tz = pytz.timezone('Asia/Kolkata')
+    ist_time = datetime.now(ist_tz)
+    return ist_time.strftime('%Y-%m-%d %I:%M %p IST')
+
+def get_ist_timestamp_detailed() -> str:
+    """
+    Get detailed timestamp in IST timezone with seconds
+
+    Returns:
+        str: Detailed formatted timestamp in IST timezone
+    """
+    ist_tz = pytz.timezone('Asia/Kolkata')
+    ist_time = datetime.now(ist_tz)
+    return ist_time.strftime('%Y-%m-%d %I:%M:%S %p IST')

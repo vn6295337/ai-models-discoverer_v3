@@ -22,7 +22,7 @@ except ImportError:
     SUPABASE_AVAILABLE = False
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, ensure_output_dir_exists, clean_output_directory
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, ensure_output_dir_exists, clean_output_directory, get_ist_timestamp
 
 # Load environment variables from .env file
 try:
@@ -188,8 +188,18 @@ def save_models_to_json(models: List[Dict[str, Any]], filename: str) -> bool:
         True if successful, False otherwise
     """
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(models),
+                "pipeline_stage": "A_fetch_api_models"
+            },
+            "models": models
+        }
+
         with open(filename, 'w', encoding='utf-8') as json_file:
-            json.dump(models, json_file, indent=2)
+            json.dump(output_data, json_file, indent=2)
         print(f"✓ Models saved to: {filename}")
         return True
     except (IOError, TypeError) as error:
@@ -212,7 +222,7 @@ def generate_human_readable_report(models: List[Dict[str, Any]], filename: str) 
             # Header
             report_file.write("=" * 80 + "\n")
             report_file.write("OPENROUTER API MODELS REPORT\n")
-            report_file.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            report_file.write(f"Generated: {get_ist_timestamp()}\n")
             report_file.write("=" * 80 + "\n\n")
             
             # Summary

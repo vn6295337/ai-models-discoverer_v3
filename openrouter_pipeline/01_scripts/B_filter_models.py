@@ -10,7 +10,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Tuple
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 def load_filtering_config() -> Dict[str, Any]:
     """Load filtering configuration from JSON file"""
@@ -40,8 +40,17 @@ def load_models_from_json(filename: str) -> List[Dict[str, Any]]:
             return []
             
         with open(filename, 'r', encoding='utf-8') as json_file:
-            models = json.load(json_file)
-        
+            data = json.load(json_file)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            print(f"ERROR: Unexpected data format in {filename}")
+            return []
+
         print(f"✓ Loaded {len(models)} models from: {filename}")
         return models
         
@@ -149,8 +158,18 @@ def save_filtered_models(models: List[Dict[str, Any]], filename: str) -> bool:
         True if successful, False otherwise
     """
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(models),
+                "pipeline_stage": "B_filter_models"
+            },
+            "models": models
+        }
+
         with open(filename, 'w', encoding='utf-8') as json_file:
-            json.dump(models, json_file, indent=2)
+            json.dump(output_data, json_file, indent=2)
         print(f"✓ Filtered models saved to: {filename}")
         return True
     except (IOError, TypeError) as error:
@@ -178,7 +197,7 @@ def generate_filter_report(all_models: List[Dict[str, Any]],
             # Header
             report_file.write("=" * 80 + "\n")
             report_file.write("OPENROUTER MODELS SEQUENTIAL FILTER REPORT\n")
-            report_file.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            report_file.write(f"Generated: {get_ist_timestamp()}\n")
             report_file.write("=" * 80 + "\n\n")
 
             # Calculate totals
