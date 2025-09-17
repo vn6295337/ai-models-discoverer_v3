@@ -49,6 +49,10 @@ jobs:
 
     - name: Run complete pipeline (A-F)
       working-directory: google_pipeline
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       run: |
         echo -e "1\ny" | python 01_scripts/Z_run_A_to_F.py
 
