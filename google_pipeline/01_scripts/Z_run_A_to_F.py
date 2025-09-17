@@ -51,7 +51,7 @@ class GooglePipelineOrchestrator:
                 'script': 'A_fetch_api_models.py',
                 'description': 'Extract comprehensive model list from Google API',
                 'outputs': [
-                    '../02_outputs/A-api-models.json'
+                    '../02_outputs/A-fetched-api-models.json'
                 ]
             },
             {
@@ -59,7 +59,7 @@ class GooglePipelineOrchestrator:
                 'name': 'Model Filtering',
                 'script': 'B_filter_models.py', 
                 'description': 'Filter models based on production criteria',
-                'inputs': ['../02_outputs/A-api-models.json'],
+                'inputs': ['../02_outputs/A-fetched-api-models.json'],
                 'outputs': [
                     '../02_outputs/B-filtered-models.json',
                     '../02_outputs/B-filtered-models-report.txt'
@@ -592,7 +592,7 @@ class GooglePipelineOrchestrator:
             # Files to clean (keep .gitkeep)
             files_to_remove = []
             patterns_to_clean = [
-                "A-api-models.json", "A-api-models-report.txt",
+                "A-fetched-api-models.json", "A-fetched-api-models-report.txt",
                 "B-filtered-models.json", "B-filtered-models-report.txt",
                 "C-scrapped-modalities.json", "C-scrapped-modalities-report.txt",
                 "D-enriched-modalities.json", "D-enriched-modalities-report.txt",

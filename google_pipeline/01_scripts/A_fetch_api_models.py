@@ -33,7 +33,7 @@ output_dir = script_dir.parent / "02_outputs"
 PIPELINE_CONFIG = {
     # Core pipeline file outputs
     'output_files': {
-        'stage_1': str(output_dir / 'A-api-models.json'),
+        'stage_1': str(output_dir / 'A-fetched-api-models.json'),
     },
     
     # AUTHORITATIVE SOURCE: Google Official Documentation URLs
@@ -222,7 +222,7 @@ def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
         return raw_data  # Return data even if save failed
     
     # Generate human-readable text version
-    txt_filename = str(output_dir / 'A-api-models-report.txt')
+    txt_filename = str(output_dir / 'A-fetched-api-models-report.txt')
     try:
         with open(txt_filename, 'w') as f:
             f.write(f"Total Models: {len(raw_data)}\n\n")

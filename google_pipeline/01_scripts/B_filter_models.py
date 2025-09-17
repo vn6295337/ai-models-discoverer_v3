@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Google Models Filter Script
-Filters A-api-models-fetch.json through criteria in 03_configs/03_model_filtering.json
+Filters A-fetched-api-models.json through criteria in 03_configs/03_model_filtering.json
 and outputs to 02_outputs/B-filtered-models.json
 """
 
@@ -30,17 +30,17 @@ class GoogleModelsFilter:
             return {}
 
     def load_input_models(self) -> List[Dict[str, Any]]:
-        """Load models from A-api-models-fetch.json"""
+        """Load models from A-fetched-api-models.json"""
         try:
-            with open('../02_outputs/A-api-models.json', 'r') as f:
+            with open('../02_outputs/A-fetched-api-models.json', 'r') as f:
                 models = json.load(f)
-                print(f"✅ Loaded {len(models)} models from A-api-models.json")
+                print(f"✅ Loaded {len(models)} models from A-fetched-api-models.json")
                 return models
         except FileNotFoundError:
-            print("❌ A-api-models.json not found")
+            print("❌ A-fetched-api-models.json not found")
             return []
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing A-api-models.json: {e}")
+            print(f"❌ Error parsing A-fetched-api-models.json: {e}")
             return []
 
     def should_exclude_model(self, model: Dict[str, Any]) -> tuple[bool, str]:
