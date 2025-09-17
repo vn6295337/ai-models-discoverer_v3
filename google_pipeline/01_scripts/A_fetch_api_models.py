@@ -120,16 +120,29 @@ def fetch_google_models_with_pagination() -> List[Dict[str, Any]]:
     import sys
     import os
     
-    # Add utils directory to path for key_client import
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
-    from key_client import get_api_key, log_usage
-    
-    # Get API key from secure key management system
-    api_key = get_api_key('google')
+    # Try to get API key from environment first (GitHub Actions), then fall back to key_client
+    api_key = os.getenv('GEMINI_API_KEY')
+
     if not api_key:
-        print("ERROR: Failed to retrieve Google API key from secure storage")
-        print("Please check key management system")
-        return []
+        # Fall back to key_client for local development
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+        from key_client import get_api_key, log_usage
+
+        api_key = get_api_key('google')
+        if not api_key:
+            print("ERROR: Failed to retrieve Google API key from both environment and secure storage")
+            print("Please check GEMINI_API_KEY environment variable or key management system")
+            return []
+    else:
+        print("✅ Using Gemini API key from environment variable")
+        # Import log_usage for rate limiting even when using env var
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+        try:
+            from key_client import log_usage
+        except ImportError:
+            # If key_client not available, create a dummy log_usage function
+            def log_usage(provider, limit_type, count):
+                return True
     
     try:
         print("Fetching Google AI models with pagination...")
