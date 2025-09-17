@@ -50,14 +50,14 @@ jobs:
     - name: Run complete pipeline (A-F)
       working-directory: google_pipeline
       run: |
-        python Z_run_A_to_F.py
+        python 01_scripts/Z_run_A_to_F.py
 
     - name: Upload pipeline report
       uses: actions/upload-artifact@v4
       if: always()
       with:
         name: google-pipeline-execution-report
-        path: google_pipeline/pipeline-outputs/Z-pipeline-report.txt
+        path: google_pipeline/02_outputs/Z-pipeline-report.txt
         retention-days: 30
 
     - name: Upload processed data
@@ -66,9 +66,9 @@ jobs:
       with:
         name: google-processed-data
         path: |
-          google_pipeline/pipeline-outputs/*.json
-          google_pipeline/pipeline-outputs/*-report.txt
-          google_pipeline/pipeline-outputs/*.csv
+          google_pipeline/02_outputs/*.json
+          google_pipeline/02_outputs/*-report.txt
+          google_pipeline/02_outputs/*.csv
           !**/node_modules/**
         retention-days: 7
 
@@ -78,16 +78,16 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
 
-        # Ensure pipeline-outputs directory exists
-        mkdir -p google_pipeline/pipeline-outputs
+        # Ensure 02_outputs directory exists
+        mkdir -p google_pipeline/02_outputs
 
         # Add timestamp file
-        echo "Google Pipeline completed: $(date -u)" > google_pipeline/pipeline-outputs/last-run.txt
-        echo "Workflow run: ${{ github.run_number }}" >> google_pipeline/pipeline-outputs/last-run.txt
-        echo "Repository: ${{ github.repository }}" >> google_pipeline/pipeline-outputs/last-run.txt
+        echo "Google Pipeline completed: $(date -u)" > google_pipeline/02_outputs/last-run.txt
+        echo "Workflow run: ${{ github.run_number }}" >> google_pipeline/02_outputs/last-run.txt
+        echo "Repository: ${{ github.repository }}" >> google_pipeline/02_outputs/last-run.txt
 
         # Commit if there are changes
-        git add google_pipeline/pipeline-outputs/
+        git add google_pipeline/02_outputs/
         if git diff --staged --quiet; then
           echo "No changes to commit"
         else
@@ -101,7 +101,7 @@ jobs:
       if: success()
       with:
         name: google-pipeline-outputs
-        path: google_pipeline/pipeline-outputs/
+        path: google_pipeline/02_outputs/
         retention-days: 30
 
     - name: Show failure summary

@@ -60,7 +60,7 @@ jobs:
       run: |
         echo "🔄 Running G_refresh_supabase_working_version.py..."
         echo "⚠️  This will refresh the Supabase working_version table with Google pipeline data"
-        python -u G_refresh_supabase_working_version.py
+        python -u 01_scripts/G_refresh_supabase_working_version.py
 
     - name: Run H_deploy_to_supabase_ai_models_main.py
       if: ${{ inputs.script_choice == 'run_h' }}
@@ -68,7 +68,7 @@ jobs:
       run: |
         echo "🚀 Running H_deploy_to_supabase_ai_models_main.py..."
         echo "⚠️  This will deploy from working_version to the main ai_models table"
-        python -u H_deploy_to_supabase_ai_models_main.py
+        python -u 01_scripts/H_deploy_to_supabase_ai_models_main.py
 
     - name: Upload deployment logs
       uses: actions/upload-artifact@v4
@@ -76,10 +76,10 @@ jobs:
       with:
         name: google-deployment-logs
         path: |
-          google_pipeline/pipeline-outputs/*.log
-          google_pipeline/pipeline-outputs/*-deployment-*.txt
-          google_pipeline/pipeline-outputs/G-*.txt
-          google_pipeline/pipeline-outputs/H-*.txt
+          google_pipeline/02_outputs/*.log
+          google_pipeline/02_outputs/*-deployment-*.txt
+          google_pipeline/02_outputs/G-*.txt
+          google_pipeline/02_outputs/H-*.txt
         retention-days: 7
 
     - name: Show completion summary
