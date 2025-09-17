@@ -256,6 +256,14 @@ class GooglePipelineOrchestrator:
             if result.returncode == 0:
                 print(f"✅ {stage_config['stage']} completed successfully ({duration:.1f}s)")
 
+                # Show script output for debugging
+                if result.stdout:
+                    print("Script output:")
+                    print(result.stdout[-1000:])  # Last 1000 chars
+                if result.stderr:
+                    print("Script stderr:")
+                    print(result.stderr)
+
                 # Validate outputs after successful execution
                 if self.validate_stage_outputs(stage_config):
                     print(f"✅ All expected outputs created for {stage_config['stage']}")
@@ -263,9 +271,6 @@ class GooglePipelineOrchestrator:
                 else:
                     error_msg = f"Script completed but failed to generate expected output files"
                     print(f"❌ {stage_config['stage']} failed: {error_msg}")
-                    if result.stderr:
-                        print("Script stderr:")
-                        print(result.stderr)
                     return False, duration, error_msg
             else:
                 error_msg = f"Script failed with return code {result.returncode}"
