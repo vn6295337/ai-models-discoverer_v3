@@ -38,7 +38,11 @@ class GooglePipelineOrchestrator:
         self.pipeline_start_time = None
         self.stage_results = []
         self.failed_stage = None
-        
+
+        # Dynamic path resolution for both execution contexts
+        self.script_dir = Path(__file__).parent
+        self.output_dir = self.script_dir.parent / "02_outputs"
+
         # Pipeline configuration
         self.pipeline_stages = [
             {
