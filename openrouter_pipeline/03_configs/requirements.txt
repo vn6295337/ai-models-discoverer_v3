@@ -1,15 +1,8 @@
-# OpenRouter Pipeline Dependencies
-# Core HTTP and data processing
-requests>=2.31.0
-pandas>=2.0.0
-numpy>=1.24.0
+# AI Models Discoverer v2 - Root Requirements
+# This project contains multiple pipelines. See individual pipeline directories for specific requirements.
 
-# Web scraping (for license extraction)
-beautifulsoup4>=4.12.0
-lxml>=4.9.0
+# For OpenRouter Pipeline dependencies, install from:
+-r openrouter_pipeline/requirements.txt
 
-# Database integration
-supabase>=2.0.0
-
-# Additional utilities
-python-dotenv>=1.0.0
+# Note: Google pipeline requirements would be added here when needed
+# -r google_pipeline/requirements.txt
