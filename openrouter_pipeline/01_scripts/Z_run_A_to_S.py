@@ -190,27 +190,37 @@ echo "🎉 Environment cleanup completed!"
         print("✅ Environment cleanup script created")
         
         # 3. Install dependencies (if requirements.txt exists)
-        requirements_file = Path("../requirements.txt")
-        if requirements_file.exists():
-            print("🔄 Installing dependencies from requirements.txt...")
-            
+        requirements_paths = [
+            Path("../requirements.txt"),           # Parent directory
+            Path("../03_configs/requirements.txt") # Config directory
+        ]
+
+        requirements_file = None
+        for req_path in requirements_paths:
+            if req_path.exists():
+                requirements_file = req_path
+                break
+
+        if requirements_file:
+            print(f"🔄 Installing dependencies from {requirements_file}...")
+
             # Determine pip path based on OS
             if os.name == 'nt':  # Windows
                 pip_path = os.path.join("openrouter_env", "Scripts", "pip")
             else:  # Unix/Linux/Mac
                 pip_path = os.path.join("openrouter_env", "bin", "pip")
-            
+
             result = subprocess.run([
-                pip_path, "install", "-r", "../requirements.txt"
+                pip_path, "install", "-r", str(requirements_file)
             ], capture_output=True, text=True, timeout=300)
-            
+
             if result.returncode == 0:
                 print("✅ Dependencies installed successfully")
             else:
                 print(f"❌ Failed to install dependencies: {result.stderr}")
                 return False
         else:
-            print("⚠️  No requirements.txt found, skipping dependency installation")
+            print("⚠️  No requirements.txt found in ../requirements.txt or ../03_configs/requirements.txt, skipping dependency installation")
         
         print("\n🎉 Environment setup completed successfully!")
         return True
