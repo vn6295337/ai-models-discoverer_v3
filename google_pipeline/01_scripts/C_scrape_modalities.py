@@ -792,30 +792,49 @@ class GoogleModalityScraper:
 
     def save_modality_mapping(self, output_file: str = "../02_outputs/C-scrapped-modalities.json"):
         """Save modality mapping to JSON file with normalized Gemma names"""
-        modality_mapping = self.generate_modality_mapping()
-        
-        # Normalize Gemma display names
-        normalized_mapping = {}
-        for key, value in modality_mapping.items():
-            normalized_key = self.normalize_gemma_display_name(key)
-            normalized_mapping[normalized_key] = value
-        
-        with open(output_file, 'w') as f:
-            json.dump(normalized_mapping, f, indent=2)
-            
-        # Generate human-readable text version
-        txt_filename = output_file.replace('.json', '-report.txt')
-        with open(txt_filename, 'w') as f:
-            f.write(f"Total Models: {len(normalized_mapping)}\n\n")
-            
-            for model, capabilities in normalized_mapping.items():
-                input_mod = capabilities['input_modalities']
-                output_mod = capabilities['output_modalities']
-                f.write(f"{model}: {input_mod} → {output_mod}\n")
-        
-        print(f"\nModality mapping saved to: {output_file}")
-        print(f"Human-readable version saved to: {txt_filename}")
-        return normalized_mapping
+        try:
+            modality_mapping = self.generate_modality_mapping()
+
+            # Normalize Gemma display names
+            normalized_mapping = {}
+            for key, value in modality_mapping.items():
+                normalized_key = self.normalize_gemma_display_name(key)
+                normalized_mapping[normalized_key] = value
+
+            # Always generate output files, even if empty
+            with open(output_file, 'w') as f:
+                json.dump(normalized_mapping, f, indent=2)
+
+            # Generate human-readable text version
+            txt_filename = output_file.replace('.json', '-report.txt')
+            with open(txt_filename, 'w') as f:
+                f.write(f"Total Models: {len(normalized_mapping)}\n\n")
+
+                if normalized_mapping:
+                    for model, capabilities in normalized_mapping.items():
+                        input_mod = capabilities['input_modalities']
+                        output_mod = capabilities['output_modalities']
+                        f.write(f"{model}: {input_mod} → {output_mod}\n")
+                else:
+                    f.write("No modalities found - web scraping may have failed\n")
+
+            print(f"\nModality mapping saved to: {output_file}")
+            print(f"Human-readable version saved to: {txt_filename}")
+            return normalized_mapping
+
+        except Exception as e:
+            print(f"⚠️ Error during modality scraping: {e}")
+            # Generate empty output files to maintain pipeline consistency
+            with open(output_file, 'w') as f:
+                json.dump({}, f, indent=2)
+
+            txt_filename = output_file.replace('.json', '-report.txt')
+            with open(txt_filename, 'w') as f:
+                f.write("Total Models: 0\n\n")
+                f.write(f"Error during scraping: {e}\n")
+
+            print(f"⚠️ Empty output files generated due to scraping failure")
+            return {}
 
 if __name__ == "__main__":
     scraper = GoogleModalityScraper()

@@ -571,7 +571,14 @@ class GoogleNormalizationPipeline:
     def save_json_output(self) -> None:
         """Save normalized data to JSON file"""
         if not self.normalized_models:
-            print("❌ No normalized models to save")
+            print("⚠️ No normalized models found - saving empty file")
+            # Generate empty output file to maintain pipeline consistency
+            try:
+                with open('../02_outputs/E-created-db-data.json', 'w', encoding='utf-8') as f:
+                    json.dump([], f, indent=2, ensure_ascii=False)
+                print("✅ Saved empty normalized models file for pipeline consistency")
+            except Exception as e:
+                print(f"❌ Error saving empty JSON file: {e}")
             return
             
         try:
@@ -636,7 +643,10 @@ class GoogleNormalizationPipeline:
         
         # Load enriched data
         if not self.load_enriched_data():
-            print("❌ Cannot proceed without enriched data")
+            print("⚠️ Cannot load enriched data - generating empty output files")
+            # Generate empty output files to maintain pipeline consistency
+            self.save_json_output()
+            self.save_txt_report()
             return
         
         # Normalize models

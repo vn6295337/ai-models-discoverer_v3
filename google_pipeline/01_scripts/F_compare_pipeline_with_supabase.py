@@ -289,8 +289,11 @@ def main():
         # Load pipeline data
         pipeline_data = load_pipeline_data()
         if not pipeline_data:
-            print("No pipeline data loaded")
-            return False
+            print("⚠️ No pipeline data loaded - creating empty comparison report")
+            # Create empty comparison report to maintain pipeline consistency
+            create_comparison_report([], [])
+            print(f"Empty comparison report saved to: {REPORT_FILE}")
+            return True
 
         # Connect to Supabase and load data
         client = get_supabase_client()

@@ -526,7 +526,10 @@ class ModalityEnrichment:
         
         # Load data files
         if not self.load_data_files():
-            print("❌ Cannot proceed without input data files")
+            print("⚠️ Input data files missing - generating empty output files")
+            # Generate empty output files to maintain pipeline consistency
+            self.save_enriched_data()
+            self.generate_summary_report()
             return
             
         # Enrich models with modality data

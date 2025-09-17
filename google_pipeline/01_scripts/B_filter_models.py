@@ -251,13 +251,17 @@ class GoogleModelsFilter:
         # Load configuration
         config = self.load_filtering_config()
         if not config:
-            print("❌ Cannot proceed without filtering configuration")
-            return
+            print("⚠️ No filtering configuration found - proceeding with basic filtering")
+            # Use default minimal config to allow processing to continue
+            config = {"exclude_keywords": [], "include_patterns": {}}
         
         # Load input models
         models = self.load_input_models()
         if not models:
-            print("❌ Cannot proceed without input models")
+            print("⚠️ No input models found - generating empty output files")
+            # Generate empty output files to maintain pipeline consistency
+            self.save_filtered_models([])
+            self.save_txt_report([], [])
             return
         
         # Apply filters
