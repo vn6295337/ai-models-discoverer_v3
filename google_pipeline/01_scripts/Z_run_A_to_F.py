@@ -111,14 +111,23 @@ class GooglePipelineOrchestrator:
 
     def validate_dependencies(self) -> bool:
         """Validate that all required configuration files exist"""
+        # Handle both execution contexts: from 01_scripts/ and from google_pipeline/
+        current_dir = Path.cwd()
+        if current_dir.name == "01_scripts":
+            # Running from 01_scripts/ directory
+            config_base = "../03_configs"
+        else:
+            # Running from google_pipeline/ directory (or parent)
+            config_base = "03_configs"
+
         required_configs = [
-            '../03_configs/01_google_models_licenses.json',
-            '../03_configs/02_modality_standardization.json',
-            '../03_configs/03_models_filtering_rules.json',
-            '../03_configs/05_timestamp_patterns.json',
-            '../03_configs/04_embedding_models.json',
-            '../03_configs/06_unique_models_modalities.json',
-            '../03_configs/07_name_standardization_rules.json'
+            f'{config_base}/01_google_models_licenses.json',
+            f'{config_base}/02_modality_standardization.json',
+            f'{config_base}/03_models_filtering_rules.json',
+            f'{config_base}/05_timestamp_patterns.json',
+            f'{config_base}/04_embedding_models.json',
+            f'{config_base}/06_unique_models_modalities.json',
+            f'{config_base}/07_name_standardization_rules.json'
         ]
         
         missing_configs = []
