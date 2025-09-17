@@ -50,7 +50,7 @@ jobs:
     - name: Run complete pipeline (A-F)
       working-directory: google_pipeline
       run: |
-        python 01_scripts/Z_run_A_to_F.py
+        echo -e "1\ny" | python 01_scripts/Z_run_A_to_F.py
 
     - name: Upload pipeline report
       uses: actions/upload-artifact@v4

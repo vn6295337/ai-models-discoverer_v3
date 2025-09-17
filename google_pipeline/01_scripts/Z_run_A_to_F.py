@@ -636,26 +636,13 @@ Examples:
         orchestrator.list_stages()
         return
 
-    # Detect if running in non-interactive environment (like GitHub Actions)
-    import sys
-    is_interactive_env = sys.stdin.isatty()
-
-    if args.interactive and is_interactive_env:
-        # Explicit interactive mode and we're in a terminal
+    if args.interactive or (not args.start and not args.list):
+        # Default to interactive mode if no specific args provided
         success = orchestrator.run_pipeline(interactive=True)
-    elif args.start:
-        # Start from specific stage
+    else:
         success = orchestrator.run_pipeline(
             start_from_stage=args.start,
             interactive=False
-        )
-    elif not is_interactive_env:
-        # Non-interactive environment (GitHub Actions, etc.) - run all stages
-        print("🤖 Non-interactive environment detected, running complete pipeline...")
-        success = orchestrator.run_pipeline(interactive=False)
-    else:
-        # Interactive terminal environment, default to interactive mode
-        success = orchestrator.run_pipeline(interactive=True
         )
     sys.exit(0 if success else 1)
 
