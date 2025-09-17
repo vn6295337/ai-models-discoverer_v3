@@ -210,9 +210,13 @@ class GooglePipelineOrchestrator:
         print(f"\n🔄 Executing {stage_config['stage']}: {stage_config['name']}")
         print(f"   Script: {script_name}")
         print(f"   Description: {stage_config['description']}")
-        
-        if not Path(script_name).exists():
-            error_msg = f"Script {script_name} not found"
+
+        # Determine the full script path - handle both execution contexts
+        script_dir = Path(__file__).parent  # This is always 01_scripts/
+        script_path = script_dir / script_name
+
+        if not script_path.exists():
+            error_msg = f"Script {script_path} not found"
             print(f"❌ {error_msg}")
             return False, 0.0, error_msg
         
@@ -224,7 +228,7 @@ class GooglePipelineOrchestrator:
         start_time = time.time()
         try:
             result = subprocess.run(
-                [sys.executable, script_name],
+                [sys.executable, str(script_path)],
                 capture_output=True,
                 text=True,
                 timeout=1800  # 30 minutes timeout
