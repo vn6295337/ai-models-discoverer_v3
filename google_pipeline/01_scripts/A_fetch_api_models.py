@@ -12,7 +12,7 @@ from typing import Any, Dict, List
 from dotenv import load_dotenv
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, ensure_output_directory, clean_output_directory
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, ensure_output_directory, clean_output_directory, get_ist_timestamp
 
 
 # Load environment variables
@@ -133,8 +133,9 @@ def fetch_google_models_with_pagination() -> List[Dict[str, Any]]:
 
         api_key = get_api_key('google')
         if not api_key:
-            print("ERROR: Failed to retrieve Google API key from both environment and secure storage")
-            print("Please check GEMINI_API_KEY environment variable or key management system")
+            print("⚠️ Failed to retrieve Google API key from both environment and secure storage")
+            print("   Please check GEMINI_API_KEY environment variable or key management system")
+            print("   Continuing with empty model list to maintain pipeline consistency")
             return []
     else:
         print("✅ Using Gemini API key from environment variable")
@@ -171,14 +172,25 @@ def fetch_google_models_with_pagination() -> List[Dict[str, Any]]:
                 log_usage('google', 'rpd', 1)  # 1 request per day
             
             if response.status_code != 200:
-                print(f"API error: {response.status_code}")
+                print(f"⚠️ API error: HTTP {response.status_code}")
+                print(f"   Response body: {response.text[:500]}")
+                print(f"   Continuing with {len(all_models)} models fetched so far")
                 break
             
-            data = response.json()
-            page_models = data.get('models', [])
-            all_models.extend(page_models)
-            
-            print(f"Page {page_num}: {len(page_models)} models")
+            try:
+                data = response.json()
+                page_models = data.get('models', [])
+                all_models.extend(page_models)
+
+                print(f"Page {page_num}: {len(page_models)} models")
+
+                if len(page_models) == 0 and page_num == 1:
+                    print("⚠️ Empty API response - no models found")
+
+            except (ValueError, KeyError) as json_error:
+                print(f"⚠️ Failed to parse API response as JSON: {json_error}")
+                print(f"   Raw response: {response.text[:200]}")
+                break
             
             # Check for next page
             page_token = data.get('nextPageToken')
@@ -187,11 +199,12 @@ def fetch_google_models_with_pagination() -> List[Dict[str, Any]]:
                 
             page_num += 1
         
-        print(f"Total models fetched: {len(all_models)}")
+        print(f"✅ Total models fetched: {len(all_models)}")
         return all_models
-        
+
     except Exception as e:
-        print(f"Error fetching Google models: {e}")
+        print(f"⚠️ Error fetching Google models: {e}")
+        print("   Continuing with empty model list to maintain pipeline consistency")
         return []
 
 def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
@@ -210,30 +223,46 @@ def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
     # Fetch fresh data from API
     print("Fetching fresh data from Google API...")
     raw_data = fetch_google_models_with_pagination()
-    if not raw_data:
-        print("ERROR: Failed to fetch data from Google API")
-        return []
-    
-    # Save the fetched data to JSON file
+
+    # Always save data to maintain pipeline consistency (even if empty)
     try:
         with open(filename, 'w') as f:
             json.dump(raw_data, f, indent=2)
-        print(f"Fresh data saved to: {filename}")
-        print(f"Total models fetched: {len(raw_data)}")
+
+        if not raw_data:
+            print("⚠️ No models fetched from API - saved empty file for pipeline consistency")
+        else:
+            print(f"✅ Fresh data saved to: {filename}")
+            print(f"   Total models fetched: {len(raw_data)}")
+
     except Exception as e:
-        print(f"ERROR: Failed to save data to {filename}: {e}")
-        return raw_data  # Return data even if save failed
+        print(f"❌ ERROR: Failed to save data to {filename}: {e}")
+        # Still try to create an empty file to maintain pipeline consistency
+        try:
+            with open(filename, 'w') as f:
+                json.dump([], f, indent=2)
+            print("⚠️ Created empty file to maintain pipeline consistency")
+        except:
+            pass
     
     # Generate human-readable text version
     txt_filename = get_output_file_path('A-fetched-api-models-report.txt')
     try:
         with open(txt_filename, 'w') as f:
+            f.write("GOOGLE API MODELS FETCH REPORT\n")
+            f.write("=" * 50 + "\n\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write(f"Total Models: {len(raw_data)}\n\n")
-            
-            for i, model in enumerate(raw_data, 1):
-                name = model.get('name', 'Unknown')
-                f.write(f"{i}. {name}\n")
-        
+
+            if raw_data:
+                f.write("MODELS LIST:\n")
+                f.write("-" * 20 + "\n")
+                for i, model in enumerate(raw_data, 1):
+                    name = model.get('name', 'Unknown')
+                    f.write(f"{i:2d}. {name}\n")
+            else:
+                f.write("No models fetched from API\n")
+
         print(f"Human-readable version saved to: {txt_filename}")
     except Exception as e:
         print(f"Warning: Could not save report file: {e}")
@@ -253,7 +282,7 @@ def run_google_stage_1():
     Execute Stage 1: Load existing data from JSON file
     """
     print("Google Models Data Transformation Pipeline - Stage 1 Data Loading")
-    print(f"Started at: {datetime.now().isoformat()}")
+    print(f"Started at: {get_ist_timestamp()}")
     print("="*80)
 
     # Clean output directory (only for first stage of pipeline)

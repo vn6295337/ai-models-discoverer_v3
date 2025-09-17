@@ -7,7 +7,13 @@ and outputs to 02_outputs/B-filtered-models.json
 
 import json
 import re
+import sys
+import os
 from typing import List, Dict, Any, Set
+
+# Import output utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+from output_utils import get_ist_timestamp
 
 class GoogleModelsFilter:
     def __init__(self):
@@ -185,7 +191,7 @@ class GoogleModelsFilter:
         
         # Header
         report_content.append("=== GOOGLE MODELS FILTERING REPORT ===")
-        report_content.append(f"Generated: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        report_content.append(f"Generated: {get_ist_timestamp()}")
         report_content.append("")
         
         # Summary

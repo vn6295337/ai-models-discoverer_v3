@@ -432,7 +432,12 @@ class ModalityEnrichment:
         
         # Header
         report_content.append("=== GOOGLE MODELS MODALITY ENRICHMENT REPORT ===\n")
-        report_content.append(f"Generated: {__import__('datetime').datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        # Import IST timestamp utility
+        import sys, os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+        from output_utils import get_ist_timestamp
+
+        report_content.append(f"Generated: {get_ist_timestamp()}")
         report_content.append("")
         
         # Summary statistics

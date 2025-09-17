@@ -596,7 +596,12 @@ class GoogleNormalizationPipeline:
         
         # Header
         report_content.append("=== GOOGLE MODELS DATA NORMALIZATION REPORT ===")
-        report_content.append(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+        # Import IST timestamp utility
+        import sys, os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+        from output_utils import get_ist_timestamp
+
+        report_content.append(f"Generated: {get_ist_timestamp()}")
         report_content.append("")
         
         # Summary
@@ -638,7 +643,13 @@ class GoogleNormalizationPipeline:
     def run_normalization_pipeline(self) -> None:
         """Run the complete normalization pipeline"""
         print("=== Google Models Data Normalization Pipeline - Stage 5 ===")
-        print(f"Started at: {datetime.now().isoformat()}")
+
+        # Import IST timestamp utility
+        import sys, os
+        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+        from output_utils import get_ist_timestamp
+
+        print(f"Started at: {get_ist_timestamp()}")
         print("="*80)
         
         # Load enriched data

@@ -320,7 +320,12 @@ def main():
                 f.write("FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE\n")
                 f.write("=" * 80 + "\n\n")
                 f.write(f"ERROR: Script failed with error: {e}\n")
-                f.write(f"Generated at: {__import__('datetime').datetime.now()}\n")
+                # Import IST timestamp utility
+                import sys, os
+                sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+                from output_utils import get_ist_timestamp
+
+                f.write(f"Generated at: {get_ist_timestamp()}\n")
             print(f"Error report saved to: {REPORT_FILE}")
         except Exception as write_error:
             print(f"Failed to write error report: {write_error}")

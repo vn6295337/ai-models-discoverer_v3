@@ -15,6 +15,10 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple
 
+# Import IST timestamp utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+from output_utils import get_ist_timestamp, get_ist_timestamp_detailed
+
 
 def run_script(script_name: str) -> Tuple[bool, str]:
     """
@@ -75,7 +79,7 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
             # Header
             f.write("=" * 80 + "\n")
             f.write("GOOGLE MODELS PIPELINE EXECUTION REPORT\n")
-            f.write(f"Execution Date: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Execution Date: {get_ist_timestamp()}\n")
             f.write(f"Total Pipeline Duration: {total_time:.1f} seconds\n")
             f.write("\n")
 
@@ -242,7 +246,7 @@ def main():
     """Main pipeline orchestrator"""
     print("=" * 80)
     print("🚀 GOOGLE PIPELINE ORCHESTRATOR")
-    print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Started at: {get_ist_timestamp()}")
     print("=" * 80)
 
     # ===============================================
@@ -319,7 +323,7 @@ def main():
     else:
         executed_letters = [chr(64 + pipeline_scripts.index(script) + 1) for script in selected_scripts]
         print(f"Executed scripts: {', '.join(executed_letters)}")
-    print(f"Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    print(f"Completed at: {get_ist_timestamp()}")
     print("=" * 80)
 
     # Generate final report
@@ -330,8 +334,8 @@ def main():
         script_dir = Path(__file__).parent
         last_run_file = script_dir.parent / "02_outputs" / "last-run.txt"
         with open(last_run_file, "w") as f:
-            f.write(f"Google Pipeline completed: {datetime.now().strftime('%a %b %d %H:%M:%S %Z %Y')}\n")
-            f.write(f"Local execution: {datetime.now().isoformat()}\n")
+            f.write(f"Google Pipeline completed: {get_ist_timestamp_detailed()}\n")
+            f.write(f"Local execution: {get_ist_timestamp()}\n")
             f.write(f"Pipeline duration: {total_time:.1f} seconds\n")
     except Exception as e:
         print(f"⚠️  Could not save completion timestamp: {e}")

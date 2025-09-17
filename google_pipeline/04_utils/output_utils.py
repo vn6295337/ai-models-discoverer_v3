@@ -8,6 +8,8 @@ import os
 import shutil
 from pathlib import Path
 from typing import Optional
+from datetime import datetime
+import pytz
 
 
 def get_output_dir() -> str:
@@ -107,3 +109,39 @@ def force_clean_output_directory():
     """
     print("🔄 Force cleaning output directory...")
     clean_output_directory()
+
+
+def get_ist_timestamp() -> str:
+    """
+    Get current timestamp in IST (Indian Standard Time) in readable format
+
+    Returns:
+        Formatted timestamp string in IST
+    """
+    ist = pytz.timezone('Asia/Kolkata')
+    now_ist = datetime.now(ist)
+    return now_ist.strftime('%Y-%m-%d %H:%M:%S IST')
+
+
+def get_ist_timestamp_iso() -> str:
+    """
+    Get current timestamp in IST (Indian Standard Time) in ISO format
+
+    Returns:
+        ISO formatted timestamp string in IST
+    """
+    ist = pytz.timezone('Asia/Kolkata')
+    now_ist = datetime.now(ist)
+    return now_ist.isoformat()
+
+
+def get_ist_timestamp_detailed() -> str:
+    """
+    Get current timestamp in IST with full weekday and month names
+
+    Returns:
+        Detailed formatted timestamp string in IST
+    """
+    ist = pytz.timezone('Asia/Kolkata')
+    now_ist = datetime.now(ist)
+    return now_ist.strftime('%a %b %d %H:%M:%S IST %Y')
