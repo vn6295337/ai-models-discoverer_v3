@@ -215,11 +215,22 @@ class GooglePipelineOrchestrator:
         script_dir = Path(__file__).parent  # This is always 01_scripts/
         script_path = script_dir / script_name
 
-        print(f"DEBUG: Script dir: {script_dir}")
-        print(f"DEBUG: Script name: {script_name}")
-        print(f"DEBUG: Script path: {script_path}")
+        # If that doesn't work, try relative to current working directory
+        if not script_path.exists():
+            current_dir = Path.cwd()
+            alt_script_path = current_dir / "01_scripts" / script_name
+            if alt_script_path.exists():
+                script_path = alt_script_path
+                print(f"DEBUG: Using alternative path: {script_path}")
+            else:
+                # Try one more approach - relative to where the script thinks it is
+                alt_script_path2 = Path(script_name)
+                if alt_script_path2.exists():
+                    script_path = alt_script_path2
+                    print(f"DEBUG: Using relative path: {script_path}")
+
+        print(f"DEBUG: Final script path: {script_path}")
         print(f"DEBUG: Script exists: {script_path.exists()}")
-        print(f"DEBUG: Current working dir: {Path.cwd()}")
 
         if not script_path.exists():
             error_msg = f"Script {script_path} not found"
