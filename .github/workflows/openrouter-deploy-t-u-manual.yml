@@ -34,7 +34,7 @@ jobs:
       working-directory: openrouter_pipeline
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        pip install -r 03_configs/requirements.txt
 
     - name: Create .env file
       working-directory: openrouter_pipeline
@@ -60,7 +60,7 @@ jobs:
       run: |
         echo "🔄 Running T_refresh_supabase_working_version.py..."
         echo "⚠️  This will refresh the Supabase working_version table with OpenRouter pipeline data"
-        python -u T_refresh_supabase_working_version.py
+        python -u 01_scripts/T_refresh_supabase_working_version.py
 
     - name: Run U_deploy_to_ai_models_main.py
       if: ${{ inputs.script_choice == 'run_u' }}
@@ -68,7 +68,7 @@ jobs:
       run: |
         echo "🚀 Running U_deploy_to_ai_models_main.py..."
         echo "⚠️  This will deploy from working_version to the main ai_models table"
-        python -u U_deploy_to_ai_models_main.py
+        python -u 01_scripts/U_deploy_to_ai_models_main.py
 
     - name: Upload deployment logs
       uses: actions/upload-artifact@v4
@@ -76,10 +76,10 @@ jobs:
       with:
         name: openrouter-deployment-logs
         path: |
-          openrouter_pipeline/*.log
-          openrouter_pipeline/*-deployment-*.txt
-          openrouter_pipeline/T-*.txt
-          openrouter_pipeline/U-*.txt
+          openrouter_pipeline/02_outputs/*.log
+          openrouter_pipeline/02_outputs/*-deployment-*.txt
+          openrouter_pipeline/02_outputs/T-*.txt
+          openrouter_pipeline/02_outputs/U-*.txt
         retention-days: 7
 
     - name: Show completion summary
