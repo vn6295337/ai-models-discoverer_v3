@@ -111,18 +111,23 @@ class GooglePipelineOrchestrator:
 
     def validate_dependencies(self) -> bool:
         """Validate that all required configuration files exist"""
-        # Use absolute path relative to script location, not current working directory
-        script_dir = Path(__file__).parent  # This is always 01_scripts/
-        config_dir = script_dir.parent / "03_configs"  # This is always google_pipeline/03_configs/
+        # Handle both execution contexts: from 01_scripts/ and from google_pipeline/
+        current_dir = Path.cwd()
+        if current_dir.name == "01_scripts":
+            # Running from 01_scripts/ directory
+            config_base = "../03_configs"
+        else:
+            # Running from google_pipeline/ directory (or parent)
+            config_base = "03_configs"
 
         required_configs = [
-            config_dir / "01_google_models_licenses.json",
-            config_dir / "02_modality_standardization.json",
-            config_dir / "03_models_filtering_rules.json",
-            config_dir / "05_timestamp_patterns.json",
-            config_dir / "04_embedding_models.json",
-            config_dir / "06_unique_models_modalities.json",
-            config_dir / "07_name_standardization_rules.json"
+            f'{config_base}/01_google_models_licenses.json',
+            f'{config_base}/02_modality_standardization.json',
+            f'{config_base}/03_models_filtering_rules.json',
+            f'{config_base}/05_timestamp_patterns.json',
+            f'{config_base}/04_embedding_models.json',
+            f'{config_base}/06_unique_models_modalities.json',
+            f'{config_base}/07_name_standardization_rules.json'
         ]
         
         missing_configs = []
@@ -630,13 +635,26 @@ Examples:
         orchestrator.list_stages()
         return
 
-    if args.interactive or (not args.start and not args.list):
-        # Default to interactive mode if no specific args provided
+    # Detect if running in non-interactive environment (like GitHub Actions)
+    import sys
+    is_interactive_env = sys.stdin.isatty()
+
+    if args.interactive and is_interactive_env:
+        # Explicit interactive mode and we're in a terminal
         success = orchestrator.run_pipeline(interactive=True)
-    else:
+    elif args.start:
+        # Start from specific stage
         success = orchestrator.run_pipeline(
             start_from_stage=args.start,
             interactive=False
+        )
+    elif not is_interactive_env:
+        # Non-interactive environment (GitHub Actions, etc.) - run all stages
+        print("🤖 Non-interactive environment detected, running complete pipeline...")
+        success = orchestrator.run_pipeline(interactive=False)
+    else:
+        # Interactive terminal environment, default to interactive mode
+        success = orchestrator.run_pipeline(interactive=True
         )
     sys.exit(0 if success else 1)
 
