@@ -113,12 +113,17 @@ class GooglePipelineOrchestrator:
         """Validate that all required configuration files exist"""
         # Handle both execution contexts: from 01_scripts/ and from google_pipeline/
         current_dir = Path.cwd()
+        print(f"DEBUG: Current working directory: {current_dir}")
+        print(f"DEBUG: Current directory name: {current_dir.name}")
+
         if current_dir.name == "01_scripts":
             # Running from 01_scripts/ directory
             config_base = "../03_configs"
         else:
             # Running from google_pipeline/ directory (or parent)
             config_base = "03_configs"
+
+        print(f"DEBUG: Using config_base: {config_base}")
 
         required_configs = [
             f'{config_base}/01_google_models_licenses.json',
