@@ -252,7 +252,8 @@ class GooglePipelineOrchestrator:
                 [sys.executable, str(script_path)],
                 capture_output=True,
                 text=True,
-                timeout=1800  # 30 minutes timeout
+                timeout=1800,  # 30 minutes timeout
+                cwd=self.script_dir  # Run from 01_scripts directory
             )
             
             duration = time.time() - start_time
