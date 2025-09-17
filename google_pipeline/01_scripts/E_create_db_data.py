@@ -2,9 +2,9 @@
 """
 Google Models Data Normalization - Stage 5
 
-This script handles Stage 5: Database Schema Normalization from pipeline-outputs/D-enriched-modalities.json.
-It normalizes enriched model data and outputs pipeline-outputs/E-created-db-data.json and
-pipeline-outputs/E-created-db-data-report.txt for final database insertion.
+This script handles Stage 5: Database Schema Normalization from ../02_outputs/D-enriched-modalities.json.
+It normalizes enriched model data and outputs ../02_outputs/E-created-db-data.json and
+../02_outputs/E-created-db-data-report.txt for final database insertion.
 """
 
 import json
@@ -21,7 +21,7 @@ from typing import Any, Dict, List, Optional, Tuple
 def load_filtering_configuration() -> Dict[str, Any]:
     """Load model filtering configuration from JSON file"""
     try:
-        with open('03_models_filtering_rules.json', 'r') as f:
+        with open('../03_configs/03_models_filtering_rules.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("⚠️ 03_models_filtering_rules.json not found, returning Unknown")
@@ -30,7 +30,7 @@ def load_filtering_configuration() -> Dict[str, Any]:
 def load_modality_standardization() -> Dict[str, Any]:
     """Load modality standardization configuration from JSON file"""
     try:
-        with open('02_modality_standardization.json', 'r') as f:
+        with open('../03_configs/02_modality_standardization.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("⚠️ 02_modality_standardization.json not found, returning Unknown")
@@ -39,7 +39,7 @@ def load_modality_standardization() -> Dict[str, Any]:
 def load_license_configuration() -> Dict[str, Any]:
     """Load license configuration from 01_google_models_licenses.json"""
     try:
-        with open('01_google_models_licenses.json', 'r') as f:
+        with open('../03_configs/01_google_models_licenses.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("⚠️ 01_google_models_licenses.json not found, returning Unknown")
@@ -48,7 +48,7 @@ def load_license_configuration() -> Dict[str, Any]:
 def load_name_standardization_rules() -> Dict[str, Any]:
     """Load name standardization rules from 07_name_standardization_rules.json"""
     try:
-        with open('07_name_standardization_rules.json', 'r') as f:
+        with open('../03_configs/07_name_standardization_rules.json', 'r') as f:
             return json.load(f)
     except FileNotFoundError:
         print("⚠️ 07_name_standardization_rules.json not found, returning Unknown")
@@ -516,17 +516,17 @@ class GoogleNormalizationPipeline:
         self.normalized_models = []
         
     def load_enriched_data(self) -> bool:
-        """Load enriched model data from pipeline-outputs/D-enriched-modalities.json"""
+        """Load enriched model data from ../02_outputs/D-enriched-modalities.json"""
         try:
-            with open('pipeline-outputs/D-enriched-modalities.json', 'r') as f:
+            with open('../02_outputs/D-enriched-modalities.json', 'r') as f:
                 self.enriched_models = json.load(f)
                 print(f"✅ Loaded {len(self.enriched_models)} enriched models")
                 return True
         except FileNotFoundError:
-            print("❌ pipeline-outputs/D-enriched-modalities.json not found")
+            print("❌ ../02_outputs/D-enriched-modalities.json not found")
             return False
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing pipeline-outputs/D-enriched-modalities.json: {e}")
+            print(f"❌ Error parsing ../02_outputs/D-enriched-modalities.json: {e}")
             return False
     
     def normalize_models(self) -> None:
@@ -575,10 +575,10 @@ class GoogleNormalizationPipeline:
             return
             
         try:
-            with open('pipeline-outputs/E-created-db-data.json', 'w', encoding='utf-8') as f:
+            with open('../02_outputs/E-created-db-data.json', 'w', encoding='utf-8') as f:
                 json.dump(self.normalized_models, f, indent=2, ensure_ascii=False)
 
-            print(f"✅ Saved {len(self.normalized_models)} normalized models to pipeline-outputs/E-created-db-data.json")
+            print(f"✅ Saved {len(self.normalized_models)} normalized models to ../02_outputs/E-created-db-data.json")
             
         except Exception as e:
             print(f"❌ Error saving JSON file: {e}")
@@ -622,9 +622,9 @@ class GoogleNormalizationPipeline:
         
         # Save report
         try:
-            with open('pipeline-outputs/E-created-db-data-report.txt', 'w') as f:
+            with open('../02_outputs/E-created-db-data-report.txt', 'w') as f:
                 f.write('\n'.join(report_content))
-            print(f"✅ Normalization report saved to pipeline-outputs/E-created-db-data-report.txt")
+            print(f"✅ Normalization report saved to ../02_outputs/E-created-db-data-report.txt")
         except Exception as e:
             print(f"❌ Error saving report: {e}")
     
@@ -649,9 +649,9 @@ class GoogleNormalizationPipeline:
         print("\n" + "="*80)
         print("STAGE 5 COMPLETE - DATA NORMALIZATION")
         print("="*80)
-        print(f"Input: pipeline-outputs/D-enriched-modalities.json ({len(self.enriched_models)} models)")
-        print(f"Output: pipeline-outputs/E-created-db-data.json ({len(self.normalized_models)} models)")
-        print(f"Report: pipeline-outputs/E-created-db-data-report.txt")
+        print(f"Input: ../02_outputs/D-enriched-modalities.json ({len(self.enriched_models)} models)")
+        print(f"Output: ../02_outputs/E-created-db-data.json ({len(self.normalized_models)} models)")
+        print(f"Report: ../02_outputs/E-created-db-data-report.txt")
         print("="*80)
 
 

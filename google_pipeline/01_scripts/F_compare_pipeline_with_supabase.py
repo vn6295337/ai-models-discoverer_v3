@@ -19,19 +19,23 @@ except ImportError:
 
 try:
     from dotenv import load_dotenv
-    env_path = Path(__file__).parent.parent / ".env"
-    if env_path.exists():
-        load_dotenv(env_path)
-    else:
-        current_env = Path(__file__).parent / ".env"
-        if current_env.exists():
-            load_dotenv(current_env)
+    # Look for .env file in multiple locations
+    env_paths = [
+        Path(__file__).parent.parent.parent.parent / ".env",  # /home/km_project/.env
+        Path(__file__).parent.parent / ".env",               # google_pipeline/.env
+        Path(__file__).parent / ".env"                       # 01_scripts/.env
+    ]
+
+    for env_path in env_paths:
+        if env_path.exists():
+            load_dotenv(env_path)
+            break
 except ImportError:
     pass
 
 # Configuration
-PIPELINE_DATA_FILE = Path(__file__).parent / "pipeline-outputs" / "E-created-db-data.json"
-REPORT_FILE = Path(__file__).parent / "pipeline-outputs" / "F-comparison-report.txt"
+PIPELINE_DATA_FILE = Path(__file__).parent / "../02_outputs" / "E-created-db-data.json"
+REPORT_FILE = Path(__file__).parent / "../02_outputs" / "F-comparison-report.txt"
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY") or os.getenv("SUPABASE_KEY")
 TABLE_NAME = "working_version"

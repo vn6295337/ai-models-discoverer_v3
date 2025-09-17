@@ -3,7 +3,7 @@ name: Google Pipeline (A-F)
 on:
   workflow_dispatch:  # Manual trigger only
   workflow_run:  # Sequential trigger from OpenRouter pipeline
-    workflows: ["OpenRouter Pipeline (A-R)"]
+    workflows: ["OpenRouter Pipeline (A-S)"]
     types:
       - completed
     branches: [ main ]

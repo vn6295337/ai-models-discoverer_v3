@@ -27,7 +27,7 @@ load_dotenv()
 PIPELINE_CONFIG = {
     # Core pipeline file outputs
     'output_files': {
-        'stage_1': 'pipeline-outputs/A-api-models.json',
+        'stage_1': '../02_outputs/A-api-models.json',
     },
     
     # AUTHORITATIVE SOURCE: Google Official Documentation URLs
@@ -115,8 +115,8 @@ def fetch_google_models_with_pagination() -> List[Dict[str, Any]]:
     import os
     
     # Add utils directory to path for key_client import
-    sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-    from utils.key_client import get_api_key, log_usage
+    sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+    from key_client import get_api_key, log_usage
     
     # Get API key from secure key management system
     api_key = get_api_key('google')
@@ -203,7 +203,7 @@ def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
         return raw_data  # Return data even if save failed
     
     # Generate human-readable text version
-    txt_filename = 'pipeline-outputs/A-api-models-report.txt'
+    txt_filename = '../02_outputs/A-api-models-report.txt'
     try:
         with open(txt_filename, 'w') as f:
             f.write(f"Total Models: {len(raw_data)}\n\n")

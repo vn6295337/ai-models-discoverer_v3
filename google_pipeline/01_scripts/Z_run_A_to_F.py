@@ -47,7 +47,7 @@ class GooglePipelineOrchestrator:
                 'script': 'A_fetch_api_models.py',
                 'description': 'Extract comprehensive model list from Google API',
                 'outputs': [
-                    'pipeline-outputs/A-api-models.json'
+                    '../02_outputs/A-api-models.json'
                 ]
             },
             {
@@ -55,10 +55,10 @@ class GooglePipelineOrchestrator:
                 'name': 'Model Filtering',
                 'script': 'B_filter_models.py', 
                 'description': 'Filter models based on production criteria',
-                'inputs': ['pipeline-outputs/A-api-models.json'],
+                'inputs': ['../02_outputs/A-api-models.json'],
                 'outputs': [
-                    'pipeline-outputs/B-filtered-models.json',
-                    'pipeline-outputs/B-filtered-models-report.txt'
+                    '../02_outputs/B-filtered-models.json',
+                    '../02_outputs/B-filtered-models-report.txt'
                 ]
             },
             {
@@ -66,7 +66,7 @@ class GooglePipelineOrchestrator:
                 'name': 'Modality Scraping',
                 'script': 'C_scrape_modalities.py',
                 'description': 'Scrape modalities from Google documentation',
-                'outputs': ['pipeline-outputs/C-scrapped-modalities.json']
+                'outputs': ['../02_outputs/C-scrapped-modalities.json']
             },
             {
                 'stage': 'Stage 4', 
@@ -74,12 +74,12 @@ class GooglePipelineOrchestrator:
                 'script': 'D_enrich_modalities.py',
                 'description': 'Enrich models with modality data and patterns',
                 'inputs': [
-                    'pipeline-outputs/B-filtered-models.json',
-                    'pipeline-outputs/C-scrapped-modalities.json'
+                    '../02_outputs/B-filtered-models.json',
+                    '../02_outputs/C-scrapped-modalities.json'
                 ],
                 'outputs': [
-                    'pipeline-outputs/D-enriched-modalities.json',
-                    'pipeline-outputs/D-enriched-modalities-report.txt'
+                    '../02_outputs/D-enriched-modalities.json',
+                    '../02_outputs/D-enriched-modalities-report.txt'
                 ]
             },
             {
@@ -88,11 +88,11 @@ class GooglePipelineOrchestrator:
                 'script': 'E_create_db_data.py',
                 'description': 'Normalize data for database schema compliance',
                 'inputs': [
-                    'pipeline-outputs/D-enriched-modalities.json'
+                    '../02_outputs/D-enriched-modalities.json'
                 ],
                 'outputs': [
-                    'pipeline-outputs/E-created-db-data.json',
-                    'pipeline-outputs/E-created-db-data-report.txt'
+                    '../02_outputs/E-created-db-data.json',
+                    '../02_outputs/E-created-db-data-report.txt'
                 ]
             },
             {
@@ -101,10 +101,10 @@ class GooglePipelineOrchestrator:
                 'script': 'F_compare_pipeline_with_supabase.py',
                 'description': 'Compare pipeline output with Supabase data',
                 'inputs': [
-                    'pipeline-outputs/E-created-db-data.json'
+                    '../02_outputs/E-created-db-data.json'
                 ],
                 'outputs': [
-                    'pipeline-outputs/F-comparison-report.txt'
+                    '../02_outputs/F-comparison-report.txt'
                 ]
             }
         ]
@@ -112,13 +112,13 @@ class GooglePipelineOrchestrator:
     def validate_dependencies(self) -> bool:
         """Validate that all required configuration files exist"""
         required_configs = [
-            '01_google_models_licenses.json',
-            '02_modality_standardization.json', 
-            '03_models_filtering_rules.json',
-            '05_timestamp_patterns.json',
-            '04_embedding_models.json',
-            '06_unique_models_modalities.json',
-            '07_name_standardization_rules.json'
+            '../03_configs/01_google_models_licenses.json',
+            '../03_configs/02_modality_standardization.json',
+            '../03_configs/03_models_filtering_rules.json',
+            '../03_configs/05_timestamp_patterns.json',
+            '../03_configs/04_embedding_models.json',
+            '../03_configs/06_unique_models_modalities.json',
+            '../03_configs/07_name_standardization_rules.json'
         ]
         
         missing_configs = []
@@ -258,43 +258,173 @@ class GooglePipelineOrchestrator:
             print(f"❌ {stage_config['stage']} failed: {error_msg}")
             return False, duration, error_msg
 
-    def run_pipeline(self, start_from_stage: Optional[str] = None) -> bool:
+    def setup_environment(self) -> bool:
+        """Setup local development environment"""
+        print("\n" + "=" * 60)
+        print("🔧 ENVIRONMENT SETUP")
+        print("=" * 60)
+
+        try:
+            # Check if we're in the right directory
+            if not os.path.exists("../03_configs"):
+                print("⚠️ Config directory not found, but continuing...")
+            else:
+                print("✅ Configuration directory found")
+
+            # Check if output directory exists
+            output_dir = "../02_outputs"
+            if not os.path.exists(output_dir):
+                os.makedirs(output_dir, exist_ok=True)
+                print(f"📁 Created output directory: {output_dir}")
+            else:
+                print(f"✅ Output directory exists: {output_dir}")
+
+            # Check requirements.txt (optional for Google pipeline)
+            if os.path.exists("../requirements.txt"):
+                print("✅ Requirements file found")
+            else:
+                print("⚠️ No requirements.txt found, skipping dependency installation")
+
+            print("\n🎉 Environment setup completed successfully!")
+            return True
+
+        except Exception as e:
+            print(f"💥 Environment setup failed: {str(e)}")
+            return False
+
+    def get_user_script_selection(self) -> List[Dict]:
+        """Get user selection for which scripts to run"""
+        script_map = {chr(65 + i): stage for i, stage in enumerate(self.pipeline_stages)}
+
+        print("\n" + "=" * 60)
+        print("📋 SCRIPT SELECTION MENU")
+        print("=" * 60)
+        print("Available scripts:")
+        for i, stage in enumerate(self.pipeline_stages):
+            letter = chr(65 + i)  # A, B, C, etc.
+            print(f"  {letter}: {stage['script']}")
+
+        print("\nExecution options:")
+        print("  1. Run all scripts (A to F)")
+        print("  2. Run script range (e.g., C to E)")
+        print("  3. Run specific scripts (e.g., A, C, F)")
+
+        while True:
+            choice = input("\nEnter your choice (1/2/3): ").strip()
+
+            if choice == "1":
+                return self.pipeline_stages
+
+            elif choice == "2":
+                while True:
+                    range_input = input("Enter range (e.g., 'C E' for C to E): ").strip().upper()
+                    try:
+                        start_letter, end_letter = range_input.split()
+                        start_idx = ord(start_letter) - 65
+                        end_idx = ord(end_letter) - 65
+
+                        if 0 <= start_idx <= end_idx < len(self.pipeline_stages):
+                            selected = self.pipeline_stages[start_idx:end_idx + 1]
+                            print(f"Selected scripts: {[chr(65 + start_idx + i) for i in range(len(selected))]}")
+                            return selected
+                        else:
+                            print("Invalid range. Please try again.")
+                    except ValueError:
+                        print("Invalid format. Use format like 'C E' for range.")
+
+            elif choice == "3":
+                while True:
+                    scripts_input = input("Enter script letters (e.g., 'A C F' or 'B D'): ").strip().upper()
+                    try:
+                        letters = scripts_input.split()
+                        selected = []
+                        indices = []
+
+                        for letter in letters:
+                            if letter in script_map:
+                                idx = ord(letter) - 65
+                                indices.append(idx)
+                                selected.append(script_map[letter])
+                            else:
+                                print(f"Invalid script letter: {letter}")
+                                break
+                        else:
+                            # Sort by original pipeline order
+                            sorted_pairs = sorted(zip(indices, selected))
+                            selected = [script for _, script in sorted_pairs]
+                            print(f"Selected scripts: {[chr(65 + idx) for idx, _ in sorted_pairs]}")
+                            return selected
+                    except ValueError:
+                        print("Invalid format. Use format like 'A C F' for specific scripts.")
+            else:
+                print("Invalid choice. Please enter 1, 2, or 3.")
+
+    def run_pipeline(self, start_from_stage: Optional[str] = None, interactive: bool = True) -> bool:
         """Execute the complete pipeline or start from a specific stage"""
-        print("=== Google Models Discovery Pipeline Orchestrator ===")
+        print("=" * 60)
+        print("🚀 GOOGLE PIPELINE ORCHESTRATOR")
         print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-        
+        print("=" * 60)
+
+        # ===============================================
+        # ENVIRONMENT SETUP SECTION
+        # ===============================================
+        print("\n🔧 Setting up local development environment...")
+        if not self.setup_environment():
+            print("💥 Pipeline aborted due to environment setup failure")
+            return False
+
+        # ===============================================
+        # PIPELINE EXECUTION SECTION
+        # ===============================================
+        print("\n📍 SEQUENTIAL PIPELINE EXECUTION")
+        print("Flow: A → B → C → D → E → F")
+        print("Note: G & H deployment scripts available via manual workflow trigger")
+
         # Validate dependencies
         if not self.validate_dependencies():
             print("\n❌ Pipeline aborted due to missing dependencies")
             return False
 
+        # Get user selection for which scripts to run
+        selected_stages = self.get_user_script_selection()
+
+        # Display selected scripts and ask for confirmation
+        print(f"\n📋 SELECTED SCRIPTS ({len(selected_stages)} total):")
+        for i, stage in enumerate(selected_stages, 1):
+            original_idx = self.pipeline_stages.index(stage) + 1
+            letter = chr(64 + original_idx)  # A, B, C, etc.
+            print(f"  {i:2d}. {letter}: {stage['script']}")
+
+        # Ask for confirmation
+        while True:
+            confirm = input(f"\nProceed with executing {len(selected_stages)} script(s)? (y/n): ").strip().lower()
+            if confirm in ['y', 'yes']:
+                break
+            elif confirm in ['n', 'no']:
+                print("Pipeline execution cancelled.")
+                return False
+            else:
+                print("Please enter 'y' or 'n'.")
+
         # Clean output directory if starting from Stage 1
-        if start_from_stage is None or start_from_stage.lower() == "stage 1":
+        if selected_stages and selected_stages[0]['stage'] == 'Stage 1':
             self.clean_output_directory()
 
         self.pipeline_start_time = time.time()
-        start_index = 0
-        
-        # Determine starting stage
-        if start_from_stage:
-            for i, stage_config in enumerate(self.pipeline_stages):
-                if stage_config['stage'].lower() == start_from_stage.lower():
-                    start_index = i
-                    print(f"\n🎯 Starting from {stage_config['stage']}: {stage_config['name']}")
-                    break
-            else:
-                print(f"\n❌ Stage '{start_from_stage}' not found")
-                return False
-        
-        # Execute pipeline stages
-        for i in range(start_index, len(self.pipeline_stages)):
-            stage_config = self.pipeline_stages[i]
-            
+
+        # Execute selected scripts
+        total_stages = len(selected_stages)
+        for i, stage_config in enumerate(selected_stages, 1):
+            original_idx = self.pipeline_stages.index(stage_config) + 1
+            letter = chr(64 + original_idx)  # A, B, C, etc.
+            print(f"\n📍 STAGE {i:2d}/{total_stages}: {letter} - {stage_config['script']}")
+
             success, duration, output = self.execute_script(
-                stage_config['script'], 
+                stage_config['script'],
                 stage_config
             )
-            
+
             # Record stage result
             stage_result = {
                 'stage': stage_config['stage'],
@@ -305,29 +435,39 @@ class GooglePipelineOrchestrator:
                 'output': output[:500] + "..." if len(output) > 500 else output
             }
             self.stage_results.append(stage_result)
-            
+
             if not success:
                 self.failed_stage = stage_config['stage']
-                print(f"\n💥 Pipeline failed at {stage_config['stage']}")
+                print(f"\n💥 Pipeline stopped due to failure in {stage_config['script']}")
                 break
-        
+
         # Generate final report
         self.generate_pipeline_report()
-        
+
         total_duration = time.time() - self.pipeline_start_time
         if self.failed_stage:
             print(f"\n❌ Pipeline FAILED at {self.failed_stage} (Total time: {total_duration:.1f}s)")
             return False
         else:
-            print(f"\n🎉 Pipeline completed successfully! All stages complete. (Total time: {total_duration:.1f}s)")
+            print("\n" + "=" * 60)
+            print("🎉 PIPELINE COMPLETED SUCCESSFULLY!")
+            print(f"Total execution time: {total_duration:.1f} seconds ({total_duration/60:.1f} minutes)")
+            print(f"All {len(self.stage_results)} selected scripts executed successfully")
+            if len(selected_stages) == len(self.pipeline_stages):
+                print("Full pipeline (A to F) completed")
+            else:
+                executed_letters = [chr(64 + self.pipeline_stages.index(stage) + 1) for stage in selected_stages]
+                print(f"Executed scripts: {', '.join(executed_letters)}")
+            print(f"Completed at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+            print("=" * 60)
 
             # Create timestamp tracking file
             self.create_completion_timestamp()
 
             print(f"\n📄 Final outputs:")
-            print(f"   • pipeline-outputs/E-created-db-data.json (database-ready)")
-            print(f"   • pipeline-outputs/E-created-db-data-report.txt (human-readable)")
-            print(f"   • pipeline-outputs/F-comparison-report.txt (pipeline vs supabase comparison)")
+            print(f"   • ../02_outputs/E-created-db-data.json (database-ready)")
+            print(f"   • ../02_outputs/E-created-db-data-report.txt (human-readable)")
+            print(f"   • ../02_outputs/F-comparison-report.txt (pipeline vs supabase comparison)")
             print(f"📊 Ready for database upload using G_refresh_supabase_working_version.py")
             return True
 
@@ -382,10 +522,10 @@ class GooglePipelineOrchestrator:
 
     def create_completion_timestamp(self) -> None:
         """Create timestamp file to track pipeline completion"""
-        timestamp_file = "pipeline-outputs/last-run.txt"
+        timestamp_file = "../02_outputs/last-run.txt"
         try:
-            # Ensure pipeline-outputs directory exists
-            Path("pipeline-outputs").mkdir(exist_ok=True)
+            # Ensure ../02_outputs directory exists
+            Path("../02_outputs").mkdir(exist_ok=True)
 
             with open(timestamp_file, 'w') as f:
                 f.write(f"Google Pipeline completed: {datetime.now().strftime('%a %b %d %H:%M:%S UTC %Y')}\n")
@@ -397,12 +537,12 @@ class GooglePipelineOrchestrator:
             print(f"⚠️  Could not save completion timestamp: {e}")
 
     def clean_output_directory(self) -> None:
-        """Clean pipeline-outputs directory of old output files"""
-        output_dir = Path("pipeline-outputs")
+        """Clean ../02_outputs directory of old output files"""
+        output_dir = Path("../02_outputs")
 
         try:
             if not output_dir.exists():
-                print("📁 Creating pipeline-outputs directory")
+                print("📁 Creating ../02_outputs directory")
                 output_dir.mkdir(exist_ok=True)
                 return
 
@@ -424,12 +564,12 @@ class GooglePipelineOrchestrator:
                     files_to_remove.append(file_path)
 
             if files_to_remove:
-                print(f"🧹 Cleaning {len(files_to_remove)} old output files from pipeline-outputs/")
+                print(f"🧹 Cleaning {len(files_to_remove)} old output files from ../02_outputs/")
                 for file_path in files_to_remove:
                     file_path.unlink()
                     print(f"   Removed: {file_path.name}")
             else:
-                print("✅ pipeline-outputs directory is clean")
+                print("✅ ../02_outputs directory is clean")
 
         except Exception as e:
             print(f"⚠️  Could not clean output directory: {e}")
@@ -447,39 +587,53 @@ class GooglePipelineOrchestrator:
 def main():
     """Main execution function with command line argument support"""
     import argparse
-    
+
     parser = argparse.ArgumentParser(
         description='Google Models Pipeline Orchestrator (Stages 1-6: Complete Pipeline with Comparison)',
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
   python Z_run_A_to_F.py                    # Run complete pipeline (Stages 1-6)
+  python Z_run_A_to_F.py --interactive      # Interactive stage selection
   python Z_run_A_to_F.py --start "Stage 3"  # Start from Stage 3
   python Z_run_A_to_F.py --list             # List all stages
         """
     )
-    
+
     parser.add_argument(
         '--start',
         type=str,
         help='Start pipeline from specific stage (e.g., "Stage 2", "Stage 4")'
     )
-    
+
+    parser.add_argument(
+        '--interactive', '-i',
+        action='store_true',
+        help='Interactive mode for stage selection'
+    )
+
     parser.add_argument(
         '--list',
         action='store_true',
         help='List all available pipeline stages and exit'
     )
-    
+
     args = parser.parse_args()
-    
+
     orchestrator = GooglePipelineOrchestrator()
-    
+
     if args.list:
         orchestrator.list_stages()
         return
-    
-    success = orchestrator.run_pipeline(start_from_stage=args.start)
+
+    if args.interactive or (not args.start and not args.list):
+        # Default to interactive mode if no specific args provided
+        success = orchestrator.run_pipeline(interactive=True)
+    else:
+        success = orchestrator.run_pipeline(
+            start_from_stage=args.start,
+            interactive=False
+        )
     sys.exit(0 if success else 1)
 
 if __name__ == "__main__":

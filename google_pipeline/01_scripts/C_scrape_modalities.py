@@ -37,7 +37,7 @@ class GoogleModalityScraper:
     def load_modality_config(self):
         """Load modality configuration from 02_modality_standardization.json"""
         try:
-            with open('02_modality_standardization.json', 'r') as f:
+            with open('../03_configs/02_modality_standardization.json', 'r') as f:
                 return json.load(f)
         except FileNotFoundError:
             print("⚠️ 02_modality_standardization.json not found, returning Unknown")
@@ -790,7 +790,7 @@ class GoogleModalityScraper:
             return key.replace("Gemma 3N (gemma-3n)", "gemma-3n")
         return key
 
-    def save_modality_mapping(self, output_file: str = "pipeline-outputs/C-scrapped-modalities.json"):
+    def save_modality_mapping(self, output_file: str = "../02_outputs/C-scrapped-modalities.json"):
         """Save modality mapping to JSON file with normalized Gemma names"""
         modality_mapping = self.generate_modality_mapping()
         

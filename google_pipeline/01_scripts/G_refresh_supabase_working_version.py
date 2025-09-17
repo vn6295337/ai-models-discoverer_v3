@@ -6,7 +6,7 @@ Supabase Google Data Refresh Script
 
 This script refreshes Google data in Supabase by:
 1. Deleting existing Google records from working_version table
-2. Loading normalized data from pipeline-outputs/E-created-db-data.json
+2. Loading normalized data from ../02_outputs/E-created-db-data.json
 3. Inserting fresh Google data into Supabase
 
 Features:
@@ -53,7 +53,7 @@ except ImportError:
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-JSON_FILE = SCRIPT_DIR / "pipeline-outputs" / "E-created-db-data.json"
+JSON_FILE = SCRIPT_DIR / "../02_outputs" / "E-created-db-data.json"
 LOG_FILE = SCRIPT_DIR / "refresh-supabase-working-version-report.txt"
 
 # Supabase configuration

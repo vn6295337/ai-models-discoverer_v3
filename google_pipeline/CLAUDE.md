@@ -1,0 +1,1 @@
+- use sudo apt instead of pip

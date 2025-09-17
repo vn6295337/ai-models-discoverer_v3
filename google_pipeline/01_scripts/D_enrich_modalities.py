@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
 Google Models Modality Enrichment Script
-Links pipeline-outputs/B-filtered-models.json with pipeline-outputs/C-scrapped-modalities.json
-to produce pipeline-outputs/D-enriched-modalities.json with input/output modalities
+Links ../02_outputs/B-filtered-models.json with ../02_outputs/C-scrapped-modalities.json
+to produce ../02_outputs/D-enriched-modalities.json with input/output modalities
 """
 
 import json
@@ -32,31 +32,31 @@ class ModalityEnrichment:
         """Load both input JSON files"""
         # Load filtered models
         try:
-            with open('pipeline-outputs/B-filtered-models.json', 'r') as f:
+            with open('../02_outputs/B-filtered-models.json', 'r') as f:
                 self.filtered_models = json.load(f)
                 print(f"✅ Loaded {len(self.filtered_models)} filtered models")
         except FileNotFoundError:
-            print("❌ pipeline-outputs/B-filtered-models.json not found")
+            print("❌ ../02_outputs/B-filtered-models.json not found")
             return False
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing pipeline-outputs/B-filtered-models.json: {e}")
+            print(f"❌ Error parsing ../02_outputs/B-filtered-models.json: {e}")
             return False
             
         # Load scraped modalities
         try:
-            with open('pipeline-outputs/C-scrapped-modalities.json', 'r') as f:
+            with open('../02_outputs/C-scrapped-modalities.json', 'r') as f:
                 self.scraped_modalities = json.load(f)
                 print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries")
         except FileNotFoundError:
-            print("❌ pipeline-outputs/C-scrapped-modalities.json not found")
+            print("❌ ../02_outputs/C-scrapped-modalities.json not found")
             return False
         except json.JSONDecodeError as e:
-            print(f"❌ Error parsing pipeline-outputs/C-scrapped-modalities.json: {e}")
+            print(f"❌ Error parsing ../02_outputs/C-scrapped-modalities.json: {e}")
             return False
             
         # Load embedding models configuration
         try:
-            with open('04_embedding_models.json', 'r') as f:
+            with open('../03_configs/04_embedding_models.json', 'r') as f:
                 self.embedding_config = json.load(f)
                 print(f"✅ Loaded embedding models configuration")
         except FileNotFoundError:
@@ -66,7 +66,7 @@ class ModalityEnrichment:
             
         # Load modality standardization configuration
         try:
-            with open('02_modality_standardization.json', 'r') as f:
+            with open('../03_configs/02_modality_standardization.json', 'r') as f:
                 self.modality_standardization = json.load(f)
                 print(f"✅ Loaded modality standardization configuration")
         except FileNotFoundError:
@@ -76,7 +76,7 @@ class ModalityEnrichment:
             
         # Load unique models configuration
         try:
-            with open('06_unique_models_modalities.json', 'r') as f:
+            with open('../03_configs/06_unique_models_modalities.json', 'r') as f:
                 self.unique_models_config = json.load(f)
                 print(f"✅ Loaded unique models configuration")
         except FileNotFoundError:
@@ -420,9 +420,9 @@ class ModalityEnrichment:
     def save_enriched_models(self) -> None:
         """Save enriched models to JSON file"""
         try:
-            with open('pipeline-outputs/D-enriched-modalities.json', 'w') as f:
+            with open('../02_outputs/D-enriched-modalities.json', 'w') as f:
                 json.dump(self.enriched_models, f, indent=2)
-            print(f"\n✅ Saved {len(self.enriched_models)} enriched models to pipeline-outputs/D-enriched-modalities.json")
+            print(f"\n✅ Saved {len(self.enriched_models)} enriched models to ../02_outputs/D-enriched-modalities.json")
         except Exception as e:
             print(f"❌ Error saving enriched models: {e}")
 
@@ -514,9 +514,9 @@ class ModalityEnrichment:
         
         # Save report
         try:
-            with open('pipeline-outputs/D-enriched-modalities-report.txt', 'w') as f:
+            with open('../02_outputs/D-enriched-modalities-report.txt', 'w') as f:
                 f.write('\n'.join(report_content))
-            print(f"✅ Enrichment report saved to pipeline-outputs/D-enriched-modalities-report.txt")
+            print(f"✅ Enrichment report saved to ../02_outputs/D-enriched-modalities-report.txt")
         except Exception as e:
             print(f"❌ Error saving enrichment report: {e}")
 
