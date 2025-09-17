@@ -11,6 +11,9 @@ from datetime import datetime
 from typing import Any, Dict, List
 from dotenv import load_dotenv
 
+# Import output utilities
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, ensure_output_directory, clean_output_directory
+
 
 # Load environment variables
 load_dotenv()
@@ -31,9 +34,9 @@ script_dir = pathlib.Path(__file__).parent
 output_dir = script_dir.parent / "02_outputs"
 
 PIPELINE_CONFIG = {
-    # Core pipeline file outputs
+    # Core pipeline file outputs - using output utilities
     'output_files': {
-        'stage_1': str(output_dir / 'A-fetched-api-models.json'),
+        'stage_1': get_output_file_path('A-fetched-api-models.json'),
     },
     
     # AUTHORITATIVE SOURCE: Google Official Documentation URLs
@@ -222,7 +225,7 @@ def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
         return raw_data  # Return data even if save failed
     
     # Generate human-readable text version
-    txt_filename = str(output_dir / 'A-fetched-api-models-report.txt')
+    txt_filename = get_output_file_path('A-fetched-api-models-report.txt')
     try:
         with open(txt_filename, 'w') as f:
             f.write(f"Total Models: {len(raw_data)}\n\n")
@@ -252,7 +255,13 @@ def run_google_stage_1():
     print("Google Models Data Transformation Pipeline - Stage 1 Data Loading")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*80)
-    
+
+    # Clean output directory (only for first stage of pipeline)
+    clean_output_directory()
+
+    # Ensure output directory exists
+    ensure_output_directory()
+
     try:
         # Stage 1: Fetch data from API
         raw_data = stage_1_fetch_google_data()

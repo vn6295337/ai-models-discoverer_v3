@@ -15,6 +15,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple
 
+
 def run_script(script_name: str) -> Tuple[bool, str]:
     """
     Run a pipeline script and return success status and output
@@ -161,47 +162,6 @@ def setup_environment() -> bool:
         print(f"💥 Environment setup failed: {str(e)}")
         return False
 
-def clean_output_directory() -> None:
-    """Clean ../02_outputs directory of old output files"""
-    script_dir = Path(__file__).parent
-    output_dir = script_dir.parent / "02_outputs"
-
-    try:
-        print("🧹 Cleaning output directory...")
-
-        if not output_dir.exists():
-            output_dir.mkdir(exist_ok=True)
-            print("✅ Output directory created")
-            return
-
-        # Files to clean (keep .gitkeep)
-        files_to_remove = []
-        patterns_to_clean = [
-            "A-fetched-api-models.json", "A-fetched-api-models-report.txt",
-            "B-filtered-models.json", "B-filtered-models-report.txt",
-            "C-scrapped-modalities.json", "C-scrapped-modalities-report.txt",
-            "D-enriched-modalities.json", "D-enriched-modalities-report.txt",
-            "E-created-db-data.json", "E-created-db-data-report.txt",
-            "F-comparison-report.txt",
-            "last-run.txt", "Z-pipeline-report.txt"
-        ]
-
-        for pattern in patterns_to_clean:
-            file_path = output_dir / pattern
-            if file_path.exists():
-                files_to_remove.append(file_path)
-
-        if files_to_remove:
-            print(f"   Found {len(files_to_remove)} files to remove:")
-            for file_path in files_to_remove:
-                file_path.unlink()
-                print(f"   Removed: {file_path.name}")
-        else:
-            print("✅ ../02_outputs directory is clean")
-
-    except Exception as e:
-        print(f"⚠️  Could not clean output directory: {e}")
-        print("Continuing with pipeline execution...")
 
 def get_user_script_selection(pipeline_scripts: List[str]) -> List[str]:
     """
@@ -332,9 +292,6 @@ def main():
         else:
             print("Please enter 'y' or 'n'.")
 
-    # Clean output directory if starting from Stage 1 (Script A)
-    if selected_scripts and selected_scripts[0] == "A_fetch_api_models.py":
-        clean_output_directory()
 
     # Execute selected scripts
     total_stages = len(selected_scripts)
