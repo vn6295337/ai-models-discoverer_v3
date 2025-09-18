@@ -176,6 +176,7 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
 
     with open(REPORT_FILE, 'w', encoding='utf-8') as f:
         f.write("FIELD COMPARISON REPORT: PIPELINE vs SUPABASE\n")
+        f.write(f"Generated: {get_ist_timestamp()}\n")
         f.write("=" * 80 + "\n\n")
 
         # Summary Statistics
