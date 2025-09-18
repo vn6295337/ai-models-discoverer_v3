@@ -10,8 +10,14 @@ from bs4 import BeautifulSoup
 import json
 import re
 import time
+import sys
+import os
 from typing import Dict, List, Tuple, Optional
 from urllib.parse import urljoin
+
+# Import IST timestamp utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+from output_utils import get_ist_timestamp
 
 class GoogleModalityScraper:
     def __init__(self):
@@ -808,6 +814,8 @@ class GoogleModalityScraper:
             # Generate human-readable text version
             txt_filename = output_file.replace('.json', '-report.txt')
             with open(txt_filename, 'w') as f:
+                f.write("=== GOOGLE MODELS MODALITY SCRAPING REPORT ===\n")
+                f.write(f"Generated: {get_ist_timestamp()}\n\n")
                 f.write(f"Total Models: {len(normalized_mapping)}\n\n")
 
                 if normalized_mapping:
@@ -830,6 +838,8 @@ class GoogleModalityScraper:
 
             txt_filename = output_file.replace('.json', '-report.txt')
             with open(txt_filename, 'w') as f:
+                f.write("=== GOOGLE MODELS MODALITY SCRAPING REPORT ===\n")
+                f.write(f"Generated: {get_ist_timestamp()}\n\n")
                 f.write("Total Models: 0\n\n")
                 f.write(f"Error during scraping: {e}\n")
 

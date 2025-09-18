@@ -6,8 +6,13 @@ Compares field values between E-created-db-data.json and Supabase working_versio
 
 import json
 import os
+import sys
 from typing import Dict, List, Optional, Any
 from pathlib import Path
+
+# Import IST timestamp utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+from output_utils import get_ist_timestamp
 
 try:
     from supabase import create_client, Client
@@ -185,6 +190,8 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
 
     with open(REPORT_FILE, 'w', encoding='utf-8') as f:
         f.write("FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE\n")
+        f.write("=" * 80 + "\n")
+        f.write(f"Generated: {get_ist_timestamp()}\n")
         f.write("=" * 80 + "\n\n")
 
         # Summary Statistics
@@ -318,14 +325,10 @@ def main():
         try:
             with open(REPORT_FILE, 'w', encoding='utf-8') as f:
                 f.write("FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE\n")
+                f.write("=" * 80 + "\n")
+                f.write(f"Generated: {get_ist_timestamp()}\n")
                 f.write("=" * 80 + "\n\n")
                 f.write(f"ERROR: Script failed with error: {e}\n")
-                # Import IST timestamp utility
-                import sys, os
-                sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
-                from output_utils import get_ist_timestamp
-
-                f.write(f"Generated at: {get_ist_timestamp()}\n")
             print(f"Error report saved to: {REPORT_FILE}")
         except Exception as write_error:
             print(f"Failed to write error report: {write_error}")
