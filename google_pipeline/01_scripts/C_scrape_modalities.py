@@ -808,8 +808,18 @@ class GoogleModalityScraper:
                 normalized_mapping[normalized_key] = value
 
             # Always generate output files, even if empty
+            # Create JSON output with metadata (similar to A and B scripts)
+            json_output = {
+                "metadata": {
+                    "generated": get_ist_timestamp(),
+                    "total_models": len(normalized_mapping),
+                    "scraping_source": "Google Documentation Web Scraper"
+                },
+                "modalities": normalized_mapping
+            }
+
             with open(output_file, 'w') as f:
-                json.dump(normalized_mapping, f, indent=2)
+                json.dump(json_output, f, indent=2)
 
             # Generate human-readable text version
             txt_filename = output_file.replace('.json', '-report.txt')
@@ -833,8 +843,17 @@ class GoogleModalityScraper:
         except Exception as e:
             print(f"⚠️ Error during modality scraping: {e}")
             # Generate empty output files to maintain pipeline consistency
+            json_output = {
+                "metadata": {
+                    "generated": get_ist_timestamp(),
+                    "total_models": 0,
+                    "scraping_source": "Google Documentation Web Scraper"
+                },
+                "modalities": {}
+            }
+
             with open(output_file, 'w') as f:
-                json.dump({}, f, indent=2)
+                json.dump(json_output, f, indent=2)
 
             txt_filename = output_file.replace('.json', '-report.txt')
             with open(txt_filename, 'w') as f:

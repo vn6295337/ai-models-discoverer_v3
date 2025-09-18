@@ -7,7 +7,13 @@ to produce ../02_outputs/D-enriched-modalities.json with input/output modalities
 
 import json
 import re
+import sys
+import os
 from typing import Dict, List, Any, Optional, Tuple
+
+# Import IST timestamp utilities
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
+from output_utils import get_ist_timestamp
 
 class ModalityEnrichment:
     def __init__(self):
@@ -55,8 +61,18 @@ class ModalityEnrichment:
         # Load scraped modalities
         try:
             with open('../02_outputs/C-scrapped-modalities.json', 'r') as f:
-                self.scraped_modalities = json.load(f)
-                print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries")
+                data = json.load(f)
+
+                # Handle new JSON structure with metadata
+                if isinstance(data, dict) and 'modalities' in data:
+                    self.scraped_modalities = data['modalities']
+                    print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries (with metadata)")
+                elif isinstance(data, dict):
+                    self.scraped_modalities = data
+                    print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries (legacy format)")
+                else:
+                    print(f"⚠️ Unexpected JSON structure in C-scrapped-modalities.json")
+                    return False
         except FileNotFoundError:
             print("❌ ../02_outputs/C-scrapped-modalities.json not found")
             return False
@@ -430,8 +446,18 @@ class ModalityEnrichment:
     def save_enriched_models(self) -> None:
         """Save enriched models to JSON file"""
         try:
+            # Create JSON output with metadata (similar to A, B, and C scripts)
+            json_output = {
+                "metadata": {
+                    "generated": get_ist_timestamp(),
+                    "total_models": len(self.enriched_models),
+                    "enrichment_source": "Google Pipeline D-Enrich"
+                },
+                "models": self.enriched_models
+            }
+
             with open('../02_outputs/D-enriched-modalities.json', 'w') as f:
-                json.dump(self.enriched_models, f, indent=2)
+                json.dump(json_output, f, indent=2)
             print(f"\n✅ Saved {len(self.enriched_models)} enriched models to ../02_outputs/D-enriched-modalities.json")
         except Exception as e:
             print(f"❌ Error saving enriched models: {e}")
@@ -442,10 +468,6 @@ class ModalityEnrichment:
         
         # Header
         report_content.append("=== GOOGLE MODELS MODALITY ENRICHMENT REPORT ===\n")
-        # Import IST timestamp utility
-        import sys, os
-        sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
-        from output_utils import get_ist_timestamp
 
         report_content.append(f"Generated: {get_ist_timestamp()}")
         report_content.append("")

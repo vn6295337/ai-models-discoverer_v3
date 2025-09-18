@@ -1,106 +1,113 @@
 {
-  "Gemini 2.5 Pro\ngemini-2.5-pro": {
-    "input_modalities": "Audio, images, videos, text, and PDF",
-    "output_modalities": "Text"
+  "metadata": {
+    "generated": "2025-09-18 19:13:53 IST",
+    "total_models": 26,
+    "scraping_source": "Google Documentation Web Scraper"
   },
-  "Gemini 2.5 Flash\ngemini-2.5-flash": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text"
-  },
-  "Gemini 2.5 Flash-Lite\ngemini-2.5-flash-lite": {
-    "input_modalities": "Text, image, video, audio",
-    "output_modalities": "Text"
-  },
-  "Gemini 2.5 Flash Live\ngemini-live-2.5-flash-preview": {
-    "input_modalities": "Audio, video, and text",
-    "output_modalities": "Text, audio"
-  },
-  "Gemini 2.5 Flash Native Audio\ngemini-2.5-flash-preview-native-audio-dialog &\n    gemini-2.5-flash-exp-native-audio-thinking-dialog": {
-    "input_modalities": "Audio, videos, and text",
-    "output_modalities": "Text and audio, interleaved"
-  },
-  "Gemini 2.5 Flash Image Preview\ngemini-2.5-flash-image-preview": {
-    "input_modalities": "Images and text",
-    "output_modalities": "Images and text"
-  },
-  "Gemini 2.5 Flash Preview TTS\ngemini-2.5-flash-preview-tts": {
-    "input_modalities": "Text",
-    "output_modalities": "Audio"
-  },
-  "Gemini 2.5 Pro Preview TTS\ngemini-2.5-pro-preview-tts": {
-    "input_modalities": "Text",
-    "output_modalities": "Audio"
-  },
-  "Gemini 2.0 Flash\ngemini-2.0-flash": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text"
-  },
-  "Gemini 2.0 Flash Preview Image Generation\ngemini-2.0-flash-preview-image-generation": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text, images"
-  },
-  "Gemini 2.0 Flash-Lite\ngemini-2.0-flash-lite": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text"
-  },
-  "Gemini 2.0 Flash Live\ngemini-2.0-flash-live-001": {
-    "input_modalities": "Audio, video, and text",
-    "output_modalities": "Text, audio"
-  },
-  "Gemini 1.5 Flash\ngemini-1.5-flash": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text"
-  },
-  "Gemini 1.5 Flash-8B\ngemini-1.5-flash-8b": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text"
-  },
-  "Gemini 1.5 Pro\ngemini-1.5-pro": {
-    "input_modalities": "Audio, images, videos, and text",
-    "output_modalities": "Text"
-  },
-  "imagen-4-ultra": {
-    "input_modalities": "Text",
-    "output_modalities": "Image"
-  },
-  "imagen-4-fast": {
-    "input_modalities": "Text",
-    "output_modalities": "Image"
-  },
-  "imagen-3": {
-    "input_modalities": "Text",
-    "output_modalities": "Image"
-  },
-  "veo-3.0-generate-001": {
-    "input_modalities": "Text, Image",
-    "output_modalities": "Video, Audio"
-  },
-  "veo-3.0-generate-preview": {
-    "input_modalities": "Text, Image",
-    "output_modalities": "Video, Audio"
-  },
-  "veo-3.0-fast-generate-001": {
-    "input_modalities": "Text, Image",
-    "output_modalities": "Video, Audio"
-  },
-  "veo-3.0-fast-generate-preview": {
-    "input_modalities": "Text, Image",
-    "output_modalities": "Video, Audio"
-  },
-  "veo-2.0-generate-001": {
-    "input_modalities": "Text, Image",
-    "output_modalities": "Video"
-  },
-  "gemma-3": {
-    "input_modalities": "Text, Image",
-    "output_modalities": "Text"
-  },
-  "gemma-2": {
-    "input_modalities": "Text",
-    "output_modalities": "Text"
-  },
-  "gemma-3n": {
-    "input_modalities": "Text, Image, Video, Audio",
-    "output_modalities": "Text"
+  "modalities": {
+    "Gemini 2.5 Pro\ngemini-2.5-pro": {
+      "input_modalities": "Audio, images, videos, text, and PDF",
+      "output_modalities": "Text"
+    },
+    "Gemini 2.5 Flash\ngemini-2.5-flash": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text"
+    },
+    "Gemini 2.5 Flash-Lite\ngemini-2.5-flash-lite": {
+      "input_modalities": "Text, image, video, audio",
+      "output_modalities": "Text"
+    },
+    "Gemini 2.5 Flash Live\ngemini-live-2.5-flash-preview": {
+      "input_modalities": "Audio, video, and text",
+      "output_modalities": "Text, audio"
+    },
+    "Gemini 2.5 Flash Native Audio\ngemini-2.5-flash-preview-native-audio-dialog &\n    gemini-2.5-flash-exp-native-audio-thinking-dialog": {
+      "input_modalities": "Audio, videos, and text",
+      "output_modalities": "Text and audio, interleaved"
+    },
+    "Gemini 2.5 Flash Image Preview\ngemini-2.5-flash-image-preview": {
+      "input_modalities": "Images and text",
+      "output_modalities": "Images and text"
+    },
+    "Gemini 2.5 Flash Preview TTS\ngemini-2.5-flash-preview-tts": {
+      "input_modalities": "Text",
+      "output_modalities": "Audio"
+    },
+    "Gemini 2.5 Pro Preview TTS\ngemini-2.5-pro-preview-tts": {
+      "input_modalities": "Text",
+      "output_modalities": "Audio"
+    },
+    "Gemini 2.0 Flash\ngemini-2.0-flash": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text"
+    },
+    "Gemini 2.0 Flash Preview Image Generation\ngemini-2.0-flash-preview-image-generation": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text, images"
+    },
+    "Gemini 2.0 Flash-Lite\ngemini-2.0-flash-lite": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text"
+    },
+    "Gemini 2.0 Flash Live\ngemini-2.0-flash-live-001": {
+      "input_modalities": "Audio, video, and text",
+      "output_modalities": "Text, audio"
+    },
+    "Gemini 1.5 Flash\ngemini-1.5-flash": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text"
+    },
+    "Gemini 1.5 Flash-8B\ngemini-1.5-flash-8b": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text"
+    },
+    "Gemini 1.5 Pro\ngemini-1.5-pro": {
+      "input_modalities": "Audio, images, videos, and text",
+      "output_modalities": "Text"
+    },
+    "imagen-4-ultra": {
+      "input_modalities": "Text",
+      "output_modalities": "Image"
+    },
+    "imagen-4-fast": {
+      "input_modalities": "Text",
+      "output_modalities": "Image"
+    },
+    "imagen-3": {
+      "input_modalities": "Text",
+      "output_modalities": "Image"
+    },
+    "veo-3.0-generate-001": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video, Audio"
+    },
+    "veo-3.0-generate-preview": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video, Audio"
+    },
+    "veo-3.0-fast-generate-001": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video, Audio"
+    },
+    "veo-3.0-fast-generate-preview": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video, Audio"
+    },
+    "veo-2.0-generate-001": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video"
+    },
+    "gemma-3": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Text"
+    },
+    "gemma-2": {
+      "input_modalities": "Text",
+      "output_modalities": "Text"
+    },
+    "gemma-3n": {
+      "input_modalities": "Text, Image, Video, Audio",
+      "output_modalities": "Text"
+    }
   }
 }

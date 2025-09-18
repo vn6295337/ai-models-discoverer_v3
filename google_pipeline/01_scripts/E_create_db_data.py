@@ -519,8 +519,18 @@ class GoogleNormalizationPipeline:
         """Load enriched model data from ../02_outputs/D-enriched-modalities.json"""
         try:
             with open('../02_outputs/D-enriched-modalities.json', 'r') as f:
-                self.enriched_models = json.load(f)
-                print(f"✅ Loaded {len(self.enriched_models)} enriched models")
+                data = json.load(f)
+
+                # Handle new JSON structure with metadata
+                if isinstance(data, dict) and 'models' in data:
+                    self.enriched_models = data['models']
+                    print(f"✅ Loaded {len(self.enriched_models)} enriched models (with metadata)")
+                elif isinstance(data, list):
+                    self.enriched_models = data
+                    print(f"✅ Loaded {len(self.enriched_models)} enriched models (legacy format)")
+                else:
+                    print(f"⚠️ Unexpected JSON structure in D-enriched-modalities.json")
+                    return False
                 return True
         except FileNotFoundError:
             print("❌ ../02_outputs/D-enriched-modalities.json not found")
