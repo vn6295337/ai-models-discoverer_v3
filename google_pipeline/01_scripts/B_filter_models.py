@@ -39,8 +39,19 @@ class GoogleModelsFilter:
         """Load models from A-fetched-api-models.json"""
         try:
             with open('../02_outputs/A-fetched-api-models.json', 'r') as f:
-                models = json.load(f)
-                print(f"✅ Loaded {len(models)} models from A-fetched-api-models.json")
+                data = json.load(f)
+
+                # Handle new JSON structure with metadata
+                if isinstance(data, dict) and 'models' in data:
+                    models = data['models']
+                    print(f"✅ Loaded {len(models)} models from A-fetched-api-models.json (with metadata)")
+                elif isinstance(data, list):
+                    models = data
+                    print(f"✅ Loaded {len(models)} models from A-fetched-api-models.json (legacy format)")
+                else:
+                    print(f"⚠️ Unexpected JSON structure in A-fetched-api-models.json")
+                    return []
+
                 return models
         except FileNotFoundError:
             print("❌ A-fetched-api-models.json not found")
