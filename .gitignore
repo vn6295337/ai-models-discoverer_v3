@@ -54,9 +54,7 @@ Thumbs.db
 # Logs
 *.log
 
-# Output files (keeping only .gitkeep)
-*/02_outputs/*.json
-*/02_outputs/*.txt
+# Keep .gitkeep files in output directories
 !*/02_outputs/.gitkeep
 
 # Temporary files
