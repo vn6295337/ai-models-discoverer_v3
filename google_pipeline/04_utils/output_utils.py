@@ -8,8 +8,7 @@ import os
 import shutil
 from pathlib import Path
 from typing import Optional
-from datetime import datetime
-import pytz
+from datetime import datetime, timezone, timedelta
 
 
 def get_output_dir() -> str:
@@ -118,8 +117,8 @@ def get_ist_timestamp() -> str:
     Returns:
         Formatted timestamp string in IST
     """
-    ist = pytz.timezone('Asia/Kolkata')
-    now_ist = datetime.now(ist)
+    ist_tz = timezone(timedelta(hours=5, minutes=30))
+    now_ist = datetime.now(ist_tz)
     return now_ist.strftime('%Y-%m-%d %H:%M:%S IST')
 
 
@@ -130,8 +129,8 @@ def get_ist_timestamp_iso() -> str:
     Returns:
         ISO formatted timestamp string in IST
     """
-    ist = pytz.timezone('Asia/Kolkata')
-    now_ist = datetime.now(ist)
+    ist_tz = timezone(timedelta(hours=5, minutes=30))
+    now_ist = datetime.now(ist_tz)
     return now_ist.isoformat()
 
 
@@ -142,6 +141,6 @@ def get_ist_timestamp_detailed() -> str:
     Returns:
         Detailed formatted timestamp string in IST
     """
-    ist = pytz.timezone('Asia/Kolkata')
-    now_ist = datetime.now(ist)
+    ist_tz = timezone(timedelta(hours=5, minutes=30))
+    now_ist = datetime.now(ist_tz)
     return now_ist.strftime('%a %b %d %H:%M:%S IST %Y')
