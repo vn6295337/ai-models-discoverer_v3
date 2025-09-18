@@ -14,7 +14,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 def load_special_mappings() -> Dict[str, str]:
     """Load GPT OSS special mappings from config file"""
@@ -46,8 +46,16 @@ def load_json_file(filename: str, description: str) -> List[Dict[str, Any]]:
     try:
         with open(filename, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        print(f"✓ Loaded {len(data)} items from {description}: {filename}")
-        return data
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
+        print(f"✓ Loaded {len(models)} items from {description}: {filename}")
+        return models
     except (FileNotFoundError, json.JSONDecodeError) as error:
         print(f"ERROR: Failed to load {description} from {filename}: {error}")
         return []
@@ -125,8 +133,18 @@ def save_collated_data(collated_models: List[Dict[str, Any]]) -> str:
     output_file = get_output_file_path('L-collated-custom-licenses.json')
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(collated_models),
+                "pipeline_stage": "L_collate_custom_licenses"
+            },
+            "models": collated_models
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(collated_models, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved {len(collated_models)} collated models to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -142,7 +160,7 @@ def generate_collation_report(collated_models: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("COLLATED CUSTOM LICENSE INFORMATION REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary

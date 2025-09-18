@@ -15,7 +15,7 @@ from datetime import datetime
 from typing import Any, Dict, List
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 def load_filtered_models() -> List[Dict[str, Any]]:
     """Load filtered models from Stage-B"""
@@ -23,7 +23,15 @@ def load_filtered_models() -> List[Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            models = json.load(f)
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
         print(f"✓ Loaded {len(models)} filtered models from: {input_file}")
         return models
     except (FileNotFoundError, json.JSONDecodeError) as error:
@@ -156,8 +164,18 @@ def save_google_licenses_json(google_models: List[Dict[str, Any]]) -> str:
         standardized_models.append(standardized_model)
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(standardized_models),
+                "pipeline_stage": "C_extract_google_licenses"
+            },
+            "models": standardized_models
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(standardized_models, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved Google licenses to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -173,7 +191,7 @@ def generate_google_licenses_report(google_models: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("GOOGLE MODELS LICENSE EXTRACTION REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary

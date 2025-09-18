@@ -39,7 +39,7 @@ except ImportError:
 
 # Import output utilities
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils"))
-from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 # Load environment variables from .env file
 try:
@@ -83,7 +83,7 @@ def setup_logging():
     # Write timestamp to log file first
     with open(LOG_FILE, 'w', encoding='utf-8') as f:
         f.write(f"Deploy to AI Models Main Log\n")
-        f.write(f"Last Run: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Last Run: {get_ist_timestamp()}\n")
         f.write("=" * 60 + "\n\n")
     
     # Setup logging

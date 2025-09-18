@@ -14,7 +14,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Set, Tuple
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 def load_standardized_license_data() -> List[Dict[str, Any]]:
     """Load standardized license data from Stage-G"""
@@ -22,7 +22,15 @@ def load_standardized_license_data() -> List[Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            license_data = json.load(f)
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            license_data = data
+        elif isinstance(data, dict) and 'models' in data:
+            license_data = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
         print(f"✓ Loaded {len(license_data)} models with standardized licenses from: {input_file}")
         return license_data
     except (FileNotFoundError, json.JSONDecodeError) as error:
@@ -117,8 +125,18 @@ def save_opensource_bucket(opensource_models: List[Dict[str, Any]]) -> str:
     output_file = get_output_file_path('H-opensource-license-names.json')
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(opensource_models),
+                "pipeline_stage": "H_bucketize_other_license_names"
+            },
+            "models": opensource_models
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(opensource_models, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved {len(opensource_models)} opensource models to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -130,8 +148,18 @@ def save_custom_bucket(custom_models: List[Dict[str, Any]]) -> str:
     output_file = get_output_file_path('H-custom-license-names.json')
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(custom_models),
+                "pipeline_stage": "H_bucketize_other_license_names"
+            },
+            "models": custom_models
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(custom_models, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved {len(custom_models)} custom licensed models to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -147,7 +175,7 @@ def generate_opensource_report(opensource_models: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("OPENSOURCE LICENSE MODELS REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary
@@ -212,7 +240,7 @@ def generate_custom_report(custom_models: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("CUSTOM LICENSE MODELS REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary

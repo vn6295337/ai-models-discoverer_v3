@@ -28,7 +28,7 @@ from typing import Dict, List, Tuple, Any
 from datetime import datetime
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 # =============================================================================
 # META LICENSE PROCESSING FUNCTIONS
@@ -293,7 +293,15 @@ def load_stage1_data() -> List[Dict[str, Any]]:
     
     try:
         with open(stage1_file, 'r', encoding='utf-8') as f:
-            data = json.load(f)
+            file_data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(file_data, list):
+            data = file_data
+        elif isinstance(file_data, dict) and 'models' in file_data:
+            data = file_data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
         
         print(f"Successfully loaded {len(data)} models from Stage-B")
         return data
@@ -339,8 +347,18 @@ def save_meta_licensing_results(licensed_models: List[Dict[str, Any]]) -> str:
     
     print(f"Saving results to: {output_file}")
     
+    # Create output data with metadata
+    output_data = {
+        "metadata": {
+            "generated_at": get_ist_timestamp(),
+            "total_models": len(standardized_models),
+            "pipeline_stage": "D_extract_meta_licenses"
+        },
+        "models": standardized_models
+    }
+
     with open(output_file, 'w', encoding='utf-8') as f:
-        json.dump(standardized_models, f, indent=2, ensure_ascii=False)
+        json.dump(output_data, f, indent=2, ensure_ascii=False)
     
     print(f"Successfully saved {len(licensed_models)} Meta models with licensing information")
     
@@ -364,7 +382,7 @@ def generate_meta_licenses_report(licensed_models: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("META MODELS LICENSE EXTRACTION REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary

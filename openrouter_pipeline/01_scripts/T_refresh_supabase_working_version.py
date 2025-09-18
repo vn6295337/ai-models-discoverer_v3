@@ -39,7 +39,7 @@ except ImportError:
 
 # Import output utilities
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils"))
-from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 # Load environment variables from .env file
 try:
@@ -83,7 +83,7 @@ def setup_logging():
     # Write timestamp to report file first
     with open(LOG_FILE, 'w', encoding='utf-8') as f:
         f.write(f"Supabase OpenRouter Working Version Refresh Report\n")
-        f.write(f"Last Run: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Last Run: {get_ist_timestamp()}\n")
         f.write("=" * 60 + "\n\n")
     
     # Setup logging
@@ -318,10 +318,15 @@ def load_finalized_json() -> Optional[List[Dict[str, Any]]]:
     
     try:
         with open(JSON_FILE, 'r', encoding='utf-8') as file:
-            models = json.load(file)
-        
-        if not isinstance(models, list):
-            logger.error(f"❌ JSON file should contain a list of models")
+            data = json.load(file)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            logger.error(f"❌ JSON file should contain a list of models or dict with 'models' key")
             return None
         
         # Expected JSON fields (matches Supabase schema exactly)

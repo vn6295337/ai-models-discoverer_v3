@@ -14,7 +14,7 @@ from datetime import datetime
 from typing import List, Dict
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
 def extract_license_from_hf_page(hf_id: str) -> str:
@@ -80,11 +80,19 @@ def main():
     # Load the JSON data
     with open(get_input_file_path('E-other-license-info-urls-from-hf.json'), 'r') as f:
         data = json.load(f)
-    
+
+    # Handle both old format (list) and new format (dict with metadata)
+    if isinstance(data, list):
+        models = data
+    elif isinstance(data, dict) and 'models' in data:
+        models = data['models']
+    else:
+        raise ValueError("Unexpected data format in input file")
+
     # Filter models with HuggingFace IDs, excluding Google/Meta
     target_models = []
-    
-    for model in data:
+
+    for model in models:
         primary_key = model.get('canonical_slug', '')  # Primary identifier
         name = model.get('name', '')                   # Practical for skip detection
         hf_id = model.get('hugging_face_id', '')       # Practical for HF API calls
@@ -120,9 +128,19 @@ def main():
     
     # Write results to JSON file
     json_output_file = get_output_file_path('F-other-license-names-from-hf.json')
-    
+
+    # Create output data with metadata
+    output_data = {
+        "metadata": {
+            "generated_at": get_ist_timestamp(),
+            "total_models": len(results),
+            "pipeline_stage": "F_fetch_other_license_names_from_hf"
+        },
+        "models": results
+    }
+
     with open(json_output_file, 'w') as f:
-        json.dump(results, f, indent=2)
+        json.dump(output_data, f, indent=2)
     
     # Write human-readable report
     report_output_file = get_output_file_path('F-other-license-names-from-hf-report.txt')
@@ -131,7 +149,7 @@ def main():
         # Header
         f.write("=" * 80 + "\n")
         f.write("OTHER MODEL LICENSE NAME EXTRACTIONS REPORT\n")
-        f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+        f.write(f"Generated: {get_ist_timestamp()}\n")
         f.write("=" * 80 + "\n\n")
         
         # Summary

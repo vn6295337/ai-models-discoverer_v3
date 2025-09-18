@@ -14,7 +14,7 @@ from datetime import datetime
 import requests
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
 def check_url_accessible(url: str) -> bool:
@@ -64,7 +64,15 @@ def load_models_data() -> List[Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            models = json.load(f)
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
         print(f"✓ Loaded {len(models)} models from: {input_file}")
         return models
     except (FileNotFoundError, json.JSONDecodeError) as error:
@@ -122,8 +130,18 @@ def save_license_info_json(processed_models: List[Dict[str, str]]) -> str:
     output_file = get_output_file_path('E-other-license-info-urls-from-hf.json')
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(processed_models),
+                "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
+            },
+            "models": processed_models
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(processed_models, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved license info to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -139,7 +157,7 @@ def generate_license_info_report(processed_models: List[Dict[str, str]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("OTHER LICENSE INFO URLS REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary

@@ -16,7 +16,7 @@ from datetime import datetime
 from typing import Any, Dict, List, Tuple
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 def load_custom_models() -> List[Dict[str, Any]]:
     """Load custom models from Stage-H"""
@@ -24,7 +24,15 @@ def load_custom_models() -> List[Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            models = json.load(f)
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
         print(f"✓ Loaded {len(models)} custom models from: {input_file}")
         return models
     except (FileNotFoundError, json.JSONDecodeError) as error:
@@ -111,8 +119,18 @@ def save_enriched_models_json(enriched_models: List[Dict[str, Any]]) -> str:
     output_file = get_output_file_path('J-custom-license-urls.json')
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(enriched_models),
+                "pipeline_stage": "J_custom_license_urls"
+            },
+            "models": enriched_models
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(enriched_models, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved {len(enriched_models)} enriched models to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -128,7 +146,7 @@ def generate_license_urls_report(enriched_models: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("CUSTOM LICENSE URLS ENRICHMENT REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Summary

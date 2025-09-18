@@ -21,7 +21,7 @@ from datetime import datetime
 from typing import Any, Dict, List
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 def load_provider_data() -> List[Dict[str, Any]]:
     """Load provider enriched data from Stage-P"""
@@ -29,7 +29,15 @@ def load_provider_data() -> List[Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            models = json.load(f)
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
         print(f"✓ Loaded {len(models)} models from: {input_file}")
         return models
     except (FileNotFoundError, json.JSONDecodeError) as error:
@@ -42,8 +50,16 @@ def load_modality_data() -> Dict[str, Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            models = json.load(f)
-        
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
+
         # Create lookup index by model ID
         modality_index = {}
         for model in models:
@@ -63,8 +79,16 @@ def load_license_data() -> Dict[str, Dict[str, Any]]:
     
     try:
         with open(input_file, 'r', encoding='utf-8') as f:
-            models = json.load(f)
-        
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
+
         # Create lookup index by model ID
         license_index = {}
         for model in models:
@@ -222,8 +246,18 @@ def save_database_json(database_records: List[Dict[str, Any]]) -> str:
     output_file = get_output_file_path('Q-created-db-data.json')
     
     try:
+        # Create output data with metadata
+        output_data = {
+            "metadata": {
+                "generated_at": get_ist_timestamp(),
+                "total_models": len(database_records),
+                "pipeline_stage": "Q_create_db_data"
+            },
+            "models": database_records
+        }
+
         with open(output_file, 'w', encoding='utf-8') as f:
-            json.dump(database_records, f, indent=2)
+            json.dump(output_data, f, indent=2)
         print(f"✓ Saved database records to: {output_file}")
         return output_file
     except (IOError, TypeError) as error:
@@ -263,7 +297,7 @@ def save_database_txt(database_records: List[Dict[str, Any]]) -> str:
             # Header
             f.write("=" * 80 + "\n")
             f.write("CREATED DATABASE SCHEMA - DATA QUALITY REPORT\n")
-            f.write(f"Generated: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}\n")
+            f.write(f"Generated: {get_ist_timestamp()}\n")
             f.write("=" * 80 + "\n\n")
             
             # Data Quality Analysis

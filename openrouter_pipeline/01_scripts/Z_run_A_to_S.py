@@ -33,8 +33,8 @@ def run_script(script_name: str) -> Tuple[bool, str]:
         start_time = time.time()
         
         # Use virtual environment Python if it exists
-        if os.path.exists("../openrouter_env/bin/python"):
-            python_exec = "../openrouter_env/bin/python"
+        if os.path.exists("openrouter_env/bin/python"):
+            python_exec = "openrouter_env/bin/python"
         else:
             python_exec = sys.executable
 
@@ -141,11 +141,11 @@ def setup_environment() -> bool:
     try:
         # 1. Create virtual environment
         print("🔄 Creating virtual environment...")
-        if os.path.exists("../openrouter_env"):
+        if os.path.exists("openrouter_env"):
             print("   Virtual environment already exists, skipping creation")
         else:
             result = subprocess.run([
-                sys.executable, "-m", "venv", "../openrouter_env"
+                sys.executable, "-m", "venv", "openrouter_env"
             ], capture_output=True, text=True, timeout=60)
             
             if result.returncode == 0:
@@ -182,11 +182,11 @@ echo "  ✅ .pyc files removed"
 echo "🎉 Environment cleanup completed!"
 """
         
-        with open("../openrouter_envclear", "w") as f:
+        with open("openrouter_envclear", "w") as f:
             f.write(cleanup_script)
 
         # Make it executable
-        os.chmod("../openrouter_envclear", 0o755)
+        os.chmod("openrouter_envclear", 0o755)
         print("✅ Environment cleanup script created")
         
         # 3. Install dependencies (if requirements.txt exists)
@@ -206,9 +206,9 @@ echo "🎉 Environment cleanup completed!"
 
             # Determine pip path based on OS
             if os.name == 'nt':  # Windows
-                pip_path = os.path.join("..", "openrouter_env", "Scripts", "pip")
+                pip_path = os.path.join("openrouter_env", "Scripts", "pip")
             else:  # Unix/Linux/Mac
-                pip_path = os.path.join("..", "openrouter_env", "bin", "pip")
+                pip_path = os.path.join("openrouter_env", "bin", "pip")
 
             result = subprocess.run([
                 pip_path, "install", "-r", str(requirements_file)

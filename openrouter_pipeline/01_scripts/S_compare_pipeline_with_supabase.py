@@ -37,7 +37,7 @@ except ImportError:
     pass
 
 # Import output utilities
-import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists
+import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 # Configuration
 PIPELINE_DATA_FILE = get_input_file_path("R_filtered_db_data.json")
@@ -69,8 +69,17 @@ def load_pipeline_data() -> List[Dict[str, Any]]:
     try:
         with open(PIPELINE_DATA_FILE, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        print(f"Loaded {len(data)} models from pipeline data")
-        return data
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
+
+        print(f"Loaded {len(models)} models from pipeline data")
+        return models
     except Exception as e:
         print(f"Failed to load pipeline data: {e}")
         return []
@@ -321,7 +330,7 @@ def main():
                 f.write("FIELD COMPARISON REPORT: PIPELINE vs SUPABASE\n")
                 f.write("=" * 80 + "\n\n")
                 f.write(f"ERROR: Script failed with error: {e}\n")
-                f.write(f"Generated at: {__import__('datetime').datetime.now()}\n")
+                f.write(f"Generated at: {get_ist_timestamp()}\n")
             print(f"Error report saved to: {REPORT_FILE}")
         except Exception as write_error:
             print(f"Failed to write error report: {write_error}")
