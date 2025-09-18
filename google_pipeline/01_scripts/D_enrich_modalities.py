@@ -33,8 +33,18 @@ class ModalityEnrichment:
         # Load filtered models
         try:
             with open('../02_outputs/B-filtered-models.json', 'r') as f:
-                self.filtered_models = json.load(f)
-                print(f"✅ Loaded {len(self.filtered_models)} filtered models")
+                data = json.load(f)
+
+                # Handle new JSON structure with metadata
+                if isinstance(data, dict) and 'models' in data:
+                    self.filtered_models = data['models']
+                    print(f"✅ Loaded {len(self.filtered_models)} filtered models (with metadata)")
+                elif isinstance(data, list):
+                    self.filtered_models = data
+                    print(f"✅ Loaded {len(self.filtered_models)} filtered models (legacy format)")
+                else:
+                    print(f"⚠️ Unexpected JSON structure in B-filtered-models.json")
+                    return False
         except FileNotFoundError:
             print("❌ ../02_outputs/B-filtered-models.json not found")
             return False

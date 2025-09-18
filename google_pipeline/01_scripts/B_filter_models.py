@@ -170,10 +170,20 @@ class GoogleModelsFilter:
         """Save filtered models to B-filtered-models.json"""
         # Extract just the model data without filtering metadata
         models_data = [item['model'] for item in filtered_models]
-        
+
+        # Create JSON output with metadata (similar to A script)
+        json_output = {
+            "metadata": {
+                "generated": get_ist_timestamp(),
+                "total_models": len(models_data),
+                "filtering_source": "Google Pipeline B-Filter"
+            },
+            "models": models_data
+        }
+
         try:
             with open('../02_outputs/B-filtered-models.json', 'w') as f:
-                json.dump(models_data, f, indent=2)
+                json.dump(json_output, f, indent=2)
             print(f"\n✅ Saved {len(models_data)} filtered models to B-filtered-models.json")
         except Exception as e:
             print(f"❌ Error saving filtered models: {e}")
