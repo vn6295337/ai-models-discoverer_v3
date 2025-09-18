@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER PIPELINE EXECUTION REPORT
-Generated: 2025-09-18 14:10:33
+Generated: 2025-09-18 08:50:34
 ================================================================================
 
 EXECUTION SUMMARY:
-  Total execution time : 242.1 seconds (4.0 minutes)
+  Total execution time : 59.8 seconds (1.0 minutes)
   Total stages         : 19
   Successful stages    : 19
   Failed stages        : 0
@@ -14,79 +14,79 @@ STAGE-BY-STAGE RESULTS:
 ================================================================================
 Stage  1: A_fetch_api_models.py
   Status: ✅ SUCCESS
-  Details: Success in 3.3s
+  Details: Success in 2.2s
 
 Stage  2: B_filter_models.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage  3: C_extract_google_licenses.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage  4: D_extract_meta_licenses.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage  5: E_fetch_other_license_info_urls_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 45.3s
+  Details: Success in 8.3s
 
 Stage  6: F_fetch_other_license_names_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 79.1s
+  Details: Success in 46.0s
 
 Stage  7: G_standardize_other_license_names_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage  8: H_bucketize_other_license_names.py
   Status: ✅ SUCCESS
-  Details: Success in 0.5s
+  Details: Success in 0.0s
 
 Stage  9: I_opensource_license_urls.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 10: J_custom_license_urls.py
   Status: ✅ SUCCESS
-  Details: Success in 11.4s
+  Details: Success in 1.6s
 
 Stage 11: K_collate_opensource_licenses.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 12: L_collate_custom_licenses.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 13: M_final_list_of_licenses.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 14: N_extract_raw_modalities.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 15: O_standardize_raw_modalities.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 16: P_enrich_provider_info.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 17: Q_create_db_data.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 18: R_filter_db_data.py
   Status: ✅ SUCCESS
-  Details: Success in 0.2s
+  Details: Success in 0.0s
 
 Stage 19: S_compare_pipeline_with_supabase.py
   Status: ✅ SUCCESS
-  Details: Success in 2.7s
+  Details: Success in 1.3s
 
 PIPELINE FLOW DIAGRAM:
 ================================================================================
