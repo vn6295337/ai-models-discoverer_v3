@@ -226,22 +226,42 @@ def stage_1_fetch_google_data() -> List[Dict[str, Any]]:
 
     # Always save data to maintain pipeline consistency (even if empty)
     try:
+        # Add timestamp metadata to JSON
+        json_output = {
+            "metadata": {
+                "generated": get_ist_timestamp(),
+                "total_models": len(raw_data),
+                "api_source": "Google Generative Language API"
+            },
+            "models": raw_data
+        }
+
         with open(filename, 'w') as f:
-            json.dump(raw_data, f, indent=2)
+            json.dump(json_output, f, indent=2)
 
         if not raw_data:
             print("⚠️ No models fetched from API - saved empty file for pipeline consistency")
         else:
             print(f"✅ Fresh data saved to: {filename}")
             print(f"   Total models fetched: {len(raw_data)}")
+            print(f"   Timestamp included: {get_ist_timestamp()}")
 
     except Exception as e:
         print(f"❌ ERROR: Failed to save data to {filename}: {e}")
         # Still try to create an empty file to maintain pipeline consistency
         try:
+            json_output = {
+                "metadata": {
+                    "generated": get_ist_timestamp(),
+                    "total_models": 0,
+                    "api_source": "Google Generative Language API",
+                    "error": "Failed to fetch data"
+                },
+                "models": []
+            }
             with open(filename, 'w') as f:
-                json.dump([], f, indent=2)
-            print("⚠️ Created empty file to maintain pipeline consistency")
+                json.dump(json_output, f, indent=2)
+            print("⚠️ Created empty file with metadata to maintain pipeline consistency")
         except:
             pass
     
