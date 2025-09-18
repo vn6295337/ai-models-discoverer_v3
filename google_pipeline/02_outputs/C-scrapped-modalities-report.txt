@@ -1,3 +1,6 @@
+=== GOOGLE MODELS MODALITY SCRAPING REPORT ===
+Generated: 2025-09-18 16:07:21 IST
+
 Total Models: 26
 
 Gemini 2.5 Pro
