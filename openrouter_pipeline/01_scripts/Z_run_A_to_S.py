@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 import os
+import argparse
 from datetime import datetime
 from pathlib import Path
 from typing import List, Tuple
@@ -18,22 +19,26 @@ from typing import List, Tuple
 # Import output utilities
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path
 
-def run_script(script_name: str) -> Tuple[bool, str]:
+def run_script(script_name: str, use_venv: bool = True) -> Tuple[bool, str]:
     """
     Run a pipeline script and return success status and output
-    
+
     Args:
         script_name: Name of the script to run
-        
+        use_venv: Whether to use virtual environment Python
+
     Returns:
         Tuple of (success, output_message)
     """
     try:
         print(f"🔄 Running {script_name}...")
         start_time = time.time()
-        
-        # Use virtual environment Python if it exists
-        if os.path.exists("openrouter_env/bin/python"):
+
+        # Determine Python executable
+        github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+        if github_actions or not use_venv:
+            python_exec = sys.executable
+        elif os.path.exists("openrouter_env/bin/python"):
             python_exec = "openrouter_env/bin/python"
         else:
             python_exec = sys.executable
@@ -126,18 +131,30 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
     except Exception as e:
         print(f"❌ Failed to generate pipeline report: {e}")
 
-def setup_environment() -> bool:
+def setup_environment(skip_venv: bool = False) -> bool:
     """
-    Setup local development environment
+    Setup development environment
     Creates virtual environment, installs dependencies, and creates utility scripts
-    
+
+    Args:
+        skip_venv: If True, skip virtual environment setup (for CI/CD environments)
+
     Returns:
         bool: True if setup successful, False otherwise
     """
     print("\n" + "=" * 60)
     print("🔧 ENVIRONMENT SETUP")
     print("=" * 60)
-    
+
+    # Auto-detect GitHub Actions or use explicit flag
+    github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+    if github_actions or skip_venv:
+        environment_type = "GitHub Actions" if github_actions else "CI/CD"
+        print(f"🚀 Detected {environment_type} environment")
+        print("   Skipping virtual environment setup - using pre-installed dependencies")
+        print(f"✅ Environment setup completed ({environment_type} mode)")
+        return True
+
     try:
         # 1. Create virtual environment
         print("🔄 Creating virtual environment...")
@@ -307,18 +324,58 @@ def get_user_script_selection(pipeline_scripts: List[str]) -> List[str]:
         else:
             print("Invalid choice. Please enter 1, 2, or 3.")
 
+def parse_arguments():
+    """Parse command-line arguments"""
+    parser = argparse.ArgumentParser(
+        description="OpenRouter Pipeline Orchestrator",
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+        epilog="""
+Examples:
+  python Z_run_A_to_S.py                    # Interactive mode with virtual environment
+  python Z_run_A_to_S.py --auto-all        # Run all scripts automatically
+  python Z_run_A_to_S.py --no-venv         # Skip virtual environment setup
+  python Z_run_A_to_S.py --scripts A B C   # Run specific scripts
+  python Z_run_A_to_S.py --range C P       # Run script range C to P
+        """
+    )
+
+    parser.add_argument(
+        '--no-venv', action='store_true',
+        help='Skip virtual environment setup (for CI/CD environments)'
+    )
+    parser.add_argument(
+        '--auto-all', action='store_true',
+        help='Automatically run all scripts without user interaction'
+    )
+    parser.add_argument(
+        '--scripts', nargs='+', metavar='SCRIPT',
+        help='Run specific scripts (e.g., --scripts A B C)'
+    )
+    parser.add_argument(
+        '--range', nargs=2, metavar=('START', 'END'),
+        help='Run script range (e.g., --range C P)'
+    )
+
+    return parser.parse_args()
+
 def main():
     """Main pipeline orchestrator"""
+    args = parse_arguments()
+
     print("=" * 60)
     print("🚀 OPENROUTER PIPELINE ORCHESTRATOR")
     print(f"Started at: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+    if args.no_venv or os.getenv('GITHUB_ACTIONS') == 'true':
+        print("Mode: CI/CD (No virtual environment)")
+    else:
+        print("Mode: Local development (With virtual environment)")
     print("=" * 60)
-    
+
     # ===============================================
     # ENVIRONMENT SETUP SECTION
     # ===============================================
-    print("\n🔧 Setting up local development environment...")
-    if not setup_environment():
+    print("\n🔧 Setting up development environment...")
+    if not setup_environment(skip_venv=args.no_venv):
         print("💥 Pipeline aborted due to environment setup failure")
         return False
     
@@ -353,26 +410,55 @@ def main():
         "S_compare_pipeline_with_supabase.py"
     ]
 
-    # Get user selection for which scripts to run
-    selected_scripts = get_user_script_selection(pipeline_scripts)
+    # Determine which scripts to run based on arguments
+    if args.auto_all:
+        selected_scripts = pipeline_scripts
+        print("🤖 Auto-run mode: Running all scripts (A to S)")
+    elif args.scripts:
+        # Convert script letters to script names
+        script_map = {chr(65 + i): script for i, script in enumerate(pipeline_scripts)}
+        selected_scripts = []
+        for script_letter in args.scripts:
+            script_letter = script_letter.upper()
+            if script_letter in script_map:
+                selected_scripts.append(script_map[script_letter])
+            else:
+                print(f"❌ Invalid script letter: {script_letter}")
+                return False
+        print(f"📋 Command-line selection: Running scripts {args.scripts}")
+    elif args.range:
+        # Convert range to script indices
+        start_letter, end_letter = args.range[0].upper(), args.range[1].upper()
+        start_idx = ord(start_letter) - 65
+        end_idx = ord(end_letter) - 65
+        if 0 <= start_idx <= end_idx < len(pipeline_scripts):
+            selected_scripts = pipeline_scripts[start_idx:end_idx + 1]
+            print(f"📋 Range selection: Running scripts {start_letter} to {end_letter}")
+        else:
+            print(f"❌ Invalid range: {start_letter} to {end_letter}")
+            return False
+    else:
+        # Interactive mode
+        selected_scripts = get_user_script_selection(pipeline_scripts)
 
-    # Display selected scripts and ask for confirmation
+    # Display selected scripts
     print(f"\n📋 SELECTED SCRIPTS ({len(selected_scripts)} total):")
     for i, script in enumerate(selected_scripts, 1):
         original_idx = pipeline_scripts.index(script) + 1
         letter = chr(64 + original_idx)  # A, B, C, etc.
         print(f"  {i:2d}. {letter}: {script}")
 
-    # Ask for confirmation
-    while True:
-        confirm = input(f"\nProceed with executing {len(selected_scripts)} script(s)? (y/n): ").strip().lower()
-        if confirm in ['y', 'yes']:
-            break
-        elif confirm in ['n', 'no']:
-            print("Pipeline execution cancelled.")
-            return False
-        else:
-            print("Please enter 'y' or 'n'.")
+    # Ask for confirmation only in interactive mode
+    if not (args.auto_all or args.scripts or args.range):
+        while True:
+            confirm = input(f"\nProceed with executing {len(selected_scripts)} script(s)? (y/n): ").strip().lower()
+            if confirm in ['y', 'yes']:
+                break
+            elif confirm in ['n', 'no']:
+                print("Pipeline execution cancelled.")
+                return False
+            else:
+                print("Please enter 'y' or 'n'.")
 
     # Execute selected scripts
     total_stages = len(selected_scripts)
@@ -380,7 +466,7 @@ def main():
         original_idx = pipeline_scripts.index(script) + 1
         letter = chr(64 + original_idx)  # A, B, C, etc.
         print(f"\n📍 STAGE {i:2d}/{total_stages}: {letter} - {script}")
-        success, message = run_script(script)
+        success, message = run_script(script, use_venv=not args.no_venv)
         execution_log.append((script, success, message))
         if not success:
             print(f"💥 Pipeline stopped due to failure in {script}")
