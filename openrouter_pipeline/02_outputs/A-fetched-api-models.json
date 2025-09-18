@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-09-18 02:50 PM IST",
+    "generated_at": "2025-09-18 07:43 PM IST",
     "total_models": 327,
     "pipeline_stage": "A_fetch_api_models"
   },
@@ -3691,8 +3691,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000005",
-        "completion": "0.0000001",
+        "prompt": "0.000000075",
+        "completion": "0.0000002",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -5984,8 +5984,8 @@
         "instruct_type": "qwen3"
       },
       "pricing": {
-        "prompt": "0.00000013",
-        "completion": "0.0000006",
+        "prompt": "0.00000018",
+        "completion": "0.00000054",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -11453,19 +11453,14 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
         "max_tokens",
-        "min_p",
         "presence_penalty",
-        "repetition_penalty",
         "response_format",
-        "seed",
         "stop",
         "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
         "top_p"
       ]
     },
@@ -13150,7 +13145,7 @@
       "name": "Meta: Llama 3.1 8B Instruct",
       "created": 1721692800,
       "description": "Meta's latest class of model (Llama 3.1) launched with a variety of sizes & flavors. This 8B instruct-tuned version is fast and efficient.\n\nIt has demonstrated strong performance compared to leading closed-source models in human evaluations.\n\nTo read more about the model release, [click here](https://ai.meta.com/blog/meta-llama-3-1/). Usage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "context_length": 131072,
+      "context_length": 16384,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -13163,15 +13158,15 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.000000015",
-        "completion": "0.00000002",
+        "prompt": "0.00000002",
+        "completion": "0.00000003",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
+        "context_length": 16384,
         "max_completion_tokens": 16384,
         "is_moderated": false
       },
