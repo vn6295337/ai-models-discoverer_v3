@@ -66,4 +66,5 @@ Thumbs.db
 # Generated utility scripts
 *envclear
 openrouter_envclear
+openrouter_env
 google_envclear
