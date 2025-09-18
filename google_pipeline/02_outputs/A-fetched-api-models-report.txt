@@ -1,11 +1,7 @@
 GOOGLE API MODELS FETCH REPORT
 ==================================================
 
-<<<<<<< HEAD
-Generated: 2025-09-18 16:07:17 IST
-=======
-Generated: 2025-09-18 18:37:27 IST
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
+Generated: 2025-09-18 18:42:44 IST
 Total Models: 65
 
 MODELS LIST:

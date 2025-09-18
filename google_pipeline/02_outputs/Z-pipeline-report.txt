@@ -1,12 +1,7 @@
 ================================================================================
 GOOGLE MODELS PIPELINE EXECUTION REPORT
-<<<<<<< HEAD
-Execution Date: 2025-09-18 16:07:22 IST
-Total Pipeline Duration: 9.4 seconds
-=======
-Execution Date: 2025-09-18 18:37:45 IST
-Total Pipeline Duration: 24.8 seconds
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
+Execution Date: 2025-09-18 18:42:50 IST
+Total Pipeline Duration: 10.2 seconds
 
 === EXECUTION SUMMARY ===
 Stages Executed: 6
@@ -17,42 +12,30 @@ Failed: 0
 Stage 1: API Data Extraction
   Script: A_fetch_api_models.py
   Status: ✅ SUCCESS
-<<<<<<< HEAD
-  Duration: 4.0s
-=======
-  Duration: 7.3s
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
+  Duration: 4.3s
 
 Stage 2: Model Filtering
   Script: B_filter_models.py
   Status: ✅ SUCCESS
-  Duration: 0.2s
+  Duration: 0.0s
 
 Stage 3: Modality Scraping
   Script: C_scrape_modalities.py
   Status: ✅ SUCCESS
-<<<<<<< HEAD
-  Duration: 4.1s
-=======
-  Duration: 14.1s
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
+  Duration: 4.5s
 
 Stage 4: Modality Enrichment
   Script: D_enrich_modalities.py
   Status: ✅ SUCCESS
-  Duration: 0.2s
+  Duration: 0.0s
 
 Stage 5: Data Normalization
   Script: E_create_db_data.py
   Status: ✅ SUCCESS
-  Duration: 0.3s
+  Duration: 0.0s
 
 Stage 6: Pipeline Comparison
   Script: F_compare_pipeline_with_supabase.py
   Status: ✅ SUCCESS
-<<<<<<< HEAD
   Duration: 1.3s
-=======
-  Duration: 2.7s
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
 

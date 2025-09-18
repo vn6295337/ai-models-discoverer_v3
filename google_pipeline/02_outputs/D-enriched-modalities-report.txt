@@ -1,10 +1,6 @@
 === GOOGLE MODELS MODALITY ENRICHMENT REPORT ===
 
-<<<<<<< HEAD
-Generated: 2025-09-18 16:07:21 IST
-=======
-Generated: 2025-09-18 18:37:42 IST
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
+Generated: 2025-09-18 18:42:49 IST
 
 === SUMMARY ===
 Total Models: 32

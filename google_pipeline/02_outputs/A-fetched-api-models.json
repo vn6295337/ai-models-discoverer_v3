@@ -1,10 +1,6 @@
 {
   "metadata": {
-<<<<<<< HEAD
-    "generated": "2025-09-18 16:07:17 IST",
-=======
-    "generated": "2025-09-18 18:37:27 IST",
->>>>>>> 3af5b09 (Update pipeline outputs with fresh timestamps and metadata)
+    "generated": "2025-09-18 18:42:44 IST",
     "total_models": 65,
     "api_source": "Google Generative Language API"
   },
