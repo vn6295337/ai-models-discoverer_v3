@@ -10,9 +10,9 @@ if [ -d "openrouter_env" ]; then
 fi
 
 # Remove Python cache
-if [ -d "01_scripts/__pycache__" ]; then
+if [ -d "__pycache__" ]; then
     echo "  Removing Python cache..."
-    rm -rf 01_scripts/__pycache__
+    rm -rf __pycache__
     echo "  ✅ Python cache removed"
 fi
 
