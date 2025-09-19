@@ -1,18 +1,18 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-09-18 07:43 PM IST
+Generated: 2025-09-19 06:08 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 327
+  Total models processed: 328
   Models passed all filters: 53
-  Models excluded: 274
+  Models excluded: 275
   Success rate: 16.2%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 327 models
-    Excluded: 271 models (non-free pricing)
+    Input: 328 models
+    Excluded: 272 models (non-free pricing)
     Remaining: 56 models
 
   Step 2 - Billing Description Filter:
@@ -28,7 +28,7 @@ STEP-BY-STEP FILTERING BREAKDOWN:
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 271 models with non-free pricing (details omitted due to volume)
+Excluded 272 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -321,8 +321,8 @@ PROVIDER: ARLIAI (1 models)
 FINAL SUMMARY:
   Total providers: 18
   Total models passed all filters: 53
-  Models excluded by pricing: 271
+  Models excluded by pricing: 272
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 274
+  Total exclusions: 275
   ✓ All filtered models accounted for
