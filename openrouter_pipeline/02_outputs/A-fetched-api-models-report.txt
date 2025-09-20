@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-09-19 06:08 AM IST
+Generated: 2025-09-20 09:47 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 328
+  Total models: 327
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  42 models
@@ -226,6 +226,15 @@ PROVIDER BREAKDOWN (Descending Order):
     - phi-4-multimodal-instruct
     - phi-4-reasoning-plus
 
+  xAI          :   7 models
+    - grok-3
+    - grok-3-beta
+    - grok-3-mini
+    - grok-3-mini-beta
+    - grok-4
+    - grok-4-fast:free
+    - grok-code-fast-1
+
   MoonshotAI   :   7 models
     - kimi-dev-72b
     - kimi-dev-72b:free
@@ -234,14 +243,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - kimi-k2:free
     - kimi-vl-a3b-thinking
     - kimi-vl-a3b-thinking:free
-
-  xAI          :   6 models
-    - grok-3
-    - grok-3-beta
-    - grok-3-mini
-    - grok-3-mini-beta
-    - grok-4
-    - grok-code-fast-1
 
   Nous         :   6 models
     - deephermes-3-llama-3-8b-preview:free

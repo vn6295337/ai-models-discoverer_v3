@@ -1,29 +1,29 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-09-19 06:08 AM IST
+Generated: 2025-09-20 09:47 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 328
-  Models passed all filters: 53
+  Total models processed: 327
+  Models passed all filters: 52
   Models excluded: 275
-  Success rate: 16.2%
+  Success rate: 15.9%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 328 models
+    Input: 327 models
     Excluded: 272 models (non-free pricing)
-    Remaining: 56 models
+    Remaining: 55 models
 
   Step 2 - Billing Description Filter:
-    Input: 56 models
+    Input: 55 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 56 models
+    Remaining: 55 models
 
   Step 3 - Keyword Filter:
-    Input: 56 models
+    Input: 55 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 53 models
+    Final: 52 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
@@ -213,17 +213,6 @@ PROVIDER: MOONSHOTAI (3 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENROUTER (2 models)
---------------------------------------------------
-   1. Sonoma Dusk Alpha
-      ID: openrouter/sonoma-dusk-alpha
-      Pricing: prompt=0, completion=0, request=0
-
-   2. Sonoma Sky Alpha
-      ID: openrouter/sonoma-sky-alpha
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: OPENAI (2 models)
 --------------------------------------------------
    1. OpenAI: gpt-oss-120b (free)
@@ -265,6 +254,13 @@ PROVIDER: QWEN (2 models)
 
    2. Qwen2.5 Coder 32B Instruct (free)
       ID: qwen/qwen-2.5-coder-32b-instruct:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: XAI (1 models)
+--------------------------------------------------
+   1. xAI: Grok 4 Fast (free)
+      ID: x-ai/grok-4-fast:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -320,7 +316,7 @@ PROVIDER: ARLIAI (1 models)
 ================================================================================
 FINAL SUMMARY:
   Total providers: 18
-  Total models passed all filters: 53
+  Total models passed all filters: 52
   Models excluded by pricing: 272
   Models excluded by billing description: 0
   Models excluded by keywords: 3

@@ -1,10 +1,59 @@
 {
   "metadata": {
-    "generated_at": "2025-09-19 06:08 AM IST",
-    "total_models": 53,
+    "generated_at": "2025-09-20 09:47 AM IST",
+    "total_models": 52,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
+    {
+      "id": "x-ai/grok-4-fast:free",
+      "canonical_slug": "x-ai/grok-4-fast",
+      "hugging_face_id": "",
+      "name": "xAI: Grok 4 Fast (free)",
+      "created": 1758240090,
+      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast). Reasoning can be enabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)\n\nPrompts and completions may be used by xAI or OpenRouter to improve future models.",
+      "context_length": 2000000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Grok",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 2000000,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "logprobs",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "seed",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_logprobs",
+        "top_p"
+      ]
+    },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",
@@ -40,92 +89,6 @@
       "per_request_limits": null,
       "supported_parameters": [
         "include_reasoning",
-        "reasoning",
-        "response_format",
-        "structured_outputs",
-        "tool_choice",
-        "tools"
-      ]
-    },
-    {
-      "id": "openrouter/sonoma-dusk-alpha",
-      "canonical_slug": "openrouter/sonoma-dusk-alpha",
-      "hugging_face_id": "",
-      "name": "Sonoma Dusk Alpha",
-      "created": 1757093247,
-      "description": "This is a cloaked model provided to the community to gather feedback. A fast and intelligent general-purpose frontier model with a 2 million token context window. Supports image inputs and parallel tool calling.\n\nNote: It\u2019s free to use during this testing period, and prompts and completions are logged by the model creator for feedback and training.",
-      "context_length": 2000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 2000000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "structured_outputs",
-        "tool_choice",
-        "tools"
-      ]
-    },
-    {
-      "id": "openrouter/sonoma-sky-alpha",
-      "canonical_slug": "openrouter/sonoma-sky-alpha",
-      "hugging_face_id": "",
-      "name": "Sonoma Sky Alpha",
-      "created": 1757093001,
-      "description": "This is a cloaked model provided to the community to gather feedback. A maximally intelligent general-purpose frontier model with a 2 million token context window. Supports image inputs and parallel tool calling.\n\nNote: It\u2019s free to use during this testing period, and prompts and completions are logged by the model creator for feedback and training.",
-      "context_length": 2000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 2000000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
         "reasoning",
         "response_format",
         "structured_outputs",

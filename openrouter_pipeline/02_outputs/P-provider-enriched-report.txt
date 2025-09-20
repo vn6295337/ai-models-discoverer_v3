@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-09-19 06:09 AM IST
+Generated: 2025-09-20 09:48 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 53
+  Total models      : 52
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -12,14 +12,13 @@ SUMMARY:
 
 ACTION ITEMS - UNKNOWN MAPPINGS:
 ==================================================
-UNKNOWN PROVIDERS (2 models):
+UNKNOWN PROVIDERS (1 models):
   Add these provider mappings to 08_provider_enrichment.json:
-    "openrouter": ["Provider Name", "Country"],
-    "openrouter": ["Provider Name", "Country"],
+    "x-ai": ["Provider Name", "Country"],
 
-UNKNOWN OFFICIAL URLS (2 unique families):
+UNKNOWN OFFICIAL URLS (1 unique families):
   Add these URL mappings to family_official_urls:
-    "openrouter": "https://official-url-here",
+    "x-ai": "https://official-url-here",
 
 ==================================================
 
@@ -33,12 +32,12 @@ MODEL PROVIDER DISTRIBUTION:
    3 models: Moonshot AI
    2 models: OpenAI
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Microsoft
    1 models: NVIDIA
    1 models: Shisa AI
    1 models: Tencent
+   1 models: Unknown
    1 models: Z.AI
 
 Total unique model providers: 16
@@ -48,8 +47,8 @@ MODEL PROVIDER COUNTRY DISTRIBUTION:
   20 models: United States
    6 models: France
    2 models: Germany
-   2 models: Unknown
    1 models: Japan
+   1 models: Unknown
 
 Total unique countries: 6
 
@@ -62,13 +61,13 @@ MODEL FAMILY DISTRIBUTION:
    3 models: cognitive computations
    3 models: moonshot ai
    2 models: openai
-   2 models: openrouter
    2 models: tng technology
    1 models: arliai
    1 models: microsoft
    1 models: nvidia
    1 models: shisa ai
    1 models: tencent
+   1 models: x-ai
    1 models: z.ai
 
 Total unique model families: 16
@@ -720,35 +719,7 @@ MODEL 46: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 47: openrouter/sonoma-dusk-alpha
---------------------------------------------------
-  ID: openrouter/sonoma-dusk-alpha
-  Original Name: Sonoma Dusk Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/sonoma-dusk-alpha
-  Clean Model Name: Sonoma Dusk Alpha
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: openrouter
-  Official URL: Unknown
-
-================================================================================
-
-MODEL 48: openrouter/sonoma-sky-alpha
---------------------------------------------------
-  ID: openrouter/sonoma-sky-alpha
-  Original Name: Sonoma Sky Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/sonoma-sky-alpha
-  Clean Model Name: Sonoma Sky Alpha
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: openrouter
-  Official URL: Unknown
-
-================================================================================
-
-MODEL 49: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 47: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
@@ -762,7 +733,7 @@ MODEL 49: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 50: tencent/hunyuan-a13b-instruct
+MODEL 48: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -776,7 +747,7 @@ MODEL 50: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 51: tngtech/deepseek-r1t-chimera
+MODEL 49: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -790,7 +761,7 @@ MODEL 51: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 52: tngtech/deepseek-r1t2-chimera
+MODEL 50: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -804,7 +775,21 @@ MODEL 52: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 53: z-ai/glm-4.5-air
+MODEL 51: x-ai/grok-4-fast
+--------------------------------------------------
+  ID: x-ai/grok-4-fast:free
+  Original Name: xAI: Grok 4 Fast (free)
+  HuggingFace ID: 
+  Canonical Slug: x-ai/grok-4-fast
+  Clean Model Name: Grok 4 Fast
+  Model Provider: Unknown
+  Model Provider Country: Unknown
+  Model Family: x-ai
+  Official URL: Unknown
+
+================================================================================
+
+MODEL 52: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
