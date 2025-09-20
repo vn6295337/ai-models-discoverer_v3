@@ -108,6 +108,9 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
     all_slugs = set()
     for index in [google_index, meta_index, opensource_index, custom_index]:
         all_slugs.update(index.keys())
+
+    # Also include models from proprietary mappings
+    all_slugs.update(proprietary_mappings.keys())
     
     print(f"Found {len(all_slugs)} unique models across all license categories")
     
@@ -152,20 +155,20 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
         elif proprietary_data:
             source_category = 'proprietary'
             primary_data = proprietary_data
-        
+
         # Create final consolidated model record with standardized field names
         final_model = {
             # Primary identification
-            'id': primary_data.get('id', ''),
-            
+            'id': primary_data.get('id', canonical_slug + ':free'),
+
             'canonical_slug': canonical_slug,
-            
+
             # Model names using standardized field names
-            'original_name': primary_data.get('original_name', ''),
-            
+            'original_name': primary_data.get('original_name', canonical_slug.replace('-', ' ').title()),
+
             'hugging_face_id': primary_data.get('hugging_face_id', ''),
             
-            'clean_model_name': primary_data.get('clean_model_name', ''),
+            'clean_model_name': primary_data.get('clean_model_name', canonical_slug.split('/')[-1].replace('-', ' ').title()),
             
             # License information fields
             'license_info_text': (google_data.get('license_info_text', '') or
