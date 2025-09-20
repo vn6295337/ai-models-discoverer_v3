@@ -26,7 +26,7 @@ from datetime import datetime
 def load_meta_licenses() -> List[Dict[str, Any]]:
     """Load Meta/Llama license information"""
     try:
-        with open('stage-4-meta-licensing.json', 'r', encoding='utf-8') as f:
+        with open('../02_outputs/stage-4-meta-licensing.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('models', [])
     except (FileNotFoundError, json.JSONDecodeError) as e:
@@ -37,7 +37,7 @@ def load_meta_licenses() -> List[Dict[str, Any]]:
 def load_hf_scraped_licenses() -> List[Dict[str, Any]]:
     """Load HuggingFace-scraped and Google license information"""
     try:
-        with open('stage-4-hf-scraped-licensing.json', 'r', encoding='utf-8') as f:
+        with open('../02_outputs/stage-4-hf-scraped-licensing.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('models', [])
     except (FileNotFoundError, json.JSONDecodeError) as e:
@@ -159,7 +159,7 @@ def save_consolidated_results(provider_mappings: Dict[str, Dict[str, Dict[str, s
                             all_models: List[Dict[str, Any]]) -> str:
     """Save consolidated results to stage-4-license-mappings.json"""
     
-    output_file = 'stage-4-license-mappings.json'
+    output_file = '../02_outputs/stage-4-license-mappings.json'
     
     # Build final structure expected by groq_pipeline.py
     consolidated_data = {

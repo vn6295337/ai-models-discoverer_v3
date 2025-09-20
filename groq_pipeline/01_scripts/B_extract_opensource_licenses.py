@@ -38,11 +38,11 @@ except ImportError as e:
 def load_groq_models() -> List[Dict[str, Any]]:
     """Load Groq production models from stage-1 data"""
     try:
-        with open('stage-1-scrape-production-models.json', 'r', encoding='utf-8') as f:
+        with open('../02_outputs/stage-1-scrape-production-models.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('production_models', [])
     except FileNotFoundError:
-        print("ERROR: stage-1-scrape-production-models.json not found")
+        print("ERROR: ../02_outputs/stage-1-scrape-production-models.json not found")
         return []
     except json.JSONDecodeError as e:
         print(f"ERROR: Invalid JSON in stage-1 file: {e}")
@@ -52,18 +52,18 @@ def load_groq_models() -> List[Dict[str, Any]]:
 def load_groq_to_hf_mappings() -> Dict[str, str]:
     """Load Groq to HuggingFace ID mappings"""
     try:
-        with open('02_groq_to_hf_mappings.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/02_groq_to_hf_mappings.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('groq_to_hf_mappings', {})
     except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Warning: Could not load 02_groq_to_hf_mappings.json: {e}")
+        print(f"Warning: Could not load ../03_configs/02_groq_to_hf_mappings.json: {e}")
         return {}
 
 
 def load_license_standardization() -> Dict[str, str]:
     """Load license name standardization mappings"""
     try:
-        with open('06_license_name_standardization.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/06_license_name_standardization.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         mappings = data.get('license_name_standardization', {}).get('mappings', {})
         # Convert to lowercase keys for case-insensitive matching
@@ -76,7 +76,7 @@ def load_license_standardization() -> Dict[str, str]:
 def load_opensource_license_urls() -> Dict[str, str]:
     """Load open source license URL mappings"""
     try:
-        with open('05_opensource_license_urls.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/05_opensource_license_urls.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         
         if 'opensource_licenses' in data:
@@ -98,7 +98,7 @@ def load_opensource_license_urls() -> Dict[str, str]:
 def load_google_license_mappings() -> Dict[str, Dict[str, str]]:
     """Load Google model license mappings"""
     try:
-        with open('07_google_models_licenses.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/07_google_models_licenses.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('google_models', {})
     except (FileNotFoundError, json.JSONDecodeError) as e:
@@ -273,12 +273,12 @@ def extract_hf_scraped_and_google_licenses(models: List[Dict[str, Any]]) -> List
 
 def save_processed_results(processed_models: List[Dict[str, Any]]) -> str:
     """Save processed license results to JSON file"""
-    output_file = 'stage-4-hf-scraped-licensing.json'
+    output_file = '../02_outputs/stage-4-hf-scraped-licensing.json'
     
     output_data = {
         'metadata': {
             'generated_at': datetime.now().isoformat() + '+00:00',
-            'source_file': 'stage-1-scrape-production-models.json',
+            'source_file': '../02_outputs/stage-1-scrape-production-models.json',
             'processor': 'B_extract_opensource_licenses.py',
             'approach': '3-category processing: Meta (skipped), Google (hardcoded), Others (HF-scraped)',
             'categories': {

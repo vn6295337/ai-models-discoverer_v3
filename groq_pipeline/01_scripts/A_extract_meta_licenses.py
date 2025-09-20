@@ -27,11 +27,11 @@ from datetime import datetime
 def load_groq_models() -> List[Dict[str, Any]]:
     """Load Groq production models from stage-1 data"""
     try:
-        with open('stage-1-scrape-production-models.json', 'r', encoding='utf-8') as f:
+        with open('../02_outputs/stage-1-scrape-production-models.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('production_models', [])
     except FileNotFoundError:
-        print("ERROR: stage-1-scrape-production-models.json not found")
+        print("ERROR: ../02_outputs/stage-1-scrape-production-models.json not found")
         return []
     except json.JSONDecodeError as e:
         print(f"ERROR: Invalid JSON in stage-1 file: {e}")
@@ -136,12 +136,12 @@ def extract_meta_licenses(models: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
 
 def save_meta_results(meta_models: List[Dict[str, Any]]) -> str:
     """Save Meta license results to JSON file"""
-    output_file = 'stage-4-meta-licensing.json'
+    output_file = '../02_outputs/stage-4-meta-licensing.json'
     
     output_data = {
         'metadata': {
             'generated_at': datetime.now().isoformat() + '+00:00',
-            'source_file': 'stage-1-scrape-production-models.json',
+            'source_file': '../02_outputs/stage-1-scrape-production-models.json',
             'processor': 'A_extract_meta_licenses.py',
             'total_models': len(meta_models),
             'description': 'Meta/Llama models with official license information'

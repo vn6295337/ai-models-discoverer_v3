@@ -1,4 +1,4 @@
-name: Groq Pipeline
+name: Groq Pipeline (A-H)
 
 on:
   workflow_dispatch:  # Manual trigger
@@ -69,24 +69,24 @@ jobs:
       working-directory: groq_pipeline
       run: |
         echo "📁 Checking generated output files:"
-        ls -la *.json *.csv 2>/dev/null || echo "No output files found"
+        ls -la 02_outputs/*.json 02_outputs/*.txt 2>/dev/null || echo "No output files found"
 
-        if [ -f "stage-1-scrape-production-models.json" ]; then
+        if [ -f "02_outputs/stage-1-scrape-production-models.json" ]; then
           echo "✅ Production models file exists"
-          echo "📊 Model count: $(jq '.total_models' stage-1-scrape-production-models.json)"
+          echo "📊 Model count: $(jq '.metadata.total_models' 02_outputs/stage-1-scrape-production-models.json)"
         fi
 
-        if [ -f "stage-2-scrape-rate-limits.json" ]; then
+        if [ -f "02_outputs/stage-2-scrape-rate-limits.json" ]; then
           echo "✅ Rate limits file exists"
         fi
 
-        if [ -f "stage-3-input-output-modalities.json" ]; then
+        if [ -f "02_outputs/stage-3-scrape-modalities.json" ]; then
           echo "✅ Modalities file exists"
         fi
 
-        if [ -f "stage-3-data-normalization.csv" ]; then
-          echo "✅ Normalized data CSV exists"
-          echo "📈 Record count: $(wc -l < stage-3-data-normalization.csv)"
+        if [ -f "02_outputs/stage-5-data-normalization.json" ]; then
+          echo "✅ Normalized data JSON exists"
+          echo "📈 Record count: $(jq '.metadata.total_models' 02_outputs/stage-5-data-normalization.json)"
         fi
 
     - name: Upload pipeline outputs
@@ -95,8 +95,8 @@ jobs:
       with:
         name: groq-pipeline-outputs
         path: |
-          groq_pipeline/*.json
-          groq_pipeline/*.csv
+          groq_pipeline/02_outputs/*.json
+          groq_pipeline/02_outputs/*.txt
           groq_pipeline/*.log
         retention-days: 30
 
@@ -116,8 +116,8 @@ jobs:
 
         # Add output files if they exist
         cd groq_pipeline
-        if ls *.json *.csv 2>/dev/null; then
-          git add *.json *.csv last-run.txt
+        if ls 02_outputs/*.json 02_outputs/*.txt 2>/dev/null; then
+          git add 02_outputs/*.json 02_outputs/*.txt last-run.txt
         else
           git add last-run.txt
         fi
@@ -137,8 +137,8 @@ jobs:
         echo "✅ Groq Pipeline execution completed successfully"
         echo "📊 Check artifacts for detailed output files"
         echo "🕒 Completed at: $(date -u)"
-        if [ -f "groq_pipeline/stage-1-scrape-production-models.json" ]; then
-          echo "📈 Models extracted: $(jq '.total_models' groq_pipeline/stage-1-scrape-production-models.json)"
+        if [ -f "groq_pipeline/02_outputs/stage-1-scrape-production-models.json" ]; then
+          echo "📈 Models extracted: $(jq '.metadata.total_models' groq_pipeline/02_outputs/stage-1-scrape-production-models.json)"
         fi
 
     - name: Show failure summary

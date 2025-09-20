@@ -6,7 +6,7 @@ Supabase Groq Data Refresh Script
 
 This script refreshes Groq data in Supabase by:
 1. Deleting existing Groq records from working_version table
-2. Loading normalized data from stage-5-data-normalization.csv
+2. Loading normalized data from stage-5-data-normalization.json
 3. Inserting fresh Groq data into Supabase
 
 Features:
@@ -23,7 +23,6 @@ Last Updated: 2025-09-06
 
 import os
 import sys
-import csv
 import json
 import logging
 from datetime import datetime
@@ -53,8 +52,8 @@ except ImportError:
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-CSV_FILE = SCRIPT_DIR / "stage-5-data-normalization.csv"
-LOG_FILE = SCRIPT_DIR / "refresh_supabase_working_version_log.txt"
+JSON_FILE = SCRIPT_DIR / "../02_outputs/stage-5-data-normalization.json"
+LOG_FILE = SCRIPT_DIR / "../02_outputs/refresh_supabase_working_version_log.txt"
 
 # Supabase configuration
 SUPABASE_URL = os.getenv("SUPABASE_URL")
@@ -288,25 +287,33 @@ def restore_backup_data(client: Client, backup_data: List[Dict[str, Any]]) -> bo
 
 def load_normalized_csv() -> Optional[List[Dict[str, Any]]]:
     """
-    Load and validate normalized CSV data from stage-5-data-normalization.csv.
-    CSV contains only Groq records with perfect schema match to Supabase.
-    
+    Load and validate normalized JSON data from stage-5-data-normalization.json.
+    JSON contains only Groq records with perfect schema match to Supabase.
+
     Returns:
         List[Dict]: List of model records as dictionaries
         None: If file not found or invalid
     """
-    logger.info(f"📁 Loading normalized CSV data from {CSV_FILE}...")
-    
-    if not CSV_FILE.exists():
-        logger.error(f"❌ CSV file not found: {CSV_FILE}")
+    logger.info(f"📁 Loading normalized JSON data from {JSON_FILE}...")
+
+    if not JSON_FILE.exists():
+        logger.error(f"❌ JSON file not found: {JSON_FILE}")
         return None
-    
+
     try:
-        models = []
-        with open(CSV_FILE, 'r', encoding='utf-8') as file:
-            reader = csv.DictReader(file)
-            
-            # Expected CSV headers (matches Supabase schema exactly)
+        with open(JSON_FILE, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            logger.error("❌ Unexpected JSON format in input file")
+            return None
+
+        # Expected JSON fields (matches Supabase schema exactly)
             expected_fields = {
                 'id', 'inference_provider', 'model_provider', 'human_readable_name', 
                 'model_provider_country', 'official_url', 'input_modalities', 

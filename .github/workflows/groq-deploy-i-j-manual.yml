@@ -1,4 +1,4 @@
-name: Groq Pipeline Deployment (Manual)
+name: Groq Pipeline (I&J Scripts)
 
 on:
   workflow_dispatch:  # Manual trigger only
@@ -51,11 +51,11 @@ jobs:
         echo "🎯 Groq Pipeline Deployment Plan:"
         echo "Selected option: ${{ inputs.script_choice }}"
         if [[ "${{ inputs.script_choice }}" == "compare_with_supabase" ]]; then
-          echo "Will execute: H_compare_pipeline_with_supabase.py (Compare Pipeline with Supabase)"
+          echo "Will execute: 01_scripts/H_compare_pipeline_with_supabase.py (Compare Pipeline with Supabase)"
         elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
-          echo "Will execute: G_refresh_supabase_working_version.py (Refresh Working Version)"
+          echo "Will execute: 01_scripts/I_refresh_supabase_working_version.py (Refresh Working Version)"
         elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
-          echo "Will execute: I_deploy_to_ai_models_main.py (Deploy to Production)"
+          echo "Will execute: 01_scripts/J_deploy_to_ai_models_main.py (Deploy to Production)"
         else
           echo "No script will be executed (none selected)"
         fi
@@ -68,9 +68,9 @@ jobs:
         SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       run: |
-        echo "🔍 Running H_compare_pipeline_with_supabase.py..."
+        echo "🔍 Running 01_scripts/H_compare_pipeline_with_supabase.py..."
         echo "⚠️  This will compare pipeline data with Supabase working_version table"
-        python -u H_compare_pipeline_with_supabase.py
+        python -u 01_scripts/H_compare_pipeline_with_supabase.py
 
     - name: Run G_refresh_supabase_working_version.py
       if: ${{ inputs.script_choice == 'refresh_working_version' }}
@@ -80,9 +80,9 @@ jobs:
         SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       run: |
-        echo "🔄 Running G_refresh_supabase_working_version.py..."
+        echo "🔄 Running 01_scripts/I_refresh_supabase_working_version.py..."
         echo "⚠️  This will refresh the Supabase working_version table with Groq pipeline data"
-        python -u G_refresh_supabase_working_version.py
+        python -u 01_scripts/I_refresh_supabase_working_version.py
 
     - name: Run I_deploy_to_ai_models_main.py
       if: ${{ inputs.script_choice == 'deploy_to_main' }}
@@ -92,9 +92,9 @@ jobs:
         SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       run: |
-        echo "🚀 Running I_deploy_to_ai_models_main.py..."
+        echo "🚀 Running 01_scripts/J_deploy_to_ai_models_main.py..."
         echo "⚠️  This will deploy from working_version to the main ai_models table"
-        python -u I_deploy_to_ai_models_main.py
+        python -u 01_scripts/J_deploy_to_ai_models_main.py
 
     - name: Upload deployment logs
       uses: actions/upload-artifact@v4
@@ -103,9 +103,10 @@ jobs:
         name: groq-deployment-logs
         path: |
           groq_pipeline/*.log
-          groq_pipeline/*-deployment-*.txt
-          groq_pipeline/G-*.txt
-          groq_pipeline/I-*.txt
+          groq_pipeline/02_outputs/*-report.txt
+          groq_pipeline/02_outputs/H-*.txt
+          groq_pipeline/02_outputs/I-*.txt
+          groq_pipeline/02_outputs/J-*.txt
         retention-days: 7
 
     - name: Show completion summary
