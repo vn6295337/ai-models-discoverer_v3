@@ -308,12 +308,22 @@ def main():
         print(f"   Script: {script_info['script']}")
         print(f"   Description: {script_info['description']}")
 
-    print(f"\nPress Enter to start execution, or Ctrl+C to cancel...")
-    try:
-        input()
-    except KeyboardInterrupt:
-        print("\n❌ Execution cancelled by user")
-        return False
+    # Check if running in automated environment (GitHub Actions, etc.)
+    is_automated = (
+        os.getenv('GITHUB_ACTIONS') == 'true' or
+        os.getenv('CI') == 'true' or
+        not sys.stdin.isatty()
+    )
+
+    if is_automated:
+        print(f"\n🤖 Running in automated mode - starting execution immediately...")
+    else:
+        print(f"\nPress Enter to start execution, or Ctrl+C to cancel...")
+        try:
+            input()
+        except (KeyboardInterrupt, EOFError):
+            print("\n❌ Execution cancelled by user")
+            return False
 
     # Execute all scripts
     results = []
