@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-09-20 11:03 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-09-20 11:10 AM IST",
+    "total_models": 52,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -604,6 +604,18 @@
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "source_category": "opensource"
+    },
+    {
+      "id": "x-ai/grok-4-fast:free",
+      "canonical_slug": "x-ai/grok-4-fast",
+      "original_name": "X Ai/Grok 4 Fast",
+      "hugging_face_id": "",
+      "clean_model_name": "Grok 4 Fast",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "xAI",
+      "license_url": "https://x.ai/legal",
+      "source_category": "proprietary"
     },
     {
       "id": "z-ai/glm-4.5-air:free",

@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-09-20 11:03 AM IST
+Generated: 2025-09-20 11:10 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -55,12 +55,6 @@ LICENSE INFO URL (21 models):
   - Qwen2.5 VL 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
-LICENSE NAME (1 models):
-  - Grok 4 Fast
-
-LICENSE URL (1 models):
-  - Grok 4 Fast
-
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
 
@@ -73,8 +67,6 @@ DATA QUALITY SUMMARY:
 Total models: 52
 Missing license info text: 21 (40.4%)
 Missing license info url: 21 (40.4%)
-Missing license name: 1 (1.9%)
-Missing license url: 1 (1.9%)
 Unknown license name: 2 (3.8%)
 
 ================================================================================
@@ -595,9 +587,9 @@ COMPLETE MODEL RECORDS:
  52. Grok 4 Fast
      Provider           : xAI (United States)
      Modalities         : Text, Image → Text
-     License            : 
+     License            : xAI
      License Info       : 
-     License URL        : 
+     License URL        : https://x.ai/legal
      Official URL       : https://x.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
