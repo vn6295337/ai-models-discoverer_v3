@@ -36,11 +36,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r 03_configs/requirements.txt
 
-    - name: Create .env file
+    - name: Set environment variables
       working-directory: google_pipeline
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       run: |
-        echo "SUPABASE_URL=https://atilxlecbaqcksnrgzav.supabase.co" >> .env
-        echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog" >> .env
+        echo "✅ Environment variables set from GitHub secrets"
 
     - name: Show execution plan
       run: |
@@ -57,6 +59,9 @@ jobs:
     - name: Run G_refresh_supabase_working_version.py
       if: ${{ inputs.script_choice == 'run_g' }}
       working-directory: google_pipeline
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       run: |
         echo "🔄 Running G_refresh_supabase_working_version.py..."
         echo "⚠️  This will refresh the Supabase working_version table with Google pipeline data"
@@ -65,6 +70,9 @@ jobs:
     - name: Run H_deploy_to_supabase_ai_models_main.py
       if: ${{ inputs.script_choice == 'run_h' }}
       working-directory: google_pipeline
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       run: |
         echo "🚀 Running H_deploy_to_supabase_ai_models_main.py..."
         echo "⚠️  This will deploy from working_version to the main ai_models table"
