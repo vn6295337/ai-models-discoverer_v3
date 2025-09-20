@@ -47,61 +47,62 @@ def setup_chrome_driver():
 # =============================================================================
 
 def scrape_production_models() -> List[Dict[str, Any]]:
-    """Scrape production models from Groq documentation"""
+    """Scrape production models from Groq documentation including production systems"""
     print("=" * 80)
     print("🚀 STAGE 1: GROQ PRODUCTION MODELS EXTRACTION")
     print("=" * 80)
     print(f"🕒 Started at: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
-    
+
     driver = setup_chrome_driver()
     print("✅ ChromeDriver automatically managed")
-    
+
     try:
-        url = 'https://console.groq.com/docs/models#production-models'
-        print(f"🔍 Extracting production models from: {url}")
-        
-        driver.get(url)
+        # Extract from production-models section
+        url_production = 'https://console.groq.com/docs/models#production-models'
+        print(f"🔍 Extracting production models from: {url_production}")
+
+        driver.get(url_production)
         print("⏳ Waiting for dynamic content...")
-        
+
         WebDriverWait(driver, 10).until(
             EC.presence_of_element_located((By.TAG_NAME, 'table'))
         )
         print("✅ Page content loaded")
-        
+
         soup = BeautifulSoup(driver.page_source, 'html.parser')
         tables = soup.find_all('table')
-        print(f"📊 Found {len(tables)} tables after fragment navigation")
-        
+        print(f"📊 Found {len(tables)} tables in production-models section")
+
         production_models = []
-        
+
         for i, table in enumerate(tables):
             print(f"✅ Processing production models table {i+1}")
-            
+
             header_row = table.find('tr')
             if not header_row:
                 continue
-                
+
             headers = [th.get_text().strip() for th in header_row.find_all(['th', 'td'])]
             print(f"📋 Production Models headers: {headers}")
-            
+
             if not ('MODEL ID' in [h.upper() for h in headers]):
                 continue
-                
+
             # Find column indices
             model_col = next((i for i, h in enumerate(headers) if 'model' in h.lower()), 0)
             developer_col = next((i for i, h in enumerate(headers) if 'developer' in h.lower()), 1)
             context_col = next((i for i, h in enumerate(headers) if 'context' in h.lower()), 2)
             completion_col = next((i for i, h in enumerate(headers) if 'completion' in h.lower()), 3)
-            
+
             # Parse data rows
             data_rows = table.find_all('tr')[1:]  # Skip header
             print(f"📊 Found {len(data_rows)} data rows in Production Models")
-            
+
             for row_num, row in enumerate(data_rows, 1):
                 cells = row.find_all(['td', 'th'])
                 if len(cells) > model_col:
                     model_id = cells[model_col].get_text().strip()
-                    
+
                     if model_id and model_id.lower() not in ['model', 'model id', '']:
                         model_data = {
                             'model_id': model_id,
@@ -111,12 +112,83 @@ def scrape_production_models() -> List[Dict[str, Any]]:
                             'active': True,
                             'context_window': cells[context_col].get_text().strip().replace(',', '') if len(cells) > context_col else '',
                             'max_completion_tokens': cells[completion_col].get_text().strip().replace(',', '') if len(cells) > completion_col else '',
-                            'public_apps': True
+                            'public_apps': True,
+                            'source_section': 'production-models'
                         }
-                        
+
                         production_models.append(model_data)
                         print(f"   ✅ Row {row_num}: {model_data['model_id']} ({model_data['model_provider']})")
-            
+
+            break  # Only process first valid table
+
+        # Extract from production-systems section
+        url_systems = 'https://console.groq.com/docs/models#production-systems'
+        print(f"\n🔍 Extracting production systems from: {url_systems}")
+
+        driver.get(url_systems)
+        print("⏳ Waiting for dynamic content...")
+
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.TAG_NAME, 'table'))
+        )
+        print("✅ Page content loaded")
+
+        soup = BeautifulSoup(driver.page_source, 'html.parser')
+        tables = soup.find_all('table')
+        print(f"📊 Found {len(tables)} tables in production-systems section")
+
+        for i, table in enumerate(tables):
+            print(f"✅ Processing production systems table {i+1}")
+
+            header_row = table.find('tr')
+            if not header_row:
+                continue
+
+            headers = [th.get_text().strip() for th in header_row.find_all(['th', 'td'])]
+            print(f"📋 Production Systems headers: {headers}")
+
+            # Look for model-related columns (more flexible matching)
+            has_model_column = any('model' in h.lower() for h in headers)
+            if not has_model_column:
+                continue
+
+            # Find column indices with flexible matching
+            model_col = next((i for i, h in enumerate(headers) if 'model' in h.lower()), 0)
+            developer_col = next((i for i, h in enumerate(headers) if any(keyword in h.lower() for keyword in ['developer', 'provider', 'company'])), 1)
+            context_col = next((i for i, h in enumerate(headers) if 'context' in h.lower()), 2)
+            completion_col = next((i for i, h in enumerate(headers) if any(keyword in h.lower() for keyword in ['completion', 'max', 'output'])), 3)
+
+            # Parse data rows
+            data_rows = table.find_all('tr')[1:]  # Skip header
+            print(f"📊 Found {len(data_rows)} data rows in Production Systems")
+
+            for row_num, row in enumerate(data_rows, 1):
+                cells = row.find_all(['td', 'th'])
+                if len(cells) > model_col:
+                    model_id = cells[model_col].get_text().strip()
+
+                    if model_id and model_id.lower() not in ['model', 'model id', '']:
+                        # Check if this model is already in our list
+                        existing_model = next((m for m in production_models if m['model_id'] == model_id), None)
+
+                        if not existing_model:
+                            model_data = {
+                                'model_id': model_id,
+                                'object': 'model',
+                                'created': int(time.time()),
+                                'model_provider': cells[developer_col].get_text().strip() if len(cells) > developer_col else 'Groq',
+                                'active': True,
+                                'context_window': cells[context_col].get_text().strip().replace(',', '') if len(cells) > context_col else '',
+                                'max_completion_tokens': cells[completion_col].get_text().strip().replace(',', '') if len(cells) > completion_col else '',
+                                'public_apps': True,
+                                'source_section': 'production-systems'
+                            }
+
+                            production_models.append(model_data)
+                            print(f"   ✅ Row {row_num}: {model_data['model_id']} ({model_data['model_provider']}) [SYSTEMS]")
+                        else:
+                            print(f"   ⚠️  Row {row_num}: {model_id} already exists from production-models section")
+
             break  # Only process first valid table
         
         driver.quit()
@@ -136,11 +208,22 @@ def scrape_production_models() -> List[Dict[str, Any]]:
 def save_production_models(production_models: List[Dict[str, Any]]) -> str:
     """Save production models to stage-1-scrape-production-models.json"""
     filename = 'stage-1-scrape-production-models.json'
-    
+
+    # Count models by source section
+    production_models_count = sum(1 for m in production_models if m.get('source_section') == 'production-models')
+    production_systems_count = sum(1 for m in production_models if m.get('source_section') == 'production-systems')
+
     data = {
         'extraction_timestamp': datetime.datetime.now().isoformat(),
-        'source_url': 'https://console.groq.com/docs/models#production-models',
+        'source_urls': [
+            'https://console.groq.com/docs/models#production-models',
+            'https://console.groq.com/docs/models#production-systems'
+        ],
         'total_models': len(production_models),
+        'models_by_source': {
+            'production-models': production_models_count,
+            'production-systems': production_systems_count
+        },
         'production_models': production_models
     }
     
