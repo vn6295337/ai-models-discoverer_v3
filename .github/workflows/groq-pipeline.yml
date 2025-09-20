@@ -2,15 +2,6 @@ name: Groq Pipeline
 
 on:
   workflow_dispatch:  # Manual trigger
-    inputs:
-      force_run:
-        description: 'Force run even if no changes'
-        required: false
-        default: 'false'
-        type: choice
-        options:
-        - 'false'
-        - 'true'
   schedule:
     # Run daily at 12:00 UTC (once per day)
     - cron: '0 12 * * *'
