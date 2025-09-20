@@ -38,9 +38,12 @@ jobs:
 
     - name: Create .env file
       working-directory: openrouter_pipeline
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
       run: |
-        echo "SUPABASE_URL=https://atilxlecbaqcksnrgzav.supabase.co" >> .env
-        echo "SUPABASE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImF0aWx4bGVjYmFxY2tzbnJnemF2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIzOTY5MTYsImV4cCI6MjA2Nzk3MjkxNn0.sYRFyQIEzZMlgg5RtHTXDSpvxl-KrJ8E7U3_UroIJog" >> .env
+        echo "SUPABASE_URL=$SUPABASE_URL" >> .env
+        echo "SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY" >> .env
 
     - name: Show execution plan
       run: |
