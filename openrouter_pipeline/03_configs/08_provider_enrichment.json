@@ -25,7 +25,8 @@
     "tng": ["TNG Technology", "Germany"],
     "tngtech": ["TNG Technology", "Germany"],
     "sarvam": ["Sarvam AI", "India"],
-    "shisa-ai": ["Shisa AI", "Japan"]
+    "shisa-ai": ["Shisa AI", "Japan"],
+    "x-ai": ["xAI", "United States"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -78,6 +79,7 @@
     "moonshot ai": "https://www.moonshot.ai/",
     "z.ai": "https://zhipuai.cn/en/",
     "tencent": "https://hunyuan.tencent.com",
-    "anthropic": "https://www.anthropic.com/claude"
+    "anthropic": "https://www.anthropic.com/claude",
+    "xai": "https://x.ai/"
   }
 }

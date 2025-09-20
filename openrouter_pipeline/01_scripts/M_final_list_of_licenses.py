@@ -48,6 +48,22 @@ def create_canonical_slug_index(models: List[Dict[str, Any]]) -> Dict[str, Dict[
             index[canonical_slug] = model
     return index
 
+def load_proprietary_license_mappings() -> Dict[str, Dict[str, str]]:
+    """Load proprietary license mappings from config file"""
+    config_file = '../03_configs/12_proprietary_license_mappings.json'
+
+    try:
+        with open(config_file, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+
+        mappings = config.get('proprietary_license_mappings', {})
+        print(f"✓ Loaded {len(mappings)} proprietary license mappings from: {config_file}")
+        return mappings
+
+    except (FileNotFoundError, json.JSONDecodeError) as error:
+        print(f"WARNING: Failed to load proprietary license mappings from {config_file}: {error}")
+        return {}
+
 def consolidate_all_licenses() -> List[Dict[str, Any]]:
     """Consolidate all license information from all pipeline stages"""
     
@@ -77,6 +93,9 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
         get_input_file_path('L-collated-custom-licenses.json'),
         'Custom licenses'
     )
+
+    # Load proprietary license mappings from config
+    proprietary_mappings = load_proprietary_license_mappings()
     
     # Create indexes for fast lookups
     print("Creating lookup indexes...")
@@ -102,10 +121,22 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
         opensource_data = opensource_index.get(canonical_slug, {})
         custom_data = custom_index.get(canonical_slug, {})
         
+        # Check for proprietary license mapping
+        proprietary_data = {}
+        if canonical_slug in proprietary_mappings:
+            mapping = proprietary_mappings[canonical_slug]
+            proprietary_data = {
+                'canonical_slug': canonical_slug,
+                'license_name': mapping.get('license_name', ''),
+                'license_url': mapping.get('license_url', ''),
+                'license_info_text': mapping.get('license_info_text', ''),
+                'license_info_url': mapping.get('license_info_url', '')
+            }
+
         # Determine source category and priority
         source_category = 'unknown'
         primary_data = {}
-        
+
         if google_data:
             source_category = 'google'
             primary_data = google_data
@@ -118,6 +149,9 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
         elif custom_data:
             source_category = 'custom'
             primary_data = custom_data
+        elif proprietary_data:
+            source_category = 'proprietary'
+            primary_data = proprietary_data
         
         # Create final consolidated model record with standardized field names
         final_model = {
@@ -138,24 +172,28 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
                                  meta_data.get('license_info_text', '') or
                                  opensource_data.get('license_info_text', '') or
                                  custom_data.get('license_info_text', '') or
+                                 proprietary_data.get('license_info_text', '') or
                                  ''),
             
             'license_info_url': (google_data.get('license_info_url', '') or
                                 meta_data.get('license_info_url', '') or
                                 opensource_data.get('license_info_url', '') or
                                 custom_data.get('license_info_url', '') or
+                                proprietary_data.get('license_info_url', '') or
                                 ''),
             
             'license_name': (google_data.get('license_name') or
                             meta_data.get('license_name') or
                             opensource_data.get('license_name') or
                             custom_data.get('license_name') or
+                            proprietary_data.get('license_name') or
                             'Unknown'),
             
             'license_url': (google_data.get('license_url') or
                            meta_data.get('license_url') or
                            opensource_data.get('license_url') or
                            custom_data.get('license_url') or
+                           proprietary_data.get('license_url') or
                            ''),
             
             # Source tracking
