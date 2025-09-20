@@ -1,0 +1,118 @@
+================================================================================
+GROQ PIPELINE NORMALIZATION REPORT
+Generated: 2025-09-20 14:35:23
+================================================================================
+
+SUMMARY:
+  Total models extracted: 14
+  Models filtered out: 0
+  Models normalized: 14
+  Models unchanged: 0
+  Success rate: 100.0%
+
+MODELS NORMALIZED: 14
+----------------------------------------
+   1. META - Llama 3.1 8b Instant
+      Model Name: llama-3.1-8b-instant -> Llama 3.1 8b Instant
+      Input Modalities: Text
+      Output Modalities: Text
+      License:  -> Llama-3.1
+      Rate Limits: RPM: 30, TPM: 6K, RPD: 14.4K, TPD: 500K
+
+   2. META - Llama 3.3 70b Versatile
+      Model Name: llama-3.3-70b-versatile -> Llama 3.3 70b Versatile
+      Input Modalities: Text
+      Output Modalities: Text
+      License:  -> Llama-3.3
+      Rate Limits: RPM: 30, TPM: 12K, RPD: 1K, TPD: 100K
+
+   3. META - Llama Guard 4 12b
+      Model Name: meta-llama/llama-guard-4-12b -> Llama Guard 4 12b
+      Input Modalities: Text, Image
+      Output Modalities: Text
+      License:  -> Llama-4
+      Rate Limits: RPM: 30, TPM: 15K, RPD: 14.4K, TPD: 500K
+
+   4. OPENAI - GPT OSS 120B
+      Model Name: openai/gpt-oss-120b -> GPT OSS 120B
+      Input Modalities: Text
+      Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+
+   5. OPENAI - GPT OSS 20B
+      Model Name: openai/gpt-oss-20b -> GPT OSS 20B
+      Input Modalities: Text
+      Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+
+   6. OPENAI - Whisper Large V3
+      Model Name: whisper-large-v3 -> Whisper Large V3
+      Input Modalities: Audio
+      Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
+
+   7. OPENAI - Whisper Large V3 Turbo
+      Model Name: whisper-large-v3-turbo -> Whisper Large V3 Turbo
+      Input Modalities: Audio
+      Output Modalities: Text
+      License: info -> MIT
+      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
+
+   8. META - Llama 3.1 8b Instant
+      Model Name: llama-3.1-8b-instant -> Llama 3.1 8b Instant
+      Input Modalities: Text
+      Output Modalities: Text
+      License:  -> Llama-3.1
+      Rate Limits: RPM: 30, TPM: 6K, RPD: 14.4K, TPD: 500K
+
+   9. META - Llama 3.3 70b Versatile
+      Model Name: llama-3.3-70b-versatile -> Llama 3.3 70b Versatile
+      Input Modalities: Text
+      Output Modalities: Text
+      License:  -> Llama-3.3
+      Rate Limits: RPM: 30, TPM: 12K, RPD: 1K, TPD: 100K
+
+   10. META - Llama Guard 4 12b
+      Model Name: meta-llama/llama-guard-4-12b -> Llama Guard 4 12b
+      Input Modalities: Text, Image
+      Output Modalities: Text
+      License:  -> Llama-4
+      Rate Limits: RPM: 30, TPM: 15K, RPD: 14.4K, TPD: 500K
+
+   11. OPENAI - GPT OSS 120B
+      Model Name: openai/gpt-oss-120b -> GPT OSS 120B
+      Input Modalities: Text
+      Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+
+   12. OPENAI - GPT OSS 20B
+      Model Name: openai/gpt-oss-20b -> GPT OSS 20B
+      Input Modalities: Text
+      Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+
+   13. OPENAI - Whisper Large V3
+      Model Name: whisper-large-v3 -> Whisper Large V3
+      Input Modalities: Audio
+      Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
+
+   14. OPENAI - Whisper Large V3 Turbo
+      Model Name: whisper-large-v3-turbo -> Whisper Large V3 Turbo
+      Input Modalities: Audio
+      Output Modalities: Text
+      License: info -> MIT
+      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
+
+PROVIDER SUMMARY:
+----------------------------------------
+  Meta: 6 models
+  OpenAI: 8 models
+
+Total providers: 2

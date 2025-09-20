@@ -1,7 +1,9 @@
 {
-  "extraction_timestamp": "2025-09-20T07:35:03.324922",
-  "source_base_url": "https://console.groq.com/docs/model/",
-  "total_models": 7,
+  "metadata": {
+    "extraction_timestamp": "2025-09-20T14:35:02.444628",
+    "source_base_url": "https://console.groq.com/docs/model/",
+    "total_models": 7
+  },
   "modalities": {
     "llama-3.1-8b-instant": {
       "model_id": "llama-3.1-8b-instant",

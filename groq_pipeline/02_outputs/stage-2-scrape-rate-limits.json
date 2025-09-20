@@ -1,7 +1,9 @@
 {
-  "extraction_timestamp": "2025-09-20T07:34:32.889572",
-  "source_url": "https://console.groq.com/docs/rate-limits",
-  "total_models": 21,
+  "metadata": {
+    "extraction_timestamp": "2025-09-20T14:34:02.652176",
+    "source_url": "https://console.groq.com/docs/rate-limits",
+    "total_models": 21
+  },
   "rate_limits": {
     "allam-2-7b": {
       "model_id": "allam-2-7b",

@@ -1,33 +1,33 @@
 {
   "metadata": {
-    "generated_at": "2025-09-20T07:35:09.546745+00:00",
+    "generated_at": "2025-09-20T14:35:20.967474+00:00",
     "consolidation_processor": "F_consolidate_all_licenses.py",
     "source_files": [
       "stage-4-meta-licensing.json",
       "stage-4-hf-scraped-licensing.json"
     ],
-    "total_models": 7,
+    "total_models": 14,
     "description": "Consolidated license information from all Groq model sources",
     "statistics": {
       "sources": {
-        "meta_models": 3,
-        "hf_scraped_models": 4,
-        "total_consolidated": 7
+        "meta_models": 6,
+        "hf_scraped_models": 8,
+        "total_consolidated": 14
       },
       "providers": {
-        "Meta": 3,
-        "OpenAI": 4
+        "Meta": 6,
+        "OpenAI": 8
       },
       "licenses": {
-        "Llama-3.1": 1,
-        "Llama-3.3": 1,
-        "Llama-4": 1,
-        "Apache-2.0": 3,
-        "MIT": 1
+        "Llama-3.1": 2,
+        "Llama-3.3": 2,
+        "Llama-4": 2,
+        "Apache-2.0": 6,
+        "MIT": 2
       },
       "categories": {
-        "meta": 3,
-        "opensource": 4
+        "meta": 6,
+        "opensource": 8
       }
     }
   },
