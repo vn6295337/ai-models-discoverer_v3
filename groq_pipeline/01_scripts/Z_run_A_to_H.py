@@ -309,10 +309,12 @@ def main():
         print(f"   Description: {script_info['description']}")
 
     # Check if running in automated environment (GitHub Actions, etc.)
+    # Note: Use Z_run_A_to_H_interactive.py for full interactive local execution
     is_automated = (
         os.getenv('GITHUB_ACTIONS') == 'true' or
         os.getenv('CI') == 'true' or
-        not sys.stdin.isatty()
+        os.getenv('AUTOMATED_EXECUTION') == 'true' or
+        '--automated' in sys.argv
     )
 
     if is_automated:
