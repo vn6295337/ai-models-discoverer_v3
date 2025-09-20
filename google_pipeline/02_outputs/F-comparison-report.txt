@@ -1,6 +1,6 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-09-20 11:10:37 IST
+Generated: 2025-09-20 11:23:22 IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -8,55 +8,53 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total models processed: 34
-   • Models in both systems: 32
+   • Models in both systems: 34
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 2
+   • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • model_provider:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • official_url:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • input_modalities:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • output_modalities:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • license_info_text:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • license_info_url:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • license_name:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • license_url:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • rate_limits:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 32
+     - Exact matches: 34
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 2
-     Models: Veo 3.0 Fast Generate 001, Veo 3.0 Generate 001
    • Existing models with differences: 0
 
 ================================================================================
@@ -707,19 +705,19 @@ MODEL: Veo 3.0 Fast Generate 001
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | Google                    |                          
-model_provider            | Google                    |                          
-human_readable_name       | Veo 3.0 Fast Generate 001 |                          
-model_provider_country    | United States             |                          
-official_url              | https://deepmind.google.. |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Audio, Video              |                          
-license_info_text         | Google                    |                          
-license_info_url          | https://developers.goog.. |                          
-license_name              | Gemini                    |                          
-license_url               | https://ai.google.dev/g.. |                          
-rate_limits               | Image input: up to 20MB.. |                          
-provider_api_access       | https://aistudio.google.. |                          
+inference_provider        | Google                    | Google                   
+model_provider            | Google                    | Google                   
+human_readable_name       | Veo 3.0 Fast Generate 001 | Veo 3.0 Fast Generate 001
+model_provider_country    | United States             | United States            
+official_url              | https://deepmind.google.. | https://deepmind.google..
+input_modalities          | Text, Image               | Text, Image              
+output_modalities         | Audio, Video              | Audio, Video             
+license_info_text         | Google                    | Google                   
+license_info_url          | https://developers.goog.. | https://developers.goog..
+license_name              | Gemini                    | Gemini                   
+license_url               | https://ai.google.dev/g.. | https://ai.google.dev/g..
+rate_limits               | Image input: up to 20MB.. | Image input: up to 20MB..
+provider_api_access       | https://aistudio.google.. | https://aistudio.google..
 
 ================================================================================
 
@@ -727,19 +725,19 @@ MODEL: Veo 3.0 Generate 001
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | Google                    |                          
-model_provider            | Google                    |                          
-human_readable_name       | Veo 3.0 Generate 001      |                          
-model_provider_country    | United States             |                          
-official_url              | https://deepmind.google.. |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Audio, Video              |                          
-license_info_text         | Google                    |                          
-license_info_url          | https://developers.goog.. |                          
-license_name              | Gemini                    |                          
-license_url               | https://ai.google.dev/g.. |                          
-rate_limits               | Image input: up to 20MB.. |                          
-provider_api_access       | https://aistudio.google.. |                          
+inference_provider        | Google                    | Google                   
+model_provider            | Google                    | Google                   
+human_readable_name       | Veo 3.0 Generate 001      | Veo 3.0 Generate 001     
+model_provider_country    | United States             | United States            
+official_url              | https://deepmind.google.. | https://deepmind.google..
+input_modalities          | Text, Image               | Text, Image              
+output_modalities         | Audio, Video              | Audio, Video             
+license_info_text         | Google                    | Google                   
+license_info_url          | https://developers.goog.. | https://developers.goog..
+license_name              | Gemini                    | Gemini                   
+license_url               | https://ai.google.dev/g.. | https://ai.google.dev/g..
+rate_limits               | Image input: up to 20MB.. | Image input: up to 20MB..
+provider_api_access       | https://aistudio.google.. | https://aistudio.google..
 
 ================================================================================
 
