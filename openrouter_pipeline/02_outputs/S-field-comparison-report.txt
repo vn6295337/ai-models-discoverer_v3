@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-09-20 10:02 AM IST
+Generated: 2025-09-20 10:54 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -367,10 +367,10 @@ MODEL: Grok 4 Fast
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
 inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
+model_provider            | xAI                       |                          
 human_readable_name       | Grok 4 Fast               |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
+model_provider_country    | United States             |                          
+official_url              | https://x.ai/             |                          
 input_modalities          | Text, Image               |                          
 output_modalities         | Text                      |                          
 license_info_text         |                           |                          

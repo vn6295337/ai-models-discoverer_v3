@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-09-20 10:02 AM IST",
+    "generated_at": "2025-09-20 10:54 AM IST",
     "total_models": 52,
     "pipeline_stage": "P_enrich_provider_info"
   },
@@ -19,10 +19,10 @@
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "no_google_model",
       "inference_provider": "OpenRouter",
-      "model_provider": "Unknown",
-      "model_provider_country": "Unknown",
-      "model_family": "x-ai",
-      "official_url": "Unknown"
+      "model_provider": "xAI",
+      "model_provider_country": "United States",
+      "model_family": "xai",
+      "official_url": "https://x.ai/"
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",

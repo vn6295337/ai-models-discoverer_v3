@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-09-20 10:02 AM IST
+Generated: 2025-09-20 10:54 AM IST
 ================================================================================
 
 SUMMARY:
@@ -74,8 +74,8 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Microsoft
    1 models: NVIDIA
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
+   1 models: xAI
 
 Total providers: 15
 
