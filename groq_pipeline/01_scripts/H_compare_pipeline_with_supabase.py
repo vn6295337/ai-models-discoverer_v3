@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Groq Pipeline vs Supabase Field Comparison
-Compares field values between stage-5-data-normalization.csv and Supabase working_version table
+Compares field values between stage-5-data-normalization.json and Supabase working_version table
 """
 
 import csv
@@ -39,8 +39,8 @@ except ImportError:
     pass
 
 # Configuration
-PIPELINE_DATA_FILE = "stage-5-data-normalization.csv"
-REPORT_FILE = "H-groq-field-comparison-report.txt"
+PIPELINE_DATA_FILE = "../02_outputs/stage-5-data-normalization.json"
+REPORT_FILE = "../02_outputs/H-groq-field-comparison-report.txt"
 SUPABASE_URL = os.getenv("SUPABASE_URL")
 SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY") or os.getenv("SUPABASE_KEY")
 TABLE_NAME = "working_version"
@@ -70,18 +70,23 @@ def get_supabase_client() -> Optional[Client]:
         return None
 
 def load_pipeline_data() -> List[Dict[str, Any]]:
-    """Load pipeline data from stage-5-data-normalization.csv"""
+    """Load pipeline data from stage-5-data-normalization.json"""
     try:
         if not os.path.exists(PIPELINE_DATA_FILE):
             print(f"❌ ERROR: {PIPELINE_DATA_FILE} not found")
             print("Please run the Groq pipeline first to generate the normalized data")
             return []
 
-        models = []
         with open(PIPELINE_DATA_FILE, 'r', encoding='utf-8') as f:
-            reader = csv.DictReader(f)
-            for row in reader:
-                models.append(row)
+            data = json.load(f)
+
+        # Handle both old format (list) and new format (dict with metadata)
+        if isinstance(data, list):
+            models = data
+        elif isinstance(data, dict) and 'models' in data:
+            models = data['models']
+        else:
+            raise ValueError("Unexpected data format in input file")
 
         print(f"Loaded {len(models)} models from pipeline data")
         return models

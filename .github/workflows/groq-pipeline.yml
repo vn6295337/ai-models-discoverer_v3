@@ -61,7 +61,7 @@ jobs:
         Xvfb :99 -screen 0 1920x1080x24 &
 
         # Run the Groq pipeline
-        python -u G_groq_pipeline.py
+        python -u 01_scripts/G_groq_pipeline.py
 
         echo "✅ Groq Pipeline completed at: $(date -u)"
 

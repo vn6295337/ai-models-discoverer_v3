@@ -2,7 +2,7 @@
 """
 Groq Complete Pipeline - End-to-End Data Extraction and Normalization
 Combines: production models extraction → rate limits extraction → modalities extraction → data normalization
-Output files: 01_production_models.json, 02_rate_limits.json, 03_input_output_modalities.json, stage-3-data-normalization.csv
+Output files: stage-1-scrape-production-models.json, stage-2-scrape-rate-limits.json, stage-3-scrape-modalities.json, stage-4-license-mappings.json, stage-5-data-normalization.json
 """
 
 import json
@@ -207,7 +207,7 @@ def scrape_production_models() -> List[Dict[str, Any]]:
 
 def save_production_models(production_models: List[Dict[str, Any]]) -> str:
     """Save production models to stage-1-scrape-production-models.json"""
-    filename = 'stage-1-scrape-production-models.json'
+    filename = '../02_outputs/stage-1-scrape-production-models.json'
 
     # Count models by source section
     production_models_count = sum(1 for m in production_models if m.get('source_section') == 'production-models')
@@ -229,8 +229,34 @@ def save_production_models(production_models: List[Dict[str, Any]]) -> str:
     
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
-    
+
+    # Also create a txt report
+    txt_filename = filename.replace('.json', '-report.txt')
+    with open(txt_filename, 'w', encoding='utf-8') as f:
+        f.write("GROQ PRODUCTION MODELS EXTRACTION REPORT\n")
+        f.write("=" * 80 + "\n\n")
+        f.write(f"Generated: {data['extraction_timestamp']}\n")
+        f.write(f"Source URLs: {', '.join(data['source_urls'])}\n")
+        f.write(f"Total Models: {data['total_models']}\n\n")
+
+        f.write("MODELS BY SOURCE:\n")
+        f.write("-" * 40 + "\n")
+        for source, count in data['models_by_source'].items():
+            f.write(f"{source}: {count} models\n")
+        f.write("\n")
+
+        f.write("MODEL DETAILS:\n")
+        f.write("-" * 80 + "\n")
+        for i, model in enumerate(production_models, 1):
+            f.write(f"Model {i}: {model['model_id']}\n")
+            f.write(f"  Provider: {model['model_provider']}\n")
+            f.write(f"  Context Window: {model['context_window']}\n")
+            f.write(f"  Max Completion: {model['max_completion_tokens']}\n")
+            f.write(f"  Source Section: {model['source_section']}\n")
+            f.write("\n")
+
     print(f"✅ Saved {len(production_models)} production models to: {filename}")
+    print(f"✅ Saved production models report to: {txt_filename}")
     return filename
 
 # =============================================================================
@@ -380,7 +406,7 @@ def scrape_rate_limits() -> Dict[str, Dict[str, str]]:
 
 def save_rate_limits(rate_limits: Dict[str, Dict[str, str]]) -> str:
     """Save rate limits to stage-2-scrape-rate-limits.json"""
-    filename = 'stage-2-scrape-rate-limits.json'
+    filename = '../02_outputs/stage-2-scrape-rate-limits.json'
     
     data = {
         'extraction_timestamp': datetime.datetime.now().isoformat(),
@@ -402,14 +428,14 @@ def save_rate_limits(rate_limits: Dict[str, Dict[str, str]]) -> str:
 def load_production_models_for_modalities() -> List[Dict[str, Any]]:
     """Load production models from stage-1-scrape-production-models.json"""
     try:
-        with open('stage-1-scrape-production-models.json', 'r', encoding='utf-8') as f:
+        with open('../02_outputs/stage-1-scrape-production-models.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
             return data.get('production_models', [])
     except FileNotFoundError:
-        print("❌ ERROR: stage-1-scrape-production-models.json not found")
+        print("❌ ERROR: ../02_outputs/stage-1-scrape-production-models.json not found")
         return []
     except json.JSONDecodeError as e:
-        print(f"❌ ERROR: Invalid JSON in stage-1-scrape-production-models.json: {e}")
+        print(f"❌ ERROR: Invalid JSON in ../02_outputs/stage-1-scrape-production-models.json: {e}")
         return []
 
 def extract_modalities_for_model(driver, model_id: str) -> Dict[str, List[str]]:
@@ -566,7 +592,7 @@ def scrape_all_modalities() -> Dict[str, Dict[str, List[str]]]:
 
 def save_modalities(modalities_data: Dict[str, Dict[str, List[str]]]) -> str:
     """Save modalities to stage-3-scrape-modalities.json"""
-    filename = 'stage-3-scrape-modalities.json'
+    filename = '../02_outputs/stage-3-scrape-modalities.json'
     
     # Transform data to include model_id field for each model
     transformed_modalities = {}
@@ -896,7 +922,7 @@ def create_unified_license_mappings(production_models: List[Dict[str, Any]]) -> 
     }
     
     # Save to file
-    filename = 'stage-4-license-mappings.json'
+    filename = '../02_outputs/stage-4-license-mappings.json'
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(final_mappings, f, indent=2)
     
@@ -933,7 +959,7 @@ def load_json_file(filename):
 def load_special_model_rules():
     """Load special model name conversion rules"""
     try:
-        with open('04_special_model_rules.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/04_special_model_rules.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('special_name_conversions', {})
     except (FileNotFoundError, json.JSONDecodeError):
@@ -985,7 +1011,7 @@ def get_provider_info(model_provider, provider_mappings):
 def load_modality_standardization():
     """Load modality standardization mappings"""
     try:
-        with open('08_modality_standardization.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/08_modality_standardization.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
         return data.get('modality_mappings', {}), data.get('ordering_priority', {})
     except (FileNotFoundError, json.JSONDecodeError):
@@ -995,7 +1021,7 @@ def load_modality_standardization():
 def load_timestamp_patterns():
     """Load timestamp formatting patterns"""
     try:
-        with open('09_timestamp_patterns.json', 'r', encoding='utf-8') as f:
+        with open('../03_configs/09_timestamp_patterns.json', 'r', encoding='utf-8') as f:
             return json.load(f)
     except (FileNotFoundError, json.JSONDecodeError):
         return {}
@@ -1117,7 +1143,7 @@ def format_rate_limits(model_id, rate_limits_data):
 def generate_normalization_report(production_models, normalized_data, report_filename=None):
     """Generate detailed normalization report like OpenRouter pipeline"""
     if not report_filename:
-        report_filename = 'groq_normalization_report.txt'
+        report_filename = '../02_outputs/groq_normalization_report.txt'
     
     total_extracted = len(production_models['production_models'])
     total_normalized = len(normalized_data)
@@ -1199,12 +1225,12 @@ def populate_normalized_data():
     
     # Load all data files
     print("Loading data files...")
-    production_models = load_json_file('stage-1-scrape-production-models.json')
-    rate_limits = load_json_file('stage-2-scrape-rate-limits.json')
-    modalities = load_json_file('stage-3-scrape-modalities.json')
-    provider_mappings = load_json_file('01_provider_mappings.json')
-    license_mappings = load_json_file('stage-4-license-mappings.json')
-    database_schema = load_json_file('03_database_schema.json')
+    production_models = load_json_file('../02_outputs/stage-1-scrape-production-models.json')
+    rate_limits = load_json_file('../02_outputs/stage-2-scrape-rate-limits.json')
+    modalities = load_json_file('../02_outputs/stage-3-scrape-modalities.json')
+    provider_mappings = load_json_file('../03_configs/01_provider_mappings.json')
+    license_mappings = load_json_file('../02_outputs/stage-4-license-mappings.json')
+    database_schema = load_json_file('../03_configs/03_database_schema.json')
     
     # Get standardization rules
     standardization = provider_mappings.get('model_name_standardization', {})
@@ -1267,13 +1293,57 @@ def populate_normalized_data():
         normalized_data.append(record)
     
     # Write to CSV
-    print("Writing to stage-5-data-normalization.csv...")
-    with open('stage-5-data-normalization.csv', 'w', newline='', encoding='utf-8') as csvfile:
-        writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(normalized_data)
-    
-    print(f"✅ Successfully populated {len(normalized_data)} records to stage-5-data-normalization.csv")
+    # Save as JSON instead of CSV
+    json_filename = '../02_outputs/stage-5-data-normalization.json'
+    print(f"Writing to {json_filename}...")
+
+    normalization_data = {
+        'metadata': {
+            'generated_at': datetime.datetime.now().isoformat(),
+            'total_models': len(normalized_data),
+            'pipeline_stage': 'stage-5-data-normalization',
+            'source_files': [
+                'stage-1-scrape-production-models.json',
+                'stage-2-scrape-rate-limits.json',
+                'stage-3-scrape-modalities.json',
+                'stage-4-license-mappings.json'
+            ]
+        },
+        'models': normalized_data
+    }
+
+    with open(json_filename, 'w', encoding='utf-8') as f:
+        json.dump(normalization_data, f, indent=2)
+
+    # Also create a txt report
+    txt_filename = json_filename.replace('.json', '-report.txt')
+    with open(txt_filename, 'w', encoding='utf-8') as f:
+        f.write("GROQ DATA NORMALIZATION REPORT\n")
+        f.write("=" * 80 + "\n\n")
+        f.write(f"Generated: {normalization_data['metadata']['generated_at']}\n")
+        f.write(f"Total Models: {normalization_data['metadata']['total_models']}\n")
+        f.write(f"Pipeline Stage: {normalization_data['metadata']['pipeline_stage']}\n\n")
+
+        f.write("SOURCE FILES:\n")
+        f.write("-" * 40 + "\n")
+        for source_file in normalization_data['metadata']['source_files']:
+            f.write(f"• {source_file}\n")
+        f.write("\n")
+
+        f.write("NORMALIZED MODEL DATA:\n")
+        f.write("-" * 80 + "\n")
+        for i, model in enumerate(normalized_data[:5], 1):  # Show first 5 models
+            f.write(f"Model {i}: {model.get('human_readable_name', 'N/A')}\n")
+            f.write(f"  Provider: {model.get('model_provider', 'N/A')}\n")
+            f.write(f"  License: {model.get('license_name', 'N/A')}\n")
+            f.write(f"  Modalities: {model.get('input_modalities', 'N/A')} → {model.get('output_modalities', 'N/A')}\n")
+            f.write("\n")
+
+        if len(normalized_data) > 5:
+            f.write(f"... and {len(normalized_data) - 5} more models\n")
+
+    print(f"✅ Successfully populated {len(normalized_data)} records to {json_filename}")
+    print(f"✅ Saved normalization report to: {txt_filename}")
     
     # Generate normalization report
     report_file = generate_normalization_report(production_models, normalized_data)
@@ -1413,7 +1483,7 @@ def main():
         print("   • stage-2-scrape-rate-limits.json - Rate limits data") 
         print("   • stage-3-scrape-modalities.json - Modalities data")
         print("   • stage-4-license-mappings.json - License mappings data")
-        print("   • stage-5-data-normalization.csv - Normalized database-ready data")
+        print("   • stage-5-data-normalization.json - Normalized database-ready data")
         print("   • groq_normalization_report.txt - Detailed normalization report")
         print(f"🕒 Pipeline completed at: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
         
