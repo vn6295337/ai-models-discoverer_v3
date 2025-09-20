@@ -5,13 +5,13 @@ Groq Pipeline Orchestrator (Scripts A to H)
 
 This script orchestrates the execution of Groq pipeline scripts A through H:
 
-A. A_extract_meta_licenses.py - Extract Meta/Llama license information
-B. B_extract_opensource_licenses.py - Extract HuggingFace-scraped & Google licenses
-C. C_extract_hf_license_info_urls.py - Extract HF license info URLs (dependency)
-D. D_extract_hf_license_names.py - Extract HF license names (dependency)
-E. (No E script in current pipeline)
+A. A_scrape_production_models.py - Extract production models from Groq docs
+B. B_scrape_rate_limits.py - Extract rate limits from Groq docs
+C. C_scrape_modalities.py - Extract input/output modalities for each model
+D. D_extract_meta_licenses.py - Extract Meta/Llama license information
+E. E_extract_opensource_licenses.py - Extract HuggingFace-scraped & Google licenses
 F. F_consolidate_all_licenses.py - Consolidate all license information
-G. G_groq_pipeline.py - Main pipeline data normalization
+G. G_normalize_data.py - Normalize all extracted data into database-ready format
 H. H_compare_pipeline_with_supabase.py - Compare pipeline with Supabase
 
 Features:
@@ -37,13 +37,31 @@ from pathlib import Path
 # Script execution order and metadata
 PIPELINE_SCRIPTS = [
     {
-        'script': 'A_extract_meta_licenses.py',
+        'script': 'A_scrape_production_models.py',
+        'name': 'Production Models Extraction',
+        'description': 'Extract production models from Groq docs',
+        'required': True
+    },
+    {
+        'script': 'B_scrape_rate_limits.py',
+        'name': 'Rate Limits Extraction',
+        'description': 'Extract rate limits from Groq docs',
+        'required': False  # Rate limits are not critical
+    },
+    {
+        'script': 'C_scrape_modalities.py',
+        'name': 'Modalities Extraction',
+        'description': 'Extract input/output modalities for each model',
+        'required': False  # Modalities are not critical
+    },
+    {
+        'script': 'D_extract_meta_licenses.py',
         'name': 'Meta/Llama License Extraction',
         'description': 'Extract official Meta/Llama license information',
         'required': True
     },
     {
-        'script': 'B_extract_opensource_licenses.py',
+        'script': 'E_extract_opensource_licenses.py',
         'name': 'HuggingFace & Google License Extraction',
         'description': 'Extract HF-scraped and Google model licenses',
         'required': True
@@ -55,9 +73,9 @@ PIPELINE_SCRIPTS = [
         'required': True
     },
     {
-        'script': 'G_groq_pipeline.py',
-        'name': 'Main Pipeline Data Normalization',
-        'description': 'Execute main Groq pipeline with data normalization',
+        'script': 'G_normalize_data.py',
+        'name': 'Data Normalization',
+        'description': 'Normalize all extracted data into database-ready format',
         'required': True
     },
     {

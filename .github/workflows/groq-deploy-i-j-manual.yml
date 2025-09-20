@@ -72,7 +72,7 @@ jobs:
         echo "⚠️  This will compare pipeline data with Supabase working_version table"
         python -u 01_scripts/H_compare_pipeline_with_supabase.py
 
-    - name: Run G_refresh_supabase_working_version.py
+    - name: Run I_refresh_supabase_working_version.py
       if: ${{ inputs.script_choice == 'refresh_working_version' }}
       working-directory: groq_pipeline
       env:
@@ -84,7 +84,7 @@ jobs:
         echo "⚠️  This will refresh the Supabase working_version table with Groq pipeline data"
         python -u 01_scripts/I_refresh_supabase_working_version.py
 
-    - name: Run I_deploy_to_ai_models_main.py
+    - name: Run J_deploy_to_ai_models_main.py
       if: ${{ inputs.script_choice == 'deploy_to_main' }}
       working-directory: groq_pipeline
       env:

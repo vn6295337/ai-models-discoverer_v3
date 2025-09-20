@@ -60,8 +60,9 @@ jobs:
         # Start virtual display for headless Chrome
         Xvfb :99 -screen 0 1920x1080x24 &
 
-        # Run the Groq pipeline
-        python -u 01_scripts/G_groq_pipeline.py
+        # Run the Groq pipeline A-H scripts orchestrator
+        cd 01_scripts
+        python -u Z_run_A_to_H.py
 
         echo "✅ Groq Pipeline completed at: $(date -u)"
 

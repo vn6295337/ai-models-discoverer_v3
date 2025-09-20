@@ -21,18 +21,111 @@ import time
 from typing import Dict, List, Any
 from datetime import datetime
 
-# Import license extraction functions
-try:
-    from D_extract_hf_license_names import extract_license_from_hf_page
-except ImportError as e:
-    print(f"ERROR: Could not import D_extract_hf_license_names: {e}")
-    sys.exit(1)
+# Consolidated license extraction functions (formerly from C and D scripts)
+import requests
+import re
 
-try:
-    from C_extract_hf_license_info_urls import get_huggingface_license_info
-except ImportError as e:
-    print(f"ERROR: Could not import C_extract_hf_license_info_urls: {e}")
-    sys.exit(1)
+
+def check_url_accessible(url: str) -> bool:
+    """Check if a URL is accessible with a HEAD request"""
+    try:
+        response = requests.head(url, timeout=5, allow_redirects=True)
+        return response.status_code == 200
+    except (requests.RequestException, requests.Timeout):
+        return False
+
+
+def get_huggingface_license_info(hf_id: str) -> Dict[str, str]:
+    """Get license information for HuggingFace models with priority order"""
+
+    # HUGGINGFACE MODELS - Priority-Based LICENSE Detection
+    if not hf_id:
+        return {
+            'license_info_text': '',
+            'license_info_url': '',
+            'license_name': '',
+            'license_url': ''
+        }
+
+    base_url = f"https://huggingface.co/{hf_id}"
+
+    # Priority 1: Try LICENSE first
+    license_url = f"{base_url}/blob/main/LICENSE"
+    if check_url_accessible(license_url):
+        return {
+            'license_info_text': 'info',
+            'license_info_url': license_url,
+            'license_name': '',
+            'license_url': ''
+        }
+
+    # Priority 2: If LICENSE not accessible, try README.md
+    readme_url = f"{base_url}/blob/main/README.md"
+    if check_url_accessible(readme_url):
+        return {
+            'license_info_text': 'info',
+            'license_info_url': readme_url,
+            'license_name': '',
+            'license_url': ''
+        }
+
+    # Priority 3: If README.md not accessible, try base repo page
+    if check_url_accessible(base_url):
+        return {
+            'license_info_text': 'info',
+            'license_info_url': base_url,
+            'license_name': '',
+            'license_url': ''
+        }
+
+    # Fallback: Return unknown if license URL not accessible
+    return {
+        'license_info_text': 'Unknown',
+        'license_info_url': '',
+        'license_name': 'Unknown',
+        'license_url': ''
+    }
+
+
+def extract_license_from_hf_page(hf_id: str) -> str:
+    """Extract license from HuggingFace page"""
+    if not hf_id:
+        return "No HF ID"
+
+    url = f"https://huggingface.co/{hf_id}"
+
+    try:
+        # Add headers to mimic browser request
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+        }
+
+        response = requests.get(url, headers=headers, timeout=10)
+        if response.status_code != 200:
+            return f"HTTP {response.status_code}"
+
+        content = response.text
+
+        # Look for license information in the specific HuggingFace HTML structure
+        patterns = [
+            r'<span class="-mr-1 text-gray-400">License:</span>\s*<span>([^<]+)</span>',  # HF license structure
+            r'<span[^>]*>License:</span>[^<]*<span[^>]*>([^<]+)</span>',  # General license span structure
+            r'"license"\s*:\s*"([^"]+)"',  # JSON license field
+        ]
+
+        for pattern in patterns:
+            match = re.search(pattern, content, re.IGNORECASE)
+            if match:
+                license_name = match.group(1).strip()
+                # Return license exactly as found on the page
+                return license_name
+
+        return "Not Found"
+
+    except requests.RequestException as e:
+        return f"Error: {str(e)}"
+    except Exception as e:
+        return f"Parse Error: {str(e)}"
 
 
 def load_groq_models() -> List[Dict[str, Any]]:
@@ -289,8 +382,6 @@ def save_processed_results(processed_models: List[Dict[str, Any]]) -> str:
             'dependencies': [
                 '02_groq_to_hf_mappings.json',
                 '07_google_models_licenses.json',
-                'D_extract_hf_license_names.py',
-                'C_extract_hf_license_info_urls.py',
                 '06_license_name_standardization.json',
                 '05_opensource_license_urls.json'
             ],
