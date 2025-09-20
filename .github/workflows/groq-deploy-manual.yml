@@ -10,6 +10,7 @@ on:
         type: choice
         options:
         - 'none'
+        - 'compare_with_supabase'
         - 'refresh_working_version'
         - 'deploy_to_main'
 
@@ -49,13 +50,27 @@ jobs:
       run: |
         echo "🎯 Groq Pipeline Deployment Plan:"
         echo "Selected option: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "compare_with_supabase" ]]; then
+          echo "Will execute: H_compare_pipeline_with_supabase.py (Compare Pipeline with Supabase)"
+        elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
           echo "Will execute: G_refresh_supabase_working_version.py (Refresh Working Version)"
         elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
           echo "Will execute: I_deploy_to_ai_models_main.py (Deploy to Production)"
         else
           echo "No script will be executed (none selected)"
         fi
+
+    - name: Run H_compare_pipeline_with_supabase.py
+      if: ${{ inputs.script_choice == 'compare_with_supabase' }}
+      working-directory: groq_pipeline
+      env:
+        SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+      run: |
+        echo "🔍 Running H_compare_pipeline_with_supabase.py..."
+        echo "⚠️  This will compare pipeline data with Supabase working_version table"
+        python -u H_compare_pipeline_with_supabase.py
 
     - name: Run G_refresh_supabase_working_version.py
       if: ${{ inputs.script_choice == 'refresh_working_version' }}
@@ -98,7 +113,9 @@ jobs:
       run: |
         echo "✅ Groq pipeline deployment completed successfully"
         echo "Script executed: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "compare_with_supabase" ]]; then
+          echo "✅ Pipeline vs Supabase comparison completed"
+        elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
           echo "✅ Working version table refreshed with Groq data"
         elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
           echo "✅ Data deployed to main ai_models table"
