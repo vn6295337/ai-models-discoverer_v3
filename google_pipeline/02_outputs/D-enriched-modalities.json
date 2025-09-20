@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-09-18 19:45:13 IST",
-    "total_models": 32,
+    "generated": "2025-09-20 09:48:59 IST",
+    "total_models": 34,
     "enrichment_source": "Google Pipeline D-Enrich"
   },
   "models": [
@@ -596,6 +596,36 @@
       "output_modalities": "Image",
       "modality_source": "scraped",
       "match_priority": 2
+    },
+    {
+      "name": "models/veo-3.0-generate-001",
+      "version": "3.0",
+      "displayName": "Veo 3",
+      "description": "Veo 3",
+      "inputTokenLimit": 480,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": [
+        "predictLongRunning"
+      ],
+      "input_modalities": "Text, Image",
+      "output_modalities": "Audio, Video",
+      "modality_source": "scraped",
+      "match_priority": 1
+    },
+    {
+      "name": "models/veo-3.0-fast-generate-001",
+      "version": "3.0",
+      "displayName": "Veo 3 fast",
+      "description": "Veo 3 fast",
+      "inputTokenLimit": 480,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": [
+        "predictLongRunning"
+      ],
+      "input_modalities": "Text, Image",
+      "output_modalities": "Audio, Video",
+      "modality_source": "scraped",
+      "match_priority": 1
     },
     {
       "name": "models/gemini-2.0-flash-live-001",

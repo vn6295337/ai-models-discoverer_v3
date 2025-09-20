@@ -1,16 +1,16 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-09-18 19:45:15 IST
+Generated: 2025-09-20 09:49:00 IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total models processed: 32
+   • Total models processed: 34
    • Models in both systems: 32
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 0
+   • Models in pipeline only (not in Supabase): 2
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -55,6 +55,8 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
+   • New models (pipeline only): 2
+     Models: Veo 3.0 Fast Generate 001, Veo 3.0 Generate 001
    • Existing models with differences: 0
 
 ================================================================================
@@ -698,6 +700,46 @@ license_name              | Gemini                    | Gemini
 license_url               | https://ai.google.dev/g.. | https://ai.google.dev/g..
 rate_limits               | 100 requests/min, 30K t.. | 100 requests/min, 30K t..
 provider_api_access       | https://aistudio.google.. | https://aistudio.google..
+
+================================================================================
+
+MODEL: Veo 3.0 Fast Generate 001
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | Google                    |                          
+model_provider            | Google                    |                          
+human_readable_name       | Veo 3.0 Fast Generate 001 |                          
+model_provider_country    | United States             |                          
+official_url              | https://deepmind.google.. |                          
+input_modalities          | Text, Image               |                          
+output_modalities         | Audio, Video              |                          
+license_info_text         | Google                    |                          
+license_info_url          | https://developers.goog.. |                          
+license_name              | Gemini                    |                          
+license_url               | https://ai.google.dev/g.. |                          
+rate_limits               | Image input: up to 20MB.. |                          
+provider_api_access       | https://aistudio.google.. |                          
+
+================================================================================
+
+MODEL: Veo 3.0 Generate 001
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | Google                    |                          
+model_provider            | Google                    |                          
+human_readable_name       | Veo 3.0 Generate 001      |                          
+model_provider_country    | United States             |                          
+official_url              | https://deepmind.google.. |                          
+input_modalities          | Text, Image               |                          
+output_modalities         | Audio, Video              |                          
+license_info_text         | Google                    |                          
+license_info_url          | https://developers.goog.. |                          
+license_name              | Gemini                    |                          
+license_url               | https://ai.google.dev/g.. |                          
+rate_limits               | Image input: up to 20MB.. |                          
+provider_api_access       | https://aistudio.google.. |                          
 
 ================================================================================
 
