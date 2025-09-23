@@ -1,21 +1,21 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-09-22 05:40 PM IST
+Generated: 2025-09-23 06:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 31
+  Total models        : 30
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 31 models
-  Stage H Opensource Names       : 31 models
-  Stage I Opensource URLs        : 31 models
+  Stage E (License Info URLs)    : 30 models
+  Stage H Opensource Names       : 30 models
+  Stage I Opensource URLs        : 30 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
-  19 models: Apache-2.0
+  18 models: Apache-2.0
   12 models: MIT
 
 Total unique license types: 2
@@ -261,21 +261,7 @@ MODEL 17: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 18: qwen/qwq-32b
---------------------------------------------------
-  ID: qwen/qwq-32b:free
-  Original Name: Qwen: QwQ 32B (free)
-  HuggingFace ID: Qwen/QwQ-32B
-  Canonical Slug: qwen/qwq-32b
-  Clean Model Name: QwQ 32B
-  License Info Text: info
-  License Info URL: https://huggingface.co/Qwen/QwQ-32B/blob/main/LICENSE
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-
-================================================================================
-
-MODEL 19: venice/uncensored
+MODEL 18: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -289,7 +275,7 @@ MODEL 19: venice/uncensored
 
 ================================================================================
 
-MODEL 20: deepseek/deepseek-chat-v3-0324
+MODEL 19: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -303,7 +289,7 @@ MODEL 20: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 21: deepseek/deepseek-chat-v3.1
+MODEL 20: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
@@ -317,7 +303,7 @@ MODEL 21: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 22: deepseek/deepseek-r1
+MODEL 21: deepseek/deepseek-r1
 --------------------------------------------------
   ID: deepseek/deepseek-r1:free
   Original Name: DeepSeek: R1 (free)
@@ -331,7 +317,7 @@ MODEL 22: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 23: deepseek/deepseek-r1-0528
+MODEL 22: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -345,7 +331,7 @@ MODEL 23: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 24: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
   Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
@@ -359,7 +345,7 @@ MODEL 24: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 25: deepseek/deepseek-r1-distill-llama-70b
+MODEL 24: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -373,7 +359,7 @@ MODEL 25: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 26: microsoft/mai-ds-r1
+MODEL 25: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -387,7 +373,7 @@ MODEL 26: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 27: moonshotai/kimi-dev-72b
+MODEL 26: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID: moonshotai/kimi-dev-72b:free
   Original Name: MoonshotAI: Kimi Dev 72B (free)
@@ -401,7 +387,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-vl-a3b-thinking
+MODEL 27: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID: moonshotai/kimi-vl-a3b-thinking:free
   Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
@@ -415,7 +401,7 @@ MODEL 28: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 29: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -429,7 +415,7 @@ MODEL 29: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -443,7 +429,7 @@ MODEL 30: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 31: z-ai/glm-4.5-air
+MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

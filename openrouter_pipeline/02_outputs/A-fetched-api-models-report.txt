@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-09-22 05:39 PM IST
+Generated: 2025-09-23 06:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 327
+  Total models: 325
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  42 models
@@ -51,7 +51,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini
     - o4-mini-high
 
-  Qwen         :  37 models
+  Qwen         :  35 models
     - qwen-2.5-vl-7b-instruct
     - qwen-max
     - qwen-plus
@@ -87,8 +87,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-next-80b-a3b-instruct
     - qwen3-next-80b-a3b-thinking
     - qwq-32b
-    - qwq-32b-preview
-    - qwq-32b:free
 
   Mistral      :  30 models
     - codestral-2501
@@ -149,12 +147,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemma-3n-e4b-it
     - gemma-3n-e4b-it:free
 
-  Meta         :  21 models
+  Meta         :  20 models
     - llama-3-70b-instruct
     - llama-3-8b-instruct
     - llama-3.1-405b
     - llama-3.1-405b-instruct
-    - llama-3.1-405b-instruct:free
     - llama-3.1-70b-instruct
     - llama-3.1-8b-instruct
     - llama-3.2-11b-vision-instruct
@@ -172,7 +169,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-guard-2-8b
     - llama-guard-4-12b
 
-  DeepSeek     :  18 models
+  DeepSeek     :  19 models
     - deepseek-chat
     - deepseek-chat-v3-0324
     - deepseek-chat-v3-0324:free
@@ -191,6 +188,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - deepseek-r1-distill-qwen-32b
     - deepseek-r1:free
     - deepseek-v3.1-base
+    - deepseek-v3.1-terminus
 
   Anthropic    :  11 models
     - claude-3-haiku

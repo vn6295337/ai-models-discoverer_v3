@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-09-22 05:40 PM IST",
-    "total_models": 52,
+    "generated_at": "2025-09-23 06:08 AM IST",
+    "total_models": 50,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -339,15 +339,6 @@
       "raw_output_modalities": "text"
     },
     {
-      "id": "qwen/qwq-32b:free",
-      "canonical_slug": "qwen/qwq-32b",
-      "original_name": "Qwen: QwQ 32B (free)",
-      "hugging_face_id": "Qwen/QwQ-32B",
-      "clean_model_name": "QwQ 32B",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
       "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
       "canonical_slug": "cognitivecomputations/dolphin3.0-r1-mistral-24b",
       "original_name": "Dolphin3.0 R1 Mistral 24B (free)",
@@ -434,15 +425,6 @@
       "original_name": "Qwen2.5 72B Instruct (free)",
       "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
       "clean_model_name": "Qwen2.5 72B Instruct",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "meta-llama/llama-3.1-405b-instruct:free",
-      "canonical_slug": "meta-llama/llama-3.1-405b-instruct",
-      "original_name": "Meta: Llama 3.1 405B Instruct (free)",
-      "hugging_face_id": "meta-llama/Meta-Llama-3.1-405B-Instruct",
-      "clean_model_name": "Llama 3.1 405B Instruct",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },
