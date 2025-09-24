@@ -1,6 +1,6 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-09-24 12:42:04 IST
+Generated: 2025-09-24 13:13:59 IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -9,7 +9,7 @@ SUMMARY STATISTICS
 1. OVERALL STATISTICS:
    • Total models processed: 35
    • Models in both systems: 34
-   • Models with differences: 17
+   • Models with differences: 1
    • Models in pipeline only (not in Supabase): 1
    • Models in Supabase only (not in pipeline): 0
 
@@ -30,47 +30,13 @@ SUMMARY STATISTICS
      - Exact matches: 34
      - Differences: 0
    • input_modalities:
-     - Exact matches: 17
-     - Differences: 17
+     - Exact matches: 33
+     - Differences: 1
      - Specific differences:
-       * Gemini 1.5 Flash 8B 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash 002: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.5 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Pro: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash-Lite 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash Live 001: Pipeline='Unknown' vs Supabase='Text, Audio, Video'
-       * Gemini 2.0 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.5 Flash-Lite: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Pro Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash-Lite: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash 8B Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash 8B: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Pro 002: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.5 Pro: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 2.5 Flash-Lite: Pipeline='Text, Image, Audio, ...' vs Supabase='Text, Image, Audio, ...'
    • output_modalities:
-     - Exact matches: 17
-     - Differences: 17
-     - Specific differences:
-       * Gemini 1.5 Flash 8B 001: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash 002: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.5 Flash: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash Latest: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Pro: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash-Lite 001: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash Live 001: Pipeline='Unknown' vs Supabase='Text, Audio'
-       * Gemini 2.0 Flash: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.5 Flash-Lite: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Pro Latest: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash-Lite: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash 8B Latest: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash 8B: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Pro 002: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash 001: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.5 Pro: Pipeline='Unknown' vs Supabase='Text'
+     - Exact matches: 34
+     - Differences: 0
    • license_info_text:
      - Exact matches: 34
      - Differences: 0
@@ -93,8 +59,8 @@ SUMMARY STATISTICS
 3. CATEGORIZED BREAKDOWN:
    • New models (pipeline only): 1
      Models: Gemini 2.5 Flash Native Audio Latest
-   • Existing models with differences: 17
-     Models: Gemini 1.5 Flash, Gemini 1.5 Flash 002, Gemini 1.5 Flash 8B, Gemini 1.5 Flash 8B 001, Gemini 1.5 Flash 8B Latest, Gemini 1.5 Flash Latest, Gemini 1.5 Pro, Gemini 1.5 Pro 002, Gemini 1.5 Pro Latest, Gemini 2.0 Flash, Gemini 2.0 Flash 001, Gemini 2.0 Flash Live 001, Gemini 2.0 Flash-Lite, Gemini 2.0 Flash-Lite 001, Gemini 2.5 Flash, Gemini 2.5 Flash-Lite, Gemini 2.5 Pro
+   • Existing models with differences: 1
+     Models: Gemini 2.5 Flash-Lite
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -169,8 +135,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Flash          | Gemini 1.5 Flash         
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -189,8 +155,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Flash 002      | Gemini 1.5 Flash 002     
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -209,8 +175,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Flash 8B       | Gemini 1.5 Flash 8B      
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -229,8 +195,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Flash 8B 001   | Gemini 1.5 Flash 8B 001  
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -249,8 +215,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Flash 8B Lat.. | Gemini 1.5 Flash 8B Lat..
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -269,8 +235,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Flash Latest   | Gemini 1.5 Flash Latest  
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -289,8 +255,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Pro            | Gemini 1.5 Pro           
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -309,8 +275,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Pro 002        | Gemini 1.5 Pro 002       
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -329,8 +295,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 1.5 Pro Latest     | Gemini 1.5 Pro Latest    
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -349,8 +315,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.0 Flash          | Gemini 2.0 Flash         
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -369,8 +335,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.0 Flash 001      | Gemini 2.0 Flash 001     
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -389,8 +355,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.0 Flash Live 001 | Gemini 2.0 Flash Live 001
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Audio, Video       
-output_modalities         | Unknown                   | Text, Audio              
+input_modalities          | Text, Audio, Video        | Text, Audio, Video       
+output_modalities         | Text, Audio               | Text, Audio              
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -409,8 +375,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.0 Flash-Lite     | Gemini 2.0 Flash-Lite    
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -429,8 +395,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.0 Flash-Lite 001 | Gemini 2.0 Flash-Lite 001
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -449,8 +415,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.5 Flash          | Gemini 2.5 Flash         
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Video | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -469,8 +435,8 @@ model_provider            | Google                    |
 human_readable_name       | Gemini 2.5 Flash Native.. |                          
 model_provider_country    | United States             |                          
 official_url              | https://deepmind.google.. |                          
-input_modalities          | Unknown                   |                          
-output_modalities         | Unknown                   |                          
+input_modalities          | Text, Audio, Video        |                          
+output_modalities         | Text, Audio               |                          
 license_info_text         | Google                    |                          
 license_info_url          | https://developers.goog.. |                          
 license_name              | Gemini                    |                          
@@ -489,8 +455,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.5 Flash-Lite     | Gemini 2.5 Flash-Lite    
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Video
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Vid.. | Text, Image, Audio, Video
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   
@@ -509,8 +475,8 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.5 Pro            | Gemini 2.5 Pro           
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Unknown                   | Text, Image, Audio, Vid..
-output_modalities         | Unknown                   | Text                     
+input_modalities          | Text, Image, Audio, Vid.. | Text, Image, Audio, Vid..
+output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
 license_name              | Gemini                    | Gemini                   

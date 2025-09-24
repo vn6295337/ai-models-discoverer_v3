@@ -1,26 +1,98 @@
 === GOOGLE MODELS MODALITY ENRICHMENT REPORT ===
 
-Generated: 2025-09-24 12:42:02 IST
+Generated: 2025-09-24 13:13:58 IST
 
 === SUMMARY ===
 Total Models: 35
-Priority 1 Matches (Exact): 2
+Priority 1 Matches (Exact): 20
 Priority 2 Matches (Normalized): 4
 Embedding Matches: 4
 Gemma Pattern Matches: 6
 Unique Model Matches: 1
-No Matches: 18
-Overall Match Rate: 48.6%
+No Matches: 0
+Overall Match Rate: 100.0%
 
 === PRIORITY 1 MATCHES (EXACT) ===
 
- 1. veo-3.0-generate-001
+ 1. gemini-1.5-pro-latest
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 2. gemini-1.5-pro-002
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 3. gemini-1.5-pro
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 4. gemini-1.5-flash-latest
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 5. gemini-1.5-flash
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 6. gemini-1.5-flash-002
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 7. gemini-1.5-flash-8b
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 8. gemini-1.5-flash-8b-001
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+ 9. gemini-1.5-flash-8b-latest
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+10. gemini-2.5-flash
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+11. gemini-2.5-pro
+    Input: Text, Image, Audio, Video, PDF
+    Output: Text
+
+12. gemini-2.0-flash
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+13. gemini-2.0-flash-001
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+14. gemini-2.0-flash-lite-001
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+15. gemini-2.0-flash-lite
+    Input: Text, Image, Audio, Video
+    Output: Text
+
+16. gemini-2.5-flash-lite
+    Input: Text, Image, Audio, Video, PDF
+    Output: Text
+
+17. veo-3.0-generate-001
     Input: Text, Image
     Output: Audio, Video
 
- 2. veo-3.0-fast-generate-001
+18. veo-3.0-fast-generate-001
     Input: Text, Image
     Output: Audio, Video
+
+19. gemini-2.0-flash-live-001
+    Input: Text, Audio, Video
+    Output: Text, Audio
+
+20. gemini-2.5-flash-native-audio-latest
+    Input: Text, Audio, Video
+    Output: Text, Audio
 
 === PRIORITY 2 MATCHES (NORMALIZED) ===
 
@@ -103,24 +175,3 @@ Overall Match Rate: 48.6%
  1. aqa
     Input: Text
     Output: Text
-
-=== NO MATCHES ===
-
- 1. gemini-1.5-pro-latest
- 2. gemini-1.5-pro-002
- 3. gemini-1.5-pro
- 4. gemini-1.5-flash-latest
- 5. gemini-1.5-flash
- 6. gemini-1.5-flash-002
- 7. gemini-1.5-flash-8b
- 8. gemini-1.5-flash-8b-001
- 9. gemini-1.5-flash-8b-latest
-10. gemini-2.5-flash
-11. gemini-2.5-pro
-12. gemini-2.0-flash
-13. gemini-2.0-flash-001
-14. gemini-2.0-flash-lite-001
-15. gemini-2.0-flash-lite
-16. gemini-2.5-flash-lite
-17. gemini-2.0-flash-live-001
-18. gemini-2.5-flash-native-audio-latest
