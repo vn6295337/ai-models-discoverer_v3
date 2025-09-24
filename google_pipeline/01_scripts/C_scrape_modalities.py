@@ -144,9 +144,9 @@ class GoogleModalityScraper:
         """
         Scrape Gemini model capabilities from individual model sections.
 
-        Extracts modality information from the official "Supported data types" tables
-        in each model's section rather than from the model variations summary table.
-        This ensures accuracy with the official documentation.
+        Uses comprehensive section scanning approach:
+        1. First tries the original heading-based method
+        2. Then systematically scans /html/body/section/section/main/devsite-content/article/div[4]/section[1-12+]
 
         Returns:
             Dict mapping model names to their input/output modalities
@@ -158,7 +158,8 @@ class GoogleModalityScraper:
         gemini_models = {}
 
         if soup:
-            # Find all model sections by looking for headings with IDs
+            # Method 1: Original heading-based approach
+            print("  Method 1: Scanning headings with IDs...")
             headings_with_ids = soup.find_all(['h1', 'h2', 'h3', 'h4'], id=True)
 
             for heading in headings_with_ids:
@@ -167,7 +168,7 @@ class GoogleModalityScraper:
 
                 # Look for Gemini model headings
                 if 'gemini' in heading_id.lower() and heading_id != 'gemini-api':
-                    print(f"  Processing section: {heading_id}")
+                    print(f"    Processing section: {heading_id}")
 
                     # Find the "Supported data types" section after this heading
                     model_info = self.extract_supported_data_types(soup, heading)
@@ -175,13 +176,243 @@ class GoogleModalityScraper:
                     if model_info:
                         model_name = heading_text if heading_text else heading_id
                         gemini_models[model_name] = model_info
-                        print(f"    Found: {model_name} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
+                        print(f"      Found: {model_name} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
                     else:
-                        print(f"    No supported data types found for {heading_id}")
+                        print(f"      No supported data types found for {heading_id}")
+
+            # Method 2: Comprehensive section scanning
+            print("  Method 2: Systematic section scanning...")
+            systematic_models = self.scan_systematic_sections(soup)
+
+            # Merge results, prioritizing new findings
+            for model_name, model_info in systematic_models.items():
+                if model_name not in gemini_models:
+                    gemini_models[model_name] = model_info
+                    print(f"      Added from systematic scan: {model_name} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
 
         return gemini_models
 
-    def extract_supported_data_types(self, soup, heading) -> Optional[Dict[str, str]]:
+    def scan_systematic_sections(self, soup) -> Dict[str, Dict[str, str]]:
+        """
+        Systematically scan /html/body/section/section/main/devsite-content/article/div[4]/section[1-12+]
+
+        Follows the exact path: /html/body/section/section/main/devsite-content/article/div[4]/section[N]
+        to find any Gemini models that might be missed by heading-based scanning.
+
+        Returns:
+            Dict mapping model names to their input/output modalities
+        """
+        systematic_models = {}
+
+        try:
+            # Navigate to the target div following the specified path
+            # /html/body/section/section/main/devsite-content/article/div[4]
+            body = soup.find('body')
+            if not body:
+                print("    ⚠️ No <body> element found")
+                return systematic_models
+
+            # Find section/section/main structure
+            sections = body.find_all('section', recursive=False)
+            if not sections:
+                print("    ⚠️ No top-level <section> elements found")
+                return systematic_models
+
+            target_section = None
+            for section in sections:
+                nested_section = section.find('section', recursive=False)
+                if nested_section:
+                    main = nested_section.find('main', recursive=False)
+                    if main:
+                        devsite_content = main.find('devsite-content', recursive=False)
+                        if devsite_content:
+                            article = devsite_content.find('article', recursive=False)
+                            if article:
+                                target_section = section
+                                print("    ✅ Found target section structure")
+                                break
+
+            if not target_section:
+                print("    ⚠️ Could not find target section structure")
+                return systematic_models
+
+            # Navigate to article/div[4]
+            main = target_section.find('section').find('main')
+            devsite_content = main.find('devsite-content')
+            article = devsite_content.find('article')
+
+            # Get all direct child divs of article
+            article_divs = article.find_all('div', recursive=False)
+            if len(article_divs) < 4:
+                print(f"    ⚠️ Expected at least 4 divs in article, found {len(article_divs)}")
+                return systematic_models
+
+            # Target div[4] (index 3)
+            target_div = article_divs[3]
+            print(f"    ✅ Found target div[4]")
+
+            # Get all section elements within this div
+            sections_in_div = target_div.find_all('section', recursive=False)
+            print(f"    📍 Found {len(sections_in_div)} sections to scan")
+
+            # Scan each section systematically
+            for i, section in enumerate(sections_in_div, 1):
+                print(f"    🔍 Scanning section[{i}]...")
+                section_models = self.extract_models_from_section(section, f"section[{i}]")
+                systematic_models.update(section_models)
+
+        except Exception as e:
+            print(f"    ❌ Error in systematic scanning: {e}")
+
+        return systematic_models
+
+    def extract_models_from_section(self, section, section_name: str) -> Dict[str, Dict[str, str]]:
+        """
+        Extract Gemini models from a specific section element.
+
+        Looks for:
+        1. Model names in headings or text
+        2. Supported data types tables
+        3. Input/output modality information
+
+        Args:
+            section: BeautifulSoup section element
+            section_name: Name for logging (e.g., "section[12]")
+
+        Returns:
+            Dict mapping model names to their input/output modalities
+        """
+        section_models = {}
+
+        try:
+            section_text = section.get_text().lower()
+
+            # Check if this section contains Gemini model information
+            if not any(keyword in section_text for keyword in ['gemini', 'live', 'flash', 'pro', 'supported data types']):
+                return section_models
+
+            print(f"      📝 {section_name} contains potential model info")
+
+            # Look for headings that might indicate model names
+            headings = section.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
+            for heading in headings:
+                heading_text = heading.get_text().strip()
+                heading_lower = heading_text.lower()
+
+                # Check for Gemini model patterns
+                if any(pattern in heading_lower for pattern in ['gemini', 'live', 'flash']):
+                    print(f"        🎯 Found potential model heading: '{heading_text}'")
+
+                    # Try to extract modality data from this section
+                    model_info = self.extract_supported_data_types(section, heading)
+                    if not model_info:
+                        # Fallback: look for modality info in surrounding text/tables
+                        model_info = self.extract_modalities_from_section_content(section)
+
+                    if model_info:
+                        section_models[heading_text] = model_info
+                        print(f"        ✅ Extracted: {heading_text} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
+
+            # Also check for tables with model information even without clear headings
+            if not section_models:
+                tables = section.find_all('table')
+                for table in tables:
+                    table_text = table.get_text().lower()
+                    if 'live' in table_text or 'flash' in table_text:
+                        print(f"        🔍 Found table with Live/Flash content")
+                        model_info = self.extract_model_info_from_table(table)
+                        if model_info:
+                            for model_name, info in model_info.items():
+                                section_models[model_name] = info
+                                print(f"        ✅ Extracted from table: {model_name} -> {info['input_modalities']} → {info['output_modalities']}")
+
+        except Exception as e:
+            print(f"      ❌ Error extracting from {section_name}: {e}")
+
+        return section_models
+
+    def extract_modalities_from_section_content(self, section) -> Optional[Dict[str, str]]:
+        """
+        Extract input/output modalities from section content (fallback method).
+
+        Looks for text patterns indicating modality information.
+        """
+        try:
+            # Look for tables first
+            tables = section.find_all('table')
+            for table in tables:
+                result = self.parse_supported_data_types_table(table)
+                if result:
+                    return result
+
+            # Look for text patterns in paragraphs
+            paragraphs = section.find_all('p')
+            for p in paragraphs:
+                text = p.get_text().strip()
+                if 'input' in text.lower() and 'output' in text.lower():
+                    # Try to parse modalities from descriptive text
+                    inputs = self.extract_inputs_from_cell(text)
+                    outputs = self.extract_outputs_from_cell(text)
+                    if inputs and outputs:
+                        return {
+                            'input_modalities': inputs,
+                            'output_modalities': outputs
+                        }
+
+        except Exception:
+            pass
+
+        return None
+
+    def extract_model_info_from_table(self, table) -> Dict[str, Dict[str, str]]:
+        """
+        Extract model information from a table that might contain Live models or other variants.
+
+        Returns:
+            Dict mapping model names to their modalities
+        """
+        models = {}
+
+        try:
+            rows = table.find_all('tr')
+            for row in rows:
+                cells = row.find_all(['td', 'th'])
+
+                # Look for cells containing model names
+                model_name = None
+                input_modalities = None
+                output_modalities = None
+
+                for cell in cells:
+                    cell_text = cell.get_text().strip()
+                    cell_lower = cell_text.lower()
+
+                    # Check if this cell contains a model name
+                    if any(pattern in cell_lower for pattern in ['live', 'gemini', 'flash']):
+                        if not model_name and ('live' in cell_lower or 'gemini' in cell_lower):
+                            model_name = cell_text
+
+                    # Check if this cell contains modality information
+                    if 'input' in cell_lower and 'output' in cell_lower:
+                        inputs = self.extract_inputs_from_cell(cell_text)
+                        outputs = self.extract_outputs_from_cell(cell_text)
+                        if inputs and outputs:
+                            input_modalities = inputs
+                            output_modalities = outputs
+
+                # If we found both model name and modalities in this row
+                if model_name and input_modalities and output_modalities:
+                    models[model_name] = {
+                        'input_modalities': input_modalities,
+                        'output_modalities': output_modalities
+                    }
+
+        except Exception:
+            pass
+
+        return models
+
+    def extract_supported_data_types(self, soup_or_section, heading) -> Optional[Dict[str, str]]:
         """
         Extract supported data types from the section following a model heading.
 
@@ -190,14 +421,19 @@ class GoogleModalityScraper:
         nested HTML structures.
 
         Args:
-            soup: BeautifulSoup object of the page
+            soup_or_section: BeautifulSoup object (page) or section element
             heading: The heading element that defines the model section
 
         Returns:
             Dict with 'input_modalities' and 'output_modalities' keys, or None if not found
         """
-        # First, try to find the section that contains this heading
-        section = self.find_containing_section(heading)
+        # Check if we received a section directly (from systematic scanning)
+        if hasattr(soup_or_section, 'name') and soup_or_section.name == 'section':
+            # We have a section directly, search within it
+            section = soup_or_section
+        else:
+            # We have the full soup, find the section that contains this heading
+            section = self.find_containing_section(heading)
 
         if section:
             # Look for tables within this section that contain "supported data types"
@@ -210,24 +446,26 @@ class GoogleModalityScraper:
                         return result
 
         # Fallback: search broadly from the heading onwards until next heading
-        current = heading
-        next_heading_level = int(heading.name[1]) if heading.name.startswith('h') else 4
+        # Only do this if we have the full soup (not when working with a section)
+        if not (hasattr(soup_or_section, 'name') and soup_or_section.name == 'section'):
+            current = heading
+            next_heading_level = int(heading.name[1]) if heading.name.startswith('h') else 4
 
-        # Traverse all following elements until we hit a heading of same or higher level
-        for element in heading.find_all_next():
-            # Stop if we hit a heading of same or higher level
-            if (hasattr(element, 'name') and element.name and
-                element.name.startswith('h') and
-                int(element.name[1]) <= next_heading_level):
-                break
+            # Traverse all following elements until we hit a heading of same or higher level
+            for element in heading.find_all_next():
+                # Stop if we hit a heading of same or higher level
+                if (hasattr(element, 'name') and element.name and
+                    element.name.startswith('h') and
+                    int(element.name[1]) <= next_heading_level):
+                    break
 
-            # Look for tables that might contain supported data types
-            if hasattr(element, 'name') and element.name == 'table':
-                table_text = element.get_text().lower()
-                if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
-                    result = self.parse_supported_data_types_table(element)
-                    if result:
-                        return result
+                # Look for tables that might contain supported data types
+                if hasattr(element, 'name') and element.name == 'table':
+                    table_text = element.get_text().lower()
+                    if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
+                        result = self.parse_supported_data_types_table(element)
+                        if result:
+                            return result
 
         return None
 
