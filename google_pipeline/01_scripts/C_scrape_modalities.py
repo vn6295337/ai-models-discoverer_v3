@@ -20,7 +20,21 @@ sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
 from output_utils import get_ist_timestamp
 
 class GoogleModalityScraper:
+    """
+    A comprehensive web scraper for extracting AI model modality information from Google's official documentation.
+
+    This scraper extracts input/output modality mappings for:
+    - Gemini models (from ai.google.dev/gemini-api/docs/models)
+    - Imagen models (from ai.google.dev/gemini-api/docs/imagen)
+    - Video models (from ai.google.dev/gemini-api/docs/video)
+    - Gemma models (from ai.google.dev/gemma/docs/)
+
+    The scraper parses official "Supported data types" sections to ensure accuracy
+    and avoid hardcoded fallbacks.
+    """
+
     def __init__(self):
+        """Initialize the scraper with session and headers for web requests."""
         self.session = requests.Session()
         self.session.headers.update({
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
@@ -28,7 +42,16 @@ class GoogleModalityScraper:
         self.modality_mapping = {}
         
     def fetch_page(self, url: str, retries: int = 3) -> Optional[BeautifulSoup]:
-        """Fetch and parse HTML page with retry logic"""
+        """
+        Fetch and parse HTML page with retry logic.
+
+        Args:
+            url: The URL to fetch
+            retries: Number of retry attempts (default: 3)
+
+        Returns:
+            BeautifulSoup object of parsed HTML, or None if all attempts fail
+        """
         for attempt in range(retries):
             try:
                 response = self.session.get(url, timeout=30)
@@ -41,7 +64,15 @@ class GoogleModalityScraper:
         return None
 
     def load_modality_config(self):
-        """Load modality configuration from 02_modality_standardization.json"""
+        """
+        Load modality configuration from 02_modality_standardization.json.
+
+        Note: This method is currently unused as the scraper now relies on
+        direct parsing from official documentation rather than standardization.
+
+        Returns:
+            Configuration dict or "Unknown" if file not found
+        """
         try:
             with open('../03_configs/02_modality_standardization.json', 'r') as f:
                 return json.load(f)
@@ -50,7 +81,18 @@ class GoogleModalityScraper:
             return "Unknown"
 
     def standardize_modalities(self, modalities: List[str]) -> str:
-        """Convert modalities to standardized format using 02_modality_standardization.json"""
+        """
+        Convert modalities to standardized format using 02_modality_standardization.json.
+
+        Note: This method is currently disabled as the scraper now preserves
+        raw modalities directly from Google's documentation for accuracy.
+
+        Args:
+            modalities: List of modality strings to standardize
+
+        Returns:
+            Comma-separated string of raw modalities (standardization disabled)
+        """
         # config = self.load_modality_config()
         # if config == "Unknown":
         #     return "Unknown"
@@ -99,102 +141,252 @@ class GoogleModalityScraper:
         return ', '.join(modalities)
 
     def scrape_gemini_models(self) -> Dict[str, Dict[str, str]]:
-        """Scrape Gemini model capabilities from model variations section"""
-        url = "https://ai.google.dev/gemini-api/docs/models#model-variations"
-        print(f"Scraping Gemini models from {url}")
-        
-        soup = self.fetch_page(url)
+        """
+        Scrape Gemini model capabilities from individual model sections.
+
+        Extracts modality information from the official "Supported data types" tables
+        in each model's section rather than from the model variations summary table.
+        This ensures accuracy with the official documentation.
+
+        Returns:
+            Dict mapping model names to their input/output modalities
+        """
+        base_url = "https://ai.google.dev/gemini-api/docs/models"
+        print(f"Scraping Gemini models from {base_url}")
+
+        soup = self.fetch_page(base_url)
         gemini_models = {}
-        
+
         if soup:
-            # Look specifically for model variations table
-            tables = soup.find_all('table')
-            for table in tables:
-                rows = table.find_all('tr')
-                headers = [th.get_text().strip().lower() for th in rows[0].find_all(['th', 'td'])] if rows else []
-                
-                # Find columns for model, input, output
-                model_col = input_col = output_col = -1
-                for i, header in enumerate(headers):
-                    if 'model' in header or 'name' in header:
-                        model_col = i
-                    elif 'input' in header:
-                        input_col = i
-                    elif 'output' in header:
-                        output_col = i
-                
-                # Process data rows
-                for row in rows[1:]:
-                    cells = row.find_all(['td', 'th'])
-                    if len(cells) > max(model_col, input_col, output_col) and model_col >= 0:
-                        model_name = cells[model_col].get_text().strip()
-                        
-                        if 'gemini' in model_name.lower() and model_name:
-                            # Extract input/output from table or use fallback
-                            input_modalities = cells[input_col].get_text().strip() if input_col >= 0 and input_col < len(cells) else ""
-                            output_modalities = cells[output_col].get_text().strip() if output_col >= 0 and output_col < len(cells) else ""
-                            
-                            # If no table data, use model-specific mapping
-                            if not input_modalities or not output_modalities:
-                                model_caps = self.get_model_specific_capabilities(model_name)
-                                if model_caps:
-                                    input_modalities = ', '.join(model_caps['input'])
-                                    output_modalities = ', '.join(model_caps['output'])
-                            
-                            if input_modalities and output_modalities:
-                                gemini_models[model_name] = {
-                                    'input_modalities': input_modalities,
-                                    'output_modalities': output_modalities
-                                }
-                                print(f"  Found: {model_name} -> {input_modalities} → {output_modalities}")
-            
-            # Fallback: Look for model sections in the page if table parsing failed
-            if not gemini_models:
-                gemini_models = self.extract_gemini_from_sections(soup)
-        
+            # Find all model sections by looking for headings with IDs
+            headings_with_ids = soup.find_all(['h1', 'h2', 'h3', 'h4'], id=True)
+
+            for heading in headings_with_ids:
+                heading_id = heading.get('id', '')
+                heading_text = heading.get_text().strip()
+
+                # Look for Gemini model headings
+                if 'gemini' in heading_id.lower() and heading_id != 'gemini-api':
+                    print(f"  Processing section: {heading_id}")
+
+                    # Find the "Supported data types" section after this heading
+                    model_info = self.extract_supported_data_types(soup, heading)
+
+                    if model_info:
+                        model_name = heading_text if heading_text else heading_id
+                        gemini_models[model_name] = model_info
+                        print(f"    Found: {model_name} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
+                    else:
+                        print(f"    No supported data types found for {heading_id}")
+
         return gemini_models
 
+    def extract_supported_data_types(self, soup, heading) -> Optional[Dict[str, str]]:
+        """
+        Extract supported data types from the section following a model heading.
+
+        Searches for tables containing "Supported data types" information within
+        the section defined by the heading. Uses robust DOM navigation to handle
+        nested HTML structures.
+
+        Args:
+            soup: BeautifulSoup object of the page
+            heading: The heading element that defines the model section
+
+        Returns:
+            Dict with 'input_modalities' and 'output_modalities' keys, or None if not found
+        """
+        # First, try to find the section that contains this heading
+        section = self.find_containing_section(heading)
+
+        if section:
+            # Look for tables within this section that contain "supported data types"
+            tables = section.find_all('table')
+            for table in tables:
+                table_text = table.get_text().lower()
+                if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
+                    result = self.parse_supported_data_types_table(table)
+                    if result:
+                        return result
+
+        # Fallback: search broadly from the heading onwards until next heading
+        current = heading
+        next_heading_level = int(heading.name[1]) if heading.name.startswith('h') else 4
+
+        # Traverse all following elements until we hit a heading of same or higher level
+        for element in heading.find_all_next():
+            # Stop if we hit a heading of same or higher level
+            if (hasattr(element, 'name') and element.name and
+                element.name.startswith('h') and
+                int(element.name[1]) <= next_heading_level):
+                break
+
+            # Look for tables that might contain supported data types
+            if hasattr(element, 'name') and element.name == 'table':
+                table_text = element.get_text().lower()
+                if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
+                    result = self.parse_supported_data_types_table(element)
+                    if result:
+                        return result
+
+        return None
+
+    def find_containing_section(self, heading):
+        """
+        Find the section element that contains this heading.
+
+        Args:
+            heading: The heading element to find the containing section for
+
+        Returns:
+            The parent section element, or None if not found
+        """
+        current = heading
+        while current:
+            if hasattr(current, 'name') and current.name == 'section':
+                return current
+            current = current.parent
+        return None
+
+    def parse_supported_data_types_table(self, table) -> Optional[Dict[str, str]]:
+        """
+        Parse supported data types from a table.
+
+        Searches table cells for content containing both "inputs" and "output"
+        and extracts the modality information.
+
+        Args:
+            table: BeautifulSoup table element
+
+        Returns:
+            Dict with 'input_modalities' and 'output_modalities' keys, or None if not found
+        """
+        rows = table.find_all('tr')
+
+        for row in rows:
+            cells = row.find_all(['td', 'th'])
+            for cell in cells:
+                cell_text = cell.get_text().strip()
+
+                # Look for cell that contains both inputs and outputs
+                if 'inputs' in cell_text.lower() and 'output' in cell_text.lower():
+                    # Parse the cell content
+                    inputs = self.extract_inputs_from_cell(cell_text)
+                    outputs = self.extract_outputs_from_cell(cell_text)
+
+                    if inputs and outputs:
+                        return {
+                            'input_modalities': inputs,
+                            'output_modalities': outputs
+                        }
+
+        return None
+
+    def extract_inputs_from_cell(self, cell_text: str) -> str:
+        """
+        Extract input modalities from table cell text.
+
+        Uses regex patterns to find input modalities in formats like:
+        - "Inputs\\nAudio, video, text"
+        - "Inputs: Audio, video, text"
+
+        Args:
+            cell_text: Raw text content from table cell
+
+        Returns:
+            Comma-separated string of standardized input modalities
+        """
+        import re
+
+        # Look for pattern like "Inputs\nAudio, video, text"
+        inputs_match = re.search(r'inputs[^\n]*\n([^\n]+)', cell_text, re.IGNORECASE)
+        if inputs_match:
+            return self.parse_modalities_from_line(inputs_match.group(1))
+
+        # Fallback: look for "Inputs: ..." pattern
+        inputs_match = re.search(r'inputs[:\s]+([^\n\r]+)', cell_text, re.IGNORECASE)
+        if inputs_match:
+            return self.parse_modalities_from_line(inputs_match.group(1))
+
+        return ""
+
+    def extract_outputs_from_cell(self, cell_text: str) -> str:
+        """
+        Extract output modalities from table cell text.
+
+        Uses regex patterns to find output modalities in formats like:
+        - "Output\\nAudio and text"
+        - "Output: Audio and text"
+
+        Args:
+            cell_text: Raw text content from table cell
+
+        Returns:
+            Comma-separated string of standardized output modalities
+        """
+        import re
+
+        # Look for pattern like "Output\nAudio and text"
+        outputs_match = re.search(r'output[^\n]*\n([^\n]+)', cell_text, re.IGNORECASE)
+        if outputs_match:
+            return self.parse_modalities_from_line(outputs_match.group(1))
+
+        # Fallback: look for "Output: ..." pattern
+        outputs_match = re.search(r'output[:\s]+([^\n\r]+)', cell_text, re.IGNORECASE)
+        if outputs_match:
+            return self.parse_modalities_from_line(outputs_match.group(1))
+
+        return ""
+
+    def parse_modalities_from_line(self, line: str) -> str:
+        """
+        Parse modalities from a line like 'Inputs: Audio, video, text' or 'Output: Audio and text'.
+
+        Standardizes modality names and formats them consistently.
+
+        Args:
+            line: Raw text line containing modality information
+
+        Returns:
+            Comma-separated string of standardized modalities (e.g., "Audio, Video, Text")
+        """
+        import re
+
+        # Remove the label part (Inputs:, Output:, etc.)
+        modalities_part = re.sub(r'^[^:]*:', '', line).strip()
+
+        # Split by commas and 'and', then clean up
+        parts = re.split(r'[,&]|\band\b', modalities_part.lower())
+        parts = [part.strip() for part in parts if part.strip()]
+
+        # Map to standard names and capitalize
+        modality_mapping = {
+            'text': 'Text',
+            'image': 'Image',
+            'images': 'Image',
+            'audio': 'Audio',
+            'video': 'Video',
+            'pdf': 'PDF'
+        }
+
+        standardized = []
+        for part in parts:
+            if part in modality_mapping:
+                standard = modality_mapping[part]
+                if standard not in standardized:
+                    standardized.append(standard)
+
+        return ', '.join(standardized)
+
     def extract_model_capabilities(self, row, soup) -> Optional[Dict[str, str]]:
-        """Extract input/output capabilities for a specific model"""
-        row_text = row.get_text().strip()
-        model_name = self.normalize_model_name(row_text)
-        
-        # Model-specific capability mapping
-        capabilities = self.get_model_specific_capabilities(model_name)
-        
-        if capabilities:
-            return {
-                # 'input_modalities': self.standardize_modalities(capabilities['input']),
-                # 'output_modalities': self.standardize_modalities(capabilities['output'])
-                'input_modalities': ', '.join(capabilities['input']),
-                'output_modalities': ', '.join(capabilities['output'])
-            }
+        """Extract input/output capabilities for a specific model - DEPRECATED"""
+        # This method is deprecated - we now scrape from official sections only
         return None
 
     def extract_gemini_from_sections(self, soup) -> Dict[str, Dict[str, str]]:
-        """Extract Gemini models from page sections"""
-        gemini_models = {}
-        
-        # Look for headings and content that mention Gemini models
-        headings = soup.find_all(['h1', 'h2', 'h3', 'h4'])
-        for heading in headings:
-            heading_text = heading.get_text().strip()
-            if 'gemini' in heading_text.lower():
-                # Extract model name
-                model_match = re.search(r'gemini[^\s]*(?:\s+\d+[.\d]*)?(?:\s+\w+)*', heading_text.lower())
-                if model_match:
-                    model_name = self.normalize_model_name(model_match.group(0))
-                    capabilities = self.get_model_specific_capabilities(model_name)
-                    
-                    if capabilities:
-                        gemini_models[model_name] = {
-                            # 'input_modalities': self.standardize_modalities(capabilities['input']),
-                            # 'output_modalities': self.standardize_modalities(capabilities['output'])
-                            'input_modalities': ', '.join(capabilities['input']),
-                            'output_modalities': ', '.join(capabilities['output'])
-                        }
-                        
-        return gemini_models
+        """Extract Gemini models from page sections - DEPRECATED"""
+        # This method is deprecated - we now scrape from official sections only
+        return {}
 
     def normalize_model_name(self, model_name: str) -> str:
         """Normalize model name for consistent matching"""
@@ -247,7 +439,15 @@ class GoogleModalityScraper:
         return None
 
     def scrape_imagen_modalities(self) -> Dict[str, Dict[str, str]]:
-        """Scrape Imagen model capabilities from specific sections"""
+        """
+        Scrape Imagen model capabilities from specific sections.
+
+        Extracts modalities for both Imagen 3 and Imagen 4 models from their
+        respective documentation sections.
+
+        Returns:
+            Dict mapping image model names to their input/output modalities
+        """
         imagen_models = {}
         
         # Scrape Imagen 4 from model versions section
@@ -321,7 +521,15 @@ class GoogleModalityScraper:
         return imagen3_models
 
     def scrape_video_modalities(self) -> Dict[str, Dict[str, str]]:
-        """Scrape Video generation model capabilities from specific sections"""
+        """
+        Scrape Video generation model capabilities from specific sections.
+
+        Extracts modalities for both Veo 2 and Veo 3 video generation models
+        from their respective documentation sections.
+
+        Returns:
+            Dict mapping video model names to their input/output modalities
+        """
         video_models = {}
         
         # Scrape Veo 3 models
@@ -434,7 +642,17 @@ class GoogleModalityScraper:
 
 
     def scrape_gemma_modalities(self) -> Dict[str, Dict[str, str]]:
-        """Scrape Gemma model capabilities from official model cards"""
+        """
+        Scrape Gemma model capabilities from official model cards.
+
+        Extracts modalities from official Gemma model card pages for:
+        - Gemma 3 (core model)
+        - Gemma 2 (core model)
+        - Gemma 3N (multimodal variant)
+
+        Returns:
+            Dict mapping Gemma model families to their input/output modalities
+        """
         gemma_models = {}
         
         # Each URL maps to exactly one result - no merging
@@ -761,7 +979,18 @@ class GoogleModalityScraper:
         return gemma_models
 
     def generate_modality_mapping(self) -> Dict[str, Dict[str, str]]:
-        """Generate consolidated modality mapping from all sources"""
+        """
+        Generate consolidated modality mapping from all sources.
+
+        Orchestrates scraping from all Google AI model documentation sources:
+        - Gemini models (generative AI)
+        - Imagen models (image generation)
+        - Video models (video generation)
+        - Gemma models (open source)
+
+        Returns:
+            Consolidated dict mapping all model names to their modalities
+        """
         print("=== Starting Google Documentation Modality Scraping ===")
         
         all_modalities = {}
@@ -797,7 +1026,18 @@ class GoogleModalityScraper:
         return key
 
     def save_modality_mapping(self, output_file: str = "../02_outputs/C-scrapped-modalities.json"):
-        """Save modality mapping to JSON file with normalized Gemma names"""
+        """
+        Save modality mapping to JSON file with normalized Gemma names.
+
+        Generates both JSON and human-readable text reports with scraped modalities.
+        Handles errors gracefully by creating empty output files if scraping fails.
+
+        Args:
+            output_file: Path to save JSON output (default: C-scrapped-modalities.json)
+
+        Returns:
+            Dict of scraped modalities, or empty dict if scraping failed
+        """
         try:
             modality_mapping = self.generate_modality_mapping()
 
