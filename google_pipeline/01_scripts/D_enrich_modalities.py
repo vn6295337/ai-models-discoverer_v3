@@ -139,40 +139,96 @@ class ModalityEnrichment:
     def normalize_api_id(self, api_id: str) -> str:
         """Normalize API ID by removing version suffixes and service indicators for Priority 2 matching"""
         normalized = api_id.lower()
-        
+
         # Remove version suffixes
         normalized = re.sub(r'-\d{3}$', '', normalized)  # Remove -001, -002, etc.
         normalized = normalized.replace('-latest', '')
-        
+
         # Remove service indicators
         normalized = normalized.replace('-generate', '')
         normalized = normalized.replace('.0', '')
         normalized = re.sub(r'-(ultra|fast)(?=-|$)', '', normalized)  # Remove -ultra, -fast when followed by - or end
-        
+
         return normalized
+
+    def normalize_gemini_api_to_display_name(self, api_id: str) -> str:
+        """
+        Normalize Gemini API model names to display names using specific rules:
+        1. Remove suffix: -latest or serial numbering in the format -001, -002, etc.
+        2. Replace hyphens with spaces except between 'flash' and 'lite'
+        3. Capitalize individual words with title case
+        4. Capitalize parameter letter 'b', 'm', 't' following numbers
+        """
+        if not api_id.lower().startswith('gemini'):
+            return api_id
+
+        normalized = api_id.lower()
+
+        # Rule 1: Remove suffixes
+        normalized = re.sub(r'-\d{3}$', '', normalized)  # Remove -001, -002, etc.
+        normalized = normalized.replace('-latest', '')
+
+        # Rule 2: Replace hyphens with spaces except between 'flash' and 'lite'
+        # First, protect flash-lite by temporarily replacing it
+        normalized = normalized.replace('flash-lite', 'FLASHLITE_TEMP')
+
+        # Replace all remaining hyphens with spaces
+        normalized = normalized.replace('-', ' ')
+
+        # Restore flash-lite
+        normalized = normalized.replace('FLASHLITE_TEMP', 'flash lite')
+
+        # Rule 3: Capitalize individual words with title case
+        words = normalized.split()
+        capitalized_words = []
+
+        for i, word in enumerate(words):
+            # Rule 4: Capitalize parameter letters 'b', 'm', 't' following numbers
+            if re.match(r'^\d+[bmt]$', word):
+                # Number followed by b/m/t - capitalize the letter
+                capitalized_words.append(word[:-1] + word[-1].upper())
+            else:
+                capitalized_words.append(word.capitalize())
+
+        # Special handling for compound terms
+        result = ' '.join(capitalized_words)
+        result = result.replace('Flash Lite', 'Flash-Lite')
+        # Handle Flash-8B (keep hyphen between Flash and 8B)
+        result = re.sub(r'Flash (\d+B)', r'Flash-\1', result)
+
+        return result
 
     def find_modality_match(self, stage2_api_id: str) -> Tuple[Optional[Dict], int, str]:
         """
-        Find modality match using two-priority strategy
-        Returns (modality_data, priority, matched_api_id) where priority is 1 or 2, or (None, 0, '') for no match
+        Find modality match using multi-priority strategy
+        Returns (modality_data, priority, matched_api_id) where priority is 0, 1, or 2, or (None, 0, '') for no match
         """
+        # Priority 0: Gemini display name matching for Gemini models
+        if stage2_api_id.lower().startswith('gemini'):
+            normalized_display_name = self.normalize_gemini_api_to_display_name(stage2_api_id)
+
+            # Check if this normalized display name exists in scraped modalities
+            for stage3_key, modality_data in self.scraped_modalities.items():
+                if stage3_key == normalized_display_name:
+                    return modality_data, 0, stage3_key  # Return the display name as matched_api_id
+
         # Priority 1: Exact match with full identifiers
         for stage3_key, modality_data in self.scraped_modalities.items():
             stage3_api_id = self.extract_api_id_from_stage3_key(stage3_key)
-            
+
             if stage2_api_id.lower() == stage3_api_id.lower():
                 return modality_data, 1, stage3_api_id
-                
+
         # Priority 2: Normalized match (strip versions and service indicators)
         stage2_normalized = self.normalize_api_id(stage2_api_id)
-        
+
         for stage3_key, modality_data in self.scraped_modalities.items():
             stage3_api_id = self.extract_api_id_from_stage3_key(stage3_key)
             stage3_normalized = self.normalize_api_id(stage3_api_id)
-            
+
             if stage2_normalized == stage3_normalized:
                 return modality_data, 2, stage3_api_id
-                
+
         return None, 0, ''
 
     def extract_gemma_pattern(self, api_id: str) -> Optional[str]:
@@ -403,27 +459,30 @@ class ModalityEnrichment:
                 enriched_model['output_modalities'] = self.standardize_modalities(output_modalities)
                 enriched_model['modality_source'] = 'scraped'
                 enriched_model['match_priority'] = priority
-                
+
                 # Update statistics
-                if priority == 1:
+                if priority == 0:
+                    self.matching_stats['priority_1_matches'] += 1  # Count as priority 1 for reporting
+                    match_type = "Priority 1 (Exact)"
+                elif priority == 1:
                     self.matching_stats['priority_1_matches'] += 1
                     match_type = "Priority 1 (Exact)"
                 else:
                     self.matching_stats['priority_2_matches'] += 1
                     match_type = "Priority 2 (Normalized)"
-                    
+
                 print(f"✅ {match_type}: {display_name} ({stage2_api_id})")
-                
+
             else:
                 # No match found
                 enriched_model['input_modalities'] = 'Unknown'
                 enriched_model['output_modalities'] = 'Unknown'
                 enriched_model['modality_source'] = 'unknown'
                 enriched_model['match_priority'] = 0
-                
+
                 self.matching_stats['no_matches'] += 1
                 print(f"❌ No match: {display_name} ({stage2_api_id})")
-                
+
             # Store match details for reporting
             match_detail = {
                 'model_name': model_name,
@@ -434,9 +493,9 @@ class ModalityEnrichment:
                 'input_modalities': enriched_model['input_modalities'],
                 'output_modalities': enriched_model['output_modalities']
             }
-            
-            # Add matched API ID for priority 2 matches
-            if modality_data and priority == 2:
+
+            # Add matched API ID for priority 0 and 2 matches
+            if modality_data and (priority == 0 or priority == 2):
                 match_detail['matched_api_id'] = matched_api_id
             
             self.matching_stats['match_details'].append(match_detail)
@@ -492,10 +551,11 @@ class ModalityEnrichment:
         report_content.append(f"Overall Match Rate: {(priority_1 + priority_2 + embedding_matches + gemma_matches + unique_matches)/total*100:.1f}%")
         report_content.append("")
         
-        # Priority 1 matches
+        # Priority 1 matches (including Priority 0 display name matches)
         if priority_1 > 0:
             report_content.append("=== PRIORITY 1 MATCHES (EXACT) ===\n")
-            for i, detail in enumerate([d for d in self.matching_stats['match_details'] if d['match_priority'] == 1], 1):
+            priority_matches = [d for d in self.matching_stats['match_details'] if d['match_priority'] in [0, 1]]
+            for i, detail in enumerate(priority_matches, 1):
                 report_content.append(f"{i:2d}. {detail['api_id']}")
                 report_content.append(f"    Input: {detail['input_modalities']}")
                 report_content.append(f"    Output: {detail['output_modalities']}")
