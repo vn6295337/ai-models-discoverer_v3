@@ -1,11 +1,11 @@
 === GOOGLE MODELS FILTERING REPORT ===
-Generated: 2025-09-23 06:08:55 IST
+Generated: 2025-09-24 06:09:44 IST
 
 === SUMMARY ===
-Total Input Models: 65
-Models Included: 34
-Models Excluded: 31
-Filtering Success Rate: 52.3%
+Total Input Models: 67
+Models Included: 35
+Models Excluded: 32
+Filtering Success Rate: 52.2%
 
 === EXCLUDED MODELS ===
  1. gemini-2.5-pro-preview-03-25
@@ -39,6 +39,7 @@ Filtering Success Rate: 52.3%
 29. gemini-2.5-flash-exp-native-audio-thinking-dialog
 30. gemini-live-2.5-flash-preview
 31. gemini-2.5-flash-live-preview
+32. gemini-2.5-flash-native-audio-preview-09-2025
 
 === INCLUDED MODELS ===
  1. embedding-gecko-001
@@ -75,7 +76,8 @@ Filtering Success Rate: 52.3%
 32. veo-3.0-generate-001
 33. veo-3.0-fast-generate-001
 34. gemini-2.0-flash-live-001
+35. gemini-2.5-flash-native-audio-latest
 
 === EXCLUSION BREAKDOWN ===
-30 models: Experimental/Preview model - production-ready models only
+31 models: Experimental/Preview model - production-ready models only
  1 models: Model requires billing/payment - free models only

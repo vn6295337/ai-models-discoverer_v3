@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-09-23 06:09:00 IST",
+    "generated": "2025-09-24 06:09:48 IST",
     "total_models": 26,
     "scraping_source": "Google Documentation Web Scraper"
   },
@@ -21,7 +21,7 @@
       "input_modalities": "Audio, video, and text",
       "output_modalities": "Text, audio"
     },
-    "Gemini 2.5 Flash Native Audio\ngemini-2.5-flash-preview-native-audio-dialog &\n    gemini-2.5-flash-exp-native-audio-thinking-dialog": {
+    "Gemini 2.5 Flash Native Audio\ngemini-2.5-flash-native-audio-preview-09-2025 &\n    gemini-2.5-flash-exp-native-audio-thinking-dialog": {
       "input_modalities": "Audio, videos, and text",
       "output_modalities": "Text and audio, interleaved"
     },
