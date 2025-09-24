@@ -1,68 +1,60 @@
 {
   "metadata": {
-    "generated": "2025-09-24 06:09:48 IST",
-    "total_models": 26,
+    "generated": "2025-09-24 11:45:06 IST",
+    "total_models": 24,
     "scraping_source": "Google Documentation Web Scraper"
   },
   "modalities": {
-    "Gemini 2.5 Pro\ngemini-2.5-pro": {
-      "input_modalities": "Audio, images, videos, text, and PDF",
+    "Gemini 2.5 Pro": {
+      "input_modalities": "Audio, Image, Video, Text, PDF",
       "output_modalities": "Text"
     },
-    "Gemini 2.5 Flash\ngemini-2.5-flash": {
-      "input_modalities": "Audio, images, videos, and text",
+    "Gemini 2.5 Flash": {
+      "input_modalities": "Text, Image, Video, Audio",
       "output_modalities": "Text"
     },
-    "Gemini 2.5 Flash-Lite\ngemini-2.5-flash-lite": {
-      "input_modalities": "Text, image, video, audio",
+    "Gemini 2.5 Flash-Lite": {
+      "input_modalities": "Text, Image, Video, Audio, PDF",
       "output_modalities": "Text"
     },
-    "Gemini 2.5 Flash Live\ngemini-live-2.5-flash-preview": {
-      "input_modalities": "Audio, video, and text",
-      "output_modalities": "Text, audio"
+    "Gemini 2.5 Flash Native Audio": {
+      "input_modalities": "Audio, Video, Text",
+      "output_modalities": "Audio, Text"
     },
-    "Gemini 2.5 Flash Native Audio\ngemini-2.5-flash-native-audio-preview-09-2025 &\n    gemini-2.5-flash-exp-native-audio-thinking-dialog": {
-      "input_modalities": "Audio, videos, and text",
-      "output_modalities": "Text and audio, interleaved"
+    "Gemini 2.5 Flash Image Preview": {
+      "input_modalities": "Image, Text",
+      "output_modalities": "Image, Text"
     },
-    "Gemini 2.5 Flash Image Preview\ngemini-2.5-flash-image-preview": {
-      "input_modalities": "Images and text",
-      "output_modalities": "Images and text"
-    },
-    "Gemini 2.5 Flash Preview TTS\ngemini-2.5-flash-preview-tts": {
+    "Gemini 2.5 Flash Preview Text-to-Speech": {
       "input_modalities": "Text",
       "output_modalities": "Audio"
     },
-    "Gemini 2.5 Pro Preview TTS\ngemini-2.5-pro-preview-tts": {
+    "Gemini 2.5 Pro Preview Text-to-Speech": {
       "input_modalities": "Text",
       "output_modalities": "Audio"
     },
-    "Gemini 2.0 Flash\ngemini-2.0-flash": {
-      "input_modalities": "Audio, images, videos, and text",
+    "Gemini 2.0 Flash": {
+      "input_modalities": "Audio, Image, Video, Text",
       "output_modalities": "Text"
     },
-    "Gemini 2.0 Flash Preview Image Generation\ngemini-2.0-flash-preview-image-generation": {
-      "input_modalities": "Audio, images, videos, and text",
-      "output_modalities": "Text, images"
+    "Gemini 2.0 Flash Preview Image Generation": {
+      "input_modalities": "Audio, Image, Video, Text",
+      "output_modalities": "Text, Image"
     },
-    "Gemini 2.0 Flash-Lite\ngemini-2.0-flash-lite": {
-      "input_modalities": "Audio, images, videos, and text",
+    "Gemini 2.0 Flash-Lite": {
+      "input_modalities": "Audio, Image, Video, Text",
       "output_modalities": "Text"
     },
-    "Gemini 2.0 Flash Live\ngemini-2.0-flash-live-001": {
-      "input_modalities": "Audio, video, and text",
-      "output_modalities": "Text, audio"
-    },
-    "Gemini 1.5 Flash\ngemini-1.5-flash": {
-      "input_modalities": "Audio, images, videos, and text",
+    "Gemini 1.5 Flash": {
+      "input_modalities": "Audio, Image, Video, Text",
       "output_modalities": "Text"
     },
-    "Gemini 1.5 Flash-8B\ngemini-1.5-flash-8b": {
-      "input_modalities": "Audio, images, videos, and text",
+    "Gemini 1.5 Flash-8B": {
+      "input_modalities": "Audio, Image, Video, Text",
       "output_modalities": "Text"
     },
-    "Gemini 1.5 Pro\ngemini-1.5-pro": {
-      "input_modalities": "Audio, images, videos, and text",
+    "Gemini 1.5 Pro": {
+      "input_modalities": "Audio, Image, Video, Text",
       "output_modalities": "Text"
     },
     "imagen-4-ultra": {
