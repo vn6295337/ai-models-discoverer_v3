@@ -1,6 +1,6 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-09-24 11:48:23 IST
+Generated: 2025-09-24 12:42:04 IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -33,44 +33,44 @@ SUMMARY STATISTICS
      - Exact matches: 17
      - Differences: 17
      - Specific differences:
-       * Gemini 1.5 Pro: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
        * Gemini 1.5 Flash 8B 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.5 Pro: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.5 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash-Lite 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
        * Gemini 1.5 Flash 002: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 2.5 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 1.5 Flash Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 1.5 Pro: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 2.0 Flash-Lite 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 1.5 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 2.0 Flash Live 001: Pipeline='Unknown' vs Supabase='Text, Audio, Video'
+       * Gemini 2.0 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
        * Gemini 2.5 Flash-Lite: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash-Lite: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
        * Gemini 1.5 Pro Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 2.0 Flash-Lite: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 1.5 Flash 8B Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 1.5 Flash 8B: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
        * Gemini 1.5 Pro 002: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
        * Gemini 2.0 Flash 001: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash 8B Latest: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 2.0 Flash Live 001: Pipeline='Unknown' vs Supabase='Text, Audio, Video'
-       * Gemini 1.5 Flash 8B: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
-       * Gemini 1.5 Flash: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
+       * Gemini 2.5 Pro: Pipeline='Unknown' vs Supabase='Text, Image, Audio, ...'
    • output_modalities:
      - Exact matches: 17
      - Differences: 17
      - Specific differences:
-       * Gemini 1.5 Pro: Pipeline='Unknown' vs Supabase='Text'
        * Gemini 1.5 Flash 8B 001: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.5 Pro: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash Latest: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.5 Flash: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash-Lite 001: Pipeline='Unknown' vs Supabase='Text'
        * Gemini 1.5 Flash 002: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 2.5 Flash: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 1.5 Flash Latest: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 1.5 Pro: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 2.0 Flash-Lite 001: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 1.5 Flash: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 2.0 Flash Live 001: Pipeline='Unknown' vs Supabase='Text, Audio'
+       * Gemini 2.0 Flash: Pipeline='Unknown' vs Supabase='Text'
        * Gemini 2.5 Flash-Lite: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash-Lite: Pipeline='Unknown' vs Supabase='Text'
        * Gemini 1.5 Pro Latest: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 2.0 Flash-Lite: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 1.5 Flash 8B Latest: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 1.5 Flash 8B: Pipeline='Unknown' vs Supabase='Text'
        * Gemini 1.5 Pro 002: Pipeline='Unknown' vs Supabase='Text'
        * Gemini 2.0 Flash 001: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash 8B Latest: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 2.0 Flash Live 001: Pipeline='Unknown' vs Supabase='Text, Audio'
-       * Gemini 1.5 Flash 8B: Pipeline='Unknown' vs Supabase='Text'
-       * Gemini 1.5 Flash: Pipeline='Unknown' vs Supabase='Text'
+       * Gemini 2.5 Pro: Pipeline='Unknown' vs Supabase='Text'
    • license_info_text:
      - Exact matches: 34
      - Differences: 0
