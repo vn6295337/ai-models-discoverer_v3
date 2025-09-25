@@ -1,6 +1,6 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-09-24 13:13:59 IST
+Generated: 2025-09-25 06:09:44 IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -8,59 +8,54 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total models processed: 35
-   • Models in both systems: 34
-   • Models with differences: 1
-   • Models in pipeline only (not in Supabase): 1
+   • Models in both systems: 35
+   • Models with differences: 0
+   • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • model_provider:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • official_url:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • input_modalities:
-     - Exact matches: 33
-     - Differences: 1
-     - Specific differences:
-       * Gemini 2.5 Flash-Lite: Pipeline='Text, Image, Audio, ...' vs Supabase='Text, Image, Audio, ...'
+     - Exact matches: 35
+     - Differences: 0
    • output_modalities:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • license_info_text:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • license_info_url:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • license_name:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • license_url:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • rate_limits:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 34
+     - Exact matches: 35
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 1
-     Models: Gemini 2.5 Flash Native Audio Latest
-   • Existing models with differences: 1
-     Models: Gemini 2.5 Flash-Lite
+   • Existing models with differences: 0
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -430,19 +425,19 @@ MODEL: Gemini 2.5 Flash Native Audio Latest
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | Google                    |                          
-model_provider            | Google                    |                          
-human_readable_name       | Gemini 2.5 Flash Native.. |                          
-model_provider_country    | United States             |                          
-official_url              | https://deepmind.google.. |                          
-input_modalities          | Text, Audio, Video        |                          
-output_modalities         | Text, Audio               |                          
-license_info_text         | Google                    |                          
-license_info_url          | https://developers.goog.. |                          
-license_name              | Gemini                    |                          
-license_url               | https://ai.google.dev/g.. |                          
-rate_limits               | 10 requests/min, 250K t.. |                          
-provider_api_access       | https://aistudio.google.. |                          
+inference_provider        | Google                    | Google                   
+model_provider            | Google                    | Google                   
+human_readable_name       | Gemini 2.5 Flash Native.. | Gemini 2.5 Flash Native..
+model_provider_country    | United States             | United States            
+official_url              | https://deepmind.google.. | https://deepmind.google..
+input_modalities          | Text, Audio, Video        | Text, Audio, Video       
+output_modalities         | Text, Audio               | Text, Audio              
+license_info_text         | Google                    | Google                   
+license_info_url          | https://developers.goog.. | https://developers.goog..
+license_name              | Gemini                    | Gemini                   
+license_url               | https://ai.google.dev/g.. | https://ai.google.dev/g..
+rate_limits               | 10 requests/min, 250K t.. | 10 requests/min, 250K t..
+provider_api_access       | https://aistudio.google.. | https://aistudio.google..
 
 ================================================================================
 
@@ -455,7 +450,7 @@ model_provider            | Google                    | Google
 human_readable_name       | Gemini 2.5 Flash-Lite     | Gemini 2.5 Flash-Lite    
 model_provider_country    | United States             | United States            
 official_url              | https://deepmind.google.. | https://deepmind.google..
-input_modalities          | Text, Image, Audio, Vid.. | Text, Image, Audio, Video
+input_modalities          | Text, Image, Audio, Vid.. | Text, Image, Audio, Vid..
 output_modalities         | Text                      | Text                     
 license_info_text         | Google                    | Google                   
 license_info_url          | https://developers.goog.. | https://developers.goog..
