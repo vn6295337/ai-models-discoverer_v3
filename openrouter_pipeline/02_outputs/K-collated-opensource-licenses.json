@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-09-25 06:09 AM IST",
-    "total_models": 30,
+    "generated_at": "2025-09-26 06:08 AM IST",
+    "total_models": 26,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -35,17 +35,6 @@
       "clean_model_name": "DeepSeek V3.1",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT"
-    },
-    {
-      "id": "deepseek/deepseek-r1:free",
-      "canonical_slug": "deepseek/deepseek-r1",
-      "original_name": "DeepSeek: R1 (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-R1",
-      "clean_model_name": "R1",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1/blob/main/LICENSE",
       "license_name": "MIT",
       "license_url": "https://opensource.org/licenses/MIT"
     },
@@ -101,28 +90,6 @@
       "clean_model_name": "Devstral Small 2505",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/mistralai/Devstral-Small-2505/blob/main/README.md",
-      "license_name": "Apache-2.0",
-      "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-    },
-    {
-      "id": "mistralai/mistral-7b-instruct:free",
-      "canonical_slug": "mistralai/mistral-7b-instruct",
-      "original_name": "Mistral: Mistral 7B Instruct (free)",
-      "hugging_face_id": "mistralai/Mistral-7B-Instruct-v0.3",
-      "clean_model_name": "Mistral 7B Instruct",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3/blob/main/README.md",
-      "license_name": "Apache-2.0",
-      "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-    },
-    {
-      "id": "mistralai/mistral-nemo:free",
-      "canonical_slug": "mistralai/mistral-nemo",
-      "original_name": "Mistral: Mistral Nemo (free)",
-      "hugging_face_id": "mistralai/Mistral-Nemo-Instruct-2407",
-      "clean_model_name": "Mistral Nemo",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
@@ -200,17 +167,6 @@
       "clean_model_name": "GPT OSS 20B",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/openai/gpt-oss-20b/blob/main/LICENSE",
-      "license_name": "Apache-2.0",
-      "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-    },
-    {
-      "id": "qwen/qwen-2.5-coder-32b-instruct:free",
-      "canonical_slug": "qwen/qwen-2.5-coder-32b-instruct",
-      "original_name": "Qwen2.5 Coder 32B Instruct (free)",
-      "hugging_face_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
-      "clean_model_name": "Qwen2.5 Coder 32B Instruct",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/blob/main/LICENSE",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },

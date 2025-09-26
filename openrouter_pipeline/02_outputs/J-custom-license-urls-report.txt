@@ -1,102 +1,139 @@
 ================================================================================
 CUSTOM LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-09-25 06:09 AM IST
+Generated: 2025-09-26 06:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 8
+  Total models : 12
   Input        : H-custom-license-names.json
   Priority     : LICENSE → README.md → Base repository
   Processor    : J_custom_license_urls.py
   Output       : J-custom-license-urls.json
 
 LICENSE URL TYPE DISTRIBUTION:
-  LICENSE file: 4 models
-  README.md file: 4 models
+  Inaccessible: 12 models
 
-Total URL types: 2
+Total URL types: 1
 
 URL RESOLUTION STATISTICS:
-  Successful URL resolutions: 8
-  Failed URL resolutions: 0
-  Success rate: 100.0%
+  Successful URL resolutions: 0
+  Failed URL resolutions: 12
+  Success rate: 0.0%
 
 CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
   NVIDIA: 1 models
-  QWEN: 2 models
+  QWEN: 1 models
   Tencent: 1 models
-  Unknown: 2 models
+  Unknown: 7 models
   llama3.3: 1 models
 
 Total license types: 6
 
+MODELS WITH FAILED URL RESOLUTION (12 models):
+  NVIDIA: Nemotron Nano 9B V2 (free)
+    HF ID: nvidia/NVIDIA-Nemotron-Nano-9B-v2
+    Reason: Inaccessible
+  MoonshotAI: Kimi K2 0711 (free)
+    HF ID: moonshotai/Kimi-K2-Instruct
+    Reason: Inaccessible
+  Tencent: Hunyuan A13B Instruct (free)
+    HF ID: tencent/Hunyuan-A13B-Instruct
+    Reason: Inaccessible
+  Shisa AI: Shisa V2 Llama 3.3 70B  (free)
+    HF ID: shisa-ai/shisa-v2-llama3.3-70b
+    Reason: Inaccessible
+  Dolphin3.0 R1 Mistral 24B (free)
+    HF ID: cognitivecomputations/Dolphin3.0-R1-Mistral-24B
+    Reason: Inaccessible
+  Dolphin3.0 Mistral 24B (free)
+    HF ID: cognitivecomputations/Dolphin3.0-Mistral-24B
+    Reason: Inaccessible
+  Qwen: Qwen2.5 VL 72B Instruct (free)
+    HF ID: Qwen/Qwen2.5-VL-72B-Instruct
+    Reason: Inaccessible
+  DeepSeek: R1 (free)
+    HF ID: deepseek-ai/DeepSeek-R1
+    Reason: Inaccessible
+  Qwen2.5 Coder 32B Instruct (free)
+    HF ID: Qwen/Qwen2.5-Coder-32B-Instruct
+    Reason: Inaccessible
+  Qwen2.5 72B Instruct (free)
+    HF ID: Qwen/Qwen2.5-72B-Instruct
+    Reason: Inaccessible
+  Mistral: Mistral Nemo (free)
+    HF ID: mistralai/Mistral-Nemo-Instruct-2407
+    Reason: Inaccessible
+  Mistral: Mistral 7B Instruct (free)
+    HF ID: mistralai/Mistral-7B-Instruct-v0.3
+    Reason: Inaccessible
+
 DETAILED MODEL LICENSE URL MAPPINGS:
 ================================================================================
 
-MODEL 1: moonshotai/kimi-k2
---------------------------------------------------
-  ID                     : moonshotai/kimi-k2:free
-  Canonical Slug         : moonshotai/kimi-k2
-  HuggingFace ID         : moonshotai/Kimi-K2-Instruct
-  License Name           : Modified MIT
-  License URL            : https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE
-  License URL Type       : LICENSE file
-
-================================================================================
-
-MODEL 2: qwen/qwen-2.5-72b-instruct
---------------------------------------------------
-  ID                     : qwen/qwen-2.5-72b-instruct:free
-  Canonical Slug         : qwen/qwen-2.5-72b-instruct
-  HuggingFace ID         : Qwen/Qwen2.5-72B-Instruct
-  License Name           : QWEN
-  License URL            : https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
-  License URL Type       : LICENSE file
-
-================================================================================
-
-MODEL 3: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID                     : qwen/qwen2.5-vl-72b-instruct:free
-  Canonical Slug         : qwen/qwen2.5-vl-72b-instruct
-  HuggingFace ID         : Qwen/Qwen2.5-VL-72B-Instruct
-  License Name           : QWEN
-  License URL            : https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/blob/main/LICENSE
-  License URL Type       : LICENSE file
-
-================================================================================
-
-MODEL 4: tencent/hunyuan-a13b-instruct
---------------------------------------------------
-  ID                     : tencent/hunyuan-a13b-instruct:free
-  Canonical Slug         : tencent/hunyuan-a13b-instruct
-  HuggingFace ID         : tencent/Hunyuan-A13B-Instruct
-  License Name           : Tencent
-  License URL            : https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
-  License URL Type       : LICENSE file
-
-================================================================================
-
-MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 1: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID                     : cognitivecomputations/dolphin3.0-mistral-24b:free
   Canonical Slug         : cognitivecomputations/dolphin3.0-mistral-24b
   HuggingFace ID         : cognitivecomputations/Dolphin3.0-Mistral-24B
   License Name           : Unknown
-  License URL            : https://huggingface.co/cognitivecomputations/Dolphin3.0-Mistral-24B/blob/main/README.md
-  License URL Type       : README.md file
+  License URL            : Unknown
+  License URL Type       : Inaccessible
 
 ================================================================================
 
-MODEL 6: cognitivecomputations/dolphin3.0-r1-mistral-24b
+MODEL 2: cognitivecomputations/dolphin3.0-r1-mistral-24b
 --------------------------------------------------
   ID                     : cognitivecomputations/dolphin3.0-r1-mistral-24b:free
   Canonical Slug         : cognitivecomputations/dolphin3.0-r1-mistral-24b
   HuggingFace ID         : cognitivecomputations/Dolphin3.0-R1-Mistral-24B
   License Name           : Unknown
-  License URL            : https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md
-  License URL Type       : README.md file
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 3: deepseek/deepseek-r1
+--------------------------------------------------
+  ID                     : deepseek/deepseek-r1:free
+  Canonical Slug         : deepseek/deepseek-r1
+  HuggingFace ID         : deepseek-ai/DeepSeek-R1
+  License Name           : Unknown
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 4: mistralai/mistral-7b-instruct
+--------------------------------------------------
+  ID                     : mistralai/mistral-7b-instruct:free
+  Canonical Slug         : mistralai/mistral-7b-instruct
+  HuggingFace ID         : mistralai/Mistral-7B-Instruct-v0.3
+  License Name           : Unknown
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 5: mistralai/mistral-nemo
+--------------------------------------------------
+  ID                     : mistralai/mistral-nemo:free
+  Canonical Slug         : mistralai/mistral-nemo
+  HuggingFace ID         : mistralai/Mistral-Nemo-Instruct-2407
+  License Name           : Unknown
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 6: moonshotai/kimi-k2
+--------------------------------------------------
+  ID                     : moonshotai/kimi-k2:free
+  Canonical Slug         : moonshotai/kimi-k2
+  HuggingFace ID         : moonshotai/Kimi-K2-Instruct
+  License Name           : Modified MIT
+  License URL            : Unknown
+  License URL Type       : Inaccessible
 
 ================================================================================
 
@@ -106,17 +143,61 @@ MODEL 7: nvidia/nemotron-nano-9b-v2
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
   HuggingFace ID         : nvidia/NVIDIA-Nemotron-Nano-9B-v2
   License Name           : NVIDIA
-  License URL            : https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md
-  License URL Type       : README.md file
+  License URL            : Unknown
+  License URL Type       : Inaccessible
 
 ================================================================================
 
-MODEL 8: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 8: qwen/qwen-2.5-72b-instruct
+--------------------------------------------------
+  ID                     : qwen/qwen-2.5-72b-instruct:free
+  Canonical Slug         : qwen/qwen-2.5-72b-instruct
+  HuggingFace ID         : Qwen/Qwen2.5-72B-Instruct
+  License Name           : Unknown
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 9: qwen/qwen-2.5-coder-32b-instruct
+--------------------------------------------------
+  ID                     : qwen/qwen-2.5-coder-32b-instruct:free
+  Canonical Slug         : qwen/qwen-2.5-coder-32b-instruct
+  HuggingFace ID         : Qwen/Qwen2.5-Coder-32B-Instruct
+  License Name           : Unknown
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 10: qwen/qwen2.5-vl-72b-instruct
+--------------------------------------------------
+  ID                     : qwen/qwen2.5-vl-72b-instruct:free
+  Canonical Slug         : qwen/qwen2.5-vl-72b-instruct
+  HuggingFace ID         : Qwen/Qwen2.5-VL-72B-Instruct
+  License Name           : QWEN
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 11: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID                     : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug         : shisa-ai/shisa-v2-llama3.3-70b
   HuggingFace ID         : shisa-ai/shisa-v2-llama3.3-70b
   License Name           : llama3.3
-  License URL            : https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md
-  License URL Type       : README.md file
+  License URL            : Unknown
+  License URL Type       : Inaccessible
+
+================================================================================
+
+MODEL 12: tencent/hunyuan-a13b-instruct
+--------------------------------------------------
+  ID                     : tencent/hunyuan-a13b-instruct:free
+  Canonical Slug         : tencent/hunyuan-a13b-instruct
+  HuggingFace ID         : tencent/Hunyuan-A13B-Instruct
+  License Name           : Tencent
+  License URL            : Unknown
+  License URL Type       : Inaccessible
 

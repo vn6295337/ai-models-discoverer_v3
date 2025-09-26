@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-09-25 06:09 AM IST
+Generated: 2025-09-26 06:08 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,7 +9,7 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (20 models):
+LICENSE INFO TEXT (24 models):
   - Dolphin3.0 Mistral 24B
   - Dolphin3.0 R1 Mistral 24B
   - Gemma 2 9B IT
@@ -26,12 +26,16 @@ LICENSE INFO TEXT (20 models):
   - Llama 3.3 8B Instruct
   - Llama 4 Maverick
   - Llama 4 Scout
+  - Mistral 7B Instruct
+  - Mistral Nemo
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
+  - Qwen2.5 Coder 32B Instruct
   - Qwen2.5 VL 72B Instruct
+  - R1
   - Shisa V2 Llama 3.3 70B
 
-LICENSE INFO URL (20 models):
+LICENSE INFO URL (24 models):
   - Dolphin3.0 Mistral 24B
   - Dolphin3.0 R1 Mistral 24B
   - Gemma 2 9B IT
@@ -48,24 +52,33 @@ LICENSE INFO URL (20 models):
   - Llama 3.3 8B Instruct
   - Llama 4 Maverick
   - Llama 4 Scout
+  - Mistral 7B Instruct
+  - Mistral Nemo
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
+  - Qwen2.5 Coder 32B Instruct
   - Qwen2.5 VL 72B Instruct
+  - R1
   - Shisa V2 Llama 3.3 70B
 
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
 
-LICENSE NAME (2 models):
+LICENSE NAME (7 models):
   - Dolphin3.0 Mistral 24B
   - Dolphin3.0 R1 Mistral 24B
+  - Mistral 7B Instruct
+  - Mistral Nemo
+  - Qwen2.5 72B Instruct
+  - Qwen2.5 Coder 32B Instruct
+  - R1
 
 DATA QUALITY SUMMARY:
 ------------------------------
 Total models: 50
-Missing license info text: 20 (40.0%)
-Missing license info url: 20 (40.0%)
-Unknown license name: 2 (4.0%)
+Missing license info text: 24 (48.0%)
+Missing license info url: 24 (48.0%)
+Unknown license name: 7 (14.0%)
 
 ================================================================================
 
@@ -75,9 +88,9 @@ COMPLETE MODEL RECORDS:
   1. Qwen2.5 72B Instruct
      Provider           : Alibaba Cloud (China)
      Modalities         : Text → Text
-     License            : QWEN
+     License            : Unknown
      License Info       : 
-     License URL        : https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
+     License URL        : Unknown
      Official URL       : https://alibabacloud.com/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -85,9 +98,9 @@ COMPLETE MODEL RECORDS:
   2. Qwen2.5 Coder 32B Instruct
      Provider           : Alibaba Cloud (China)
      Modalities         : Text → Text
-     License            : Apache-2.0
-     License Info       : info
-     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     License            : Unknown
+     License Info       : 
+     License URL        : Unknown
      Official URL       : https://alibabacloud.com/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -107,7 +120,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text, Image → Text
      License            : QWEN
      License Info       : 
-     License URL        : https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/blob/main/LICENSE
+     License URL        : Unknown
      Official URL       : https://alibabacloud.com/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -187,7 +200,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text → Text
      License            : Unknown
      License Info       : 
-     License URL        : https://huggingface.co/cognitivecomputations/Dolphin3.0-Mistral-24B/blob/main/README.md
+     License URL        : Unknown
      Official URL       : https://dphn.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -197,7 +210,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text → Text
      License            : Unknown
      License Info       : 
-     License URL        : https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md
+     License URL        : Unknown
      Official URL       : https://dphn.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -245,9 +258,9 @@ COMPLETE MODEL RECORDS:
  18. R1
      Provider           : DeepSeek (China)
      Modalities         : Text → Text
-     License            : MIT
-     License Info       : info
-     License URL        : https://opensource.org/licenses/MIT
+     License            : Unknown
+     License Info       : 
+     License URL        : Unknown
      Official URL       : https://deepseek.com/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -405,9 +418,9 @@ COMPLETE MODEL RECORDS:
  34. Mistral 7B Instruct
      Provider           : Mistral AI (France)
      Modalities         : Text → Text
-     License            : Apache-2.0
-     License Info       : info
-     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     License            : Unknown
+     License Info       : 
+     License URL        : Unknown
      Official URL       : https://mistral.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -415,9 +428,9 @@ COMPLETE MODEL RECORDS:
  35. Mistral Nemo
      Provider           : Mistral AI (France)
      Modalities         : Text → Text
-     License            : Apache-2.0
-     License Info       : info
-     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     License            : Unknown
+     License Info       : 
+     License URL        : Unknown
      Official URL       : https://mistral.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -467,7 +480,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text → Text
      License            : Modified MIT
      License Info       : 
-     License URL        : https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE
+     License URL        : Unknown
      Official URL       : https://www.moonshot.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -487,7 +500,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text → Text
      License            : NVIDIA
      License Info       : 
-     License URL        : https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md
+     License URL        : Unknown
      Official URL       : https://build.nvidia.com/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -517,7 +530,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text → Text
      License            : llama3.3
      License Info       : 
-     License URL        : https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md
+     License URL        : Unknown
      Official URL       : https://shisa.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
@@ -547,7 +560,7 @@ COMPLETE MODEL RECORDS:
      Modalities         : Text → Text
      License            : Tencent
      License Info       : 
-     License URL        : https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
+     License URL        : Unknown
      Official URL       : https://hunyuan.tencent.com
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys

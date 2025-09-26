@@ -1,6 +1,6 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-09-25 06:09 AM IST
+Generated: 2025-09-26 06:08 AM IST
 ================================================================================
 
 SUMMARY:
@@ -10,16 +10,17 @@ SUMMARY:
   Output       : F-other-license-names-from-hf.json
 
 LICENSE DISTRIBUTION:
+  HTTP 429: 5
   Unknown: 2
-  apache-2.0: 18
+  apache-2.0: 15
   llama3.3: 1
-  mit: 12
+  mit: 11
   modified-mit: 1
   nvidia-open-model-license: 1
-  qwen: 2
+  qwen: 1
   tencent-hunyuan-a13b: 1
 
-Total license types: 8
+Total license types: 9
 
 DETAILED MODEL EXTRACTION RESULTS:
 ================================================================================
@@ -326,7 +327,7 @@ MODEL 34: deepseek/deepseek-r1
   ID               : deepseek/deepseek-r1:free
   Canonical Slug   : deepseek/deepseek-r1
   HuggingFace ID   : deepseek-ai/DeepSeek-R1
-  Extracted License: mit
+  Extracted License: HTTP 429
 
 ================================================================================
 
@@ -335,7 +336,7 @@ MODEL 35: qwen/qwen-2.5-coder-32b-instruct
   ID               : qwen/qwen-2.5-coder-32b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-coder-32b-instruct
   HuggingFace ID   : Qwen/Qwen2.5-Coder-32B-Instruct
-  Extracted License: apache-2.0
+  Extracted License: HTTP 429
 
 ================================================================================
 
@@ -344,7 +345,7 @@ MODEL 36: qwen/qwen-2.5-72b-instruct
   ID               : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-72b-instruct
   HuggingFace ID   : Qwen/Qwen2.5-72B-Instruct
-  Extracted License: qwen
+  Extracted License: HTTP 429
 
 ================================================================================
 
@@ -353,7 +354,7 @@ MODEL 37: mistralai/mistral-nemo
   ID               : mistralai/mistral-nemo:free
   Canonical Slug   : mistralai/mistral-nemo
   HuggingFace ID   : mistralai/Mistral-Nemo-Instruct-2407
-  Extracted License: apache-2.0
+  Extracted License: HTTP 429
 
 ================================================================================
 
@@ -362,5 +363,5 @@ MODEL 38: mistralai/mistral-7b-instruct
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct
   HuggingFace ID   : mistralai/Mistral-7B-Instruct-v0.3
-  Extracted License: apache-2.0
+  Extracted License: HTTP 429
 
