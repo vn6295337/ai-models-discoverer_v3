@@ -161,6 +161,11 @@ class ModalityEnrichment:
         # Remove service indicators
         normalized = normalized.replace('-generate', '')
         normalized = normalized.replace('.0', '')
+
+        # Normalize spaces and hyphens for display name matching
+        normalized = normalized.replace(' ', '-')
+
+        # Remove variant suffixes (must be after space->hyphen conversion)
         normalized = re.sub(r'-(ultra|fast)(?=-|$)', '', normalized)  # Remove -ultra, -fast when followed by - or end
 
         return normalized

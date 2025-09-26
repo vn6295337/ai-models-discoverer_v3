@@ -1285,38 +1285,83 @@ class GoogleModalityScraper:
                 normalized_key = self.normalize_gemma_display_name(key)
                 normalized_mapping[normalized_key] = value
 
-            # Always generate output files, even if empty
-            # Create JSON output with metadata (similar to A and B scripts)
-            json_output = {
-                "metadata": {
-                    "generated": get_ist_timestamp(),
-                    "total_models": len(normalized_mapping),
-                    "scraping_source": "Google Documentation Web Scraper"
-                },
-                "modalities": normalized_mapping
-            }
+            # Check if we should preserve existing backup instead of overwriting with poor results
+            should_use_backup = False
+            if len(normalized_mapping) < 15:  # Insufficient scraping results
+                try:
+                    if os.path.exists(output_file):
+                        with open(output_file, 'r') as f:
+                            existing_data = json.load(f)
+                            existing_count = len(existing_data.get('modalities', {}))
 
-            with open(output_file, 'w') as f:
-                json.dump(json_output, f, indent=2)
+                        if existing_count > len(normalized_mapping):
+                            print(f"📋 PRESERVING BACKUP: Found {existing_count} modalities in backup vs {len(normalized_mapping)} newly scraped")
+                            print(f"📋 Keeping existing file - not overwriting with insufficient data")
+                            should_use_backup = True
+                except Exception as e:
+                    print(f"📋 Could not check existing backup: {e}")
 
-            # Generate human-readable text version
+            if not should_use_backup:
+                # Create JSON output with metadata (similar to A and B scripts)
+                json_output = {
+                    "metadata": {
+                        "generated": get_ist_timestamp(),
+                        "total_models": len(normalized_mapping),
+                        "scraping_source": "Google Documentation Web Scraper"
+                    },
+                    "modalities": normalized_mapping
+                }
+
+                with open(output_file, 'w') as f:
+                    json.dump(json_output, f, indent=2)
+
+            # Generate human-readable text version (always update the report)
             txt_filename = output_file.replace('.json', '-report.txt')
             with open(txt_filename, 'w') as f:
                 f.write("=== GOOGLE MODELS MODALITY SCRAPING REPORT ===\n")
                 f.write(f"Generated: {get_ist_timestamp()}\n\n")
-                f.write(f"Total Models: {len(normalized_mapping)}\n\n")
 
-                if normalized_mapping:
-                    for model, capabilities in normalized_mapping.items():
-                        input_mod = capabilities['input_modalities']
-                        output_mod = capabilities['output_modalities']
-                        f.write(f"{model}: {input_mod} → {output_mod}\n")
+                if should_use_backup:
+                    f.write("BACKUP PRESERVATION MODE - Existing data kept\n")
+                    f.write(f"Newly scraped models: {len(normalized_mapping)}\n")
+                    f.write(f"Backup contains more data - preserving existing file\n\n")
+
+                    # Load and report on the backup data being preserved
+                    try:
+                        with open(output_file, 'r') as backup_f:
+                            backup_data = json.load(backup_f)
+                            backup_modalities = backup_data.get('modalities', {})
+                            f.write(f"Preserved Models: {len(backup_modalities)}\n\n")
+                            for model, capabilities in backup_modalities.items():
+                                input_mod = capabilities['input_modalities']
+                                output_mod = capabilities['output_modalities']
+                                f.write(f"{model}: {input_mod} → {output_mod}\n")
+                    except Exception as e:
+                        f.write(f"Error reading preserved backup: {e}\n")
                 else:
-                    f.write("No modalities found - web scraping may have failed\n")
+                    f.write(f"Total Models: {len(normalized_mapping)}\n\n")
+                    if normalized_mapping:
+                        for model, capabilities in normalized_mapping.items():
+                            input_mod = capabilities['input_modalities']
+                            output_mod = capabilities['output_modalities']
+                            f.write(f"{model}: {input_mod} → {output_mod}\n")
+                    else:
+                        f.write("No modalities found - web scraping may have failed\n")
 
-            print(f"\nModality mapping saved to: {output_file}")
-            print(f"Human-readable version saved to: {txt_filename}")
-            return normalized_mapping
+            if should_use_backup:
+                print(f"\n📋 Backup preserved at: {output_file}")
+                print(f"📋 Report updated at: {txt_filename}")
+                # Return the preserved backup data for the main script's validation
+                try:
+                    with open(output_file, 'r') as f:
+                        preserved_data = json.load(f)
+                        return preserved_data.get('modalities', {})
+                except Exception:
+                    return normalized_mapping  # Fallback to scraped data
+            else:
+                print(f"\nModality mapping saved to: {output_file}")
+                print(f"Human-readable version saved to: {txt_filename}")
+                return normalized_mapping
 
         except Exception as e:
             print(f"⚠️ Error during modality scraping: {e}")

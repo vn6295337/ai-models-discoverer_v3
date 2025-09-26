@@ -11,6 +11,7 @@ import subprocess
 import sys
 import time
 import os
+import json
 import argparse
 from datetime import datetime
 from pathlib import Path
@@ -127,6 +128,37 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
                 if "Success in" in message:
                     f.write(f"  Duration: {duration}\n")
                 f.write(f"\n")
+
+            # Check for web scraping issues after pipeline execution
+            f.write("=== WEB SCRAPING ANALYSIS ===\n")
+
+            # Check if C-scrapped-modalities.json has insufficient data
+            scraping_report_path = script_dir.parent / "02_outputs" / "C-scrapped-modalities.json"
+            try:
+                with open(scraping_report_path, 'r') as scraping_f:
+                    scraping_data = json.load(scraping_f)
+                    scraped_count = len(scraping_data.get('modalities', {}))
+
+                    if scraped_count < 15:
+                        f.write(f"⚠️  WEB SCRAPING DEGRADATION DETECTED\n")
+                        f.write(f"   Scraped Models: {scraped_count} (Expected: 20+)\n")
+                        f.write(f"   This likely indicates CI/CD web scraping limitations\n")
+                        f.write(f"   Pipeline used backup data and pattern matching fallbacks\n")
+
+                        # Check enrichment results
+                        enrichment_report_path = script_dir.parent / "02_outputs" / "D-enriched-modalities-report.txt"
+                        if enrichment_report_path.exists():
+                            with open(enrichment_report_path, 'r') as enrich_f:
+                                content = enrich_f.read()
+                                if "Overall Match Rate:" in content:
+                                    match_rate = content.split("Overall Match Rate: ")[1].split("%")[0]
+                                    f.write(f"   Enrichment Match Rate: {match_rate}%\n")
+                        f.write(f"\n")
+                    else:
+                        f.write(f"✅ Web Scraping: Successful ({scraped_count} models scraped)\n\n")
+
+            except Exception as e:
+                f.write(f"⚠️  Could not analyze web scraping results: {e}\n\n")
 
         print(f"📄 Pipeline report saved to: {report_file}")
 
