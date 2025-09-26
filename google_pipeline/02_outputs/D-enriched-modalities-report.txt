@@ -1,16 +1,16 @@
 === GOOGLE MODELS MODALITY ENRICHMENT REPORT ===
 
-Generated: 2025-09-26 06:09:01 IST
+Generated: 2025-09-26 14:58:26 IST
 
 === SUMMARY ===
-Total Models: 38
+Total Models: 35
 Priority 1 Matches (Exact): 20
 Priority 2 Matches (Normalized): 4
 Embedding Matches: 4
 Gemma Pattern Matches: 6
 Unique Model Matches: 1
-No Matches: 3
-Overall Match Rate: 92.1%
+No Matches: 0
+Overall Match Rate: 100.0%
 
 === PRIORITY 1 MATCHES (EXACT) ===
 
@@ -74,35 +74,23 @@ Overall Match Rate: 92.1%
     Input: Text, Image, Audio, Video
     Output: Text
 
-16. gemini-flash-latest
-    Input: Unknown
-    Output: Unknown
-
-17. gemini-flash-lite-latest
-    Input: Unknown
-    Output: Unknown
-
-18. gemini-pro-latest
-    Input: Unknown
-    Output: Unknown
-
-19. gemini-2.5-flash-lite
+16. gemini-2.5-flash-lite
     Input: Text, Image, Audio, Video, PDF
     Output: Text
 
-20. veo-3.0-generate-001
+17. veo-3.0-generate-001
     Input: Text, Image
     Output: Audio, Video
 
-21. veo-3.0-fast-generate-001
+18. veo-3.0-fast-generate-001
     Input: Text, Image
     Output: Audio, Video
 
-22. gemini-2.0-flash-live-001
+19. gemini-2.0-flash-live-001
     Input: Text, Audio, Video
     Output: Text, Audio
 
-23. gemini-2.5-flash-native-audio-latest
+20. gemini-2.5-flash-native-audio-latest
     Input: Text, Audio, Video
     Output: Text, Audio
 
@@ -187,27 +175,3 @@ Overall Match Rate: 92.1%
  1. aqa
     Input: Text
     Output: Text
-
-=== NO MATCHES ===
-
- 1. gemini-1.5-pro-latest
- 2. gemini-1.5-pro-002
- 3. gemini-1.5-pro
- 4. gemini-1.5-flash-latest
- 5. gemini-1.5-flash
- 6. gemini-1.5-flash-002
- 7. gemini-1.5-flash-8b
- 8. gemini-1.5-flash-8b-001
- 9. gemini-1.5-flash-8b-latest
-10. gemini-2.5-flash
-11. gemini-2.5-pro
-12. gemini-2.0-flash
-13. gemini-2.0-flash-001
-14. gemini-2.0-flash-lite-001
-15. gemini-2.0-flash-lite
-16. gemini-flash-latest
-17. gemini-flash-lite-latest
-18. gemini-pro-latest
-19. gemini-2.5-flash-lite
-20. gemini-2.0-flash-live-001
-21. gemini-2.5-flash-native-audio-latest
