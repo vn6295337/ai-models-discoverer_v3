@@ -1,15 +1,18 @@
 === GOOGLE MODELS MODALITY SCRAPING REPORT ===
-Generated: 2025-09-25 06:09:42 IST
+Generated: 2025-09-26 06:09:01 IST
 
-Total Models: 26
+Total Models: 29
 
 Gemini 2.5 Pro: Audio, Image, Video, Text, PDF → Text
 Gemini 2.5 Flash: Text, Image, Video, Audio → Text
+Gemini 2.5 Flash Preview: Text, Image, Video, Audio → Text
 Gemini 2.5 Flash-Lite: Text, Image, Video, Audio, PDF → Text
+Gemini 2.5 Flash-Lite Preview: Text, Image, Video, Audio, PDF → Text
 Gemini 2.5 Flash Native Audio: Audio, Video, Text → Audio, Text
 Gemini 2.5 Flash Image Preview: Image, Text → Image, Text
 Gemini 2.5 Flash Preview Text-to-Speech: Text → Audio
 Gemini 2.5 Pro Preview Text-to-Speech: Text → Audio
+Gemini Robotics-ER 1.5 Preview: Text, Image, Video, Audio → Text
 Gemini 2.0 Flash: Audio, Image, Video, Text → Text
 Gemini 2.0 Flash Preview Image Generation: Audio, Image, Video, Text → Text, Image
 Gemini 2.0 Flash-Lite: Audio, Image, Video, Text → Text

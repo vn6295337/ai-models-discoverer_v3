@@ -1,16 +1,16 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-09-25 06:09:44 IST
+Generated: 2025-09-26 06:09:02 IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total models processed: 35
+   • Total models processed: 38
    • Models in both systems: 35
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 0
+   • Models in pipeline only (not in Supabase): 3
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -55,6 +55,8 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
+   • New models (pipeline only): 3
+     Models: Gemini Flash Latest, Gemini Flash-Lite Latest, Gemini Pro Latest
    • Existing models with differences: 0
 
 ================================================================================
@@ -498,6 +500,66 @@ license_name              | Gemini                    | Gemini
 license_url               | https://ai.google.dev/g.. | https://ai.google.dev/g..
 rate_limits               | 100 requests/min, 30K t.. | 100 requests/min, 30K t..
 provider_api_access       | https://aistudio.google.. | https://aistudio.google..
+
+================================================================================
+
+MODEL: Gemini Flash Latest
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | Google                    |                          
+model_provider            | Google                    |                          
+human_readable_name       | Gemini Flash Latest       |                          
+model_provider_country    | United States             |                          
+official_url              | https://deepmind.google.. |                          
+input_modalities          | Unknown                   |                          
+output_modalities         | Unknown                   |                          
+license_info_text         | Google                    |                          
+license_info_url          | https://developers.goog.. |                          
+license_name              | Gemini                    |                          
+license_url               | https://ai.google.dev/g.. |                          
+rate_limits               | 15 requests/min, 1M tok.. |                          
+provider_api_access       | https://aistudio.google.. |                          
+
+================================================================================
+
+MODEL: Gemini Flash-Lite Latest
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | Google                    |                          
+model_provider            | Google                    |                          
+human_readable_name       | Gemini Flash-Lite Latest  |                          
+model_provider_country    | United States             |                          
+official_url              | https://deepmind.google.. |                          
+input_modalities          | Unknown                   |                          
+output_modalities         | Unknown                   |                          
+license_info_text         | Google                    |                          
+license_info_url          | https://developers.goog.. |                          
+license_name              | Gemini                    |                          
+license_url               | https://ai.google.dev/g.. |                          
+rate_limits               | 15 requests/min, 1M tok.. |                          
+provider_api_access       | https://aistudio.google.. |                          
+
+================================================================================
+
+MODEL: Gemini Pro Latest
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | Google                    |                          
+model_provider            | Google                    |                          
+human_readable_name       | Gemini Pro Latest         |                          
+model_provider_country    | United States             |                          
+official_url              | https://deepmind.google.. |                          
+input_modalities          | Unknown                   |                          
+output_modalities         | Unknown                   |                          
+license_info_text         | Google                    |                          
+license_info_url          | https://developers.goog.. |                          
+license_name              | Gemini                    |                          
+license_url               | https://ai.google.dev/g.. |                          
+rate_limits               | 15 requests/min, 1M tok.. |                          
+provider_api_access       | https://aistudio.google.. |                          
 
 ================================================================================
 

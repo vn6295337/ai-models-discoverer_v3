@@ -1,11 +1,11 @@
 === GOOGLE MODELS FILTERING REPORT ===
-Generated: 2025-09-25 06:09:38 IST
+Generated: 2025-09-26 06:08:56 IST
 
 === SUMMARY ===
-Total Input Models: 67
-Models Included: 35
-Models Excluded: 32
-Filtering Success Rate: 52.2%
+Total Input Models: 73
+Models Included: 38
+Models Excluded: 35
+Filtering Success Rate: 52.1%
 
 === EXCLUDED MODELS ===
  1. gemini-2.5-pro-preview-03-25
@@ -28,18 +28,21 @@ Filtering Success Rate: 52.2%
 18. gemini-2.5-pro-preview-tts
 19. learnlm-2.0-flash-experimental
 20. gemini-2.5-flash-image-preview
-21. gemini-embedding-exp-03-07
-22. gemini-embedding-exp
-23. imagen-4.0-generate-preview-06-06
-24. imagen-4.0-ultra-generate-preview-06-06
-25. veo-2.0-generate-001
-26. veo-3.0-generate-preview
-27. veo-3.0-fast-generate-preview
-28. gemini-2.5-flash-preview-native-audio-dialog
-29. gemini-2.5-flash-exp-native-audio-thinking-dialog
-30. gemini-live-2.5-flash-preview
-31. gemini-2.5-flash-live-preview
-32. gemini-2.5-flash-native-audio-preview-09-2025
+21. gemini-2.5-flash-preview-09-2025
+22. gemini-2.5-flash-lite-preview-09-2025
+23. gemini-robotics-er-1.5-preview
+24. gemini-embedding-exp-03-07
+25. gemini-embedding-exp
+26. imagen-4.0-generate-preview-06-06
+27. imagen-4.0-ultra-generate-preview-06-06
+28. veo-2.0-generate-001
+29. veo-3.0-generate-preview
+30. veo-3.0-fast-generate-preview
+31. gemini-2.5-flash-preview-native-audio-dialog
+32. gemini-2.5-flash-exp-native-audio-thinking-dialog
+33. gemini-live-2.5-flash-preview
+34. gemini-2.5-flash-live-preview
+35. gemini-2.5-flash-native-audio-preview-09-2025
 
 === INCLUDED MODELS ===
  1. embedding-gecko-001
@@ -64,20 +67,23 @@ Filtering Success Rate: 52.2%
 20. gemma-3-27b-it
 21. gemma-3n-e4b-it
 22. gemma-3n-e2b-it
-23. gemini-2.5-flash-lite
-24. embedding-001
-25. text-embedding-004
-26. gemini-embedding-001
-27. aqa
-28. imagen-3.0-generate-002
-29. imagen-4.0-generate-001
-30. imagen-4.0-ultra-generate-001
-31. imagen-4.0-fast-generate-001
-32. veo-3.0-generate-001
-33. veo-3.0-fast-generate-001
-34. gemini-2.0-flash-live-001
-35. gemini-2.5-flash-native-audio-latest
+23. gemini-flash-latest
+24. gemini-flash-lite-latest
+25. gemini-pro-latest
+26. gemini-2.5-flash-lite
+27. embedding-001
+28. text-embedding-004
+29. gemini-embedding-001
+30. aqa
+31. imagen-3.0-generate-002
+32. imagen-4.0-generate-001
+33. imagen-4.0-ultra-generate-001
+34. imagen-4.0-fast-generate-001
+35. veo-3.0-generate-001
+36. veo-3.0-fast-generate-001
+37. gemini-2.0-flash-live-001
+38. gemini-2.5-flash-native-audio-latest
 
 === EXCLUSION BREAKDOWN ===
-31 models: Experimental/Preview model - production-ready models only
+34 models: Experimental/Preview model - production-ready models only
  1 models: Model requires billing/payment - free models only
