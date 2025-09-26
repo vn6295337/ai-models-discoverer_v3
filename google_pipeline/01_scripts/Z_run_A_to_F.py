@@ -134,6 +134,8 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
 
             # Check if C-scrapped-modalities.json has insufficient data
             scraping_report_path = script_dir.parent / "02_outputs" / "C-scrapped-modalities.json"
+            scraping_text_report = script_dir.parent / "02_outputs" / "C-scrapped-modalities-report.txt"
+
             try:
                 with open(scraping_report_path, 'r') as scraping_f:
                     scraping_data = json.load(scraping_f)
@@ -142,8 +144,39 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
                     if scraped_count < 15:
                         f.write(f"⚠️  WEB SCRAPING DEGRADATION DETECTED\n")
                         f.write(f"   Scraped Models: {scraped_count} (Expected: 20+)\n")
-                        f.write(f"   This likely indicates CI/CD web scraping limitations\n")
-                        f.write(f"   Pipeline used backup data and pattern matching fallbacks\n")
+
+                        # Try to extract failure reason from C script's text report
+                        failure_reason = "CI/CD environment limitations"
+                        backup_preserved = False
+
+                        if scraping_text_report.exists():
+                            try:
+                                with open(scraping_text_report, 'r') as report_f:
+                                    report_content = report_f.read()
+
+                                    # Check for specific failure indicators
+                                    if "BACKUP PRESERVATION MODE" in report_content:
+                                        backup_preserved = True
+                                        failure_reason = "Network/scraping failure - backup data preserved"
+                                    elif "No modalities found" in report_content:
+                                        failure_reason = "Complete web scraping failure"
+                                    elif "Request timeout" in report_content.lower():
+                                        failure_reason = "Network timeout during scraping"
+                                    elif "403" in report_content or "blocked" in report_content.lower():
+                                        failure_reason = "Access blocked/rate limited by target websites"
+                                    elif "connection" in report_content.lower():
+                                        failure_reason = "Network connectivity issues"
+                                    elif "ssl" in report_content.lower() or "certificate" in report_content.lower():
+                                        failure_reason = "SSL/certificate issues"
+
+                            except Exception:
+                                pass  # Use default reason
+
+                        f.write(f"   Failure Reason: {failure_reason}\n")
+                        if backup_preserved:
+                            f.write(f"   Status: Backup data automatically preserved\n")
+                        else:
+                            f.write(f"   Status: Using pattern matching and embedding fallbacks\n")
 
                         # Check enrichment results
                         enrichment_report_path = script_dir.parent / "02_outputs" / "D-enriched-modalities-report.txt"
@@ -152,7 +185,7 @@ def generate_pipeline_report(execution_log: List[Tuple[str, bool, str]], total_t
                                 content = enrich_f.read()
                                 if "Overall Match Rate:" in content:
                                     match_rate = content.split("Overall Match Rate: ")[1].split("%")[0]
-                                    f.write(f"   Enrichment Match Rate: {match_rate}%\n")
+                                    f.write(f"   Final Enrichment Rate: {match_rate}%\n")
                         f.write(f"\n")
                     else:
                         f.write(f"✅ Web Scraping: Successful ({scraped_count} models scraped)\n\n")

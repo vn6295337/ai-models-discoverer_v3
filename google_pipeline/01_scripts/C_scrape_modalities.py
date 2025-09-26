@@ -40,6 +40,7 @@ class GoogleModalityScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
         })
         self.modality_mapping = {}
+        self.scraping_errors = []  # Track specific scraping errors
         
     def fetch_page(self, url: str, retries: int = 3) -> Optional[BeautifulSoup]:
         """
@@ -57,8 +58,29 @@ class GoogleModalityScraper:
                 response = self.session.get(url, timeout=30)
                 response.raise_for_status()
                 return BeautifulSoup(response.content, 'html.parser')
+            except requests.exceptions.Timeout:
+                error_msg = f"Timeout after 30s for {url} (attempt {attempt + 1})"
+                print(error_msg)
+                self.scraping_errors.append(error_msg)
+                if attempt < retries - 1:
+                    time.sleep(2)
+            except requests.exceptions.ConnectionError as e:
+                error_msg = f"Connection error for {url} (attempt {attempt + 1}): {e}"
+                print(error_msg)
+                self.scraping_errors.append(error_msg)
+                if attempt < retries - 1:
+                    time.sleep(2)
+            except requests.exceptions.HTTPError as e:
+                status_code = e.response.status_code if e.response else "unknown"
+                error_msg = f"HTTP {status_code} error for {url} (attempt {attempt + 1}): {e}"
+                print(error_msg)
+                self.scraping_errors.append(error_msg)
+                if attempt < retries - 1:
+                    time.sleep(2)
             except Exception as e:
-                print(f"Attempt {attempt + 1} failed for {url}: {e}")
+                error_msg = f"Unexpected error for {url} (attempt {attempt + 1}): {e}"
+                print(error_msg)
+                self.scraping_errors.append(error_msg)
                 if attempt < retries - 1:
                     time.sleep(2)
         return None
@@ -1324,7 +1346,16 @@ class GoogleModalityScraper:
                 if should_use_backup:
                     f.write("BACKUP PRESERVATION MODE - Existing data kept\n")
                     f.write(f"Newly scraped models: {len(normalized_mapping)}\n")
-                    f.write(f"Backup contains more data - preserving existing file\n\n")
+                    f.write(f"Backup contains more data - preserving existing file\n")
+
+                    # Include scraping error details
+                    if self.scraping_errors:
+                        f.write(f"\nScraping Errors Encountered ({len(self.scraping_errors)} total):\n")
+                        for i, error in enumerate(self.scraping_errors[:5], 1):  # Show first 5 errors
+                            f.write(f"  {i}. {error}\n")
+                        if len(self.scraping_errors) > 5:
+                            f.write(f"  ... and {len(self.scraping_errors) - 5} more errors\n")
+                    f.write("\n")
 
                     # Load and report on the backup data being preserved
                     try:
@@ -1339,7 +1370,17 @@ class GoogleModalityScraper:
                     except Exception as e:
                         f.write(f"Error reading preserved backup: {e}\n")
                 else:
-                    f.write(f"Total Models: {len(normalized_mapping)}\n\n")
+                    f.write(f"Total Models: {len(normalized_mapping)}\n")
+
+                    # Include scraping error details if any occurred
+                    if self.scraping_errors:
+                        f.write(f"\nScraping Errors Encountered ({len(self.scraping_errors)} total):\n")
+                        for i, error in enumerate(self.scraping_errors[:3], 1):  # Show first 3 errors
+                            f.write(f"  {i}. {error}\n")
+                        if len(self.scraping_errors) > 3:
+                            f.write(f"  ... and {len(self.scraping_errors) - 3} more errors\n")
+                    f.write("\n")
+
                     if normalized_mapping:
                         for model, capabilities in normalized_mapping.items():
                             input_mod = capabilities['input_modalities']
@@ -1347,6 +1388,8 @@ class GoogleModalityScraper:
                             f.write(f"{model}: {input_mod} → {output_mod}\n")
                     else:
                         f.write("No modalities found - web scraping may have failed\n")
+                        if self.scraping_errors:
+                            f.write("See scraping errors above for details.\n")
 
             if should_use_backup:
                 print(f"\n📋 Backup preserved at: {output_file}")
