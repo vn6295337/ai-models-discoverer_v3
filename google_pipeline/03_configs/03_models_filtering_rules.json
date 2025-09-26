@@ -4,7 +4,7 @@
   },
   "exclude_keywords": [
     "experimental",
-    "preview", 
+    "preview",
     "exp",
     "beta"
   ],
@@ -13,12 +13,23 @@
     "requires billing to be enabled",
     "billing to be enabled"
   ],
+  "exclude_specific_models": [
+    {
+      "name": "models/gemini-flash-latest",
+      "reason": "Preview model - gemini-flash-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response."
+    },
+    {
+      "name": "models/gemini-flash-lite-latest",
+      "reason": "Preview model - gemini-flash-lite-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response."
+    }
+  ],
   "exclude_reasons": {
     "experimental": "Experimental/Preview model - production-ready models only",
     "preview": "Experimental/Preview model - production-ready models only",
-    "exp": "Experimental/Preview model - production-ready models only", 
+    "exp": "Experimental/Preview model - production-ready models only",
     "beta": "Experimental/Preview model - production-ready models only",
-    "billing_required": "Model requires billing/payment - free models only"
+    "billing_required": "Model requires billing/payment - free models only",
+    "specific_preview_model": "Preview model identified via external documentation - production-ready models only"
   },
   "include_patterns": {
     "embedding_models": [

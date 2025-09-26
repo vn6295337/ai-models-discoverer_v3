@@ -64,37 +64,43 @@ class GoogleModelsFilter:
         """Check if model should be excluded based on filtering criteria"""
         if not self.filtering_config:
             return False, ""
-            
+
         exclude_keywords = self.filtering_config.get('exclude_keywords', [])
         exclude_descriptions = self.filtering_config.get('exclude_descriptions', [])
+        exclude_specific_models = self.filtering_config.get('exclude_specific_models', [])
         exclude_reasons = self.filtering_config.get('exclude_reasons', {})
-        
+
         # Check model name, displayName, and description for exclusion keywords
         model_name = model.get('name', '').lower()
         display_name = model.get('displayName', '').lower()
         description = model.get('description', '').lower()
-        
+
+        # Check for specific model exclusions first
+        for specific_model in exclude_specific_models:
+            if model.get('name', '') == specific_model.get('name', ''):
+                return True, specific_model.get('reason', 'Specifically excluded model')
+
         # Check for keyword exclusions in name, display name, and description
         for keyword in exclude_keywords:
             keyword_lower = keyword.lower()
             # Use word boundaries and exclude "non-keyword" patterns
             import re
-            
+
             # Check if keyword appears but not as "non-keyword"
             pattern = r'\b' + re.escape(keyword_lower) + r'\b'
             non_pattern = r'\bnon-' + re.escape(keyword_lower) + r'\b'
-            
+
             for text in [model_name, display_name, description]:
                 if re.search(pattern, text) and not re.search(non_pattern, text):
                     reason = exclude_reasons.get(keyword, f"Contains excluded keyword: {keyword}")
                     return True, reason
-        
+
         # Check for description-based exclusions
         for exclude_desc in exclude_descriptions:
             if exclude_desc in description:
                 reason = exclude_reasons.get('billing_required', 'Model requires billing/payment - free models only')
                 return True, reason
-                
+
         return False, ""
 
     def should_include_model(self, model: Dict[str, Any]) -> tuple[bool, str]:
