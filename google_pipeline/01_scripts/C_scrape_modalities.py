@@ -1346,3 +1346,28 @@ class GoogleModalityScraper:
 if __name__ == "__main__":
     scraper = GoogleModalityScraper()
     mapping = scraper.save_modality_mapping()
+
+    # Check if scraping produced insufficient results (likely CI/CD failure)
+    if len(mapping) < 15:  # Expect 20+ models normally
+        print(f"\n⚠️ WARNING: Only {len(mapping)} modalities scraped")
+        print("⚠️ This suggests web scraping failed in CI/CD environment")
+
+        # Try to restore from backup if it exists
+        backup_file = "../02_outputs/C-scrapped-modalities.json"
+        if os.path.exists(backup_file):
+            try:
+                with open(backup_file, 'r') as f:
+                    backup_data = json.load(f)
+                    backup_count = len(backup_data.get('modalities', {}))
+
+                if backup_count > len(mapping):
+                    print(f"📋 Found better backup with {backup_count} modalities - keeping backup")
+                    print("📋 Current scraping results discarded due to insufficient data")
+                else:
+                    print(f"📋 Backup has {backup_count} modalities - keeping new results")
+
+            except Exception as e:
+                print(f"📋 Could not read backup: {e}")
+        else:
+            print("📋 No backup available - proceeding with limited scraped data")
+            print("📋 Downstream enrichment will use embedding patterns and fallbacks")

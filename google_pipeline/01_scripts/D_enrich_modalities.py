@@ -66,10 +66,24 @@ class ModalityEnrichment:
                 # Handle new JSON structure with metadata
                 if isinstance(data, dict) and 'modalities' in data:
                     self.scraped_modalities = data['modalities']
-                    print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries (with metadata)")
+                    scraped_count = len(self.scraped_modalities)
+                    print(f"✅ Loaded {scraped_count} scraped modality entries (with metadata)")
+
+                    # Check if scraped data is insufficient (likely indicates scraping failure)
+                    if scraped_count < 15:  # Expect 20+ models normally
+                        print(f"⚠️ WARNING: Only {scraped_count} scraped modalities found")
+                        print("⚠️ This suggests web scraping may have failed in CI/CD environment")
+                        print("⚠️ Proceeding with available data + pattern matching fallbacks")
+
                 elif isinstance(data, dict):
                     self.scraped_modalities = data
-                    print(f"✅ Loaded {len(self.scraped_modalities)} scraped modality entries (legacy format)")
+                    scraped_count = len(self.scraped_modalities)
+                    print(f"✅ Loaded {scraped_count} scraped modality entries (legacy format)")
+
+                    if scraped_count < 15:
+                        print(f"⚠️ WARNING: Only {scraped_count} scraped modalities found")
+                        print("⚠️ This suggests web scraping may have failed")
+
                 else:
                     print(f"⚠️ Unexpected JSON structure in C-scrapped-modalities.json")
                     return False

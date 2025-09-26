@@ -29,14 +29,28 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Clean output directory for fresh pipeline run
+    - name: Clean output directory but preserve scraped modalities
       working-directory: google_pipeline
       run: |
-        echo "🧹 Force cleaning output directory for fresh pipeline execution"
+        echo "🧹 Smart cleaning output directory for fresh pipeline execution"
+        # Backup scraped modalities if it exists (fallback for when web scraping fails)
+        if [ -f "02_outputs/C-scrapped-modalities.json" ]; then
+          cp 02_outputs/C-scrapped-modalities.json /tmp/C-scrapped-modalities-backup.json
+          echo "📋 Backed up existing scraped modalities as fallback"
+        fi
+
+        # Clean all output files
         rm -rf 02_outputs/*
+
+        # Restore backup if it existed
+        if [ -f "/tmp/C-scrapped-modalities-backup.json" ]; then
+          cp /tmp/C-scrapped-modalities-backup.json 02_outputs/C-scrapped-modalities.json
+          echo "📋 Restored scraped modalities backup for fallback"
+        fi
+
         # Keep .gitkeep if it exists
         touch 02_outputs/.gitkeep
-        echo "✅ Output directory cleaned - pipeline will generate fresh files"
+        echo "✅ Output directory cleaned with modality fallback preserved"
 
     - name: Set up Python 3.11
       uses: actions/setup-python@v4
