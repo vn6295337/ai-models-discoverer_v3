@@ -17,45 +17,63 @@ from typing import List, Dict
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
-def extract_license_from_hf_page(hf_id: str) -> str:
-    """Extract license from HuggingFace page"""
+def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
+    """Extract license from HuggingFace page with retry logic for rate limiting"""
     if not hf_id:
         return "Unknown"
-    
+
     url = f"https://huggingface.co/{hf_id}"
-    
-    try:
-        # Add headers to mimic browser request
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
-        }
-        
-        response = requests.get(url, headers=headers, timeout=10)
-        if response.status_code != 200:
-            return f"HTTP {response.status_code}"
-        
-        content = response.text
-        
-        # Look for license information in the specific HuggingFace HTML structure
-        patterns = [
-            r'<span class="-mr-1 text-gray-400">License:</span>\s*<span>([^<]+)</span>',  # HF license structure
-            r'<span[^>]*>License:</span>[^<]*<span[^>]*>([^<]+)</span>',  # General license span structure
-            r'"license"\s*:\s*"([^"]+)"',  # JSON license field
-        ]
-        
-        for pattern in patterns:
-            match = re.search(pattern, content, re.IGNORECASE)
-            if match:
-                license_name = match.group(1).strip()
-                # Return license exactly as found on the page
-                return license_name
-        
-        return "Unknown"
-        
-    except requests.RequestException as e:
-        return f"Error: {str(e)}"
-    except Exception as e:
-        return f"Parse Error: {str(e)}"
+
+    for attempt in range(max_retries):
+        try:
+            # Add headers to mimic browser request
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+
+            response = requests.get(url, headers=headers, timeout=10)
+
+            # Handle rate limiting with exponential backoff
+            if response.status_code == 429:
+                if attempt < max_retries - 1:
+                    wait_time = (2 ** attempt) * 5  # 5, 10, 20 seconds
+                    print(f"Rate limited for {hf_id}, waiting {wait_time}s (attempt {attempt + 1}/{max_retries})")
+                    time.sleep(wait_time)
+                    continue
+                else:
+                    return f"HTTP 429 (Rate Limited after {max_retries} attempts)"
+
+            if response.status_code != 200:
+                return f"HTTP {response.status_code}"
+
+            content = response.text
+
+            # Look for license information in the specific HuggingFace HTML structure
+            patterns = [
+                r'<span class="-mr-1 text-gray-400">License:</span>\s*<span>([^<]+)</span>',  # HF license structure
+                r'<span[^>]*>License:</span>[^<]*<span[^>]*>([^<]+)</span>',  # General license span structure
+                r'"license"\s*:\s*"([^"]+)"',  # JSON license field
+            ]
+
+            for pattern in patterns:
+                match = re.search(pattern, content, re.IGNORECASE)
+                if match:
+                    license_name = match.group(1).strip()
+                    # Return license exactly as found on the page
+                    return license_name
+
+            return "Unknown"
+
+        except requests.RequestException as e:
+            if attempt < max_retries - 1:
+                print(f"Request failed for {hf_id}, retrying in 3s (attempt {attempt + 1}/{max_retries}): {str(e)}")
+                time.sleep(3)
+                continue
+            return f"Error: {str(e)}"
+        except Exception as e:
+            return f"Parse Error: {str(e)}"
+
+    return "Unknown"
 
 
 def should_skip_model(name: str) -> bool:
@@ -123,8 +141,8 @@ def main():
             'extracted_license': license_info
         })
         
-        # Add small delay to be respectful to HuggingFace
-        time.sleep(1)
+        # Add longer delay to be respectful to HuggingFace and avoid rate limiting
+        time.sleep(2)
     
     # Write results to JSON file
     json_output_file = get_output_file_path('F-other-license-names-from-hf.json')

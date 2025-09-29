@@ -9,6 +9,7 @@ Outputs: E-other-license-info-urls-from-hf.json + report
 import json
 import sys
 import os
+import time
 from typing import Dict, List, Any
 from datetime import datetime
 import requests
@@ -17,13 +18,29 @@ import requests
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
-def check_url_accessible(url: str) -> bool:
-    """Check if a URL is accessible with a HEAD request"""
-    try:
-        response = requests.head(url, timeout=5, allow_redirects=True)
-        return response.status_code == 200
-    except (requests.RequestException, requests.Timeout):
-        return False
+def check_url_accessible(url: str, max_retries: int = 2) -> bool:
+    """Check if a URL is accessible with a HEAD request, with retry logic for rate limiting"""
+    for attempt in range(max_retries):
+        try:
+            headers = {
+                'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
+            }
+            response = requests.head(url, timeout=5, allow_redirects=True, headers=headers)
+
+            if response.status_code == 429:
+                if attempt < max_retries - 1:
+                    wait_time = (attempt + 1) * 3  # 3, 6 seconds
+                    time.sleep(wait_time)
+                    continue
+                return False
+
+            return response.status_code == 200
+        except (requests.RequestException, requests.Timeout):
+            if attempt < max_retries - 1:
+                time.sleep(2)
+                continue
+            return False
+    return False
 
 
 # =============================================================================
