@@ -17,7 +17,7 @@ from typing import List, Dict
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
-def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
+def extract_license_from_hf_page(hf_id: str, max_retries: int = 5) -> str:
     """Extract license from HuggingFace page with retry logic for rate limiting"""
     if not hf_id:
         return "Unknown"
@@ -36,7 +36,7 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
             # Handle rate limiting with exponential backoff
             if response.status_code == 429:
                 if attempt < max_retries - 1:
-                    wait_time = (2 ** attempt) * 5  # 5, 10, 20 seconds
+                    wait_time = (2 ** attempt) * 10  # 10, 20, 40, 80 seconds
                     print(f"Rate limited for {hf_id}, waiting {wait_time}s (attempt {attempt + 1}/{max_retries})")
                     time.sleep(wait_time)
                     continue
@@ -141,8 +141,9 @@ def main():
             'extracted_license': license_info
         })
         
-        # Add longer delay to be respectful to HuggingFace and avoid rate limiting
-        time.sleep(2)
+        # Add progressively longer delays for later models that are more likely to hit rate limits
+        base_delay = 2 + (i // 10)  # Increase delay every 10 models: 2s, 3s, 4s, 5s
+        time.sleep(base_delay)
     
     # Write results to JSON file
     json_output_file = get_output_file_path('F-other-license-names-from-hf.json')
