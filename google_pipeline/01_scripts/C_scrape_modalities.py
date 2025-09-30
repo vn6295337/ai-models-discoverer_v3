@@ -164,11 +164,11 @@ class GoogleModalityScraper:
 
     def scrape_gemini_models(self) -> Dict[str, Dict[str, str]]:
         """
-        Scrape Gemini model capabilities from individual model sections.
+        Scrape Gemini model capabilities using direct DOM element detection.
 
-        Uses comprehensive section scanning approach:
-        1. First tries the original heading-based method
-        2. Then systematically scans /html/body/section/section/main/devsite-content/article/div[4]/section[1-12+]
+        Uses enhanced approach to find ALL Gemini models directly from their DOM locations:
+        - devsite-expandable elements with Gemini IDs (for Gemini 2.0 models)
+        - devsite-selector elements with Gemini active attributes (for Gemini 2.5 models)
 
         Returns:
             Dict mapping model names to their input/output modalities
@@ -180,286 +180,113 @@ class GoogleModalityScraper:
         gemini_models = {}
 
         if soup:
-            # Method 1: Original heading-based approach
-            print("  Method 1: Scanning headings with IDs...")
-            headings_with_ids = soup.find_all(['h1', 'h2', 'h3', 'h4'], id=True)
+            print("  🎯 Direct DOM element detection...")
 
-            for heading in headings_with_ids:
-                heading_id = heading.get('id', '')
-                heading_text = heading.get_text().strip()
+            # Find ALL devsite-expandable elements with Gemini IDs (for Gemini 2.0 models)
+            import re
+            gemini_expandables = soup.find_all('devsite-expandable', id=re.compile(r'gemini', re.IGNORECASE))
+            print(f"    📍 Found {len(gemini_expandables)} devsite-expandable elements with Gemini IDs")
 
-                # Look for Gemini model headings
-                if 'gemini' in heading_id.lower() and heading_id != 'gemini-api':
-                    print(f"    Processing section: {heading_id}")
+            for expandable in gemini_expandables:
+                expandable_id = expandable.get('id')
+                if expandable_id:
+                    print(f"      🔍 Processing devsite-expandable: {expandable_id}")
+                    expandable_models = self.extract_models_from_devsite_expandable(expandable, expandable_id, "direct")
+                    gemini_models.update(expandable_models)
 
-                    # Find the "Supported data types" section after this heading
-                    model_info = self.extract_supported_data_types(soup, heading)
+            # Find ALL devsite-selector elements with Gemini active attributes (for Gemini 2.5 models)
+            gemini_selectors = soup.find_all('devsite-selector', attrs={'active': re.compile(r'gemini', re.IGNORECASE)})
+            print(f"    📍 Found {len(gemini_selectors)} devsite-selector elements with Gemini active attributes")
 
-                    if model_info:
-                        model_name = heading_text if heading_text else heading_id
-                        gemini_models[model_name] = model_info
-                        print(f"      Found: {model_name} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
-                    else:
-                        print(f"      No supported data types found for {heading_id}")
+            for selector in gemini_selectors:
+                active_model = selector.get('active')
+                if active_model:
+                    print(f"      🔍 Processing devsite-selector: {active_model}")
+                    selector_models = self.extract_models_from_devsite_selector(selector, "direct")
+                    gemini_models.update(selector_models)
 
-            # Method 2: Comprehensive section scanning
-            print("  Method 2: Systematic section scanning...")
-            systematic_models = self.scan_systematic_sections(soup)
-
-            # Merge results, prioritizing new findings
-            for model_name, model_info in systematic_models.items():
-                if model_name not in gemini_models:
-                    gemini_models[model_name] = model_info
-                    print(f"      Added from systematic scan: {model_name} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
+            print(f"  ✅ Total Gemini models extracted: {len(gemini_models)}")
 
         return gemini_models
 
-    def scan_systematic_sections(self, soup) -> Dict[str, Dict[str, str]]:
-        """
-        Systematically scan /html/body/section/section/main/devsite-content/article/div[4]/section[1-12+]
 
-        Follows the exact path: /html/body/section/section/main/devsite-content/article/div[4]/section[N]
-        to find any Gemini models that might be missed by heading-based scanning.
+
+
+    def extract_models_from_devsite_selector(self, devsite_selector, location_name: str) -> Dict[str, Dict[str, str]]:
+        """
+        Extract Gemini models from a devsite-selector element.
+
+        Args:
+            devsite_selector: BeautifulSoup devsite-selector element
+            location_name: Name for logging (e.g., "div[1]")
 
         Returns:
             Dict mapping model names to their input/output modalities
         """
-        systematic_models = {}
+        selector_models = {}
 
         try:
-            # Navigate to the target div following the specified path
-            # /html/body/section/section/main/devsite-content/article/div[4]
-            body = soup.find('body')
-            if not body:
-                print("    ⚠️ No <body> element found")
-                return systematic_models
+            # Check if this is a valid devsite-selector with scope="auto" and class rendered
+            scope = devsite_selector.get('scope')
+            class_attr = devsite_selector.get('class')
+            active_model = devsite_selector.get('active')
 
-            # Find section/section/main structure
-            sections = body.find_all('section', recursive=False)
-            if not sections:
-                print("    ⚠️ No top-level <section> elements found")
-                return systematic_models
+            # Relaxed validation - accept any scope value including {} and None
+            # Only skip if scope has a specific value that's not 'auto'
+            if scope and scope != 'auto' and scope != {}:
+                print(f"      ⚠️ Skipping devsite-selector with unexpected scope='{scope}'")
+                return selector_models
 
-            target_section = None
-            for section in sections:
-                nested_section = section.find('section', recursive=False)
-                if nested_section:
-                    main = nested_section.find('main', recursive=False)
-                    if main:
-                        devsite_content = main.find('devsite-content', recursive=False)
-                        if devsite_content:
-                            article = devsite_content.find('article', recursive=False)
-                            if article:
-                                target_section = section
-                                print("    ✅ Found target section structure")
-                                break
+            # Optional class validation - accept elements with or without 'rendered' class
+            # This is now purely informational
+            has_rendered = False
+            if isinstance(class_attr, list):
+                has_rendered = 'rendered' in class_attr
+            elif isinstance(class_attr, str):
+                has_rendered = 'rendered' in class_attr
 
-            if not target_section:
-                print("    ⚠️ Could not find target section structure")
-                return systematic_models
+            # Log but don't filter based on class attribute
+            if not has_rendered:
+                print(f"      📝 devsite-selector without 'rendered' class (proceeding anyway)")
+            else:
+                print(f"      ✅ devsite-selector has 'rendered' class")
 
-            # Navigate to article/div[4]
-            main = target_section.find('section').find('main')
-            devsite_content = main.find('devsite-content')
-            article = devsite_content.find('article')
+            if not active_model:
+                print(f"      ⚠️ Skipping devsite-selector without active attribute")
+                return selector_models
 
-            # Get all direct child divs of article
-            article_divs = article.find_all('div', recursive=False)
-            if len(article_divs) < 4:
-                print(f"    ⚠️ Expected at least 4 divs in article, found {len(article_divs)}")
-                return systematic_models
+            print(f"        🎯 Found valid devsite-selector with active='{active_model}'")
 
-            # Target div[4] (index 3)
-            target_div = article_divs[3]
-            print(f"    ✅ Found target div[4]")
+            # Normalize by removing versioning qualifiers
+            normalized_id = self.remove_versioning_qualifiers(active_model)
 
-            # Get all section elements within this div
-            sections_in_div = target_div.find_all('section', recursive=False)
-            print(f"    📍 Found {len(sections_in_div)} sections to scan")
+            # Convert normalized id to display name for logging
+            display_name = self.convert_expandable_id_to_display_name(normalized_id)
 
-            # Scan each section systematically
-            for i, section in enumerate(sections_in_div, 1):
-                print(f"    🔍 Scanning section[{i}]...")
-                section_models = self.extract_models_from_section(section, f"section[{i}]")
-                systematic_models.update(section_models)
+            # Extract modality information from the selector content
+            model_info = self.extract_modalities_from_selector_content(devsite_selector)
+
+            if model_info:
+                # Use normalized_id as the key for consolidating versions
+                selector_models[normalized_id] = model_info
+                print(f"        ✅ Extracted: {display_name} (key: {normalized_id}) -> {model_info['input_modalities']} → {model_info['output_modalities']}")
+            else:
+                print(f"        ⚠️ No modality data found for {display_name}")
 
         except Exception as e:
-            print(f"    ❌ Error in systematic scanning: {e}")
+            print(f"      ❌ Error extracting from devsite-selector in {location_name}: {e}")
 
-        return systematic_models
+        return selector_models
 
-    def extract_models_from_section(self, section, section_name: str) -> Dict[str, Dict[str, str]]:
+    def extract_modalities_from_selector_content(self, devsite_selector) -> Optional[Dict[str, str]]:
         """
-        Extract Gemini models from a specific section element.
+        Extract input/output modalities from devsite-selector content.
 
-        Looks for:
-        1. Model names in headings or text
-        2. Supported data types tables
-        3. Input/output modality information
-
-        Args:
-            section: BeautifulSoup section element
-            section_name: Name for logging (e.g., "section[12]")
-
-        Returns:
-            Dict mapping model names to their input/output modalities
-        """
-        section_models = {}
-
-        try:
-            section_text = section.get_text().lower()
-
-            # Check if this section contains Gemini model information
-            if not any(keyword in section_text for keyword in ['gemini', 'live', 'flash', 'pro', 'supported data types']):
-                return section_models
-
-            print(f"      📝 {section_name} contains potential model info")
-
-            # Look for headings that might indicate model names
-            headings = section.find_all(['h1', 'h2', 'h3', 'h4', 'h5', 'h6'])
-            for heading in headings:
-                heading_text = heading.get_text().strip()
-                heading_lower = heading_text.lower()
-
-                # Check for Gemini model patterns
-                if any(pattern in heading_lower for pattern in ['gemini', 'live', 'flash']):
-                    print(f"        🎯 Found potential model heading: '{heading_text}'")
-
-                    # Try to extract modality data from this section
-                    model_info = self.extract_supported_data_types(section, heading)
-                    if not model_info:
-                        # Fallback: look for modality info in surrounding text/tables
-                        model_info = self.extract_modalities_from_section_content(section)
-
-                    if model_info:
-                        section_models[heading_text] = model_info
-                        print(f"        ✅ Extracted: {heading_text} -> {model_info['input_modalities']} → {model_info['output_modalities']}")
-
-            # Also check for tables with model information even without clear headings
-            if not section_models:
-                tables = section.find_all('table')
-                for table in tables:
-                    table_text = table.get_text().lower()
-                    if 'live' in table_text or 'flash' in table_text:
-                        print(f"        🔍 Found table with Live/Flash content")
-                        model_info = self.extract_model_info_from_table(table)
-                        if model_info:
-                            for model_name, info in model_info.items():
-                                section_models[model_name] = info
-                                print(f"        ✅ Extracted from table: {model_name} -> {info['input_modalities']} → {info['output_modalities']}")
-
-        except Exception as e:
-            print(f"      ❌ Error extracting from {section_name}: {e}")
-
-        return section_models
-
-    def extract_modalities_from_section_content(self, section) -> Optional[Dict[str, str]]:
-        """
-        Extract input/output modalities from section content (fallback method).
-
-        Looks for text patterns indicating modality information.
+        Looks for "Supported data types" tables or text within the selector.
         """
         try:
-            # Look for tables first
-            tables = section.find_all('table')
-            for table in tables:
-                result = self.parse_supported_data_types_table(table)
-                if result:
-                    return result
-
-            # Look for text patterns in paragraphs
-            paragraphs = section.find_all('p')
-            for p in paragraphs:
-                text = p.get_text().strip()
-                if 'input' in text.lower() and 'output' in text.lower():
-                    # Try to parse modalities from descriptive text
-                    inputs = self.extract_inputs_from_cell(text)
-                    outputs = self.extract_outputs_from_cell(text)
-                    if inputs and outputs:
-                        return {
-                            'input_modalities': inputs,
-                            'output_modalities': outputs
-                        }
-
-        except Exception:
-            pass
-
-        return None
-
-    def extract_model_info_from_table(self, table) -> Dict[str, Dict[str, str]]:
-        """
-        Extract model information from a table that might contain Live models or other variants.
-
-        Returns:
-            Dict mapping model names to their modalities
-        """
-        models = {}
-
-        try:
-            rows = table.find_all('tr')
-            for row in rows:
-                cells = row.find_all(['td', 'th'])
-
-                # Look for cells containing model names
-                model_name = None
-                input_modalities = None
-                output_modalities = None
-
-                for cell in cells:
-                    cell_text = cell.get_text().strip()
-                    cell_lower = cell_text.lower()
-
-                    # Check if this cell contains a model name
-                    if any(pattern in cell_lower for pattern in ['live', 'gemini', 'flash']):
-                        if not model_name and ('live' in cell_lower or 'gemini' in cell_lower):
-                            model_name = cell_text
-
-                    # Check if this cell contains modality information
-                    if 'input' in cell_lower and 'output' in cell_lower:
-                        inputs = self.extract_inputs_from_cell(cell_text)
-                        outputs = self.extract_outputs_from_cell(cell_text)
-                        if inputs and outputs:
-                            input_modalities = inputs
-                            output_modalities = outputs
-
-                # If we found both model name and modalities in this row
-                if model_name and input_modalities and output_modalities:
-                    models[model_name] = {
-                        'input_modalities': input_modalities,
-                        'output_modalities': output_modalities
-                    }
-
-        except Exception:
-            pass
-
-        return models
-
-    def extract_supported_data_types(self, soup_or_section, heading) -> Optional[Dict[str, str]]:
-        """
-        Extract supported data types from the section following a model heading.
-
-        Searches for tables containing "Supported data types" information within
-        the section defined by the heading. Uses robust DOM navigation to handle
-        nested HTML structures.
-
-        Args:
-            soup_or_section: BeautifulSoup object (page) or section element
-            heading: The heading element that defines the model section
-
-        Returns:
-            Dict with 'input_modalities' and 'output_modalities' keys, or None if not found
-        """
-        # Check if we received a section directly (from systematic scanning)
-        if hasattr(soup_or_section, 'name') and soup_or_section.name == 'section':
-            # We have a section directly, search within it
-            section = soup_or_section
-        else:
-            # We have the full soup, find the section that contains this heading
-            section = self.find_containing_section(heading)
-
-        if section:
-            # Look for tables within this section that contain "supported data types"
-            tables = section.find_all('table')
+            # Look for tables within the selector
+            tables = devsite_selector.find_all('table')
             for table in tables:
                 table_text = table.get_text().lower()
                 if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
@@ -467,46 +294,241 @@ class GoogleModalityScraper:
                     if result:
                         return result
 
-        # Fallback: search broadly from the heading onwards until next heading
-        # Only do this if we have the full soup (not when working with a section)
-        if not (hasattr(soup_or_section, 'name') and soup_or_section.name == 'section'):
-            current = heading
-            next_heading_level = int(heading.name[1]) if heading.name.startswith('h') else 4
+            # Fallback: Look for text patterns in the selector content
+            selector_text = devsite_selector.get_text()
+            if 'input' in selector_text.lower() and 'output' in selector_text.lower():
+                inputs = self.extract_inputs_from_cell(selector_text)
+                outputs = self.extract_outputs_from_cell(selector_text)
+                if inputs and outputs:
+                    return {
+                        'input_modalities': inputs,
+                        'output_modalities': outputs
+                    }
 
-            # Traverse all following elements until we hit a heading of same or higher level
-            for element in heading.find_all_next():
-                # Stop if we hit a heading of same or higher level
-                if (hasattr(element, 'name') and element.name and
-                    element.name.startswith('h') and
-                    int(element.name[1]) <= next_heading_level):
-                    break
-
-                # Look for tables that might contain supported data types
-                if hasattr(element, 'name') and element.name == 'table':
-                    table_text = element.get_text().lower()
-                    if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
-                        result = self.parse_supported_data_types_table(element)
-                        if result:
-                            return result
+        except Exception as e:
+            print(f"        ❌ Error parsing selector content: {e}")
 
         return None
 
-    def find_containing_section(self, heading):
+    def extract_models_from_devsite_expandable(self, devsite_expandable, expandable_id: str, location_name: str) -> Dict[str, Dict[str, str]]:
         """
-        Find the section element that contains this heading.
+        Extract Gemini models from a devsite-expandable element with id attribute.
+
+        This handles Gemini 2.0 models which use devsite-expandable id="model-name"
+        instead of devsite-selector active="model-name".
 
         Args:
-            heading: The heading element to find the containing section for
+            devsite_expandable: BeautifulSoup devsite-expandable element
+            expandable_id: The id attribute value (e.g., "gemini-2.0-flash")
+            location_name: Name for logging (e.g., "div[4]")
 
         Returns:
-            The parent section element, or None if not found
+            Dict mapping model names to their input/output modalities
         """
-        current = heading
-        while current:
-            if hasattr(current, 'name') and current.name == 'section':
-                return current
-            current = current.parent
+        expandable_models = {}
+
+        try:
+            print(f"        🎯 Processing devsite-expandable with id='{expandable_id}'")
+
+            # Normalize by removing versioning qualifiers
+            normalized_id = self.remove_versioning_qualifiers(expandable_id)
+
+            # Convert normalized id to display name for logging
+            display_name = self.convert_expandable_id_to_display_name(normalized_id)
+
+            # Extract modality information from the expandable content
+            model_info = self.extract_modalities_from_expandable_content(devsite_expandable)
+
+            if model_info:
+                # Use normalized_id as the key for consolidating versions
+                expandable_models[normalized_id] = model_info
+                print(f"        ✅ Extracted: {display_name} (key: {normalized_id}) -> {model_info['input_modalities']} → {model_info['output_modalities']}")
+            else:
+                print(f"        ⚠️ No modality data found for {display_name}")
+
+            # Search for specific devsite-selector using XPath-like structure
+            # For gemini-2.0-flash: /html/body/section/section/main/devsite-content/article/div[4]/div[4]/div/section/devsite-expandable/devsite-selector
+            if expandable_id == 'gemini-2.0-flash':
+                print(f"        🎯 Using specific XPath for {expandable_id}")
+
+                # Navigate the specific path for gemini-2.0-flash and gemini-2.0-flash-live
+                target_selector, selector_active = self.find_selector_by_xpath(devsite_expandable, expandable_id)
+
+                if target_selector and selector_active:
+                    print(f"          📍 Found selector with active='{selector_active}'")
+
+                    # Use the active attribute value to determine the correct model variant
+                    model_variant = selector_active  # This will be either 'gemini-2.0-flash' or 'gemini-2.0-flash-live'
+
+                    if model_variant in ['gemini-2.0-flash', 'gemini-2.0-flash-live']:
+                        print(f"          🎯 Processing variant: {model_variant}")
+
+                        normalized_variant = self.remove_versioning_qualifiers(model_variant)
+                        variant_display_name = self.convert_expandable_id_to_display_name(normalized_variant)
+
+                        # Extract modalities from the selector
+                        variant_model_info = self.extract_modalities_from_selector_content(target_selector)
+
+                        if variant_model_info:
+                            expandable_models[normalized_variant] = variant_model_info
+                            print(f"          ✅ Extracted variant: {variant_display_name} (key: {normalized_variant}) -> {variant_model_info['input_modalities']} → {variant_model_info['output_modalities']}")
+                    else:
+                        print(f"          ⚠️ Unexpected active value: '{selector_active}', expected 'gemini-2.0-flash' or 'gemini-2.0-flash-live'")
+            else:
+                # Fallback: search for nested devsite-selector elements (for other models)
+                nested_selectors = devsite_expandable.find_all('devsite-selector')
+                print(f"        🔍 Found {len(nested_selectors)} nested devsite-selector elements")
+
+                for nested_selector in nested_selectors:
+                    nested_active = nested_selector.get('active')
+                    if nested_active and 'gemini' in nested_active.lower():
+                        print(f"          🎯 Processing nested selector: {nested_active}")
+
+                        # Normalize nested selector ID
+                        nested_normalized_id = self.remove_versioning_qualifiers(nested_active)
+                        nested_display_name = self.convert_expandable_id_to_display_name(nested_normalized_id)
+
+                        # Extract modalities from nested selector
+                        nested_model_info = self.extract_modalities_from_selector_content(nested_selector)
+
+                        if nested_model_info:
+                            # Use normalized_id as key for nested selector too
+                            expandable_models[nested_normalized_id] = nested_model_info
+                            print(f"          ✅ Extracted nested: {nested_display_name} (key: {nested_normalized_id}) -> {nested_model_info['input_modalities']} → {nested_model_info['output_modalities']}")
+                        else:
+                            print(f"          ⚠️ No modality data found for nested {nested_display_name}")
+
+            # Also search for direct tables within expandable (for models like gemini-2.0-flash-lite)
+            # This handles: /devsite-expandable/div/table structure
+            nested_tables = devsite_expandable.find_all('table')
+            if nested_tables:
+                print(f"        🔍 Found {len(nested_tables)} nested tables to check")
+                for table in nested_tables:
+                    table_text = table.get_text().lower()
+                    # Check if table contains gemini-related content
+                    if 'gemini' in table_text and ('flash-lite' in table_text or 'supported data types' in table_text):
+                        print(f"          🎯 Processing table with Gemini content")
+
+                        # Extract modalities from the table
+                        table_model_info = self.parse_supported_data_types_table(table)
+
+                        if table_model_info:
+                            # Use the expandable's ID but mark it as table-derived
+                            table_key = f"{normalized_id}-table"
+                            expandable_models[table_key] = table_model_info
+                            print(f"          ✅ Extracted from table: {display_name} Table (key: {table_key}) -> {table_model_info['input_modalities']} → {table_model_info['output_modalities']}")
+
+        except Exception as e:
+            print(f"      ❌ Error extracting from devsite-expandable in {location_name}: {e}")
+
+        return expandable_models
+
+    def find_selector_by_xpath(self, devsite_expandable, expandable_id: str):
+        """
+        Find devsite-selector using specific XPath for gemini-2.0-flash models.
+
+        Returns tuple of (selector_element, active_attribute_value) to properly
+        identify both gemini-2.0-flash and gemini-2.0-flash-live variants.
+
+        Navigates: devsite-expandable/devsite-selector (direct child)
+        For: /html/body/section/section/main/devsite-content/article/div[4]/div[4]/div/section/devsite-expandable/devsite-selector
+        """
+        try:
+            # Direct search for devsite-selector within this expandable
+            selector = devsite_expandable.find('devsite-selector', recursive=False)
+
+            if selector:
+                # Get the active attribute value to determine the actual model variant
+                active_value = selector.get('active', '')
+                print(f"          📍 Found direct devsite-selector in {expandable_id}, active='{active_value}'")
+                return selector, active_value
+            else:
+                print(f"          ⚠️ No direct devsite-selector found in {expandable_id}")
+                return None, None
+
+        except Exception as e:
+            print(f"          ❌ Error finding selector by xpath: {e}")
+            return None, None
+
+    def remove_versioning_qualifiers(self, model_id: str) -> str:
+        """
+        Remove versioning qualifiers from model IDs to normalize them.
+
+        Examples:
+        - "gemini-2.5-flash-lite-latest-001" → "gemini-2.5-flash-lite"
+        - "gemini-2.0-flash-preview" → "gemini-2.0-flash"
+        - "gemini-2.5-pro-002" → "gemini-2.5-pro"
+
+        Args:
+            model_id: Raw model ID with potential versioning qualifiers
+
+        Returns:
+            Normalized model ID without versioning qualifiers
+        """
+        import re
+
+        # Remove common versioning patterns from the end of the string
+        # Patterns: -latest, -preview, -001, -002, etc.
+        pattern = r'-(latest|preview|\d{3}|\d{2}|\d{1})$'
+        normalized = re.sub(pattern, '', model_id, flags=re.IGNORECASE)
+
+        # Handle multiple qualifiers (e.g., -latest-001)
+        # Keep applying until no more matches
+        while normalized != model_id:
+            model_id = normalized
+            normalized = re.sub(pattern, '', model_id, flags=re.IGNORECASE)
+
+        return normalized
+
+    def convert_expandable_id_to_display_name(self, expandable_id: str) -> str:
+        """
+        Convert devsite-expandable id to display name.
+
+        Examples:
+        - "gemini-2.0-flash" -> "Gemini 2.0 Flash"
+        - "gemini-2.0-flash-lite" -> "Gemini 2.0 Flash Lite"
+        """
+        # Replace hyphens with spaces and title case
+        display_name = expandable_id.replace('-', ' ').title()
+
+        # Fix specific formatting issues
+        display_name = display_name.replace('Gemini ', 'Gemini ')  # Ensure proper spacing
+        display_name = display_name.replace(' Lite', '-Lite')     # Keep "Flash-Lite" format
+
+        return display_name
+
+    def extract_modalities_from_expandable_content(self, devsite_expandable) -> Optional[Dict[str, str]]:
+        """
+        Extract input/output modalities from devsite-expandable content.
+
+        Similar to extract_modalities_from_selector_content but for expandable elements.
+        """
+        try:
+            # Look for tables within the expandable
+            tables = devsite_expandable.find_all('table')
+            for table in tables:
+                table_text = table.get_text().lower()
+                if 'supported data types' in table_text or ('inputs' in table_text and 'output' in table_text):
+                    result = self.parse_supported_data_types_table(table)
+                    if result:
+                        return result
+
+            # Fallback: Look for text patterns in the expandable content
+            expandable_text = devsite_expandable.get_text()
+            if 'input' in expandable_text.lower() and 'output' in expandable_text.lower():
+                inputs = self.extract_inputs_from_cell(expandable_text)
+                outputs = self.extract_outputs_from_cell(expandable_text)
+                if inputs and outputs:
+                    return {
+                        'input_modalities': inputs,
+                        'output_modalities': outputs
+                    }
+
+        except Exception as e:
+            print(f"        ❌ Error parsing expandable content: {e}")
+
         return None
+
 
     def parse_supported_data_types_table(self, table) -> Optional[Dict[str, str]]:
         """
@@ -598,17 +620,18 @@ class GoogleModalityScraper:
 
         return ""
 
+
     def parse_modalities_from_line(self, line: str) -> str:
         """
         Parse modalities from a line like 'Inputs: Audio, video, text' or 'Output: Audio and text'.
 
-        Standardizes modality names and formats them consistently.
+        Preserves raw Google documentation with basic capitalization only.
 
         Args:
             line: Raw text line containing modality information
 
         Returns:
-            Comma-separated string of standardized modalities (e.g., "Audio, Video, Text")
+            Comma-separated string of modalities (e.g., "Audio, Video, Text")
         """
         import re
 
@@ -616,37 +639,18 @@ class GoogleModalityScraper:
         modalities_part = re.sub(r'^[^:]*:', '', line).strip()
 
         # Split by commas and 'and', then clean up
-        parts = re.split(r'[,&]|\band\b', modalities_part.lower())
+        parts = re.split(r'[,&]|\band\b', modalities_part)
         parts = [part.strip() for part in parts if part.strip()]
 
-        # Map to standard names and capitalize
-        modality_mapping = {
-            'text': 'Text',
-            'image': 'Image',
-            'images': 'Image',
-            'audio': 'Audio',
-            'video': 'Video',
-            'pdf': 'PDF'
-        }
-
-        standardized = []
+        # Completely raw output - preserve Google's exact terminology and case
+        cleaned = []
         for part in parts:
-            if part in modality_mapping:
-                standard = modality_mapping[part]
-                if standard not in standardized:
-                    standardized.append(standard)
+            cleaned_part = part.strip()
+            if cleaned_part and cleaned_part not in cleaned:
+                cleaned.append(cleaned_part)
 
-        return ', '.join(standardized)
+        return ', '.join(cleaned)
 
-    def extract_model_capabilities(self, row, soup) -> Optional[Dict[str, str]]:
-        """Extract input/output capabilities for a specific model - DEPRECATED"""
-        # This method is deprecated - we now scrape from official sections only
-        return None
-
-    def extract_gemini_from_sections(self, soup) -> Dict[str, Dict[str, str]]:
-        """Extract Gemini models from page sections - DEPRECATED"""
-        # This method is deprecated - we now scrape from official sections only
-        return {}
 
     def normalize_model_name(self, model_name: str) -> str:
         """Normalize model name for consistent matching"""
@@ -659,44 +663,6 @@ class GoogleModalityScraper:
         # Return model name without normalization
         return model_name.strip()
     
-    def get_model_specific_capabilities(self, model_name: str) -> Optional[Dict[str, List[str]]]:
-        """Return specific capabilities for known models"""
-        model_name = self.normalize_model_name(model_name)
-        
-        # Specific model capability mappings
-        model_capabilities = {
-            'gemini-2.0-flash-live': {
-                'input': ['Audio', 'Video', 'Text'],
-                'output': ['Text', 'Audio']
-            },
-            'gemini-2.0-flash-experimental': {
-                'input': ['Text', 'Image', 'Audio', 'Video', 'PDF'],
-                'output': ['Text']
-            },
-            'gemini-1.5-pro': {
-                'input': ['Text', 'Image', 'Audio', 'Video', 'PDF'],
-                'output': ['Text']
-            },
-            'gemini-1.5-flash': {
-                'input': ['Text', 'Image', 'Audio', 'Video', 'PDF'],
-                'output': ['Text']
-            },
-            'gemini-1.0-pro': {
-                'input': ['Text'],
-                'output': ['Text']
-            }
-        }
-        
-        # Try exact match first
-        if model_name in model_capabilities:
-            return model_capabilities[model_name]
-            
-        # Try partial matches for model families
-        for known_model, capabilities in model_capabilities.items():
-            if known_model in model_name or model_name in known_model:
-                return capabilities
-        
-        return None
 
     def scrape_imagen_modalities(self) -> Dict[str, Dict[str, str]]:
         """
@@ -961,35 +927,24 @@ class GoogleModalityScraper:
         """Parse modality names from text like 'text and image' or 'text, image, video, and audio'"""
         if not text:
             return []
-        
-        # Normalize the text
-        text = text.lower().strip()
-        
+
+        # Clean the text but preserve case for special terms
+        original_text = text.strip()
+
         # Remove common words that aren't modalities
-        text = re.sub(r'\b(and|or|input|output|outputs)\b', '', text)
-        
+        cleaned_text = re.sub(r'\b(and|or|input|output|outputs)\b', '', original_text, flags=re.IGNORECASE)
+
         # Split by both commas and remaining spaces, then clean up
-        parts = re.split(r'[,\s]+', text)
+        parts = re.split(r'[,\s]+', cleaned_text)
         parts = [part.strip() for part in parts if part.strip()]
-        
-        # Map text parts to standard modality names
-        modality_mapping = {
-            'text': 'Text',
-            'image': 'Image',
-            'images': 'Image', 
-            'audio': 'Audio',
-            'video': 'Video',
-            'pdf': 'Pdf',
-            'document': 'Pdf'
-        }
-        
+
+        # Completely raw output - preserve Google's exact terminology and case
         modalities = []
         for part in parts:
-            if part in modality_mapping:
-                modality = modality_mapping[part]
-                if modality not in modalities:
-                    modalities.append(modality)
-        
+            cleaned_part = part.strip()
+            if cleaned_part and cleaned_part not in modalities:
+                modalities.append(cleaned_part)
+
         return modalities
     
     def find_inputs_outputs_sections(self, soup) -> Tuple[str, str]:
@@ -1285,6 +1240,44 @@ class GoogleModalityScraper:
             return key.replace("Gemma 3N (gemma-3n)", "gemma-3n")
         return key
 
+    def detect_quality_issues(self, modality_mapping: Dict[str, Dict[str, str]]) -> bool:
+        """
+        Detect known quality issues in scraped modality data that suggest scraping problems.
+
+        Args:
+            modality_mapping: The scraped modality mapping to check
+
+        Returns:
+            True if quality issues detected, False otherwise
+        """
+        issues_found = []
+
+        # Check for known incorrect patterns
+        for model_name, modalities in modality_mapping.items():
+            input_modalities = modalities.get('input_modalities', '')
+            output_modalities = modalities.get('output_modalities', '')
+
+            # Issue 1: Check for Gemini 2.0 models incorrectly getting PDF (they should not have PDF)
+            if 'PDF' in input_modalities and 'Gemini 2.0' in model_name:
+                # Only flag if it's actually a Gemini 2.0 model (not 2.5)
+                if '2.0' in model_name and '2.5' not in model_name:
+                    issues_found.append(f"Incorrect PDF modality for {model_name} - Gemini 2.0 models don't support PDF")
+
+            # Issue 2: Too many "Unknown" modalities suggests scraping failure
+            if input_modalities.lower() == 'unknown' or output_modalities.lower() == 'unknown':
+                issues_found.append(f"Unknown modalities for {model_name}")
+
+        # Report issues if found
+        if issues_found:
+            print(f"⚠️ Quality issues detected in scraped data:")
+            for issue in issues_found[:3]:  # Show first 3 issues
+                print(f"  - {issue}")
+            if len(issues_found) > 3:
+                print(f"  ... and {len(issues_found) - 3} more issues")
+            return True
+
+        return False
+
     def save_modality_mapping(self, output_file: str = "../02_outputs/C-scrapped-modalities.json"):
         """
         Save modality mapping to JSON file with normalized Gemma names.
@@ -1309,16 +1302,21 @@ class GoogleModalityScraper:
 
             # Check if we should preserve existing backup instead of overwriting with poor results
             should_use_backup = False
-            if len(normalized_mapping) < 15:  # Insufficient scraping results
+            has_quality_issues = self.detect_quality_issues(normalized_mapping)
+
+            if len(normalized_mapping) < 15 or has_quality_issues:  # Insufficient scraping results or quality issues
                 try:
                     if os.path.exists(output_file):
                         with open(output_file, 'r') as f:
                             existing_data = json.load(f)
                             existing_count = len(existing_data.get('modalities', {}))
 
-                        if existing_count > len(normalized_mapping):
-                            print(f"📋 PRESERVING BACKUP: Found {existing_count} modalities in backup vs {len(normalized_mapping)} newly scraped")
-                            print(f"📋 Keeping existing file - not overwriting with insufficient data")
+                        if existing_count > len(normalized_mapping) or has_quality_issues:
+                            if has_quality_issues:
+                                print(f"📋 PRESERVING BACKUP: Quality issues detected in newly scraped data")
+                            if existing_count > len(normalized_mapping):
+                                print(f"📋 PRESERVING BACKUP: Found {existing_count} modalities in backup vs {len(normalized_mapping)} newly scraped")
+                            print(f"📋 Keeping existing file - not overwriting with problematic data")
                             should_use_backup = True
                 except Exception as e:
                     print(f"📋 Could not check existing backup: {e}")
@@ -1408,7 +1406,71 @@ class GoogleModalityScraper:
 
         except Exception as e:
             print(f"⚠️ Error during modality scraping: {e}")
-            # Generate empty output files to maintain pipeline consistency
+
+            # Attempt to preserve existing modality data instead of overwriting with empty results
+            backup_modalities = {}
+            backup_loaded = False
+
+            if os.path.exists(output_file):
+                try:
+                    with open(output_file, 'r') as f:
+                        existing_data = json.load(f)
+
+                    if isinstance(existing_data, dict) and 'modalities' in existing_data:
+                        backup_modalities = existing_data.get('modalities', {})
+                    elif isinstance(existing_data, dict):
+                        backup_modalities = existing_data
+
+                    backup_loaded = len(backup_modalities) > 0
+                    if backup_loaded:
+                        print(f"📋 Preserving existing modality data ({len(backup_modalities)} entries)")
+                except Exception as backup_error:
+                    print(f"📋 Could not read existing modality backup: {backup_error}")
+
+            txt_filename = output_file.replace('.json', '-report.txt')
+            with open(txt_filename, 'w') as f:
+                f.write("=== GOOGLE MODELS MODALITY SCRAPING REPORT ===\n")
+                f.write(f"Generated: {get_ist_timestamp()}\n\n")
+                f.write("SCRAPING FAILURE MODE\n")
+                f.write(f"Error during scraping: {e}\n\n")
+
+                if backup_loaded:
+                    f.write("BACKUP PRESERVATION MODE - Existing data kept\n")
+                    f.write(f"Preserved Models: {len(backup_modalities)}\n\n")
+
+                    # Include scraping errors if any were recorded before the failure
+                    if self.scraping_errors:
+                        f.write(f"Scraping Errors Encountered ({len(self.scraping_errors)} total):\n")
+                        for i, error in enumerate(self.scraping_errors[:5], 1):
+                            f.write(f"  {i}. {error}\n")
+                        if len(self.scraping_errors) > 5:
+                            f.write(f"  ... and {len(self.scraping_errors) - 5} more errors\n")
+                        f.write("\n")
+
+                    # Provide a summary of preserved modalities for transparency
+                    for model, capabilities in backup_modalities.items():
+                        if isinstance(capabilities, dict):
+                            input_mod = capabilities.get('input_modalities', 'Unknown')
+                            output_mod = capabilities.get('output_modalities', 'Unknown')
+                        else:
+                            input_mod = 'Unknown'
+                            output_mod = 'Unknown'
+                        f.write(f"{model}: {input_mod} → {output_mod}\n")
+                else:
+                    f.write("NO BACKUP AVAILABLE - Generated empty placeholder dataset\n\n")
+
+                    if self.scraping_errors:
+                        f.write(f"Scraping Errors Encountered ({len(self.scraping_errors)} total):\n")
+                        for i, error in enumerate(self.scraping_errors[:3], 1):
+                            f.write(f"  {i}. {error}\n")
+                        if len(self.scraping_errors) > 3:
+                            f.write(f"  ... and {len(self.scraping_errors) - 3} more errors\n")
+                        f.write("\n")
+
+            if backup_loaded:
+                return backup_modalities
+
+            # No backup to fall back on – generate empty files to keep pipeline consistent
             json_output = {
                 "metadata": {
                     "generated": get_ist_timestamp(),
@@ -1421,14 +1483,7 @@ class GoogleModalityScraper:
             with open(output_file, 'w') as f:
                 json.dump(json_output, f, indent=2)
 
-            txt_filename = output_file.replace('.json', '-report.txt')
-            with open(txt_filename, 'w') as f:
-                f.write("=== GOOGLE MODELS MODALITY SCRAPING REPORT ===\n")
-                f.write(f"Generated: {get_ist_timestamp()}\n\n")
-                f.write("Total Models: 0\n\n")
-                f.write(f"Error during scraping: {e}\n")
-
-            print(f"⚠️ Empty output files generated due to scraping failure")
+            print(f"⚠️ Empty output files generated due to scraping failure (no backup available)")
             return {}
 
 if __name__ == "__main__":

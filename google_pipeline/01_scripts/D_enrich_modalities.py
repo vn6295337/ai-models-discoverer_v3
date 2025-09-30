@@ -30,6 +30,7 @@ class ModalityEnrichment:
             'embedding_matches': 0,
             'gemma_matches': 0,
             'unique_matches': 0,
+            'hardcoded_matches': 0,
             'no_matches': 0,
             'match_details': []
         }
@@ -303,6 +304,23 @@ class ModalityEnrichment:
                 
         return False
 
+    def find_hardcoded_modality_match(self, stage2_api_id: str) -> Tuple[Optional[Dict], int, str]:
+        """Find modality match for hardcoded models using modality standardization config"""
+        if not self.modality_standardization:
+            return None, 0, ''
+
+        hardcoded_modalities = self.modality_standardization.get('hardcoded_modalities', {})
+
+        if stage2_api_id in hardcoded_modalities:
+            model_config = hardcoded_modalities[stage2_api_id]
+            modality_data = {
+                'input_modalities': model_config.get('input_modalities', 'Text'),
+                'output_modalities': model_config.get('output_modalities', 'Text')
+            }
+            return modality_data, 6, stage2_api_id  # Priority 6 for hardcoded models (highest priority)
+
+        return None, 0, ''
+
     def standardize_modalities(self, modalities_str: str) -> str:
         """
         Standardize modality ordering using 02_modality_standardization.json
@@ -382,8 +400,35 @@ class ModalityEnrichment:
             
             # Extract API ID from stage-2 model
             stage2_api_id = self.extract_api_id_from_stage2_name(model_name)
-            
-            # Check if this is a unique model first (highest priority)
+
+            # Check if this is a hardcoded model first (highest priority)
+            hardcoded_data, hardcoded_priority, hardcoded_matched_id = self.find_hardcoded_modality_match(stage2_api_id)
+            if hardcoded_data:
+                enriched_model = model.copy()
+                input_modalities = hardcoded_data.get('input_modalities', 'Text')
+                output_modalities = hardcoded_data.get('output_modalities', 'Text')
+                enriched_model['input_modalities'] = self.standardize_modalities(input_modalities)
+                enriched_model['output_modalities'] = self.standardize_modalities(output_modalities)
+                enriched_model['modality_source'] = 'hardcoded_config'
+                enriched_model['match_priority'] = hardcoded_priority
+
+                self.matching_stats['hardcoded_matches'] += 1
+                print(f"🔧 Hardcoded Model: {display_name} ({stage2_api_id})")
+
+                match_detail = {
+                    'model_name': model_name,
+                    'display_name': display_name,
+                    'api_id': stage2_api_id,
+                    'match_found': True,
+                    'match_priority': hardcoded_priority,
+                    'input_modalities': enriched_model['input_modalities'],
+                    'output_modalities': enriched_model['output_modalities']
+                }
+                self.matching_stats['match_details'].append(match_detail)
+                self.enriched_models.append(enriched_model)
+                continue
+
+            # Check if this is a unique model (second highest priority)
             unique_data, unique_priority, unique_matched_id = self.find_unique_model_match(stage2_api_id)
             if unique_data:
                 enriched_model = model.copy()
@@ -657,13 +702,14 @@ class ModalityEnrichment:
         
         # Print summary
         print(f"\n=== Enrichment Summary ===")
+        print(f"Hardcoded Matches: {self.matching_stats['hardcoded_matches']}")
         print(f"Priority 1 Matches: {self.matching_stats['priority_1_matches']}")
         print(f"Priority 2 Matches: {self.matching_stats['priority_2_matches']}")
         print(f"Embedding Matches: {self.matching_stats['embedding_matches']}")
         print(f"Gemma Pattern Matches: {self.matching_stats['gemma_matches']}")
         print(f"Unique Model Matches: {self.matching_stats['unique_matches']}")
         print(f"No Matches: {self.matching_stats['no_matches']}")
-        total_success = self.matching_stats['priority_1_matches'] + self.matching_stats['priority_2_matches'] + self.matching_stats['embedding_matches'] + self.matching_stats['gemma_matches'] + self.matching_stats['unique_matches']
+        total_success = self.matching_stats['hardcoded_matches'] + self.matching_stats['priority_1_matches'] + self.matching_stats['priority_2_matches'] + self.matching_stats['embedding_matches'] + self.matching_stats['gemma_matches'] + self.matching_stats['unique_matches']
         print(f"Total Success Rate: {total_success/self.matching_stats['total_models']*100:.1f}%")
 
 if __name__ == "__main__":
