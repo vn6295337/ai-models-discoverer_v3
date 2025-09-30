@@ -25,6 +25,10 @@
     {
       "name": "models/gemini-pro-latest",
       "reason": "Preview model - gemini-pro-latest is an unstable alias pointer that lacks proper model identification and version awareness compared to stable gemini-2.5-pro. Confirmed via direct model prompting test on Sep 26 2025. Note: preview tag not mentioned in API response."
+    },
+    {
+      "name": "models/gemini-2.5-flash-native-audio-latest",
+      "reason": "Preview model - gemini-2.5-flash-native-audio-preview-09-2025 (https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-live). Note: preview tag not mentioned in API response."
     }
   ],
   "exclude_reasons": {
