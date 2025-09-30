@@ -26,7 +26,8 @@
     "tngtech": ["TNG Technology", "Germany"],
     "sarvam": ["Sarvam AI", "India"],
     "shisa-ai": ["Shisa AI", "Japan"],
-    "x-ai": ["xAI", "United States"]
+    "x-ai": ["xAI", "United States"],
+    "meituan": ["Meituan", "China"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -80,6 +81,7 @@
     "z.ai": "https://zhipuai.cn/en/",
     "tencent": "https://hunyuan.tencent.com",
     "anthropic": "https://www.anthropic.com/claude",
-    "xai": "https://x.ai/"
+    "xai": "https://x.ai/",
+    "meituan": "https://longcat.chat/"
   }
 }
