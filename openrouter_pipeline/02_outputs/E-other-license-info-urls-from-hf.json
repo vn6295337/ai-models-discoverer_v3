@@ -1,10 +1,17 @@
 {
   "metadata": {
-    "generated_at": "2025-09-26 06:07 AM IST",
-    "total_models": 38,
+    "generated_at": "2025-09-30 08:24 AM IST",
+    "total_models": 39,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
+    {
+      "id": "meituan/longcat-flash-chat",
+      "canonical_slug": "meituan/longcat-flash-chat",
+      "name": "Meituan: LongCat Flash Chat",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "license_info_url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE"
+    },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",

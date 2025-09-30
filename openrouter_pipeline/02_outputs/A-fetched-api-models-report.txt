@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-09-26 06:07 AM IST
+Generated: 2025-09-30 08:23 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 325
+  Total models: 327
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  43 models
@@ -123,7 +123,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - pixtral-12b
     - pixtral-large-2411
 
-  Google       :  24 models
+  Google       :  23 models
     - gemini-2.0-flash-001
     - gemini-2.0-flash-exp:free
     - gemini-2.0-flash-lite-001
@@ -135,7 +135,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemini-2.5-pro
     - gemini-2.5-pro-preview
     - gemini-2.5-pro-preview-05-06
-    - gemini-flash-1.5-8b
     - gemma-2-27b-it
     - gemma-2-9b-it
     - gemma-2-9b-it:free
@@ -148,6 +147,28 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemma-3n-e2b-it:free
     - gemma-3n-e4b-it
     - gemma-3n-e4b-it:free
+
+  DeepSeek     :  20 models
+    - deepseek-chat
+    - deepseek-chat-v3-0324
+    - deepseek-chat-v3-0324:free
+    - deepseek-chat-v3.1
+    - deepseek-chat-v3.1:free
+    - deepseek-prover-v2
+    - deepseek-r1
+    - deepseek-r1-0528
+    - deepseek-r1-0528-qwen3-8b
+    - deepseek-r1-0528-qwen3-8b:free
+    - deepseek-r1-0528:free
+    - deepseek-r1-distill-llama-70b
+    - deepseek-r1-distill-llama-70b:free
+    - deepseek-r1-distill-llama-8b
+    - deepseek-r1-distill-qwen-14b
+    - deepseek-r1-distill-qwen-32b
+    - deepseek-r1:free
+    - deepseek-v3.1-base
+    - deepseek-v3.1-terminus
+    - deepseek-v3.2-exp
 
   Meta         :  20 models
     - llama-3-70b-instruct
@@ -171,28 +192,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-guard-2-8b
     - llama-guard-4-12b
 
-  DeepSeek     :  19 models
-    - deepseek-chat
-    - deepseek-chat-v3-0324
-    - deepseek-chat-v3-0324:free
-    - deepseek-chat-v3.1
-    - deepseek-chat-v3.1:free
-    - deepseek-prover-v2
-    - deepseek-r1
-    - deepseek-r1-0528
-    - deepseek-r1-0528-qwen3-8b
-    - deepseek-r1-0528-qwen3-8b:free
-    - deepseek-r1-0528:free
-    - deepseek-r1-distill-llama-70b
-    - deepseek-r1-distill-llama-70b:free
-    - deepseek-r1-distill-llama-8b
-    - deepseek-r1-distill-qwen-14b
-    - deepseek-r1-distill-qwen-32b
-    - deepseek-r1:free
-    - deepseek-v3.1-base
-    - deepseek-v3.1-terminus
-
-  Anthropic    :  11 models
+  Anthropic    :  12 models
     - claude-3-haiku
     - claude-3-opus
     - claude-3.5-haiku
@@ -204,6 +204,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-opus-4
     - claude-opus-4.1
     - claude-sonnet-4
+    - claude-sonnet-4.5
 
   xAI          :   8 models
     - grok-3
@@ -251,6 +252,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - sonar-reasoning
     - sonar-reasoning-pro
 
+  TheDrummer   :   5 models
+    - anubis-70b-v1.1
+    - cydonia-24b-v4.1
+    - rocinante-12b
+    - skyfall-36b-v2
+    - unslopnemo-12b
+
   Arcee AI     :   5 models
     - afm-4.5b
     - coder-large
@@ -264,13 +272,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - glm-4.5-air
     - glm-4.5-air:free
     - glm-4.5v
-
-  TheDrummer   :   5 models
-    - anubis-70b-v1.1
-    - anubis-pro-105b-v1
-    - rocinante-12b
-    - skyfall-36b-v2
-    - unslopnemo-12b
 
   NVIDIA       :   4 models
     - llama-3.1-nemotron-70b-instruct
@@ -366,6 +367,9 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-3-lumimaid-70b
     - llama-3.1-lumimaid-8b
 
+  Relace       :   1 models
+    - relace-apply-3
+
   OpenGVLab    :   1 models
     - internvl3-78b
 
@@ -396,4 +400,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer       :   1 models
     - weaver
 
-Total providers: 46
+Total providers: 47

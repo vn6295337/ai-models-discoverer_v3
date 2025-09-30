@@ -1,26 +1,18 @@
 === GOOGLE MODELS MODALITY SCRAPING REPORT ===
-Generated: 2025-09-26 06:09:01 IST
+Generated: 2025-09-30 14:40:46 IST
 
-Total Models: 29
+Total Models: 21
 
-Gemini 2.5 Pro: Audio, Image, Video, Text, PDF → Text
-Gemini 2.5 Flash: Text, Image, Video, Audio → Text
-Gemini 2.5 Flash Preview: Text, Image, Video, Audio → Text
-Gemini 2.5 Flash-Lite: Text, Image, Video, Audio, PDF → Text
-Gemini 2.5 Flash-Lite Preview: Text, Image, Video, Audio, PDF → Text
-Gemini 2.5 Flash Native Audio: Audio, Video, Text → Audio, Text
-Gemini 2.5 Flash Image Preview: Image, Text → Image, Text
-Gemini 2.5 Flash Preview Text-to-Speech: Text → Audio
-Gemini 2.5 Pro Preview Text-to-Speech: Text → Audio
-Gemini Robotics-ER 1.5 Preview: Text, Image, Video, Audio → Text
-Gemini 2.0 Flash: Audio, Image, Video, Text → Text
-Gemini 2.0 Flash Preview Image Generation: Audio, Image, Video, Text → Text, Image
-Gemini 2.0 Flash-Lite: Audio, Image, Video, Text → Text
-Gemini 1.5 Flash: Audio, Image, Video, Text → Text
-Gemini 1.5 Flash-8B: Audio, Image, Video, Text → Text
-Gemini 1.5 Pro: Audio, Image, Video, Text → Text
-Gemini 2.5 Flash Live: Audio, Video, Text → Text, Audio
-Gemini 2.0 Flash Live: Audio, Video, Text → Text, Audio
+gemini-2.5-pro: Audio, images, video, text, PDF → Text
+gemini-2.5-pro-table: Text → Audio
+gemini-2.5-flash: Text, images, video, audio → Text
+gemini-2.5-flash-table: Text → Audio
+gemini-2.5-flash-lite: Text, image, video, audio, PDF → Text
+gemini-2.5-flash-lite-table: Text, image, video, audio, PDF → Text
+gemini-2.0-flash: Audio, images, video, text → Text
+gemini-2.0-flash-table: Audio, video, text → Text, audio
+gemini-2.0-flash-lite: Audio, images, video, text → Text
+gemini-2.0-flash-lite-table: Audio, images, video, text → Text
 imagen-4-ultra: Text → Image
 imagen-4-fast: Text → Image
 imagen-3: Text → Image
@@ -29,6 +21,6 @@ veo-3.0-generate-preview: Text, Image → Video, Audio
 veo-3.0-fast-generate-001: Text, Image → Video, Audio
 veo-3.0-fast-generate-preview: Text, Image → Video, Audio
 veo-2.0-generate-001: Text, Image → Video
-gemma-3: Text, Image → Text
-gemma-2: Text → Text
-gemma-3n: Text, Image, Video, Audio → Text
+gemma-3: text, image → text
+gemma-2: text → text, decoder-only
+gemma-3n: text, image, video, audio → text

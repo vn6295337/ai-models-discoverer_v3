@@ -1,15 +1,15 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-09-26 06:08 AM IST
+Generated: 2025-09-30 09:10 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total models processed: 47
+   • Total models processed: 48
    • Models in both systems: 47
-   • Models with differences: 9
-   • Models in pipeline only (not in Supabase): 0
+   • Models with differences: 0
+   • Models in pipeline only (not in Supabase): 1
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -35,45 +35,17 @@ SUMMARY STATISTICS
      - Exact matches: 47
      - Differences: 0
    • license_info_text:
-     - Exact matches: 43
-     - Differences: 4
-     - Missing in pipeline: 4
-     - Specific differences:
-       * Mistral 7B Instruct: Pipeline='' vs Supabase='info'
-       * R1: Pipeline='' vs Supabase='info'
-       * Qwen2.5 Coder 32B Instruct: Pipeline='' vs Supabase='info'
-       * Mistral Nemo: Pipeline='' vs Supabase='info'
+     - Exact matches: 47
+     - Differences: 0
    • license_info_url:
-     - Exact matches: 43
-     - Differences: 4
-     - Missing in pipeline: 4
-     - Specific differences:
-       * Mistral 7B Instruct: Pipeline='' vs Supabase='https://huggingface....'
-       * R1: Pipeline='' vs Supabase='https://huggingface....'
-       * Qwen2.5 Coder 32B Instruct: Pipeline='' vs Supabase='https://huggingface....'
-       * Mistral Nemo: Pipeline='' vs Supabase='https://huggingface....'
+     - Exact matches: 47
+     - Differences: 0
    • license_name:
-     - Exact matches: 42
-     - Differences: 5
-     - Specific differences:
-       * Mistral 7B Instruct: Pipeline='Unknown' vs Supabase='Apache-2.0'
-       * R1: Pipeline='Unknown' vs Supabase='MIT'
-       * Qwen2.5 Coder 32B Instruct: Pipeline='Unknown' vs Supabase='Apache-2.0'
-       * Mistral Nemo: Pipeline='Unknown' vs Supabase='Apache-2.0'
-       * Qwen2.5 72B Instruct: Pipeline='Unknown' vs Supabase='QWEN'
+     - Exact matches: 47
+     - Differences: 0
    • license_url:
-     - Exact matches: 38
-     - Differences: 9
-     - Specific differences:
-       * Nemotron Nano 9B V2: Pipeline='Unknown' vs Supabase='https://huggingface....'
-       * Mistral 7B Instruct: Pipeline='Unknown' vs Supabase='https://www.apache.o...'
-       * R1: Pipeline='Unknown' vs Supabase='https://opensource.o...'
-       * Qwen2.5 Coder 32B Instruct: Pipeline='Unknown' vs Supabase='https://www.apache.o...'
-       * Qwen2.5 VL 72B Instruct: Pipeline='Unknown' vs Supabase='https://huggingface....'
-       * Mistral Nemo: Pipeline='Unknown' vs Supabase='https://www.apache.o...'
-       * Qwen2.5 72B Instruct: Pipeline='Unknown' vs Supabase='https://huggingface....'
-       * Kimi K2 0711: Pipeline='Unknown' vs Supabase='https://huggingface....'
-       * Hunyuan A13B Instruct: Pipeline='Unknown' vs Supabase='https://huggingface....'
+     - Exact matches: 47
+     - Differences: 0
    • rate_limits:
      - Exact matches: 47
      - Differences: 0
@@ -82,8 +54,9 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • Existing models with differences: 9
-     Models: Hunyuan A13B Instruct, Kimi K2 0711, Mistral 7B Instruct, Mistral Nemo, Nemotron Nano 9B V2, Qwen2.5 72B Instruct, Qwen2.5 Coder 32B Instruct, Qwen2.5 VL 72B Instruct, R1
+   • New models (pipeline only): 1
+     Models: LongCat Flash Chat
+   • Existing models with differences: 0
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -423,7 +396,7 @@ output_modalities         | Text                      | Text
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
 license_name              | Tencent                   | Tencent                  
-license_url               | Unknown                   | https://huggingface.co/..
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -463,7 +436,7 @@ output_modalities         | Text                      | Text
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
 license_name              | Modified MIT              | Modified MIT             
-license_url               | Unknown                   | https://huggingface.co/..
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -589,6 +562,26 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
+MODEL: LongCat Flash Chat
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | Meituan                   |                          
+human_readable_name       | LongCat Flash Chat        |                          
+model_provider_country    | China                     |                          
+official_url              | https://longcat.chat/     |                          
+input_modalities          | Text                      |                          
+output_modalities         | Text                      |                          
+license_info_text         | info                      |                          
+license_info_url          | https://huggingface.co/.. |                          
+license_name              | MIT                       |                          
+license_url               | https://opensource.org/.. |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
+
+================================================================================
+
 MODEL: MAI DS R1
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
@@ -620,10 +613,10 @@ model_provider_country    | France                    | France
 official_url              | https://mistral.ai/       | https://mistral.ai/      
 input_modalities          | Text                      | Text                     
 output_modalities         | Text                      | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              | Unknown                   | Apache-2.0               
-license_url               | Unknown                   | https://www.apache.org/..
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | Apache-2.0                | Apache-2.0               
+license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -640,10 +633,10 @@ model_provider_country    | France                    | France
 official_url              | https://mistral.ai/       | https://mistral.ai/      
 input_modalities          | Text                      | Text                     
 output_modalities         | Text                      | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              | Unknown                   | Apache-2.0               
-license_url               | Unknown                   | https://www.apache.org/..
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | Apache-2.0                | Apache-2.0               
+license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -723,7 +716,7 @@ output_modalities         | Text                      | Text
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
 license_name              | NVIDIA                    | NVIDIA                   
-license_url               | Unknown                   | https://huggingface.co/..
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -762,8 +755,8 @@ input_modalities          | Text                      | Text
 output_modalities         | Text                      | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
-license_name              | Unknown                   | QWEN                     
-license_url               | Unknown                   | https://huggingface.co/..
+license_name              | QWEN                      | QWEN                     
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -780,10 +773,10 @@ model_provider_country    | China                     | China
 official_url              | https://alibabacloud.com/ | https://alibabacloud.com/
 input_modalities          | Text                      | Text                     
 output_modalities         | Text                      | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              | Unknown                   | Apache-2.0               
-license_url               | Unknown                   | https://www.apache.org/..
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | Apache-2.0                | Apache-2.0               
+license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -823,7 +816,7 @@ output_modalities         | Text                      | Text
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
 license_name              | QWEN                      | QWEN                     
-license_url               | Unknown                   | https://huggingface.co/..
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
@@ -960,10 +953,10 @@ model_provider_country    | China                     | China
 official_url              | https://deepseek.com/     | https://deepseek.com/    
 input_modalities          | Text                      | Text                     
 output_modalities         | Text                      | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              | Unknown                   | MIT                      
-license_url               | Unknown                   | https://opensource.org/..
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | MIT                       | MIT                      
+license_url               | https://opensource.org/.. | https://opensource.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-09-26 06:08 AM IST",
-    "total_models": 50,
+    "generated_at": "2025-09-30 08:27 AM IST",
+    "total_models": 51,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -12,6 +12,15 @@
       "hugging_face_id": "",
       "clean_model_name": "Grok 4 Fast",
       "raw_input_modalities": "text, image",
+      "raw_output_modalities": "text"
+    },
+    {
+      "id": "meituan/longcat-flash-chat",
+      "canonical_slug": "meituan/longcat-flash-chat",
+      "original_name": "Meituan: LongCat Flash Chat",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "clean_model_name": "LongCat Flash Chat",
+      "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },
     {

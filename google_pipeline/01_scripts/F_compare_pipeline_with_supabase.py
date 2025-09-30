@@ -224,9 +224,9 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
                 if stats['difference_details']:
                     f.write(f"     - Specific differences:\n")
                     for diff in stats['difference_details']:  # Show all differences
-                        model_name = diff['model'][:30] + "..." if len(diff['model']) > 30 else diff['model']
-                        pipeline_val = diff['pipeline_value'][:20] + "..." if len(diff['pipeline_value']) > 20 else diff['pipeline_value']
-                        supabase_val = diff['supabase_value'][:20] + "..." if len(diff['supabase_value']) > 20 else diff['supabase_value']
+                        model_name = diff['model'][:50] + "..." if len(diff['model']) > 50 else diff['model']
+                        pipeline_val = diff['pipeline_value'][:60] + "..." if len(diff['pipeline_value']) > 60 else diff['pipeline_value']
+                        supabase_val = diff['supabase_value'][:60] + "..." if len(diff['supabase_value']) > 60 else diff['supabase_value']
                         f.write(f"       * {model_name}: Pipeline='{pipeline_val}' vs Supabase='{supabase_val}'\n")
             f.write("\n")
 
@@ -272,21 +272,21 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
             supabase_model = supabase_lookup.get(model_name, {})
 
             f.write(f"MODEL: {model_name}\n")
-            f.write("-" * 80 + "\n")
-            f.write(f"{'Field Name':<25} | {'Pipeline Value':<25} | {'Supabase Value':<25}\n")
-            f.write("-" * 80 + "\n")
+            f.write("-" * 130 + "\n")
+            f.write(f"{'Field Name':<25} | {'Pipeline Value':<50} | {'Supabase Value':<50}\n")
+            f.write("-" * 130 + "\n")
 
             for field in fields_to_compare:
                 pipeline_value = str(pipeline_model.get(field, '')).strip()
                 supabase_value = str(supabase_model.get(field, '')).strip()
 
                 # Truncate long values for display
-                pipeline_display = pipeline_value[:23] + ".." if len(pipeline_value) > 25 else pipeline_value
-                supabase_display = supabase_value[:23] + ".." if len(supabase_value) > 25 else supabase_value
+                pipeline_display = pipeline_value[:48] + ".." if len(pipeline_value) > 50 else pipeline_value
+                supabase_display = supabase_value[:48] + ".." if len(supabase_value) > 50 else supabase_value
 
-                f.write(f"{field:<25} | {pipeline_display:<25} | {supabase_display:<25}\n")
+                f.write(f"{field:<25} | {pipeline_display:<50} | {supabase_display:<50}\n")
 
-            f.write("\n" + "=" * 80 + "\n\n")
+            f.write("\n" + "=" * 130 + "\n\n")
 
 def main():
     """Main execution function"""

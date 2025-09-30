@@ -1,11 +1,11 @@
 === GOOGLE MODELS FILTERING REPORT ===
-Generated: 2025-09-26 14:55:54 IST
+Generated: 2025-09-30 13:01:17 IST
 
 === SUMMARY ===
-Total Input Models: 73
-Models Included: 35
-Models Excluded: 38
-Filtering Success Rate: 47.9%
+Total Input Models: 64
+Models Included: 25
+Models Excluded: 39
+Filtering Success Rate: 39.1%
 
 === EXCLUDED MODELS ===
  1. gemini-2.5-pro-preview-03-25
@@ -45,48 +45,40 @@ Filtering Success Rate: 47.9%
 35. gemini-2.5-flash-exp-native-audio-thinking-dialog
 36. gemini-live-2.5-flash-preview
 37. gemini-2.5-flash-live-preview
-38. gemini-2.5-flash-native-audio-preview-09-2025
+38. gemini-2.5-flash-native-audio-latest
+39. gemini-2.5-flash-native-audio-preview-09-2025
 
 === INCLUDED MODELS ===
  1. embedding-gecko-001
- 2. gemini-1.5-pro-latest
- 3. gemini-1.5-pro-002
- 4. gemini-1.5-pro
- 5. gemini-1.5-flash-latest
- 6. gemini-1.5-flash
- 7. gemini-1.5-flash-002
- 8. gemini-1.5-flash-8b
- 9. gemini-1.5-flash-8b-001
-10. gemini-1.5-flash-8b-latest
-11. gemini-2.5-flash
-12. gemini-2.5-pro
-13. gemini-2.0-flash
-14. gemini-2.0-flash-001
-15. gemini-2.0-flash-lite-001
-16. gemini-2.0-flash-lite
-17. gemma-3-1b-it
-18. gemma-3-4b-it
-19. gemma-3-12b-it
-20. gemma-3-27b-it
-21. gemma-3n-e4b-it
-22. gemma-3n-e2b-it
-23. gemini-2.5-flash-lite
-24. embedding-001
-25. text-embedding-004
-26. gemini-embedding-001
-27. aqa
-28. imagen-3.0-generate-002
-29. imagen-4.0-generate-001
-30. imagen-4.0-ultra-generate-001
-31. imagen-4.0-fast-generate-001
-32. veo-3.0-generate-001
-33. veo-3.0-fast-generate-001
-34. gemini-2.0-flash-live-001
-35. gemini-2.5-flash-native-audio-latest
+ 2. gemini-2.5-flash
+ 3. gemini-2.5-pro
+ 4. gemini-2.0-flash
+ 5. gemini-2.0-flash-001
+ 6. gemini-2.0-flash-lite-001
+ 7. gemini-2.0-flash-lite
+ 8. gemma-3-1b-it
+ 9. gemma-3-4b-it
+10. gemma-3-12b-it
+11. gemma-3-27b-it
+12. gemma-3n-e4b-it
+13. gemma-3n-e2b-it
+14. gemini-2.5-flash-lite
+15. embedding-001
+16. text-embedding-004
+17. gemini-embedding-001
+18. aqa
+19. imagen-3.0-generate-002
+20. imagen-4.0-generate-001
+21. imagen-4.0-ultra-generate-001
+22. imagen-4.0-fast-generate-001
+23. veo-3.0-generate-001
+24. veo-3.0-fast-generate-001
+25. gemini-2.0-flash-live-001
 
 === EXCLUSION BREAKDOWN ===
 34 models: Experimental/Preview model - production-ready models only
  1 models: Model requires billing/payment - free models only
+ 1 models: Preview model - gemini-2.5-flash-native-audio-preview-09-2025 (https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-live). Note: preview tag not mentioned in API response.
  1 models: Preview model - gemini-flash-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response.
  1 models: Preview model - gemini-flash-lite-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response.
  1 models: Preview model - gemini-pro-latest is an unstable alias pointer that lacks proper model identification and version awareness compared to stable gemini-2.5-pro. Confirmed via direct model prompting test on Sep 26 2025. Note: preview tag not mentioned in API response.

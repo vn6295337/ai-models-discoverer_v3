@@ -1,10 +1,18 @@
 {
   "metadata": {
-    "generated_at": "2025-09-26 06:08 AM IST",
-    "total_models": 38,
+    "generated_at": "2025-09-30 08:27 AM IST",
+    "total_models": 39,
     "pipeline_stage": "G_standardize_other_license_names_from_hf"
   },
   "models": [
+    {
+      "id": "meituan/longcat-flash-chat",
+      "canonical_slug": "meituan/longcat-flash-chat",
+      "name": "Meituan: LongCat Flash Chat",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "raw_extracted_license": "mit",
+      "standardized_license_name": "MIT"
+    },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",
@@ -274,40 +282,40 @@
       "canonical_slug": "deepseek/deepseek-r1",
       "name": "DeepSeek: R1 (free)",
       "hugging_face_id": "deepseek-ai/DeepSeek-R1",
-      "raw_extracted_license": "HTTP 429",
-      "standardized_license_name": "Unknown"
+      "raw_extracted_license": "mit",
+      "standardized_license_name": "MIT"
     },
     {
       "id": "qwen/qwen-2.5-coder-32b-instruct:free",
       "canonical_slug": "qwen/qwen-2.5-coder-32b-instruct",
       "name": "Qwen2.5 Coder 32B Instruct (free)",
       "hugging_face_id": "Qwen/Qwen2.5-Coder-32B-Instruct",
-      "raw_extracted_license": "HTTP 429",
-      "standardized_license_name": "Unknown"
+      "raw_extracted_license": "apache-2.0",
+      "standardized_license_name": "Apache-2.0"
     },
     {
       "id": "qwen/qwen-2.5-72b-instruct:free",
       "canonical_slug": "qwen/qwen-2.5-72b-instruct",
       "name": "Qwen2.5 72B Instruct (free)",
       "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
-      "raw_extracted_license": "HTTP 429",
-      "standardized_license_name": "Unknown"
+      "raw_extracted_license": "qwen",
+      "standardized_license_name": "QWEN"
     },
     {
       "id": "mistralai/mistral-nemo:free",
       "canonical_slug": "mistralai/mistral-nemo",
       "name": "Mistral: Mistral Nemo (free)",
       "hugging_face_id": "mistralai/Mistral-Nemo-Instruct-2407",
-      "raw_extracted_license": "HTTP 429",
-      "standardized_license_name": "Unknown"
+      "raw_extracted_license": "apache-2.0",
+      "standardized_license_name": "Apache-2.0"
     },
     {
       "id": "mistralai/mistral-7b-instruct:free",
       "canonical_slug": "mistralai/mistral-7b-instruct",
       "name": "Mistral: Mistral 7B Instruct (free)",
       "hugging_face_id": "mistralai/Mistral-7B-Instruct-v0.3",
-      "raw_extracted_license": "HTTP 429",
-      "standardized_license_name": "Unknown"
+      "raw_extracted_license": "apache-2.0",
+      "standardized_license_name": "Apache-2.0"
     }
   ]
 }
