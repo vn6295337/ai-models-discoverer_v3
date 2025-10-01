@@ -7,18 +7,42 @@ Excludes Google and Meta models (they have dedicated handlers)
 """
 
 import json
-import requests
+import os
 import time
 import re
+import requests
 from datetime import datetime
 from typing import List, Dict
+from pathlib import Path
+
+from huggingface_hub import HfApi
+
+# Load environment variables from .env file
+try:
+    from dotenv import load_dotenv
+    # Check multiple .env locations
+    env_paths = [
+        Path("/home/km_project/.env"),  # Home directory
+        Path(__file__).parent.parent / ".env",  # openrouter_pipeline directory
+        Path(__file__).parent / ".env"  # 01_scripts directory
+    ]
+
+    for env_path in env_paths:
+        if env_path.exists():
+            load_dotenv(env_path)
+            print(f"Loaded environment from: {env_path}")
+            break
+    else:
+        print("⚠️ No .env file found in any of the expected locations")
+except ImportError:
+    print("⚠️ python-dotenv not available, using system environment variables")
 
 # Import output utilities
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
-def extract_license_from_hf_page(hf_id: str, max_retries: int = 5) -> str:
-    """Extract license from HuggingFace page with retry logic for rate limiting"""
+def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
+    """Extract license from HuggingFace page with web scraping (fallback for 'other' licenses)"""
     if not hf_id:
         return "Unknown"
 
@@ -31,12 +55,12 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 5) -> str:
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36'
             }
 
-            response = requests.get(url, headers=headers, timeout=10)
+            response = requests.get(url, headers=headers, timeout=15)
 
             # Handle rate limiting with exponential backoff
             if response.status_code == 429:
                 if attempt < max_retries - 1:
-                    wait_time = (2 ** attempt) * 10  # 10, 20, 40, 80 seconds
+                    wait_time = (2 ** attempt) * 5  # 5, 10, 20 seconds
                     print(f"Rate limited for {hf_id}, waiting {wait_time}s (attempt {attempt + 1}/{max_retries})")
                     time.sleep(wait_time)
                     continue
@@ -53,6 +77,8 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 5) -> str:
                 r'<span class="-mr-1 text-gray-400">License:</span>\s*<span>([^<]+)</span>',  # HF license structure
                 r'<span[^>]*>License:</span>[^<]*<span[^>]*>([^<]+)</span>',  # General license span structure
                 r'"license"\s*:\s*"([^"]+)"',  # JSON license field
+                r'<dt[^>]*>License</dt>\s*<dd[^>]*>([^<]+)</dd>',  # Definition list structure
+                r'License:\s*([A-Za-z0-9\-\.\s]+)',  # Plain text license
             ]
 
             for pattern in patterns:
@@ -74,6 +100,31 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 5) -> str:
             return f"Parse Error: {str(e)}"
 
     return "Unknown"
+
+
+def extract_license_from_hf_api(hf_id: str) -> str:
+    """Extract license from HuggingFace using official Hub API, with web scraping fallback for 'other' licenses"""
+    if not hf_id:
+        return "Unknown"
+
+    try:
+        api = HfApi(token=os.getenv('HUGGINGFACE_API_KEY'))
+        repo_info = api.repo_info(hf_id)
+
+        if repo_info.cardData:
+            license_value = repo_info.cardData.license or 'Unknown'
+
+            # If license is 'other', use web scraping to get the actual license name
+            if license_value.lower() == 'other':
+                print(f"  License is 'other', using web scraping for {hf_id}")
+                scraped_license = extract_license_from_hf_page(hf_id)
+                return scraped_license if scraped_license != "Unknown" else license_value
+
+            return license_value
+        return 'Unknown'
+    except Exception as e:
+        print(f"API error for {hf_id}: {str(e)}")
+        return 'Unknown'
 
 
 def should_skip_model(name: str) -> bool:
@@ -131,7 +182,7 @@ def main():
     for i, model in enumerate(target_models, 1):
         print(f"Processing {i}/{len(target_models)}: {model['name'][:60]}...")
         
-        license_info = extract_license_from_hf_page(model['hugging_face_id'])
+        license_info = extract_license_from_hf_api(model['hugging_face_id'])
         
         results.append({
             'id': model['id'],
@@ -141,9 +192,8 @@ def main():
             'extracted_license': license_info
         })
         
-        # Add progressively longer delays for later models that are more likely to hit rate limits
-        base_delay = 2 + (i // 10)  # Increase delay every 10 models: 2s, 3s, 4s, 5s
-        time.sleep(base_delay)
+        # Small delay to be respectful to the API
+        time.sleep(0.1)  # 100ms delay between API calls
     
     # Write results to JSON file
     json_output_file = get_output_file_path('F-other-license-names-from-hf.json')

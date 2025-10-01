@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-09-30 09:10 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-10-01 09:02 AM IST",
+    "total_models": 50,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
@@ -23,25 +23,6 @@
       "model_provider_country": "United States",
       "model_family": "xai",
       "official_url": "https://x.ai/"
-    },
-    {
-      "id": "meituan/longcat-flash-chat",
-      "canonical_slug": "meituan/longcat-flash-chat",
-      "original_name": "Meituan: LongCat Flash Chat",
-      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
-      "clean_model_name": "LongCat Flash Chat",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Meituan",
-      "model_provider_country": "China",
-      "model_family": "meituan",
-      "official_url": "https://longcat.chat/"
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",

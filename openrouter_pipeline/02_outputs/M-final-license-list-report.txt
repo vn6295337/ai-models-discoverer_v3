@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-09-30 08:27 AM IST
+Generated: 2025-10-01 09:02 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 51
+  Total models        : 50
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,12 +13,12 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 8 models
   Google: 6 models
   Meta: 5 models
-  Opensource: 31 models
+  Opensource: 30 models
   Proprietary: 1 models
 
 FINAL LICENSE DISTRIBUTION:
   18 models: Apache-2.0
-  13 models: MIT
+  12 models: MIT
    6 models: Gemma
    2 models: Llama-3.3
    2 models: Llama-4
@@ -681,22 +681,7 @@ MODEL 43: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 44: meituan/longcat-flash-chat
---------------------------------------------------
-  ID: meituan/longcat-flash-chat
-  Original Name: Meituan: LongCat Flash Chat
-  HuggingFace ID: meituan-longcat/LongCat-Flash-Chat
-  Canonical Slug: meituan/longcat-flash-chat
-  Clean Model Name: LongCat Flash Chat
-  License Info Text: info
-  License Info URL: https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 45: microsoft/mai-ds-r1
+MODEL 44: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -711,7 +696,7 @@ MODEL 45: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 46: moonshotai/kimi-dev-72b
+MODEL 45: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID: moonshotai/kimi-dev-72b:free
   Original Name: MoonshotAI: Kimi Dev 72B (free)
@@ -726,7 +711,7 @@ MODEL 46: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 47: moonshotai/kimi-vl-a3b-thinking
+MODEL 46: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID: moonshotai/kimi-vl-a3b-thinking:free
   Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
@@ -741,7 +726,7 @@ MODEL 47: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 48: tngtech/deepseek-r1t-chimera
+MODEL 47: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -756,7 +741,7 @@ MODEL 48: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 49: tngtech/deepseek-r1t2-chimera
+MODEL 48: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -771,7 +756,7 @@ MODEL 49: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 50: z-ai/glm-4.5-air
+MODEL 49: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -786,7 +771,7 @@ MODEL 50: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 51: x-ai/grok-4-fast
+MODEL 50: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast

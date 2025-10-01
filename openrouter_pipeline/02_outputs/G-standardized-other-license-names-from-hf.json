@@ -1,18 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2025-09-30 08:27 AM IST",
-    "total_models": 39,
+    "generated_at": "2025-10-01 09:02 AM IST",
+    "total_models": 38,
     "pipeline_stage": "G_standardize_other_license_names_from_hf"
   },
   "models": [
-    {
-      "id": "meituan/longcat-flash-chat",
-      "canonical_slug": "meituan/longcat-flash-chat",
-      "name": "Meituan: LongCat Flash Chat",
-      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
-      "raw_extracted_license": "mit",
-      "standardized_license_name": "MIT"
-    },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",

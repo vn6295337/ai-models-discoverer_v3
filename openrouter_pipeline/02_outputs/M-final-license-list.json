@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-09-30 08:27 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-10-01 09:02 AM IST",
+    "total_models": 50,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -184,18 +184,6 @@
       "license_name": "Gemma",
       "license_url": "https://ai.google.dev/gemma/terms",
       "source_category": "google"
-    },
-    {
-      "id": "meituan/longcat-flash-chat",
-      "canonical_slug": "meituan/longcat-flash-chat",
-      "original_name": "Meituan: LongCat Flash Chat",
-      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
-      "clean_model_name": "LongCat Flash Chat",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT",
-      "source_category": "opensource"
     },
     {
       "id": "meta-llama/llama-3.2-3b-instruct:free",

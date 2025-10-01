@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-09-30 08:23 AM IST
+Generated: 2025-10-01 08:55 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 327
+  Total models: 328
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  43 models
@@ -244,6 +244,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - hermes-4-405b
     - hermes-4-70b
 
+  Z.AI         :   6 models
+    - glm-4-32b
+    - glm-4.5
+    - glm-4.5-air
+    - glm-4.5-air:free
+    - glm-4.5v
+    - glm-4.6
+
   Perplexity   :   6 models
     - r1-1776
     - sonar
@@ -265,13 +273,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - maestro-reasoning
     - spotlight
     - virtuoso-large
-
-  Z.AI         :   5 models
-    - glm-4-32b
-    - glm-4.5
-    - glm-4.5-air
-    - glm-4.5-air:free
-    - glm-4.5v
 
   NVIDIA       :   4 models
     - llama-3.1-nemotron-70b-instruct

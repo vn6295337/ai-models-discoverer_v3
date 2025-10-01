@@ -1,32 +1,72 @@
 ================================================================================
 OPENROUTER PIPELINE EXECUTION REPORT
-Generated: 2025-09-30 09:10:20
+Generated: 2025-10-01 09:02:28
 ================================================================================
 
 EXECUTION SUMMARY:
-  Total execution time : 28.5 seconds (0.5 minutes)
-  Total stages         : 4
-  Successful stages    : 4
+  Total execution time : 49.3 seconds (0.8 minutes)
+  Total stages         : 14
+  Successful stages    : 14
   Failed stages        : 0
   Success rate         : 100.0%
 
 STAGE-BY-STAGE RESULTS:
 ================================================================================
-Stage  1: P_enrich_provider_info.py
+Stage  1: F_fetch_other_license_names_from_hf.py
+  Status: ✅ SUCCESS
+  Details: Success in 24.0s
+
+Stage  2: G_standardize_other_license_names_from_hf.py
   Status: ✅ SUCCESS
   Details: Success in 0.2s
 
-Stage  2: Q_create_db_data.py
+Stage  3: H_bucketize_other_license_names.py
   Status: ✅ SUCCESS
   Details: Success in 0.2s
 
-Stage  3: R_filter_db_data.py
+Stage  4: I_opensource_license_urls.py
   Status: ✅ SUCCESS
   Details: Success in 0.2s
 
-Stage  4: S_compare_pipeline_with_supabase.py
+Stage  5: J_custom_license_urls.py
   Status: ✅ SUCCESS
-  Details: Success in 2.2s
+  Details: Success in 10.4s
+
+Stage  6: K_collate_opensource_licenses.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage  7: L_collate_custom_licenses.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage  8: M_final_list_of_licenses.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage  9: N_extract_raw_modalities.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage 10: O_standardize_raw_modalities.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage 11: P_enrich_provider_info.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.3s
+
+Stage 12: Q_create_db_data.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage 13: R_filter_db_data.py
+  Status: ✅ SUCCESS
+  Details: Success in 0.2s
+
+Stage 14: S_compare_pipeline_with_supabase.py
+  Status: ✅ SUCCESS
+  Details: Success in 2.9s
 
 PIPELINE FLOW DIAGRAM:
 ================================================================================

@@ -1,10 +1,10 @@
 ================================================================================
 OPENSOURCE LICENSE MODELS REPORT
-Generated: 2025-09-30 08:27 AM IST
+Generated: 2025-10-01 09:02 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 31
+  Total models : 30
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -12,7 +12,7 @@ SUMMARY:
 
 OPENSOURCE LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
-  MIT: 13 models
+  MIT: 12 models
 
 Total license types: 2
 
@@ -235,16 +235,7 @@ MODEL 24: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 25: meituan/longcat-flash-chat
---------------------------------------------------
-  ID              : meituan/longcat-flash-chat
-  Canonical Slug  : meituan/longcat-flash-chat
-  HuggingFace ID  : meituan-longcat/LongCat-Flash-Chat
-  License Name    : MIT
-
-================================================================================
-
-MODEL 26: microsoft/mai-ds-r1
+MODEL 25: microsoft/mai-ds-r1
 --------------------------------------------------
   ID              : microsoft/mai-ds-r1:free
   Canonical Slug  : microsoft/mai-ds-r1
@@ -253,7 +244,7 @@ MODEL 26: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 27: moonshotai/kimi-dev-72b
+MODEL 26: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID              : moonshotai/kimi-dev-72b:free
   Canonical Slug  : moonshotai/kimi-dev-72b
@@ -262,7 +253,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-vl-a3b-thinking
+MODEL 27: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID              : moonshotai/kimi-vl-a3b-thinking:free
   Canonical Slug  : moonshotai/kimi-vl-a3b-thinking
@@ -271,7 +262,7 @@ MODEL 28: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 29: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -280,7 +271,7 @@ MODEL 29: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -289,7 +280,7 @@ MODEL 30: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 31: z-ai/glm-4.5-air
+MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air

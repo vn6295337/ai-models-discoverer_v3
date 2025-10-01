@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-09-30 09:10 AM IST
+Generated: 2025-10-01 09:02 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 51
+  Total models      : 50
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -23,7 +23,6 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: OpenAI
    2 models: TNG Technology
    1 models: ArliAI
-   1 models: Meituan
    1 models: Microsoft
    1 models: NVIDIA
    1 models: Shisa AI
@@ -31,10 +30,10 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Z.AI
    1 models: xAI
 
-Total unique model providers: 17
+Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  22 models: China
+  21 models: China
   20 models: United States
    6 models: France
    2 models: Germany
@@ -53,7 +52,6 @@ MODEL FAMILY DISTRIBUTION:
    2 models: openai
    2 models: tng technology
    1 models: arliai
-   1 models: meituan
    1 models: microsoft
    1 models: nvidia
    1 models: shisa ai
@@ -61,7 +59,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: xai
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 16
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -430,21 +428,7 @@ MODEL 26: google/gemma-3n-e4b-it
 
 ================================================================================
 
-MODEL 27: meituan/longcat-flash-chat
---------------------------------------------------
-  ID: meituan/longcat-flash-chat
-  Original Name: Meituan: LongCat Flash Chat
-  HuggingFace ID: meituan-longcat/LongCat-Flash-Chat
-  Canonical Slug: meituan/longcat-flash-chat
-  Clean Model Name: LongCat Flash Chat
-  Model Provider: Meituan
-  Model Provider Country: China
-  Model Family: meituan
-  Official URL: https://longcat.chat/
-
-================================================================================
-
-MODEL 28: meta-llama/llama-3.2-3b-instruct
+MODEL 27: meta-llama/llama-3.2-3b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.2-3b-instruct:free
   Original Name: Meta: Llama 3.2 3B Instruct (free)
@@ -458,7 +442,7 @@ MODEL 28: meta-llama/llama-3.2-3b-instruct
 
 ================================================================================
 
-MODEL 29: meta-llama/llama-3.3-70b-instruct
+MODEL 28: meta-llama/llama-3.3-70b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-70b-instruct:free
   Original Name: Meta: Llama 3.3 70B Instruct (free)
@@ -472,7 +456,7 @@ MODEL 29: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 30: meta-llama/llama-3.3-8b-instruct
+MODEL 29: meta-llama/llama-3.3-8b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-8b-instruct:free
   Original Name: Meta: Llama 3.3 8B Instruct (free)
@@ -486,7 +470,7 @@ MODEL 30: meta-llama/llama-3.3-8b-instruct
 
 ================================================================================
 
-MODEL 31: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 30: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -500,7 +484,7 @@ MODEL 31: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 32: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 31: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -514,7 +498,7 @@ MODEL 32: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 33: microsoft/mai-ds-r1
+MODEL 32: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -528,7 +512,7 @@ MODEL 33: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 34: mistralai/devstral-small-2505
+MODEL 33: mistralai/devstral-small-2505
 --------------------------------------------------
   ID: mistralai/devstral-small-2505:free
   Original Name: Mistral: Devstral Small 2505 (free)
@@ -542,7 +526,7 @@ MODEL 34: mistralai/devstral-small-2505
 
 ================================================================================
 
-MODEL 35: mistralai/mistral-7b-instruct
+MODEL 34: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -556,7 +540,7 @@ MODEL 35: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 36: mistralai/mistral-nemo
+MODEL 35: mistralai/mistral-nemo
 --------------------------------------------------
   ID: mistralai/mistral-nemo:free
   Original Name: Mistral: Mistral Nemo (free)
@@ -570,7 +554,7 @@ MODEL 36: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 37: mistralai/mistral-small-24b-instruct-2501
+MODEL 36: mistralai/mistral-small-24b-instruct-2501
 --------------------------------------------------
   ID: mistralai/mistral-small-24b-instruct-2501:free
   Original Name: Mistral: Mistral Small 3 (free)
@@ -584,7 +568,7 @@ MODEL 37: mistralai/mistral-small-24b-instruct-2501
 
 ================================================================================
 
-MODEL 38: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 37: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -598,7 +582,7 @@ MODEL 38: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 39: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 38: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
@@ -612,7 +596,7 @@ MODEL 39: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 40: moonshotai/kimi-dev-72b
+MODEL 39: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID: moonshotai/kimi-dev-72b:free
   Original Name: MoonshotAI: Kimi Dev 72B (free)
@@ -626,7 +610,7 @@ MODEL 40: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 41: moonshotai/kimi-k2
+MODEL 40: moonshotai/kimi-k2
 --------------------------------------------------
   ID: moonshotai/kimi-k2:free
   Original Name: MoonshotAI: Kimi K2 0711 (free)
@@ -640,7 +624,7 @@ MODEL 41: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 42: moonshotai/kimi-vl-a3b-thinking
+MODEL 41: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID: moonshotai/kimi-vl-a3b-thinking:free
   Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
@@ -654,7 +638,7 @@ MODEL 42: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 43: nvidia/nemotron-nano-9b-v2
+MODEL 42: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -668,7 +652,7 @@ MODEL 43: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 44: openai/gpt-oss-120b
+MODEL 43: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -682,7 +666,7 @@ MODEL 44: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 45: openai/gpt-oss-20b
+MODEL 44: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -696,7 +680,7 @@ MODEL 45: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 46: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 45: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
@@ -710,7 +694,7 @@ MODEL 46: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 47: tencent/hunyuan-a13b-instruct
+MODEL 46: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -724,7 +708,7 @@ MODEL 47: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 48: tngtech/deepseek-r1t-chimera
+MODEL 47: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -738,7 +722,7 @@ MODEL 48: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 49: tngtech/deepseek-r1t2-chimera
+MODEL 48: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -752,7 +736,7 @@ MODEL 49: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 50: x-ai/grok-4-fast
+MODEL 49: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: xAI: Grok 4 Fast (free)
@@ -766,7 +750,7 @@ MODEL 50: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 51: z-ai/glm-4.5-air
+MODEL 50: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

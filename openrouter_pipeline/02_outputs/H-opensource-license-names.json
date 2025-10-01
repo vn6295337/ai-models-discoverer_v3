@@ -1,17 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2025-09-30 08:27 AM IST",
-    "total_models": 31,
+    "generated_at": "2025-10-01 09:02 AM IST",
+    "total_models": 30,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
-    {
-      "id": "meituan/longcat-flash-chat",
-      "canonical_slug": "meituan/longcat-flash-chat",
-      "name": "Meituan: LongCat Flash Chat",
-      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
-      "license_name": "MIT"
-    },
     {
       "id": "deepseek/deepseek-chat-v3.1:free",
       "canonical_slug": "deepseek/deepseek-chat-v3.1",

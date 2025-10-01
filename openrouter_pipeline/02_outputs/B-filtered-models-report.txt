@@ -1,34 +1,34 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-09-30 08:23 AM IST
+Generated: 2025-10-01 08:55 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 327
-  Models passed all filters: 51
-  Models excluded: 276
-  Success rate: 15.6%
+  Total models processed: 328
+  Models passed all filters: 50
+  Models excluded: 278
+  Success rate: 15.2%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 327 models
-    Excluded: 273 models (non-free pricing)
-    Remaining: 54 models
+    Input: 328 models
+    Excluded: 275 models (non-free pricing)
+    Remaining: 53 models
 
   Step 2 - Billing Description Filter:
-    Input: 54 models
+    Input: 53 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 54 models
+    Remaining: 53 models
 
   Step 3 - Keyword Filter:
-    Input: 54 models
+    Input: 53 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 51 models
+    Final: 50 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 273 models with non-free pricing (details omitted due to volume)
+Excluded 275 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -256,13 +256,6 @@ PROVIDER: XAI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: MEITUAN (1 models)
---------------------------------------------------
-   1. Meituan: LongCat Flash Chat
-      ID: meituan/longcat-flash-chat
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: NVIDIA (1 models)
 --------------------------------------------------
    1. NVIDIA: Nemotron Nano 9B V2 (free)
@@ -314,10 +307,10 @@ PROVIDER: ARLIAI (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 19
-  Total models passed all filters: 51
-  Models excluded by pricing: 273
+  Total providers: 18
+  Total models passed all filters: 50
+  Models excluded by pricing: 275
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 276
+  Total exclusions: 278
   ✓ All filtered models accounted for
