@@ -13,6 +13,92 @@ import logging
 logger = logging.getLogger(__name__)
 
 
+
+from urllib.parse import unquote, parse_qsl
+
+
+def _parse_postgres_url(url: str):
+    """Parse PostgreSQL connection URI into connection kwargs.
+
+    Returns a dict suitable for psycopg2.connect(**kwargs) or None if parsing fails."""
+    if not url or '://' not in url:
+        return None
+
+    scheme, rest = url.split('://', 1)
+    if scheme not in ('postgres', 'postgresql'):
+        return None
+
+    if '@' not in rest:
+        return None
+
+    user_part, host_part = rest.rsplit('@', 1)
+
+    if ':' in user_part:
+        user, password = user_part.split(':', 1)
+    else:
+        user, password = user_part, ''
+
+    user = unquote(user)
+    password = unquote(password)
+
+    if '?' in host_part:
+        host_main, query = host_part.split('?', 1)
+    else:
+        host_main, query = host_part, ''
+
+    query_params = {}
+    if query:
+        for key, value in parse_qsl(query, keep_blank_values=True):
+            if key:
+                query_params[key] = unquote(value)
+
+    if '/' in host_main:
+        host_port, db_path = host_main.split('/', 1)
+        dbname = unquote(db_path) if db_path else None
+    else:
+        host_port, dbname = host_main, None
+
+    host = host_port
+    port = None
+
+    if host_port.startswith('['):
+        # IPv6 literal like [::1]:5432
+        if ']' in host_port:
+            closing = host_port.find(']')
+            host = host_port[1:closing]
+            remainder = host_port[closing + 1:]
+            if remainder.startswith(':'):
+                port = remainder[1:]
+    elif ':' in host_port:
+        host, port = host_port.split(':', 1)
+
+    host = unquote(host)
+    if port:
+        port = unquote(port)
+
+    conn_kwargs = {}
+    if user:
+        conn_kwargs['user'] = user
+    if password:
+        conn_kwargs['password'] = password
+    if host:
+        conn_kwargs['host'] = host
+    if port:
+        conn_kwargs['port'] = port
+    if dbname:
+        # Strip additional path components if present
+        dbname = dbname.split('/', 1)[0]
+        if dbname:
+            conn_kwargs['dbname'] = dbname
+
+    # Merge query params (sslmode, options, etc.)
+    for key, value in query_params.items():
+        if value:
+            conn_kwargs[key] = value
+
+    return conn_kwargs if conn_kwargs else None
+
+
 def get_pipeline_db_connection():
     """
     Create PostgreSQL connection using PIPELINE_SUPABASE_URL.
@@ -28,7 +114,11 @@ def get_pipeline_db_connection():
         return None
 
     try:
-        conn = psycopg2.connect(pipeline_url)
+        conn_kwargs = _parse_postgres_url(pipeline_url)
+        if conn_kwargs:
+            conn = psycopg2.connect(**conn_kwargs)
+        else:
+            conn = psycopg2.connect(pipeline_url)
         conn.autocommit = False  # Use transactions
         return conn
     except Exception as e:

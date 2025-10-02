@@ -9,6 +9,14 @@ from pathlib import Path
 from dotenv import load_dotenv
 import psycopg2
 from psycopg2.extras import RealDictCursor
+import sys
+
+# Import database utilities
+sys.path.append(str(Path(__file__).resolve().parent.parent.parent))
+try:
+    from db_utils import get_pipeline_db_connection
+except ImportError:
+    get_pipeline_db_connection = None
 
 # Load environment variables
 env_path = Path(__file__).parent / ".env.local"
@@ -28,8 +36,18 @@ print(f"Testing with pipeline_writer role")
 print("=" * 70)
 print()
 
+conn = None
+
 try:
-    conn = psycopg2.connect(PIPELINE_URL)
+    if get_pipeline_db_connection is None:
+        print("❌ db_utils not available - cannot create database connection")
+        exit(1)
+
+    conn = get_pipeline_db_connection()
+    if not conn:
+        print("❌ Failed to initialize database connection using PIPELINE_SUPABASE_URL")
+        exit(1)
+
     cursor = conn.cursor(cursor_factory=RealDictCursor)
 
     # Test 1: Read from ai_models_main_v3

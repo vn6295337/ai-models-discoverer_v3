@@ -14,6 +14,13 @@ from pathlib import Path
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', '04_utils'))
 from output_utils import get_ist_timestamp
 
+# Import database utilities
+sys.path.append(str(Path(__file__).parent.parent.parent))
+try:
+    from db_utils import get_pipeline_db_connection
+except ImportError:
+    get_pipeline_db_connection = None
+
 try:
     import psycopg2
     from psycopg2.extras import RealDictCursor
@@ -42,7 +49,6 @@ except ImportError:
 # Configuration
 PIPELINE_DATA_FILE = Path(__file__).parent / "../02_outputs" / "E-created-db-data.json"
 REPORT_FILE = Path(__file__).parent / "../02_outputs" / "F-comparison-report.txt"
-PIPELINE_SUPABASE_URL = os.getenv("PIPELINE_SUPABASE_URL")
 TABLE_NAME = "working_version"
 INFERENCE_PROVIDER = "Google"
 
@@ -52,16 +58,14 @@ def get_db_connection():
         print("psycopg2 not available - running in pipeline-only mode")
         return None
 
-    if not PIPELINE_SUPABASE_URL:
-        print("Missing PIPELINE_SUPABASE_URL environment variable")
+    if get_pipeline_db_connection is None:
+        print("db_utils module not available - cannot connect to Supabase")
         return None
 
-    try:
-        conn = psycopg2.connect(PIPELINE_SUPABASE_URL)
-        return conn
-    except Exception as e:
-        print(f"Failed to connect to database: {e}")
-        return None
+    conn = get_pipeline_db_connection()
+    if not conn:
+        print("Failed to connect to Supabase using configured credentials")
+    return conn
 
 def load_pipeline_data() -> List[Dict[str, Any]]:
     """Load pipeline data from E-created-db-data.json"""

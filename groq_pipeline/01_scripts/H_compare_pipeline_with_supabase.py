@@ -7,9 +7,17 @@ Compares field values between stage-5-data-normalization.json and Supabase worki
 import csv
 import os
 import json
+import sys
 from typing import Dict, List, Optional, Any
 from pathlib import Path
 from datetime import datetime
+
+# Import database utilities
+sys.path.append(str(Path(__file__).parent.parent.parent))
+try:
+    from db_utils import get_pipeline_db_connection
+except ImportError:
+    get_pipeline_db_connection = None
 
 try:
     import psycopg2
@@ -42,7 +50,6 @@ except ImportError:
 # Configuration
 PIPELINE_DATA_FILE = "../02_outputs/stage-5-data-normalization.json"
 REPORT_FILE = "../02_outputs/H-groq-field-comparison-report.txt"
-PIPELINE_SUPABASE_URL = os.getenv("PIPELINE_SUPABASE_URL")
 TABLE_NAME = "working_version"
 INFERENCE_PROVIDER = "Groq"
 
@@ -58,16 +65,14 @@ def get_db_connection():
         print("psycopg2 not available - running in pipeline-only mode")
         return None
 
-    if not PIPELINE_SUPABASE_URL:
-        print("Missing PIPELINE_SUPABASE_URL environment variable")
+    if get_pipeline_db_connection is None:
+        print("db_utils module not available - cannot connect to Supabase")
         return None
 
-    try:
-        conn = psycopg2.connect(PIPELINE_SUPABASE_URL)
-        return conn
-    except Exception as e:
-        print(f"Failed to connect to database: {e}")
-        return None
+    conn = get_pipeline_db_connection()
+    if not conn:
+        print("Failed to connect to Supabase using configured credentials")
+    return conn
 
 def load_pipeline_data() -> List[Dict[str, Any]]:
     """Load pipeline data from stage-5-data-normalization.json"""
