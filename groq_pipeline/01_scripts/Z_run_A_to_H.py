@@ -142,7 +142,8 @@ def execute_script(script_info: Dict) -> Tuple[bool, str, float]:
             [sys.executable, script_name],
             capture_output=True,
             text=True,
-            timeout=1800  # 30 minute timeout
+            timeout=1800,  # 30 minute timeout
+            env=os.environ  # Pass through all environment variables
         )
 
         duration = time.time() - start_time

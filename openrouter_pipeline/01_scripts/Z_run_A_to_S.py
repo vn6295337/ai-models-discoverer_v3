@@ -48,7 +48,8 @@ def run_script(script_name: str, use_venv: bool = True) -> Tuple[bool, str]:
             capture_output=True,
             text=True,
             timeout=900,  # 15 minute timeout per script
-            cwd=os.path.dirname(__file__)  # Run from 01_scripts directory
+            cwd=os.path.dirname(__file__),  # Run from 01_scripts directory
+            env=os.environ  # Pass through all environment variables
         )
         
         end_time = time.time()
