@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-02 10:23 AM IST",
+    "generated_at": "2025-10-02 11:09 AM IST",
     "total_models": 52,
     "pipeline_stage": "P_enrich_provider_info"
   },
@@ -38,10 +38,10 @@
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "no_google_model",
       "inference_provider": "OpenRouter",
-      "model_provider": "Unknown",
-      "model_provider_country": "Unknown",
-      "model_family": "alibaba",
-      "official_url": "Unknown"
+      "model_provider": "Alibaba Cloud",
+      "model_provider_country": "China",
+      "model_family": "alibaba cloud",
+      "official_url": "https://alibabacloud.com/"
     },
     {
       "id": "meituan/longcat-flash-chat:free",

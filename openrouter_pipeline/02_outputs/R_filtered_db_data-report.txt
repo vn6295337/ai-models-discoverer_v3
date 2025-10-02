@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-02 10:23 AM IST
+Generated: 2025-10-02 11:09 AM IST
 ================================================================================
 
 SUMMARY:
@@ -61,7 +61,7 @@ FINALIZED DATABASE DATA SUMMARY:
 ================================================================================
 
 PROVIDER DISTRIBUTION (FINALIZED DATA):
-  10 models: Alibaba Cloud
+  11 models: Alibaba Cloud
    6 models: DeepSeek
    6 models: Google
    6 models: Mistral AI
@@ -75,11 +75,10 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Microsoft
    1 models: NVIDIA
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
    1 models: xAI
 
-Total providers: 17
+Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
   49 models: Unknown

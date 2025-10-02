@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-02 10:23 AM IST
+Generated: 2025-10-02 11:09 AM IST
 ================================================================================
 
 SUMMARY:
@@ -10,20 +10,10 @@ SUMMARY:
   Processor         : P_enrich_provider_info.py
   Output            : P-provider-enriched.json
 
-ACTION ITEMS - UNKNOWN MAPPINGS:
-==================================================
-UNKNOWN PROVIDERS (1 models):
-  Add these provider mappings to 08_provider_enrichment.json:
-    "alibaba": ["Provider Name", "Country"],
-
-UNKNOWN OFFICIAL URLS (1 unique families):
-  Add these URL mappings to family_official_urls:
-    "alibaba": "https://official-url-here",
-
-==================================================
+✓ ALL PROVIDERS AND FAMILIES MAPPED SUCCESSFULLY
 
 MODEL PROVIDER DISTRIBUTION:
-  10 models: Alibaba Cloud
+  11 models: Alibaba Cloud
    6 models: DeepSeek
    6 models: Google
    6 models: Mistral AI
@@ -38,24 +28,22 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: NVIDIA
    1 models: Shisa AI
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
    1 models: xAI
 
-Total unique model providers: 18
+Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  22 models: China
+  23 models: China
   20 models: United States
    6 models: France
    2 models: Germany
    1 models: Japan
-   1 models: Unknown
 
-Total unique countries: 6
+Total unique countries: 5
 
 MODEL FAMILY DISTRIBUTION:
-  10 models: alibaba cloud
+  11 models: alibaba cloud
    6 models: deepseek
    6 models: gemma
    6 models: mistral ai
@@ -64,7 +52,6 @@ MODEL FAMILY DISTRIBUTION:
    3 models: moonshot ai
    2 models: openai
    2 models: tng technology
-   1 models: alibaba
    1 models: arliai
    1 models: meituan
    1 models: microsoft
@@ -74,26 +61,12 @@ MODEL FAMILY DISTRIBUTION:
    1 models: xai
    1 models: z.ai
 
-Total unique model families: 18
+Total unique model families: 17
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
 
-MODEL 1: alibaba/tongyi-deepresearch-30b-a3b
---------------------------------------------------
-  ID: alibaba/tongyi-deepresearch-30b-a3b:free
-  Original Name: Tongyi DeepResearch 30B A3B (free)
-  HuggingFace ID: Alibaba-NLP/Tongyi-DeepResearch-30B-A3B
-  Canonical Slug: alibaba/tongyi-deepresearch-30b-a3b
-  Clean Model Name: Tongyi DeepResearch 30B A3B
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: alibaba
-  Official URL: Unknown
-
-================================================================================
-
-MODEL 2: qwen/qwen-2.5-72b-instruct
+MODEL 1: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID: qwen/qwen-2.5-72b-instruct:free
   Original Name: Qwen2.5 72B Instruct (free)
@@ -107,7 +80,7 @@ MODEL 2: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 3: qwen/qwen-2.5-coder-32b-instruct
+MODEL 2: qwen/qwen-2.5-coder-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen-2.5-coder-32b-instruct:free
   Original Name: Qwen2.5 Coder 32B Instruct (free)
@@ -121,7 +94,7 @@ MODEL 3: qwen/qwen-2.5-coder-32b-instruct
 
 ================================================================================
 
-MODEL 4: qwen/qwen2.5-vl-32b-instruct
+MODEL 3: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -135,7 +108,7 @@ MODEL 4: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 5: qwen/qwen2.5-vl-72b-instruct
+MODEL 4: qwen/qwen2.5-vl-72b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-72b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)
@@ -149,7 +122,7 @@ MODEL 5: qwen/qwen2.5-vl-72b-instruct
 
 ================================================================================
 
-MODEL 6: qwen/qwen3-14b-04-28
+MODEL 5: qwen/qwen3-14b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-14b:free
   Original Name: Qwen: Qwen3 14B (free)
@@ -163,7 +136,7 @@ MODEL 6: qwen/qwen3-14b-04-28
 
 ================================================================================
 
-MODEL 7: qwen/qwen3-235b-a22b-04-28
+MODEL 6: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -177,7 +150,7 @@ MODEL 7: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 8: qwen/qwen3-30b-a3b-04-28
+MODEL 7: qwen/qwen3-30b-a3b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-30b-a3b:free
   Original Name: Qwen: Qwen3 30B A3B (free)
@@ -191,7 +164,7 @@ MODEL 8: qwen/qwen3-30b-a3b-04-28
 
 ================================================================================
 
-MODEL 9: qwen/qwen3-4b-04-28
+MODEL 8: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -205,7 +178,7 @@ MODEL 9: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 10: qwen/qwen3-8b-04-28
+MODEL 9: qwen/qwen3-8b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-8b:free
   Original Name: Qwen: Qwen3 8B (free)
@@ -219,13 +192,27 @@ MODEL 10: qwen/qwen3-8b-04-28
 
 ================================================================================
 
-MODEL 11: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 10: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
   HuggingFace ID: Qwen/Qwen3-Coder-480B-A35B-Instruct
   Canonical Slug: qwen/qwen3-coder-480b-a35b-07-25
   Clean Model Name: Qwen3 Coder 480B A35B
+  Model Provider: Alibaba Cloud
+  Model Provider Country: China
+  Model Family: alibaba cloud
+  Official URL: https://alibabacloud.com/
+
+================================================================================
+
+MODEL 11: alibaba/tongyi-deepresearch-30b-a3b
+--------------------------------------------------
+  ID: alibaba/tongyi-deepresearch-30b-a3b:free
+  Original Name: Tongyi DeepResearch 30B A3B (free)
+  HuggingFace ID: Alibaba-NLP/Tongyi-DeepResearch-30B-A3B
+  Canonical Slug: alibaba/tongyi-deepresearch-30b-a3b
+  Clean Model Name: Tongyi DeepResearch 30B A3B
   Model Provider: Alibaba Cloud
   Model Provider Country: China
   Model Family: alibaba cloud
