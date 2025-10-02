@@ -78,6 +78,7 @@ jobs:
         GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
         SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
       run: |
         python 01_scripts/Z_run_A_to_F.py --auto-all
 

@@ -52,6 +52,7 @@ jobs:
       working-directory: groq_pipeline
       env:
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+        PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
         DISPLAY: :99
       run: |
         echo "🚀 Starting Groq Pipeline..."
