@@ -1,10 +1,24 @@
 {
   "metadata": {
-    "generated_at": "2025-10-01 08:55 AM IST",
-    "total_models": 38,
+    "generated_at": "2025-10-02 10:22 AM IST",
+    "total_models": 40,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
+    {
+      "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
+      "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",
+      "name": "Tongyi DeepResearch 30B A3B (free)",
+      "hugging_face_id": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
+      "license_info_url": "https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B/blob/main/README.md"
+    },
+    {
+      "id": "meituan/longcat-flash-chat:free",
+      "canonical_slug": "meituan/longcat-flash-chat",
+      "name": "Meituan: LongCat Flash Chat (free)",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "license_info_url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE"
+    },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",

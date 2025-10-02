@@ -1,10 +1,21 @@
 {
   "metadata": {
-    "generated_at": "2025-10-01 09:02 AM IST",
-    "total_models": 30,
+    "generated_at": "2025-10-02 10:23 AM IST",
+    "total_models": 32,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
+    {
+      "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
+      "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",
+      "original_name": "Tongyi DeepResearch 30B A3B (free)",
+      "hugging_face_id": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
+      "clean_model_name": "Tongyi DeepResearch 30B A3B",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B/blob/main/README.md",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
     {
       "id": "arliai/qwq-32b-arliai-rpr-v1:free",
       "canonical_slug": "arliai/qwq-32b-arliai-rpr-v1",
@@ -79,6 +90,17 @@
       "clean_model_name": "R1 Distill Llama 70B",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B/blob/main/LICENSE",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT"
+    },
+    {
+      "id": "meituan/longcat-flash-chat:free",
+      "canonical_slug": "meituan/longcat-flash-chat",
+      "original_name": "Meituan: LongCat Flash Chat (free)",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "clean_model_name": "LongCat Flash Chat",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE",
       "license_name": "MIT",
       "license_url": "https://opensource.org/licenses/MIT"
     },

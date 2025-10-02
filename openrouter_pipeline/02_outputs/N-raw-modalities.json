@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-01 09:02 AM IST",
-    "total_models": 50,
+    "generated_at": "2025-10-02 10:23 AM IST",
+    "total_models": 52,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -12,6 +12,24 @@
       "hugging_face_id": "",
       "clean_model_name": "Grok 4 Fast",
       "raw_input_modalities": "text, image",
+      "raw_output_modalities": "text"
+    },
+    {
+      "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
+      "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",
+      "original_name": "Tongyi DeepResearch 30B A3B (free)",
+      "hugging_face_id": "Alibaba-NLP/Tongyi-DeepResearch-30B-A3B",
+      "clean_model_name": "Tongyi DeepResearch 30B A3B",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text"
+    },
+    {
+      "id": "meituan/longcat-flash-chat:free",
+      "canonical_slug": "meituan/longcat-flash-chat",
+      "original_name": "Meituan: LongCat Flash Chat (free)",
+      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "clean_model_name": "LongCat Flash Chat",
+      "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },
     {

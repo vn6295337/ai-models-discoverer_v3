@@ -1,11 +1,11 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-01 09:02 AM IST
+Generated: 2025-10-02 10:23 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 50
-  Models kept          : 47
+  Input models         : 52
+  Models kept          : 49
   Models removed       : 3
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
@@ -71,15 +71,17 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Cognitive Computations
+   1 models: Meituan
    1 models: Microsoft
    1 models: NVIDIA
    1 models: Tencent
+   1 models: Unknown
    1 models: Z.AI
    1 models: xAI
 
-Total providers: 15
+Total providers: 17
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  47 models: Unknown
+  49 models: Unknown
 
 Total families: 1
