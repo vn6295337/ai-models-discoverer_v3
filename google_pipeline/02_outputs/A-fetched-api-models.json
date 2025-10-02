@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-09-30 13:01:16 IST",
+    "generated": "2025-10-02 10:23:40 IST",
     "total_models": 64,
     "api_source": "Google Generative Language API"
   },
@@ -994,7 +994,8 @@
       "temperature": 1,
       "topP": 0.95,
       "topK": 64,
-      "maxTemperature": 2
+      "maxTemperature": 2,
+      "thinking": true
     },
     {
       "name": "models/gemini-2.5-flash-native-audio-preview-09-2025",
@@ -1010,7 +1011,8 @@
       "temperature": 1,
       "topP": 0.95,
       "topK": 64,
-      "maxTemperature": 2
+      "maxTemperature": 2,
+      "thinking": true
     }
   ]
 }
