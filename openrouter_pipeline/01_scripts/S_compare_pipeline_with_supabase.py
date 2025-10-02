@@ -10,17 +10,18 @@ from typing import Dict, List, Optional, Any
 from pathlib import Path
 
 try:
-    from supabase import create_client, Client
-    SUPABASE_AVAILABLE = True
+    import psycopg2
+    from psycopg2.extras import RealDictCursor
+    PSYCOPG2_AVAILABLE = True
 except ImportError:
-    print("Warning: supabase package not found. Running in pipeline-only mode.")
-    Client = None
-    SUPABASE_AVAILABLE = False
+    print("Warning: psycopg2 package not found. Running in pipeline-only mode.")
+    PSYCOPG2_AVAILABLE = False
 
 try:
     from dotenv import load_dotenv
     # Check for .env in multiple possible locations
     env_paths = [
+        Path(__file__).parent.parent.parent / ".env.local",  # Project root .env.local (FIRST priority)
         Path("/home/km_project/.env"),  # Home directory
         Path(__file__).parent.parent / ".env",  # openrouter_pipeline directory
         Path(__file__).parent / ".env"  # 01_scripts directory
@@ -42,26 +43,25 @@ import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "
 # Configuration
 PIPELINE_DATA_FILE = get_input_file_path("R_filtered_db_data.json")
 REPORT_FILE = get_output_file_path("S-field-comparison-report.txt")
-SUPABASE_URL = os.getenv("SUPABASE_URL")
-SUPABASE_ANON_KEY = os.getenv("SUPABASE_ANON_KEY") or os.getenv("SUPABASE_KEY")
+PIPELINE_SUPABASE_URL = os.getenv("PIPELINE_SUPABASE_URL")
 TABLE_NAME = "working_version"
 INFERENCE_PROVIDER = "OpenRouter"
 
-def get_supabase_client() -> Optional[Client]:
-    """Initialize Supabase client"""
-    if not SUPABASE_AVAILABLE:
-        print("Supabase not available - running in pipeline-only mode")
+def get_db_connection():
+    """Initialize PostgreSQL connection using pipeline_writer role"""
+    if not PSYCOPG2_AVAILABLE:
+        print("psycopg2 not available - running in pipeline-only mode")
         return None
 
-    if not SUPABASE_URL or not SUPABASE_ANON_KEY:
-        print("Missing SUPABASE_URL or SUPABASE_ANON_KEY environment variables")
+    if not PIPELINE_SUPABASE_URL:
+        print("Missing PIPELINE_SUPABASE_URL environment variable")
         return None
 
     try:
-        client = create_client(SUPABASE_URL, SUPABASE_ANON_KEY)
-        return client
+        conn = psycopg2.connect(PIPELINE_SUPABASE_URL)
+        return conn
     except Exception as e:
-        print(f"Failed to connect to Supabase: {e}")
+        print(f"Failed to connect to database: {e}")
         return None
 
 def load_pipeline_data() -> List[Dict[str, Any]]:
@@ -84,19 +84,25 @@ def load_pipeline_data() -> List[Dict[str, Any]]:
         print(f"Failed to load pipeline data: {e}")
         return []
 
-def load_supabase_data(client: Client) -> List[Dict[str, Any]]:
+def load_supabase_data(conn) -> List[Dict[str, Any]]:
     """Load OpenRouter data from Supabase working_version table"""
     try:
         print(f"Querying Supabase table '{TABLE_NAME}' for inference_provider='{INFERENCE_PROVIDER}'")
-        response = client.table(TABLE_NAME).select("*").eq("inference_provider", INFERENCE_PROVIDER).execute()
-        data = response.data if response.data else []
+        with conn.cursor(cursor_factory=RealDictCursor) as cur:
+            cur.execute(
+                f"SELECT * FROM {TABLE_NAME} WHERE inference_provider = %s",
+                (INFERENCE_PROVIDER,)
+            )
+            data = [dict(row) for row in cur.fetchall()]
+
         print(f"Loaded {len(data)} models from Supabase")
 
         # Debug: Check if table exists but has no OpenRouter data
         if len(data) == 0:
             print("No OpenRouter data found. Checking total table count...")
-            total_response = client.table(TABLE_NAME).select("*").limit(5).execute()
-            total_data = total_response.data if total_response.data else []
+            with conn.cursor(cursor_factory=RealDictCursor) as cur:
+                cur.execute(f"SELECT * FROM {TABLE_NAME} LIMIT 5")
+                total_data = [dict(row) for row in cur.fetchall()]
             print(f"Total rows in table (first 5): {len(total_data)}")
             if total_data:
                 print(f"Sample inference_provider values: {[row.get('inference_provider', 'None') for row in total_data]}")
@@ -307,15 +313,18 @@ def main():
             return False
 
         # Connect to Supabase and load data
-        client = get_supabase_client()
-        if not client:
+        conn = get_db_connection()
+        if not conn:
             print("Failed to connect to Supabase - creating report with pipeline data only")
             # Create report with pipeline data only
             create_comparison_report(pipeline_data, [])
             print(f"Comparison report (pipeline-only) saved to: {REPORT_FILE}")
             return True
 
-        supabase_data = load_supabase_data(client)
+        try:
+            supabase_data = load_supabase_data(conn)
+        finally:
+            conn.close()
 
         # Generate comparison report
         create_comparison_report(pipeline_data, supabase_data)

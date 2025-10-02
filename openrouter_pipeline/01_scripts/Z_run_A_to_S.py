@@ -158,13 +158,16 @@ def setup_environment(skip_venv: bool = False) -> bool:
     try:
         # 1. Create virtual environment
         print("🔄 Creating virtual environment...")
-        if os.path.exists("openrouter_env"):
+        script_dir = Path(__file__).parent.resolve()
+        venv_path = script_dir / "openrouter_env"
+
+        if venv_path.exists():
             print("   Virtual environment already exists, skipping creation")
         else:
             result = subprocess.run([
-                sys.executable, "-m", "venv", "openrouter_env"
+                sys.executable, "-m", "venv", str(venv_path)
             ], capture_output=True, text=True, timeout=60)
-            
+
             if result.returncode == 0:
                 print("✅ Virtual environment created successfully")
             else:
@@ -221,14 +224,14 @@ echo "🎉 Environment cleanup completed!"
         if requirements_file:
             print(f"🔄 Installing dependencies from {requirements_file}...")
 
-            # Determine pip path based on OS
+            # Determine pip path based on OS (use absolute path)
             if os.name == 'nt':  # Windows
-                pip_path = os.path.join("openrouter_env", "Scripts", "pip")
+                pip_path = venv_path / "Scripts" / "pip"
             else:  # Unix/Linux/Mac
-                pip_path = os.path.join("openrouter_env", "bin", "pip")
+                pip_path = venv_path / "bin" / "pip"
 
             result = subprocess.run([
-                pip_path, "install", "-r", str(requirements_file)
+                str(pip_path), "install", "-r", str(requirements_file)
             ], capture_output=True, text=True, timeout=300)
 
             if result.returncode == 0:
