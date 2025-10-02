@@ -1,0 +1,33 @@
+Supabase Google Working Version Refresh Report
+Last Run: 2025-10-02 07:09:26
+============================================================
+
+2025-10-02 07:09:26,362 - INFO - ============================================================
+2025-10-02 07:09:26,362 - INFO - SUPABASE GOOGLE DATA REFRESH STARTED
+2025-10-02 07:09:26,362 - INFO - ============================================================
+2025-10-02 07:09:27,000 - INFO - ✅ Database connection established
+2025-10-02 07:09:27,001 - INFO -    Target table: working_version_v3
+2025-10-02 07:09:27,119 - INFO - 📁 Loading finalized JSON data from /home/km_project/ai-models-discoverer_v2/google_pipeline/01_scripts/../02_outputs/E-created-db-data.json...
+2025-10-02 07:09:27,151 - INFO - ✅ Loaded 25 valid Google models from JSON
+2025-10-02 07:09:27,151 - INFO - 🧹 Preparing data for database insertion...
+2025-10-02 07:09:27,152 - INFO - ✅ Prepared 25 models for insertion
+2025-10-02 07:09:27,152 - INFO - 🛡️ CREATING BACKUP FOR ROLLBACK PROTECTION...
+2025-10-02 07:09:27,265 - INFO - ✅ Backed up 25 existing Google records
+2025-10-02 07:09:27,265 - INFO - 🗑️ Deleting existing Google records from working_version_v3...
+2025-10-02 07:09:27,389 - INFO - ✅ Successfully deleted 25 Google records
+2025-10-02 07:09:27,390 - INFO - 📤 Inserting 25 models into working_version_v3...
+2025-10-02 07:09:27,730 - INFO - ✅ Successfully inserted 25 models
+2025-10-02 07:09:27,738 - INFO - 🔍 Verifying insertion results...
+2025-10-02 07:09:27,882 - INFO - ============================================================
+2025-10-02 07:09:27,894 - INFO - 🎉 SUPABASE GOOGLE DATA REFRESH COMPLETED SUCCESSFULLY
+2025-10-02 07:09:27,899 - INFO - ============================================================
+2025-10-02 07:09:27,899 - INFO - 📊 Summary:
+2025-10-02 07:09:27,899 - INFO -    • Initial Google records: 25
+2025-10-02 07:09:27,899 - INFO -    • Records backed up: 25
+2025-10-02 07:09:27,900 - INFO -    • Records deleted: 25
+2025-10-02 07:09:27,900 - INFO -    • New records inserted: 25
+2025-10-02 07:09:27,900 - INFO -    • Final record count: 25
+2025-10-02 07:09:27,900 - INFO -    • Processing time: 0:00:01.519452
+2025-10-02 07:09:27,900 - INFO -    • Report file: /home/km_project/ai-models-discoverer_v2/google_pipeline/01_scripts/../02_outputs/refresh-supabase-working-version-report.txt
+2025-10-02 07:09:27,900 - INFO - ============================================================
+2025-10-02 07:09:27,924 - INFO - Database connection closed

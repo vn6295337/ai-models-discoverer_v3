@@ -72,7 +72,7 @@ JSON_FILE = SCRIPT_DIR / "../02_outputs" / "E-created-db-data.json"
 LOG_FILE = SCRIPT_DIR / "../02_outputs/refresh-supabase-working-version-report.txt"
 
 # Database configuration
-TABLE_NAME = "working_version_v3"
+TABLE_NAME = "working_version"
 INFERENCE_PROVIDER = "Google"
 
 # Setup logging

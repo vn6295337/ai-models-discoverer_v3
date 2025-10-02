@@ -79,8 +79,8 @@ def get_ist_timestamp():
 LOG_FILE = Path(__file__).parent.parent / "02_outputs" / "J-deploy-to-ai-models-main-report.txt"
 
 # Database configuration
-STAGING_TABLE = "working_version_v3"
-PRODUCTION_TABLE = "ai_models_main_v3"
+STAGING_TABLE = "working_version"
+PRODUCTION_TABLE = "ai_models_main"
 INFERENCE_PROVIDER = "Groq"
 
 # Setup logging

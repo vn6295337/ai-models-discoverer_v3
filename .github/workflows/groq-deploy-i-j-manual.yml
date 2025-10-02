@@ -43,6 +43,10 @@ jobs:
         GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
       run: |
         echo "✅ Environment variables set from GitHub secrets"
+        if [ -z "$PIPELINE_SUPABASE_URL" ]; then
+          echo "❌ ERROR: PIPELINE_SUPABASE_URL secret is not set"
+          exit 1
+        fi
 
     - name: Show execution plan
       run: |

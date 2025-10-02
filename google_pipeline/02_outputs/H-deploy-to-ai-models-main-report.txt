@@ -1,0 +1,35 @@
+Deploy to AI Models Main Log
+Last Run: 2025-10-02 07:09:50 IST
+============================================================
+
+2025-10-02 07:09:50,516 - INFO - ======================================================================
+2025-10-02 07:09:50,517 - INFO - GOOGLE PRODUCTION DEPLOYMENT STARTED
+2025-10-02 07:09:50,518 - INFO - ======================================================================
+2025-10-02 07:09:50,998 - INFO - ✅ Database connection established
+2025-10-02 07:09:50,999 - INFO -    Staging table: working_version_v3
+2025-10-02 07:09:50,999 - INFO -    Production table: ai_models_main_v3
+2025-10-02 07:09:51,174 - INFO - 📁 Loading Google data from working_version_v3...
+2025-10-02 07:09:51,242 - INFO - ✅ Loaded 25 Google records from staging
+2025-10-02 07:09:51,242 - INFO - 🧹 Preparing staging data for production deployment...
+2025-10-02 07:09:51,243 - INFO - ✅ Prepared 25 models for production deployment
+2025-10-02 07:09:51,243 - INFO - 🛡️ CREATING PRODUCTION BACKUP FOR ROLLBACK PROTECTION...
+2025-10-02 07:09:51,319 - INFO - ✅ Backed up 25 existing Google records from production
+2025-10-02 07:09:51,319 - INFO - 🗑️ Deleting existing Google records from ai_models_main_v3...
+2025-10-02 07:09:51,450 - INFO - ✅ Successfully deleted 25 Google records from production
+2025-10-02 07:09:51,450 - INFO - 🚀 Deploying 25 models to production (ai_models_main_v3)...
+2025-10-02 07:09:51,710 - INFO - ✅ Successfully deployed 25 models to production
+2025-10-02 07:09:51,711 - INFO - 🔍 Verifying production deployment results...
+2025-10-02 07:09:51,832 - INFO - ======================================================================
+2025-10-02 07:09:51,832 - INFO - 🎉 GOOGLE PRODUCTION DEPLOYMENT COMPLETED SUCCESSFULLY
+2025-10-02 07:09:51,832 - INFO - ======================================================================
+2025-10-02 07:09:51,832 - INFO - 📊 Deployment Summary:
+2025-10-02 07:09:51,832 - INFO -    • Staging records processed: 25
+2025-10-02 07:09:51,833 - INFO -    • Production records backed up: 25
+2025-10-02 07:09:51,833 - INFO -    • Production records deleted: 25
+2025-10-02 07:09:51,833 - INFO -    • New records deployed: 25
+2025-10-02 07:09:51,833 - INFO -    • Final production count: 25
+2025-10-02 07:09:51,833 - INFO -    • Deployment time: 0:00:01.313728
+2025-10-02 07:09:51,834 - INFO -    • Log file: /home/km_project/ai-models-discoverer_v2/google_pipeline/02_outputs/H-deploy-to-ai-models-main-report.txt
+2025-10-02 07:09:51,834 - INFO - ======================================================================
+2025-10-02 07:09:51,834 - INFO - 🚀 Google models successfully deployed to production!
+2025-10-02 07:09:51,835 - INFO - Database connection closed

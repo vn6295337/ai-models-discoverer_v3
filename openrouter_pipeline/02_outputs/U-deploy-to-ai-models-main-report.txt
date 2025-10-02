@@ -1,0 +1,35 @@
+Deploy to AI Models Main Log
+Last Run: 2025-10-02 07:08 AM IST
+============================================================
+
+2025-10-02 07:08:59,536 - INFO - ======================================================================
+2025-10-02 07:08:59,537 - INFO - OPENROUTER PRODUCTION DEPLOYMENT STARTED
+2025-10-02 07:08:59,537 - INFO - ======================================================================
+2025-10-02 07:09:00,054 - INFO - ✅ Database connection established
+2025-10-02 07:09:00,054 - INFO -    Staging table: working_version_v3
+2025-10-02 07:09:00,054 - INFO -    Production table: ai_models_main_v3
+2025-10-02 07:09:00,293 - INFO - 📁 Loading OpenRouter data from working_version_v3...
+2025-10-02 07:09:00,431 - INFO - ✅ Loaded 47 OpenRouter records from staging
+2025-10-02 07:09:00,431 - INFO - 🧹 Preparing staging data for production deployment...
+2025-10-02 07:09:00,432 - INFO - ✅ Prepared 47 models for production deployment
+2025-10-02 07:09:00,432 - INFO - 🛡️ CREATING PRODUCTION BACKUP FOR ROLLBACK PROTECTION...
+2025-10-02 07:09:00,514 - INFO - ✅ Backed up 47 existing OpenRouter records from production
+2025-10-02 07:09:00,514 - INFO - 🗑️ Deleting existing OpenRouter records from ai_models_main_v3...
+2025-10-02 07:09:00,626 - INFO - ✅ Successfully deleted 47 OpenRouter records from production
+2025-10-02 07:09:00,627 - INFO - 🚀 Deploying 47 models to production (ai_models_main_v3)...
+2025-10-02 07:09:00,899 - INFO - ✅ Successfully deployed 47 models to production
+2025-10-02 07:09:00,899 - INFO - 🔍 Verifying production deployment results...
+2025-10-02 07:09:01,014 - INFO - ======================================================================
+2025-10-02 07:09:01,015 - INFO - 🎉 OPENROUTER PRODUCTION DEPLOYMENT COMPLETED SUCCESSFULLY
+2025-10-02 07:09:01,015 - INFO - ======================================================================
+2025-10-02 07:09:01,015 - INFO - 📊 Deployment Summary:
+2025-10-02 07:09:01,015 - INFO -    • Staging records processed: 47
+2025-10-02 07:09:01,016 - INFO -    • Production records backed up: 47
+2025-10-02 07:09:01,016 - INFO -    • Production records deleted: 47
+2025-10-02 07:09:01,016 - INFO -    • New records deployed: 47
+2025-10-02 07:09:01,016 - INFO -    • Final production count: 47
+2025-10-02 07:09:01,016 - INFO -    • Deployment time: 0:00:01.477155
+2025-10-02 07:09:01,016 - INFO -    • Log file: /home/km_project/ai-models-discoverer_v2/openrouter_pipeline/01_scripts/../02_outputs/U-deploy-to-ai-models-main-report.txt
+2025-10-02 07:09:01,017 - INFO - ======================================================================
+2025-10-02 07:09:01,018 - INFO - 🚀 OpenRouter models successfully deployed to production!
+2025-10-02 07:09:01,019 - INFO - Database connection closed

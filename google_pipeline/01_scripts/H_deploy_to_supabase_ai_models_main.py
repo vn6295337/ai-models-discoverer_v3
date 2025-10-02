@@ -75,8 +75,8 @@ except ImportError:
 LOG_FILE = get_output_file_path("H-deploy-to-ai-models-main-report.txt")
 
 # Database configuration
-STAGING_TABLE = "working_version_v3"
-PRODUCTION_TABLE = "ai_models_main_v3"
+STAGING_TABLE = "working_version"
+PRODUCTION_TABLE = "ai_models_main"
 INFERENCE_PROVIDER = "Google"
 
 # Setup logging

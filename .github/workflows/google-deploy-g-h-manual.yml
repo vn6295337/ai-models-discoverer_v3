@@ -41,6 +41,10 @@ jobs:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
       run: |
         echo "✅ Environment variables set from GitHub secrets"
+        if [ -z "$PIPELINE_SUPABASE_URL" ]; then
+          echo "❌ ERROR: PIPELINE_SUPABASE_URL secret is not set"
+          exit 1
+        fi
 
     - name: Show execution plan
       run: |

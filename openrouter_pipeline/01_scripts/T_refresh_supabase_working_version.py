@@ -78,7 +78,7 @@ JSON_FILE = SCRIPT_DIR / get_input_file_path("R_filtered_db_data.json")
 LOG_FILE = SCRIPT_DIR / get_output_file_path("T-supabase-refresh-report.txt")
 
 # Database configuration
-TABLE_NAME = "working_version_v3"
+TABLE_NAME = "working_version"
 INFERENCE_PROVIDER = "OpenRouter"
 
 # Setup logging
