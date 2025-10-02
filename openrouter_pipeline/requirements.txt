@@ -12,6 +12,7 @@ numpy>=2.3.0
 
 # Database and API
 supabase>=2.18.0
+psycopg2-binary>=2.9.9
 huggingface-hub>=0.20.0
 
 # Configuration and environment
