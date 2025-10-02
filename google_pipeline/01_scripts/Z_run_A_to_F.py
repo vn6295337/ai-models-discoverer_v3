@@ -212,22 +212,35 @@ def setup_environment(skip_venv: bool = False) -> bool:
     print("🔧 ENVIRONMENT SETUP")
     print("=" * 80)
 
+    script_dir = Path(__file__).parent  # 01_scripts
+    config_dir = script_dir.parent / "03_configs"  # google_pipeline/03_configs
+    output_dir = script_dir.parent / "02_outputs"  # google_pipeline/02_outputs
+    requirements_file = config_dir / "requirements.txt"
+
     # Auto-detect GitHub Actions or use explicit flag
     github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
     if github_actions or skip_venv:
         environment_type = "GitHub Actions" if github_actions else "CI/CD"
         print(f"🚀 Detected {environment_type} environment")
         print("   Skipping virtual environment setup - using pre-installed dependencies")
+        if requirements_file.exists():
+            print(f"   Installing dependencies with system Python from {requirements_file}...")
+            result = subprocess.run([
+                sys.executable, "-m", "pip", "install", "-r", str(requirements_file)
+            ], capture_output=True, text=True, timeout=300, env={**os.environ, "PIP_BREAK_SYSTEM_PACKAGES": "1"})
+
+            if result.returncode == 0:
+                print("✅ Dependencies installed for system environment")
+            else:
+                print(f"❌ Failed to install dependencies: {result.stderr}")
+                return False
+        else:
+            print("⚠️  No requirements.txt found for dependency installation")
         print(f"✅ Environment setup completed ({environment_type} mode)")
         return True
 
     try:
         # Use script directory as reference point for consistent path resolution
-        script_dir = Path(__file__).parent  # 01_scripts
-        config_dir = script_dir.parent / "03_configs"  # google_pipeline/03_configs
-        output_dir = script_dir.parent / "02_outputs"  # google_pipeline/02_outputs
-
-        # Check configuration directory
         if not config_dir.exists():
             print("❌ Configuration directory not found")
             return False

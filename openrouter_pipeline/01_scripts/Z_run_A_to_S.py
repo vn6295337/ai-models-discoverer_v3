@@ -148,17 +148,37 @@ def setup_environment(skip_venv: bool = False) -> bool:
 
     # Auto-detect GitHub Actions or use explicit flag
     github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+
+    script_dir = Path(__file__).parent.resolve()
+    requirements_paths = [
+        script_dir.parent / "requirements.txt",
+        script_dir.parent / "03_configs" / "requirements.txt"
+    ]
+    requirements_file = next((req for req in requirements_paths if req.exists()), None)
+
     if github_actions or skip_venv:
         environment_type = "GitHub Actions" if github_actions else "CI/CD"
         print(f"🚀 Detected {environment_type} environment")
         print("   Skipping virtual environment setup - using pre-installed dependencies")
+        if requirements_file:
+            print(f"   Installing dependencies with system Python from {requirements_file}...")
+            result = subprocess.run([
+                sys.executable, "-m", "pip", "install", "-r", str(requirements_file)
+            ], capture_output=True, text=True, timeout=300, env={**os.environ, "PIP_BREAK_SYSTEM_PACKAGES": "1"})
+
+            if result.returncode == 0:
+                print("✅ Dependencies installed for system environment")
+            else:
+                print(f"❌ Failed to install dependencies: {result.stderr}")
+                return False
+        else:
+            print("⚠️  No requirements file found for dependency installation")
         print(f"✅ Environment setup completed ({environment_type} mode)")
         return True
 
     try:
         # 1. Create virtual environment
         print("🔄 Creating virtual environment...")
-        script_dir = Path(__file__).parent.resolve()
         venv_path = script_dir / "openrouter_env"
 
         if venv_path.exists():
@@ -210,17 +230,6 @@ echo "🎉 Environment cleanup completed!"
         print("✅ Environment cleanup script created")
         
         # 3. Install dependencies (if requirements.txt exists)
-        requirements_paths = [
-            Path("../requirements.txt"),           # Parent directory
-            Path("../03_configs/requirements.txt") # Config directory
-        ]
-
-        requirements_file = None
-        for req_path in requirements_paths:
-            if req_path.exists():
-                requirements_file = req_path
-                break
-
         if requirements_file:
             print(f"🔄 Installing dependencies from {requirements_file}...")
 

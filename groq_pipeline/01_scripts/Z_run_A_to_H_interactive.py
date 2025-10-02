@@ -182,9 +182,19 @@ def setup_environment(skip_venv: bool = False) -> bool:
 
     # Auto-detect GitHub Actions or use explicit flag
     github_actions = os.getenv('GITHUB_ACTIONS') == 'true'
+    dependencies = ["selenium", "webdriver-manager", "beautifulsoup4", "requests", "supabase", "psycopg2-binary", "python-dotenv"]
 
     if skip_venv or github_actions:
         print("📝 Skipping virtual environment setup (CI/CD mode)")
+        print("   Installing dependencies with system Python...")
+        result = subprocess.run([
+            sys.executable, "-m", "pip", "install", *dependencies
+        ], capture_output=True, text=True, timeout=300, env={**os.environ, "PIP_BREAK_SYSTEM_PACKAGES": "1"})
+
+        if result.returncode != 0:
+            print(f"❌ Failed to install dependencies: {result.stderr}")
+            return False
+        print("✅ Dependencies installed for system environment")
         return True
 
     # Check if virtual environment exists
@@ -204,8 +214,7 @@ def setup_environment(skip_venv: bool = False) -> bool:
     if pip_path.exists():
         print("📦 Installing dependencies...")
         result = subprocess.run([
-            str(pip_path), "install",
-            "selenium", "webdriver-manager", "beautifulsoup4", "requests", "supabase", "python-dotenv"
+            str(pip_path), "install", *dependencies
         ], capture_output=True, text=True)
 
         if result.returncode != 0:
