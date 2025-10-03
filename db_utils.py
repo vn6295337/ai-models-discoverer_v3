@@ -122,7 +122,9 @@ def get_pipeline_db_connection():
         conn.autocommit = False  # Use transactions
         return conn
     except Exception as e:
-        logger.error(f"Failed to connect to database: {str(e)}")
+        error_msg = f"Failed to connect to database: {str(e)}"
+        logger.error(error_msg)
+        print(f"[DB_UTILS ERROR] {error_msg}")  # Also print to stdout for visibility
         return None
 
 
