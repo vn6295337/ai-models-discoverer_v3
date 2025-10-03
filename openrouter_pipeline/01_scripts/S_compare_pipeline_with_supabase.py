@@ -55,6 +55,13 @@ INFERENCE_PROVIDER = "OpenRouter"
 
 def get_db_connection():
     """Initialize PostgreSQL connection using pipeline_writer role"""
+    # Diagnostic: Check if environment variable is set
+    pipeline_url = os.getenv("PIPELINE_SUPABASE_URL")
+    print(f"[DEBUG] PIPELINE_SUPABASE_URL environment variable: {'SET' if pipeline_url else 'NOT SET'}")
+    if pipeline_url:
+        print(f"[DEBUG] URL length: {len(pipeline_url)} characters")
+        print(f"[DEBUG] URL starts with: {pipeline_url[:20]}...")
+
     if not PSYCOPG2_AVAILABLE:
         print("psycopg2 not available - running in pipeline-only mode")
         return None
@@ -66,6 +73,8 @@ def get_db_connection():
     conn = get_pipeline_db_connection()
     if not conn:
         print("Failed to connect to Supabase using configured credentials")
+    else:
+        print("[DEBUG] Successfully connected to Supabase")
     return conn
 
 def load_pipeline_data() -> List[Dict[str, Any]]:
