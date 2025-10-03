@@ -57,6 +57,9 @@ def run_script(script_name: str, use_venv: bool = True) -> Tuple[bool, str]:
         
         if result.returncode == 0:
             print(f"✅ {script_name} completed successfully ({duration:.1f}s)")
+            # Print stdout to show diagnostic output
+            if result.stdout:
+                print(f"   Output: {result.stdout}")
             return True, f"Success in {duration:.1f}s"
         else:
             print(f"❌ {script_name} failed with return code {result.returncode}")
