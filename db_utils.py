@@ -5,6 +5,7 @@ Provides PostgreSQL connection helpers for pipeline_writer role
 """
 
 import os
+import socket
 import psycopg2
 from psycopg2.extras import execute_batch, RealDictCursor
 from typing import Optional, List, Dict, Any
@@ -15,6 +16,28 @@ logger = logging.getLogger(__name__)
 
 
 from urllib.parse import unquote, parse_qsl
+
+
+def _resolve_ipv4(hostname: str) -> Optional[str]:
+    """Resolve hostname to IPv4 address only (for GitHub Actions IPv6 compatibility).
+
+    Args:
+        hostname: The hostname to resolve
+
+    Returns:
+        IPv4 address string or None if resolution fails
+    """
+    try:
+        # Get IPv4 addresses only (AF_INET)
+        addr_info = socket.getaddrinfo(hostname, None, socket.AF_INET, socket.SOCK_STREAM)
+        if addr_info:
+            # Return the first IPv4 address
+            ipv4_addr = addr_info[0][4][0]
+            print(f"[DB_UTILS] Resolved {hostname} to IPv4: {ipv4_addr}")
+            return ipv4_addr
+    except socket.gaierror as e:
+        print(f"[DB_UTILS] Failed to resolve {hostname} to IPv4: {e}")
+    return None
 
 
 def _parse_postgres_url(url: str):
@@ -116,6 +139,16 @@ def get_pipeline_db_connection():
     try:
         conn_kwargs = _parse_postgres_url(pipeline_url)
         if conn_kwargs:
+            # Force IPv4 resolution for GitHub Actions compatibility
+            if 'host' in conn_kwargs:
+                original_host = conn_kwargs['host']
+                ipv4_addr = _resolve_ipv4(original_host)
+                if ipv4_addr:
+                    # Use hostaddr for direct IPv4 connection while preserving host for SSL
+                    conn_kwargs['hostaddr'] = ipv4_addr
+                else:
+                    print(f"[DB_UTILS] Warning: Could not resolve {original_host} to IPv4, attempting connection anyway")
+
             conn = psycopg2.connect(**conn_kwargs)
         else:
             conn = psycopg2.connect(pipeline_url)
