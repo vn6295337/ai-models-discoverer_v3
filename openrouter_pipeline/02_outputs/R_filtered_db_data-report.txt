@@ -1,11 +1,11 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-02 07:56 PM IST
+Generated: 2025-10-03 06:43 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 52
-  Models kept          : 49
+  Input models         : 51
+  Models kept          : 48
   Models removed       : 3
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
@@ -67,13 +67,13 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    6 models: Mistral AI
    5 models: Meta
    3 models: Moonshot AI
-   2 models: OpenAI
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Cognitive Computations
    1 models: Meituan
    1 models: Microsoft
    1 models: NVIDIA
+   1 models: OpenAI
    1 models: Tencent
    1 models: Z.AI
    1 models: xAI
@@ -81,6 +81,6 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
 Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  49 models: Unknown
+  48 models: Unknown
 
 Total families: 1

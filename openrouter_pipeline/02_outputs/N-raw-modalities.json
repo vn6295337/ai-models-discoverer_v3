@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-02 07:56 PM IST",
-    "total_models": 52,
+    "generated_at": "2025-10-03 06:43 AM IST",
+    "total_models": 51,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -47,15 +47,6 @@
       "original_name": "DeepSeek: DeepSeek V3.1 (free)",
       "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
       "clean_model_name": "DeepSeek V3.1",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "openai/gpt-oss-120b:free",
-      "canonical_slug": "openai/gpt-oss-120b",
-      "original_name": "OpenAI: gpt-oss-120b (free)",
-      "hugging_face_id": "openai/gpt-oss-120b",
-      "clean_model_name": "GPT OSS 120B",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },

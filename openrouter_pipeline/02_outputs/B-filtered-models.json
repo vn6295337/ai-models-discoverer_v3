@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-02 07:56 PM IST",
-    "total_models": 52,
+    "generated_at": "2025-10-03 06:43 AM IST",
+    "total_models": 51,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
@@ -265,49 +265,6 @@
         "top_p"
       ],
       "default_parameters": {}
-    },
-    {
-      "id": "openai/gpt-oss-120b:free",
-      "canonical_slug": "openai/gpt-oss-120b",
-      "hugging_face_id": "openai/gpt-oss-120b",
-      "name": "OpenAI: gpt-oss-120b (free)",
-      "created": 1754414231,
-      "description": "gpt-oss-120b is an open-weight, 117B-parameter Mixture-of-Experts (MoE) language model from OpenAI designed for high-reasoning, agentic, and general-purpose production use cases. It activates 5.1B parameters per forward pass and is optimized to run on a single H100 GPU with native MXFP4 quantization. The model supports configurable reasoning depth, full chain-of-thought access, and native tool use, including function calling, browsing, and structured output generation.",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "GPT",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": null,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "seed",
-        "stop",
-        "temperature"
-      ],
-      "default_parameters": null
     },
     {
       "id": "openai/gpt-oss-20b:free",

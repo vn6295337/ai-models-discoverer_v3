@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-02 07:56 PM IST",
-    "total_models": 32,
+    "generated_at": "2025-10-03 06:43 AM IST",
+    "total_models": 31,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
@@ -25,13 +25,6 @@
       "name": "DeepSeek: DeepSeek V3.1 (free)",
       "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
       "license_name": "MIT"
-    },
-    {
-      "id": "openai/gpt-oss-120b:free",
-      "canonical_slug": "openai/gpt-oss-120b",
-      "name": "OpenAI: gpt-oss-120b (free)",
-      "hugging_face_id": "openai/gpt-oss-120b",
-      "license_name": "Apache-2.0"
     },
     {
       "id": "openai/gpt-oss-20b:free",

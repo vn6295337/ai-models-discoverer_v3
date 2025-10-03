@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-02 07:56 PM IST
+Generated: 2025-10-03 06:43 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 52
+  Total models      : 51
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -20,12 +20,12 @@ MODEL PROVIDER DISTRIBUTION:
    5 models: Meta
    3 models: Cognitive Computations
    3 models: Moonshot AI
-   2 models: OpenAI
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Meituan
    1 models: Microsoft
    1 models: NVIDIA
+   1 models: OpenAI
    1 models: Shisa AI
    1 models: Tencent
    1 models: Z.AI
@@ -35,7 +35,7 @@ Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   23 models: China
-  20 models: United States
+  19 models: United States
    6 models: France
    2 models: Germany
    1 models: Japan
@@ -50,12 +50,12 @@ MODEL FAMILY DISTRIBUTION:
    5 models: meta
    3 models: cognitive computations
    3 models: moonshot ai
-   2 models: openai
    2 models: tng technology
    1 models: arliai
    1 models: meituan
    1 models: microsoft
    1 models: nvidia
+   1 models: openai
    1 models: shisa ai
    1 models: tencent
    1 models: xai
@@ -682,21 +682,7 @@ MODEL 44: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 45: openai/gpt-oss-120b
---------------------------------------------------
-  ID: openai/gpt-oss-120b:free
-  Original Name: OpenAI: gpt-oss-120b (free)
-  HuggingFace ID: openai/gpt-oss-120b
-  Canonical Slug: openai/gpt-oss-120b
-  Clean Model Name: GPT OSS 120B
-  Model Provider: OpenAI
-  Model Provider Country: United States
-  Model Family: openai
-  Official URL: https://openai.com/
-
-================================================================================
-
-MODEL 46: openai/gpt-oss-20b
+MODEL 45: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -710,7 +696,7 @@ MODEL 46: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 47: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 46: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
@@ -724,7 +710,7 @@ MODEL 47: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 48: tencent/hunyuan-a13b-instruct
+MODEL 47: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -738,7 +724,7 @@ MODEL 48: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 49: tngtech/deepseek-r1t-chimera
+MODEL 48: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -752,7 +738,7 @@ MODEL 49: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 50: tngtech/deepseek-r1t2-chimera
+MODEL 49: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -766,7 +752,7 @@ MODEL 50: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 51: x-ai/grok-4-fast
+MODEL 50: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: xAI: Grok 4 Fast (free)
@@ -780,7 +766,7 @@ MODEL 51: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 52: z-ai/glm-4.5-air
+MODEL 51: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

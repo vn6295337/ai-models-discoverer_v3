@@ -1,29 +1,29 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-02 07:56 PM IST
+Generated: 2025-10-03 06:43 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 331
-  Models passed all filters: 52
+  Total models processed: 330
+  Models passed all filters: 51
   Models excluded: 279
-  Success rate: 15.7%
+  Success rate: 15.5%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 331 models
+    Input: 330 models
     Excluded: 276 models (non-free pricing)
-    Remaining: 55 models
+    Remaining: 54 models
 
   Step 2 - Billing Description Filter:
-    Input: 55 models
+    Input: 54 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 55 models
+    Remaining: 54 models
 
   Step 3 - Keyword Filter:
-    Input: 55 models
+    Input: 54 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 52 models
+    Final: 51 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
@@ -205,17 +205,6 @@ PROVIDER: MOONSHOTAI (3 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENAI (2 models)
---------------------------------------------------
-   1. OpenAI: gpt-oss-120b (free)
-      ID: openai/gpt-oss-120b:free
-      Pricing: prompt=0, completion=0, request=0
-
-   2. OpenAI: gpt-oss-20b (free)
-      ID: openai/gpt-oss-20b:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: TNG (2 models)
 --------------------------------------------------
    1. TNG: DeepSeek R1T Chimera (free)
@@ -277,6 +266,13 @@ PROVIDER: NVIDIA (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: OPENAI (1 models)
+--------------------------------------------------
+   1. OpenAI: gpt-oss-20b (free)
+      ID: openai/gpt-oss-20b:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: Z.AI (1 models)
 --------------------------------------------------
    1. Z.AI: GLM 4.5 Air (free)
@@ -322,7 +318,7 @@ PROVIDER: ARLIAI (1 models)
 ================================================================================
 FINAL SUMMARY:
   Total providers: 20
-  Total models passed all filters: 52
+  Total models passed all filters: 51
   Models excluded by pricing: 276
   Models excluded by billing description: 0
   Models excluded by keywords: 3
