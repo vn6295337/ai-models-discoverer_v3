@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-10-03 09:55 AM IST
+Generated: 2025-10-04 07:08 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -7,54 +7,56 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total models processed: 48
-   • Models in both systems: 48
+   • Models in both systems: 47
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 0
+   • Models in Supabase only (not in pipeline): 1
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • model_provider:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • official_url:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • input_modalities:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • output_modalities:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • license_info_text:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • license_info_url:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • license_name:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • license_url:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • rate_limits:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 48
+     - Exact matches: 47
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
    • Existing models with differences: 0
+   • Deprecated models (Supabase only): 1
+     Models: Grok 4 Fast
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -344,19 +346,19 @@ MODEL: Grok 4 Fast
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                | OpenRouter               
-model_provider            | xAI                       | xAI                      
-human_readable_name       | Grok 4 Fast               | Grok 4 Fast              
-model_provider_country    | United States             | United States            
-official_url              | https://x.ai/             | https://x.ai/            
-input_modalities          | Text, Image               | Text, Image              
-output_modalities         | Text                      | Text                     
+inference_provider        |                           | OpenRouter               
+model_provider            |                           | xAI                      
+human_readable_name       |                           | Grok 4 Fast              
+model_provider_country    |                           | United States            
+official_url              |                           | https://x.ai/            
+input_modalities          |                           | Text, Image              
+output_modalities         |                           | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
-license_name              | xAI                       | xAI                      
-license_url               | https://x.ai/legal        | https://x.ai/legal       
-rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
-provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+license_name              |                           | xAI                      
+license_url               |                           | https://x.ai/legal       
+rate_limits               |                           | 20 requests/min 50/day   
+provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 

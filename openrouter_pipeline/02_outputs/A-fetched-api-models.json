@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-03 09:55 AM IST",
-    "total_models": 330,
+    "generated_at": "2025-10-04 07:08 AM IST",
+    "total_models": 326,
     "pipeline_stage": "A_fetch_api_models"
   },
   "models": [
@@ -89,11 +89,9 @@
         "prompt": "0.000003",
         "completion": "0.000015",
         "request": "0",
-        "image": "0.0048",
+        "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000003",
-        "input_cache_write": "0.00000375"
+        "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 1000000,
@@ -711,60 +709,6 @@
       }
     },
     {
-      "id": "x-ai/grok-4-fast:free",
-      "canonical_slug": "x-ai/grok-4-fast",
-      "hugging_face_id": "",
-      "name": "xAI: Grok 4 Fast (free)",
-      "created": 1758240090,
-      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast). Reasoning can be enabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)\n\nPrompts and completions on Grok 4 Fast Free may be used by xAI or OpenRouter to improve future models.",
-      "context_length": 2000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Grok",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 2000000,
-        "max_completion_tokens": 30000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "seed",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      }
-    },
-    {
       "id": "x-ai/grok-4-fast",
       "canonical_slug": "x-ai/grok-4-fast",
       "hugging_face_id": "",
@@ -1058,8 +1002,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000003",
-        "completion": "0.00000013",
+        "prompt": "0.00000007",
+        "completion": "0.00000026",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -1467,6 +1411,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
+        "logit_bias",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -1503,8 +1448,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000004",
-        "completion": "0.000002",
+        "prompt": "0.00000039",
+        "completion": "0.0000019",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -1531,58 +1476,6 @@
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {}
-    },
-    {
-      "id": "bytedance/seed-oss-36b-instruct",
-      "canonical_slug": "bytedance/seed-oss-36b-instruct",
-      "hugging_face_id": "ByteDance-Seed/Seed-OSS-36B-Instruct",
-      "name": "ByteDance: Seed OSS 36B Instruct",
-      "created": 1756834704,
-      "description": "Seed-OSS-36B-Instruct is a 36B-parameter instruction-tuned reasoning language model from ByteDance\u2019s Seed team, released under Apache-2.0. The model is optimized for general instruction following with strong performance in reasoning, mathematics, coding, tool use/agentic workflows, and multilingual tasks, and is intended for international (i18n) use cases. It is not currently possible to control the reasoning effort.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.00000016",
-        "completion": "0.00000065",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
         "top_k",
         "top_logprobs",
         "top_p"
@@ -1919,8 +1812,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.000001",
+        "prompt": "0.0000003",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -2104,56 +1997,6 @@
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {}
-    },
-    {
-      "id": "deepseek/deepseek-v3.1-base",
-      "canonical_slug": "deepseek/deepseek-v3.1-base",
-      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Base",
-      "name": "DeepSeek: DeepSeek V3.1 Base",
-      "created": 1755727017,
-      "description": "This is a base model, trained only for raw next-token prediction. Unlike instruct/chat models, it has not been fine-tuned to follow user instructions. Prompts need to be written more like training text or examples rather than simple requests (e.g., \u201cTranslate the following sentence\u2026\u201d instead of just \u201cTranslate this\u201d).\n\nDeepSeek-V3.1 Base is a 671B parameter open Mixture-of-Experts (MoE) language model with 37B active parameters per forward pass and a context length of 128K tokens. Trained on 14.8T tokens using FP8 mixed precision, it achieves high training efficiency and stability, with strong performance across language, reasoning, math, and coding tasks. \n",
-      "context_length": 163840,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "DeepSeek",
-        "instruct_type": "none"
-      },
-      "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 163840,
-        "max_completion_tokens": 163840,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
         "top_k",
         "top_logprobs",
         "top_p"
@@ -3044,8 +2887,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000007",
-        "completion": "0.00000028",
+        "prompt": "0.00000008",
+        "completion": "0.00000033",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -3098,8 +2941,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000038",
-        "completion": "0.0000016",
+        "prompt": "0.00000035",
+        "completion": "0.00000155",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -3107,7 +2950,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4226,8 +4069,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.000001",
+        "prompt": "0.0000003",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -4454,7 +4297,7 @@
       "name": "TheDrummer: Anubis 70B V1.1",
       "created": 1751208347,
       "description": "TheDrummer's Anubis v1.1 is an unaligned, creative Llama 3.3 70B model focused on providing character-driven roleplay & stories. It excels at gritty, visceral prose, unique character adherence, and coherent narratives, while maintaining the instruction following Llama 3.3 70B is known for.",
-      "context_length": 4096,
+      "context_length": 131072,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -4467,16 +4310,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000004",
-        "completion": "0.0000007",
+        "prompt": "0.00000065",
+        "completion": "0.000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 4096,
-        "max_completion_tokens": null,
+        "context_length": 131072,
+        "max_completion_tokens": 131072,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4487,10 +4330,8 @@
         "min_p",
         "presence_penalty",
         "repetition_penalty",
-        "response_format",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "top_k",
         "top_p"
@@ -5401,8 +5242,8 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000001",
-        "completion": "0.00000005",
+        "prompt": "0.00000003",
+        "completion": "0.00000011",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -5719,8 +5560,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000014",
+        "prompt": "0.00000005",
+        "completion": "0.00000022",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -5960,8 +5801,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000013",
-        "completion": "0.00000051",
+        "prompt": "0.00000015",
+        "completion": "0.00000059",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -6819,8 +6660,8 @@
         "instruct_type": "qwen3"
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000014",
+        "prompt": "0.00000005",
+        "completion": "0.00000022",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -6875,8 +6716,8 @@
         "instruct_type": "qwen3"
       },
       "pricing": {
-        "prompt": "0.00000003",
-        "completion": "0.00000013",
+        "prompt": "0.00000005",
+        "completion": "0.0000002",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -7095,8 +6936,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.000001",
+        "prompt": "0.0000003",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -7199,8 +7040,8 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000025",
-        "completion": "0.000001",
+        "prompt": "0.0000003",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -7251,8 +7092,8 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000014",
+        "prompt": "0.00000005",
+        "completion": "0.00000022",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -7497,8 +7338,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000014",
+        "prompt": "0.00000005",
+        "completion": "0.00000022",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -7857,8 +7698,8 @@
         "instruct_type": "deepseek-r1"
       },
       "pricing": {
-        "prompt": "0.00000002",
-        "completion": "0.00000007",
+        "prompt": "0.00000003",
+        "completion": "0.00000011",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -8068,7 +7909,7 @@
       },
       "pricing": {
         "prompt": "0.00000002",
-        "completion": "0.00000007",
+        "completion": "0.00000008",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -8575,8 +8416,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000014",
+        "prompt": "0.00000005",
+        "completion": "0.00000022",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -8822,7 +8663,7 @@
       "name": "Mistral: Mistral Small 3.1 24B",
       "created": 1742238937,
       "description": "Mistral Small 3.1 24B Instruct is an upgraded variant of Mistral Small 3 (2501), featuring 24 billion parameters with advanced multimodal capabilities. It provides state-of-the-art performance in text-based reasoning and vision tasks, including image analysis, programming, mathematical reasoning, and multilingual support across dozens of languages. Equipped with an extensive 128k token context window and optimized for efficient local inference, it supports use cases such as conversational agents, function calling, long-document comprehension, and privacy-sensitive deployments. The updated version is [Mistral Small 3.2](mistralai/mistral-small-3.2-24b-instruct)",
-      "context_length": 131072,
+      "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -8836,16 +8677,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000015",
+        "prompt": "0.00000005",
+        "completion": "0.0000001",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
+        "context_length": 128000,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9306,7 +9147,7 @@
       "name": "Google: Gemma 3 27B",
       "created": 1741756359,
       "description": "Gemma 3 introduces multimodality, supporting vision-language input and text outputs. It handles context windows up to 128k tokens, understands over 140 languages, and offers improved math, reasoning, and chat capabilities, including structured outputs and function calling. Gemma 3 27B is Google's latest open source model, successor to [Gemma 2](google/gemma-2-27b-it)",
-      "context_length": 96000,
+      "context_length": 131072,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -9320,16 +9161,16 @@
         "instruct_type": "gemma"
       },
       "pricing": {
-        "prompt": "0.00000007",
-        "completion": "0.00000026",
+        "prompt": "0.00000009",
+        "completion": "0.00000016",
         "request": "0",
-        "image": "0",
+        "image": "0.0000256",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 96000,
-        "max_completion_tokens": 96000,
+        "context_length": 131072,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -9372,8 +9213,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000016",
+        "prompt": "0.00000008",
+        "completion": "0.00000033",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -9718,8 +9559,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000001",
-        "completion": "0.00000005",
+        "prompt": "0.00000003",
+        "completion": "0.00000011",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10063,7 +9904,7 @@
       },
       "pricing": {
         "prompt": "0.00000001",
-        "completion": "0.00000003",
+        "completion": "0.00000005",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10164,8 +10005,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000003",
-        "completion": "0.00000011",
+        "prompt": "0.00000004",
+        "completion": "0.00000017",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10715,8 +10556,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000007",
-        "completion": "0.00000028",
+        "prompt": "0.00000008",
+        "completion": "0.00000033",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10954,8 +10795,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000004",
-        "completion": "0.00000015",
+        "prompt": "0.00000005",
+        "completion": "0.00000008",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -10963,7 +10804,7 @@
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": 32768,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -11641,8 +11482,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000024999988",
-        "completion": "0.000000999999888",
+        "prompt": "0.0000003",
+        "completion": "0.00000085",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -11650,7 +11491,7 @@
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 163840,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -12374,7 +12215,7 @@
       },
       "pricing": {
         "prompt": "0.00000004",
-        "completion": "0.00000014",
+        "completion": "0.00000016",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -14665,7 +14506,7 @@
       },
       "pricing": {
         "prompt": "0.00000001",
-        "completion": "0.00000002",
+        "completion": "0.00000003",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -15084,53 +14925,6 @@
       "default_parameters": {}
     },
     {
-      "id": "neversleep/llama-3-lumimaid-70b",
-      "canonical_slug": "neversleep/llama-3-lumimaid-70b",
-      "hugging_face_id": "NeverSleep/Llama-3-Lumimaid-70B-v0.1",
-      "name": "NeverSleep: Llama 3 Lumimaid 70B",
-      "created": 1715817600,
-      "description": "The NeverSleep team is back, with a Llama 3 70B finetune trained on their curated roleplay data. Striking a balance between eRP and RP, Lumimaid was designed to be serious, yet uncensored when necessary.\n\nTo enhance it's overall intelligence and chat capability, roughly 40% of the training data was not roleplay. This provides a breadth of knowledge to access, while still keeping roleplay as the primary strength.\n\nUsage of this model is subject to [Meta's Acceptable Use Policy](https://llama.meta.com/llama3/use-policy/).",
-      "context_length": 8192,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "llama3"
-      },
-      "pricing": {
-        "prompt": "0.000004",
-        "completion": "0.000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {}
-    },
-    {
       "id": "openai/gpt-4o",
       "canonical_slug": "openai/gpt-4o",
       "hugging_face_id": null,
@@ -15528,7 +15322,7 @@
       },
       "top_provider": {
         "context_length": 65536,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -15966,8 +15760,8 @@
         "instruct_type": "mistral"
       },
       "pricing": {
-        "prompt": "0.0000004",
-        "completion": "0.0000004",
+        "prompt": "0.00000054",
+        "completion": "0.00000054",
         "request": "0",
         "image": "0",
         "web_search": "0",

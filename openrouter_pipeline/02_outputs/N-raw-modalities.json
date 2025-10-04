@@ -1,19 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2025-10-03 09:55 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-10-04 07:08 AM IST",
+    "total_models": 50,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
-    {
-      "id": "x-ai/grok-4-fast:free",
-      "canonical_slug": "x-ai/grok-4-fast",
-      "original_name": "xAI: Grok 4 Fast (free)",
-      "hugging_face_id": "",
-      "clean_model_name": "Grok 4 Fast",
-      "raw_input_modalities": "text, image",
-      "raw_output_modalities": "text"
-    },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
       "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",

@@ -1,64 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2025-10-03 09:55 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-10-04 07:08 AM IST",
+    "total_models": 50,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
-    {
-      "id": "x-ai/grok-4-fast:free",
-      "canonical_slug": "x-ai/grok-4-fast",
-      "hugging_face_id": "",
-      "name": "xAI: Grok 4 Fast (free)",
-      "created": 1758240090,
-      "description": "Grok 4 Fast is xAI's latest multimodal model with SOTA cost-efficiency and a 2M token context window. It comes in two flavors: non-reasoning and reasoning. Read more about the model on xAI's [news post](http://x.ai/news/grok-4-fast). Reasoning can be enabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)\n\nPrompts and completions on Grok 4 Fast Free may be used by xAI or OpenRouter to improve future models.",
-      "context_length": 2000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Grok",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 2000000,
-        "max_completion_tokens": 30000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "logprobs",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "seed",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      }
-    },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
       "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",

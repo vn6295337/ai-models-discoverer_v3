@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-03 09:55 AM IST
+Generated: 2025-10-04 07:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 330
+  Total models: 326
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  42 models
@@ -149,28 +149,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemma-3n-e4b-it
     - gemma-3n-e4b-it:free
 
-  DeepSeek     :  20 models
-    - deepseek-chat
-    - deepseek-chat-v3-0324
-    - deepseek-chat-v3-0324:free
-    - deepseek-chat-v3.1
-    - deepseek-chat-v3.1:free
-    - deepseek-prover-v2
-    - deepseek-r1
-    - deepseek-r1-0528
-    - deepseek-r1-0528-qwen3-8b
-    - deepseek-r1-0528-qwen3-8b:free
-    - deepseek-r1-0528:free
-    - deepseek-r1-distill-llama-70b
-    - deepseek-r1-distill-llama-70b:free
-    - deepseek-r1-distill-llama-8b
-    - deepseek-r1-distill-qwen-14b
-    - deepseek-r1-distill-qwen-32b
-    - deepseek-r1:free
-    - deepseek-v3.1-base
-    - deepseek-v3.1-terminus
-    - deepseek-v3.2-exp
-
   Meta         :  20 models
     - llama-3-70b-instruct
     - llama-3-8b-instruct
@@ -193,6 +171,27 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-guard-2-8b
     - llama-guard-4-12b
 
+  DeepSeek     :  19 models
+    - deepseek-chat
+    - deepseek-chat-v3-0324
+    - deepseek-chat-v3-0324:free
+    - deepseek-chat-v3.1
+    - deepseek-chat-v3.1:free
+    - deepseek-prover-v2
+    - deepseek-r1
+    - deepseek-r1-0528
+    - deepseek-r1-0528-qwen3-8b
+    - deepseek-r1-0528-qwen3-8b:free
+    - deepseek-r1-0528:free
+    - deepseek-r1-distill-llama-70b
+    - deepseek-r1-distill-llama-70b:free
+    - deepseek-r1-distill-llama-8b
+    - deepseek-r1-distill-qwen-14b
+    - deepseek-r1-distill-qwen-32b
+    - deepseek-r1:free
+    - deepseek-v3.1-terminus
+    - deepseek-v3.2-exp
+
   Anthropic    :  12 models
     - claude-3-haiku
     - claude-3-opus
@@ -207,16 +206,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-sonnet-4
     - claude-sonnet-4.5
 
-  xAI          :   8 models
-    - grok-3
-    - grok-3-beta
-    - grok-3-mini
-    - grok-3-mini-beta
-    - grok-4
-    - grok-4-fast
-    - grok-4-fast:free
-    - grok-code-fast-1
-
   Microsoft    :   8 models
     - mai-ds-r1
     - mai-ds-r1:free
@@ -226,6 +215,15 @@ PROVIDER BREAKDOWN (Descending Order):
     - phi-4
     - phi-4-multimodal-instruct
     - phi-4-reasoning-plus
+
+  xAI          :   7 models
+    - grok-3
+    - grok-3-beta
+    - grok-3-mini
+    - grok-3-mini-beta
+    - grok-4
+    - grok-4-fast
+    - grok-code-fast-1
 
   MoonshotAI   :   7 models
     - kimi-dev-72b
@@ -318,10 +316,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - longcat-flash-chat
     - longcat-flash-chat:free
 
-  ByteDance    :   2 models
-    - seed-oss-36b-instruct
-    - ui-tars-1.5-7b
-
   AI21         :   2 models
     - jamba-large-1.7
     - jamba-mini-1.7
@@ -370,10 +364,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - inflection-3-pi
     - inflection-3-productivity
 
-  NeverSleep   :   2 models
-    - llama-3-lumimaid-70b
-    - llama-3.1-lumimaid-8b
-
   Relace       :   1 models
     - relace-apply-3
 
@@ -386,6 +376,9 @@ PROVIDER BREAKDOWN (Descending Order):
   StepFun      :   1 models
     - step3
 
+  ByteDance    :   1 models
+    - ui-tars-1.5-7b
+
   Venice       :   1 models
     - dolphin-mistral-24b-venice-edition:free
 
@@ -394,6 +387,9 @@ PROVIDER BREAKDOWN (Descending Order):
 
   AlfredPros   :   1 models
     - codellama-7b-instruct-solidity
+
+  NeverSleep   :   1 models
+    - llama-3.1-lumimaid-8b
 
   Sao10k       :   1 models
     - l3-euryale-70b

@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-10-03 09:55 AM IST
+Generated: 2025-10-04 07:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 51
+  Total models : 50
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
@@ -12,26 +12,26 @@ SUMMARY:
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
   38 models: Text
-  11 models: Text, Image
+  10 models: Text, Image
    2 models: Text, Image, Audio, Video
 
 Total unique input types: 3
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  51 models: Text
+  50 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
   38 models: Text → Text
-  11 models: Text, Image → Text
+  10 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
 
 Total unique combinations: 3
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 51 models
-  Output modalities changed: 51 models
+  Input modalities changed: 50 models
+  Output modalities changed: 50 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
@@ -612,21 +612,7 @@ MODEL 41: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 42: x-ai/grok-4-fast
---------------------------------------------------
-  ID: x-ai/grok-4-fast:free
-  Original Name: xAI: Grok 4 Fast (free)
-  HuggingFace ID: 
-  Canonical Slug: x-ai/grok-4-fast
-  Clean Model Name: Grok 4 Fast
-  Raw Input Modalities: text, image
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 43: moonshotai/kimi-vl-a3b-thinking
+MODEL 42: moonshotai/kimi-vl-a3b-thinking
 --------------------------------------------------
   ID: moonshotai/kimi-vl-a3b-thinking:free
   Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
@@ -640,7 +626,7 @@ MODEL 43: moonshotai/kimi-vl-a3b-thinking
 
 ================================================================================
 
-MODEL 44: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 43: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -654,7 +640,7 @@ MODEL 44: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 45: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 44: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -668,7 +654,7 @@ MODEL 45: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 46: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 45: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -682,7 +668,7 @@ MODEL 46: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 47: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 46: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
@@ -696,7 +682,7 @@ MODEL 47: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 48: qwen/qwen2.5-vl-32b-instruct
+MODEL 47: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -710,7 +696,7 @@ MODEL 48: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 49: qwen/qwen2.5-vl-72b-instruct
+MODEL 48: qwen/qwen2.5-vl-72b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-72b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)
@@ -724,7 +710,7 @@ MODEL 49: qwen/qwen2.5-vl-72b-instruct
 
 ================================================================================
 
-MODEL 50: google/gemma-3n-e2b-it
+MODEL 49: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -738,7 +724,7 @@ MODEL 50: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 51: google/gemma-3n-e4b-it
+MODEL 50: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)

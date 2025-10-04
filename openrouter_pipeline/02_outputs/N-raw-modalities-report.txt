@@ -1,29 +1,29 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-10-03 09:55 AM IST
+Generated: 2025-10-04 07:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 51
+  Total models : 50
   Input        : B-filtered-models.json
   Processor    : N_extract_raw_modalities.py
   Output       : N-raw-modalities.json
 
 RAW INPUT MODALITIES DISTRIBUTION:
   40 models: text
-   9 models: text, image
+   8 models: text, image
    2 models: image, text
 
 Total unique input types: 3
 
 RAW OUTPUT MODALITIES DISTRIBUTION:
-  51 models: text
+  50 models: text
 
 Total unique output types: 1
 
 RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
   40 models: text → text
-   9 models: text, image → text
+   8 models: text, image → text
    2 models: image, text → text
 
 Total unique combinations: 3
@@ -571,19 +571,7 @@ MODEL 45: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 46: x-ai/grok-4-fast
---------------------------------------------------
-  ID: x-ai/grok-4-fast:free
-  Original Name: xAI: Grok 4 Fast (free)
-  HuggingFace ID: 
-  Canonical Slug: x-ai/grok-4-fast
-  Clean Model Name: Grok 4 Fast
-  Raw Input Modalities: text, image
-  Raw Output Modalities: text
-
-================================================================================
-
-MODEL 47: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 46: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -595,7 +583,7 @@ MODEL 47: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 48: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 47: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -607,7 +595,7 @@ MODEL 48: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 49: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 48: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -619,7 +607,7 @@ MODEL 49: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 50: qwen/qwen2.5-vl-32b-instruct
+MODEL 49: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -631,7 +619,7 @@ MODEL 50: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 51: qwen/qwen2.5-vl-72b-instruct
+MODEL 50: qwen/qwen2.5-vl-72b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-72b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)

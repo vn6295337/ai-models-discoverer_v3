@@ -1,34 +1,34 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-03 09:55 AM IST
+Generated: 2025-10-04 07:08 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 330
-  Models passed all filters: 51
-  Models excluded: 279
-  Success rate: 15.5%
+  Total models processed: 326
+  Models passed all filters: 50
+  Models excluded: 276
+  Success rate: 15.3%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 330 models
-    Excluded: 276 models (non-free pricing)
-    Remaining: 54 models
+    Input: 326 models
+    Excluded: 273 models (non-free pricing)
+    Remaining: 53 models
 
   Step 2 - Billing Description Filter:
-    Input: 54 models
+    Input: 53 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 54 models
+    Remaining: 53 models
 
   Step 3 - Keyword Filter:
-    Input: 54 models
+    Input: 53 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 51 models
+    Final: 50 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 276 models with non-free pricing (details omitted due to volume)
+Excluded 273 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -238,13 +238,6 @@ PROVIDER: QWEN (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: XAI (1 models)
---------------------------------------------------
-   1. xAI: Grok 4 Fast (free)
-      ID: x-ai/grok-4-fast:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: ALIBABA (1 models)
 --------------------------------------------------
    1. Tongyi DeepResearch 30B A3B (free)
@@ -317,10 +310,10 @@ PROVIDER: ARLIAI (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 20
-  Total models passed all filters: 51
-  Models excluded by pricing: 276
+  Total providers: 19
+  Total models passed all filters: 50
+  Models excluded by pricing: 273
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 279
+  Total exclusions: 276
   ✓ All filtered models accounted for

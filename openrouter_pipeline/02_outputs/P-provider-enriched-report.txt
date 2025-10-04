@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-03 09:55 AM IST
+Generated: 2025-10-04 07:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 51
+  Total models      : 50
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -29,13 +29,12 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Shisa AI
    1 models: Tencent
    1 models: Z.AI
-   1 models: xAI
 
-Total unique model providers: 17
+Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   23 models: China
-  19 models: United States
+  18 models: United States
    6 models: France
    2 models: Germany
    1 models: Japan
@@ -58,10 +57,9 @@ MODEL FAMILY DISTRIBUTION:
    1 models: openai
    1 models: shisa ai
    1 models: tencent
-   1 models: xai
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 16
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -752,21 +750,7 @@ MODEL 49: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 50: x-ai/grok-4-fast
---------------------------------------------------
-  ID: x-ai/grok-4-fast:free
-  Original Name: xAI: Grok 4 Fast (free)
-  HuggingFace ID: 
-  Canonical Slug: x-ai/grok-4-fast
-  Clean Model Name: Grok 4 Fast
-  Model Provider: xAI
-  Model Provider Country: United States
-  Model Family: xai
-  Official URL: https://x.ai/
-
-================================================================================
-
-MODEL 51: z-ai/glm-4.5-air
+MODEL 50: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
