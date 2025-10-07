@@ -1,27 +1,27 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-06 07:15 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 50
+  Input models         : 49
   Models kept          : 47
-  Models removed       : 3
+  Models removed       : 2
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
   Output               : R_filtered_db_data.json
 
 REMOVAL REASONS DISTRIBUTION:
-   2 models: License info not available
+   1 models: License info not available
    1 models: Region specific & non-english model
 
 Total removal reasons: 2
 
 REMOVAL PROCESSING SUMMARY:
   Configured for removal: 5 models
-  Successfully removed: 3 models
-  ⚠ 2 models not found (check canonical slugs)
+  Successfully removed: 2 models
+  ⚠ 3 models not found (check canonical slugs)
 
 DETAILED REMOVED MODEL INFORMATION:
 ================================================================================
@@ -37,18 +37,7 @@ REMOVED MODEL 1: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-REMOVED MODEL 2: cognitivecomputations/dolphin3.0-r1-mistral-24b
---------------------------------------------------
-  Provider ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-  Clean Model Name: Dolphin3.0 R1 Mistral 24B
-  Canonical Slug: cognitivecomputations/dolphin3.0-r1-mistral-24b
-  Model Provider: Cognitive Computations
-  Model Family: mistral
-  Removal Reason: License info not available
-
-================================================================================
-
-REMOVED MODEL 3: shisa-ai/shisa-v2-llama3.3-70b
+REMOVED MODEL 2: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   Provider ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Clean Model Name: Shisa V2 Llama 3.3 70B
@@ -66,8 +55,9 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    6 models: Google
    6 models: Mistral AI
    5 models: Meta
-   3 models: Moonshot AI
+   2 models: Moonshot AI
    2 models: TNG Technology
+   2 models: Z.AI
    1 models: ArliAI
    1 models: Cognitive Computations
    1 models: Meituan
@@ -75,7 +65,6 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: NVIDIA
    1 models: OpenAI
    1 models: Tencent
-   1 models: Z.AI
 
 Total providers: 15
 

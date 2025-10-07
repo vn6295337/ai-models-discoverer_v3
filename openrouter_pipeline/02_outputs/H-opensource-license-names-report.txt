@@ -1,6 +1,6 @@
 ================================================================================
 OPENSOURCE LICENSE MODELS REPORT
-Generated: 2025-10-06 07:15 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SUMMARY:
@@ -262,16 +262,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-vl-a3b-thinking
---------------------------------------------------
-  ID              : moonshotai/kimi-vl-a3b-thinking:free
-  Canonical Slug  : moonshotai/kimi-vl-a3b-thinking
-  HuggingFace ID  : moonshotai/Kimi-VL-A3B-Thinking
-  License Name    : MIT
-
-================================================================================
-
-MODEL 29: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -280,7 +271,7 @@ MODEL 29: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -289,9 +280,18 @@ MODEL 30: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 31: z-ai/glm-4.5-air
+MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
+  Canonical Slug  : z-ai/glm-4.5-air
+  HuggingFace ID  : zai-org/GLM-4.5-Air
+  License Name    : MIT
+
+================================================================================
+
+MODEL 31: z-ai/glm-4.5-air
+--------------------------------------------------
+  ID              : z-ai/glm-4.5-air
   Canonical Slug  : z-ai/glm-4.5-air
   HuggingFace ID  : zai-org/GLM-4.5-Air
   License Name    : MIT

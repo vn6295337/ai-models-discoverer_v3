@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-06 07:15 AM IST",
+    "generated_at": "2025-10-07 07:12 AM IST",
     "total_models": 31,
     "pipeline_stage": "I_opensource_license_urls"
   },
@@ -41,6 +41,14 @@
       "id": "z-ai/glm-4.5-air:free",
       "canonical_slug": "z-ai/glm-4.5-air",
       "name": "Z.AI: GLM 4.5 Air (free)",
+      "hugging_face_id": "zai-org/GLM-4.5-Air",
+      "license_name": "MIT",
+      "official_license_url": "https://opensource.org/licenses/MIT"
+    },
+    {
+      "id": "z-ai/glm-4.5-air",
+      "canonical_slug": "z-ai/glm-4.5-air",
+      "name": "Z.AI: GLM 4.5 Air",
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "license_name": "MIT",
       "official_license_url": "https://opensource.org/licenses/MIT"
@@ -172,14 +180,6 @@
       "hugging_face_id": "ArliAI/QwQ-32B-ArliAI-RpR-v1",
       "license_name": "Apache-2.0",
       "official_license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-    },
-    {
-      "id": "moonshotai/kimi-vl-a3b-thinking:free",
-      "canonical_slug": "moonshotai/kimi-vl-a3b-thinking",
-      "name": "MoonshotAI: Kimi VL A3B Thinking (free)",
-      "hugging_face_id": "moonshotai/Kimi-VL-A3B-Thinking",
-      "license_name": "MIT",
-      "official_license_url": "https://opensource.org/licenses/MIT"
     },
     {
       "id": "qwen/qwen2.5-vl-32b-instruct:free",

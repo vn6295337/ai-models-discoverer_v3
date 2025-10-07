@@ -1,13 +1,13 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-06 07:14 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 326
+  Total models: 324
 
 PROVIDER BREAKDOWN (Descending Order):
-  OpenAI       :  42 models
+  OpenAI       :  43 models
     - chatgpt-4o-latest
     - codex-mini
     - gpt-3.5-turbo
@@ -37,6 +37,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - gpt-5-codex
     - gpt-5-mini
     - gpt-5-nano
+    - gpt-5-pro
     - gpt-oss-120b
     - gpt-oss-20b
     - gpt-oss-20b:free
@@ -51,7 +52,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini
     - o4-mini-high
 
-  Qwen         :  38 models
+  Qwen         :  39 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -61,6 +62,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen-turbo
     - qwen-vl-max
     - qwen-vl-plus
+    - qwen2.5-coder-7b-instruct
     - qwen2.5-vl-32b-instruct
     - qwen2.5-vl-32b-instruct:free
     - qwen2.5-vl-72b-instruct
@@ -225,15 +227,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4-fast
     - grok-code-fast-1
 
-  MoonshotAI   :   7 models
-    - kimi-dev-72b
-    - kimi-dev-72b:free
-    - kimi-k2
-    - kimi-k2-0905
-    - kimi-k2:free
-    - kimi-vl-a3b-thinking
-    - kimi-vl-a3b-thinking:free
-
   Nous         :   7 models
     - deephermes-3-llama-3-8b-preview
     - deephermes-3-llama-3-8b-preview:free
@@ -272,6 +265,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - maestro-reasoning
     - spotlight
     - virtuoso-large
+
+  MoonshotAI   :   5 models
+    - kimi-dev-72b
+    - kimi-dev-72b:free
+    - kimi-k2
+    - kimi-k2-0905
+    - kimi-k2:free
 
   NVIDIA       :   4 models
     - llama-3.1-nemotron-70b-instruct

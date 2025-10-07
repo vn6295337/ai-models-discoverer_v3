@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE MODELS REPORT
-Generated: 2025-10-06 07:15 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 8
+  Total models : 7
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -15,7 +15,7 @@ CUSTOM LICENSE DISTRIBUTION:
   NVIDIA: 1 models
   QWEN: 2 models
   Tencent: 1 models
-  Unknown: 2 models
+  Unknown: 1 models
   llama3.3: 1 models
 
 Total license types: 6
@@ -77,16 +77,7 @@ MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 7: cognitivecomputations/dolphin3.0-r1-mistral-24b
---------------------------------------------------
-  ID              : cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-  Canonical Slug  : cognitivecomputations/dolphin3.0-r1-mistral-24b
-  HuggingFace ID  : cognitivecomputations/Dolphin3.0-R1-Mistral-24B
-  License Name    : Unknown
-
-================================================================================
-
-MODEL 8: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID              : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b

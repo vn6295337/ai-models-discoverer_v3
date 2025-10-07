@@ -1,34 +1,34 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-06 07:14 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 326
-  Models passed all filters: 50
-  Models excluded: 276
-  Success rate: 15.3%
+  Total models processed: 324
+  Models passed all filters: 49
+  Models excluded: 275
+  Success rate: 15.1%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 326 models
-    Excluded: 273 models (non-free pricing)
-    Remaining: 53 models
+    Input: 324 models
+    Excluded: 272 models (non-free pricing)
+    Remaining: 52 models
 
   Step 2 - Billing Description Filter:
-    Input: 53 models
+    Input: 52 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 53 models
+    Remaining: 52 models
 
   Step 3 - Keyword Filter:
-    Input: 53 models
+    Input: 52 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 50 models
+    Final: 49 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 273 models with non-free pricing (details omitted due to volume)
+Excluded 272 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -190,7 +190,18 @@ PROVIDER: META (5 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: MOONSHOTAI (3 models)
+PROVIDER: Z.AI (2 models)
+--------------------------------------------------
+   1. Z.AI: GLM 4.5 Air
+      ID: z-ai/glm-4.5-air
+      Pricing: prompt=0, completion=0, request=0
+
+   2. Z.AI: GLM 4.5 Air (free)
+      ID: z-ai/glm-4.5-air:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: MOONSHOTAI (2 models)
 --------------------------------------------------
    1. MoonshotAI: Kimi Dev 72B (free)
       ID: moonshotai/kimi-dev-72b:free
@@ -198,10 +209,6 @@ PROVIDER: MOONSHOTAI (3 models)
 
    2. MoonshotAI: Kimi K2 0711 (free)
       ID: moonshotai/kimi-k2:free
-      Pricing: prompt=0, completion=0, request=0
-
-   3. MoonshotAI: Kimi VL A3B Thinking (free)
-      ID: moonshotai/kimi-vl-a3b-thinking:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -213,17 +220,6 @@ PROVIDER: TNG (2 models)
 
    2. TNG: DeepSeek R1T2 Chimera (free)
       ID: tngtech/deepseek-r1t2-chimera:free
-      Pricing: prompt=0, completion=0, request=0
-
-
-PROVIDER: COGNITIVECOMPUTATIONS (2 models)
---------------------------------------------------
-   1. Dolphin3.0 Mistral 24B (free)
-      ID: cognitivecomputations/dolphin3.0-mistral-24b:free
-      Pricing: prompt=0, completion=0, request=0
-
-   2. Dolphin3.0 R1 Mistral 24B (free)
-      ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -266,13 +262,6 @@ PROVIDER: OPENAI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: Z.AI (1 models)
---------------------------------------------------
-   1. Z.AI: GLM 4.5 Air (free)
-      ID: z-ai/glm-4.5-air:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: VENICE (1 models)
 --------------------------------------------------
    1. Venice: Uncensored (free)
@@ -308,12 +297,19 @@ PROVIDER: ARLIAI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: COGNITIVECOMPUTATIONS (1 models)
+--------------------------------------------------
+   1. Dolphin3.0 Mistral 24B (free)
+      ID: cognitivecomputations/dolphin3.0-mistral-24b:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 ================================================================================
 FINAL SUMMARY:
   Total providers: 19
-  Total models passed all filters: 50
-  Models excluded by pricing: 273
+  Total models passed all filters: 49
+  Models excluded by pricing: 272
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 276
+  Total exclusions: 275
   ✓ All filtered models accounted for

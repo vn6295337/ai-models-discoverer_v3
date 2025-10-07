@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-06 07:14 AM IST",
-    "total_models": 50,
+    "generated_at": "2025-10-07 07:12 AM IST",
+    "total_models": 49,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
@@ -311,6 +311,64 @@
         "repetition_penalty",
         "seed",
         "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.75,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "z-ai/glm-4.5-air",
+      "canonical_slug": "z-ai/glm-4.5-air",
+      "hugging_face_id": "zai-org/GLM-4.5-Air",
+      "name": "Z.AI: GLM 4.5 Air",
+      "created": 1753471258,
+      "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter size. GLM-4.5-Air also supports hybrid inference modes, offering a \"thinking mode\" for advanced reasoning and tool use, and a \"non-thinking mode\" for real-time interaction. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)",
+      "context_length": 32768,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 32768,
+        "max_completion_tokens": 32768,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
@@ -1438,59 +1496,6 @@
       "default_parameters": {}
     },
     {
-      "id": "moonshotai/kimi-vl-a3b-thinking:free",
-      "canonical_slug": "moonshotai/kimi-vl-a3b-thinking",
-      "hugging_face_id": "moonshotai/Kimi-VL-A3B-Thinking",
-      "name": "MoonshotAI: Kimi VL A3B Thinking (free)",
-      "created": 1744304841,
-      "description": "Kimi-VL is a lightweight Mixture-of-Experts vision-language model that activates only 2.8B parameters per step while delivering strong performance on multimodal reasoning and long-context tasks. The Kimi-VL-A3B-Thinking variant, fine-tuned with chain-of-thought and reinforcement learning, excels in math and visual reasoning benchmarks like MathVision, MMMU, and MathVista, rivaling much larger models such as Qwen2.5-VL-7B and Gemma-3-12B. It supports 128K context and high-resolution input via its MoonViT encoder.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "image",
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {}
-    },
-    {
       "id": "meta-llama/llama-4-maverick:free",
       "canonical_slug": "meta-llama/llama-4-maverick-17b-128e-instruct",
       "hugging_face_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
@@ -1824,18 +1829,9 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
         "seed",
-        "stop",
         "temperature",
-        "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1886,58 +1882,6 @@
         "seed",
         "stop",
         "structured_outputs",
-        "temperature",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {}
-    },
-    {
-      "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
-      "canonical_slug": "cognitivecomputations/dolphin3.0-r1-mistral-24b",
-      "hugging_face_id": "cognitivecomputations/Dolphin3.0-R1-Mistral-24B",
-      "name": "Dolphin3.0 R1 Mistral 24B (free)",
-      "created": 1739462498,
-      "description": "Dolphin 3.0 R1 is the next generation of the Dolphin series of instruct-tuned models.  Designed to be the ultimate general purpose local model, enabling coding, math, agentic, function calling, and general use cases.\n\nThe R1 version has been trained for 3 epochs to reason using 800k reasoning traces from the Dolphin-R1 dataset.\n\nDolphin aims to be a general purpose reasoning instruct model, similar to the models behind ChatGPT, Claude, Gemini.\n\nPart of the [Dolphin 3.0 Collection](https://huggingface.co/collections/cognitivecomputations/dolphin-30-677ab47f73d7ff66743979a3) Curated and trained by [Eric Hartford](https://huggingface.co/ehartford), [Ben Gitter](https://huggingface.co/bigstorm), [BlouseJury](https://huggingface.co/BlouseJury) and [Cognitive Computations](https://huggingface.co/cognitivecomputations)",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": "deepseek-r1"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "seed",
-        "stop",
         "temperature",
         "top_k",
         "top_logprobs",

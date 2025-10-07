@@ -1,27 +1,27 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-10-06 07:15 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 8
+  Total models        : 7
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
 
 CUSTOM LICENSE DISTRIBUTION:
    2 models: QWEN
-   2 models: Unknown
    1 models: Modified MIT
    1 models: NVIDIA
    1 models: Tencent
+   1 models: Unknown
    1 models: llama3.3
 
 Total unique license types: 6
 
 LICENSE URL TYPE DISTRIBUTION:
    4 models: LICENSE file
-   4 models: README.md file
+   3 models: README.md file
 
 Total URL types: 2
 
@@ -112,21 +112,7 @@ MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 7: cognitivecomputations/dolphin3.0-r1-mistral-24b
---------------------------------------------------
-  ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-  Original Name: Dolphin3.0 R1 Mistral 24B (free)
-  HuggingFace ID: cognitivecomputations/Dolphin3.0-R1-Mistral-24B
-  Canonical Slug: cognitivecomputations/dolphin3.0-r1-mistral-24b
-  Clean Model Name: Dolphin3.0 R1 Mistral 24B
-  License Info Text: 
-  License Info URL: 
-  License Name: Unknown
-  License URL: https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md
-
-================================================================================
-
-MODEL 8: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)

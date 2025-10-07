@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-06 07:15 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-10-07 07:12 AM IST",
+    "total_models": 49,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -39,18 +39,6 @@
       "license_info_url": "",
       "license_name": "Unknown",
       "license_url": "https://huggingface.co/cognitivecomputations/Dolphin3.0-Mistral-24B/blob/main/README.md",
-      "source_category": "custom"
-    },
-    {
-      "id": "cognitivecomputations/dolphin3.0-r1-mistral-24b:free",
-      "canonical_slug": "cognitivecomputations/dolphin3.0-r1-mistral-24b",
-      "original_name": "Dolphin3.0 R1 Mistral 24B (free)",
-      "hugging_face_id": "cognitivecomputations/Dolphin3.0-R1-Mistral-24B",
-      "clean_model_name": "Dolphin3.0 R1 Mistral 24B",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "Unknown",
-      "license_url": "https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md",
       "source_category": "custom"
     },
     {
@@ -378,18 +366,6 @@
       "source_category": "custom"
     },
     {
-      "id": "moonshotai/kimi-vl-a3b-thinking:free",
-      "canonical_slug": "moonshotai/kimi-vl-a3b-thinking",
-      "original_name": "MoonshotAI: Kimi VL A3B Thinking (free)",
-      "hugging_face_id": "moonshotai/Kimi-VL-A3B-Thinking",
-      "clean_model_name": "Kimi VL A3B Thinking",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking/blob/main/README.md",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT",
-      "source_category": "opensource"
-    },
-    {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",
       "original_name": "NVIDIA: Nemotron Nano 9B V2 (free)",
@@ -606,9 +582,9 @@
       "source_category": "proprietary"
     },
     {
-      "id": "z-ai/glm-4.5-air:free",
+      "id": "z-ai/glm-4.5-air",
       "canonical_slug": "z-ai/glm-4.5-air",
-      "original_name": "Z.AI: GLM 4.5 Air (free)",
+      "original_name": "Z.AI: GLM 4.5 Air",
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "clean_model_name": "GLM 4.5 Air",
       "license_info_text": "info",

@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-10-06 07:15 AM IST
+Generated: 2025-10-07 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 39
+  Total models : 38
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
@@ -12,8 +12,8 @@ SUMMARY:
 
 STANDARDIZATION RESULTS:
   Models with license transformations: 36
-  Models unchanged: 3
-  Transformation rate: 92.3%
+  Models unchanged: 2
+  Transformation rate: 94.7%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
@@ -22,7 +22,7 @@ STANDARDIZED LICENSE DISTRIBUTION:
   NVIDIA: 1 models
   QWEN: 2 models
   Tencent: 1 models
-  Unknown: 2 models
+  Unknown: 1 models
   llama3.3: 1 models
 
 Total license types: 8
@@ -37,9 +37,8 @@ LICENSE NAME TRANSFORMATIONS:
 
 Total unique transformations: 6
 
-MODELS WITH NO LICENSE CHANGES (3 models):
+MODELS WITH NO LICENSE CHANGES (2 models):
   Shisa AI: Shisa V2 Llama 3.3 70B  (free): 'llama3.3'
-  Dolphin3.0 R1 Mistral 24B (free): 'Unknown'
   Dolphin3.0 Mistral 24B (free): 'Unknown'
 
 DETAILED MODEL STANDARDIZATION RESULTS:
@@ -315,17 +314,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-vl-a3b-thinking
---------------------------------------------------
-  ID                     : moonshotai/kimi-vl-a3b-thinking:free
-  Canonical Slug         : moonshotai/kimi-vl-a3b-thinking
-  HuggingFace ID         : moonshotai/Kimi-VL-A3B-Thinking
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 29: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t-chimera
@@ -335,11 +324,21 @@ MODEL 29: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t2-chimera
   HuggingFace ID         : tngtech/DeepSeek-TNG-R1T2-Chimera
+  Raw License            : mit
+  Standardized License   : MIT
+
+================================================================================
+
+MODEL 30: z-ai/glm-4.5-air
+--------------------------------------------------
+  ID                     : z-ai/glm-4.5-air
+  Canonical Slug         : z-ai/glm-4.5-air
+  HuggingFace ID         : zai-org/GLM-4.5-Air
   Raw License            : mit
   Standardized License   : MIT
 

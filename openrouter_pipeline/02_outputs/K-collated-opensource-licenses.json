@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-06 07:15 AM IST",
-    "total_models": 31,
+    "generated_at": "2025-10-07 07:12 AM IST",
+    "total_models": 30,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -193,17 +193,6 @@
       "license_url": "https://opensource.org/licenses/MIT"
     },
     {
-      "id": "moonshotai/kimi-vl-a3b-thinking:free",
-      "canonical_slug": "moonshotai/kimi-vl-a3b-thinking",
-      "original_name": "MoonshotAI: Kimi VL A3B Thinking (free)",
-      "hugging_face_id": "moonshotai/Kimi-VL-A3B-Thinking",
-      "clean_model_name": "Kimi VL A3B Thinking",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking/blob/main/README.md",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT"
-    },
-    {
       "id": "openai/gpt-oss-20b:free",
       "canonical_slug": "openai/gpt-oss-20b",
       "original_name": "OpenAI: gpt-oss-20b (free)",
@@ -336,9 +325,9 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     {
-      "id": "z-ai/glm-4.5-air:free",
+      "id": "z-ai/glm-4.5-air",
       "canonical_slug": "z-ai/glm-4.5-air",
-      "original_name": "Z.AI: GLM 4.5 Air (free)",
+      "original_name": "Z.AI: GLM 4.5 Air",
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "clean_model_name": "GLM 4.5 Air",
       "license_info_text": "info",
