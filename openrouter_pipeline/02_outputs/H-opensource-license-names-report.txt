@@ -1,10 +1,10 @@
 ================================================================================
 OPENSOURCE LICENSE MODELS REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:22 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 31
+  Total models : 30
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -12,7 +12,7 @@ SUMMARY:
 
 OPENSOURCE LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
-  MIT: 13 models
+  MIT: 12 models
 
 Total license types: 2
 
@@ -283,15 +283,6 @@ MODEL 29: tngtech/deepseek-r1t2-chimera
 MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
-  Canonical Slug  : z-ai/glm-4.5-air
-  HuggingFace ID  : zai-org/GLM-4.5-Air
-  License Name    : MIT
-
-================================================================================
-
-MODEL 31: z-ai/glm-4.5-air
---------------------------------------------------
-  ID              : z-ai/glm-4.5-air
   Canonical Slug  : z-ai/glm-4.5-air
   HuggingFace ID  : zai-org/GLM-4.5-Air
   License Name    : MIT

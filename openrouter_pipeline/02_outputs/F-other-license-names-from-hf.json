@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-07 07:12 AM IST",
-    "total_models": 38,
+    "generated_at": "2025-10-07 12:22 PM IST",
+    "total_models": 37,
     "pipeline_stage": "F_fetch_other_license_names_from_hf"
   },
   "models": [
@@ -44,13 +44,6 @@
       "id": "z-ai/glm-4.5-air:free",
       "canonical_slug": "z-ai/glm-4.5-air",
       "name": "Z.AI: GLM 4.5 Air (free)",
-      "hugging_face_id": "zai-org/GLM-4.5-Air",
-      "extracted_license": "mit"
-    },
-    {
-      "id": "z-ai/glm-4.5-air",
-      "canonical_slug": "z-ai/glm-4.5-air",
-      "name": "Z.AI: GLM 4.5 Air",
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "extracted_license": "mit"
     },

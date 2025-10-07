@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-07 07:12 AM IST",
+    "generated_at": "2025-10-07 12:22 PM IST",
     "total_models": 30,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
@@ -325,9 +325,9 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     {
-      "id": "z-ai/glm-4.5-air",
+      "id": "z-ai/glm-4.5-air:free",
       "canonical_slug": "z-ai/glm-4.5-air",
-      "original_name": "Z.AI: GLM 4.5 Air",
+      "original_name": "Z.AI: GLM 4.5 Air (free)",
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "clean_model_name": "GLM 4.5 Air",
       "license_info_text": "info",

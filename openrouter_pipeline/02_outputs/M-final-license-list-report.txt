@@ -1,6 +1,6 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:22 PM IST
 ================================================================================
 
 SUMMARY:
@@ -743,8 +743,8 @@ MODEL 47: tngtech/deepseek-r1t2-chimera
 
 MODEL 48: z-ai/glm-4.5-air
 --------------------------------------------------
-  ID: z-ai/glm-4.5-air
-  Original Name: Z.AI: GLM 4.5 Air
+  ID: z-ai/glm-4.5-air:free
+  Original Name: Z.AI: GLM 4.5 Air (free)
   HuggingFace ID: zai-org/GLM-4.5-Air
   Canonical Slug: z-ai/glm-4.5-air
   Clean Model Name: GLM 4.5 Air

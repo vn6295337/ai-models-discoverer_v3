@@ -1,23 +1,23 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:22 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 38
+  Total models : 37
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
   Output       : G-standardized-other-license-names-from-hf.json
 
 STANDARDIZATION RESULTS:
-  Models with license transformations: 36
+  Models with license transformations: 35
   Models unchanged: 2
-  Transformation rate: 94.7%
+  Transformation rate: 94.6%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
-  MIT: 13 models
+  MIT: 12 models
   Modified MIT: 1 models
   NVIDIA: 1 models
   QWEN: 2 models
@@ -336,16 +336,6 @@ MODEL 29: tngtech/deepseek-r1t2-chimera
 
 MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
-  ID                     : z-ai/glm-4.5-air
-  Canonical Slug         : z-ai/glm-4.5-air
-  HuggingFace ID         : zai-org/GLM-4.5-Air
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 31: z-ai/glm-4.5-air
---------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
   Canonical Slug         : z-ai/glm-4.5-air
   HuggingFace ID         : zai-org/GLM-4.5-Air
@@ -354,7 +344,7 @@ MODEL 31: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 32: moonshotai/kimi-k2
+MODEL 31: moonshotai/kimi-k2
 --------------------------------------------------
   ID                     : moonshotai/kimi-k2:free
   Canonical Slug         : moonshotai/kimi-k2
@@ -364,7 +354,7 @@ MODEL 32: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 33: nvidia/nemotron-nano-9b-v2
+MODEL 32: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -374,7 +364,7 @@ MODEL 33: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 34: qwen/qwen-2.5-72b-instruct
+MODEL 33: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug         : qwen/qwen-2.5-72b-instruct
@@ -384,7 +374,7 @@ MODEL 34: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 35: qwen/qwen2.5-vl-72b-instruct
+MODEL 34: qwen/qwen2.5-vl-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen2.5-vl-72b-instruct:free
   Canonical Slug         : qwen/qwen2.5-vl-72b-instruct
@@ -394,7 +384,7 @@ MODEL 35: qwen/qwen2.5-vl-72b-instruct
 
 ================================================================================
 
-MODEL 36: tencent/hunyuan-a13b-instruct
+MODEL 35: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID                     : tencent/hunyuan-a13b-instruct:free
   Canonical Slug         : tencent/hunyuan-a13b-instruct

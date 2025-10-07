@@ -1,17 +1,17 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:22 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 38
+  Total models : 37
   Input        : B-filtered-models.json
   Processor    : E_fetch_other_license_info_urls_from_hf.py
   Output       : E-other-license-info-urls-from-hf.json
 
 LICENSE INFO URL BREAKDOWN:
   20 models: LICENSE file
-  18 models: README.md file
+  17 models: README.md file
 
 Total categories: 2
 
@@ -343,15 +343,6 @@ MODEL 36: venice/uncensored
 ================================================================================
 
 MODEL 37: z-ai/glm-4.5-air
---------------------------------------------------
-  ID              : z-ai/glm-4.5-air
-  Canonical Slug  : z-ai/glm-4.5-air
-  HuggingFace ID  : zai-org/GLM-4.5-Air
-  License Info URL: https://huggingface.co/zai-org/GLM-4.5-Air/blob/main/README.md
-
-================================================================================
-
-MODEL 38: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air

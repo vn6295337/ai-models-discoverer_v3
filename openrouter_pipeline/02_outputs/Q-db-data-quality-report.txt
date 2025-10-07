@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:22 PM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,9 +9,8 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (19 models):
+LICENSE INFO TEXT (18 models):
   - Dolphin3.0 Mistral 24B
-  - GLM 4.5 Air
   - Gemma 2 9B IT
   - Gemma 3 12B IT
   - Gemma 3 27B IT
@@ -30,9 +29,8 @@ LICENSE INFO TEXT (19 models):
   - Qwen2.5 VL 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
-LICENSE INFO URL (19 models):
+LICENSE INFO URL (18 models):
   - Dolphin3.0 Mistral 24B
-  - GLM 4.5 Air
   - Gemma 2 9B IT
   - Gemma 3 12B IT
   - Gemma 3 27B IT
@@ -50,12 +48,6 @@ LICENSE INFO URL (19 models):
   - Qwen2.5 72B Instruct
   - Qwen2.5 VL 72B Instruct
   - Shisa V2 Llama 3.3 70B
-
-LICENSE NAME (1 models):
-  - GLM 4.5 Air
-
-LICENSE URL (1 models):
-  - GLM 4.5 Air
 
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
@@ -65,12 +57,10 @@ LICENSE NAME (1 models):
 
 DATA QUALITY SUMMARY:
 ------------------------------
-Total models: 49
-Missing license info text: 19 (38.8%)
-Missing license info url: 19 (38.8%)
-Missing license name: 1 (2.0%)
-Missing license url: 1 (2.0%)
-Unknown license name: 1 (2.0%)
+Total models: 48
+Missing license info text: 18 (37.5%)
+Missing license info url: 18 (37.5%)
+Unknown license name: 1 (2.1%)
 
 ================================================================================
 
@@ -548,16 +538,6 @@ COMPLETE MODEL RECORDS:
      Provider API Access: https://openrouter.ai/settings/keys
 
  48. GLM 4.5 Air
-     Provider           : Z.AI (China)
-     Modalities         : Text → Text
-     License            : 
-     License Info       : 
-     License URL        : 
-     Official URL       : https://zhipuai.cn/en/
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 49. GLM 4.5 Air
      Provider           : Z.AI (China)
      Modalities         : Text → Text
      License            : MIT

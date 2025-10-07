@@ -1,13 +1,13 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:21 PM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
   Total models processed: 324
-  Models passed all filters: 49
-  Models excluded: 275
-  Success rate: 15.1%
+  Models passed all filters: 48
+  Models excluded: 276
+  Success rate: 14.8%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
@@ -23,7 +23,12 @@ STEP-BY-STEP FILTERING BREAKDOWN:
   Step 3 - Keyword Filter:
     Input: 52 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 49 models
+    Remaining: 49 models
+
+  Step 4 - Deduplication Filter:
+    Input: 49 models
+    Excluded: 1 models (duplicates after (free) suffix normalization)
+    Final: 48 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
@@ -46,6 +51,14 @@ EXCLUDED FOR: PREVIEW/EXPERIMENTAL VERSION (2 models)
 --------------------------------------------------
    1. Agentica: Deepcoder 14B Preview (free)
    2. Nous: DeepHermes 3 Llama 3 8B Preview (free)
+
+================================================================================
+STEP 4 - DEDUPLICATION FILTER RESULTS (DETAILED)
+================================================================================
+Found 1 duplicate models after (free) suffix normalization:
+
+   1. Z.AI: GLM 4.5 Air
+      Reason: Duplicate model after (free) suffix normalization
 
 ================================================================================
 FINAL FILTERED MODELS (PASSED ALL FILTERS)
@@ -190,17 +203,6 @@ PROVIDER: META (5 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: Z.AI (2 models)
---------------------------------------------------
-   1. Z.AI: GLM 4.5 Air
-      ID: z-ai/glm-4.5-air
-      Pricing: prompt=0, completion=0, request=0
-
-   2. Z.AI: GLM 4.5 Air (free)
-      ID: z-ai/glm-4.5-air:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: MOONSHOTAI (2 models)
 --------------------------------------------------
    1. MoonshotAI: Kimi Dev 72B (free)
@@ -262,6 +264,13 @@ PROVIDER: OPENAI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: Z.AI (1 models)
+--------------------------------------------------
+   1. Z.AI: GLM 4.5 Air (free)
+      ID: z-ai/glm-4.5-air:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: VENICE (1 models)
 --------------------------------------------------
    1. Venice: Uncensored (free)
@@ -307,9 +316,10 @@ PROVIDER: COGNITIVECOMPUTATIONS (1 models)
 ================================================================================
 FINAL SUMMARY:
   Total providers: 19
-  Total models passed all filters: 49
+  Total models passed all filters: 48
   Models excluded by pricing: 272
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 275
+  Models excluded by deduplication: 1
+  Total exclusions: 276
   ✓ All filtered models accounted for

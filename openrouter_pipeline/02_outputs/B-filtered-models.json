@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-07 07:12 AM IST",
-    "total_models": 49,
+    "generated_at": "2025-10-07 12:21 PM IST",
+    "total_models": 48,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
@@ -311,64 +311,6 @@
         "repetition_penalty",
         "seed",
         "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.75,
-        "top_p": null,
-        "frequency_penalty": null
-      }
-    },
-    {
-      "id": "z-ai/glm-4.5-air",
-      "canonical_slug": "z-ai/glm-4.5-air",
-      "hugging_face_id": "zai-org/GLM-4.5-Air",
-      "name": "Z.AI: GLM 4.5 Air",
-      "created": 1753471258,
-      "description": "GLM-4.5-Air is the lightweight variant of our latest flagship model family, also purpose-built for agent-centric applications. Like GLM-4.5, it adopts the Mixture-of-Experts (MoE) architecture but with a more compact parameter size. GLM-4.5-Air also supports hybrid inference modes, offering a \"thinking mode\" for advanced reasoning and tool use, and a \"non-thinking mode\" for real-time interaction. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)",
-      "context_length": 32768,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 32768,
-        "max_completion_tokens": 32768,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",

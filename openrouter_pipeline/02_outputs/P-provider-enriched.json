@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-07 07:12 AM IST",
-    "total_models": 49,
+    "generated_at": "2025-10-07 12:22 PM IST",
+    "total_models": 48,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
@@ -104,25 +104,6 @@
       "id": "z-ai/glm-4.5-air:free",
       "canonical_slug": "z-ai/glm-4.5-air",
       "original_name": "Z.AI: GLM 4.5 Air (free)",
-      "hugging_face_id": "zai-org/GLM-4.5-Air",
-      "clean_model_name": "GLM 4.5 Air",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Z.AI",
-      "model_provider_country": "China",
-      "model_family": "z.ai",
-      "official_url": "https://zhipuai.cn/en/"
-    },
-    {
-      "id": "z-ai/glm-4.5-air",
-      "canonical_slug": "z-ai/glm-4.5-air",
-      "original_name": "Z.AI: GLM 4.5 Air",
       "hugging_face_id": "zai-org/GLM-4.5-Air",
       "clean_model_name": "GLM 4.5 Air",
       "raw_input_modalities": "text",

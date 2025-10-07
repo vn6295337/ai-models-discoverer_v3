@@ -1,23 +1,23 @@
 ================================================================================
 OPENSOURCE LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-10-07 07:12 AM IST
+Generated: 2025-10-07 12:22 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 31
+  Total models : 30
   Input        : H-opensource-license-names.json
   Reference    : 05_opensource_license_urls.json
   Processor    : I_opensource_license_urls.py
   Output       : I-opensource-license-urls.json
 
 URL MAPPING STATISTICS:
-  Successful URL mappings: 31
+  Successful URL mappings: 30
   Failed URL mappings: 0
   Success rate: 100.0%
 
 LICENSE URL DISTRIBUTION:
   Apache-2.0 → https://www.apache.org/licenses/LICENSE-2.0: 18 models
-  MIT → https://opensource.org/licenses/MIT: 13 models
+  MIT → https://opensource.org/licenses/MIT: 12 models
 
 Total mapping types: 2
 
@@ -317,16 +317,6 @@ MODEL 29: tngtech/deepseek-r1t2-chimera
 MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
-  Canonical Slug         : z-ai/glm-4.5-air
-  HuggingFace ID         : zai-org/GLM-4.5-Air
-  License Name           : MIT
-  Official License URL   : https://opensource.org/licenses/MIT
-
-================================================================================
-
-MODEL 31: z-ai/glm-4.5-air
---------------------------------------------------
-  ID                     : z-ai/glm-4.5-air
   Canonical Slug         : z-ai/glm-4.5-air
   HuggingFace ID         : zai-org/GLM-4.5-Air
   License Name           : MIT
