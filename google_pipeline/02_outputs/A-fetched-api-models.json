@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-10-07 12:22:46 IST",
-    "total_models": 65,
+    "generated": "2025-10-08 06:57:02 IST",
+    "total_models": 66,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -707,6 +707,23 @@
       "displayName": "Gemini Robotics-ER 1.5 Preview",
       "description": "Gemini Robotics-ER 1.5 Preview",
       "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    {
+      "name": "models/gemini-2.5-computer-use-preview-10-2025",
+      "version": "Gemini 2.5 Computer Use Preview 10-2025",
+      "displayName": "Gemini 2.5 Computer Use Preview 10-2025",
+      "description": "Gemini 2.5 Computer Use Preview 10-2025",
+      "inputTokenLimit": 131072,
       "outputTokenLimit": 65536,
       "supportedGenerationMethods": [
         "generateContent",
