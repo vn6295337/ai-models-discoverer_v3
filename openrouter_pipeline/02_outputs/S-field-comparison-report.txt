@@ -1,15 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-10-07 12:22 PM IST
-================================================================================
-
-⚠ DUPLICATE DETECTION ALERTS
---------------------------------------------------------------------------------
-
-SUPABASE DUPLICATES: Found 1 duplicate name(s)
-  • 'GLM 4.5 Air': 2 occurrences
-    [1] id: 1396, provider_id: N/A, license: 
-    [2] id: 1397, provider_id: N/A, license: MIT
-
+Generated: 2025-10-08 06:56 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -18,9 +8,7 @@ SUMMARY STATISTICS
 1. OVERALL STATISTICS:
    • Total unique model names: 46
    • Total records in pipeline: 46
-   • Total records in Supabase: 47
-   • Duplicate records in pipeline: 0
-   • Duplicate records in Supabase: 1
+   • Total records in Supabase: 46
    • Models in both systems: 46
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
