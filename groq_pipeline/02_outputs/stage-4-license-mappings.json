@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-07T12:31:24.708820+00:00",
+    "generated_at": "2025-10-08T12:33:26.289137+00:00",
     "consolidation_processor": "F_consolidate_all_licenses.py",
     "source_files": [
       "stage-4-meta-licensing.json",

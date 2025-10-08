@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-07T12:31:22.669502+00:00",
+    "generated_at": "2025-10-08T12:33:24.245458+00:00",
     "source_file": "../02_outputs/stage-1-scrape-production-models.json",
     "processor": "B_extract_opensource_licenses.py",
     "approach": "3-category processing: Meta (skipped), Google (hardcoded), Others (HF-scraped)",
@@ -48,7 +48,7 @@
       "category": "opensource",
       "raw_license_name": "apache-2.0",
       "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/openai/whisper-large-v3",
+      "license_info_url": "https://huggingface.co/openai/whisper-large-v3/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
