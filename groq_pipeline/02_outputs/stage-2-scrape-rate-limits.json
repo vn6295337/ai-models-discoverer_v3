@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "extraction_timestamp": "2025-10-08T12:32:13.056027",
+    "extraction_timestamp": "2025-10-09T12:29:40.524106",
     "source_url": "https://console.groq.com/docs/rate-limits",
-    "total_models": 21
+    "total_models": 20
   },
   "rate_limits": {
     "allam-2-7b": {
@@ -20,15 +20,6 @@
       "RPD": "1K",
       "TPM": "6K",
       "TPD": "100K",
-      "ASH": "-",
-      "ASD": "-"
-    },
-    "gemma2-9b-it": {
-      "model_id": "gemma2-9b-it",
-      "RPM": "30",
-      "RPD": "14.4K",
-      "TPM": "15K",
-      "TPD": "500K",
       "ASH": "-",
       "ASD": "-"
     },
