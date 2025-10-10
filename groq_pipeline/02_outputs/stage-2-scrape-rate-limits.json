@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "extraction_timestamp": "2025-10-09T12:29:40.524106",
+    "extraction_timestamp": "2025-10-10T12:31:05.215845",
     "source_url": "https://console.groq.com/docs/rate-limits",
-    "total_models": 20
+    "total_models": 19
   },
   "rate_limits": {
     "allam-2-7b": {
@@ -11,15 +11,6 @@
       "RPD": "7K",
       "TPM": "6K",
       "TPD": "500K",
-      "ASH": "-",
-      "ASD": "-"
-    },
-    "deepseek-r1-distill-llama-70b": {
-      "model_id": "deepseek-r1-distill-llama-70b",
-      "RPM": "30",
-      "RPD": "1K",
-      "TPM": "6K",
-      "TPD": "100K",
       "ASH": "-",
       "ASD": "-"
     },
