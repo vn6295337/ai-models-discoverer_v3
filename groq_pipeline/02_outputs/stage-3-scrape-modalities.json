@@ -1,12 +1,12 @@
 {
   "metadata": {
-    "extraction_timestamp": "2025-10-10T12:32:00.818995",
+    "extraction_timestamp": "2025-10-11T12:27:23.135805",
     "source_base_url": "https://console.groq.com/docs/model/",
     "total_models": 7
   },
   "modalities": {
-    "llama-3.1-8b-instant": {
-      "model_id": "llama-3.1-8b-instant",
+    "Llama 3.1 8Bllama-3.1-8b-instant": {
+      "model_id": "Llama 3.1 8Bllama-3.1-8b-instant",
       "input_modalities": [
         "Text"
       ],
@@ -14,8 +14,8 @@
         "Text"
       ]
     },
-    "llama-3.3-70b-versatile": {
-      "model_id": "llama-3.3-70b-versatile",
+    "Llama 3.3 70Bllama-3.3-70b-versatile": {
+      "model_id": "Llama 3.3 70Bllama-3.3-70b-versatile",
       "input_modalities": [
         "Text"
       ],
@@ -23,27 +23,18 @@
         "Text"
       ]
     },
-    "meta-llama/llama-guard-4-12b": {
-      "model_id": "meta-llama/llama-guard-4-12b",
+    "Llama Guard 4 12Bmeta-llama/llama-guard-4-12b": {
+      "model_id": "Llama Guard 4 12Bmeta-llama/llama-guard-4-12b",
       "input_modalities": [
-        "Text",
-        "Image"
-      ],
-      "output_modalities": [
-        "Text"
-      ]
-    },
-    "openai/gpt-oss-120b": {
-      "model_id": "openai/gpt-oss-120b",
-      "input_modalities": [
+        "Image",
         "Text"
       ],
       "output_modalities": [
         "Text"
       ]
     },
-    "openai/gpt-oss-20b": {
-      "model_id": "openai/gpt-oss-20b",
+    "GPT OSS 120Bopenai/gpt-oss-120b": {
+      "model_id": "GPT OSS 120Bopenai/gpt-oss-120b",
       "input_modalities": [
         "Text"
       ],
@@ -51,8 +42,17 @@
         "Text"
       ]
     },
-    "whisper-large-v3": {
-      "model_id": "whisper-large-v3",
+    "GPT OSS 20Bopenai/gpt-oss-20b": {
+      "model_id": "GPT OSS 20Bopenai/gpt-oss-20b",
+      "input_modalities": [
+        "Text"
+      ],
+      "output_modalities": [
+        "Text"
+      ]
+    },
+    "Whisperwhisper-large-v3": {
+      "model_id": "Whisperwhisper-large-v3",
       "input_modalities": [
         "Audio"
       ],
@@ -60,8 +60,8 @@
         "Text"
       ]
     },
-    "whisper-large-v3-turbo": {
-      "model_id": "whisper-large-v3-turbo",
+    "Whisper Large V3 Turbowhisper-large-v3-turbo": {
+      "model_id": "Whisper Large V3 Turbowhisper-large-v3-turbo",
       "input_modalities": [
         "Audio"
       ],

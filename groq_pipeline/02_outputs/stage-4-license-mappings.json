@@ -1,88 +1,76 @@
 {
   "metadata": {
-    "generated_at": "2025-10-10T12:32:18.235016+00:00",
+    "generated_at": "2025-10-11T12:27:35.038639+00:00",
     "consolidation_processor": "F_consolidate_all_licenses.py",
     "source_files": [
       "stage-4-meta-licensing.json",
       "stage-4-hf-scraped-licensing.json"
     ],
-    "total_models": 14,
+    "total_models": 10,
     "description": "Consolidated license information from all Groq model sources",
     "statistics": {
       "sources": {
         "meta_models": 6,
-        "hf_scraped_models": 8,
-        "total_consolidated": 14
+        "hf_scraped_models": 4,
+        "total_consolidated": 10
       },
       "providers": {
-        "Meta": 6,
-        "OpenAI": 8
+        "250K TPM1K RPM": 6,
+        "300K TPM1K RPM": 2,
+        "30K TPM100 RPM": 2
       },
       "licenses": {
         "Llama-3.1": 2,
         "Llama-3.3": 2,
         "Llama-4": 2,
-        "Apache-2.0": 6,
-        "MIT": 2
+        "HTTP 401": 4
       },
       "categories": {
         "meta": 6,
-        "opensource": 8
+        "custom": 4
       }
     }
   },
   "license_urls": {
     "Llama-3.1": "https://www.llama.com/llama3_1/license/",
     "Llama-3.3": "https://www.llama.com/llama3_3/license/",
-    "Llama-4": "https://www.llama.com/llama4/license/",
-    "Apache-2.0": "https://www.apache.org/licenses/LICENSE-2.0",
-    "MIT": "https://opensource.org/licenses/MIT"
+    "Llama-4": "https://www.llama.com/llama4/license/"
   },
   "provider_license_mappings": {
-    "Meta": {
-      "llama-3.1-8b-instant": {
+    "250K TPM1K RPM": {
+      "Llama 3.1 8Bllama-3.1-8b-instant": {
         "license_info_text": "",
         "license_info_url": "",
         "license_name": "Llama-3.1",
         "license_url": "https://www.llama.com/llama3_1/license/"
       },
-      "llama-3.3-70b-versatile": {
+      "gpt-oss-120b": {
+        "license_info_text": "",
+        "license_info_url": "",
+        "license_name": "HTTP 401",
+        "license_url": ""
+      },
+      "gpt-oss-20b": {
+        "license_info_text": "",
+        "license_info_url": "",
+        "license_name": "HTTP 401",
+        "license_url": ""
+      }
+    },
+    "300K TPM1K RPM": {
+      "Llama 3.3 70Bllama-3.3-70b-versatile": {
         "license_info_text": "",
         "license_info_url": "",
         "license_name": "Llama-3.3",
         "license_url": "https://www.llama.com/llama3_3/license/"
-      },
+      }
+    },
+    "30K TPM100 RPM": {
       "llama-guard-4-12b": {
         "license_info_text": "",
         "license_info_url": "",
         "license_name": "Llama-4",
         "license_url": "https://www.llama.com/llama4/license/"
-      }
-    },
-    "OpenAI": {
-      "gpt-oss-120b": {
-        "license_info_text": "info",
-        "license_info_url": "https://huggingface.co/openai/gpt-oss-120b/blob/main/LICENSE",
-        "license_name": "Apache-2.0",
-        "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-      },
-      "gpt-oss-20b": {
-        "license_info_text": "info",
-        "license_info_url": "https://huggingface.co/openai/gpt-oss-20b/blob/main/LICENSE",
-        "license_name": "Apache-2.0",
-        "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-      },
-      "whisper-large-v3": {
-        "license_info_text": "info",
-        "license_info_url": "https://huggingface.co/openai/whisper-large-v3/blob/main/README.md",
-        "license_name": "Apache-2.0",
-        "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-      },
-      "whisper-large-v3-turbo": {
-        "license_info_text": "info",
-        "license_info_url": "https://huggingface.co/openai/whisper-large-v3-turbo/blob/main/README.md",
-        "license_name": "MIT",
-        "license_url": "https://opensource.org/licenses/MIT"
       }
     }
   }

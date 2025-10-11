@@ -1,6 +1,6 @@
 ================================================================================
 GROQ PIPELINE NORMALIZATION REPORT
-Generated: 2025-10-10 12:32:20
+Generated: 2025-10-11 12:27:37
 ================================================================================
 
 SUMMARY:
@@ -12,107 +12,92 @@ SUMMARY:
 
 MODELS NORMALIZED: 14
 ----------------------------------------
-   1. META - Llama 3.1 8b Instant
-      Model Name: llama-3.1-8b-instant -> Llama 3.1 8b Instant
+   1. 250K TPM1K RPM - Llama 3.1 8bllama 3.1 8b Instant
+      Model Name: Llama 3.1 8Bllama-3.1-8b-instant -> Llama 3.1 8bllama 3.1 8b Instant
       Input Modalities: Text
       Output Modalities: Text
       License:  -> Llama-3.1
-      Rate Limits: RPM: 30, TPM: 6K, RPD: 14.4K, TPD: 500K
 
-   2. META - Llama 3.3 70b Versatile
-      Model Name: llama-3.3-70b-versatile -> Llama 3.3 70b Versatile
+   2. 300K TPM1K RPM - Llama 3.3 70bllama 3.3 70b Versatile
+      Model Name: Llama 3.3 70Bllama-3.3-70b-versatile -> Llama 3.3 70bllama 3.3 70b Versatile
       Input Modalities: Text
       Output Modalities: Text
       License:  -> Llama-3.3
-      Rate Limits: RPM: 30, TPM: 12K, RPD: 1K, TPD: 100K
 
-   3. META - Llama Guard 4 12b
-      Model Name: meta-llama/llama-guard-4-12b -> Llama Guard 4 12b
+   3. 30K TPM100 RPM - Llama Guard 4 12b
+      Model Name: Llama Guard 4 12Bmeta-llama/llama-guard-4-12b -> Llama Guard 4 12b
       Input Modalities: Text, Image
       Output Modalities: Text
       License:  -> Llama-4
-      Rate Limits: RPM: 30, TPM: 15K, RPD: 14.4K, TPD: 500K
 
-   4. OPENAI - GPT OSS 120B
-      Model Name: openai/gpt-oss-120b -> GPT OSS 120B
+   4. 250K TPM1K RPM - GPT OSS 120B
+      Model Name: GPT OSS 120Bopenai/gpt-oss-120b -> GPT OSS 120B
       Input Modalities: Text
       Output Modalities: Text
-      License: info -> Apache-2.0
-      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+      License:  -> HTTP 401
 
-   5. OPENAI - GPT OSS 20B
-      Model Name: openai/gpt-oss-20b -> GPT OSS 20B
+   5. 250K TPM1K RPM - GPT OSS 20B
+      Model Name: GPT OSS 20Bopenai/gpt-oss-20b -> GPT OSS 20B
       Input Modalities: Text
       Output Modalities: Text
-      License: info -> Apache-2.0
-      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+      License:  -> HTTP 401
 
-   6. OPENAI - Whisper Large V3
-      Model Name: whisper-large-v3 -> Whisper Large V3
+   6. 200K ASH300 RPM - Whisperwhisper Large V3
+      Model Name: Whisperwhisper-large-v3 -> Whisperwhisper Large V3
       Input Modalities: Audio
       Output Modalities: Text
-      License: info -> Apache-2.0
-      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
 
-   7. OPENAI - Whisper Large V3 Turbo
-      Model Name: whisper-large-v3-turbo -> Whisper Large V3 Turbo
+   7. 400K ASH400 RPM - Whisper Large V3 Turbowhisper Large V3 Turbo
+      Model Name: Whisper Large V3 Turbowhisper-large-v3-turbo -> Whisper Large V3 Turbowhisper Large V3 Turbo
       Input Modalities: Audio
       Output Modalities: Text
-      License: info -> MIT
-      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
 
-   8. META - Llama 3.1 8b Instant
-      Model Name: llama-3.1-8b-instant -> Llama 3.1 8b Instant
+   8. 250K TPM1K RPM - Llama 3.1 8bllama 3.1 8b Instant
+      Model Name: Llama 3.1 8Bllama-3.1-8b-instant -> Llama 3.1 8bllama 3.1 8b Instant
       Input Modalities: Text
       Output Modalities: Text
       License:  -> Llama-3.1
-      Rate Limits: RPM: 30, TPM: 6K, RPD: 14.4K, TPD: 500K
 
-   9. META - Llama 3.3 70b Versatile
-      Model Name: llama-3.3-70b-versatile -> Llama 3.3 70b Versatile
+   9. 300K TPM1K RPM - Llama 3.3 70bllama 3.3 70b Versatile
+      Model Name: Llama 3.3 70Bllama-3.3-70b-versatile -> Llama 3.3 70bllama 3.3 70b Versatile
       Input Modalities: Text
       Output Modalities: Text
       License:  -> Llama-3.3
-      Rate Limits: RPM: 30, TPM: 12K, RPD: 1K, TPD: 100K
 
-   10. META - Llama Guard 4 12b
-      Model Name: meta-llama/llama-guard-4-12b -> Llama Guard 4 12b
+   10. 30K TPM100 RPM - Llama Guard 4 12b
+      Model Name: Llama Guard 4 12Bmeta-llama/llama-guard-4-12b -> Llama Guard 4 12b
       Input Modalities: Text, Image
       Output Modalities: Text
       License:  -> Llama-4
-      Rate Limits: RPM: 30, TPM: 15K, RPD: 14.4K, TPD: 500K
 
-   11. OPENAI - GPT OSS 120B
-      Model Name: openai/gpt-oss-120b -> GPT OSS 120B
+   11. 250K TPM1K RPM - GPT OSS 120B
+      Model Name: GPT OSS 120Bopenai/gpt-oss-120b -> GPT OSS 120B
       Input Modalities: Text
       Output Modalities: Text
-      License: info -> Apache-2.0
-      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+      License:  -> HTTP 401
 
-   12. OPENAI - GPT OSS 20B
-      Model Name: openai/gpt-oss-20b -> GPT OSS 20B
+   12. 250K TPM1K RPM - GPT OSS 20B
+      Model Name: GPT OSS 20Bopenai/gpt-oss-20b -> GPT OSS 20B
       Input Modalities: Text
       Output Modalities: Text
-      License: info -> Apache-2.0
-      Rate Limits: RPM: 30, TPM: 8K, RPD: 1K, TPD: 200K
+      License:  -> HTTP 401
 
-   13. OPENAI - Whisper Large V3
-      Model Name: whisper-large-v3 -> Whisper Large V3
+   13. 200K ASH300 RPM - Whisperwhisper Large V3
+      Model Name: Whisperwhisper-large-v3 -> Whisperwhisper Large V3
       Input Modalities: Audio
       Output Modalities: Text
-      License: info -> Apache-2.0
-      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
 
-   14. OPENAI - Whisper Large V3 Turbo
-      Model Name: whisper-large-v3-turbo -> Whisper Large V3 Turbo
+   14. 400K ASH400 RPM - Whisper Large V3 Turbowhisper Large V3 Turbo
+      Model Name: Whisper Large V3 Turbowhisper-large-v3-turbo -> Whisper Large V3 Turbowhisper Large V3 Turbo
       Input Modalities: Audio
       Output Modalities: Text
-      License: info -> MIT
-      Rate Limits: RPM: 20, RPD: 2K, ASH: 7.2K, ASD: 28.8K
 
 PROVIDER SUMMARY:
 ----------------------------------------
-  Meta: 6 models
-  OpenAI: 8 models
+  200K ASH300 RPM: 2 models
+  250K TPM1K RPM: 6 models
+  300K TPM1K RPM: 2 models
+  30K TPM100 RPM: 2 models
+  400K ASH400 RPM: 2 models
 
-Total providers: 2
+Total providers: 5
