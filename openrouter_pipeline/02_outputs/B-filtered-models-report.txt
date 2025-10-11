@@ -1,18 +1,18 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-10 06:57 AM IST
+Generated: 2025-10-11 06:53 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 327
+  Total models processed: 330
   Models passed all filters: 48
-  Models excluded: 279
-  Success rate: 14.7%
+  Models excluded: 282
+  Success rate: 14.5%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 327 models
-    Excluded: 276 models (non-free pricing)
+    Input: 330 models
+    Excluded: 279 models (non-free pricing)
     Remaining: 51 models
 
   Step 2 - Billing Description Filter:
@@ -33,7 +33,7 @@ STEP-BY-STEP FILTERING BREAKDOWN:
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 276 models with non-free pricing (details omitted due to volume)
+Excluded 279 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -314,9 +314,9 @@ PROVIDER: COGNITIVECOMPUTATIONS (1 models)
 FINAL SUMMARY:
   Total providers: 19
   Total models passed all filters: 48
-  Models excluded by pricing: 276
+  Models excluded by pricing: 279
   Models excluded by billing description: 0
   Models excluded by keywords: 3
   Models excluded by deduplication: 0
-  Total exclusions: 279
+  Total exclusions: 282
   ✓ All filtered models accounted for
