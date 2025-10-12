@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-11 06:53 AM IST",
+    "generated_at": "2025-10-12 07:07 AM IST",
     "total_models": 330,
     "pipeline_stage": "A_fetch_api_models"
   },
@@ -4837,8 +4837,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000003",
-        "completion": "0.00000165",
+        "prompt": "0.0000004",
+        "completion": "0.0000022",
         "request": "0",
         "image": "0",
         "web_search": "0",
