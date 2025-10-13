@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-12 07:07 AM IST
+Generated: 2025-10-13 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 330
+  Total models: 331
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  43 models
@@ -370,6 +370,9 @@ PROVIDER BREAKDOWN (Descending Order):
     - inflection-3-pi
     - inflection-3-productivity
 
+  inclusionAI  :   1 models
+    - ling-1t
+
   Relace       :   1 models
     - relace-apply-3
 
@@ -406,4 +409,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer       :   1 models
     - weaver
 
-Total providers: 47
+Total providers: 48
