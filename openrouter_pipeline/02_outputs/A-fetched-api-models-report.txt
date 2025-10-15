@@ -1,13 +1,13 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-14 06:56 AM IST
+Generated: 2025-10-15 07:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 331
+  Total models: 334
 
 PROVIDER BREAKDOWN (Descending Order):
-  OpenAI       :  43 models
+  OpenAI       :  45 models
     - chatgpt-4o-latest
     - codex-mini
     - gpt-3.5-turbo
@@ -46,13 +46,15 @@ PROVIDER BREAKDOWN (Descending Order):
     - o1-mini-2024-09-12
     - o1-pro
     - o3
+    - o3-deep-research
     - o3-mini
     - o3-mini-high
     - o3-pro
     - o4-mini
+    - o4-mini-deep-research
     - o4-mini-high
 
-  Qwen         :  41 models
+  Qwen         :  43 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -93,6 +95,8 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-235b-a22b-thinking
     - qwen3-vl-30b-a3b-instruct
     - qwen3-vl-30b-a3b-thinking
+    - qwen3-vl-8b-instruct
+    - qwen3-vl-8b-thinking
     - qwq-32b
 
   Mistral      :  31 models
@@ -247,14 +251,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - glm-4.5v
     - glm-4.6
 
-  Perplexity   :   6 models
-    - r1-1776
-    - sonar
-    - sonar-deep-research
-    - sonar-pro
-    - sonar-reasoning
-    - sonar-reasoning-pro
-
   NVIDIA       :   5 models
     - llama-3.1-nemotron-70b-instruct
     - llama-3.1-nemotron-ultra-253b-v1
@@ -289,6 +285,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - kimi-k2
     - kimi-k2-0905
     - kimi-k2:free
+
+  Perplexity   :   5 models
+    - sonar
+    - sonar-deep-research
+    - sonar-pro
+    - sonar-reasoning
+    - sonar-reasoning-pro
 
   TNG          :   4 models
     - deepseek-r1t-chimera
