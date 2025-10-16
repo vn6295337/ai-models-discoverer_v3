@@ -1,13 +1,13 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-15 07:07 AM IST
+Generated: 2025-10-16 06:58 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 334
+  Total models: 336
 
 PROVIDER BREAKDOWN (Descending Order):
-  OpenAI       :  45 models
+  OpenAI       :  46 models
     - chatgpt-4o-latest
     - codex-mini
     - gpt-3.5-turbo
@@ -35,6 +35,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - gpt-5
     - gpt-5-chat
     - gpt-5-codex
+    - gpt-5-image
     - gpt-5-mini
     - gpt-5-nano
     - gpt-5-pro
@@ -201,7 +202,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - deepseek-v3.1-terminus
     - deepseek-v3.2-exp
 
-  Anthropic    :  12 models
+  Anthropic    :  13 models
     - claude-3-haiku
     - claude-3-opus
     - claude-3.5-haiku
@@ -210,6 +211,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-3.5-sonnet-20240620
     - claude-3.7-sonnet
     - claude-3.7-sonnet:thinking
+    - claude-haiku-4.5
     - claude-opus-4
     - claude-opus-4.1
     - claude-sonnet-4
