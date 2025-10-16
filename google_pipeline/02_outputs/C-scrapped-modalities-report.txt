@@ -1,7 +1,7 @@
 === GOOGLE MODELS MODALITY SCRAPING REPORT ===
-Generated: 2025-10-15 07:08:48 IST
+Generated: 2025-10-16 06:59:36 IST
 
-Total Models: 19
+Total Models: 21
 
 gemini-2.5-pro: Audio, images, video, text, PDF → Text
 gemini-2.5-pro-table: Text → Audio
@@ -16,6 +16,8 @@ gemini-2.0-flash-lite-table: Audio, images, video, text → Text
 imagen-4-ultra: Text → Image
 imagen-4-fast: Text → Image
 imagen-3: Text → Image
+veo-3.1-generate-preview: Text, Image → Video, Audio
+veo-3.1-fast-generate-preview: Text, Image → Video, Audio
 veo-3.0-generate-001: Text, Image → Video, Audio
 veo-3.0-fast-generate-001: Text, Image → Video, Audio
 veo-2.0-generate-001: Text, Image → Video
