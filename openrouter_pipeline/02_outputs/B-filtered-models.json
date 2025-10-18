@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-17 06:58 AM IST",
+    "generated_at": "2025-10-18 06:54 AM IST",
     "total_models": 48,
     "pipeline_stage": "B_filter_models"
   },
@@ -40,11 +40,9 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
+        "reasoning",
         "repetition_penalty",
         "response_format",
         "seed",
@@ -54,7 +52,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -98,10 +95,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
@@ -112,7 +106,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -239,10 +232,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -251,8 +241,9 @@
         "stop",
         "structured_outputs",
         "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -293,21 +284,18 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
         "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -351,10 +339,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
@@ -363,7 +348,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -536,10 +520,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -547,7 +528,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -588,10 +568,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -599,7 +576,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -640,10 +616,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
@@ -653,7 +626,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -696,10 +668,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -707,7 +676,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -748,10 +716,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -759,7 +724,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -800,10 +764,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -811,7 +772,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -851,10 +811,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
@@ -863,7 +820,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -1047,10 +1003,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1058,7 +1011,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1099,10 +1051,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1110,7 +1059,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1151,10 +1099,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1162,7 +1107,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1203,10 +1147,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1218,7 +1159,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1259,10 +1199,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1270,7 +1207,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1311,10 +1247,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1322,7 +1255,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1362,17 +1294,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1413,10 +1341,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -1424,7 +1349,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1559,10 +1483,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
@@ -1570,7 +1491,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1610,10 +1530,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
@@ -1622,7 +1539,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1663,10 +1579,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
@@ -1677,7 +1590,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -1806,10 +1718,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
@@ -1818,7 +1727,6 @@
         "structured_outputs",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1858,17 +1766,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -1952,17 +1856,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -2006,7 +1906,6 @@
         "frequency_penalty",
         "include_reasoning",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -2016,7 +1915,6 @@
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -2055,10 +1953,19 @@
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "frequency_penalty",
         "include_reasoning",
         "max_tokens",
+        "presence_penalty",
         "reasoning",
-        "temperature"
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
       ],
       "default_parameters": {}
     },
@@ -2146,17 +2053,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -2240,17 +2143,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
@@ -2290,17 +2189,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -2342,17 +2237,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "seed",
         "stop",
         "temperature",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {}
