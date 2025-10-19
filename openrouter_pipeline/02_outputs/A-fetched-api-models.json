@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-18 06:54 AM IST",
+    "generated_at": "2025-10-19 07:15 AM IST",
     "total_models": 340,
     "pipeline_stage": "A_fetch_api_models"
   },
@@ -760,15 +760,8 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
         "reasoning",
-        "repetition_penalty",
         "response_format",
-        "seed",
-        "stop",
         "structured_outputs",
         "temperature",
         "tool_choice",
@@ -4578,7 +4571,7 @@
       "name": "Mistral: Devstral Medium",
       "created": 1752161321,
       "description": "Devstral Medium is a high-performance code generation and agentic reasoning model developed jointly by Mistral AI and All Hands AI. Positioned as a step up from Devstral Small, it achieves 61.6% on SWE-Bench Verified, placing it ahead of Gemini 2.5 Pro and GPT-4.1 in code-related tasks, at a fraction of the cost. It is designed for generalization across prompt styles and tool use in code agents and frameworks.\n\nDevstral Medium is available via API only (not open-weight), and supports enterprise deployment on private infrastructure, with optional fine-tuning capabilities.",
-      "context_length": 131072,
+      "context_length": 32768,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -4599,7 +4592,7 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
+        "context_length": 32768,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -5143,7 +5136,6 @@
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
-        "response_format",
         "seed",
         "stop",
         "temperature",
@@ -5449,7 +5441,6 @@
         "repetition_penalty",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "tool_choice",
         "tools",
@@ -5971,7 +5962,7 @@
       "name": "Mistral: Magistral Medium 2506",
       "created": 1749354054,
       "description": "Magistral is Mistral's first reasoning model. It is ideal for general purpose use requiring longer thought processing and better accuracy than with non-reasoning LLMs. From legal research and financial forecasting to software development and creative storytelling \u2014 this model solves multi-step challenges where transparency and precision are critical.",
-      "context_length": 40960,
+      "context_length": 32768,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -5992,7 +5983,7 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 40960,
+        "context_length": 32768,
         "max_completion_tokens": 40000,
         "is_moderated": false
       },
@@ -12697,7 +12688,7 @@
       "name": "Mistral: Pixtral Large 2411",
       "created": 1731977388,
       "description": "Pixtral Large is a 124B parameter, open-weight, multimodal model built on top of [Mistral Large 2](/mistralai/mistral-large-2411). The model is able to understand documents, charts and natural images.\n\nThe model is available under the Mistral Research License (MRL) for research and educational use, and the Mistral Commercial License for experimentation, testing, and production for commercial purposes.\n\n",
-      "context_length": 131072,
+      "context_length": 32768,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -12719,7 +12710,7 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
+        "context_length": 32768,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -13270,7 +13261,10 @@
         "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
+        "tool_choice",
+        "tools",
         "top_k",
         "top_p"
       ],
@@ -14492,6 +14486,7 @@
         "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_k",
         "top_p"
@@ -15841,8 +15836,8 @@
         "instruct_type": "mistral"
       },
       "pricing": {
-        "prompt": "0.0000009",
-        "completion": "0.0000009",
+        "prompt": "0.000002",
+        "completion": "0.000006",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -15856,11 +15851,8 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
         "presence_penalty",
-        "repetition_penalty",
         "response_format",
         "seed",
         "stop",
@@ -15868,8 +15860,6 @@
         "temperature",
         "tool_choice",
         "tools",
-        "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
