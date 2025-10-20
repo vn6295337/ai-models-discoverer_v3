@@ -1,6 +1,6 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-10-19 07:15 AM IST
+Generated: 2025-10-20 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -18,7 +18,16 @@ Total categories: 2
 DETAILED MODEL LICENSE INFO URLS:
 ================================================================================
 
-MODEL 1: deepseek/deepseek-chat-v3-0324
+MODEL 1: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID              : deepseek/deepseek-r1-0528-qwen3-8b:free
+  Canonical Slug  : deepseek/deepseek-r1-0528-qwen3-8b
+  HuggingFace ID  : deepseek-ai/deepseek-r1-0528-qwen3-8b
+  License Info URL: https://huggingface.co/deepseek-ai/deepseek-r1-0528-qwen3-8b/blob/main/LICENSE
+
+================================================================================
+
+MODEL 2: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID              : deepseek/deepseek-chat-v3-0324:free
   Canonical Slug  : deepseek/deepseek-chat-v3-0324
@@ -27,21 +36,12 @@ MODEL 1: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 2: deepseek/deepseek-chat-v3.1
+MODEL 3: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID              : deepseek/deepseek-chat-v3.1:free
   Canonical Slug  : deepseek/deepseek-chat-v3.1
   HuggingFace ID  : deepseek-ai/DeepSeek-V3.1
   License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE
-
-================================================================================
-
-MODEL 3: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID              : deepseek/deepseek-r1-0528-qwen3-8b:free
-  Canonical Slug  : deepseek/deepseek-r1-0528-qwen3-8b
-  HuggingFace ID  : deepseek-ai/deepseek-r1-0528-qwen3-8b
-  License Info URL: https://huggingface.co/deepseek-ai/deepseek-r1-0528-qwen3-8b/blob/main/LICENSE
 
 ================================================================================
 

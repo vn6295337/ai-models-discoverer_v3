@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-19 07:16 AM IST
+Generated: 2025-10-20 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -260,7 +260,21 @@ MODEL 14: venice/uncensored
 
 ================================================================================
 
-MODEL 15: deepseek/deepseek-chat-v3-0324
+MODEL 15: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
+  Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
+  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
+  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
+  Clean Model Name: DeepSeek R1 0528 Qwen3 8B
+  Model Provider: DeepSeek
+  Model Provider Country: China
+  Model Family: deepseek
+  Official URL: https://deepseek.com/
+
+================================================================================
+
+MODEL 16: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -274,27 +288,13 @@ MODEL 15: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 16: deepseek/deepseek-chat-v3.1
+MODEL 17: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
   HuggingFace ID: deepseek-ai/DeepSeek-V3.1
   Canonical Slug: deepseek/deepseek-chat-v3.1
   Clean Model Name: DeepSeek V3.1
-  Model Provider: DeepSeek
-  Model Provider Country: China
-  Model Family: deepseek
-  Official URL: https://deepseek.com/
-
-================================================================================
-
-MODEL 17: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
-  Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
-  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
-  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
-  Clean Model Name: Deepseek R1 0528 Qwen3 8B
   Model Provider: DeepSeek
   Model Provider Country: China
   Model Family: deepseek

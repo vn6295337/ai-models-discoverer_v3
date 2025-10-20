@@ -1,6 +1,6 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-10-19 07:16 AM IST
+Generated: 2025-10-20 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -224,7 +224,17 @@ MODEL 18: venice/uncensored
 
 ================================================================================
 
-MODEL 19: deepseek/deepseek-chat-v3-0324
+MODEL 19: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID                     : deepseek/deepseek-r1-0528-qwen3-8b:free
+  Canonical Slug         : deepseek/deepseek-r1-0528-qwen3-8b
+  HuggingFace ID         : deepseek-ai/deepseek-r1-0528-qwen3-8b
+  Raw License            : mit
+  Standardized License   : MIT
+
+================================================================================
+
+MODEL 20: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID                     : deepseek/deepseek-chat-v3-0324:free
   Canonical Slug         : deepseek/deepseek-chat-v3-0324
@@ -234,21 +244,11 @@ MODEL 19: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 20: deepseek/deepseek-chat-v3.1
+MODEL 21: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID                     : deepseek/deepseek-chat-v3.1:free
   Canonical Slug         : deepseek/deepseek-chat-v3.1
   HuggingFace ID         : deepseek-ai/DeepSeek-V3.1
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 21: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID                     : deepseek/deepseek-r1-0528-qwen3-8b:free
-  Canonical Slug         : deepseek/deepseek-r1-0528-qwen3-8b
-  HuggingFace ID         : deepseek-ai/deepseek-r1-0528-qwen3-8b
   Raw License            : mit
   Standardized License   : MIT
 

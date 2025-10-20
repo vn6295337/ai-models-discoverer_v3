@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-10-19 07:16 AM IST
+Generated: 2025-10-20 07:13 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -207,7 +207,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 15. DeepSeek V3 0324
+ 15. DeepSeek R1 0528 Qwen3 8B
      Provider           : DeepSeek (China)
      Modalities         : Text → Text
      License            : MIT
@@ -217,7 +217,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 16. DeepSeek V3.1
+ 16. DeepSeek V3 0324
      Provider           : DeepSeek (China)
      Modalities         : Text → Text
      License            : MIT
@@ -227,7 +227,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 17. Deepseek R1 0528 Qwen3 8B
+ 17. DeepSeek V3.1
      Provider           : DeepSeek (China)
      Modalities         : Text → Text
      License            : MIT

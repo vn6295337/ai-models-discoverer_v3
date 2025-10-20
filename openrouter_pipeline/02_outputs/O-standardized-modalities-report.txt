@@ -1,6 +1,6 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-10-19 07:16 AM IST
+Generated: 2025-10-20 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -38,7 +38,21 @@ STANDARDIZATION IMPACT ANALYSIS:
 DETAILED STANDARDIZED MODALITY MODEL INFORMATION:
 ================================================================================
 
-MODEL 1: tngtech/deepseek-r1t-chimera
+MODEL 1: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
+  Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
+  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
+  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
+  Clean Model Name: DeepSeek R1 0528 Qwen3 8B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 2: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -52,7 +66,7 @@ MODEL 1: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 2: tngtech/deepseek-r1t2-chimera
+MODEL 3: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -66,7 +80,7 @@ MODEL 2: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 3: deepseek/deepseek-chat-v3-0324
+MODEL 4: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -80,27 +94,13 @@ MODEL 3: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 4: deepseek/deepseek-chat-v3.1
+MODEL 5: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
   HuggingFace ID: deepseek-ai/DeepSeek-V3.1
   Canonical Slug: deepseek/deepseek-chat-v3.1
   Clean Model Name: DeepSeek V3.1
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 5: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
-  Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
-  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
-  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
-  Clean Model Name: Deepseek R1 0528 Qwen3 8B
   Raw Input Modalities: text
   Raw Output Modalities: text
   Standardized Input Modalities: Text

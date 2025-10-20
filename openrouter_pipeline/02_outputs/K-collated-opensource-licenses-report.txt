@@ -1,6 +1,6 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-10-19 07:16 AM IST
+Generated: 2025-10-20 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -334,10 +334,10 @@ MODEL 22: deepseek/deepseek-r1-0528
 MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
-  Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
+  Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
   HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
   Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
-  Clean Model Name: Deepseek R1 0528 Qwen3 8B
+  Clean Model Name: DeepSeek R1 0528 Qwen3 8B
   License Info Text: info
   License Info URL: https://huggingface.co/deepseek-ai/deepseek-r1-0528-qwen3-8b/blob/main/LICENSE
   License Name: MIT

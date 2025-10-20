@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-19 07:16 AM IST",
+    "generated_at": "2025-10-20 07:13 AM IST",
     "total_models": 48,
     "pipeline_stage": "P_enrich_provider_info"
   },
@@ -274,9 +274,9 @@
     {
       "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
       "canonical_slug": "deepseek/deepseek-r1-0528-qwen3-8b",
-      "original_name": "DeepSeek: Deepseek R1 0528 Qwen3 8B (free)",
+      "original_name": "DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)",
       "hugging_face_id": "deepseek-ai/deepseek-r1-0528-qwen3-8b",
-      "clean_model_name": "Deepseek R1 0528 Qwen3 8B",
+      "clean_model_name": "DeepSeek R1 0528 Qwen3 8B",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text",
       "enhanced_input_modalities": "text",
