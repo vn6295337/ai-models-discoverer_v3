@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-20 07:13 AM IST
+Generated: 2025-10-21 07:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 340
+  Total models: 339
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  47 models
@@ -377,13 +377,12 @@ PROVIDER BREAKDOWN (Descending Order):
     - molmo-7b-d
     - olmo-2-0325-32b-instruct
 
-  Liquid       :   2 models
-    - lfm-3b
-    - lfm-7b
-
   Inflection   :   2 models
     - inflection-3-pi
     - inflection-3-productivity
+
+  IBM          :   1 models
+    - granite-4.0-h-micro
 
   Relace       :   1 models
     - relace-apply-3
