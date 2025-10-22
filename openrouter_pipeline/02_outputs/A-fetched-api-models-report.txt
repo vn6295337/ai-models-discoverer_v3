@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-21 07:08 AM IST
+Generated: 2025-10-22 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 339
+  Total models: 338
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  47 models
@@ -56,7 +56,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini-deep-research
     - o4-mini-high
 
-  Qwen         :  43 models
+  Qwen         :  42 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -70,7 +70,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen2.5-vl-32b-instruct
     - qwen2.5-vl-32b-instruct:free
     - qwen2.5-vl-72b-instruct
-    - qwen2.5-vl-72b-instruct:free
     - qwen3-14b
     - qwen3-14b:free
     - qwen3-235b-a22b
@@ -373,10 +372,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - deepcoder-14b-preview
     - deepcoder-14b-preview:free
 
-  AllenAI      :   2 models
-    - molmo-7b-d
-    - olmo-2-0325-32b-instruct
-
   Inflection   :   2 models
     - inflection-3-pi
     - inflection-3-productivity
@@ -404,6 +399,9 @@ PROVIDER BREAKDOWN (Descending Order):
 
   AlfredPros   :   1 models
     - codellama-7b-instruct-solidity
+
+  AllenAI      :   1 models
+    - olmo-2-0325-32b-instruct
 
   NeverSleep   :   1 models
     - llama-3.1-lumimaid-8b

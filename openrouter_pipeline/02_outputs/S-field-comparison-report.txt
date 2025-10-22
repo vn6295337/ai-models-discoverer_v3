@@ -1,69 +1,89 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-10-21 07:08 AM IST
+Generated: 2025-10-22 07:11 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 47
+   • Total unique model names: 48
    • Total records in pipeline: 46
    • Total records in Supabase: 46
-   • Models in both systems: 45
+   • Models in both systems: 44
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 1
-   • Models in Supabase only (not in pipeline): 1
+   • Models in pipeline only (not in Supabase): 2
+   • Models in Supabase only (not in pipeline): 2
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • model_provider:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • official_url:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • input_modalities:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • output_modalities:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • license_info_text:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • license_info_url:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • license_name:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • license_url:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • rate_limits:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 45
+     - Exact matches: 44
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 1
-     Models: DeepSeek R1 0528 Qwen3 8B
+   • New models (pipeline only): 2
+     Models: Andromeda Alpha, DeepSeek R1 0528 Qwen3 8B
    • Existing models with differences: 0
-   • Deprecated models (Supabase only): 1
-     Models: Deepseek R1 0528 Qwen3 8B
+   • Deprecated models (Supabase only): 2
+     Models: Deepseek R1 0528 Qwen3 8B, Qwen2.5 VL 72B Instruct
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
+================================================================================
+
+MODEL: Andromeda Alpha
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | Unknown                   |                          
+human_readable_name       | Andromeda Alpha           |                          
+model_provider_country    | Unknown                   |                          
+official_url              | Unknown                   |                          
+input_modalities          | Text, Image               |                          
+output_modalities         | Text                      |                          
+license_info_text         |                           |                          
+license_info_url          |                           |                          
+license_name              |                           |                          
+license_url               |                           |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
+
 ================================================================================
 
 MODEL: DeepSeek R1 0528 Qwen3 8B
@@ -770,19 +790,19 @@ MODEL: Qwen2.5 VL 72B Instruct
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                | OpenRouter               
-model_provider            | Alibaba Cloud             | Alibaba Cloud            
-human_readable_name       | Qwen2.5 VL 72B Instruct   | Qwen2.5 VL 72B Instruct  
-model_provider_country    | China                     | China                    
-official_url              | https://alibabacloud.com/ | https://alibabacloud.com/
-input_modalities          | Text, Image               | Text, Image              
-output_modalities         | Text                      | Text                     
+inference_provider        |                           | OpenRouter               
+model_provider            |                           | Alibaba Cloud            
+human_readable_name       |                           | Qwen2.5 VL 72B Instruct  
+model_provider_country    |                           | China                    
+official_url              |                           | https://alibabacloud.com/
+input_modalities          |                           | Text, Image              
+output_modalities         |                           | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
-license_name              | QWEN                      | QWEN                     
-license_url               | https://huggingface.co/.. | https://huggingface.co/..
-rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
-provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+license_name              |                           | QWEN                     
+license_url               |                           | https://huggingface.co/..
+rate_limits               |                           | 20 requests/min 50/day   
+provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 

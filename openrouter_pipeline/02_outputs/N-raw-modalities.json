@@ -1,10 +1,19 @@
 {
   "metadata": {
-    "generated_at": "2025-10-21 07:08 AM IST",
+    "generated_at": "2025-10-22 07:11 AM IST",
     "total_models": 48,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
+    {
+      "id": "openrouter/andromeda-alpha",
+      "canonical_slug": "openrouter/andromeda-alpha",
+      "original_name": "Andromeda Alpha",
+      "hugging_face_id": "",
+      "clean_model_name": "Andromeda Alpha",
+      "raw_input_modalities": "image, text",
+      "raw_output_modalities": "text"
+    },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
       "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",
@@ -336,15 +345,6 @@
       "hugging_face_id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
       "clean_model_name": "Dolphin3.0 Mistral 24B",
       "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "qwen/qwen2.5-vl-72b-instruct:free",
-      "canonical_slug": "qwen/qwen2.5-vl-72b-instruct",
-      "original_name": "Qwen: Qwen2.5 VL 72B Instruct (free)",
-      "hugging_face_id": "Qwen/Qwen2.5-VL-72B-Instruct",
-      "clean_model_name": "Qwen2.5 VL 72B Instruct",
-      "raw_input_modalities": "text, image",
       "raw_output_modalities": "text"
     },
     {

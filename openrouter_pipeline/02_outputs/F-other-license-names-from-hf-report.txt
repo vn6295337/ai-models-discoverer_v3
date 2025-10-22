@@ -1,10 +1,10 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-10-21 07:08 AM IST
+Generated: 2025-10-22 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 37
+  Total models : 36
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
@@ -16,7 +16,7 @@ LICENSE DISTRIBUTION:
   mit: 12
   modified-mit: 1
   nvidia-open-model-license: 1
-  qwen: 2
+  qwen: 1
   tencent-hunyuan-a13b: 1
 
 Total license types: 8
@@ -285,16 +285,7 @@ MODEL 29: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 30: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID               : qwen/qwen2.5-vl-72b-instruct:free
-  Canonical Slug   : qwen/qwen2.5-vl-72b-instruct
-  HuggingFace ID   : Qwen/Qwen2.5-VL-72B-Instruct
-  Extracted License: qwen
-
-================================================================================
-
-MODEL 31: mistralai/mistral-small-24b-instruct-2501
+MODEL 30: mistralai/mistral-small-24b-instruct-2501
 --------------------------------------------------
   ID               : mistralai/mistral-small-24b-instruct-2501:free
   Canonical Slug   : mistralai/mistral-small-24b-instruct-2501
@@ -303,7 +294,7 @@ MODEL 31: mistralai/mistral-small-24b-instruct-2501
 
 ================================================================================
 
-MODEL 32: deepseek/deepseek-r1-distill-llama-70b
+MODEL 31: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID               : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug   : deepseek/deepseek-r1-distill-llama-70b
@@ -312,7 +303,7 @@ MODEL 32: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 33: deepseek/deepseek-r1
+MODEL 32: deepseek/deepseek-r1
 --------------------------------------------------
   ID               : deepseek/deepseek-r1:free
   Canonical Slug   : deepseek/deepseek-r1
@@ -321,7 +312,7 @@ MODEL 33: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 34: qwen/qwen-2.5-coder-32b-instruct
+MODEL 33: qwen/qwen-2.5-coder-32b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-coder-32b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-coder-32b-instruct
@@ -330,7 +321,7 @@ MODEL 34: qwen/qwen-2.5-coder-32b-instruct
 
 ================================================================================
 
-MODEL 35: qwen/qwen-2.5-72b-instruct
+MODEL 34: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-72b-instruct
@@ -339,7 +330,7 @@ MODEL 35: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 36: mistralai/mistral-nemo
+MODEL 35: mistralai/mistral-nemo
 --------------------------------------------------
   ID               : mistralai/mistral-nemo:free
   Canonical Slug   : mistralai/mistral-nemo
@@ -348,7 +339,7 @@ MODEL 36: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 37: mistralai/mistral-7b-instruct
+MODEL 36: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct

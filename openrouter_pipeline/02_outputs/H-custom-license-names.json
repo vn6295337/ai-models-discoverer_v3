@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-21 07:08 AM IST",
-    "total_models": 7,
+    "generated_at": "2025-10-22 07:11 AM IST",
+    "total_models": 6,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
@@ -39,13 +39,6 @@
       "name": "Dolphin3.0 Mistral 24B (free)",
       "hugging_face_id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
       "license_name": "Unknown"
-    },
-    {
-      "id": "qwen/qwen2.5-vl-72b-instruct:free",
-      "canonical_slug": "qwen/qwen2.5-vl-72b-instruct",
-      "name": "Qwen: Qwen2.5 VL 72B Instruct (free)",
-      "hugging_face_id": "Qwen/Qwen2.5-VL-72B-Instruct",
-      "license_name": "QWEN"
     },
     {
       "id": "qwen/qwen-2.5-72b-instruct:free",

@@ -1,18 +1,18 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-10-21 07:08 AM IST
+Generated: 2025-10-22 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 7
+  Total models        : 6
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
 
 CUSTOM LICENSE DISTRIBUTION:
-   2 models: QWEN
    1 models: Modified MIT
    1 models: NVIDIA
+   1 models: QWEN
    1 models: Tencent
    1 models: Unknown
    1 models: llama3.3
@@ -20,7 +20,7 @@ CUSTOM LICENSE DISTRIBUTION:
 Total unique license types: 6
 
 LICENSE URL TYPE DISTRIBUTION:
-   4 models: LICENSE file
+   3 models: LICENSE file
    3 models: README.md file
 
 Total URL types: 2
@@ -70,21 +70,7 @@ MODEL 3: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 4: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID: qwen/qwen2.5-vl-72b-instruct:free
-  Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)
-  HuggingFace ID: Qwen/Qwen2.5-VL-72B-Instruct
-  Canonical Slug: qwen/qwen2.5-vl-72b-instruct
-  Clean Model Name: Qwen2.5 VL 72B Instruct
-  License Info Text: 
-  License Info URL: 
-  License Name: QWEN
-  License URL: https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/blob/main/LICENSE
-
-================================================================================
-
-MODEL 5: tencent/hunyuan-a13b-instruct
+MODEL 4: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -98,7 +84,7 @@ MODEL 5: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID: cognitivecomputations/dolphin3.0-mistral-24b:free
   Original Name: Dolphin3.0 Mistral 24B (free)
@@ -112,7 +98,7 @@ MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
