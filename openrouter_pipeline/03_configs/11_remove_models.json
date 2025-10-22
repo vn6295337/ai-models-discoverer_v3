@@ -21,6 +21,10 @@
     {
       "canonical_slug": "openrouter/sonoma-sky-alpha",
       "reason": "Testing models"
+    },
+    {
+      "canonical_slug": "openrouter/andromeda-alpha",
+      "reason": "Trial model"
     }
   ]
 }
