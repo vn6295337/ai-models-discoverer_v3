@@ -18,6 +18,40 @@ from typing import Any, Dict, List, Tuple
 # Import output utilities
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
+def load_license_url_overrides() -> Dict[str, str]:
+    """Load custom license URL overrides for non-Meta models"""
+    config_file = '../03_configs/13_custom_license_url_overrides.json'
+
+    try:
+        with open(config_file, 'r', encoding='utf-8') as f:
+            config = json.load(f)
+
+        overrides = config.get('license_url_overrides', {})
+        print(f"✓ Loaded {len(overrides)} license URL overrides from: {config_file}")
+        return overrides
+
+    except (FileNotFoundError, json.JSONDecodeError) as error:
+        print(f"WARNING: Failed to load license URL overrides from {config_file}: {error}")
+        return {}
+
+def get_override_license_url(license_name: str, overrides: Dict[str, str]) -> str:
+    """Get override license URL if available for this license type"""
+    if not license_name or not overrides:
+        return ''
+
+    license_clean = license_name.strip()
+
+    # Exact match (case-sensitive first)
+    if license_clean in overrides:
+        return overrides[license_clean]
+
+    # Case-insensitive match
+    for override_license, override_url in overrides.items():
+        if license_clean.lower() == override_license.lower():
+            return override_url
+
+    return ''
+
 def load_custom_models() -> List[Dict[str, Any]]:
     """Load custom models from Stage-H"""
     input_file = get_input_file_path('H-custom-license-names.json')
@@ -78,40 +112,51 @@ def get_license_url_with_priority(hf_id: str) -> Tuple[str, str]:
     # Fallback: Return Unknown if no valid repository page
     return 'Unknown', 'Inaccessible'
 
-def enrich_models_with_license_urls(models: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
-    """Enrich models with HuggingFace license URLs using priority system"""
+def enrich_models_with_license_urls(models: List[Dict[str, Any]], overrides: Dict[str, str]) -> List[Dict[str, Any]]:
+    """Enrich models with license URLs, using official overrides or HuggingFace URLs"""
     enriched_models = []
-    
-    print(f"Enriching {len(models)} custom models with HuggingFace license URLs...")
-    print("Using 3-tier priority: LICENSE → README.md → Base repository")
-    
+
+    print(f"Enriching {len(models)} custom models with license URLs...")
+    if overrides:
+        print(f"Using {len(overrides)} license URL overrides for known license types")
+    print("Fallback priority for non-override models: LICENSE → README.md → Base repository")
+
     for i, model in enumerate(models, 1):
         primary_key = model.get('canonical_slug', '')  # Primary identifier
         hf_id = model.get('hugging_face_id', '')       # Practical for URL generation
-        
-        # Get license URL using priority system
-        license_url, url_type = get_license_url_with_priority(hf_id)
-        
+        license_name = model.get('license_name', '')   # Practical for override checking
+
+        # Check for license URL override first
+        override_url = get_override_license_url(license_name, overrides)
+
+        if override_url:
+            # Use official license URL override
+            license_url = override_url
+            url_type = 'Official override'
+        else:
+            # Get license URL using HuggingFace priority system
+            license_url, url_type = get_license_url_with_priority(hf_id)
+
         # Create enriched model record
         enriched_model = {
             'id': model.get('id', ''),
             'canonical_slug': primary_key,             # Primary identifier
             'name': model.get('name', ''),              # Needed for clean model name extraction
             'hugging_face_id': hf_id,
-            'license_name': model.get('license_name', ''),
+            'license_name': license_name,
             'license_url': license_url,
             'license_url_type': url_type
         }
-        
+
         enriched_models.append(enriched_model)
-        
+
         # Progress indicator with URL type
         print(f"  {i}/{len(models)}: {model.get('name', 'Unknown')[:50]}... → {url_type}")
-        
-        # Small delay to be respectful to HuggingFace
-        if i % 10 == 0:
+
+        # Small delay to be respectful to HuggingFace (only if fetching HF URLs)
+        if url_type != 'Official override' and i % 10 == 0:
             time.sleep(1)
-    
+
     return enriched_models
 
 def save_enriched_models_json(enriched_models: List[Dict[str, Any]]) -> str:
@@ -164,7 +209,7 @@ def generate_license_urls_report(enriched_models: List[Dict[str, Any]]) -> str:
                 url_type_stats[url_type] = url_type_stats.get(url_type, 0) + 1
             
             f.write(f"LICENSE URL TYPE DISTRIBUTION:\n")
-            for url_type in ['LICENSE file', 'README.md file', 'Base repository', 'Inaccessible', 'No HF ID']:
+            for url_type in ['Official override', 'LICENSE file', 'README.md file', 'Base repository', 'Inaccessible', 'No HF ID']:
                 count = url_type_stats.get(url_type, 0)
                 if count > 0:
                     f.write(f"  {url_type}: {count} models\n")
@@ -253,48 +298,52 @@ def generate_license_urls_report(enriched_models: List[Dict[str, Any]]) -> str:
 
 def main():
     """Main execution function"""
-    
+
     # Ensure output directory exists
     ensure_output_dir_exists()
 
     print("Custom License URLs Enricher")
     print(f"Started at: {datetime.now().isoformat()}")
     print("="*60)
-    
+
+    # Load license URL overrides for non-Meta models with known license types
+    overrides = load_license_url_overrides()
+    print()
+
     # Load custom models from Stage-H
     models = load_custom_models()
     if not models:
         print("No custom models loaded")
         return False
-    
+
     # Enrich models with license URLs
-    enriched_models = enrich_models_with_license_urls(models)
-    
+    enriched_models = enrich_models_with_license_urls(models, overrides)
+
     if not enriched_models:
         print("No models enriched")
         return False
-    
+
     # Save JSON output
     json_success = save_enriched_models_json(enriched_models)
-    
+
     # Generate report
     report_success = generate_license_urls_report(enriched_models)
-    
+
     if json_success and report_success:
         print("="*60)
         print("CUSTOM LICENSE URL ENRICHMENT COMPLETE")
         print(f"Total models enriched: {len(enriched_models)}")
-        
+
         # Summary statistics
         url_type_counts = {}
         for model in enriched_models:
             url_type = model.get('license_url_type', 'Unknown')
             url_type_counts[url_type] = url_type_counts.get(url_type, 0) + 1
-        
+
         print("URL Type Distribution:")
         for url_type, count in sorted(url_type_counts.items()):
             print(f"  {url_type}: {count} models")
-        
+
         print(f"JSON output: {json_success}")
         print(f"Report output: {report_success}")
         print(f"Completed at: {datetime.now().isoformat()}")

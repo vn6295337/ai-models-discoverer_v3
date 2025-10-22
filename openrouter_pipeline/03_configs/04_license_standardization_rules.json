@@ -36,7 +36,16 @@
       "modified-mit": "Modified MIT",
       "modified mit": "Modified MIT",
       "mit modified": "Modified MIT",
-      "mit-modified": "Modified MIT"
+      "mit-modified": "Modified MIT",
+      "llama3": "Llama-3.1",
+      "llama 3": "Llama-3.1",
+      "llama-3": "Llama-3.1",
+      "llama3.1": "Llama-3.1",
+      "llama 3.1": "Llama-3.1",
+      "llama-3.1": "Llama-3.1",
+      "llama2": "Llama-2",
+      "llama 2": "Llama-2",
+      "llama-2": "Llama-2"
     },
     "case_sensitive": false,
     "notes": [

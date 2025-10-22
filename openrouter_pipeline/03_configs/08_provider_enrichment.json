@@ -28,7 +28,8 @@
     "sarvam": ["Sarvam AI", "India"],
     "shisa-ai": ["Shisa AI", "Japan"],
     "x-ai": ["xAI", "United States"],
-    "meituan": ["Meituan", "China"]
+    "meituan": ["Meituan", "China"],
+    "nousresearch": ["Nous Research", "United States"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -84,6 +85,8 @@
     "tencent": "https://hunyuan.tencent.com",
     "anthropic": "https://www.anthropic.com/claude",
     "xai": "https://x.ai/",
-    "meituan": "https://longcat.chat/"
+    "meituan": "https://longcat.chat/",
+    "nous research": "https://nousresearch.com/",
+    "nousresearch": "https://nousresearch.com/"
   }
 }

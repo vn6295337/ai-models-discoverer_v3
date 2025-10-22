@@ -115,10 +115,10 @@ def collate_custom_license_information() -> List[Dict[str, Any]]:
             'original_name': original_name,
             'hugging_face_id': model.get('hugging_face_id', ''),
             'clean_model_name': clean_model_name,
-            
+
             # License information
             'license_info_text': '',  # Always blank for custom licenses
-            'license_info_url': '',   # Always blank for custom licenses  
+            'license_info_url': '',   # Always blank for custom licenses
             'license_name': model.get('license_name', 'Unknown'),
             'license_url': model.get('license_url', '')
         }

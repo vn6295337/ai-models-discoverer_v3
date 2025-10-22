@@ -79,6 +79,38 @@
     {
       "license_name": "Artistic-2.0",
       "license_url": "https://spdx.org/licenses/Artistic-2.0.html"
+    },
+    {
+      "license_name": "llama3",
+      "license_url": "https://www.llama.com/llama3_1/license/"
+    },
+    {
+      "license_name": "llama2",
+      "license_url": "https://www.llama.com/llama2/license/"
+    },
+    {
+      "license_name": "Llama-3.1",
+      "license_url": "https://www.llama.com/llama3_1/license/"
+    },
+    {
+      "license_name": "Llama-3",
+      "license_url": "https://www.llama.com/llama3/license/"
+    },
+    {
+      "license_name": "Llama-2",
+      "license_url": "https://www.llama.com/llama2/license/"
+    },
+    {
+      "license_name": "Llama-3.2",
+      "license_url": "https://www.llama.com/llama3_2/license/"
+    },
+    {
+      "license_name": "Llama-3.3",
+      "license_url": "https://www.llama.com/llama3_3/license/"
+    },
+    {
+      "license_name": "Llama-4",
+      "license_url": "https://www.llama.com/llama4/license/"
     }
   ]
 }
