@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 07:11 AM IST",
-    "total_models": 48,
+    "generated_at": "2025-10-22 01:02 PM IST",
+    "total_models": 49,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
@@ -859,6 +859,25 @@
       "model_provider_country": "China",
       "model_family": "alibaba cloud",
       "official_url": "https://alibabacloud.com/"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
+      "original_name": "Nous: Hermes 3 405B Instruct (free)",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "clean_model_name": "Hermes 3 405B Instruct",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text",
+      "enhanced_input_modalities": "text",
+      "enhanced_output_modalities": "text",
+      "standardized_input_modalities": "Text",
+      "standardized_output_modalities": "Text",
+      "google_enhancement_status": "no_google_model",
+      "inference_provider": "OpenRouter",
+      "model_provider": "Unknown",
+      "model_provider_country": "Unknown",
+      "model_family": "nousresearch",
+      "official_url": "Unknown"
     },
     {
       "id": "mistralai/mistral-nemo:free",

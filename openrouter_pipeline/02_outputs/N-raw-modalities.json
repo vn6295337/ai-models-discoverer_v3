@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 07:11 AM IST",
-    "total_models": 48,
+    "generated_at": "2025-10-22 01:02 PM IST",
+    "total_models": 49,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -407,6 +407,15 @@
       "original_name": "Qwen2.5 72B Instruct (free)",
       "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
       "clean_model_name": "Qwen2.5 72B Instruct",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
+      "original_name": "Nous: Hermes 3 405B Instruct (free)",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "clean_model_name": "Hermes 3 405B Instruct",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },

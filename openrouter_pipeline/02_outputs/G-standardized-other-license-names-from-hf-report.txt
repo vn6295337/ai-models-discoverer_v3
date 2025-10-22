@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-10-22 07:11 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 36
+  Total models : 37
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
@@ -12,8 +12,8 @@ SUMMARY:
 
 STANDARDIZATION RESULTS:
   Models with license transformations: 34
-  Models unchanged: 2
-  Transformation rate: 94.4%
+  Models unchanged: 3
+  Transformation rate: 91.9%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
@@ -23,9 +23,10 @@ STANDARDIZED LICENSE DISTRIBUTION:
   QWEN: 1 models
   Tencent: 1 models
   Unknown: 1 models
+  llama3: 1 models
   llama3.3: 1 models
 
-Total license types: 8
+Total license types: 9
 
 LICENSE NAME TRANSFORMATIONS:
   'apache-2.0' → 'Apache-2.0'
@@ -37,9 +38,10 @@ LICENSE NAME TRANSFORMATIONS:
 
 Total unique transformations: 6
 
-MODELS WITH NO LICENSE CHANGES (2 models):
+MODELS WITH NO LICENSE CHANGES (3 models):
   Shisa AI: Shisa V2 Llama 3.3 70B  (free): 'llama3.3'
   Dolphin3.0 Mistral 24B (free): 'Unknown'
+  Nous: Hermes 3 405B Instruct (free): 'llama3'
 
 DETAILED MODEL STANDARDIZATION RESULTS:
 ================================================================================

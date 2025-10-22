@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-10-22 07:11 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 48
-   • Total records in pipeline: 46
+   • Total unique model names: 49
+   • Total records in pipeline: 47
    • Total records in Supabase: 46
    • Models in both systems: 44
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 2
+   • Models in pipeline only (not in Supabase): 3
    • Models in Supabase only (not in pipeline): 2
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -56,8 +56,8 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 2
-     Models: Andromeda Alpha, DeepSeek R1 0528 Qwen3 8B
+   • New models (pipeline only): 3
+     Models: Andromeda Alpha, DeepSeek R1 0528 Qwen3 8B, Hermes 3 405B Instruct
    • Existing models with differences: 0
    • Deprecated models (Supabase only): 2
      Models: Deepseek R1 0528 Qwen3 8B, Qwen2.5 VL 72B Instruct
@@ -383,6 +383,26 @@ license_name              | Gemma                     | Gemma
 license_url               | https://ai.google.dev/g.. | https://ai.google.dev/g..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+
+================================================================================
+
+MODEL: Hermes 3 405B Instruct
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | Unknown                   |                          
+human_readable_name       | Hermes 3 405B Instruct    |                          
+model_provider_country    | Unknown                   |                          
+official_url              | Unknown                   |                          
+input_modalities          | Text                      |                          
+output_modalities         | Text                      |                          
+license_info_text         |                           |                          
+license_info_url          |                           |                          
+license_name              | llama3                    |                          
+license_url               | https://huggingface.co/.. |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
 
 ================================================================================
 

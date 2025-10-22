@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 07:11 AM IST",
-    "total_models": 48,
+    "generated_at": "2025-10-22 01:02 PM IST",
+    "total_models": 49,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
@@ -360,7 +360,7 @@
       "name": "Qwen: Qwen3 Coder 480B A35B (free)",
       "created": 1753230546,
       "description": "Qwen3-Coder-480B-A35B-Instruct is a Mixture-of-Experts (MoE) code generation model developed by the Qwen team. It is optimized for agentic coding tasks such as function calling, tool use, and long-context reasoning over repositories. The model features 480 billion total parameters, with 35 billion active per forward pass (8 out of 160 experts).\n\nPricing for the Alibaba endpoints varies by context length. Once a request is greater than 128k input tokens, the higher pricing is used.",
-      "context_length": 262144,
+      "context_length": 262000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -381,8 +381,8 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": null,
+        "context_length": 262000,
+        "max_completion_tokens": 262000,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -2155,6 +2155,50 @@
         "presence_penalty",
         "repetition_penalty",
         "seed",
+        "stop",
+        "temperature",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {}
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "name": "Nous: Hermes 3 405B Instruct (free)",
+      "created": 1723766400,
+      "description": "Hermes 3 is a generalist language model with many improvements over Hermes 2, including advanced agentic capabilities, much better roleplaying, reasoning, multi-turn conversation, long context coherence, and improvements across the board.\n\nHermes 3 405B is a frontier-level, full-parameter finetune of the Llama-3.1 405B foundation model, focused on aligning LLMs to the user, with powerful steering capabilities and control given to the end user.\n\nThe Hermes 3 series builds and expands on the Hermes 2 set of capabilities, including more powerful and reliable function calling and structured output capabilities, generalist assistant capabilities, and improved code generation skills.\n\nHermes 3 is competitive, if not superior, to Llama-3.1 Instruct models at general capabilities, with varying strengths and weaknesses attributable between the two.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Llama3",
+        "instruct_type": "chatml"
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
         "stop",
         "temperature",
         "top_k",

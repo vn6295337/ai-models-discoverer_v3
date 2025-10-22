@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-22 07:11 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 48
+  Total models      : 49
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -12,12 +12,14 @@ SUMMARY:
 
 ACTION ITEMS - UNKNOWN MAPPINGS:
 ==================================================
-UNKNOWN PROVIDERS (1 models):
+UNKNOWN PROVIDERS (2 models):
   Add these provider mappings to 08_provider_enrichment.json:
+    "nousresearch": ["Provider Name", "Country"],
     "openrouter": ["Provider Name", "Country"],
 
-UNKNOWN OFFICIAL URLS (1 unique families):
+UNKNOWN OFFICIAL URLS (2 unique families):
   Add these URL mappings to family_official_urls:
+    "nousresearch": "https://official-url-here",
     "openrouter": "https://official-url-here",
 
 ==================================================
@@ -31,6 +33,7 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: Cognitive Computations
    2 models: Moonshot AI
    2 models: TNG Technology
+   2 models: Unknown
    1 models: ArliAI
    1 models: Meituan
    1 models: Microsoft
@@ -38,7 +41,6 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: OpenAI
    1 models: Shisa AI
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
 
 Total unique model providers: 17
@@ -48,8 +50,8 @@ MODEL PROVIDER COUNTRY DISTRIBUTION:
   17 models: United States
    6 models: France
    2 models: Germany
+   2 models: Unknown
    1 models: Japan
-   1 models: Unknown
 
 Total unique countries: 6
 
@@ -65,6 +67,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: arliai
    1 models: meituan
    1 models: microsoft
+   1 models: nousresearch
    1 models: nvidia
    1 models: openai
    1 models: openrouter
@@ -72,7 +75,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: tencent
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 18
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -637,7 +640,21 @@ MODEL 40: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 41: nvidia/nemotron-nano-9b-v2
+MODEL 41: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID: nousresearch/hermes-3-llama-3.1-405b:free
+  Original Name: Nous: Hermes 3 405B Instruct (free)
+  HuggingFace ID: NousResearch/Hermes-3-Llama-3.1-405B
+  Canonical Slug: nousresearch/hermes-3-llama-3.1-405b
+  Clean Model Name: Hermes 3 405B Instruct
+  Model Provider: Unknown
+  Model Provider Country: Unknown
+  Model Family: nousresearch
+  Official URL: Unknown
+
+================================================================================
+
+MODEL 42: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -651,7 +668,7 @@ MODEL 41: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 42: openai/gpt-oss-20b
+MODEL 43: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -665,7 +682,7 @@ MODEL 42: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 43: openrouter/andromeda-alpha
+MODEL 44: openrouter/andromeda-alpha
 --------------------------------------------------
   ID: openrouter/andromeda-alpha
   Original Name: Andromeda Alpha
@@ -679,7 +696,7 @@ MODEL 43: openrouter/andromeda-alpha
 
 ================================================================================
 
-MODEL 44: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 45: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
@@ -693,7 +710,7 @@ MODEL 44: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 45: tencent/hunyuan-a13b-instruct
+MODEL 46: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -707,7 +724,7 @@ MODEL 45: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 46: tngtech/deepseek-r1t-chimera
+MODEL 47: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -721,7 +738,7 @@ MODEL 46: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 47: tngtech/deepseek-r1t2-chimera
+MODEL 48: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -735,7 +752,7 @@ MODEL 47: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 48: z-ai/glm-4.5-air
+MODEL 49: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

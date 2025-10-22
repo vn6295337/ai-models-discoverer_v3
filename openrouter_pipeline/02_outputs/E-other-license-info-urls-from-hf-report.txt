@@ -1,17 +1,17 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-10-22 07:11 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 36
+  Total models : 37
   Input        : B-filtered-models.json
   Processor    : E_fetch_other_license_info_urls_from_hf.py
   Output       : E-other-license-info-urls-from-hf.json
 
 LICENSE INFO URL BREAKDOWN:
   19 models: LICENSE file
-  17 models: README.md file
+  18 models: README.md file
 
 Total categories: 2
 
@@ -279,7 +279,16 @@ MODEL 29: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 30: qwen/qwen2.5-vl-32b-instruct
+MODEL 30: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID              : nousresearch/hermes-3-llama-3.1-405b:free
+  Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
+  HuggingFace ID  : NousResearch/Hermes-3-Llama-3.1-405B
+  License Info URL: https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
+
+================================================================================
+
+MODEL 31: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID              : qwen/qwen2.5-vl-32b-instruct:free
   Canonical Slug  : qwen/qwen2.5-vl-32b-instruct
@@ -288,7 +297,7 @@ MODEL 30: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 31: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 32: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID              : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b
@@ -297,7 +306,7 @@ MODEL 31: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 32: tngtech/deepseek-r1t-chimera
+MODEL 33: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -306,7 +315,7 @@ MODEL 32: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 33: tngtech/deepseek-r1t2-chimera
+MODEL 34: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -315,7 +324,7 @@ MODEL 33: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 34: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 35: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID              : alibaba/tongyi-deepresearch-30b-a3b:free
   Canonical Slug  : alibaba/tongyi-deepresearch-30b-a3b
@@ -324,7 +333,7 @@ MODEL 34: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 35: venice/uncensored
+MODEL 36: venice/uncensored
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug  : venice/uncensored
@@ -333,7 +342,7 @@ MODEL 35: venice/uncensored
 
 ================================================================================
 
-MODEL 36: z-ai/glm-4.5-air
+MODEL 37: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air

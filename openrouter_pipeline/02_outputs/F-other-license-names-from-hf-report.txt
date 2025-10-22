@@ -1,10 +1,10 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-10-22 07:11 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 36
+  Total models : 37
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
@@ -12,6 +12,7 @@ SUMMARY:
 LICENSE DISTRIBUTION:
   Unknown: 1
   apache-2.0: 18
+  llama3: 1
   llama3.3: 1
   mit: 12
   modified-mit: 1
@@ -19,7 +20,7 @@ LICENSE DISTRIBUTION:
   qwen: 1
   tencent-hunyuan-a13b: 1
 
-Total license types: 8
+Total license types: 9
 
 DETAILED MODEL EXTRACTION RESULTS:
 ================================================================================
@@ -330,7 +331,16 @@ MODEL 34: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 35: mistralai/mistral-nemo
+MODEL 35: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID               : nousresearch/hermes-3-llama-3.1-405b:free
+  Canonical Slug   : nousresearch/hermes-3-llama-3.1-405b
+  HuggingFace ID   : NousResearch/Hermes-3-Llama-3.1-405B
+  Extracted License: llama3
+
+================================================================================
+
+MODEL 36: mistralai/mistral-nemo
 --------------------------------------------------
   ID               : mistralai/mistral-nemo:free
   Canonical Slug   : mistralai/mistral-nemo
@@ -339,7 +349,7 @@ MODEL 35: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 36: mistralai/mistral-7b-instruct
+MODEL 37: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 07:11 AM IST",
-    "total_models": 36,
+    "generated_at": "2025-10-22 01:02 PM IST",
+    "total_models": 37,
     "pipeline_stage": "F_fetch_other_license_names_from_hf"
   },
   "models": [
@@ -242,6 +242,13 @@
       "name": "Qwen2.5 72B Instruct (free)",
       "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
       "extracted_license": "qwen"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
+      "name": "Nous: Hermes 3 405B Instruct (free)",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "extracted_license": "llama3"
     },
     {
       "id": "mistralai/mistral-nemo:free",

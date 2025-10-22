@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 07:11 AM IST",
-    "total_models": 48,
+    "generated_at": "2025-10-22 01:02 PM IST",
+    "total_models": 49,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -363,6 +363,18 @@
       "license_info_url": "",
       "license_name": "Modified MIT",
       "license_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE",
+      "source_category": "custom"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
+      "original_name": "Nous: Hermes 3 405B Instruct (free)",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "clean_model_name": "Hermes 3 405B Instruct",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "llama3",
+      "license_url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md",
       "source_category": "custom"
     },
     {
