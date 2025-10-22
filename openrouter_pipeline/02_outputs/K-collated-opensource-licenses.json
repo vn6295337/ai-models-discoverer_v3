@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 01:02 PM IST",
-    "total_models": 30,
+    "generated_at": "2025-10-22 03:23 PM IST",
+    "total_models": 31,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -191,6 +191,17 @@
       "license_info_url": "https://huggingface.co/moonshotai/Kimi-Dev-72B/blob/main/README.md",
       "license_name": "MIT",
       "license_url": "https://opensource.org/licenses/MIT"
+    },
+    {
+      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
+      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
+      "original_name": "Nous: Hermes 3 405B Instruct (free)",
+      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
+      "clean_model_name": "Hermes 3 405B Instruct",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md",
+      "license_name": "Llama-3.1",
+      "license_url": "https://www.llama.com/llama3_1/license/"
     },
     {
       "id": "openai/gpt-oss-20b:free",

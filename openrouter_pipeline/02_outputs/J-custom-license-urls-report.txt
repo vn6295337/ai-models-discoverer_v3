@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 7
+  Total models : 6
   Input        : H-custom-license-names.json
   Priority     : LICENSE → README.md → Base repository
   Processor    : J_custom_license_urls.py
@@ -12,12 +12,12 @@ SUMMARY:
 
 LICENSE URL TYPE DISTRIBUTION:
   LICENSE file: 3 models
-  README.md file: 4 models
+  README.md file: 3 models
 
 Total URL types: 2
 
 URL RESOLUTION STATISTICS:
-  Successful URL resolutions: 7
+  Successful URL resolutions: 6
   Failed URL resolutions: 0
   Success rate: 100.0%
 
@@ -27,10 +27,9 @@ CUSTOM LICENSE DISTRIBUTION:
   QWEN: 1 models
   Tencent: 1 models
   Unknown: 1 models
-  llama3: 1 models
   llama3.3: 1 models
 
-Total license types: 7
+Total license types: 6
 
 DETAILED MODEL LICENSE URL MAPPINGS:
 ================================================================================
@@ -79,18 +78,7 @@ MODEL 4: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 5: nousresearch/hermes-3-llama-3.1-405b
---------------------------------------------------
-  ID                     : nousresearch/hermes-3-llama-3.1-405b:free
-  Canonical Slug         : nousresearch/hermes-3-llama-3.1-405b
-  HuggingFace ID         : NousResearch/Hermes-3-Llama-3.1-405B
-  License Name           : llama3
-  License URL            : https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
-  License URL Type       : README.md file
-
-================================================================================
-
-MODEL 6: nvidia/nemotron-nano-9b-v2
+MODEL 5: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -101,7 +89,7 @@ MODEL 6: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID                     : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug         : shisa-ai/shisa-v2-llama3.3-70b

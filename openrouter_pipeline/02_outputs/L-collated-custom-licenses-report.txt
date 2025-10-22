@@ -1,10 +1,10 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 7
+  Total models        : 6
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
@@ -15,14 +15,13 @@ CUSTOM LICENSE DISTRIBUTION:
    1 models: QWEN
    1 models: Tencent
    1 models: Unknown
-   1 models: llama3
    1 models: llama3.3
 
-Total unique license types: 7
+Total unique license types: 6
 
 LICENSE URL TYPE DISTRIBUTION:
    3 models: LICENSE file
-   4 models: README.md file
+   3 models: README.md file
 
 Total URL types: 2
 
@@ -99,21 +98,7 @@ MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 6: nousresearch/hermes-3-llama-3.1-405b
---------------------------------------------------
-  ID: nousresearch/hermes-3-llama-3.1-405b:free
-  Original Name: Nous: Hermes 3 405B Instruct (free)
-  HuggingFace ID: NousResearch/Hermes-3-Llama-3.1-405B
-  Canonical Slug: nousresearch/hermes-3-llama-3.1-405b
-  Clean Model Name: Hermes 3 405B Instruct
-  License Info Text: 
-  License Info URL: 
-  License Name: llama3
-  License URL: https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
-
-================================================================================
-
-MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)

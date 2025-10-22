@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,7 +9,7 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (19 models):
+LICENSE INFO TEXT (18 models):
   - Andromeda Alpha
   - Dolphin3.0 Mistral 24B
   - Gemma 2 9B IT
@@ -18,7 +18,6 @@ LICENSE INFO TEXT (19 models):
   - Gemma 3 4B IT
   - Gemma 3n E2B IT
   - Gemma 3n E4B IT
-  - Hermes 3 405B Instruct
   - Hunyuan A13B Instruct
   - Kimi K2 0711
   - Llama 3.2 3B Instruct
@@ -30,7 +29,7 @@ LICENSE INFO TEXT (19 models):
   - Qwen2.5 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
-LICENSE INFO URL (19 models):
+LICENSE INFO URL (18 models):
   - Andromeda Alpha
   - Dolphin3.0 Mistral 24B
   - Gemma 2 9B IT
@@ -39,7 +38,6 @@ LICENSE INFO URL (19 models):
   - Gemma 3 4B IT
   - Gemma 3n E2B IT
   - Gemma 3n E4B IT
-  - Hermes 3 405B Instruct
   - Hunyuan A13B Instruct
   - Kimi K2 0711
   - Llama 3.2 3B Instruct
@@ -60,9 +58,8 @@ LICENSE URL (1 models):
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
 
-MODEL PROVIDER (2 models):
+MODEL PROVIDER (1 models):
   - Andromeda Alpha
-  - Hermes 3 405B Instruct
 
 LICENSE NAME (1 models):
   - Dolphin3.0 Mistral 24B
@@ -70,11 +67,11 @@ LICENSE NAME (1 models):
 DATA QUALITY SUMMARY:
 ------------------------------
 Total models: 49
-Missing license info text: 19 (38.8%)
-Missing license info url: 19 (38.8%)
+Missing license info text: 18 (36.7%)
+Missing license info url: 18 (36.7%)
 Missing license name: 1 (2.0%)
 Missing license url: 1 (2.0%)
-Unknown model provider: 2 (4.1%)
+Unknown model provider: 1 (2.0%)
 Unknown license name: 1 (2.0%)
 
 ================================================================================
@@ -492,7 +489,17 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 42. GPT OSS 20B
+ 42. Hermes 3 405B Instruct
+     Provider           : Nous Research (United States)
+     Modalities         : Text → Text
+     License            : Llama-3.1
+     License Info       : info
+     License URL        : https://www.llama.com/llama3_1/license/
+     Official URL       : https://nousresearch.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 43. GPT OSS 20B
      Provider           : OpenAI (United States)
      Modalities         : Text → Text
      License            : Apache-2.0
@@ -502,7 +509,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 43. Shisa V2 Llama 3.3 70B
+ 44. Shisa V2 Llama 3.3 70B
      Provider           : Shisa AI (Japan)
      Modalities         : Text → Text
      License            : llama3.3
@@ -512,7 +519,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 44. DeepSeek R1T Chimera
+ 45. DeepSeek R1T Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -522,7 +529,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 45. DeepSeek R1T2 Chimera
+ 46. DeepSeek R1T2 Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -532,7 +539,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 46. Hunyuan A13B Instruct
+ 47. Hunyuan A13B Instruct
      Provider           : Tencent (China)
      Modalities         : Text → Text
      License            : Tencent
@@ -542,22 +549,12 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 47. Andromeda Alpha
+ 48. Andromeda Alpha
      Provider           : Unknown (Unknown)
      Modalities         : Text, Image → Text
      License            : 
      License Info       : 
      License URL        : 
-     Official URL       : Unknown
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 48. Hermes 3 405B Instruct
-     Provider           : Unknown (Unknown)
-     Modalities         : Text → Text
-     License            : llama3
-     License Info       : 
-     License URL        : https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
      Official URL       : Unknown
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys

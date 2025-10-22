@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 01:02 PM IST",
+    "generated_at": "2025-10-22 03:23 PM IST",
     "total_models": 49,
     "pipeline_stage": "M_final_list_of_licenses"
   },
@@ -371,11 +371,11 @@
       "original_name": "Nous: Hermes 3 405B Instruct (free)",
       "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
       "clean_model_name": "Hermes 3 405B Instruct",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "llama3",
-      "license_url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md",
-      "source_category": "custom"
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md",
+      "license_name": "Llama-3.1",
+      "license_url": "https://www.llama.com/llama3_1/license/",
+      "source_category": "opensource"
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",

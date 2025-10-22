@@ -1,10 +1,10 @@
 ================================================================================
 OPENSOURCE LICENSE MODELS REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 30
+  Total models : 31
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -12,9 +12,10 @@ SUMMARY:
 
 OPENSOURCE LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
+  Llama-3.1: 1 models
   MIT: 12 models
 
-Total license types: 2
+Total license types: 3
 
 DETAILED OPENSOURCE MODEL LISTINGS:
 ================================================================================
@@ -181,7 +182,16 @@ MODEL 18: venice/uncensored
 
 ================================================================================
 
-MODEL 19: deepseek/deepseek-chat-v3-0324
+MODEL 19: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID              : nousresearch/hermes-3-llama-3.1-405b:free
+  Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
+  HuggingFace ID  : NousResearch/Hermes-3-Llama-3.1-405B
+  License Name    : Llama-3.1
+
+================================================================================
+
+MODEL 20: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID              : deepseek/deepseek-chat-v3-0324:free
   Canonical Slug  : deepseek/deepseek-chat-v3-0324
@@ -190,7 +200,7 @@ MODEL 19: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 20: deepseek/deepseek-chat-v3.1
+MODEL 21: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID              : deepseek/deepseek-chat-v3.1:free
   Canonical Slug  : deepseek/deepseek-chat-v3.1
@@ -199,7 +209,7 @@ MODEL 20: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 21: deepseek/deepseek-r1
+MODEL 22: deepseek/deepseek-r1
 --------------------------------------------------
   ID              : deepseek/deepseek-r1:free
   Canonical Slug  : deepseek/deepseek-r1
@@ -208,7 +218,7 @@ MODEL 21: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 22: deepseek/deepseek-r1-0528
+MODEL 23: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID              : deepseek/deepseek-r1-0528:free
   Canonical Slug  : deepseek/deepseek-r1-0528
@@ -217,7 +227,7 @@ MODEL 22: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 24: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID              : deepseek/deepseek-r1-0528-qwen3-8b:free
   Canonical Slug  : deepseek/deepseek-r1-0528-qwen3-8b
@@ -226,7 +236,7 @@ MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 24: deepseek/deepseek-r1-distill-llama-70b
+MODEL 25: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID              : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug  : deepseek/deepseek-r1-distill-llama-70b
@@ -235,7 +245,7 @@ MODEL 24: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 25: meituan/longcat-flash-chat
+MODEL 26: meituan/longcat-flash-chat
 --------------------------------------------------
   ID              : meituan/longcat-flash-chat:free
   Canonical Slug  : meituan/longcat-flash-chat
@@ -244,7 +254,7 @@ MODEL 25: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 26: microsoft/mai-ds-r1
+MODEL 27: microsoft/mai-ds-r1
 --------------------------------------------------
   ID              : microsoft/mai-ds-r1:free
   Canonical Slug  : microsoft/mai-ds-r1
@@ -253,7 +263,7 @@ MODEL 26: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 27: moonshotai/kimi-dev-72b
+MODEL 28: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID              : moonshotai/kimi-dev-72b:free
   Canonical Slug  : moonshotai/kimi-dev-72b
@@ -262,7 +272,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: tngtech/deepseek-r1t-chimera
+MODEL 29: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -271,7 +281,7 @@ MODEL 28: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 29: tngtech/deepseek-r1t2-chimera
+MODEL 30: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -280,7 +290,7 @@ MODEL 29: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 30: z-ai/glm-4.5-air
+MODEL 31: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air
