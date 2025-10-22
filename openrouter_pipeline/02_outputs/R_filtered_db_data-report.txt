@@ -1,12 +1,12 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-22 03:23 PM IST
+Generated: 2025-10-22 03:32 PM IST
 ================================================================================
 
 SUMMARY:
   Input models         : 49
-  Models kept          : 47
-  Models removed       : 2
+  Models kept          : 46
+  Models removed       : 3
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
@@ -15,12 +15,13 @@ SUMMARY:
 REMOVAL REASONS DISTRIBUTION:
    1 models: License info not available
    1 models: Region specific & non-english model
+   1 models: Trial model
 
-Total removal reasons: 2
+Total removal reasons: 3
 
 REMOVAL PROCESSING SUMMARY:
-  Configured for removal: 5 models
-  Successfully removed: 2 models
+  Configured for removal: 6 models
+  Successfully removed: 3 models
   ⚠ 3 models not found (check canonical slugs)
 
 DETAILED REMOVED MODEL INFORMATION:
@@ -46,6 +47,17 @@ REMOVED MODEL 2: shisa-ai/shisa-v2-llama3.3-70b
   Model Family: llama
   Removal Reason: Region specific & non-english model
 
+================================================================================
+
+REMOVED MODEL 3: openrouter/andromeda-alpha
+--------------------------------------------------
+  Provider ID: openrouter/andromeda-alpha
+  Clean Model Name: Andromeda Alpha
+  Canonical Slug: openrouter/andromeda-alpha
+  Model Provider: Unknown
+  Model Family: Unknown
+  Removal Reason: Trial model
+
 FINALIZED DATABASE DATA SUMMARY:
 ================================================================================
 
@@ -65,12 +77,11 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Nous Research
    1 models: OpenAI
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
 
-Total providers: 17
+Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  47 models: Unknown
+  46 models: Unknown
 
 Total families: 1
