@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE MODELS REPORT
-Generated: 2025-10-03 09:24 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 8
+  Total models : 7
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -13,12 +13,13 @@ SUMMARY:
 CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
   NVIDIA: 1 models
-  QWEN: 2 models
+  QWEN: 1 models
   Tencent: 1 models
-  Unknown: 2 models
+  Unknown: 1 models
+  llama3: 1 models
   llama3.3: 1 models
 
-Total license types: 6
+Total license types: 7
 
 DETAILED CUSTOM LICENSE MODEL LISTINGS:
 ================================================================================
@@ -50,16 +51,7 @@ MODEL 3: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 4: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID              : qwen/qwen2.5-vl-72b-instruct:free
-  Canonical Slug  : qwen/qwen2.5-vl-72b-instruct
-  HuggingFace ID  : Qwen/Qwen2.5-VL-72B-Instruct
-  License Name    : QWEN
-
-================================================================================
-
-MODEL 5: tencent/hunyuan-a13b-instruct
+MODEL 4: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID              : tencent/hunyuan-a13b-instruct:free
   Canonical Slug  : tencent/hunyuan-a13b-instruct
@@ -68,7 +60,7 @@ MODEL 5: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin3.0-mistral-24b:free
   Canonical Slug  : cognitivecomputations/dolphin3.0-mistral-24b
@@ -77,16 +69,16 @@ MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 7: cognitivecomputations/dolphin3.0-r1-mistral-24b
+MODEL 6: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
-  ID              : cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-  Canonical Slug  : cognitivecomputations/dolphin3.0-r1-mistral-24b
-  HuggingFace ID  : cognitivecomputations/Dolphin3.0-R1-Mistral-24B
-  License Name    : Unknown
+  ID              : nousresearch/hermes-3-llama-3.1-405b:free
+  Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
+  HuggingFace ID  : NousResearch/Hermes-3-Llama-3.1-405B
+  License Name    : llama3
 
 ================================================================================
 
-MODEL 8: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID              : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b

@@ -1,35 +1,36 @@
 ================================================================================
 CUSTOM LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-10-03 09:24 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 8
+  Total models : 7
   Input        : H-custom-license-names.json
   Priority     : LICENSE → README.md → Base repository
   Processor    : J_custom_license_urls.py
   Output       : J-custom-license-urls.json
 
 LICENSE URL TYPE DISTRIBUTION:
-  LICENSE file: 4 models
+  LICENSE file: 3 models
   README.md file: 4 models
 
 Total URL types: 2
 
 URL RESOLUTION STATISTICS:
-  Successful URL resolutions: 8
+  Successful URL resolutions: 7
   Failed URL resolutions: 0
   Success rate: 100.0%
 
 CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
   NVIDIA: 1 models
-  QWEN: 2 models
+  QWEN: 1 models
   Tencent: 1 models
-  Unknown: 2 models
+  Unknown: 1 models
+  llama3: 1 models
   llama3.3: 1 models
 
-Total license types: 6
+Total license types: 7
 
 DETAILED MODEL LICENSE URL MAPPINGS:
 ================================================================================
@@ -56,18 +57,7 @@ MODEL 2: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 3: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID                     : qwen/qwen2.5-vl-72b-instruct:free
-  Canonical Slug         : qwen/qwen2.5-vl-72b-instruct
-  HuggingFace ID         : Qwen/Qwen2.5-VL-72B-Instruct
-  License Name           : QWEN
-  License URL            : https://huggingface.co/Qwen/Qwen2.5-VL-72B-Instruct/blob/main/LICENSE
-  License URL Type       : LICENSE file
-
-================================================================================
-
-MODEL 4: tencent/hunyuan-a13b-instruct
+MODEL 3: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID                     : tencent/hunyuan-a13b-instruct:free
   Canonical Slug         : tencent/hunyuan-a13b-instruct
@@ -78,7 +68,7 @@ MODEL 4: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 4: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID                     : cognitivecomputations/dolphin3.0-mistral-24b:free
   Canonical Slug         : cognitivecomputations/dolphin3.0-mistral-24b
@@ -89,18 +79,18 @@ MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 6: cognitivecomputations/dolphin3.0-r1-mistral-24b
+MODEL 5: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
-  ID                     : cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-  Canonical Slug         : cognitivecomputations/dolphin3.0-r1-mistral-24b
-  HuggingFace ID         : cognitivecomputations/Dolphin3.0-R1-Mistral-24B
-  License Name           : Unknown
-  License URL            : https://huggingface.co/cognitivecomputations/Dolphin3.0-R1-Mistral-24B/blob/main/README.md
+  ID                     : nousresearch/hermes-3-llama-3.1-405b:free
+  Canonical Slug         : nousresearch/hermes-3-llama-3.1-405b
+  HuggingFace ID         : NousResearch/Hermes-3-Llama-3.1-405B
+  License Name           : llama3
+  License URL            : https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
   License URL Type       : README.md file
 
 ================================================================================
 
-MODEL 7: nvidia/nemotron-nano-9b-v2
+MODEL 6: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -111,7 +101,7 @@ MODEL 7: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 8: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID                     : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug         : shisa-ai/shisa-v2-llama3.3-70b

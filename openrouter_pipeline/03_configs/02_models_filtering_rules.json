@@ -27,5 +27,11 @@
     "preview": "Preview/experimental version",
     "experimental": "Experimental version",
     "beta": "Beta version"
+  },
+  "deduplication_rules": {
+    "enabled": true,
+    "remove_duplicates_after_free_suffix_strip": true,
+    "preference": "keep_with_free_suffix",
+    "dedup_reason": "Duplicate model after (free) suffix normalization"
   }
 }

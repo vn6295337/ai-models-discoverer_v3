@@ -1,31 +1,32 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-10-03 09:24 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 39
+  Total models : 37
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
   Output       : G-standardized-other-license-names-from-hf.json
 
 STANDARDIZATION RESULTS:
-  Models with license transformations: 36
+  Models with license transformations: 34
   Models unchanged: 3
-  Transformation rate: 92.3%
+  Transformation rate: 91.9%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
-  MIT: 13 models
+  MIT: 12 models
   Modified MIT: 1 models
   NVIDIA: 1 models
-  QWEN: 2 models
+  QWEN: 1 models
   Tencent: 1 models
-  Unknown: 2 models
+  Unknown: 1 models
+  llama3: 1 models
   llama3.3: 1 models
 
-Total license types: 8
+Total license types: 9
 
 LICENSE NAME TRANSFORMATIONS:
   'apache-2.0' → 'Apache-2.0'
@@ -39,8 +40,8 @@ Total unique transformations: 6
 
 MODELS WITH NO LICENSE CHANGES (3 models):
   Shisa AI: Shisa V2 Llama 3.3 70B  (free): 'llama3.3'
-  Dolphin3.0 R1 Mistral 24B (free): 'Unknown'
   Dolphin3.0 Mistral 24B (free): 'Unknown'
+  Nous: Hermes 3 405B Instruct (free): 'llama3'
 
 DETAILED MODEL STANDARDIZATION RESULTS:
 ================================================================================
@@ -225,7 +226,17 @@ MODEL 18: venice/uncensored
 
 ================================================================================
 
-MODEL 19: deepseek/deepseek-chat-v3-0324
+MODEL 19: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID                     : deepseek/deepseek-r1-0528-qwen3-8b:free
+  Canonical Slug         : deepseek/deepseek-r1-0528-qwen3-8b
+  HuggingFace ID         : deepseek-ai/deepseek-r1-0528-qwen3-8b
+  Raw License            : mit
+  Standardized License   : MIT
+
+================================================================================
+
+MODEL 20: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID                     : deepseek/deepseek-chat-v3-0324:free
   Canonical Slug         : deepseek/deepseek-chat-v3-0324
@@ -235,21 +246,11 @@ MODEL 19: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 20: deepseek/deepseek-chat-v3.1
+MODEL 21: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID                     : deepseek/deepseek-chat-v3.1:free
   Canonical Slug         : deepseek/deepseek-chat-v3.1
   HuggingFace ID         : deepseek-ai/DeepSeek-V3.1
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 21: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID                     : deepseek/deepseek-r1-0528-qwen3-8b:free
-  Canonical Slug         : deepseek/deepseek-r1-0528-qwen3-8b
-  HuggingFace ID         : deepseek-ai/deepseek-r1-0528-qwen3-8b
   Raw License            : mit
   Standardized License   : MIT
 
@@ -315,17 +316,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-vl-a3b-thinking
---------------------------------------------------
-  ID                     : moonshotai/kimi-vl-a3b-thinking:free
-  Canonical Slug         : moonshotai/kimi-vl-a3b-thinking
-  HuggingFace ID         : moonshotai/Kimi-VL-A3B-Thinking
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 29: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t-chimera
@@ -335,7 +326,7 @@ MODEL 29: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t2-chimera
@@ -345,7 +336,7 @@ MODEL 30: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 31: z-ai/glm-4.5-air
+MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
   Canonical Slug         : z-ai/glm-4.5-air
@@ -355,7 +346,7 @@ MODEL 31: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 32: moonshotai/kimi-k2
+MODEL 31: moonshotai/kimi-k2
 --------------------------------------------------
   ID                     : moonshotai/kimi-k2:free
   Canonical Slug         : moonshotai/kimi-k2
@@ -365,7 +356,7 @@ MODEL 32: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 33: nvidia/nemotron-nano-9b-v2
+MODEL 32: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -375,7 +366,7 @@ MODEL 33: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 34: qwen/qwen-2.5-72b-instruct
+MODEL 33: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug         : qwen/qwen-2.5-72b-instruct
@@ -385,17 +376,7 @@ MODEL 34: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 35: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID                     : qwen/qwen2.5-vl-72b-instruct:free
-  Canonical Slug         : qwen/qwen2.5-vl-72b-instruct
-  HuggingFace ID         : Qwen/Qwen2.5-VL-72B-Instruct
-  Raw License            : qwen
-  Standardized License   : QWEN
-
-================================================================================
-
-MODEL 36: tencent/hunyuan-a13b-instruct
+MODEL 34: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID                     : tencent/hunyuan-a13b-instruct:free
   Canonical Slug         : tencent/hunyuan-a13b-instruct

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-10-03 09:25:25 IST",
-    "total_models": 65,
+    "generated": "2025-10-22 13:03:22 IST",
+    "total_models": 66,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -719,6 +719,23 @@
       "thinking": true
     },
     {
+      "name": "models/gemini-2.5-computer-use-preview-10-2025",
+      "version": "Gemini 2.5 Computer Use Preview 10-2025",
+      "displayName": "Gemini 2.5 Computer Use Preview 10-2025",
+      "description": "Gemini 2.5 Computer Use Preview 10-2025",
+      "inputTokenLimit": 131072,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    {
       "name": "models/embedding-001",
       "version": "001",
       "displayName": "Embedding 001",
@@ -916,37 +933,26 @@
       ]
     },
     {
-      "name": "models/gemini-2.5-flash-preview-native-audio-dialog",
-      "version": "gemini-2.5-flash-preview-native-audio-dialog-2025-05-19",
-      "displayName": "Gemini 2.5 Flash Preview Native Audio Dialog",
-      "description": "Gemini 2.5 Flash Preview Native Audio Dialog",
-      "inputTokenLimit": 131072,
+      "name": "models/veo-3.1-generate-preview",
+      "version": "3.1",
+      "displayName": "Veo 3.1",
+      "description": "Veo 3.1",
+      "inputTokenLimit": 480,
       "outputTokenLimit": 8192,
       "supportedGenerationMethods": [
-        "countTokens",
-        "bidiGenerateContent"
-      ],
-      "temperature": 1,
-      "topP": 0.95,
-      "topK": 64,
-      "maxTemperature": 2
+        "predictLongRunning"
+      ]
     },
     {
-      "name": "models/gemini-2.5-flash-exp-native-audio-thinking-dialog",
-      "version": "gemini-2.5-flash-exp-native-audio-thinking-dialog-2025-05-19",
-      "displayName": "Gemini 2.5 Flash Exp Native Audio Thinking Dialog",
-      "description": "Gemini 2.5 Flash Exp Native Audio Thinking Dialog",
-      "inputTokenLimit": 131072,
+      "name": "models/veo-3.1-fast-generate-preview",
+      "version": "3.1",
+      "displayName": "Veo 3.1 fast",
+      "description": "Veo 3.1 fast",
+      "inputTokenLimit": 480,
       "outputTokenLimit": 8192,
       "supportedGenerationMethods": [
-        "countTokens",
-        "bidiGenerateContent"
-      ],
-      "temperature": 1,
-      "topP": 0.95,
-      "topK": 64,
-      "maxTemperature": 2,
-      "thinking": true
+        "predictLongRunning"
+      ]
     },
     {
       "name": "models/gemini-2.0-flash-live-001",

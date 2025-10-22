@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "extraction_timestamp": "2025-10-02T12:41:37.479490",
+    "extraction_timestamp": "2025-10-21T12:32:11.297674",
     "source_urls": [
       "https://console.groq.com/docs/models#production-models",
       "https://console.groq.com/docs/models#production-systems"
@@ -13,10 +13,10 @@
   },
   "production_models": [
     {
-      "model_id": "llama-3.1-8b-instant",
+      "model_id": "Llama 3.1 8Bllama-3.1-8b-instant",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "Meta",
+      "created": 1761049931,
+      "model_provider": "250K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "131072",
@@ -24,10 +24,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "llama-3.3-70b-versatile",
+      "model_id": "Llama 3.3 70Bllama-3.3-70b-versatile",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "Meta",
+      "created": 1761049931,
+      "model_provider": "300K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "32768",
@@ -35,10 +35,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "meta-llama/llama-guard-4-12b",
+      "model_id": "Llama Guard 4 12Bmeta-llama/llama-guard-4-12b",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "Meta",
+      "created": 1761049931,
+      "model_provider": "30K TPM100 RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "1024",
@@ -46,10 +46,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "openai/gpt-oss-120b",
+      "model_id": "GPT OSS 120Bopenai/gpt-oss-120b",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "250K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "65536",
@@ -57,10 +57,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "openai/gpt-oss-20b",
+      "model_id": "GPT OSS 20Bopenai/gpt-oss-20b",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "250K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "65536",
@@ -68,10 +68,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "whisper-large-v3",
+      "model_id": "Whisperwhisper-large-v3",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "200K ASH300 RPM",
       "active": true,
       "context_window": "-",
       "max_completion_tokens": "-",
@@ -79,10 +79,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "whisper-large-v3-turbo",
+      "model_id": "Whisper Large V3 Turbowhisper-large-v3-turbo",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "400K ASH400 RPM",
       "active": true,
       "context_window": "-",
       "max_completion_tokens": "-",
@@ -90,10 +90,10 @@
       "source_section": "production-models"
     },
     {
-      "model_id": "llama-3.1-8b-instant",
+      "model_id": "Llama 3.1 8Bllama-3.1-8b-instant",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "Meta",
+      "created": 1761049931,
+      "model_provider": "250K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "131072",
@@ -101,10 +101,10 @@
       "source_section": "production-systems"
     },
     {
-      "model_id": "llama-3.3-70b-versatile",
+      "model_id": "Llama 3.3 70Bllama-3.3-70b-versatile",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "Meta",
+      "created": 1761049931,
+      "model_provider": "300K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "32768",
@@ -112,10 +112,10 @@
       "source_section": "production-systems"
     },
     {
-      "model_id": "meta-llama/llama-guard-4-12b",
+      "model_id": "Llama Guard 4 12Bmeta-llama/llama-guard-4-12b",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "Meta",
+      "created": 1761049931,
+      "model_provider": "30K TPM100 RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "1024",
@@ -123,10 +123,10 @@
       "source_section": "production-systems"
     },
     {
-      "model_id": "openai/gpt-oss-120b",
+      "model_id": "GPT OSS 120Bopenai/gpt-oss-120b",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "250K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "65536",
@@ -134,10 +134,10 @@
       "source_section": "production-systems"
     },
     {
-      "model_id": "openai/gpt-oss-20b",
+      "model_id": "GPT OSS 20Bopenai/gpt-oss-20b",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "250K TPM1K RPM",
       "active": true,
       "context_window": "131072",
       "max_completion_tokens": "65536",
@@ -145,10 +145,10 @@
       "source_section": "production-systems"
     },
     {
-      "model_id": "whisper-large-v3",
+      "model_id": "Whisperwhisper-large-v3",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "200K ASH300 RPM",
       "active": true,
       "context_window": "-",
       "max_completion_tokens": "-",
@@ -156,10 +156,10 @@
       "source_section": "production-systems"
     },
     {
-      "model_id": "whisper-large-v3-turbo",
+      "model_id": "Whisper Large V3 Turbowhisper-large-v3-turbo",
       "object": "model",
-      "created": 1759408897,
-      "model_provider": "OpenAI",
+      "created": 1761049931,
+      "model_provider": "400K ASH400 RPM",
       "active": true,
       "context_window": "-",
       "max_completion_tokens": "-",

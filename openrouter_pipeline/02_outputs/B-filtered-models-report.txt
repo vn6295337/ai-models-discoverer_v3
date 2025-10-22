@@ -1,34 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-03 09:24 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 330
-  Models passed all filters: 51
-  Models excluded: 279
-  Success rate: 15.5%
+  Total models processed: 339
+  Models passed all filters: 49
+  Models excluded: 290
+  Success rate: 14.5%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 330 models
-    Excluded: 276 models (non-free pricing)
-    Remaining: 54 models
+    Input: 339 models
+    Excluded: 287 models (non-free pricing)
+    Remaining: 52 models
 
   Step 2 - Billing Description Filter:
-    Input: 54 models
+    Input: 52 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 54 models
+    Remaining: 52 models
 
   Step 3 - Keyword Filter:
-    Input: 54 models
+    Input: 52 models
     Excluded: 3 models (preview/experimental/beta)
-    Final: 51 models
+    Remaining: 49 models
+
+  Step 4 - Deduplication Filter:
+    Input: 49 models
+    Excluded: 0 models (duplicates after (free) suffix normalization)
+    Final: 49 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 276 models with non-free pricing (details omitted due to volume)
+Excluded 287 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -48,47 +53,48 @@ EXCLUDED FOR: PREVIEW/EXPERIMENTAL VERSION (2 models)
    2. Nous: DeepHermes 3 Llama 3 8B Preview (free)
 
 ================================================================================
+STEP 4 - DEDUPLICATION FILTER RESULTS (DETAILED)
+================================================================================
+No duplicate models found.
+
+================================================================================
 FINAL FILTERED MODELS (PASSED ALL FILTERS)
 ================================================================================
 
-PROVIDER: QWEN (8 models)
+PROVIDER: QWEN (7 models)
 --------------------------------------------------
    1. Qwen: Qwen2.5 VL 32B Instruct (free)
       ID: qwen/qwen2.5-vl-32b-instruct:free
       Pricing: prompt=0, completion=0, request=0
 
-   2. Qwen: Qwen2.5 VL 72B Instruct (free)
-      ID: qwen/qwen2.5-vl-72b-instruct:free
-      Pricing: prompt=0, completion=0, request=0
-
-   3. Qwen: Qwen3 14B (free)
+   2. Qwen: Qwen3 14B (free)
       ID: qwen/qwen3-14b:free
       Pricing: prompt=0, completion=0, request=0
 
-   4. Qwen: Qwen3 235B A22B (free)
+   3. Qwen: Qwen3 235B A22B (free)
       ID: qwen/qwen3-235b-a22b:free
       Pricing: prompt=0, completion=0, request=0
 
-   5. Qwen: Qwen3 30B A3B (free)
+   4. Qwen: Qwen3 30B A3B (free)
       ID: qwen/qwen3-30b-a3b:free
       Pricing: prompt=0, completion=0, request=0
 
-   6. Qwen: Qwen3 4B (free)
+   5. Qwen: Qwen3 4B (free)
       ID: qwen/qwen3-4b:free
       Pricing: prompt=0, completion=0, request=0
 
-   7. Qwen: Qwen3 8B (free)
+   6. Qwen: Qwen3 8B (free)
       ID: qwen/qwen3-8b:free
       Pricing: prompt=0, completion=0, request=0
 
-   8. Qwen: Qwen3 Coder 480B A35B (free)
+   7. Qwen: Qwen3 Coder 480B A35B (free)
       ID: qwen/qwen3-coder:free
       Pricing: prompt=0, completion=0, request=0
 
 
 PROVIDER: DEEPSEEK (6 models)
 --------------------------------------------------
-   1. DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
+   1. DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
       ID: deepseek/deepseek-r1-0528-qwen3-8b:free
       Pricing: prompt=0, completion=0, request=0
 
@@ -190,7 +196,7 @@ PROVIDER: META (5 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: MOONSHOTAI (3 models)
+PROVIDER: MOONSHOTAI (2 models)
 --------------------------------------------------
    1. MoonshotAI: Kimi Dev 72B (free)
       ID: moonshotai/kimi-dev-72b:free
@@ -198,10 +204,6 @@ PROVIDER: MOONSHOTAI (3 models)
 
    2. MoonshotAI: Kimi K2 0711 (free)
       ID: moonshotai/kimi-k2:free
-      Pricing: prompt=0, completion=0, request=0
-
-   3. MoonshotAI: Kimi VL A3B Thinking (free)
-      ID: moonshotai/kimi-vl-a3b-thinking:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -216,17 +218,6 @@ PROVIDER: TNG (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: COGNITIVECOMPUTATIONS (2 models)
---------------------------------------------------
-   1. Dolphin3.0 Mistral 24B (free)
-      ID: cognitivecomputations/dolphin3.0-mistral-24b:free
-      Pricing: prompt=0, completion=0, request=0
-
-   2. Dolphin3.0 R1 Mistral 24B (free)
-      ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: QWEN (2 models)
 --------------------------------------------------
    1. Qwen2.5 72B Instruct (free)
@@ -238,10 +229,10 @@ PROVIDER: QWEN (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: XAI (1 models)
+PROVIDER: OPENROUTER (1 models)
 --------------------------------------------------
-   1. xAI: Grok 4 Fast (free)
-      ID: x-ai/grok-4-fast:free
+   1. Andromeda Alpha
+      ID: openrouter/andromeda-alpha
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -315,12 +306,27 @@ PROVIDER: ARLIAI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: COGNITIVECOMPUTATIONS (1 models)
+--------------------------------------------------
+   1. Dolphin3.0 Mistral 24B (free)
+      ID: cognitivecomputations/dolphin3.0-mistral-24b:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: NOUS (1 models)
+--------------------------------------------------
+   1. Nous: Hermes 3 405B Instruct (free)
+      ID: nousresearch/hermes-3-llama-3.1-405b:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 20
-  Total models passed all filters: 51
-  Models excluded by pricing: 276
+  Total providers: 21
+  Total models passed all filters: 49
+  Models excluded by pricing: 287
   Models excluded by billing description: 0
   Models excluded by keywords: 3
-  Total exclusions: 279
+  Models excluded by deduplication: 0
+  Total exclusions: 290
   ✓ All filtered models accounted for

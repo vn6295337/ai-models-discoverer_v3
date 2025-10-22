@@ -73,12 +73,14 @@ def filter_models(models: List[Dict[str, Any]], config: Dict[str, Any]) -> Tuple
     billing_keywords = config.get('billing_keywords', [])
     exclude_keywords = config.get('exclude_keywords', [])
     exclude_reasons = config.get('exclude_reasons', {})
+    dedup_rules = config.get('deduplication_rules', {})
 
     # Initialize tracking for each step
     excluded_by_step = {
         'step1_pricing': [],
         'step2_billing': [],
-        'step3_keywords': []
+        'step3_keywords': [],
+        'step4_deduplication': []
     }
 
     print(f"Starting sequential filtering with {len(models)} total models")
@@ -140,11 +142,62 @@ def filter_models(models: List[Dict[str, Any]], config: Dict[str, Any]) -> Tuple
 
     print(f"Step 3 (Keywords): {len(step3_passed)} models passed, {len(excluded_by_step['step3_keywords'])} excluded")
 
+    # STEP 4: Deduplication after (free) suffix normalization
+    step4_passed = []
+    if dedup_rules.get('enabled', False) and dedup_rules.get('remove_duplicates_after_free_suffix_strip', False):
+        # Group models by normalized name (after stripping (free))
+        normalized_groups = {}
+        for model in step3_passed:
+            model_name = model.get('name', '')
+            # Normalize by stripping (free) suffix
+            normalized_name = model_name.replace(' (free)', '').strip()
+
+            if normalized_name not in normalized_groups:
+                normalized_groups[normalized_name] = []
+            normalized_groups[normalized_name].append(model)
+
+        # Process each group - keep only one if duplicates exist
+        dedup_preference = dedup_rules.get('preference', 'keep_with_free_suffix')
+        dedup_reason = dedup_rules.get('dedup_reason', 'Duplicate model after (free) suffix normalization')
+
+        for normalized_name, group_models in normalized_groups.items():
+            if len(group_models) > 1:
+                # Multiple models with same normalized name - keep one based on preference
+                if dedup_preference == 'keep_with_free_suffix':
+                    # Keep the one WITH (free) suffix
+                    kept_model = None
+                    for model in group_models:
+                        if ' (free)' in model.get('name', ''):
+                            kept_model = model
+                            break
+                    # Fallback: if none has (free), keep first
+                    if kept_model is None:
+                        kept_model = group_models[0]
+                else:
+                    # Default: keep first model
+                    kept_model = group_models[0]
+
+                step4_passed.append(kept_model)
+
+                # Mark others as excluded
+                for model in group_models:
+                    if model != kept_model:
+                        excluded_by_step['step4_deduplication'].append((model.get('name', ''), dedup_reason))
+            else:
+                # No duplicates, keep the model
+                step4_passed.append(group_models[0])
+
+        print(f"Step 4 (Deduplication): {len(step4_passed)} models passed, {len(excluded_by_step['step4_deduplication'])} excluded")
+    else:
+        # Deduplication disabled - pass all models through
+        step4_passed = step3_passed
+        print(f"Step 4 (Deduplication): Skipped (disabled in config)")
+
     # Final summary
     total_excluded = sum(len(excluded_list) for excluded_list in excluded_by_step.values())
-    print(f"Sequential filtering complete: {len(step3_passed)} final models, {total_excluded} total excluded")
+    print(f"Sequential filtering complete: {len(step4_passed)} final models, {total_excluded} total excluded")
 
-    return step3_passed, excluded_by_step
+    return step4_passed, excluded_by_step
 
 def save_filtered_models(models: List[Dict[str, Any]], filename: str) -> bool:
     """
@@ -241,6 +294,14 @@ def generate_filter_report(all_models: List[Dict[str, Any]],
             report_file.write(f"  Step 3 - Keyword Filter:\n")
             report_file.write(f"    Input: {models_remaining + step3_excluded} models\n")
             report_file.write(f"    Excluded: {step3_excluded} models (preview/experimental/beta)\n")
+            report_file.write(f"    Remaining: {models_remaining} models\n\n")
+
+            # Step 4: Deduplication Filter
+            step4_excluded = len(excluded_by_step['step4_deduplication'])
+            models_remaining -= step4_excluded
+            report_file.write(f"  Step 4 - Deduplication Filter:\n")
+            report_file.write(f"    Input: {models_remaining + step4_excluded} models\n")
+            report_file.write(f"    Excluded: {step4_excluded} models (duplicates after (free) suffix normalization)\n")
             report_file.write(f"    Final: {models_remaining} models\n\n")
 
             # Step 1 Summary (no details as requested)
@@ -287,6 +348,20 @@ def generate_filter_report(all_models: List[Dict[str, Any]],
                     report_file.write("\n")
             else:
                 report_file.write("No models excluded for keywords.\n\n")
+
+            # Step 4 Detailed Results
+            report_file.write("=" * 80 + "\n")
+            report_file.write("STEP 4 - DEDUPLICATION FILTER RESULTS (DETAILED)\n")
+            report_file.write("=" * 80 + "\n")
+
+            if excluded_by_step['step4_deduplication']:
+                report_file.write(f"Found {step4_excluded} duplicate models after (free) suffix normalization:\n\n")
+
+                for i, (model_name, reason) in enumerate(excluded_by_step['step4_deduplication'], 1):
+                    report_file.write(f"  {i:2d}. {model_name}\n")
+                    report_file.write(f"      Reason: {reason}\n\n")
+            else:
+                report_file.write("No duplicate models found.\n\n")
 
             # Final filtered models organized by provider
             report_file.write("=" * 80 + "\n")
@@ -360,6 +435,7 @@ def generate_filter_report(all_models: List[Dict[str, Any]],
             report_file.write(f"  Models excluded by pricing: {step1_excluded}\n")
             report_file.write(f"  Models excluded by billing description: {step2_excluded}\n")
             report_file.write(f"  Models excluded by keywords: {step3_excluded}\n")
+            report_file.write(f"  Models excluded by deduplication: {step4_excluded}\n")
             report_file.write(f"  Total exclusions: {total_excluded}\n")
 
             if total_models_listed != len(filtered_models):
@@ -421,6 +497,7 @@ def main():
         print(f"  Step 1 (Pricing): {len(excluded_by_step['step1_pricing'])} excluded")
         print(f"  Step 2 (Billing): {len(excluded_by_step['step2_billing'])} excluded")
         print(f"  Step 3 (Keywords): {len(excluded_by_step['step3_keywords'])} excluded")
+        print(f"  Step 4 (Deduplication): {len(excluded_by_step['step4_deduplication'])} excluded")
         print(f"JSON output: {output_filename}")
         print(f"Report output: {report_filename}")
         print(f"Completed at: {datetime.now().isoformat()}")

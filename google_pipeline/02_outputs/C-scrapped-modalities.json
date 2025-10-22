@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-10-03 09:25:30 IST",
+    "generated": "2025-10-22 13:03:25 IST",
     "total_models": 21,
     "scraping_source": "Google Documentation Web Scraper"
   },
@@ -57,19 +57,19 @@
       "input_modalities": "Text",
       "output_modalities": "Image"
     },
+    "veo-3.1-generate-preview": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video, Audio"
+    },
+    "veo-3.1-fast-generate-preview": {
+      "input_modalities": "Text, Image",
+      "output_modalities": "Video, Audio"
+    },
     "veo-3.0-generate-001": {
       "input_modalities": "Text, Image",
       "output_modalities": "Video, Audio"
     },
-    "veo-3.0-generate-preview": {
-      "input_modalities": "Text, Image",
-      "output_modalities": "Video, Audio"
-    },
     "veo-3.0-fast-generate-001": {
-      "input_modalities": "Text, Image",
-      "output_modalities": "Video, Audio"
-    },
-    "veo-3.0-fast-generate-preview": {
       "input_modalities": "Text, Image",
       "output_modalities": "Video, Audio"
     },

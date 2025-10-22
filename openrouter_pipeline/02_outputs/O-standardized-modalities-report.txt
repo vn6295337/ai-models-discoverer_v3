@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-10-03 09:24 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 51
+  Total models : 49
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
@@ -12,33 +12,47 @@ SUMMARY:
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
   38 models: Text
-  11 models: Text, Image
+   9 models: Text, Image
    2 models: Text, Image, Audio, Video
 
 Total unique input types: 3
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  51 models: Text
+  49 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
   38 models: Text → Text
-  11 models: Text, Image → Text
+   9 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
 
 Total unique combinations: 3
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 51 models
-  Output modalities changed: 51 models
+  Input modalities changed: 49 models
+  Output modalities changed: 49 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
 DETAILED STANDARDIZED MODALITY MODEL INFORMATION:
 ================================================================================
 
-MODEL 1: tngtech/deepseek-r1t-chimera
+MODEL 1: deepseek/deepseek-r1-0528-qwen3-8b
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
+  Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
+  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
+  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
+  Clean Model Name: DeepSeek R1 0528 Qwen3 8B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 2: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -52,7 +66,7 @@ MODEL 1: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 2: tngtech/deepseek-r1t2-chimera
+MODEL 3: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -66,7 +80,7 @@ MODEL 2: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 3: deepseek/deepseek-chat-v3-0324
+MODEL 4: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -80,27 +94,13 @@ MODEL 3: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 4: deepseek/deepseek-chat-v3.1
+MODEL 5: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
   HuggingFace ID: deepseek-ai/DeepSeek-V3.1
   Canonical Slug: deepseek/deepseek-chat-v3.1
   Clean Model Name: DeepSeek V3.1
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 5: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
-  Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
-  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
-  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
-  Clean Model Name: Deepseek R1 0528 Qwen3 8B
   Raw Input Modalities: text
   Raw Output Modalities: text
   Standardized Input Modalities: Text
@@ -136,21 +136,7 @@ MODEL 7: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 8: cognitivecomputations/dolphin3.0-r1-mistral-24b
---------------------------------------------------
-  ID: cognitivecomputations/dolphin3.0-r1-mistral-24b:free
-  Original Name: Dolphin3.0 R1 Mistral 24B (free)
-  HuggingFace ID: cognitivecomputations/Dolphin3.0-R1-Mistral-24B
-  Canonical Slug: cognitivecomputations/dolphin3.0-r1-mistral-24b
-  Clean Model Name: Dolphin3.0 R1 Mistral 24B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 9: z-ai/glm-4.5-air
+MODEL 8: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -164,7 +150,7 @@ MODEL 9: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 10: openai/gpt-oss-20b
+MODEL 9: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -178,13 +164,27 @@ MODEL 10: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 11: google/gemma-2-9b-it
+MODEL 10: google/gemma-2-9b-it
 --------------------------------------------------
   ID: google/gemma-2-9b-it:free
   Original Name: Google: Gemma 2 9B (free)
   HuggingFace ID: google/gemma-2-9b-it
   Canonical Slug: google/gemma-2-9b-it
   Clean Model Name: Gemma 2 9B IT
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 11: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID: nousresearch/hermes-3-llama-3.1-405b:free
+  Original Name: Nous: Hermes 3 405B Instruct (free)
+  HuggingFace ID: NousResearch/Hermes-3-Llama-3.1-405B
+  Canonical Slug: nousresearch/hermes-3-llama-3.1-405b
+  Clean Model Name: Hermes 3 405B Instruct
   Raw Input Modalities: text
   Raw Output Modalities: text
   Standardized Input Modalities: Text
@@ -570,7 +570,21 @@ MODEL 38: venice/uncensored
 
 ================================================================================
 
-MODEL 39: google/gemma-3-12b-it
+MODEL 39: openrouter/andromeda-alpha
+--------------------------------------------------
+  ID: openrouter/andromeda-alpha
+  Original Name: Andromeda Alpha
+  HuggingFace ID: 
+  Canonical Slug: openrouter/andromeda-alpha
+  Clean Model Name: Andromeda Alpha
+  Raw Input Modalities: image, text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 40: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -584,7 +598,7 @@ MODEL 39: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 40: google/gemma-3-27b-it
+MODEL 41: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -598,7 +612,7 @@ MODEL 40: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 41: google/gemma-3-4b-it
+MODEL 42: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -612,35 +626,7 @@ MODEL 41: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 42: x-ai/grok-4-fast
---------------------------------------------------
-  ID: x-ai/grok-4-fast:free
-  Original Name: xAI: Grok 4 Fast (free)
-  HuggingFace ID: 
-  Canonical Slug: x-ai/grok-4-fast
-  Clean Model Name: Grok 4 Fast
-  Raw Input Modalities: text, image
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 43: moonshotai/kimi-vl-a3b-thinking
---------------------------------------------------
-  ID: moonshotai/kimi-vl-a3b-thinking:free
-  Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
-  HuggingFace ID: moonshotai/Kimi-VL-A3B-Thinking
-  Canonical Slug: moonshotai/kimi-vl-a3b-thinking
-  Clean Model Name: Kimi VL A3B Thinking
-  Raw Input Modalities: image, text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 44: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 43: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -654,7 +640,7 @@ MODEL 44: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 45: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 44: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -668,7 +654,7 @@ MODEL 45: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 46: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 45: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -682,7 +668,7 @@ MODEL 46: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 47: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 46: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
@@ -696,7 +682,7 @@ MODEL 47: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 48: qwen/qwen2.5-vl-32b-instruct
+MODEL 47: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -710,21 +696,7 @@ MODEL 48: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 49: qwen/qwen2.5-vl-72b-instruct
---------------------------------------------------
-  ID: qwen/qwen2.5-vl-72b-instruct:free
-  Original Name: Qwen: Qwen2.5 VL 72B Instruct (free)
-  HuggingFace ID: Qwen/Qwen2.5-VL-72B-Instruct
-  Canonical Slug: qwen/qwen2.5-vl-72b-instruct
-  Clean Model Name: Qwen2.5 VL 72B Instruct
-  Raw Input Modalities: text, image
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 50: google/gemma-3n-e2b-it
+MODEL 48: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -738,7 +710,7 @@ MODEL 50: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 51: google/gemma-3n-e4b-it
+MODEL 49: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)

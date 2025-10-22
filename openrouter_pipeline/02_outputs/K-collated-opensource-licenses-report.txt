@@ -1,22 +1,22 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-10-03 09:24 AM IST
+Generated: 2025-10-22 01:02 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 31
+  Total models        : 30
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 31 models
-  Stage H Opensource Names       : 31 models
-  Stage I Opensource URLs        : 31 models
+  Stage E (License Info URLs)    : 30 models
+  Stage H Opensource Names       : 30 models
+  Stage I Opensource URLs        : 30 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
   18 models: Apache-2.0
-  13 models: MIT
+  12 models: MIT
 
 Total unique license types: 2
 
@@ -334,10 +334,10 @@ MODEL 22: deepseek/deepseek-r1-0528
 MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
-  Original Name: DeepSeek: Deepseek R1 0528 Qwen3 8B (free)
+  Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
   HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
   Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
-  Clean Model Name: Deepseek R1 0528 Qwen3 8B
+  Clean Model Name: DeepSeek R1 0528 Qwen3 8B
   License Info Text: info
   License Info URL: https://huggingface.co/deepseek-ai/deepseek-r1-0528-qwen3-8b/blob/main/LICENSE
   License Name: MIT
@@ -401,21 +401,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: moonshotai/kimi-vl-a3b-thinking
---------------------------------------------------
-  ID: moonshotai/kimi-vl-a3b-thinking:free
-  Original Name: MoonshotAI: Kimi VL A3B Thinking (free)
-  HuggingFace ID: moonshotai/Kimi-VL-A3B-Thinking
-  Canonical Slug: moonshotai/kimi-vl-a3b-thinking
-  Clean Model Name: Kimi VL A3B Thinking
-  License Info Text: info
-  License Info URL: https://huggingface.co/moonshotai/Kimi-VL-A3B-Thinking/blob/main/README.md
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-
-================================================================================
-
-MODEL 29: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -429,7 +415,7 @@ MODEL 29: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 30: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -443,7 +429,7 @@ MODEL 30: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 31: z-ai/glm-4.5-air
+MODEL 30: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

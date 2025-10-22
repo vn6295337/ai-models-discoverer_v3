@@ -125,10 +125,35 @@ def load_supabase_data(conn) -> List[Dict[str, Any]]:
         print(f"Failed to load Supabase data: {e}")
         return []
 
+def detect_duplicates(data: List[Dict[str, Any]], source_name: str) -> Dict[str, List[Dict[str, Any]]]:
+    """Detect duplicate human_readable_name values in data"""
+    name_groups = {}
+    for model in data:
+        name = model.get('human_readable_name', '')
+        if name:  # Skip empty names
+            if name not in name_groups:
+                name_groups[name] = []
+            name_groups[name].append(model)
+
+    # Return only groups with duplicates
+    duplicates = {name: models for name, models in name_groups.items() if len(models) > 1}
+
+    if duplicates:
+        print(f"⚠ WARNING: Found {len(duplicates)} duplicate name(s) in {source_name}:")
+        for name, models in duplicates.items():
+            print(f"  - '{name}': {len(models)} occurrences")
+
+    return duplicates
+
 def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data: List[Dict[str, Any]]):
     """Generate field comparison report"""
 
+    # Detect duplicates BEFORE creating lookups
+    pipeline_duplicates = detect_duplicates(pipeline_data, "pipeline")
+    supabase_duplicates = detect_duplicates(supabase_data, "Supabase")
+
     # Create lookup dictionaries by human_readable_name
+    # Note: This will overwrite duplicates - only last occurrence will be kept
     pipeline_lookup = {model.get('human_readable_name', ''): model for model in pipeline_data}
     supabase_lookup = {model.get('human_readable_name', ''): model for model in supabase_data}
 
@@ -198,6 +223,34 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
         f.write(f"Generated: {get_ist_timestamp()}\n")
         f.write("=" * 80 + "\n\n")
 
+        # Duplicate Detection Results
+        if pipeline_duplicates or supabase_duplicates:
+            f.write("⚠ DUPLICATE DETECTION ALERTS\n")
+            f.write("-" * 80 + "\n\n")
+
+            if pipeline_duplicates:
+                f.write(f"PIPELINE DUPLICATES: Found {len(pipeline_duplicates)} duplicate name(s)\n")
+                for name, models in sorted(pipeline_duplicates.items()):
+                    f.write(f"  • '{name}': {len(models)} occurrences\n")
+                    for i, model in enumerate(models, 1):
+                        provider_id = model.get('provider_id', 'N/A')
+                        license_name = model.get('license_name', 'N/A')
+                        f.write(f"    [{i}] provider_id: {provider_id}, license: {license_name}\n")
+                f.write("\n")
+
+            if supabase_duplicates:
+                f.write(f"SUPABASE DUPLICATES: Found {len(supabase_duplicates)} duplicate name(s)\n")
+                for name, models in sorted(supabase_duplicates.items()):
+                    f.write(f"  • '{name}': {len(models)} occurrences\n")
+                    for i, model in enumerate(models, 1):
+                        provider_id = model.get('provider_id', 'N/A')
+                        license_name = model.get('license_name', 'N/A')
+                        db_id = model.get('id', 'N/A')
+                        f.write(f"    [{i}] id: {db_id}, provider_id: {provider_id}, license: {license_name}\n")
+                f.write("\n")
+
+            f.write("=" * 80 + "\n\n")
+
         # Summary Statistics
         f.write("SUMMARY STATISTICS\n")
         f.write("-" * 80 + "\n\n")
@@ -222,7 +275,16 @@ def create_comparison_report(pipeline_data: List[Dict[str, Any]], supabase_data:
 
         # Overall Statistics
         f.write("1. OVERALL STATISTICS:\n")
-        f.write(f"   • Total models processed: {len(all_model_names)}\n")
+        f.write(f"   • Total unique model names: {len(all_model_names)}\n")
+        f.write(f"   • Total records in pipeline: {len(pipeline_data)}\n")
+        f.write(f"   • Total records in Supabase: {len(supabase_data)}\n")
+
+        if pipeline_duplicates or supabase_duplicates:
+            dup_count_pipeline = sum(len(models) - 1 for models in pipeline_duplicates.values())
+            dup_count_supabase = sum(len(models) - 1 for models in supabase_duplicates.values())
+            f.write(f"   • Duplicate records in pipeline: {dup_count_pipeline}\n")
+            f.write(f"   • Duplicate records in Supabase: {dup_count_supabase}\n")
+
         f.write(f"   • Models in both systems: {len(models_in_both)}\n")
         if models_in_both:
             f.write(f"   • Models with differences: {models_with_differences_count}\n")
