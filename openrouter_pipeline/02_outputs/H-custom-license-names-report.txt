@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE MODELS REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 7
+  Total models : 6
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -16,10 +16,9 @@ CUSTOM LICENSE DISTRIBUTION:
   QWEN: 1 models
   Tencent: 1 models
   Unknown: 1 models
-  llama3: 1 models
   llama3.3: 1 models
 
-Total license types: 7
+Total license types: 6
 
 DETAILED CUSTOM LICENSE MODEL LISTINGS:
 ================================================================================
@@ -69,16 +68,7 @@ MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 6: nousresearch/hermes-3-llama-3.1-405b
---------------------------------------------------
-  ID              : nousresearch/hermes-3-llama-3.1-405b:free
-  Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
-  HuggingFace ID  : NousResearch/Hermes-3-Llama-3.1-405B
-  License Name    : llama3
-
-================================================================================
-
-MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID              : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b

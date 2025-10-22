@@ -1,24 +1,25 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 30
+  Total models        : 31
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 30 models
-  Stage H Opensource Names       : 30 models
-  Stage I Opensource URLs        : 30 models
+  Stage E (License Info URLs)    : 31 models
+  Stage H Opensource Names       : 31 models
+  Stage I Opensource URLs        : 31 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
   18 models: Apache-2.0
   12 models: MIT
+   1 models: Llama-3.1
 
-Total unique license types: 2
+Total unique license types: 3
 
 DETAILED OPENSOURCE MODEL INFORMATION:
 ================================================================================
@@ -275,7 +276,21 @@ MODEL 18: venice/uncensored
 
 ================================================================================
 
-MODEL 19: deepseek/deepseek-chat-v3-0324
+MODEL 19: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID: nousresearch/hermes-3-llama-3.1-405b:free
+  Original Name: Nous: Hermes 3 405B Instruct (free)
+  HuggingFace ID: NousResearch/Hermes-3-Llama-3.1-405B
+  Canonical Slug: nousresearch/hermes-3-llama-3.1-405b
+  Clean Model Name: Hermes 3 405B Instruct
+  License Info Text: info
+  License Info URL: https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
+  License Name: Llama-3.1
+  License URL: https://www.llama.com/llama3_1/license/
+
+================================================================================
+
+MODEL 20: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -289,7 +304,7 @@ MODEL 19: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 20: deepseek/deepseek-chat-v3.1
+MODEL 21: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
@@ -303,7 +318,7 @@ MODEL 20: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 21: deepseek/deepseek-r1
+MODEL 22: deepseek/deepseek-r1
 --------------------------------------------------
   ID: deepseek/deepseek-r1:free
   Original Name: DeepSeek: R1 (free)
@@ -317,7 +332,7 @@ MODEL 21: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 22: deepseek/deepseek-r1-0528
+MODEL 23: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -331,7 +346,7 @@ MODEL 22: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 24: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
   Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
@@ -345,7 +360,7 @@ MODEL 23: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 24: deepseek/deepseek-r1-distill-llama-70b
+MODEL 25: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -359,7 +374,7 @@ MODEL 24: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 25: meituan/longcat-flash-chat
+MODEL 26: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -373,7 +388,7 @@ MODEL 25: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 26: microsoft/mai-ds-r1
+MODEL 27: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -387,7 +402,7 @@ MODEL 26: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 27: moonshotai/kimi-dev-72b
+MODEL 28: moonshotai/kimi-dev-72b
 --------------------------------------------------
   ID: moonshotai/kimi-dev-72b:free
   Original Name: MoonshotAI: Kimi Dev 72B (free)
@@ -401,7 +416,7 @@ MODEL 27: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 28: tngtech/deepseek-r1t-chimera
+MODEL 29: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -415,7 +430,7 @@ MODEL 28: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 29: tngtech/deepseek-r1t2-chimera
+MODEL 30: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -429,7 +444,7 @@ MODEL 29: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 30: z-ai/glm-4.5-air
+MODEL 31: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

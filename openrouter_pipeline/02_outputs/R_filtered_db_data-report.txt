@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
@@ -57,17 +57,18 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    5 models: Meta
    2 models: Moonshot AI
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Cognitive Computations
    1 models: Meituan
    1 models: Microsoft
    1 models: NVIDIA
+   1 models: Nous Research
    1 models: OpenAI
    1 models: Tencent
+   1 models: Unknown
    1 models: Z.AI
 
-Total providers: 16
+Total providers: 17
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
   47 models: Unknown

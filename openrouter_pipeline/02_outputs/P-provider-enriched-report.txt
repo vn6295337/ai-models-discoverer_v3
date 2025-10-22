@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-22 01:02 PM IST
+Generated: 2025-10-22 03:23 PM IST
 ================================================================================
 
 SUMMARY:
@@ -12,14 +12,12 @@ SUMMARY:
 
 ACTION ITEMS - UNKNOWN MAPPINGS:
 ==================================================
-UNKNOWN PROVIDERS (2 models):
+UNKNOWN PROVIDERS (1 models):
   Add these provider mappings to 08_provider_enrichment.json:
-    "nousresearch": ["Provider Name", "Country"],
     "openrouter": ["Provider Name", "Country"],
 
-UNKNOWN OFFICIAL URLS (2 unique families):
+UNKNOWN OFFICIAL URLS (1 unique families):
   Add these URL mappings to family_official_urls:
-    "nousresearch": "https://official-url-here",
     "openrouter": "https://official-url-here",
 
 ==================================================
@@ -33,25 +31,26 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: Cognitive Computations
    2 models: Moonshot AI
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Meituan
    1 models: Microsoft
    1 models: NVIDIA
+   1 models: Nous Research
    1 models: OpenAI
    1 models: Shisa AI
    1 models: Tencent
+   1 models: Unknown
    1 models: Z.AI
 
-Total unique model providers: 17
+Total unique model providers: 18
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   21 models: China
-  17 models: United States
+  18 models: United States
    6 models: France
    2 models: Germany
-   2 models: Unknown
    1 models: Japan
+   1 models: Unknown
 
 Total unique countries: 6
 
@@ -67,7 +66,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: arliai
    1 models: meituan
    1 models: microsoft
-   1 models: nousresearch
+   1 models: nous research
    1 models: nvidia
    1 models: openai
    1 models: openrouter
@@ -647,10 +646,10 @@ MODEL 41: nousresearch/hermes-3-llama-3.1-405b
   HuggingFace ID: NousResearch/Hermes-3-Llama-3.1-405B
   Canonical Slug: nousresearch/hermes-3-llama-3.1-405b
   Clean Model Name: Hermes 3 405B Instruct
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: nousresearch
-  Official URL: Unknown
+  Model Provider: Nous Research
+  Model Provider Country: United States
+  Model Family: nous research
+  Official URL: https://nousresearch.com/
 
 ================================================================================
 

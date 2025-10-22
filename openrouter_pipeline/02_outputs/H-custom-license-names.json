@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 01:02 PM IST",
-    "total_models": 7,
+    "generated_at": "2025-10-22 03:23 PM IST",
+    "total_models": 6,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
@@ -46,13 +46,6 @@
       "name": "Qwen2.5 72B Instruct (free)",
       "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
       "license_name": "QWEN"
-    },
-    {
-      "id": "nousresearch/hermes-3-llama-3.1-405b:free",
-      "canonical_slug": "nousresearch/hermes-3-llama-3.1-405b",
-      "name": "Nous: Hermes 3 405B Instruct (free)",
-      "hugging_face_id": "NousResearch/Hermes-3-Llama-3.1-405B",
-      "license_name": "llama3"
     }
   ]
 }
