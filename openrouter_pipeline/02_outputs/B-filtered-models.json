@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-22 03:32 PM IST",
+    "generated_at": "2025-10-23 07:07 AM IST",
     "total_models": 49,
     "pipeline_stage": "B_filter_models"
   },
@@ -11,7 +11,7 @@
       "hugging_face_id": "",
       "name": "Andromeda Alpha",
       "created": 1761076994,
-      "description": "This is a smaller reasoning model that has been trained to be really good at image and visual understanding. This is a cloaked model provided to the community to gather feedback.\n\nNote: All prompts and output are logged to improve the provider\u2019s model and its product and services. Please do not upload any personal, confidential, or otherwise sensitive information. This is a trial use only. Do not use for production or business-critical systems.",
+      "description": "This is a small reasoning VLM trained for image understanding. It's strengths include multi-image comprehension (6+ images), especially those containing charts and text. This is a cloaked model provided to the community to gather feedback.\n\nNote: All prompts and output are logged to improve the provider\u2019s model and its product and services. Please do not upload any personal, confidential, or otherwise sensitive information. This is a trial use only. Do not use for production or business-critical systems.",
       "context_length": 128000,
       "architecture": {
         "modality": "text+image->text",
@@ -89,6 +89,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
+        "include_reasoning",
         "max_tokens",
         "presence_penalty",
         "reasoning",

@@ -1,13 +1,13 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-22 03:32 PM IST
+Generated: 2025-10-23 07:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 339
+  Total models: 344
 
 PROVIDER BREAKDOWN (Descending Order):
-  OpenAI       :  47 models
+  OpenAI       :  48 models
     - chatgpt-4o-latest
     - codex-mini
     - gpt-3.5-turbo
@@ -41,6 +41,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - gpt-5-nano
     - gpt-5-pro
     - gpt-oss-120b
+    - gpt-oss-120b:exacto
     - gpt-oss-20b
     - gpt-oss-20b:free
     - o1
@@ -56,7 +57,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini-deep-research
     - o4-mini-high
 
-  Qwen         :  42 models
+  Qwen         :  43 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -88,6 +89,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-coder-30b-a3b-instruct
     - qwen3-coder-flash
     - qwen3-coder-plus
+    - qwen3-coder:exacto
     - qwen3-coder:free
     - qwen3-max
     - qwen3-next-80b-a3b-instruct
@@ -182,7 +184,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-guard-2-8b
     - llama-guard-4-12b
 
-  DeepSeek     :  18 models
+  DeepSeek     :  19 models
     - deepseek-chat
     - deepseek-chat-v3-0324
     - deepseek-chat-v3-0324:free
@@ -200,6 +202,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - deepseek-r1-distill-qwen-32b
     - deepseek-r1:free
     - deepseek-v3.1-terminus
+    - deepseek-v3.1-terminus:exacto
     - deepseek-v3.2-exp
 
   Anthropic    :  13 models
@@ -237,6 +240,15 @@ PROVIDER BREAKDOWN (Descending Order):
     - phi-4-multimodal-instruct
     - phi-4-reasoning-plus
 
+  Z.AI         :   7 models
+    - glm-4-32b
+    - glm-4.5
+    - glm-4.5-air
+    - glm-4.5-air:free
+    - glm-4.5v
+    - glm-4.6
+    - glm-4.6:exacto
+
   xAI          :   7 models
     - grok-3
     - grok-3-beta
@@ -246,13 +258,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4-fast
     - grok-code-fast-1
 
-  Z.AI         :   6 models
-    - glm-4-32b
-    - glm-4.5
-    - glm-4.5-air
-    - glm-4.5-air:free
-    - glm-4.5v
-    - glm-4.6
+  MoonshotAI   :   6 models
+    - kimi-dev-72b
+    - kimi-dev-72b:free
+    - kimi-k2
+    - kimi-k2-0905
+    - kimi-k2-0905:exacto
+    - kimi-k2:free
 
   NVIDIA       :   5 models
     - llama-3.1-nemotron-70b-instruct
@@ -281,13 +293,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - maestro-reasoning
     - spotlight
     - virtuoso-large
-
-  MoonshotAI   :   5 models
-    - kimi-dev-72b
-    - kimi-dev-72b:free
-    - kimi-k2
-    - kimi-k2-0905
-    - kimi-k2:free
 
   Perplexity   :   5 models
     - sonar
