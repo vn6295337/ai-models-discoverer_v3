@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-24 06:55 AM IST
+Generated: 2025-10-25 06:57 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 347
+  Total models: 348
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  48 models
@@ -320,6 +320,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - l3.1-euryale-70b
     - l3.3-euryale-70b
 
+  MiniMax      :   3 models
+    - minimax-01
+    - minimax-m1
+    - minimax-m2:free
+
   Deep Cogito  :   3 models
     - cogito-v2-preview-deepseek-671b
     - cogito-v2-preview-llama-405b
@@ -362,10 +367,6 @@ PROVIDER BREAKDOWN (Descending Order):
   Inception    :   2 models
     - mercury
     - mercury-coder
-
-  MiniMax      :   2 models
-    - minimax-01
-    - minimax-m1
 
   Shisa AI     :   2 models
     - shisa-v2-llama3.3-70b

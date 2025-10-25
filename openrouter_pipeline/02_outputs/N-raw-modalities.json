@@ -1,10 +1,19 @@
 {
   "metadata": {
-    "generated_at": "2025-10-24 06:56 AM IST",
-    "total_models": 49,
+    "generated_at": "2025-10-25 06:57 AM IST",
+    "total_models": 50,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
+    {
+      "id": "minimax/minimax-m2:free",
+      "canonical_slug": "minimax/minimax-m2",
+      "original_name": "MiniMax: MiniMax M2 (free)",
+      "hugging_face_id": "",
+      "clean_model_name": "MiniMax M2",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text"
+    },
     {
       "id": "openrouter/andromeda-alpha",
       "canonical_slug": "openrouter/andromeda-alpha",
