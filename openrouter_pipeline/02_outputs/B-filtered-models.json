@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-25 06:57 AM IST",
+    "generated_at": "2025-10-26 07:12 AM IST",
     "total_models": 50,
     "pipeline_stage": "B_filter_models"
   },
@@ -2055,7 +2055,7 @@
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": 2048,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
