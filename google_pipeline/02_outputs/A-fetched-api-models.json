@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-10-26 07:14:07 IST",
+    "generated": "2025-10-27 07:17:39 IST",
     "total_models": 66,
     "api_source": "Google Generative Language API"
   },
@@ -640,7 +640,8 @@
       "outputTokenLimit": 8192,
       "supportedGenerationMethods": [
         "generateContent",
-        "countTokens"
+        "countTokens",
+        "batchGenerateContent"
       ],
       "temperature": 1,
       "topP": 0.95,
@@ -656,7 +657,8 @@
       "outputTokenLimit": 8192,
       "supportedGenerationMethods": [
         "generateContent",
-        "countTokens"
+        "countTokens",
+        "batchGenerateContent"
       ],
       "temperature": 1,
       "topP": 0.95,
