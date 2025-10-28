@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-10-27 07:16 AM IST
+Generated: 2025-10-28 07:07 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,7 +9,7 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (19 models):
+LICENSE INFO TEXT (18 models):
   - Andromeda Alpha
   - Dolphin3.0 Mistral 24B
   - Gemma 2 9B IT
@@ -25,12 +25,11 @@ LICENSE INFO TEXT (19 models):
   - Llama 3.3 8B Instruct
   - Llama 4 Maverick
   - Llama 4 Scout
-  - MiniMax M2
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
-LICENSE INFO URL (19 models):
+LICENSE INFO URL (18 models):
   - Andromeda Alpha
   - Dolphin3.0 Mistral 24B
   - Gemma 2 9B IT
@@ -46,18 +45,15 @@ LICENSE INFO URL (19 models):
   - Llama 3.3 8B Instruct
   - Llama 4 Maverick
   - Llama 4 Scout
-  - MiniMax M2
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
-LICENSE NAME (2 models):
+LICENSE NAME (1 models):
   - Andromeda Alpha
-  - MiniMax M2
 
-LICENSE URL (2 models):
+LICENSE URL (1 models):
   - Andromeda Alpha
-  - MiniMax M2
 
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
@@ -72,10 +68,10 @@ LICENSE NAME (1 models):
 DATA QUALITY SUMMARY:
 ------------------------------
 Total models: 50
-Missing license info text: 19 (38.0%)
-Missing license info url: 19 (38.0%)
-Missing license name: 2 (4.0%)
-Missing license url: 2 (4.0%)
+Missing license info text: 18 (36.0%)
+Missing license info url: 18 (36.0%)
+Missing license name: 1 (2.0%)
+Missing license url: 1 (2.0%)
 Unknown model provider: 2 (4.0%)
 Unknown license name: 1 (2.0%)
 
@@ -567,9 +563,9 @@ COMPLETE MODEL RECORDS:
  49. MiniMax M2
      Provider           : Unknown (Unknown)
      Modalities         : Text → Text
-     License            : 
-     License Info       : 
-     License URL        : 
+     License            : MIT
+     License Info       : info
+     License URL        : https://opensource.org/licenses/MIT
      Official URL       : Unknown
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys

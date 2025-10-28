@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-27 07:16 AM IST",
-    "total_models": 31,
+    "generated_at": "2025-10-28 07:07 AM IST",
+    "total_models": 32,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -112,6 +112,17 @@
       "clean_model_name": "MAI DS R1",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/microsoft/MAI-DS-R1/blob/main/LICENSE",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT"
+    },
+    {
+      "id": "minimax/minimax-m2:free",
+      "canonical_slug": "minimax/minimax-m2",
+      "original_name": "MiniMax: MiniMax M2 (free)",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2",
+      "clean_model_name": "MiniMax M2",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2/blob/main/README.md",
       "license_name": "MIT",
       "license_url": "https://opensource.org/licenses/MIT"
     },

@@ -1,10 +1,18 @@
 {
   "metadata": {
-    "generated_at": "2025-10-27 07:16 AM IST",
-    "total_models": 31,
+    "generated_at": "2025-10-28 07:07 AM IST",
+    "total_models": 32,
     "pipeline_stage": "I_opensource_license_urls"
   },
   "models": [
+    {
+      "id": "minimax/minimax-m2:free",
+      "canonical_slug": "minimax/minimax-m2",
+      "name": "MiniMax: MiniMax M2 (free)",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2",
+      "license_name": "MIT",
+      "official_license_url": "https://opensource.org/licenses/MIT"
+    },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
       "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",

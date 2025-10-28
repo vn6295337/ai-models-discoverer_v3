@@ -1,6 +1,6 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-10-27 07:16 AM IST
+Generated: 2025-10-28 07:07 AM IST
 ================================================================================
 
 SUMMARY:
@@ -311,7 +311,7 @@ MODEL 24: minimax/minimax-m2
 --------------------------------------------------
   ID: minimax/minimax-m2:free
   Original Name: MiniMax: MiniMax M2 (free)
-  HuggingFace ID: 
+  HuggingFace ID: MiniMaxAI/MiniMax-M2
   Canonical Slug: minimax/minimax-m2
   Clean Model Name: MiniMax M2
   Raw Input Modalities: text

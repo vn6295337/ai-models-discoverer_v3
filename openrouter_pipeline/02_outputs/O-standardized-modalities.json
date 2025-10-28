@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-10-27 07:16 AM IST",
+    "generated_at": "2025-10-28 07:07 AM IST",
     "total_models": 50,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
@@ -9,7 +9,7 @@
       "id": "minimax/minimax-m2:free",
       "canonical_slug": "minimax/minimax-m2",
       "original_name": "MiniMax: MiniMax M2 (free)",
-      "hugging_face_id": "",
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2",
       "clean_model_name": "MiniMax M2",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text",
