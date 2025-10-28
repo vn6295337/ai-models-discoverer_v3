@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-28 07:07 AM IST
+Generated: 2025-10-28 11:33 AM IST
 ================================================================================
 
 SUMMARY:
@@ -12,14 +12,12 @@ SUMMARY:
 
 ACTION ITEMS - UNKNOWN MAPPINGS:
 ==================================================
-UNKNOWN PROVIDERS (2 models):
+UNKNOWN PROVIDERS (1 models):
   Add these provider mappings to 08_provider_enrichment.json:
-    "minimax": ["Provider Name", "Country"],
     "openrouter": ["Provider Name", "Country"],
 
-UNKNOWN OFFICIAL URLS (2 unique families):
+UNKNOWN OFFICIAL URLS (1 unique families):
   Add these URL mappings to family_official_urls:
-    "minimax": "https://official-url-here",
     "openrouter": "https://official-url-here",
 
 ==================================================
@@ -33,28 +31,30 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: Cognitive Computations
    2 models: Moonshot AI
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Meituan
    1 models: Microsoft
+   1 models: MiniMax
    1 models: NVIDIA
    1 models: Nous Research
    1 models: OpenAI
    1 models: Shisa AI
    1 models: Tencent
+   1 models: Unknown
    1 models: Z.AI
 
-Total unique model providers: 18
+Total unique model providers: 19
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   21 models: China
   18 models: United States
    6 models: France
    2 models: Germany
-   2 models: Unknown
    1 models: Japan
+   1 models: Singapore
+   1 models: Unknown
 
-Total unique countries: 6
+Total unique countries: 7
 
 MODEL FAMILY DISTRIBUTION:
   10 models: alibaba cloud
@@ -537,10 +537,10 @@ MODEL 33: minimax/minimax-m2
   HuggingFace ID: MiniMaxAI/MiniMax-M2
   Canonical Slug: minimax/minimax-m2
   Clean Model Name: MiniMax M2
-  Model Provider: Unknown
-  Model Provider Country: Unknown
+  Model Provider: MiniMax
+  Model Provider Country: Singapore
   Model Family: minimax
-  Official URL: Unknown
+  Official URL: https://www.minimax.io/
 
 ================================================================================
 

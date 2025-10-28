@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-28 07:07 AM IST
+Generated: 2025-10-28 11:33 AM IST
 ================================================================================
 
 SUMMARY:
@@ -73,11 +73,11 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Cognitive Computations
    1 models: Meituan
    1 models: Microsoft
+   1 models: MiniMax
    1 models: NVIDIA
    1 models: Nous Research
    1 models: OpenAI
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
 
 Total providers: 17

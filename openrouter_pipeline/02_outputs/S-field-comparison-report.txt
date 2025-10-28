@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-10-28 07:07 AM IST
+Generated: 2025-10-28 11:33 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -569,10 +569,10 @@ MODEL: MiniMax M2
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
 inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
+model_provider            | MiniMax                   |                          
 human_readable_name       | MiniMax M2                |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
+model_provider_country    | Singapore                 |                          
+official_url              | https://www.minimax.io/   |                          
 input_modalities          | Text                      |                          
 output_modalities         | Text                      |                          
 license_info_text         | info                      |                          
