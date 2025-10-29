@@ -1,6 +1,6 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -31,25 +31,25 @@ Total unique combinations: 3
 DETAILED RAW MODALITY MODEL INFORMATION:
 ================================================================================
 
-MODEL 1: openrouter/andromeda-alpha
---------------------------------------------------
-  ID: openrouter/andromeda-alpha
-  Original Name: Andromeda Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/andromeda-alpha
-  Clean Model Name: Andromeda Alpha
-  Raw Input Modalities: image, text
-  Raw Output Modalities: text
-
-================================================================================
-
-MODEL 2: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 1: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
   HuggingFace ID: mistralai/Mistral-Small-3.2-24B-Instruct-2506
   Canonical Slug: mistralai/mistral-small-3.2-24b-instruct-2506
   Clean Model Name: Mistral Small 3.2 24B
+  Raw Input Modalities: image, text
+  Raw Output Modalities: text
+
+================================================================================
+
+MODEL 2: nvidia/nemotron-nano-12b-v2-vl
+--------------------------------------------------
+  ID: nvidia/nemotron-nano-12b-v2-vl:free
+  Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  Canonical Slug: nvidia/nemotron-nano-12b-v2-vl
+  Clean Model Name: Nemotron Nano 12B 2 VL
   Raw Input Modalities: image, text
   Raw Output Modalities: text
 

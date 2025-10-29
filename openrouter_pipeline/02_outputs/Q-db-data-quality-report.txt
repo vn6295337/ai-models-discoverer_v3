@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -10,7 +10,6 @@ MISSING OR EMPTY VALUES:
 ------------------------------
 
 LICENSE INFO TEXT (18 models):
-  - Andromeda Alpha
   - Dolphin3.0 Mistral 24B
   - Gemma 2 9B IT
   - Gemma 3 12B IT
@@ -25,12 +24,12 @@ LICENSE INFO TEXT (18 models):
   - Llama 3.3 8B Instruct
   - Llama 4 Maverick
   - Llama 4 Scout
+  - Nemotron Nano 12B 2 VL
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
 LICENSE INFO URL (18 models):
-  - Andromeda Alpha
   - Dolphin3.0 Mistral 24B
   - Gemma 2 9B IT
   - Gemma 3 12B IT
@@ -45,21 +44,13 @@ LICENSE INFO URL (18 models):
   - Llama 3.3 8B Instruct
   - Llama 4 Maverick
   - Llama 4 Scout
+  - Nemotron Nano 12B 2 VL
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
   - Shisa V2 Llama 3.3 70B
 
-LICENSE NAME (1 models):
-  - Andromeda Alpha
-
-LICENSE URL (1 models):
-  - Andromeda Alpha
-
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
-
-MODEL PROVIDER (1 models):
-  - Andromeda Alpha
 
 LICENSE NAME (1 models):
   - Dolphin3.0 Mistral 24B
@@ -69,9 +60,6 @@ DATA QUALITY SUMMARY:
 Total models: 50
 Missing license info text: 18 (36.0%)
 Missing license info url: 18 (36.0%)
-Missing license name: 1 (2.0%)
-Missing license url: 1 (2.0%)
-Unknown model provider: 1 (2.0%)
 Unknown license name: 1 (2.0%)
 
 ================================================================================
@@ -489,7 +477,17 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 42. Nemotron Nano 9B V2
+ 42. Nemotron Nano 12B 2 VL
+     Provider           : NVIDIA (United States)
+     Modalities         : Text, Image → Text
+     License            : NVIDIA
+     License Info       : 
+     License URL        : https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16/blob/main/README.md
+     Official URL       : https://build.nvidia.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 43. Nemotron Nano 9B V2
      Provider           : NVIDIA (United States)
      Modalities         : Text → Text
      License            : NVIDIA
@@ -499,7 +497,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 43. Hermes 3 405B Instruct
+ 44. Hermes 3 405B Instruct
      Provider           : Nous Research (United States)
      Modalities         : Text → Text
      License            : Llama-3.1
@@ -509,7 +507,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 44. GPT OSS 20B
+ 45. GPT OSS 20B
      Provider           : OpenAI (United States)
      Modalities         : Text → Text
      License            : Apache-2.0
@@ -519,7 +517,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 45. Shisa V2 Llama 3.3 70B
+ 46. Shisa V2 Llama 3.3 70B
      Provider           : Shisa AI (Japan)
      Modalities         : Text → Text
      License            : llama3.3
@@ -529,7 +527,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 46. DeepSeek R1T Chimera
+ 47. DeepSeek R1T Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -539,7 +537,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 47. DeepSeek R1T2 Chimera
+ 48. DeepSeek R1T2 Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -549,23 +547,13 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 48. Hunyuan A13B Instruct
+ 49. Hunyuan A13B Instruct
      Provider           : Tencent (China)
      Modalities         : Text → Text
      License            : Tencent
      License Info       : 
      License URL        : https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
      Official URL       : https://hunyuan.tencent.com
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 49. Andromeda Alpha
-     Provider           : Unknown (Unknown)
-     Modalities         : Text, Image → Text
-     License            : 
-     License Info       : 
-     License URL        : 
-     Official URL       : Unknown
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 

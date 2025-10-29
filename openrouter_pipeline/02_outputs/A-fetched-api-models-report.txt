@@ -1,6 +1,6 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -257,6 +257,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4-fast
     - grok-code-fast-1
 
+  NVIDIA       :   6 models
+    - llama-3.1-nemotron-70b-instruct
+    - llama-3.1-nemotron-ultra-253b-v1
+    - llama-3.3-nemotron-super-49b-v1.5
+    - nemotron-nano-12b-v2-vl:free
+    - nemotron-nano-9b-v2
+    - nemotron-nano-9b-v2:free
+
   MoonshotAI   :   6 models
     - kimi-dev-72b
     - kimi-dev-72b:free
@@ -264,13 +272,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - kimi-k2-0905
     - kimi-k2-0905:exacto
     - kimi-k2:free
-
-  NVIDIA       :   5 models
-    - llama-3.1-nemotron-70b-instruct
-    - llama-3.1-nemotron-ultra-253b-v1
-    - llama-3.3-nemotron-super-49b-v1.5
-    - nemotron-nano-9b-v2
-    - nemotron-nano-9b-v2:free
 
   Baidu        :   5 models
     - ernie-4.5-21b-a3b

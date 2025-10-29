@@ -1,26 +1,26 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 38
+  Total models : 39
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
   Output       : G-standardized-other-license-names-from-hf.json
 
 STANDARDIZATION RESULTS:
-  Models with license transformations: 36
+  Models with license transformations: 37
   Models unchanged: 2
-  Transformation rate: 94.7%
+  Transformation rate: 94.9%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 18 models
   Llama-3.1: 1 models
   MIT: 13 models
   Modified MIT: 1 models
-  NVIDIA: 1 models
+  NVIDIA: 2 models
   QWEN: 1 models
   Tencent: 1 models
   Unknown: 1 models
@@ -376,7 +376,17 @@ MODEL 33: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 34: nvidia/nemotron-nano-9b-v2
+MODEL 34: nvidia/nemotron-nano-12b-v2-vl
+--------------------------------------------------
+  ID                     : nvidia/nemotron-nano-12b-v2-vl:free
+  Canonical Slug         : nvidia/nemotron-nano-12b-v2-vl
+  HuggingFace ID         : nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  Raw License            : nvidia-open-model-license
+  Standardized License   : NVIDIA
+
+================================================================================
+
+MODEL 35: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -386,7 +396,7 @@ MODEL 34: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 35: qwen/qwen-2.5-72b-instruct
+MODEL 36: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug         : qwen/qwen-2.5-72b-instruct
@@ -396,7 +406,7 @@ MODEL 35: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 36: tencent/hunyuan-a13b-instruct
+MODEL 37: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID                     : tencent/hunyuan-a13b-instruct:free
   Canonical Slug         : tencent/hunyuan-a13b-instruct

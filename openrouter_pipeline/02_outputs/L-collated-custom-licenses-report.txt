@@ -1,17 +1,17 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 6
+  Total models        : 7
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
 
 CUSTOM LICENSE DISTRIBUTION:
+   2 models: NVIDIA
    1 models: Modified MIT
-   1 models: NVIDIA
    1 models: QWEN
    1 models: Tencent
    1 models: Unknown
@@ -21,7 +21,7 @@ Total unique license types: 6
 
 LICENSE URL TYPE DISTRIBUTION:
    3 models: LICENSE file
-   3 models: README.md file
+   4 models: README.md file
 
 Total URL types: 2
 
@@ -42,7 +42,21 @@ MODEL 1: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 2: nvidia/nemotron-nano-9b-v2
+MODEL 2: nvidia/nemotron-nano-12b-v2-vl
+--------------------------------------------------
+  ID: nvidia/nemotron-nano-12b-v2-vl:free
+  Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  Canonical Slug: nvidia/nemotron-nano-12b-v2-vl
+  Clean Model Name: Nemotron Nano 12B 2 VL
+  License Info Text: 
+  License Info URL: 
+  License Name: NVIDIA
+  License URL: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16/blob/main/README.md
+
+================================================================================
+
+MODEL 3: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -56,7 +70,7 @@ MODEL 2: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 3: qwen/qwen-2.5-72b-instruct
+MODEL 4: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID: qwen/qwen-2.5-72b-instruct:free
   Original Name: Qwen2.5 72B Instruct (free)
@@ -70,7 +84,7 @@ MODEL 3: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 4: tencent/hunyuan-a13b-instruct
+MODEL 5: tencent/hunyuan-a13b-instruct
 --------------------------------------------------
   ID: tencent/hunyuan-a13b-instruct:free
   Original Name: Tencent: Hunyuan A13B Instruct (free)
@@ -84,7 +98,7 @@ MODEL 4: tencent/hunyuan-a13b-instruct
 
 ================================================================================
 
-MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID: cognitivecomputations/dolphin3.0-mistral-24b:free
   Original Name: Dolphin3.0 Mistral 24B (free)
@@ -98,7 +112,7 @@ MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)

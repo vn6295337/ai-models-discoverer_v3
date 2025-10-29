@@ -1,10 +1,19 @@
 {
   "metadata": {
-    "generated_at": "2025-10-28 11:33 AM IST",
+    "generated_at": "2025-10-29 07:13 AM IST",
     "total_models": 50,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "canonical_slug": "nvidia/nemotron-nano-12b-v2-vl",
+      "original_name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
+      "clean_model_name": "Nemotron Nano 12B 2 VL",
+      "raw_input_modalities": "image, text",
+      "raw_output_modalities": "text"
+    },
     {
       "id": "minimax/minimax-m2:free",
       "canonical_slug": "minimax/minimax-m2",
@@ -12,15 +21,6 @@
       "hugging_face_id": "MiniMaxAI/MiniMax-M2",
       "clean_model_name": "MiniMax M2",
       "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "openrouter/andromeda-alpha",
-      "canonical_slug": "openrouter/andromeda-alpha",
-      "original_name": "Andromeda Alpha",
-      "hugging_face_id": "",
-      "clean_model_name": "Andromeda Alpha",
-      "raw_input_modalities": "image, text",
       "raw_output_modalities": "text"
     },
     {

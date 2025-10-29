@@ -1,17 +1,17 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 38
+  Total models : 39
   Input        : B-filtered-models.json
   Processor    : E_fetch_other_license_info_urls_from_hf.py
   Output       : E-other-license-info-urls-from-hf.json
 
 LICENSE INFO URL BREAKDOWN:
+  20 models: README.md file
   19 models: LICENSE file
-  19 models: README.md file
 
 Total categories: 2
 
@@ -279,7 +279,16 @@ MODEL 29: moonshotai/kimi-dev-72b
 
 ================================================================================
 
-MODEL 30: nvidia/nemotron-nano-9b-v2
+MODEL 30: nvidia/nemotron-nano-12b-v2-vl
+--------------------------------------------------
+  ID              : nvidia/nemotron-nano-12b-v2-vl:free
+  Canonical Slug  : nvidia/nemotron-nano-12b-v2-vl
+  HuggingFace ID  : nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  License Info URL: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16/blob/main/README.md
+
+================================================================================
+
+MODEL 31: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID              : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug  : nvidia/nemotron-nano-9b-v2
@@ -288,7 +297,7 @@ MODEL 30: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 31: nousresearch/hermes-3-llama-3.1-405b
+MODEL 32: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID              : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
@@ -297,7 +306,7 @@ MODEL 31: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 32: qwen/qwen2.5-vl-32b-instruct
+MODEL 33: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID              : qwen/qwen2.5-vl-32b-instruct:free
   Canonical Slug  : qwen/qwen2.5-vl-32b-instruct
@@ -306,7 +315,7 @@ MODEL 32: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 33: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 34: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID              : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b
@@ -315,7 +324,7 @@ MODEL 33: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 34: tngtech/deepseek-r1t-chimera
+MODEL 35: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -324,7 +333,7 @@ MODEL 34: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 35: tngtech/deepseek-r1t2-chimera
+MODEL 36: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -333,7 +342,7 @@ MODEL 35: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 36: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 37: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID              : alibaba/tongyi-deepresearch-30b-a3b:free
   Canonical Slug  : alibaba/tongyi-deepresearch-30b-a3b
@@ -342,7 +351,7 @@ MODEL 36: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 37: venice/uncensored
+MODEL 38: venice/uncensored
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug  : venice/uncensored
@@ -351,7 +360,7 @@ MODEL 37: venice/uncensored
 
 ================================================================================
 
-MODEL 38: z-ai/glm-4.5-air
+MODEL 39: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air

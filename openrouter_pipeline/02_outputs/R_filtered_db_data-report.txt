@@ -1,12 +1,12 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
   Input models         : 50
-  Models kept          : 47
-  Models removed       : 3
+  Models kept          : 48
+  Models removed       : 2
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
@@ -15,14 +15,13 @@ SUMMARY:
 REMOVAL REASONS DISTRIBUTION:
    1 models: License info not available
    1 models: Region specific & non-english model
-   1 models: Trial model
 
-Total removal reasons: 3
+Total removal reasons: 2
 
 REMOVAL PROCESSING SUMMARY:
   Configured for removal: 6 models
-  Successfully removed: 3 models
-  ⚠ 3 models not found (check canonical slugs)
+  Successfully removed: 2 models
+  ⚠ 4 models not found (check canonical slugs)
 
 DETAILED REMOVED MODEL INFORMATION:
 ================================================================================
@@ -47,17 +46,6 @@ REMOVED MODEL 2: shisa-ai/shisa-v2-llama3.3-70b
   Model Family: llama
   Removal Reason: Region specific & non-english model
 
-================================================================================
-
-REMOVED MODEL 3: openrouter/andromeda-alpha
---------------------------------------------------
-  Provider ID: openrouter/andromeda-alpha
-  Clean Model Name: Andromeda Alpha
-  Canonical Slug: openrouter/andromeda-alpha
-  Model Provider: Unknown
-  Model Family: Unknown
-  Removal Reason: Trial model
-
 FINALIZED DATABASE DATA SUMMARY:
 ================================================================================
 
@@ -68,13 +56,13 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    6 models: Mistral AI
    5 models: Meta
    2 models: Moonshot AI
+   2 models: NVIDIA
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Cognitive Computations
    1 models: Meituan
    1 models: Microsoft
    1 models: MiniMax
-   1 models: NVIDIA
    1 models: Nous Research
    1 models: OpenAI
    1 models: Tencent
@@ -83,6 +71,6 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
 Total providers: 17
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  47 models: Unknown
+  48 models: Unknown
 
 Total families: 1

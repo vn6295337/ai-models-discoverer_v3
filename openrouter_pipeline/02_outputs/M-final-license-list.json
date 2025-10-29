@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-28 11:33 AM IST",
-    "total_models": 50,
+    "generated_at": "2025-10-29 07:13 AM IST",
+    "total_models": 51,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -388,6 +388,18 @@
       "license_name": "Llama-3.1",
       "license_url": "https://www.llama.com/llama3_1/license/",
       "source_category": "opensource"
+    },
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "canonical_slug": "nvidia/nemotron-nano-12b-v2-vl",
+      "original_name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
+      "clean_model_name": "Nemotron Nano 12B 2 VL",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "NVIDIA",
+      "license_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16/blob/main/README.md",
+      "source_category": "custom"
     },
     {
       "id": "nvidia/nemotron-nano-9b-v2:free",

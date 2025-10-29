@@ -1,10 +1,18 @@
 {
   "metadata": {
-    "generated_at": "2025-10-28 11:33 AM IST",
-    "total_models": 38,
+    "generated_at": "2025-10-29 07:13 AM IST",
+    "total_models": 39,
     "pipeline_stage": "G_standardize_other_license_names_from_hf"
   },
   "models": [
+    {
+      "id": "nvidia/nemotron-nano-12b-v2-vl:free",
+      "canonical_slug": "nvidia/nemotron-nano-12b-v2-vl",
+      "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
+      "raw_extracted_license": "nvidia-open-model-license",
+      "standardized_license_name": "NVIDIA"
+    },
     {
       "id": "minimax/minimax-m2:free",
       "canonical_slug": "minimax/minimax-m2",

@@ -1,6 +1,6 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
@@ -196,6 +196,17 @@ PROVIDER: META (5 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: NVIDIA (2 models)
+--------------------------------------------------
+   1. NVIDIA: Nemotron Nano 12B 2 VL (free)
+      ID: nvidia/nemotron-nano-12b-v2-vl:free
+      Pricing: prompt=0, completion=0, request=0
+
+   2. NVIDIA: Nemotron Nano 9B V2 (free)
+      ID: nvidia/nemotron-nano-9b-v2:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: MOONSHOTAI (2 models)
 --------------------------------------------------
    1. MoonshotAI: Kimi Dev 72B (free)
@@ -236,13 +247,6 @@ PROVIDER: MINIMAX (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENROUTER (1 models)
---------------------------------------------------
-   1. Andromeda Alpha
-      ID: openrouter/andromeda-alpha
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: ALIBABA (1 models)
 --------------------------------------------------
    1. Tongyi DeepResearch 30B A3B (free)
@@ -254,13 +258,6 @@ PROVIDER: MEITUAN (1 models)
 --------------------------------------------------
    1. Meituan: LongCat Flash Chat (free)
       ID: meituan/longcat-flash-chat:free
-      Pricing: prompt=0, completion=0, request=0
-
-
-PROVIDER: NVIDIA (1 models)
---------------------------------------------------
-   1. NVIDIA: Nemotron Nano 9B V2 (free)
-      ID: nvidia/nemotron-nano-9b-v2:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -329,7 +326,7 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 22
+  Total providers: 21
   Total models passed all filters: 50
   Models excluded by pricing: 293
   Models excluded by billing description: 0

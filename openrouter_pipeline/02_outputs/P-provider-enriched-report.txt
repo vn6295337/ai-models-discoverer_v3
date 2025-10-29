@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-28 11:33 AM IST
+Generated: 2025-10-29 07:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -10,17 +10,7 @@ SUMMARY:
   Processor         : P_enrich_provider_info.py
   Output            : P-provider-enriched.json
 
-ACTION ITEMS - UNKNOWN MAPPINGS:
-==================================================
-UNKNOWN PROVIDERS (1 models):
-  Add these provider mappings to 08_provider_enrichment.json:
-    "openrouter": ["Provider Name", "Country"],
-
-UNKNOWN OFFICIAL URLS (1 unique families):
-  Add these URL mappings to family_official_urls:
-    "openrouter": "https://official-url-here",
-
-==================================================
+✓ ALL PROVIDERS AND FAMILIES MAPPED SUCCESSFULLY
 
 MODEL PROVIDER DISTRIBUTION:
   10 models: Alibaba Cloud
@@ -30,31 +20,29 @@ MODEL PROVIDER DISTRIBUTION:
    5 models: Meta
    2 models: Cognitive Computations
    2 models: Moonshot AI
+   2 models: NVIDIA
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Meituan
    1 models: Microsoft
    1 models: MiniMax
-   1 models: NVIDIA
    1 models: Nous Research
    1 models: OpenAI
    1 models: Shisa AI
    1 models: Tencent
-   1 models: Unknown
    1 models: Z.AI
 
-Total unique model providers: 19
+Total unique model providers: 18
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   21 models: China
-  18 models: United States
+  19 models: United States
    6 models: France
    2 models: Germany
    1 models: Japan
    1 models: Singapore
-   1 models: Unknown
 
-Total unique countries: 7
+Total unique countries: 6
 
 MODEL FAMILY DISTRIBUTION:
   10 models: alibaba cloud
@@ -64,20 +52,19 @@ MODEL FAMILY DISTRIBUTION:
    5 models: meta
    2 models: cognitive computations
    2 models: moonshot ai
+   2 models: nvidia
    2 models: tng technology
    1 models: arliai
    1 models: meituan
    1 models: microsoft
    1 models: minimax
    1 models: nous research
-   1 models: nvidia
    1 models: openai
-   1 models: openrouter
    1 models: shisa ai
    1 models: tencent
    1 models: z.ai
 
-Total unique model families: 19
+Total unique model families: 18
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -670,7 +657,21 @@ MODEL 42: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 43: nvidia/nemotron-nano-9b-v2
+MODEL 43: nvidia/nemotron-nano-12b-v2-vl
+--------------------------------------------------
+  ID: nvidia/nemotron-nano-12b-v2-vl:free
+  Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16
+  Canonical Slug: nvidia/nemotron-nano-12b-v2-vl
+  Clean Model Name: Nemotron Nano 12B 2 VL
+  Model Provider: NVIDIA
+  Model Provider Country: United States
+  Model Family: nvidia
+  Official URL: https://build.nvidia.com/
+
+================================================================================
+
+MODEL 44: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -684,7 +685,7 @@ MODEL 43: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 44: openai/gpt-oss-20b
+MODEL 45: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -695,20 +696,6 @@ MODEL 44: openai/gpt-oss-20b
   Model Provider Country: United States
   Model Family: openai
   Official URL: https://openai.com/
-
-================================================================================
-
-MODEL 45: openrouter/andromeda-alpha
---------------------------------------------------
-  ID: openrouter/andromeda-alpha
-  Original Name: Andromeda Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/andromeda-alpha
-  Clean Model Name: Andromeda Alpha
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: openrouter
-  Official URL: Unknown
 
 ================================================================================
 
