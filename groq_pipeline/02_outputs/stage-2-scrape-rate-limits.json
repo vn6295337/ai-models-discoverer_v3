@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "extraction_timestamp": "2025-10-28T12:31:57.891014",
+    "extraction_timestamp": "2025-10-29T12:31:43.974763",
     "source_url": "https://console.groq.com/docs/rate-limits",
-    "total_models": 19
+    "total_models": 20
   },
   "rate_limits": {
     "allam-2-7b": {
@@ -124,6 +124,15 @@
     },
     "openai/gpt-oss-20b": {
       "model_id": "openai/gpt-oss-20b",
+      "RPM": "30",
+      "RPD": "1K",
+      "TPM": "8K",
+      "TPD": "200K",
+      "ASH": "-",
+      "ASD": "-"
+    },
+    "openai/gpt-oss-safeguard-20b": {
+      "model_id": "openai/gpt-oss-safeguard-20b",
       "RPM": "30",
       "RPD": "1K",
       "TPM": "8K",
