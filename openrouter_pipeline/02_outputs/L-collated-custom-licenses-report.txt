@@ -1,10 +1,10 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-10-29 07:13 AM IST
+Generated: 2025-10-30 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 7
+  Total models        : 6
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
@@ -13,14 +13,13 @@ CUSTOM LICENSE DISTRIBUTION:
    2 models: NVIDIA
    1 models: Modified MIT
    1 models: QWEN
-   1 models: Tencent
    1 models: Unknown
    1 models: llama3.3
 
-Total unique license types: 6
+Total unique license types: 5
 
 LICENSE URL TYPE DISTRIBUTION:
-   3 models: LICENSE file
+   2 models: LICENSE file
    4 models: README.md file
 
 Total URL types: 2
@@ -84,21 +83,7 @@ MODEL 4: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 5: tencent/hunyuan-a13b-instruct
---------------------------------------------------
-  ID: tencent/hunyuan-a13b-instruct:free
-  Original Name: Tencent: Hunyuan A13B Instruct (free)
-  HuggingFace ID: tencent/Hunyuan-A13B-Instruct
-  Canonical Slug: tencent/hunyuan-a13b-instruct
-  Clean Model Name: Hunyuan A13B Instruct
-  License Info Text: 
-  License Info URL: 
-  License Name: Tencent
-  License URL: https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
-
-================================================================================
-
-MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 5: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID: cognitivecomputations/dolphin3.0-mistral-24b:free
   Original Name: Dolphin3.0 Mistral 24B (free)
@@ -112,7 +97,7 @@ MODEL 6: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)

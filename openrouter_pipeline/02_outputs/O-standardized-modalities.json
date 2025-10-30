@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-29 07:13 AM IST",
-    "total_models": 50,
+    "generated_at": "2025-10-30 07:13 AM IST",
+    "total_models": 49,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
   "models": [
@@ -172,20 +172,6 @@
       "standardized_input_modalities": "Text, Image, Audio, Video",
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "google_enhanced"
-    },
-    {
-      "id": "tencent/hunyuan-a13b-instruct:free",
-      "canonical_slug": "tencent/hunyuan-a13b-instruct",
-      "original_name": "Tencent: Hunyuan A13B Instruct (free)",
-      "hugging_face_id": "tencent/Hunyuan-A13B-Instruct",
-      "clean_model_name": "Hunyuan A13B Instruct",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model"
     },
     {
       "id": "tngtech/deepseek-r1t2-chimera:free",

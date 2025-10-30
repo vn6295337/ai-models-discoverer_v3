@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-29 07:13 AM IST",
-    "total_models": 7,
+    "generated_at": "2025-10-30 07:13 AM IST",
+    "total_models": 6,
     "pipeline_stage": "J_custom_license_urls"
   },
   "models": [
@@ -30,15 +30,6 @@
       "hugging_face_id": "moonshotai/Kimi-K2-Instruct",
       "license_name": "Modified MIT",
       "license_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE",
-      "license_url_type": "LICENSE file"
-    },
-    {
-      "id": "tencent/hunyuan-a13b-instruct:free",
-      "canonical_slug": "tencent/hunyuan-a13b-instruct",
-      "name": "Tencent: Hunyuan A13B Instruct (free)",
-      "hugging_face_id": "tencent/Hunyuan-A13B-Instruct",
-      "license_name": "Tencent",
-      "license_url": "https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE",
       "license_url_type": "LICENSE file"
     },
     {

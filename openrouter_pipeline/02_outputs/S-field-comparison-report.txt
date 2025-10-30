@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-10-29 07:13 AM IST
+Generated: 2025-10-30 07:13 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -7,12 +7,12 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total unique model names: 48
-   • Total records in pipeline: 48
-   • Total records in Supabase: 47
+   • Total records in pipeline: 47
+   • Total records in Supabase: 48
    • Models in both systems: 47
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 1
-   • Models in Supabase only (not in pipeline): 0
+   • Models in pipeline only (not in Supabase): 0
+   • Models in Supabase only (not in pipeline): 1
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
@@ -56,9 +56,9 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 1
-     Models: Nemotron Nano 12B 2 VL
    • Existing models with differences: 0
+   • Deprecated models (Supabase only): 1
+     Models: Hunyuan A13B Instruct
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -368,19 +368,19 @@ MODEL: Hunyuan A13B Instruct
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                | OpenRouter               
-model_provider            | Tencent                   | Tencent                  
-human_readable_name       | Hunyuan A13B Instruct     | Hunyuan A13B Instruct    
-model_provider_country    | China                     | China                    
-official_url              | https://hunyuan.tencent.. | https://hunyuan.tencent..
-input_modalities          | Text                      | Text                     
-output_modalities         | Text                      | Text                     
+inference_provider        |                           | OpenRouter               
+model_provider            |                           | Tencent                  
+human_readable_name       |                           | Hunyuan A13B Instruct    
+model_provider_country    |                           | China                    
+official_url              |                           | https://hunyuan.tencent..
+input_modalities          |                           | Text                     
+output_modalities         |                           | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
-license_name              | Tencent                   | Tencent                  
-license_url               | https://huggingface.co/.. | https://huggingface.co/..
-rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
-provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+license_name              |                           | Tencent                  
+license_url               |                           | https://huggingface.co/..
+rate_limits               |                           | 20 requests/min 50/day   
+provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -688,19 +688,19 @@ MODEL: Nemotron Nano 12B 2 VL
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | NVIDIA                    |                          
-human_readable_name       | Nemotron Nano 12B 2 VL    |                          
-model_provider_country    | United States             |                          
-official_url              | https://build.nvidia.com/ |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              | NVIDIA                    |                          
-license_url               | https://huggingface.co/.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | NVIDIA                    | NVIDIA                   
+human_readable_name       | Nemotron Nano 12B 2 VL    | Nemotron Nano 12B 2 VL   
+model_provider_country    | United States             | United States            
+official_url              | https://build.nvidia.com/ | https://build.nvidia.com/
+input_modalities          | Text, Image               | Text, Image              
+output_modalities         | Text                      | Text                     
+license_info_text         |                           | None                     
+license_info_url          |                           | None                     
+license_name              | NVIDIA                    | NVIDIA                   
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 

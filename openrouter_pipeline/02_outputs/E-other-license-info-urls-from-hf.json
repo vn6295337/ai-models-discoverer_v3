@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-29 07:13 AM IST",
-    "total_models": 39,
+    "generated_at": "2025-10-30 07:13 AM IST",
+    "total_models": 38,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
@@ -81,13 +81,6 @@
       "name": "Venice: Uncensored (free)",
       "hugging_face_id": "cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition",
       "license_info_url": "https://huggingface.co/cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition/blob/main/README.md"
-    },
-    {
-      "id": "tencent/hunyuan-a13b-instruct:free",
-      "canonical_slug": "tencent/hunyuan-a13b-instruct",
-      "name": "Tencent: Hunyuan A13B Instruct (free)",
-      "hugging_face_id": "tencent/Hunyuan-A13B-Instruct",
-      "license_info_url": "https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE"
     },
     {
       "id": "tngtech/deepseek-r1t2-chimera:free",

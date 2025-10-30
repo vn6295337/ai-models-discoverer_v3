@@ -1,23 +1,23 @@
 ================================================================================
 CUSTOM LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-10-29 07:13 AM IST
+Generated: 2025-10-30 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 7
+  Total models : 6
   Input        : H-custom-license-names.json
   Priority     : LICENSE → README.md → Base repository
   Processor    : J_custom_license_urls.py
   Output       : J-custom-license-urls.json
 
 LICENSE URL TYPE DISTRIBUTION:
-  LICENSE file: 3 models
+  LICENSE file: 2 models
   README.md file: 4 models
 
 Total URL types: 2
 
 URL RESOLUTION STATISTICS:
-  Successful URL resolutions: 7
+  Successful URL resolutions: 6
   Failed URL resolutions: 0
   Success rate: 100.0%
 
@@ -25,11 +25,10 @@ CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
   NVIDIA: 2 models
   QWEN: 1 models
-  Tencent: 1 models
   Unknown: 1 models
   llama3.3: 1 models
 
-Total license types: 6
+Total license types: 5
 
 DETAILED MODEL LICENSE URL MAPPINGS:
 ================================================================================
@@ -56,18 +55,7 @@ MODEL 2: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 3: tencent/hunyuan-a13b-instruct
---------------------------------------------------
-  ID                     : tencent/hunyuan-a13b-instruct:free
-  Canonical Slug         : tencent/hunyuan-a13b-instruct
-  HuggingFace ID         : tencent/Hunyuan-A13B-Instruct
-  License Name           : Tencent
-  License URL            : https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE
-  License URL Type       : LICENSE file
-
-================================================================================
-
-MODEL 4: cognitivecomputations/dolphin3.0-mistral-24b
+MODEL 3: cognitivecomputations/dolphin3.0-mistral-24b
 --------------------------------------------------
   ID                     : cognitivecomputations/dolphin3.0-mistral-24b:free
   Canonical Slug         : cognitivecomputations/dolphin3.0-mistral-24b
@@ -78,7 +66,7 @@ MODEL 4: cognitivecomputations/dolphin3.0-mistral-24b
 
 ================================================================================
 
-MODEL 5: nvidia/nemotron-nano-12b-v2-vl
+MODEL 4: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-12b-v2-vl:free
   Canonical Slug         : nvidia/nemotron-nano-12b-v2-vl
@@ -89,7 +77,7 @@ MODEL 5: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 6: nvidia/nemotron-nano-9b-v2
+MODEL 5: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -100,7 +88,7 @@ MODEL 6: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 7: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 6: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID                     : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug         : shisa-ai/shisa-v2-llama3.3-70b

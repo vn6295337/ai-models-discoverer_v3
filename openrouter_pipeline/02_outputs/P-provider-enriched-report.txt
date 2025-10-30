@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-10-29 07:13 AM IST
+Generated: 2025-10-30 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 50
+  Total models      : 49
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -29,13 +29,12 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Nous Research
    1 models: OpenAI
    1 models: Shisa AI
-   1 models: Tencent
    1 models: Z.AI
 
-Total unique model providers: 18
+Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  21 models: China
+  20 models: China
   19 models: United States
    6 models: France
    2 models: Germany
@@ -61,10 +60,9 @@ MODEL FAMILY DISTRIBUTION:
    1 models: nous research
    1 models: openai
    1 models: shisa ai
-   1 models: tencent
    1 models: z.ai
 
-Total unique model families: 18
+Total unique model families: 17
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -713,21 +711,7 @@ MODEL 46: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 47: tencent/hunyuan-a13b-instruct
---------------------------------------------------
-  ID: tencent/hunyuan-a13b-instruct:free
-  Original Name: Tencent: Hunyuan A13B Instruct (free)
-  HuggingFace ID: tencent/Hunyuan-A13B-Instruct
-  Canonical Slug: tencent/hunyuan-a13b-instruct
-  Clean Model Name: Hunyuan A13B Instruct
-  Model Provider: Tencent
-  Model Provider Country: China
-  Model Family: tencent
-  Official URL: https://hunyuan.tencent.com
-
-================================================================================
-
-MODEL 48: tngtech/deepseek-r1t-chimera
+MODEL 47: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -741,7 +725,7 @@ MODEL 48: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 49: tngtech/deepseek-r1t2-chimera
+MODEL 48: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -755,7 +739,7 @@ MODEL 49: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 50: z-ai/glm-4.5-air
+MODEL 49: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

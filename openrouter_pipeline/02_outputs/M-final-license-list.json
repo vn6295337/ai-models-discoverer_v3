@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-29 07:13 AM IST",
-    "total_models": 51,
+    "generated_at": "2025-10-30 07:13 AM IST",
+    "total_models": 50,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -543,18 +543,6 @@
       "license_info_url": "",
       "license_name": "llama3.3",
       "license_url": "https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md",
-      "source_category": "custom"
-    },
-    {
-      "id": "tencent/hunyuan-a13b-instruct:free",
-      "canonical_slug": "tencent/hunyuan-a13b-instruct",
-      "original_name": "Tencent: Hunyuan A13B Instruct (free)",
-      "hugging_face_id": "tencent/Hunyuan-A13B-Instruct",
-      "clean_model_name": "Hunyuan A13B Instruct",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "Tencent",
-      "license_url": "https://huggingface.co/tencent/Hunyuan-A13B-Instruct/blob/main/LICENSE",
       "source_category": "custom"
     },
     {

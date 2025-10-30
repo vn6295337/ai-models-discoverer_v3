@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-29 07:13 AM IST",
-    "total_models": 50,
+    "generated_at": "2025-10-30 07:13 AM IST",
+    "total_models": 49,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -110,15 +110,6 @@
       "original_name": "Google: Gemma 3n 2B (free)",
       "hugging_face_id": "google/gemma-3n-E2B-it",
       "clean_model_name": "Gemma 3n E2B IT",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "tencent/hunyuan-a13b-instruct:free",
-      "canonical_slug": "tencent/hunyuan-a13b-instruct",
-      "original_name": "Tencent: Hunyuan A13B Instruct (free)",
-      "hugging_face_id": "tencent/Hunyuan-A13B-Instruct",
-      "clean_model_name": "Hunyuan A13B Instruct",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },

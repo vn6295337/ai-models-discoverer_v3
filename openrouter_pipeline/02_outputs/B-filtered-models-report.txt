@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-10-29 07:13 AM IST
+Generated: 2025-10-30 07:12 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 346
-  Models passed all filters: 50
-  Models excluded: 296
-  Success rate: 14.5%
+  Total models processed: 348
+  Models passed all filters: 49
+  Models excluded: 299
+  Success rate: 14.1%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 346 models
-    Excluded: 293 models (non-free pricing)
-    Remaining: 53 models
+    Input: 348 models
+    Excluded: 296 models (non-free pricing)
+    Remaining: 52 models
 
   Step 2 - Billing Description Filter:
-    Input: 53 models
+    Input: 52 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 53 models
+    Remaining: 52 models
 
   Step 3 - Keyword Filter:
-    Input: 53 models
+    Input: 52 models
     Excluded: 3 models (preview/experimental/beta)
-    Remaining: 50 models
+    Remaining: 49 models
 
   Step 4 - Deduplication Filter:
-    Input: 50 models
+    Input: 49 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 50 models
+    Final: 49 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 293 models with non-free pricing (details omitted due to volume)
+Excluded 296 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -282,13 +282,6 @@ PROVIDER: VENICE (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: TENCENT (1 models)
---------------------------------------------------
-   1. Tencent: Hunyuan A13B Instruct (free)
-      ID: tencent/hunyuan-a13b-instruct:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: MICROSOFT (1 models)
 --------------------------------------------------
    1. Microsoft: MAI DS R1 (free)
@@ -326,11 +319,11 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 21
-  Total models passed all filters: 50
-  Models excluded by pricing: 293
+  Total providers: 20
+  Total models passed all filters: 49
+  Models excluded by pricing: 296
   Models excluded by billing description: 0
   Models excluded by keywords: 3
   Models excluded by deduplication: 0
-  Total exclusions: 296
+  Total exclusions: 299
   ✓ All filtered models accounted for
