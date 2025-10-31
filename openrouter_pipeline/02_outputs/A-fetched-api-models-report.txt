@@ -1,13 +1,13 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-30 07:12 AM IST
+Generated: 2025-10-31 07:09 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 348
+  Total models: 351
 
 PROVIDER BREAKDOWN (Descending Order):
-  OpenAI       :  47 models
+  OpenAI       :  48 models
     - chatgpt-4o-latest
     - codex-mini
     - gpt-3.5-turbo
@@ -55,6 +55,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini
     - o4-mini-deep-research
     - o4-mini-high
+    - text-embedding-3-large
 
   Qwen         :  44 models
     - qwen-2.5-7b-instruct
@@ -102,7 +103,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-8b-thinking
     - qwq-32b
 
-  Mistral      :  31 models
+  Mistral      :  32 models
     - codestral-2501
     - codestral-2508
     - devstral-medium
@@ -134,6 +135,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - mixtral-8x7b-instruct
     - pixtral-12b
     - pixtral-large-2411
+    - voxtral-small-24b-2507
 
   Google       :  25 models
     - gemini-2.0-flash-001
@@ -267,6 +269,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4-fast
     - grok-code-fast-1
 
+  Perplexity   :   6 models
+    - sonar
+    - sonar-deep-research
+    - sonar-pro
+    - sonar-pro-search
+    - sonar-reasoning
+    - sonar-reasoning-pro
+
   MoonshotAI   :   6 models
     - kimi-dev-72b
     - kimi-dev-72b:free
@@ -295,13 +305,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - maestro-reasoning
     - spotlight
     - virtuoso-large
-
-  Perplexity   :   5 models
-    - sonar
-    - sonar-deep-research
-    - sonar-pro
-    - sonar-reasoning
-    - sonar-reasoning-pro
 
   MiniMax      :   4 models
     - minimax-01
