@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-31 07:10 AM IST",
-    "total_models": 49,
+    "generated_at": "2025-11-01 07:13 AM IST",
+    "total_models": 44,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
@@ -272,25 +272,6 @@
       "official_url": "https://mistral.ai/"
     },
     {
-      "id": "moonshotai/kimi-dev-72b:free",
-      "canonical_slug": "moonshotai/kimi-dev-72b",
-      "original_name": "MoonshotAI: Kimi Dev 72B (free)",
-      "hugging_face_id": "moonshotai/Kimi-Dev-72B",
-      "clean_model_name": "Kimi Dev 72B",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Moonshot AI",
-      "model_provider_country": "China",
-      "model_family": "moonshot ai",
-      "official_url": "https://www.moonshot.ai/"
-    },
-    {
       "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
       "canonical_slug": "deepseek/deepseek-r1-0528-qwen3-8b",
       "original_name": "DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)",
@@ -327,25 +308,6 @@
       "model_provider_country": "China",
       "model_family": "deepseek",
       "official_url": "https://deepseek.com/"
-    },
-    {
-      "id": "mistralai/devstral-small-2505:free",
-      "canonical_slug": "mistralai/devstral-small-2505",
-      "original_name": "Mistral: Devstral Small 2505 (free)",
-      "hugging_face_id": "mistralai/Devstral-Small-2505",
-      "clean_model_name": "Devstral Small 2505",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Mistral AI",
-      "model_provider_country": "France",
-      "model_family": "mistral ai",
-      "official_url": "https://mistral.ai/"
     },
     {
       "id": "google/gemma-3n-e4b-it:free",
@@ -410,25 +372,6 @@
       "original_name": "Qwen: Qwen3 30B A3B (free)",
       "hugging_face_id": "Qwen/Qwen3-30B-A3B",
       "clean_model_name": "Qwen3 30B A3B",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Alibaba Cloud",
-      "model_provider_country": "China",
-      "model_family": "alibaba cloud",
-      "official_url": "https://alibabacloud.com/"
-    },
-    {
-      "id": "qwen/qwen3-8b:free",
-      "canonical_slug": "qwen/qwen3-8b-04-28",
-      "original_name": "Qwen: Qwen3 8B (free)",
-      "hugging_face_id": "Qwen/Qwen3-8B",
-      "clean_model_name": "Qwen3 8B",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text",
       "enhanced_input_modalities": "text",
@@ -709,25 +652,6 @@
       "official_url": "https://ai.google.dev/gemma"
     },
     {
-      "id": "cognitivecomputations/dolphin3.0-mistral-24b:free",
-      "canonical_slug": "cognitivecomputations/dolphin3.0-mistral-24b",
-      "original_name": "Dolphin3.0 Mistral 24B (free)",
-      "hugging_face_id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
-      "clean_model_name": "Dolphin3.0 Mistral 24B",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Cognitive Computations",
-      "model_provider_country": "United States",
-      "model_family": "cognitive computations",
-      "official_url": "https://dphn.ai/"
-    },
-    {
       "id": "mistralai/mistral-small-24b-instruct-2501:free",
       "canonical_slug": "mistralai/mistral-small-24b-instruct-2501",
       "original_name": "Mistral: Mistral Small 3 (free)",
@@ -897,25 +821,6 @@
       "model_provider_country": "France",
       "model_family": "mistral ai",
       "official_url": "https://mistral.ai/"
-    },
-    {
-      "id": "google/gemma-2-9b-it:free",
-      "canonical_slug": "google/gemma-2-9b-it",
-      "original_name": "Google: Gemma 2 9B (free)",
-      "hugging_face_id": "google/gemma-2-9b-it",
-      "clean_model_name": "Gemma 2 9B IT",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_match_in_google_data",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Google",
-      "model_provider_country": "United States",
-      "model_family": "gemma",
-      "official_url": "https://ai.google.dev/gemma"
     },
     {
       "id": "mistralai/mistral-7b-instruct:free",

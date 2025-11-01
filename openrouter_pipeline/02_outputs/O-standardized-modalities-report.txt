@@ -1,37 +1,37 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-10-31 07:10 AM IST
+Generated: 2025-11-01 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 49
+  Total models : 44
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
   Output       : O-standardized-modalities.json
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
-  38 models: Text
+  33 models: Text
    9 models: Text, Image
    2 models: Text, Image, Audio, Video
 
 Total unique input types: 3
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  49 models: Text
+  44 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
-  38 models: Text → Text
+  33 models: Text → Text
    9 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
 
 Total unique combinations: 3
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 49 models
-  Output modalities changed: 49 models
+  Input modalities changed: 44 models
+  Output modalities changed: 44 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
@@ -108,35 +108,7 @@ MODEL 5: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 6: mistralai/devstral-small-2505
---------------------------------------------------
-  ID: mistralai/devstral-small-2505:free
-  Original Name: Mistral: Devstral Small 2505 (free)
-  HuggingFace ID: mistralai/Devstral-Small-2505
-  Canonical Slug: mistralai/devstral-small-2505
-  Clean Model Name: Devstral Small 2505
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 7: cognitivecomputations/dolphin3.0-mistral-24b
---------------------------------------------------
-  ID: cognitivecomputations/dolphin3.0-mistral-24b:free
-  Original Name: Dolphin3.0 Mistral 24B (free)
-  HuggingFace ID: cognitivecomputations/Dolphin3.0-Mistral-24B
-  Canonical Slug: cognitivecomputations/dolphin3.0-mistral-24b
-  Clean Model Name: Dolphin3.0 Mistral 24B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 8: z-ai/glm-4.5-air
+MODEL 6: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -150,7 +122,7 @@ MODEL 8: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 9: openai/gpt-oss-20b
+MODEL 7: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -164,21 +136,7 @@ MODEL 9: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 10: google/gemma-2-9b-it
---------------------------------------------------
-  ID: google/gemma-2-9b-it:free
-  Original Name: Google: Gemma 2 9B (free)
-  HuggingFace ID: google/gemma-2-9b-it
-  Canonical Slug: google/gemma-2-9b-it
-  Clean Model Name: Gemma 2 9B IT
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 11: nousresearch/hermes-3-llama-3.1-405b
+MODEL 8: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -192,21 +150,7 @@ MODEL 11: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 12: moonshotai/kimi-dev-72b
---------------------------------------------------
-  ID: moonshotai/kimi-dev-72b:free
-  Original Name: MoonshotAI: Kimi Dev 72B (free)
-  HuggingFace ID: moonshotai/Kimi-Dev-72B
-  Canonical Slug: moonshotai/kimi-dev-72b
-  Clean Model Name: Kimi Dev 72B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 13: moonshotai/kimi-k2
+MODEL 9: moonshotai/kimi-k2
 --------------------------------------------------
   ID: moonshotai/kimi-k2:free
   Original Name: MoonshotAI: Kimi K2 0711 (free)
@@ -220,7 +164,7 @@ MODEL 13: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 14: meta-llama/llama-3.2-3b-instruct
+MODEL 10: meta-llama/llama-3.2-3b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.2-3b-instruct:free
   Original Name: Meta: Llama 3.2 3B Instruct (free)
@@ -234,7 +178,7 @@ MODEL 14: meta-llama/llama-3.2-3b-instruct
 
 ================================================================================
 
-MODEL 15: meta-llama/llama-3.3-70b-instruct
+MODEL 11: meta-llama/llama-3.3-70b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-70b-instruct:free
   Original Name: Meta: Llama 3.3 70B Instruct (free)
@@ -248,7 +192,7 @@ MODEL 15: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 16: meta-llama/llama-3.3-8b-instruct
+MODEL 12: meta-llama/llama-3.3-8b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-8b-instruct:free
   Original Name: Meta: Llama 3.3 8B Instruct (free)
@@ -262,7 +206,7 @@ MODEL 16: meta-llama/llama-3.3-8b-instruct
 
 ================================================================================
 
-MODEL 17: meituan/longcat-flash-chat
+MODEL 13: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -276,7 +220,7 @@ MODEL 17: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 18: microsoft/mai-ds-r1
+MODEL 14: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -290,7 +234,7 @@ MODEL 18: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 19: minimax/minimax-m2
+MODEL 15: minimax/minimax-m2
 --------------------------------------------------
   ID: minimax/minimax-m2:free
   Original Name: MiniMax: MiniMax M2 (free)
@@ -304,7 +248,7 @@ MODEL 19: minimax/minimax-m2
 
 ================================================================================
 
-MODEL 20: mistralai/mistral-7b-instruct
+MODEL 16: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -318,7 +262,7 @@ MODEL 20: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 21: mistralai/mistral-nemo
+MODEL 17: mistralai/mistral-nemo
 --------------------------------------------------
   ID: mistralai/mistral-nemo:free
   Original Name: Mistral: Mistral Nemo (free)
@@ -332,7 +276,7 @@ MODEL 21: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 22: mistralai/mistral-small-24b-instruct-2501
+MODEL 18: mistralai/mistral-small-24b-instruct-2501
 --------------------------------------------------
   ID: mistralai/mistral-small-24b-instruct-2501:free
   Original Name: Mistral: Mistral Small 3 (free)
@@ -346,7 +290,7 @@ MODEL 22: mistralai/mistral-small-24b-instruct-2501
 
 ================================================================================
 
-MODEL 23: nvidia/nemotron-nano-9b-v2
+MODEL 19: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -360,7 +304,7 @@ MODEL 23: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 24: arliai/qwq-32b-arliai-rpr-v1
+MODEL 20: arliai/qwq-32b-arliai-rpr-v1
 --------------------------------------------------
   ID: arliai/qwq-32b-arliai-rpr-v1:free
   Original Name: ArliAI: QwQ 32B RpR v1 (free)
@@ -374,7 +318,7 @@ MODEL 24: arliai/qwq-32b-arliai-rpr-v1
 
 ================================================================================
 
-MODEL 25: qwen/qwen-2.5-72b-instruct
+MODEL 21: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID: qwen/qwen-2.5-72b-instruct:free
   Original Name: Qwen2.5 72B Instruct (free)
@@ -388,7 +332,7 @@ MODEL 25: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 26: qwen/qwen-2.5-coder-32b-instruct
+MODEL 22: qwen/qwen-2.5-coder-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen-2.5-coder-32b-instruct:free
   Original Name: Qwen2.5 Coder 32B Instruct (free)
@@ -402,7 +346,7 @@ MODEL 26: qwen/qwen-2.5-coder-32b-instruct
 
 ================================================================================
 
-MODEL 27: qwen/qwen3-14b-04-28
+MODEL 23: qwen/qwen3-14b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-14b:free
   Original Name: Qwen: Qwen3 14B (free)
@@ -416,7 +360,7 @@ MODEL 27: qwen/qwen3-14b-04-28
 
 ================================================================================
 
-MODEL 28: qwen/qwen3-235b-a22b-04-28
+MODEL 24: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -430,7 +374,7 @@ MODEL 28: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 29: qwen/qwen3-30b-a3b-04-28
+MODEL 25: qwen/qwen3-30b-a3b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-30b-a3b:free
   Original Name: Qwen: Qwen3 30B A3B (free)
@@ -444,7 +388,7 @@ MODEL 29: qwen/qwen3-30b-a3b-04-28
 
 ================================================================================
 
-MODEL 30: qwen/qwen3-4b-04-28
+MODEL 26: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -458,21 +402,7 @@ MODEL 30: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 31: qwen/qwen3-8b-04-28
---------------------------------------------------
-  ID: qwen/qwen3-8b:free
-  Original Name: Qwen: Qwen3 8B (free)
-  HuggingFace ID: Qwen/Qwen3-8B
-  Canonical Slug: qwen/qwen3-8b-04-28
-  Clean Model Name: Qwen3 8B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 32: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 27: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -486,7 +416,7 @@ MODEL 32: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 33: deepseek/deepseek-r1
+MODEL 28: deepseek/deepseek-r1
 --------------------------------------------------
   ID: deepseek/deepseek-r1:free
   Original Name: DeepSeek: R1 (free)
@@ -500,7 +430,7 @@ MODEL 33: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 34: deepseek/deepseek-r1-0528
+MODEL 29: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -514,7 +444,7 @@ MODEL 34: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 35: deepseek/deepseek-r1-distill-llama-70b
+MODEL 30: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -528,7 +458,7 @@ MODEL 35: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 36: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 31: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID: shisa-ai/shisa-v2-llama3.3-70b:free
   Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
@@ -542,7 +472,7 @@ MODEL 36: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 37: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 32: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -556,7 +486,7 @@ MODEL 37: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 38: venice/uncensored
+MODEL 33: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -570,7 +500,7 @@ MODEL 38: venice/uncensored
 
 ================================================================================
 
-MODEL 39: google/gemma-3-12b-it
+MODEL 34: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -584,7 +514,7 @@ MODEL 39: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 40: google/gemma-3-27b-it
+MODEL 35: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -598,7 +528,7 @@ MODEL 40: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 41: google/gemma-3-4b-it
+MODEL 36: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -612,7 +542,7 @@ MODEL 41: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 42: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 37: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -626,7 +556,7 @@ MODEL 42: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 43: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 38: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -640,7 +570,7 @@ MODEL 43: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 44: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 39: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -654,7 +584,7 @@ MODEL 44: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 45: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 40: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
@@ -668,7 +598,7 @@ MODEL 45: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 46: nvidia/nemotron-nano-12b-v2-vl
+MODEL 41: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -682,7 +612,7 @@ MODEL 46: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 47: qwen/qwen2.5-vl-32b-instruct
+MODEL 42: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -696,7 +626,7 @@ MODEL 47: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 48: google/gemma-3n-e2b-it
+MODEL 43: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -710,7 +640,7 @@ MODEL 48: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 49: google/gemma-3n-e4b-it
+MODEL 44: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)

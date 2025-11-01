@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-31 07:10 AM IST",
-    "total_models": 6,
+    "generated_at": "2025-11-01 07:13 AM IST",
+    "total_models": 5,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
@@ -32,13 +32,6 @@
       "name": "Shisa AI: Shisa V2 Llama 3.3 70B  (free)",
       "hugging_face_id": "shisa-ai/shisa-v2-llama3.3-70b",
       "license_name": "llama3.3"
-    },
-    {
-      "id": "cognitivecomputations/dolphin3.0-mistral-24b:free",
-      "canonical_slug": "cognitivecomputations/dolphin3.0-mistral-24b",
-      "name": "Dolphin3.0 Mistral 24B (free)",
-      "hugging_face_id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
-      "license_name": "Unknown"
     },
     {
       "id": "qwen/qwen-2.5-72b-instruct:free",

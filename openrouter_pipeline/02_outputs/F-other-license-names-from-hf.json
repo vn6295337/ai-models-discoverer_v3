@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-10-31 07:10 AM IST",
-    "total_models": 38,
+    "generated_at": "2025-11-01 07:13 AM IST",
+    "total_models": 34,
     "pipeline_stage": "F_fetch_other_license_names_from_hf"
   },
   "models": [
@@ -97,13 +97,6 @@
       "extracted_license": "apache-2.0"
     },
     {
-      "id": "moonshotai/kimi-dev-72b:free",
-      "canonical_slug": "moonshotai/kimi-dev-72b",
-      "name": "MoonshotAI: Kimi Dev 72B (free)",
-      "hugging_face_id": "moonshotai/Kimi-Dev-72B",
-      "extracted_license": "mit"
-    },
-    {
       "id": "deepseek/deepseek-r1-0528-qwen3-8b:free",
       "canonical_slug": "deepseek/deepseek-r1-0528-qwen3-8b",
       "name": "DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)",
@@ -118,13 +111,6 @@
       "extracted_license": "mit"
     },
     {
-      "id": "mistralai/devstral-small-2505:free",
-      "canonical_slug": "mistralai/devstral-small-2505",
-      "name": "Mistral: Devstral Small 2505 (free)",
-      "hugging_face_id": "mistralai/Devstral-Small-2505",
-      "extracted_license": "apache-2.0"
-    },
-    {
       "id": "qwen/qwen3-4b:free",
       "canonical_slug": "qwen/qwen3-4b-04-28",
       "name": "Qwen: Qwen3 4B (free)",
@@ -136,13 +122,6 @@
       "canonical_slug": "qwen/qwen3-30b-a3b-04-28",
       "name": "Qwen: Qwen3 30B A3B (free)",
       "hugging_face_id": "Qwen/Qwen3-30B-A3B",
-      "extracted_license": "apache-2.0"
-    },
-    {
-      "id": "qwen/qwen3-8b:free",
-      "canonical_slug": "qwen/qwen3-8b-04-28",
-      "name": "Qwen: Qwen3 8B (free)",
-      "hugging_face_id": "Qwen/Qwen3-8B",
       "extracted_license": "apache-2.0"
     },
     {
@@ -207,13 +186,6 @@
       "name": "Mistral: Mistral Small 3.1 24B (free)",
       "hugging_face_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
       "extracted_license": "apache-2.0"
-    },
-    {
-      "id": "cognitivecomputations/dolphin3.0-mistral-24b:free",
-      "canonical_slug": "cognitivecomputations/dolphin3.0-mistral-24b",
-      "name": "Dolphin3.0 Mistral 24B (free)",
-      "hugging_face_id": "cognitivecomputations/Dolphin3.0-Mistral-24B",
-      "extracted_license": "Unknown"
     },
     {
       "id": "mistralai/mistral-small-24b-instruct-2501:free",

@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-10-31 07:09 AM IST
+Generated: 2025-11-01 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 351
+  Total models: 343
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  48 models
@@ -57,7 +57,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini-high
     - text-embedding-3-large
 
-  Qwen         :  44 models
+  Qwen         :  43 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -84,7 +84,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-32b
     - qwen3-4b:free
     - qwen3-8b
-    - qwen3-8b:free
     - qwen3-coder
     - qwen3-coder-30b-a3b-instruct
     - qwen3-coder-flash
@@ -103,13 +102,12 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-8b-thinking
     - qwq-32b
 
-  Mistral      :  32 models
+  Mistral      :  31 models
     - codestral-2501
     - codestral-2508
     - devstral-medium
     - devstral-small
     - devstral-small-2505
-    - devstral-small-2505:free
     - magistral-medium-2506
     - magistral-medium-2506:thinking
     - magistral-small-2506
@@ -137,7 +135,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - pixtral-large-2411
     - voxtral-small-24b-2507
 
-  Google       :  25 models
+  Google       :  24 models
     - gemini-2.0-flash-001
     - gemini-2.0-flash-exp:free
     - gemini-2.0-flash-lite-001
@@ -153,7 +151,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemini-2.5-pro-preview-05-06
     - gemma-2-27b-it
     - gemma-2-9b-it
-    - gemma-2-9b-it:free
     - gemma-3-12b-it
     - gemma-3-12b-it:free
     - gemma-3-27b-it
@@ -222,16 +219,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-sonnet-4
     - claude-sonnet-4.5
 
-  Nous         :   8 models
-    - deephermes-3-llama-3-8b-preview
-    - deephermes-3-llama-3-8b-preview:free
-    - deephermes-3-mistral-24b-preview
-    - hermes-3-llama-3.1-405b
-    - hermes-3-llama-3.1-405b:free
-    - hermes-3-llama-3.1-70b
-    - hermes-4-405b
-    - hermes-4-70b
-
   Microsoft    :   8 models
     - mai-ds-r1
     - mai-ds-r1:free
@@ -277,13 +264,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - sonar-reasoning
     - sonar-reasoning-pro
 
-  MoonshotAI   :   6 models
-    - kimi-dev-72b
-    - kimi-dev-72b:free
-    - kimi-k2
-    - kimi-k2-0905
-    - kimi-k2-0905:exacto
-    - kimi-k2:free
+  Nous         :   6 models
+    - deephermes-3-mistral-24b-preview
+    - hermes-3-llama-3.1-405b
+    - hermes-3-llama-3.1-405b:free
+    - hermes-3-llama-3.1-70b
+    - hermes-4-405b
+    - hermes-4-70b
 
   Baidu        :   5 models
     - ernie-4.5-21b-a3b
@@ -305,6 +292,19 @@ PROVIDER BREAKDOWN (Descending Order):
     - maestro-reasoning
     - spotlight
     - virtuoso-large
+
+  MoonshotAI   :   5 models
+    - kimi-dev-72b
+    - kimi-k2
+    - kimi-k2-0905
+    - kimi-k2-0905:exacto
+    - kimi-k2:free
+
+  Amazon       :   4 models
+    - nova-lite-v1
+    - nova-micro-v1
+    - nova-premier-v1
+    - nova-pro-v1
 
   MiniMax      :   4 models
     - minimax-01
@@ -340,11 +340,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - aion-1.0-mini
     - aion-rp-llama-3.1-8b
 
-  Amazon       :   3 models
-    - nova-lite-v1
-    - nova-micro-v1
-    - nova-pro-v1
-
   inclusionAI  :   2 models
     - ling-1t
     - ring-1t
@@ -356,10 +351,6 @@ PROVIDER BREAKDOWN (Descending Order):
   AI21         :   2 models
     - jamba-large-1.7
     - jamba-mini-1.7
-
-  THUDM        :   2 models
-    - glm-4.1v-9b-thinking
-    - glm-z1-32b
 
   Morph        :   2 models
     - morph-v3-fast
@@ -399,6 +390,9 @@ PROVIDER BREAKDOWN (Descending Order):
 
   ByteDance    :   1 models
     - ui-tars-1.5-7b
+
+  THUDM        :   1 models
+    - glm-4.1v-9b-thinking
 
   Venice       :   1 models
     - dolphin-mistral-24b-venice-edition:free

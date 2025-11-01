@@ -1,25 +1,24 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-10-31 07:10 AM IST
+Generated: 2025-11-01 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 38
+  Total models : 34
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
 
 LICENSE DISTRIBUTION:
-  Unknown: 1
-  apache-2.0: 18
+  apache-2.0: 16
   llama3: 1
   llama3.3: 1
-  mit: 13
+  mit: 12
   modified-mit: 1
   nvidia-open-model-license: 2
   qwen: 1
 
-Total license types: 8
+Total license types: 7
 
 DETAILED MODEL EXTRACTION RESULTS:
 ================================================================================
@@ -141,16 +140,7 @@ MODEL 13: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 14: moonshotai/kimi-dev-72b
---------------------------------------------------
-  ID               : moonshotai/kimi-dev-72b:free
-  Canonical Slug   : moonshotai/kimi-dev-72b
-  HuggingFace ID   : moonshotai/Kimi-Dev-72B
-  Extracted License: mit
-
-================================================================================
-
-MODEL 15: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 14: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID               : deepseek/deepseek-r1-0528-qwen3-8b:free
   Canonical Slug   : deepseek/deepseek-r1-0528-qwen3-8b
@@ -159,7 +149,7 @@ MODEL 15: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 16: deepseek/deepseek-r1-0528
+MODEL 15: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID               : deepseek/deepseek-r1-0528:free
   Canonical Slug   : deepseek/deepseek-r1-0528
@@ -168,16 +158,7 @@ MODEL 16: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 17: mistralai/devstral-small-2505
---------------------------------------------------
-  ID               : mistralai/devstral-small-2505:free
-  Canonical Slug   : mistralai/devstral-small-2505
-  HuggingFace ID   : mistralai/Devstral-Small-2505
-  Extracted License: apache-2.0
-
-================================================================================
-
-MODEL 18: qwen/qwen3-4b-04-28
+MODEL 16: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID               : qwen/qwen3-4b:free
   Canonical Slug   : qwen/qwen3-4b-04-28
@@ -186,7 +167,7 @@ MODEL 18: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 19: qwen/qwen3-30b-a3b-04-28
+MODEL 17: qwen/qwen3-30b-a3b-04-28
 --------------------------------------------------
   ID               : qwen/qwen3-30b-a3b:free
   Canonical Slug   : qwen/qwen3-30b-a3b-04-28
@@ -195,16 +176,7 @@ MODEL 19: qwen/qwen3-30b-a3b-04-28
 
 ================================================================================
 
-MODEL 20: qwen/qwen3-8b-04-28
---------------------------------------------------
-  ID               : qwen/qwen3-8b:free
-  Canonical Slug   : qwen/qwen3-8b-04-28
-  HuggingFace ID   : Qwen/Qwen3-8B
-  Extracted License: apache-2.0
-
-================================================================================
-
-MODEL 21: qwen/qwen3-14b-04-28
+MODEL 18: qwen/qwen3-14b-04-28
 --------------------------------------------------
   ID               : qwen/qwen3-14b:free
   Canonical Slug   : qwen/qwen3-14b-04-28
@@ -213,7 +185,7 @@ MODEL 21: qwen/qwen3-14b-04-28
 
 ================================================================================
 
-MODEL 22: qwen/qwen3-235b-a22b-04-28
+MODEL 19: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID               : qwen/qwen3-235b-a22b:free
   Canonical Slug   : qwen/qwen3-235b-a22b-04-28
@@ -222,7 +194,7 @@ MODEL 22: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 23: tngtech/deepseek-r1t-chimera
+MODEL 20: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID               : tngtech/deepseek-r1t-chimera:free
   Canonical Slug   : tngtech/deepseek-r1t-chimera
@@ -231,7 +203,7 @@ MODEL 23: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 24: microsoft/mai-ds-r1
+MODEL 21: microsoft/mai-ds-r1
 --------------------------------------------------
   ID               : microsoft/mai-ds-r1:free
   Canonical Slug   : microsoft/mai-ds-r1
@@ -240,7 +212,7 @@ MODEL 24: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 25: shisa-ai/shisa-v2-llama3.3-70b
+MODEL 22: shisa-ai/shisa-v2-llama3.3-70b
 --------------------------------------------------
   ID               : shisa-ai/shisa-v2-llama3.3-70b:free
   Canonical Slug   : shisa-ai/shisa-v2-llama3.3-70b
@@ -249,7 +221,7 @@ MODEL 25: shisa-ai/shisa-v2-llama3.3-70b
 
 ================================================================================
 
-MODEL 26: arliai/qwq-32b-arliai-rpr-v1
+MODEL 23: arliai/qwq-32b-arliai-rpr-v1
 --------------------------------------------------
   ID               : arliai/qwq-32b-arliai-rpr-v1:free
   Canonical Slug   : arliai/qwq-32b-arliai-rpr-v1
@@ -258,7 +230,7 @@ MODEL 26: arliai/qwq-32b-arliai-rpr-v1
 
 ================================================================================
 
-MODEL 27: qwen/qwen2.5-vl-32b-instruct
+MODEL 24: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID               : qwen/qwen2.5-vl-32b-instruct:free
   Canonical Slug   : qwen/qwen2.5-vl-32b-instruct
@@ -267,7 +239,7 @@ MODEL 27: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 28: deepseek/deepseek-chat-v3-0324
+MODEL 25: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID               : deepseek/deepseek-chat-v3-0324:free
   Canonical Slug   : deepseek/deepseek-chat-v3-0324
@@ -276,7 +248,7 @@ MODEL 28: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 29: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 26: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID               : mistralai/mistral-small-3.1-24b-instruct:free
   Canonical Slug   : mistralai/mistral-small-3.1-24b-instruct-2503
@@ -285,16 +257,7 @@ MODEL 29: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 30: cognitivecomputations/dolphin3.0-mistral-24b
---------------------------------------------------
-  ID               : cognitivecomputations/dolphin3.0-mistral-24b:free
-  Canonical Slug   : cognitivecomputations/dolphin3.0-mistral-24b
-  HuggingFace ID   : cognitivecomputations/Dolphin3.0-Mistral-24B
-  Extracted License: Unknown
-
-================================================================================
-
-MODEL 31: mistralai/mistral-small-24b-instruct-2501
+MODEL 27: mistralai/mistral-small-24b-instruct-2501
 --------------------------------------------------
   ID               : mistralai/mistral-small-24b-instruct-2501:free
   Canonical Slug   : mistralai/mistral-small-24b-instruct-2501
@@ -303,7 +266,7 @@ MODEL 31: mistralai/mistral-small-24b-instruct-2501
 
 ================================================================================
 
-MODEL 32: deepseek/deepseek-r1-distill-llama-70b
+MODEL 28: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID               : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug   : deepseek/deepseek-r1-distill-llama-70b
@@ -312,7 +275,7 @@ MODEL 32: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 33: deepseek/deepseek-r1
+MODEL 29: deepseek/deepseek-r1
 --------------------------------------------------
   ID               : deepseek/deepseek-r1:free
   Canonical Slug   : deepseek/deepseek-r1
@@ -321,7 +284,7 @@ MODEL 33: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 34: qwen/qwen-2.5-coder-32b-instruct
+MODEL 30: qwen/qwen-2.5-coder-32b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-coder-32b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-coder-32b-instruct
@@ -330,7 +293,7 @@ MODEL 34: qwen/qwen-2.5-coder-32b-instruct
 
 ================================================================================
 
-MODEL 35: qwen/qwen-2.5-72b-instruct
+MODEL 31: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug   : qwen/qwen-2.5-72b-instruct
@@ -339,7 +302,7 @@ MODEL 35: qwen/qwen-2.5-72b-instruct
 
 ================================================================================
 
-MODEL 36: nousresearch/hermes-3-llama-3.1-405b
+MODEL 32: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID               : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug   : nousresearch/hermes-3-llama-3.1-405b
@@ -348,7 +311,7 @@ MODEL 36: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 37: mistralai/mistral-nemo
+MODEL 33: mistralai/mistral-nemo
 --------------------------------------------------
   ID               : mistralai/mistral-nemo:free
   Canonical Slug   : mistralai/mistral-nemo
@@ -357,7 +320,7 @@ MODEL 37: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 38: mistralai/mistral-7b-instruct
+MODEL 34: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct
