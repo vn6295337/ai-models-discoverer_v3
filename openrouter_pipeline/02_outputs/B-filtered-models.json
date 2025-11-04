@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-03 07:14 AM IST",
+    "generated_at": "2025-11-04 07:10 AM IST",
     "total_models": 44,
     "pipeline_stage": "B_filter_models"
   },
@@ -341,7 +341,11 @@
         "top_k",
         "top_p"
       ],
-      "default_parameters": {}
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
     },
     {
       "id": "z-ai/glm-4.5-air:free",
