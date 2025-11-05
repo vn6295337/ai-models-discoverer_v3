@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 341
+  Total models: 339
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  47 models
@@ -359,10 +359,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - mercury
     - mercury-coder
 
-  Shisa AI     :   2 models
-    - shisa-v2-llama3.3-70b
-    - shisa-v2-llama3.3-70b:free
-
   ArliAI       :   2 models
     - qwq-32b-arliai-rpr-v1
     - qwq-32b-arliai-rpr-v1:free
@@ -420,4 +416,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer       :   1 models
     - weaver
 
-Total providers: 48
+Total providers: 47

@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-04 07:10 AM IST",
-    "total_models": 34,
+    "generated_at": "2025-11-05 07:12 AM IST",
+    "total_models": 33,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
@@ -151,13 +151,6 @@
       "name": "Microsoft: MAI DS R1 (free)",
       "hugging_face_id": "microsoft/MAI-DS-R1",
       "license_info_url": "https://huggingface.co/microsoft/MAI-DS-R1/blob/main/LICENSE"
-    },
-    {
-      "id": "shisa-ai/shisa-v2-llama3.3-70b:free",
-      "canonical_slug": "shisa-ai/shisa-v2-llama3.3-70b",
-      "name": "Shisa AI: Shisa V2 Llama 3.3 70B  (free)",
-      "hugging_face_id": "shisa-ai/shisa-v2-llama3.3-70b",
-      "license_info_url": "https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md"
     },
     {
       "id": "arliai/qwq-32b-arliai-rpr-v1:free",

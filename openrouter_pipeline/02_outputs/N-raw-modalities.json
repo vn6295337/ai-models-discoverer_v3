@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-04 07:10 AM IST",
-    "total_models": 44,
+    "generated_at": "2025-11-05 07:12 AM IST",
+    "total_models": 43,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -218,15 +218,6 @@
       "original_name": "Microsoft: MAI DS R1 (free)",
       "hugging_face_id": "microsoft/MAI-DS-R1",
       "clean_model_name": "MAI DS R1",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "shisa-ai/shisa-v2-llama3.3-70b:free",
-      "canonical_slug": "shisa-ai/shisa-v2-llama3.3-70b",
-      "original_name": "Shisa AI: Shisa V2 Llama 3.3 70B  (free)",
-      "hugging_face_id": "shisa-ai/shisa-v2-llama3.3-70b",
-      "clean_model_name": "Shisa V2 Llama 3.3 70B",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },

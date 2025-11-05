@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE MODELS REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 5
+  Total models : 4
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -14,9 +14,8 @@ CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
   NVIDIA: 2 models
   QWEN: 1 models
-  llama3.3: 1 models
 
-Total license types: 4
+Total license types: 3
 
 DETAILED CUSTOM LICENSE MODEL LISTINGS:
 ================================================================================
@@ -54,13 +53,4 @@ MODEL 4: qwen/qwen-2.5-72b-instruct
   Canonical Slug  : qwen/qwen-2.5-72b-instruct
   HuggingFace ID  : Qwen/Qwen2.5-72B-Instruct
   License Name    : QWEN
-
-================================================================================
-
-MODEL 5: shisa-ai/shisa-v2-llama3.3-70b
---------------------------------------------------
-  ID              : shisa-ai/shisa-v2-llama3.3-70b:free
-  Canonical Slug  : shisa-ai/shisa-v2-llama3.3-70b
-  HuggingFace ID  : shisa-ai/shisa-v2-llama3.3-70b
-  License Name    : llama3.3
 

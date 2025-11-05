@@ -1,38 +1,23 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 44
+  Input models         : 43
   Models kept          : 43
-  Models removed       : 1
+  Models removed       : 0
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
   Output               : R_filtered_db_data.json
 
-REMOVAL REASONS DISTRIBUTION:
-   1 models: Region specific & non-english model
-
-Total removal reasons: 1
+NO MODELS REMOVED
 
 REMOVAL PROCESSING SUMMARY:
   Configured for removal: 6 models
-  Successfully removed: 1 models
-  ⚠ 5 models not found (check canonical slugs)
-
-DETAILED REMOVED MODEL INFORMATION:
-================================================================================
-
-REMOVED MODEL 1: shisa-ai/shisa-v2-llama3.3-70b
---------------------------------------------------
-  Provider ID: shisa-ai/shisa-v2-llama3.3-70b:free
-  Clean Model Name: Shisa V2 Llama 3.3 70B
-  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
-  Model Provider: Shisa AI
-  Model Family: llama
-  Removal Reason: Region specific & non-english model
+  Successfully removed: 0 models
+  ⚠ 6 models not found (check canonical slugs)
 
 FINALIZED DATABASE DATA SUMMARY:
 ================================================================================

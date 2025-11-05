@@ -1,37 +1,37 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 44
+  Total models : 43
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
   Output       : O-standardized-modalities.json
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
-  33 models: Text
+  32 models: Text
    9 models: Text, Image
    2 models: Text, Image, Audio, Video
 
 Total unique input types: 3
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  44 models: Text
+  43 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
-  33 models: Text → Text
+  32 models: Text → Text
    9 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
 
 Total unique combinations: 3
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 44 models
-  Output modalities changed: 44 models
+  Input modalities changed: 43 models
+  Output modalities changed: 43 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
@@ -458,21 +458,7 @@ MODEL 30: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 31: shisa-ai/shisa-v2-llama3.3-70b
---------------------------------------------------
-  ID: shisa-ai/shisa-v2-llama3.3-70b:free
-  Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
-  HuggingFace ID: shisa-ai/shisa-v2-llama3.3-70b
-  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
-  Clean Model Name: Shisa V2 Llama 3.3 70B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 32: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 31: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -486,7 +472,7 @@ MODEL 32: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 33: venice/uncensored
+MODEL 32: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -500,7 +486,7 @@ MODEL 33: venice/uncensored
 
 ================================================================================
 
-MODEL 34: google/gemma-3-12b-it
+MODEL 33: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -514,7 +500,7 @@ MODEL 34: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 35: google/gemma-3-27b-it
+MODEL 34: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -528,7 +514,7 @@ MODEL 35: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 36: google/gemma-3-4b-it
+MODEL 35: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -542,7 +528,7 @@ MODEL 36: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 37: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 36: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -556,7 +542,7 @@ MODEL 37: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 38: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 37: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -570,7 +556,7 @@ MODEL 38: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 39: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 38: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -584,7 +570,7 @@ MODEL 39: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 40: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 39: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
@@ -598,7 +584,7 @@ MODEL 40: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 41: nvidia/nemotron-nano-12b-v2-vl
+MODEL 40: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -612,7 +598,7 @@ MODEL 41: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 42: qwen/qwen2.5-vl-32b-instruct
+MODEL 41: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -626,7 +612,7 @@ MODEL 42: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 43: google/gemma-3n-e2b-it
+MODEL 42: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -640,7 +626,7 @@ MODEL 43: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 44: google/gemma-3n-e4b-it
+MODEL 43: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)

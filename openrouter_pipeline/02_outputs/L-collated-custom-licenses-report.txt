@@ -1,10 +1,10 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 5
+  Total models        : 4
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
@@ -13,13 +13,12 @@ CUSTOM LICENSE DISTRIBUTION:
    2 models: NVIDIA
    1 models: Modified MIT
    1 models: QWEN
-   1 models: llama3.3
 
-Total unique license types: 4
+Total unique license types: 3
 
 LICENSE URL TYPE DISTRIBUTION:
    2 models: LICENSE file
-   3 models: README.md file
+   2 models: README.md file
 
 Total URL types: 2
 
@@ -79,18 +78,4 @@ MODEL 4: qwen/qwen-2.5-72b-instruct
   License Info URL: 
   License Name: QWEN
   License URL: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
-
-================================================================================
-
-MODEL 5: shisa-ai/shisa-v2-llama3.3-70b
---------------------------------------------------
-  ID: shisa-ai/shisa-v2-llama3.3-70b:free
-  Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
-  HuggingFace ID: shisa-ai/shisa-v2-llama3.3-70b
-  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
-  Clean Model Name: Shisa V2 Llama 3.3 70B
-  License Info Text: 
-  License Info URL: 
-  License Name: llama3.3
-  License URL: https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md
 

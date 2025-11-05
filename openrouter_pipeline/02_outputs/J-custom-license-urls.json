@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-04 07:10 AM IST",
-    "total_models": 5,
+    "generated_at": "2025-11-05 07:12 AM IST",
+    "total_models": 4,
     "pipeline_stage": "J_custom_license_urls"
   },
   "models": [
@@ -31,15 +31,6 @@
       "license_name": "Modified MIT",
       "license_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE",
       "license_url_type": "LICENSE file"
-    },
-    {
-      "id": "shisa-ai/shisa-v2-llama3.3-70b:free",
-      "canonical_slug": "shisa-ai/shisa-v2-llama3.3-70b",
-      "name": "Shisa AI: Shisa V2 Llama 3.3 70B  (free)",
-      "hugging_face_id": "shisa-ai/shisa-v2-llama3.3-70b",
-      "license_name": "llama3.3",
-      "license_url": "https://huggingface.co/shisa-ai/shisa-v2-llama3.3-70b/blob/main/README.md",
-      "license_url_type": "README.md file"
     },
     {
       "id": "qwen/qwen-2.5-72b-instruct:free",

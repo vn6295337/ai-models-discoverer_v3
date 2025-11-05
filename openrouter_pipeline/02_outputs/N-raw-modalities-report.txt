@@ -1,28 +1,28 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 44
+  Total models : 43
   Input        : B-filtered-models.json
   Processor    : N_extract_raw_modalities.py
   Output       : N-raw-modalities.json
 
 RAW INPUT MODALITIES DISTRIBUTION:
-  35 models: text
+  34 models: text
    7 models: text, image
    2 models: image, text
 
 Total unique input types: 3
 
 RAW OUTPUT MODALITIES DISTRIBUTION:
-  44 models: text
+  43 models: text
 
 Total unique output types: 1
 
 RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
-  35 models: text → text
+  34 models: text → text
    7 models: text, image → text
    2 models: image, text → text
 
@@ -439,19 +439,7 @@ MODEL 34: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 35: shisa-ai/shisa-v2-llama3.3-70b
---------------------------------------------------
-  ID: shisa-ai/shisa-v2-llama3.3-70b:free
-  Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
-  HuggingFace ID: shisa-ai/shisa-v2-llama3.3-70b
-  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
-  Clean Model Name: Shisa V2 Llama 3.3 70B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-
-================================================================================
-
-MODEL 36: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 35: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -463,7 +451,7 @@ MODEL 36: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 37: venice/uncensored
+MODEL 36: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -475,7 +463,7 @@ MODEL 37: venice/uncensored
 
 ================================================================================
 
-MODEL 38: google/gemma-3-12b-it
+MODEL 37: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -487,7 +475,7 @@ MODEL 38: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 39: google/gemma-3-27b-it
+MODEL 38: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -499,7 +487,7 @@ MODEL 39: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 40: google/gemma-3-4b-it
+MODEL 39: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -511,7 +499,7 @@ MODEL 40: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 41: meta-llama/llama-4-maverick-17b-128e-instruct
+MODEL 40: meta-llama/llama-4-maverick-17b-128e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-maverick:free
   Original Name: Meta: Llama 4 Maverick (free)
@@ -523,7 +511,7 @@ MODEL 41: meta-llama/llama-4-maverick-17b-128e-instruct
 
 ================================================================================
 
-MODEL 42: meta-llama/llama-4-scout-17b-16e-instruct
+MODEL 41: meta-llama/llama-4-scout-17b-16e-instruct
 --------------------------------------------------
   ID: meta-llama/llama-4-scout:free
   Original Name: Meta: Llama 4 Scout (free)
@@ -535,7 +523,7 @@ MODEL 42: meta-llama/llama-4-scout-17b-16e-instruct
 
 ================================================================================
 
-MODEL 43: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 42: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -547,7 +535,7 @@ MODEL 43: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 44: qwen/qwen2.5-vl-32b-instruct
+MODEL 43: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)

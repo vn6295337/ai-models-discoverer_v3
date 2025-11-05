@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-11-04 07:10 AM IST
+Generated: 2025-11-05 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 44
+  Total models      : 43
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -28,20 +28,18 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Moonshot AI
    1 models: Nous Research
    1 models: OpenAI
-   1 models: Shisa AI
    1 models: Z.AI
 
-Total unique model providers: 17
+Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   18 models: China
   17 models: United States
    5 models: France
    2 models: Germany
-   1 models: Japan
    1 models: Singapore
 
-Total unique countries: 6
+Total unique countries: 5
 
 MODEL FAMILY DISTRIBUTION:
    9 models: alibaba cloud
@@ -59,10 +57,9 @@ MODEL FAMILY DISTRIBUTION:
    1 models: moonshot ai
    1 models: nous research
    1 models: openai
-   1 models: shisa ai
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 16
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -627,21 +624,7 @@ MODEL 40: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 41: shisa-ai/shisa-v2-llama3.3-70b
---------------------------------------------------
-  ID: shisa-ai/shisa-v2-llama3.3-70b:free
-  Original Name: Shisa AI: Shisa V2 Llama 3.3 70B  (free)
-  HuggingFace ID: shisa-ai/shisa-v2-llama3.3-70b
-  Canonical Slug: shisa-ai/shisa-v2-llama3.3-70b
-  Clean Model Name: Shisa V2 Llama 3.3 70B
-  Model Provider: Shisa AI
-  Model Provider Country: Japan
-  Model Family: shisa ai
-  Official URL: https://shisa.ai/
-
-================================================================================
-
-MODEL 42: tngtech/deepseek-r1t-chimera
+MODEL 41: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -655,7 +638,7 @@ MODEL 42: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 43: tngtech/deepseek-r1t2-chimera
+MODEL 42: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -669,7 +652,7 @@ MODEL 43: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 44: z-ai/glm-4.5-air
+MODEL 43: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
