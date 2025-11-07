@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-06 07:11 AM IST
+Generated: 2025-11-07 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 339
+  Total models: 340
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  47 models
@@ -56,7 +56,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini-deep-research
     - o4-mini-high
 
-  Qwen         :  43 models
+  Qwen         :  42 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -96,7 +96,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-235b-a22b-thinking
     - qwen3-vl-30b-a3b-instruct
     - qwen3-vl-30b-a3b-thinking
-    - qwen3-vl-32b-instruct
     - qwen3-vl-8b-instruct
     - qwen3-vl-8b-thinking
     - qwq-32b
@@ -255,6 +254,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4-fast
     - grok-code-fast-1
 
+  MoonshotAI   :   6 models
+    - kimi-dev-72b
+    - kimi-k2
+    - kimi-k2-0905
+    - kimi-k2-0905:exacto
+    - kimi-k2-thinking
+    - kimi-k2:free
+
   Perplexity   :   6 models
     - sonar
     - sonar-deep-research
@@ -291,13 +298,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - maestro-reasoning
     - spotlight
     - virtuoso-large
-
-  MoonshotAI   :   5 models
-    - kimi-dev-72b
-    - kimi-k2
-    - kimi-k2-0905
-    - kimi-k2-0905:exacto
-    - kimi-k2:free
 
   Amazon       :   4 models
     - nova-lite-v1

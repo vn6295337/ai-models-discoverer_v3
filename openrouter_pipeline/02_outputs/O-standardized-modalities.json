@@ -1,10 +1,24 @@
 {
   "metadata": {
-    "generated_at": "2025-11-06 07:11 AM IST",
-    "total_models": 43,
+    "generated_at": "2025-11-07 07:10 AM IST",
+    "total_models": 44,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
   "models": [
+    {
+      "id": "openrouter/polaris-alpha",
+      "canonical_slug": "openrouter/polaris-alpha",
+      "original_name": "Polaris Alpha",
+      "hugging_face_id": "",
+      "clean_model_name": "Polaris Alpha",
+      "raw_input_modalities": "text, image",
+      "raw_output_modalities": "text",
+      "enhanced_input_modalities": "text, image",
+      "enhanced_output_modalities": "text",
+      "standardized_input_modalities": "Text, Image",
+      "standardized_output_modalities": "Text",
+      "google_enhancement_status": "no_google_model"
+    },
     {
       "id": "nvidia/nemotron-nano-12b-v2-vl:free",
       "canonical_slug": "nvidia/nemotron-nano-12b-v2-vl",
