@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-11-06 07:12:13 IST",
+    "generated": "2025-11-07 07:11:27 IST",
     "total_models": 66,
     "api_source": "Google Generative Language API"
   },
@@ -637,7 +637,7 @@
       "displayName": "Nano Banana",
       "description": "Gemini 2.5 Flash Preview Image",
       "inputTokenLimit": 32768,
-      "outputTokenLimit": 8192,
+      "outputTokenLimit": 32768,
       "supportedGenerationMethods": [
         "generateContent",
         "countTokens",
@@ -654,7 +654,7 @@
       "displayName": "Nano Banana",
       "description": "Gemini 2.5 Flash Preview Image",
       "inputTokenLimit": 32768,
-      "outputTokenLimit": 8192,
+      "outputTokenLimit": 32768,
       "supportedGenerationMethods": [
         "generateContent",
         "countTokens",
