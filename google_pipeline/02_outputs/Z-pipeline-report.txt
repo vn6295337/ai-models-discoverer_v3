@@ -1,7 +1,7 @@
 ================================================================================
 GOOGLE MODELS PIPELINE EXECUTION REPORT
-Execution Date: 2025-11-07 07:11:34 IST
-Total Pipeline Duration: 11.1 seconds
+Execution Date: 2025-11-08 06:58:44 IST
+Total Pipeline Duration: 10.4 seconds
 
 === EXECUTION SUMMARY ===
 Stages Executed: 6
@@ -12,7 +12,7 @@ Failed: 0
 Stage 1: API Data Extraction
   Script: A_fetch_api_models.py
   Status: ✅ SUCCESS
-  Duration: 4.2s
+  Duration: 3.8s
 
 Stage 2: Model Filtering
   Script: B_filter_models.py
@@ -22,7 +22,7 @@ Stage 2: Model Filtering
 Stage 3: Modality Scraping
   Script: C_scrape_modalities.py
   Status: ✅ SUCCESS
-  Duration: 5.0s
+  Duration: 4.5s
 
 Stage 4: Modality Enrichment
   Script: D_enrich_modalities.py
@@ -37,7 +37,7 @@ Stage 5: Data Normalization
 Stage 6: Pipeline Comparison
   Script: F_compare_pipeline_with_supabase.py
   Status: ✅ SUCCESS
-  Duration: 1.9s
+  Duration: 2.0s
 
 === WEB SCRAPING ANALYSIS ===
 ✅ Web Scraping: Successful (21 models scraped)
