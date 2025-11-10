@@ -1,4 +1,4 @@
-# AI Transformation Portfolio
+# ai_portfolio
 
 > **AI Transformation Strategist** with 22+ years building production AI solutions driving $30M+ value
 
@@ -61,7 +61,7 @@ Interactive React dashboard that visualizes AI model availability and capabiliti
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│           AI Transformation Portfolio                     │
+│                    ai_portfolio                           │
 │   End-to-End AI Model Discovery & Visualization         │
 └──────────────────────────────────────────────────────────┘
                          │
