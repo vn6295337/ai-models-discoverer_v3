@@ -60,12 +60,12 @@ def load_modality_data() -> Dict[str, Dict[str, Any]]:
         else:
             raise ValueError("Unexpected data format in input file")
 
-        # Create lookup index by model ID
+        # Create lookup index by canonical_slug
         modality_index = {}
         for model in models:
-            model_id = model.get('id', '')
-            if model_id:
-                modality_index[model_id] = model
+            canonical_slug = model.get('canonical_slug', '')
+            if canonical_slug:
+                modality_index[canonical_slug] = model
         
         print(f"✓ Loaded {len(modality_index)} models with modalities from: {input_file}")
         return modality_index
@@ -89,12 +89,12 @@ def load_license_data() -> Dict[str, Dict[str, Any]]:
         else:
             raise ValueError("Unexpected data format in input file")
 
-        # Create lookup index by model ID
+        # Create lookup index by canonical_slug
         license_index = {}
         for model in models:
-            model_id = model.get('id', '')
-            if model_id:
-                license_index[model_id] = model
+            canonical_slug = model.get('canonical_slug', '')
+            if canonical_slug:
+                license_index[canonical_slug] = model
         
         print(f"✓ Loaded {len(license_index)} models with licenses from: {input_file}")
         return license_index
@@ -206,21 +206,21 @@ def create_final_database_data(provider_models: List[Dict[str, Any]],
     license_missing = []
     
     for provider_model in provider_models:
-        model_id = provider_model.get('id', '')
-        
+        canonical_slug = provider_model.get('canonical_slug', '')
+
         # Get modality data
-        modality_data = modality_index.get(model_id, {})
+        modality_data = modality_index.get(canonical_slug, {})
         if modality_data:
             modality_matched += 1
         else:
-            modality_missing.append(model_id)
-        
+            modality_missing.append(canonical_slug)
+
         # Get license data
-        license_data = license_index.get(model_id, {})
+        license_data = license_index.get(canonical_slug, {})
         if license_data:
             license_matched += 1
         else:
-            license_missing.append(model_id)
+            license_missing.append(canonical_slug)
         
         # Create database record using field mapping
         db_record = create_database_record(provider_model, modality_data, license_data, api_config, field_mapping)
