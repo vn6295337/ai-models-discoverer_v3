@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-11-11 12:45 PM IST
+Generated: 2025-11-11 04:01 PM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,13 +9,12 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (16 models):
+LICENSE INFO TEXT (15 models):
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
   - Gemma 3n E2B IT
   - Gemma 3n E4B IT
-  - Kat Coder
   - Kimi K2 0711
   - Llama 3.2 3B Instruct
   - Llama 3.3 70B Instruct
@@ -27,13 +26,12 @@ LICENSE INFO TEXT (16 models):
   - Polaris Alpha
   - Qwen2.5 72B Instruct
 
-LICENSE INFO URL (16 models):
+LICENSE INFO URL (15 models):
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
   - Gemma 3n E2B IT
   - Gemma 3n E4B IT
-  - Kat Coder
   - Kimi K2 0711
   - Llama 3.2 3B Instruct
   - Llama 3.3 70B Instruct
@@ -45,12 +43,10 @@ LICENSE INFO URL (16 models):
   - Polaris Alpha
   - Qwen2.5 72B Instruct
 
-LICENSE NAME (2 models):
-  - Kat Coder
+LICENSE NAME (1 models):
   - Polaris Alpha
 
-LICENSE URL (2 models):
-  - Kat Coder
+LICENSE URL (1 models):
   - Polaris Alpha
 
 UNKNOWN OR 'NOT FOUND' VALUES:
@@ -62,10 +58,10 @@ MODEL PROVIDER (1 models):
 DATA QUALITY SUMMARY:
 ------------------------------
 Total models: 45
-Missing license info text: 16 (35.6%)
-Missing license info url: 16 (35.6%)
-Missing license name: 2 (4.4%)
-Missing license url: 2 (4.4%)
+Missing license info text: 15 (33.3%)
+Missing license info url: 15 (33.3%)
+Missing license name: 1 (2.2%)
+Missing license url: 1 (2.2%)
 Unknown model provider: 1 (2.2%)
 
 ================================================================================
@@ -296,9 +292,9 @@ COMPLETE MODEL RECORDS:
  23. Kat Coder
      Provider           : Kwaipilot (China)
      Modalities         : Text → Text
-     License            : 
-     License Info       : 
-     License URL        : 
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
      Official URL       : https://kwaipilot.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys

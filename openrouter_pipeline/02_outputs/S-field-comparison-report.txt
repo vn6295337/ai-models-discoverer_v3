@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-11 12:45 PM IST
+Generated: 2025-11-11 04:01 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -335,10 +335,10 @@ model_provider_country    | China                     |
 official_url              | https://kwaipilot.ai/     |                          
 input_modalities          | Text                      |                          
 output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
+license_info_text         | info                      |                          
+license_info_url          | https://kat-coder.org/    |                          
+license_name              | Apache-2.0                |                          
+license_url               | https://www.apache.org/.. |                          
 rate_limits               | 20 requests/min 50/day    |                          
 provider_api_access       | https://openrouter.ai/s.. |                          
 
