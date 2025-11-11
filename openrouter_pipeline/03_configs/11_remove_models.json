@@ -25,6 +25,10 @@
     {
       "canonical_slug": "openrouter/andromeda-alpha",
       "reason": "Trial model"
+    },
+    {
+      "canonical_slug": "openrouter/polaris-alpha",
+      "reason": "Cloaked model"
     }
   ]
 }
