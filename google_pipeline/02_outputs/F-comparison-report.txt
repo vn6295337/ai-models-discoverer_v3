@@ -1,6 +1,6 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-11-10 07:16:30 IST
+Generated: 2025-11-11 07:13:28 IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -8,54 +8,56 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total models processed: 25
-   • Models in both systems: 25
+   • Models in both systems: 24
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 0
+   • Models in Supabase only (not in pipeline): 1
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • model_provider:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • official_url:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • input_modalities:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • output_modalities:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • license_info_text:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • license_info_url:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • license_name:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • license_url:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • rate_limits:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 25
+     - Exact matches: 24
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
    • Existing models with differences: 0
+   • Deprecated models (Supabase only): 1
+     Models: Imagen 3.0 Generate 002
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -425,19 +427,19 @@ MODEL: Imagen 3.0 Generate 002
 ----------------------------------------------------------------------------------------------------------------------------------
 Field Name                | Pipeline Value                                     | Supabase Value                                    
 ----------------------------------------------------------------------------------------------------------------------------------
-inference_provider        | Google                                             | Google                                            
-model_provider            | Google                                             | Google                                            
-human_readable_name       | Imagen 3.0 Generate 002                            | Imagen 3.0 Generate 002                           
-model_provider_country    | United States                                      | United States                                     
-official_url              | https://deepmind.google/models/imagen/             | https://deepmind.google/models/imagen/            
-input_modalities          | Text                                               | Text                                              
-output_modalities         | Image                                              | Image                                             
-license_info_text         | Google                                             | Google                                            
-license_info_url          | https://developers.google.com/terms                | https://developers.google.com/terms               
-license_name              | Gemini                                             | Gemini                                            
-license_url               | https://ai.google.dev/gemini-api/terms             | https://ai.google.dev/gemini-api/terms            
-rate_limits               | Input: 480 tokens, Output: up to 4 images          | Input: 480 tokens, Output: up to 4 images         
-provider_api_access       | https://aistudio.google.com/apikey                 | https://aistudio.google.com/apikey                
+inference_provider        |                                                    | Google                                            
+model_provider            |                                                    | Google                                            
+human_readable_name       |                                                    | Imagen 3.0 Generate 002                           
+model_provider_country    |                                                    | United States                                     
+official_url              |                                                    | https://deepmind.google/models/imagen/            
+input_modalities          |                                                    | Text                                              
+output_modalities         |                                                    | Image                                             
+license_info_text         |                                                    | Google                                            
+license_info_url          |                                                    | https://developers.google.com/terms               
+license_name              |                                                    | Gemini                                            
+license_url               |                                                    | https://ai.google.dev/gemini-api/terms            
+rate_limits               |                                                    | Input: 480 tokens, Output: up to 4 images         
+provider_api_access       |                                                    | https://aistudio.google.com/apikey                
 
 ==================================================================================================================================
 

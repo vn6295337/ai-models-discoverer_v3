@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-11-10 07:16:23 IST",
-    "total_models": 66,
+    "generated": "2025-11-11 07:13:20 IST",
+    "total_models": 65,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -812,17 +812,6 @@
       "temperature": 0.2,
       "topP": 1,
       "topK": 40
-    },
-    {
-      "name": "models/imagen-3.0-generate-002",
-      "version": "002",
-      "displayName": "Imagen 3.0",
-      "description": "Vertex served Imagen 3.0 002 model",
-      "inputTokenLimit": 480,
-      "outputTokenLimit": 8192,
-      "supportedGenerationMethods": [
-        "predict"
-      ]
     },
     {
       "name": "models/imagen-4.0-generate-preview-06-06",
