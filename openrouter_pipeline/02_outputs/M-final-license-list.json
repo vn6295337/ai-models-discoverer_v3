@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-11 07:12 AM IST",
-    "total_models": 44,
+    "generated_at": "2025-11-11 12:45 PM IST",
+    "total_models": 45,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -160,6 +160,18 @@
       "license_name": "Gemma",
       "license_url": "https://ai.google.dev/gemma/terms",
       "source_category": "google"
+    },
+    {
+      "id": "kwaipilot/kat-coder-pro-v1:free",
+      "canonical_slug": "kwaipilot/kat-coder-pro-v1",
+      "original_name": "Kwaipilot/Kat Coder Pro V1",
+      "hugging_face_id": "",
+      "clean_model_name": "Kat Coder Pro V1",
+      "license_info_text": "info",
+      "license_info_url": "https://kat-coder.org/",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "proprietary"
     },
     {
       "id": "meituan/longcat-flash-chat:free",
