@@ -1,16 +1,16 @@
 === GOOGLE MODELS MODALITY ENRICHMENT REPORT ===
 
-Generated: 2025-11-10 07:16:28 IST
+Generated: 2025-11-11 07:13:26 IST
 
 === SUMMARY ===
-Total Models: 25
+Total Models: 24
 Priority 1 Matches (Exact): 7
-Priority 2 Matches (Normalized): 6
+Priority 2 Matches (Normalized): 5
 Embedding Matches: 4
 Gemma Pattern Matches: 6
 Unique Model Matches: 1
 No Matches: 0
-Overall Match Rate: 96.0%
+Overall Match Rate: 95.8%
 
 === PRIORITY 1 MATCHES (EXACT) ===
 
@@ -56,25 +56,19 @@ Overall Match Rate: 96.0%
     Input: Text, Image, Audio, Video
     Output: Text
 
- 3. imagen-3.0-generate-002
-    Filtered model's API ID normalized: 'imagen-3'
-    Scraped model's API ID normalized: 'imagen-3'
-    Input: Text
-    Output: Image
-
- 4. imagen-4.0-generate-001
+ 3. imagen-4.0-generate-001
     Filtered model's API ID normalized: 'imagen-4'
     Scraped model's API ID normalized: 'imagen-4'
     Input: Text
     Output: Image
 
- 5. imagen-4.0-ultra-generate-001
+ 4. imagen-4.0-ultra-generate-001
     Filtered model's API ID normalized: 'imagen-4'
     Scraped model's API ID normalized: 'imagen-4'
     Input: Text
     Output: Image
 
- 6. imagen-4.0-fast-generate-001
+ 5. imagen-4.0-fast-generate-001
     Filtered model's API ID normalized: 'imagen-4'
     Scraped model's API ID normalized: 'imagen-4'
     Input: Text

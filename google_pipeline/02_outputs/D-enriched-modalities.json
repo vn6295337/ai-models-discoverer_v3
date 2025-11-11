@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-11-10 07:16:28 IST",
-    "total_models": 25,
+    "generated": "2025-11-11 07:13:26 IST",
+    "total_models": 24,
     "enrichment_source": "Google Pipeline D-Enrich"
   },
   "models": [
@@ -351,21 +351,6 @@
       "output_modalities": "Text",
       "modality_source": "unique_config",
       "match_priority": 5
-    },
-    {
-      "name": "models/imagen-3.0-generate-002",
-      "version": "002",
-      "displayName": "Imagen 3.0",
-      "description": "Vertex served Imagen 3.0 002 model",
-      "inputTokenLimit": 480,
-      "outputTokenLimit": 8192,
-      "supportedGenerationMethods": [
-        "predict"
-      ],
-      "input_modalities": "Text",
-      "output_modalities": "Image",
-      "modality_source": "scraped",
-      "match_priority": 2
     },
     {
       "name": "models/imagen-4.0-generate-001",
