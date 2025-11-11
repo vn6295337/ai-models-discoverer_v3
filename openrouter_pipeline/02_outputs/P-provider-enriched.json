@@ -1,10 +1,29 @@
 {
   "metadata": {
-    "generated_at": "2025-11-10 07:15 AM IST",
-    "total_models": 44,
+    "generated_at": "2025-11-11 07:12 AM IST",
+    "total_models": 45,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
+    {
+      "id": "kwaipilot/kat-coder-pro:free",
+      "canonical_slug": "kwaipilot/kat-coder-pro-v1",
+      "original_name": "Kwaipilot: Kat Coder (free)",
+      "hugging_face_id": "",
+      "clean_model_name": "Kat Coder",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text",
+      "enhanced_input_modalities": "text",
+      "enhanced_output_modalities": "text",
+      "standardized_input_modalities": "Text",
+      "standardized_output_modalities": "Text",
+      "google_enhancement_status": "no_google_model",
+      "inference_provider": "OpenRouter",
+      "model_provider": "Unknown",
+      "model_provider_country": "Unknown",
+      "model_family": "kwaipilot",
+      "official_url": "Unknown"
+    },
     {
       "id": "openrouter/polaris-alpha",
       "canonical_slug": "openrouter/polaris-alpha",

@@ -1,34 +1,34 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-10 07:15 AM IST
+Generated: 2025-11-11 07:12 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 341
-  Models passed all filters: 44
+  Total models processed: 342
+  Models passed all filters: 45
   Models excluded: 297
-  Success rate: 12.9%
+  Success rate: 13.2%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 341 models
+    Input: 342 models
     Excluded: 295 models (non-free pricing)
-    Remaining: 46 models
+    Remaining: 47 models
 
   Step 2 - Billing Description Filter:
-    Input: 46 models
+    Input: 47 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 46 models
+    Remaining: 47 models
 
   Step 3 - Keyword Filter:
-    Input: 46 models
+    Input: 47 models
     Excluded: 2 models (preview/experimental/beta)
-    Remaining: 44 models
+    Remaining: 45 models
 
   Step 4 - Deduplication Filter:
-    Input: 44 models
+    Input: 45 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 44 models
+    Final: 45 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
@@ -216,6 +216,13 @@ PROVIDER: QWEN (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: KWAIPILOT (1 models)
+--------------------------------------------------
+   1. Kwaipilot: Kat Coder (free)
+      ID: kwaipilot/kat-coder-pro:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: OPENROUTER (1 models)
 --------------------------------------------------
    1. Polaris Alpha
@@ -295,8 +302,8 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 19
-  Total models passed all filters: 44
+  Total providers: 20
+  Total models passed all filters: 45
   Models excluded by pricing: 295
   Models excluded by billing description: 0
   Models excluded by keywords: 2
