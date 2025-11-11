@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-11-11 07:12 AM IST
+Generated: 2025-11-11 12:45 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 44
+  Total models        : 45
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -14,10 +14,10 @@ SOURCE CATEGORY DISTRIBUTION:
   Google: 5 models
   Meta: 5 models
   Opensource: 29 models
-  Proprietary: 1 models
+  Proprietary: 2 models
 
 FINAL LICENSE DISTRIBUTION:
-  16 models: Apache-2.0
+  17 models: Apache-2.0
   12 models: MIT
    5 models: Gemma
    2 models: Llama-3.3
@@ -679,7 +679,22 @@ MODEL 43: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 44: x-ai/grok-4-fast
+MODEL 44: kwaipilot/kat-coder-pro-v1
+--------------------------------------------------
+  ID: kwaipilot/kat-coder-pro-v1:free
+  Original Name: Kwaipilot/Kat Coder Pro V1
+  HuggingFace ID: 
+  Canonical Slug: kwaipilot/kat-coder-pro-v1
+  Clean Model Name: Kat Coder Pro V1
+  License Info Text: info
+  License Info URL: https://kat-coder.org/
+  License Name: Apache-2.0
+  License URL: https://www.apache.org/licenses/LICENSE-2.0
+  Source Category: proprietary
+
+================================================================================
+
+MODEL 45: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast

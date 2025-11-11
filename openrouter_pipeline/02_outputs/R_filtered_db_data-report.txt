@@ -1,23 +1,38 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-11-11 07:12 AM IST
+Generated: 2025-11-11 12:45 PM IST
 ================================================================================
 
 SUMMARY:
   Input models         : 45
-  Models kept          : 45
-  Models removed       : 0
+  Models kept          : 44
+  Models removed       : 1
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
   Output               : R_filtered_db_data.json
 
-NO MODELS REMOVED
+REMOVAL REASONS DISTRIBUTION:
+   1 models: Cloaked model
+
+Total removal reasons: 1
 
 REMOVAL PROCESSING SUMMARY:
-  Configured for removal: 6 models
-  Successfully removed: 0 models
+  Configured for removal: 7 models
+  Successfully removed: 1 models
   ⚠ 6 models not found (check canonical slugs)
+
+DETAILED REMOVED MODEL INFORMATION:
+================================================================================
+
+REMOVED MODEL 1: openrouter/polaris-alpha
+--------------------------------------------------
+  Provider ID: openrouter/polaris-alpha
+  Clean Model Name: Polaris Alpha
+  Canonical Slug: openrouter/polaris-alpha
+  Model Provider: Unknown
+  Model Family: Unknown
+  Removal Reason: Cloaked model
 
 FINALIZED DATABASE DATA SUMMARY:
 ================================================================================
@@ -30,9 +45,9 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    5 models: Mistral AI
    2 models: NVIDIA
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Cognitive Computations
+   1 models: Kwaipilot
    1 models: Meituan
    1 models: Microsoft
    1 models: MiniMax
@@ -44,6 +59,6 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
 Total providers: 17
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  45 models: Unknown
+  44 models: Unknown
 
 Total families: 1

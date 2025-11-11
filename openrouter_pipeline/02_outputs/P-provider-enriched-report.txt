@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-11-11 07:12 AM IST
+Generated: 2025-11-11 12:45 PM IST
 ================================================================================
 
 SUMMARY:
@@ -12,14 +12,12 @@ SUMMARY:
 
 ACTION ITEMS - UNKNOWN MAPPINGS:
 ==================================================
-UNKNOWN PROVIDERS (2 models):
+UNKNOWN PROVIDERS (1 models):
   Add these provider mappings to 08_provider_enrichment.json:
-    "kwaipilot": ["Provider Name", "Country"],
     "openrouter": ["Provider Name", "Country"],
 
-UNKNOWN OFFICIAL URLS (2 unique families):
+UNKNOWN OFFICIAL URLS (1 unique families):
   Add these URL mappings to family_official_urls:
-    "kwaipilot": "https://official-url-here",
     "openrouter": "https://official-url-here",
 
 ==================================================
@@ -32,26 +30,27 @@ MODEL PROVIDER DISTRIBUTION:
    5 models: Mistral AI
    2 models: NVIDIA
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Cognitive Computations
+   1 models: Kwaipilot
    1 models: Meituan
    1 models: Microsoft
    1 models: MiniMax
    1 models: Moonshot AI
    1 models: Nous Research
    1 models: OpenAI
+   1 models: Unknown
    1 models: Z.AI
 
-Total unique model providers: 17
+Total unique model providers: 18
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  18 models: China
+  19 models: China
   17 models: United States
    5 models: France
    2 models: Germany
-   2 models: Unknown
    1 models: Singapore
+   1 models: Unknown
 
 Total unique countries: 6
 
@@ -395,10 +394,10 @@ MODEL 23: kwaipilot/kat-coder-pro-v1
   HuggingFace ID: 
   Canonical Slug: kwaipilot/kat-coder-pro-v1
   Clean Model Name: Kat Coder
-  Model Provider: Unknown
-  Model Provider Country: Unknown
+  Model Provider: Kwaipilot
+  Model Provider Country: China
   Model Family: kwaipilot
-  Official URL: Unknown
+  Official URL: https://kwaipilot.ai/
 
 ================================================================================
 
