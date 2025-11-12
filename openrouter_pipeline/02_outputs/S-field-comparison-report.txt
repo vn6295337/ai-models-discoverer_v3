@@ -1,18 +1,18 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-11 04:01 PM IST
+Generated: 2025-11-12 07:11 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 44
+   • Total unique model names: 45
    • Total records in pipeline: 44
-   • Total records in Supabase: 43
+   • Total records in Supabase: 44
    • Models in both systems: 43
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 1
-   • Models in Supabase only (not in pipeline): 0
+   • Models in Supabase only (not in pipeline): 1
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
@@ -57,8 +57,10 @@ SUMMARY STATISTICS
 
 3. CATEGORIZED BREAKDOWN:
    • New models (pipeline only): 1
-     Models: Kat Coder
+     Models: KAT-Coder-Pro V1
    • Existing models with differences: 0
+   • Deprecated models (Supabase only): 1
+     Models: Kat Coder
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -324,13 +326,13 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
-MODEL: Kat Coder
+MODEL: KAT-Coder-Pro V1
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
 inference_provider        | OpenRouter                |                          
 model_provider            | Kwaipilot                 |                          
-human_readable_name       | Kat Coder                 |                          
+human_readable_name       | KAT-Coder-Pro V1          |                          
 model_provider_country    | China                     |                          
 official_url              | https://kwaipilot.ai/     |                          
 input_modalities          | Text                      |                          
@@ -341,6 +343,26 @@ license_name              | Apache-2.0                |
 license_url               | https://www.apache.org/.. |                          
 rate_limits               | 20 requests/min 50/day    |                          
 provider_api_access       | https://openrouter.ai/s.. |                          
+
+================================================================================
+
+MODEL: Kat Coder
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        |                           | OpenRouter               
+model_provider            |                           | Kwaipilot                
+human_readable_name       |                           | Kat Coder                
+model_provider_country    |                           | China                    
+official_url              |                           | https://kwaipilot.ai/    
+input_modalities          |                           | Text                     
+output_modalities         |                           | Text                     
+license_info_text         |                           | info                     
+license_info_url          |                           | https://kat-coder.org/   
+license_name              |                           | Apache-2.0               
+license_url               |                           | https://www.apache.org/..
+rate_limits               |                           | 20 requests/min 50/day   
+provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 

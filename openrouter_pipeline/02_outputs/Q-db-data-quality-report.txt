@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-11-11 04:01 PM IST
+Generated: 2025-11-12 07:11 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -289,7 +289,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 23. Kat Coder
+ 23. KAT-Coder-Pro V1
      Provider           : Kwaipilot (China)
      Modalities         : Text → Text
      License            : Apache-2.0

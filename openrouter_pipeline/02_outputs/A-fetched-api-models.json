@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-11 04:01 PM IST",
+    "generated_at": "2025-11-12 07:11 AM IST",
     "total_models": 342,
     "pipeline_stage": "A_fetch_api_models"
   },
@@ -9,7 +9,7 @@
       "id": "kwaipilot/kat-coder-pro:free",
       "canonical_slug": "kwaipilot/kat-coder-pro-v1",
       "hugging_face_id": "",
-      "name": "Kwaipilot: Kat Coder (free)",
+      "name": "Kwaipilot: KAT-Coder-Pro V1 (free)",
       "created": 1762745912,
       "description": "KAT-Coder-Pro V1 is KwaiKAT's most advanced agentic coding model in the KAT-Coder series. Designed specifically for agentic coding tasks, it excels in real-world software engineering scenarios, achieving 73.4% solve rate on the SWE-Bench Verified benchmark. \n\nThe model has been optimized for tool-use capability, multi-turn interaction, instruction following, generalization, and comprehensive capabilities through a multi-stage training process, including mid-training, supervised fine-tuning (SFT), reinforcement fine-tuning (RFT), and scalable agentic RL.",
       "context_length": 256000,
@@ -182,17 +182,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000006",
-        "completion": "0.0000025",
+        "prompt": "0.00000055",
+        "completion": "0.00000225",
         "request": "0",
         "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000015"
+        "internal_reasoning": "0"
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 262144,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -1938,8 +1937,10 @@
         "min_p",
         "presence_penalty",
         "repetition_penalty",
+        "response_format",
         "seed",
         "stop",
+        "structured_outputs",
         "temperature",
         "top_k",
         "top_p"
@@ -12228,7 +12229,7 @@
       "name": "Mistral: Codestral 2501",
       "created": 1736895522,
       "description": "[Mistral](/mistralai)'s cutting-edge language model for coding. Codestral specializes in low-latency, high-frequency tasks such as fill-in-the-middle (FIM), code correction and test generation. \n\nLearn more on their blog post: https://mistral.ai/news/codestral-2501/",
-      "context_length": 262144,
+      "context_length": 256000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -12249,7 +12250,7 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 262144,
+        "context_length": 256000,
         "max_completion_tokens": null,
         "is_moderated": false
       },
@@ -16627,8 +16628,8 @@
         "instruct_type": "airoboros"
       },
       "pricing": {
-        "prompt": "0.000004",
-        "completion": "0.0000055",
+        "prompt": "0.000006",
+        "completion": "0.000008",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -16636,7 +16637,7 @@
       },
       "top_provider": {
         "context_length": 6144,
-        "max_completion_tokens": 512,
+        "max_completion_tokens": 1024,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -16651,7 +16652,6 @@
         "response_format",
         "seed",
         "stop",
-        "structured_outputs",
         "temperature",
         "top_a",
         "top_k",
