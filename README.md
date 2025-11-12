@@ -2,6 +2,35 @@
 
 Automated multi-pipeline system for discovering, enriching, and managing AI model metadata from OpenRouter, Google AI, and Groq. Deploys curated datasets to Supabase database for production use by [askme](https://github.com/vn6295337/askme) and [ai-land](https://github.com/vn6295337/ai-land).
 
+## 🏗️ System Architecture
+
+  This repository is part of a 3-tier AI Intelligence System:
+
+  ```
+  ┌─────────────────────────────────────────────────────────────────┐
+  │                  AI INTELLIGENCE SYSTEM                         │
+  ├─────────────────────────────────────────────────────────────────┤
+  │                                                                 │
+  │  [1] Discovery Pipeline  →  [2] Dashboard  →  [3] API Gateway   │
+  │                                                                 │
+  │      ai-models-           ai-land             askme-cli         │
+  │      discoverer_v3                                              │
+  │                                                                 │
+  │  • 8-stage automation    • Real-time viz     • Smart routing    │
+  │  • Daily updates         • 75+ models        • Multi-provider   │
+  │  • Zero manual work      • Decision support  • Secure access    │
+  └─────────────────────────────────────────────────────────────────┘
+  ```
+
+  **🔗 Related Repositories:**
+  - **[ai-models-discoverer_v3](https://github.com/vn6295337/ai-models-discoverer_v3)** - Automated discovery pipeline *(you are 
+  here)*
+  - **[ai-land](https://github.com/vn6295337/ai-land)** - Decision intelligence dashboard
+  - **[askme-cli](https://github.com/vn6295337/askme)** - Unified API gateway
+
+  **📊 Data Flow:**
+  Discovery Pipeline → Supabase (`ai_models_main` table) → Dashboard + API Gateway
+
 ## Overview
 
 Production-grade data pipeline system that:
