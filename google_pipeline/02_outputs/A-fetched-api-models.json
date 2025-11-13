@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-11-12 07:12:33 IST",
-    "total_models": 65,
+    "generated": "2025-11-13 07:13:24 IST",
+    "total_models": 63,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -873,28 +873,6 @@
       "version": "2.0",
       "displayName": "Veo 2",
       "description": "Vertex served Veo 2 model. Access to this model requires billing to be enabled on the associated Google Cloud Platform account. Please visit https://console.cloud.google.com/billing to enable it.",
-      "inputTokenLimit": 480,
-      "outputTokenLimit": 8192,
-      "supportedGenerationMethods": [
-        "predictLongRunning"
-      ]
-    },
-    {
-      "name": "models/veo-3.0-generate-preview",
-      "version": "3.0",
-      "displayName": "Veo 3",
-      "description": "Veo 3 preview.",
-      "inputTokenLimit": 480,
-      "outputTokenLimit": 8192,
-      "supportedGenerationMethods": [
-        "predictLongRunning"
-      ]
-    },
-    {
-      "name": "models/veo-3.0-fast-generate-preview",
-      "version": "3.0",
-      "displayName": "Veo 3 fast",
-      "description": "Veo 3 fast preview.",
       "inputTokenLimit": 480,
       "outputTokenLimit": 8192,
       "supportedGenerationMethods": [
