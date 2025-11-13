@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-12 07:11 AM IST",
-    "total_models": 33,
+    "generated_at": "2025-11-13 07:12 AM IST",
+    "total_models": 32,
     "pipeline_stage": "F_fetch_other_license_names_from_hf"
   },
   "models": [
@@ -11,13 +11,6 @@
       "name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
       "extracted_license": "nvidia-open-model-license"
-    },
-    {
-      "id": "minimax/minimax-m2:free",
-      "canonical_slug": "minimax/minimax-m2",
-      "name": "MiniMax: MiniMax M2 (free)",
-      "hugging_face_id": "MiniMaxAI/MiniMax-M2",
-      "extracted_license": "mit"
     },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b:free",

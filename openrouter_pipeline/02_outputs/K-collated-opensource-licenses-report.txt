@@ -1,22 +1,22 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-11-12 07:11 AM IST
+Generated: 2025-11-13 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 29
+  Total models        : 28
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 29 models
-  Stage H Opensource Names       : 29 models
-  Stage I Opensource URLs        : 29 models
+  Stage E (License Info URLs)    : 28 models
+  Stage H Opensource Names       : 28 models
+  Stage I Opensource URLs        : 28 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
   16 models: Apache-2.0
-  12 models: MIT
+  11 models: MIT
    1 models: Llama-3.1
 
 Total unique license types: 3
@@ -374,21 +374,7 @@ MODEL 25: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 26: minimax/minimax-m2
---------------------------------------------------
-  ID: minimax/minimax-m2:free
-  Original Name: MiniMax: MiniMax M2 (free)
-  HuggingFace ID: MiniMaxAI/MiniMax-M2
-  Canonical Slug: minimax/minimax-m2
-  Clean Model Name: MiniMax M2
-  License Info Text: info
-  License Info URL: https://huggingface.co/MiniMaxAI/MiniMax-M2/blob/main/README.md
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-
-================================================================================
-
-MODEL 27: tngtech/deepseek-r1t-chimera
+MODEL 26: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -402,7 +388,7 @@ MODEL 27: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 28: tngtech/deepseek-r1t2-chimera
+MODEL 27: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -416,7 +402,7 @@ MODEL 28: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 29: z-ai/glm-4.5-air
+MODEL 28: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

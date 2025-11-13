@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-12 07:11 AM IST",
-    "total_models": 45,
+    "generated_at": "2025-11-13 07:12 AM IST",
+    "total_models": 44,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -29,16 +29,7 @@
       "original_name": "NVIDIA: Nemotron Nano 12B 2 VL (free)",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16",
       "clean_model_name": "Nemotron Nano 12B 2 VL",
-      "raw_input_modalities": "image, text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "minimax/minimax-m2:free",
-      "canonical_slug": "minimax/minimax-m2",
-      "original_name": "MiniMax: MiniMax M2 (free)",
-      "hugging_face_id": "MiniMaxAI/MiniMax-M2",
-      "clean_model_name": "MiniMax M2",
-      "raw_input_modalities": "text",
+      "raw_input_modalities": "image, text, video",
       "raw_output_modalities": "text"
     },
     {

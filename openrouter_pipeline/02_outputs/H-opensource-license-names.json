@@ -1,17 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2025-11-12 07:11 AM IST",
-    "total_models": 29,
+    "generated_at": "2025-11-13 07:12 AM IST",
+    "total_models": 28,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
-    {
-      "id": "minimax/minimax-m2:free",
-      "canonical_slug": "minimax/minimax-m2",
-      "name": "MiniMax: MiniMax M2 (free)",
-      "hugging_face_id": "MiniMaxAI/MiniMax-M2",
-      "license_name": "MIT"
-    },
     {
       "id": "alibaba/tongyi-deepresearch-30b-a3b:free",
       "canonical_slug": "alibaba/tongyi-deepresearch-30b-a3b",

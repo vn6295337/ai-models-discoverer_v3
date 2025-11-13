@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-11-12 07:11 AM IST
+Generated: 2025-11-13 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 45
+  Total models        : 44
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,12 +13,12 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 4 models
   Google: 5 models
   Meta: 5 models
-  Opensource: 29 models
+  Opensource: 28 models
   Proprietary: 2 models
 
 FINAL LICENSE DISTRIBUTION:
   17 models: Apache-2.0
-  12 models: MIT
+  11 models: MIT
    5 models: Gemma
    2 models: Llama-3.3
    2 models: Llama-4
@@ -619,22 +619,7 @@ MODEL 39: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 40: minimax/minimax-m2
---------------------------------------------------
-  ID: minimax/minimax-m2:free
-  Original Name: MiniMax: MiniMax M2 (free)
-  HuggingFace ID: MiniMaxAI/MiniMax-M2
-  Canonical Slug: minimax/minimax-m2
-  Clean Model Name: MiniMax M2
-  License Info Text: info
-  License Info URL: https://huggingface.co/MiniMaxAI/MiniMax-M2/blob/main/README.md
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 41: tngtech/deepseek-r1t-chimera
+MODEL 40: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -649,7 +634,7 @@ MODEL 41: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 42: tngtech/deepseek-r1t2-chimera
+MODEL 41: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -664,7 +649,7 @@ MODEL 42: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 43: z-ai/glm-4.5-air
+MODEL 42: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -679,7 +664,7 @@ MODEL 43: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 44: kwaipilot/kat-coder-pro-v1
+MODEL 43: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -694,7 +679,7 @@ MODEL 44: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 45: x-ai/grok-4-fast
+MODEL 44: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast

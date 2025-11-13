@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-11-12 07:11 AM IST
+Generated: 2025-11-13 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 45
+  Total models      : 44
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -35,24 +35,22 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Kwaipilot
    1 models: Meituan
    1 models: Microsoft
-   1 models: MiniMax
    1 models: Moonshot AI
    1 models: Nous Research
    1 models: OpenAI
    1 models: Unknown
    1 models: Z.AI
 
-Total unique model providers: 18
+Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   19 models: China
   17 models: United States
    5 models: France
    2 models: Germany
-   1 models: Singapore
    1 models: Unknown
 
-Total unique countries: 6
+Total unique countries: 5
 
 MODEL FAMILY DISTRIBUTION:
    9 models: alibaba cloud
@@ -67,14 +65,13 @@ MODEL FAMILY DISTRIBUTION:
    1 models: kwaipilot
    1 models: meituan
    1 models: microsoft
-   1 models: minimax
    1 models: moonshot ai
    1 models: nous research
    1 models: openai
    1 models: openrouter
    1 models: z.ai
 
-Total unique model families: 18
+Total unique model families: 17
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -499,21 +496,7 @@ MODEL 30: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 31: minimax/minimax-m2
---------------------------------------------------
-  ID: minimax/minimax-m2:free
-  Original Name: MiniMax: MiniMax M2 (free)
-  HuggingFace ID: MiniMaxAI/MiniMax-M2
-  Canonical Slug: minimax/minimax-m2
-  Clean Model Name: MiniMax M2
-  Model Provider: MiniMax
-  Model Provider Country: Singapore
-  Model Family: minimax
-  Official URL: https://www.minimax.io/
-
-================================================================================
-
-MODEL 32: mistralai/mistral-7b-instruct
+MODEL 31: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -527,7 +510,7 @@ MODEL 32: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 33: mistralai/mistral-nemo
+MODEL 32: mistralai/mistral-nemo
 --------------------------------------------------
   ID: mistralai/mistral-nemo:free
   Original Name: Mistral: Mistral Nemo (free)
@@ -541,7 +524,7 @@ MODEL 33: mistralai/mistral-nemo
 
 ================================================================================
 
-MODEL 34: mistralai/mistral-small-24b-instruct-2501
+MODEL 33: mistralai/mistral-small-24b-instruct-2501
 --------------------------------------------------
   ID: mistralai/mistral-small-24b-instruct-2501:free
   Original Name: Mistral: Mistral Small 3 (free)
@@ -555,7 +538,7 @@ MODEL 34: mistralai/mistral-small-24b-instruct-2501
 
 ================================================================================
 
-MODEL 35: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 34: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -569,7 +552,7 @@ MODEL 35: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 36: mistralai/mistral-small-3.2-24b-instruct-2506
+MODEL 35: mistralai/mistral-small-3.2-24b-instruct-2506
 --------------------------------------------------
   ID: mistralai/mistral-small-3.2-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.2 24B (free)
@@ -583,7 +566,7 @@ MODEL 36: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 37: moonshotai/kimi-k2
+MODEL 36: moonshotai/kimi-k2
 --------------------------------------------------
   ID: moonshotai/kimi-k2:free
   Original Name: MoonshotAI: Kimi K2 0711 (free)
@@ -597,7 +580,7 @@ MODEL 37: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 38: nousresearch/hermes-3-llama-3.1-405b
+MODEL 37: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -611,7 +594,7 @@ MODEL 38: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 39: nvidia/nemotron-nano-12b-v2-vl
+MODEL 38: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -625,7 +608,7 @@ MODEL 39: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 40: nvidia/nemotron-nano-9b-v2
+MODEL 39: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -639,7 +622,7 @@ MODEL 40: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 41: openai/gpt-oss-20b
+MODEL 40: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -653,7 +636,7 @@ MODEL 41: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 42: openrouter/polaris-alpha
+MODEL 41: openrouter/polaris-alpha
 --------------------------------------------------
   ID: openrouter/polaris-alpha
   Original Name: Polaris Alpha
@@ -667,7 +650,7 @@ MODEL 42: openrouter/polaris-alpha
 
 ================================================================================
 
-MODEL 43: tngtech/deepseek-r1t-chimera
+MODEL 42: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -681,7 +664,7 @@ MODEL 43: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 44: tngtech/deepseek-r1t2-chimera
+MODEL 43: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -695,7 +678,7 @@ MODEL 44: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 45: z-ai/glm-4.5-air
+MODEL 44: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

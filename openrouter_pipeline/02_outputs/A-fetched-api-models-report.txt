@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-12 07:11 AM IST
+Generated: 2025-11-13 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 342
+  Total models: 341
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  47 models
@@ -306,12 +306,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - nova-premier-v1
     - nova-pro-v1
 
-  MiniMax      :   4 models
-    - minimax-01
-    - minimax-m1
-    - minimax-m2
-    - minimax-m2:free
-
   TNG          :   4 models
     - deepseek-r1t-chimera
     - deepseek-r1t-chimera:free
@@ -329,6 +323,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - l3.1-70b-hanami-x1
     - l3.1-euryale-70b
     - l3.3-euryale-70b
+
+  MiniMax      :   3 models
+    - minimax-01
+    - minimax-m1
+    - minimax-m2
 
   Deep Cogito  :   3 models
     - cogito-v2-preview-deepseek-671b
