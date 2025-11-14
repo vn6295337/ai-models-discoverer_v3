@@ -1,38 +1,23 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-11-13 07:12 AM IST
+Generated: 2025-11-14 07:12 AM IST
 ================================================================================
 
 SUMMARY:
   Input models         : 44
-  Models kept          : 43
-  Models removed       : 1
+  Models kept          : 44
+  Models removed       : 0
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
   Output               : R_filtered_db_data.json
 
-REMOVAL REASONS DISTRIBUTION:
-   1 models: Cloaked model
-
-Total removal reasons: 1
+NO MODELS REMOVED
 
 REMOVAL PROCESSING SUMMARY:
   Configured for removal: 7 models
-  Successfully removed: 1 models
-  ⚠ 6 models not found (check canonical slugs)
-
-DETAILED REMOVED MODEL INFORMATION:
-================================================================================
-
-REMOVED MODEL 1: openrouter/polaris-alpha
---------------------------------------------------
-  Provider ID: openrouter/polaris-alpha
-  Clean Model Name: Polaris Alpha
-  Canonical Slug: openrouter/polaris-alpha
-  Model Provider: Unknown
-  Model Family: Unknown
-  Removal Reason: Cloaked model
+  Successfully removed: 0 models
+  ⚠ 7 models not found (check canonical slugs)
 
 FINALIZED DATABASE DATA SUMMARY:
 ================================================================================
@@ -44,6 +29,7 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    5 models: Meta
    5 models: Mistral AI
    2 models: NVIDIA
+   2 models: OpenAI
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Cognitive Computations
@@ -52,12 +38,11 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Microsoft
    1 models: Moonshot AI
    1 models: Nous Research
-   1 models: OpenAI
    1 models: Z.AI
 
 Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  43 models: Unknown
+  44 models: Unknown
 
 Total families: 1

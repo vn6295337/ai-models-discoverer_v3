@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-13 07:12 AM IST",
+    "generated_at": "2025-11-14 07:12 AM IST",
     "total_models": 44,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
@@ -16,20 +16,6 @@
       "enhanced_input_modalities": "text",
       "enhanced_output_modalities": "text",
       "standardized_input_modalities": "Text",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model"
-    },
-    {
-      "id": "openrouter/polaris-alpha",
-      "canonical_slug": "openrouter/polaris-alpha",
-      "original_name": "Polaris Alpha",
-      "hugging_face_id": "",
-      "clean_model_name": "Polaris Alpha",
-      "raw_input_modalities": "text, image",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text, image",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text, Image",
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "no_google_model"
     },
@@ -95,6 +81,20 @@
       "original_name": "DeepSeek: DeepSeek V3.1 (free)",
       "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
       "clean_model_name": "DeepSeek V3.1",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text",
+      "enhanced_input_modalities": "text",
+      "enhanced_output_modalities": "text",
+      "standardized_input_modalities": "Text",
+      "standardized_output_modalities": "Text",
+      "google_enhancement_status": "no_google_model"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "canonical_slug": "openai/gpt-oss-120b",
+      "original_name": "OpenAI: gpt-oss-120b",
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "clean_model_name": "GPT OSS 120B",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text",
       "enhanced_input_modalities": "text",

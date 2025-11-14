@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-13 07:12 AM IST",
-    "total_models": 44,
+    "generated_at": "2025-11-14 07:12 AM IST",
+    "total_models": 45,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -364,6 +364,18 @@
       "license_name": "NVIDIA",
       "license_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md",
       "source_category": "custom"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "canonical_slug": "openai/gpt-oss-120b",
+      "original_name": "OpenAI: gpt-oss-120b",
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "clean_model_name": "GPT OSS 120B",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/openai/gpt-oss-120b/blob/main/LICENSE",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "opensource"
     },
     {
       "id": "openai/gpt-oss-20b:free",

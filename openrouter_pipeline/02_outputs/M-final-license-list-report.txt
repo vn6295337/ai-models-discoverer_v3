@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-11-13 07:12 AM IST
+Generated: 2025-11-14 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 44
+  Total models        : 45
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,11 +13,11 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 4 models
   Google: 5 models
   Meta: 5 models
-  Opensource: 28 models
+  Opensource: 29 models
   Proprietary: 2 models
 
 FINAL LICENSE DISTRIBUTION:
-  17 models: Apache-2.0
+  18 models: Apache-2.0
   11 models: MIT
    5 models: Gemma
    2 models: Llama-3.3
@@ -349,7 +349,22 @@ MODEL 21: mistralai/mistral-small-3.2-24b-instruct-2506
 
 ================================================================================
 
-MODEL 22: openai/gpt-oss-20b
+MODEL 22: openai/gpt-oss-120b
+--------------------------------------------------
+  ID: openai/gpt-oss-120b
+  Original Name: OpenAI: gpt-oss-120b
+  HuggingFace ID: openai/gpt-oss-120b
+  Canonical Slug: openai/gpt-oss-120b
+  Clean Model Name: GPT OSS 120B
+  License Info Text: info
+  License Info URL: https://huggingface.co/openai/gpt-oss-120b/blob/main/LICENSE
+  License Name: Apache-2.0
+  License URL: https://www.apache.org/licenses/LICENSE-2.0
+  Source Category: opensource
+
+================================================================================
+
+MODEL 23: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -364,7 +379,7 @@ MODEL 22: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 23: qwen/qwen-2.5-coder-32b-instruct
+MODEL 24: qwen/qwen-2.5-coder-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen-2.5-coder-32b-instruct:free
   Original Name: Qwen2.5 Coder 32B Instruct (free)
@@ -379,7 +394,7 @@ MODEL 23: qwen/qwen-2.5-coder-32b-instruct
 
 ================================================================================
 
-MODEL 24: qwen/qwen2.5-vl-32b-instruct
+MODEL 25: qwen/qwen2.5-vl-32b-instruct
 --------------------------------------------------
   ID: qwen/qwen2.5-vl-32b-instruct:free
   Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
@@ -394,7 +409,7 @@ MODEL 24: qwen/qwen2.5-vl-32b-instruct
 
 ================================================================================
 
-MODEL 25: qwen/qwen3-14b-04-28
+MODEL 26: qwen/qwen3-14b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-14b:free
   Original Name: Qwen: Qwen3 14B (free)
@@ -409,7 +424,7 @@ MODEL 25: qwen/qwen3-14b-04-28
 
 ================================================================================
 
-MODEL 26: qwen/qwen3-235b-a22b-04-28
+MODEL 27: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -424,7 +439,7 @@ MODEL 26: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 27: qwen/qwen3-30b-a3b-04-28
+MODEL 28: qwen/qwen3-30b-a3b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-30b-a3b:free
   Original Name: Qwen: Qwen3 30B A3B (free)
@@ -439,7 +454,7 @@ MODEL 27: qwen/qwen3-30b-a3b-04-28
 
 ================================================================================
 
-MODEL 28: qwen/qwen3-4b-04-28
+MODEL 29: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -454,7 +469,7 @@ MODEL 28: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 29: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 30: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -469,7 +484,7 @@ MODEL 29: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 30: venice/uncensored
+MODEL 31: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -484,7 +499,7 @@ MODEL 30: venice/uncensored
 
 ================================================================================
 
-MODEL 31: nousresearch/hermes-3-llama-3.1-405b
+MODEL 32: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -499,7 +514,7 @@ MODEL 31: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 32: deepseek/deepseek-chat-v3-0324
+MODEL 33: deepseek/deepseek-chat-v3-0324
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3-0324:free
   Original Name: DeepSeek: DeepSeek V3 0324 (free)
@@ -514,7 +529,7 @@ MODEL 32: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 33: deepseek/deepseek-chat-v3.1
+MODEL 34: deepseek/deepseek-chat-v3.1
 --------------------------------------------------
   ID: deepseek/deepseek-chat-v3.1:free
   Original Name: DeepSeek: DeepSeek V3.1 (free)
@@ -529,7 +544,7 @@ MODEL 33: deepseek/deepseek-chat-v3.1
 
 ================================================================================
 
-MODEL 34: deepseek/deepseek-r1
+MODEL 35: deepseek/deepseek-r1
 --------------------------------------------------
   ID: deepseek/deepseek-r1:free
   Original Name: DeepSeek: R1 (free)
@@ -544,7 +559,7 @@ MODEL 34: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 35: deepseek/deepseek-r1-0528
+MODEL 36: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -559,7 +574,7 @@ MODEL 35: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 36: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 37: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
   Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
@@ -574,7 +589,7 @@ MODEL 36: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 37: deepseek/deepseek-r1-distill-llama-70b
+MODEL 38: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -589,7 +604,7 @@ MODEL 37: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 38: meituan/longcat-flash-chat
+MODEL 39: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -604,7 +619,7 @@ MODEL 38: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 39: microsoft/mai-ds-r1
+MODEL 40: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -619,7 +634,7 @@ MODEL 39: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 40: tngtech/deepseek-r1t-chimera
+MODEL 41: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -634,7 +649,7 @@ MODEL 40: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 41: tngtech/deepseek-r1t2-chimera
+MODEL 42: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -649,7 +664,7 @@ MODEL 41: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 42: z-ai/glm-4.5-air
+MODEL 43: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -664,7 +679,7 @@ MODEL 42: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 43: kwaipilot/kat-coder-pro-v1
+MODEL 44: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -679,7 +694,7 @@ MODEL 43: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 44: x-ai/grok-4-fast
+MODEL 45: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast

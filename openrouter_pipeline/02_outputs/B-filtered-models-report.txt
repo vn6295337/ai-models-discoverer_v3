@@ -1,18 +1,18 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-13 07:12 AM IST
+Generated: 2025-11-14 07:12 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 341
+  Total models processed: 344
   Models passed all filters: 44
-  Models excluded: 297
-  Success rate: 12.9%
+  Models excluded: 300
+  Success rate: 12.8%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 341 models
-    Excluded: 295 models (non-free pricing)
+    Input: 344 models
+    Excluded: 298 models (non-free pricing)
     Remaining: 46 models
 
   Step 2 - Billing Description Filter:
@@ -33,7 +33,7 @@ STEP-BY-STEP FILTERING BREAKDOWN:
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 295 models with non-free pricing (details omitted due to volume)
+Excluded 298 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -194,6 +194,17 @@ PROVIDER: NVIDIA (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: OPENAI (2 models)
+--------------------------------------------------
+   1. OpenAI: gpt-oss-120b
+      ID: openai/gpt-oss-120b
+      Pricing: prompt=0, completion=0, request=0
+
+   2. OpenAI: gpt-oss-20b (free)
+      ID: openai/gpt-oss-20b:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: TNG (2 models)
 --------------------------------------------------
    1. TNG: DeepSeek R1T Chimera (free)
@@ -223,13 +234,6 @@ PROVIDER: KWAIPILOT (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENROUTER (1 models)
---------------------------------------------------
-   1. Polaris Alpha
-      ID: openrouter/polaris-alpha
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: ALIBABA (1 models)
 --------------------------------------------------
    1. Tongyi DeepResearch 30B A3B (free)
@@ -241,13 +245,6 @@ PROVIDER: MEITUAN (1 models)
 --------------------------------------------------
    1. Meituan: LongCat Flash Chat (free)
       ID: meituan/longcat-flash-chat:free
-      Pricing: prompt=0, completion=0, request=0
-
-
-PROVIDER: OPENAI (1 models)
---------------------------------------------------
-   1. OpenAI: gpt-oss-20b (free)
-      ID: openai/gpt-oss-20b:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -295,11 +292,11 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 19
+  Total providers: 18
   Total models passed all filters: 44
-  Models excluded by pricing: 295
+  Models excluded by pricing: 298
   Models excluded by billing description: 0
   Models excluded by keywords: 2
   Models excluded by deduplication: 0
-  Total exclusions: 297
+  Total exclusions: 300
   ✓ All filtered models accounted for

@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-11-13 07:12 AM IST
+Generated: 2025-11-14 07:12 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,7 +9,7 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (15 models):
+LICENSE INFO TEXT (14 models):
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
@@ -23,10 +23,9 @@ LICENSE INFO TEXT (15 models):
   - Llama 4 Scout
   - Nemotron Nano 12B 2 VL
   - Nemotron Nano 9B V2
-  - Polaris Alpha
   - Qwen2.5 72B Instruct
 
-LICENSE INFO URL (15 models):
+LICENSE INFO URL (14 models):
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
@@ -40,29 +39,17 @@ LICENSE INFO URL (15 models):
   - Llama 4 Scout
   - Nemotron Nano 12B 2 VL
   - Nemotron Nano 9B V2
-  - Polaris Alpha
   - Qwen2.5 72B Instruct
-
-LICENSE NAME (1 models):
-  - Polaris Alpha
-
-LICENSE URL (1 models):
-  - Polaris Alpha
 
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
-
-MODEL PROVIDER (1 models):
-  - Polaris Alpha
+✓ No unknown values found
 
 DATA QUALITY SUMMARY:
 ------------------------------
 Total models: 44
-Missing license info text: 15 (34.1%)
-Missing license info url: 15 (34.1%)
-Missing license name: 1 (2.3%)
-Missing license url: 1 (2.3%)
-Unknown model provider: 1 (2.3%)
+Missing license info text: 14 (31.8%)
+Missing license info url: 14 (31.8%)
 
 ================================================================================
 
@@ -459,7 +446,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 40. GPT OSS 20B
+ 40. GPT OSS 120B
      Provider           : OpenAI (United States)
      Modalities         : Text → Text
      License            : Apache-2.0
@@ -469,7 +456,17 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 41. DeepSeek R1T Chimera
+ 41. GPT OSS 20B
+     Provider           : OpenAI (United States)
+     Modalities         : Text → Text
+     License            : Apache-2.0
+     License Info       : info
+     License URL        : https://www.apache.org/licenses/LICENSE-2.0
+     Official URL       : https://openai.com/
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 42. DeepSeek R1T Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -479,23 +476,13 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 42. DeepSeek R1T2 Chimera
+ 43. DeepSeek R1T2 Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
      License Info       : info
      License URL        : https://opensource.org/licenses/MIT
      Official URL       : https://tngtech.com
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 43. Polaris Alpha
-     Provider           : Unknown (Unknown)
-     Modalities         : Text, Image → Text
-     License            : 
-     License Info       : 
-     License URL        : 
-     Official URL       : Unknown
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
