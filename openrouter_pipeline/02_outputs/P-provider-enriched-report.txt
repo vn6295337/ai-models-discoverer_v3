@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-11-14 07:12 AM IST
+Generated: 2025-11-15 07:08 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 44
+  Total models      : 43
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -19,7 +19,6 @@ MODEL PROVIDER DISTRIBUTION:
    5 models: Meta
    5 models: Mistral AI
    2 models: NVIDIA
-   2 models: OpenAI
    2 models: TNG Technology
    1 models: ArliAI
    1 models: Cognitive Computations
@@ -28,13 +27,14 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Microsoft
    1 models: Moonshot AI
    1 models: Nous Research
+   1 models: OpenAI
    1 models: Z.AI
 
 Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   19 models: China
-  18 models: United States
+  17 models: United States
    5 models: France
    2 models: Germany
 
@@ -47,7 +47,6 @@ MODEL FAMILY DISTRIBUTION:
    5 models: meta
    5 models: mistral ai
    2 models: nvidia
-   2 models: openai
    2 models: tng technology
    1 models: arliai
    1 models: cognitive computations
@@ -56,6 +55,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: microsoft
    1 models: moonshot ai
    1 models: nous research
+   1 models: openai
    1 models: z.ai
 
 Total unique model families: 16
@@ -609,21 +609,7 @@ MODEL 39: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 40: openai/gpt-oss-120b
---------------------------------------------------
-  ID: openai/gpt-oss-120b
-  Original Name: OpenAI: gpt-oss-120b
-  HuggingFace ID: openai/gpt-oss-120b
-  Canonical Slug: openai/gpt-oss-120b
-  Clean Model Name: GPT OSS 120B
-  Model Provider: OpenAI
-  Model Provider Country: United States
-  Model Family: openai
-  Official URL: https://openai.com/
-
-================================================================================
-
-MODEL 41: openai/gpt-oss-20b
+MODEL 40: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -637,7 +623,7 @@ MODEL 41: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 42: tngtech/deepseek-r1t-chimera
+MODEL 41: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -651,7 +637,7 @@ MODEL 42: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 43: tngtech/deepseek-r1t2-chimera
+MODEL 42: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -665,7 +651,7 @@ MODEL 43: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 44: z-ai/glm-4.5-air
+MODEL 43: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

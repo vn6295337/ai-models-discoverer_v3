@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-14 07:12 AM IST
+Generated: 2025-11-15 07:08 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
   Total models processed: 344
-  Models passed all filters: 44
-  Models excluded: 300
-  Success rate: 12.8%
+  Models passed all filters: 43
+  Models excluded: 301
+  Success rate: 12.5%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
     Input: 344 models
-    Excluded: 298 models (non-free pricing)
-    Remaining: 46 models
+    Excluded: 299 models (non-free pricing)
+    Remaining: 45 models
 
   Step 2 - Billing Description Filter:
-    Input: 46 models
+    Input: 45 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 46 models
+    Remaining: 45 models
 
   Step 3 - Keyword Filter:
-    Input: 46 models
+    Input: 45 models
     Excluded: 2 models (preview/experimental/beta)
-    Remaining: 44 models
+    Remaining: 43 models
 
   Step 4 - Deduplication Filter:
-    Input: 44 models
+    Input: 43 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 44 models
+    Final: 43 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 298 models with non-free pricing (details omitted due to volume)
+Excluded 299 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -194,17 +194,6 @@ PROVIDER: NVIDIA (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENAI (2 models)
---------------------------------------------------
-   1. OpenAI: gpt-oss-120b
-      ID: openai/gpt-oss-120b
-      Pricing: prompt=0, completion=0, request=0
-
-   2. OpenAI: gpt-oss-20b (free)
-      ID: openai/gpt-oss-20b:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: TNG (2 models)
 --------------------------------------------------
    1. TNG: DeepSeek R1T Chimera (free)
@@ -245,6 +234,13 @@ PROVIDER: MEITUAN (1 models)
 --------------------------------------------------
    1. Meituan: LongCat Flash Chat (free)
       ID: meituan/longcat-flash-chat:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: OPENAI (1 models)
+--------------------------------------------------
+   1. OpenAI: gpt-oss-20b (free)
+      ID: openai/gpt-oss-20b:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -293,10 +289,10 @@ PROVIDER: NOUS (1 models)
 ================================================================================
 FINAL SUMMARY:
   Total providers: 18
-  Total models passed all filters: 44
-  Models excluded by pricing: 298
+  Total models passed all filters: 43
+  Models excluded by pricing: 299
   Models excluded by billing description: 0
   Models excluded by keywords: 2
   Models excluded by deduplication: 0
-  Total exclusions: 300
+  Total exclusions: 301
   ✓ All filtered models accounted for

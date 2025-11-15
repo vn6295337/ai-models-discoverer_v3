@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-11-14 07:12 AM IST
+Generated: 2025-11-15 07:08 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -47,9 +47,9 @@ UNKNOWN OR 'NOT FOUND' VALUES:
 
 DATA QUALITY SUMMARY:
 ------------------------------
-Total models: 44
-Missing license info text: 14 (31.8%)
-Missing license info url: 14 (31.8%)
+Total models: 43
+Missing license info text: 14 (32.6%)
+Missing license info url: 14 (32.6%)
 
 ================================================================================
 
@@ -446,7 +446,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 40. GPT OSS 120B
+ 40. GPT OSS 20B
      Provider           : OpenAI (United States)
      Modalities         : Text → Text
      License            : Apache-2.0
@@ -456,17 +456,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 41. GPT OSS 20B
-     Provider           : OpenAI (United States)
-     Modalities         : Text → Text
-     License            : Apache-2.0
-     License Info       : info
-     License URL        : https://www.apache.org/licenses/LICENSE-2.0
-     Official URL       : https://openai.com/
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 42. DeepSeek R1T Chimera
+ 41. DeepSeek R1T Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -476,7 +466,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 43. DeepSeek R1T2 Chimera
+ 42. DeepSeek R1T2 Chimera
      Provider           : TNG Technology (Germany)
      Modalities         : Text → Text
      License            : MIT
@@ -486,7 +476,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 44. GLM 4.5 Air
+ 43. GLM 4.5 Air
      Provider           : Z.AI (China)
      Modalities         : Text → Text
      License            : MIT
