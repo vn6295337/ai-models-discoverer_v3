@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-16 07:16 AM IST
+Generated: 2025-11-16 10:41 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 45
-   • Total records in pipeline: 42
+   • Total unique model names: 43
+   • Total records in pipeline: 40
    • Total records in Supabase: 43
    • Models in both systems: 40
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 2
+   • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 3
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -56,8 +56,6 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 2
-     Models: Sherlock Dash Alpha, Sherlock Think Alpha
    • Existing models with differences: 0
    • Deprecated models (Supabase only): 3
      Models: Llama 3.3 8B Instruct, Llama 4 Maverick, Llama 4 Scout
@@ -883,46 +881,6 @@ license_name              | MIT                       | MIT
 license_url               | https://opensource.org/.. | https://opensource.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Sherlock Dash Alpha
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
-human_readable_name       | Sherlock Dash Alpha       |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
-
-================================================================================
-
-MODEL: Sherlock Think Alpha
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
-human_readable_name       | Sherlock Think Alpha      |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
 
 ================================================================================
 
