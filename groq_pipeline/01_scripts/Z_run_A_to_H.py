@@ -272,8 +272,7 @@ def generate_execution_report(results: List[Tuple[Dict, bool, str, float]]) -> s
 
 def save_execution_report(report_content: str) -> str:
     """Save execution report to file"""
-    timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-    report_file = f"../02_outputs/Z-groq-pipeline-A-to-H-report-{timestamp}.txt"
+    report_file = f"../02_outputs/Z-groq-pipeline-A-to-H-report.txt"
 
     try:
         os.makedirs("../02_outputs", exist_ok=True)
