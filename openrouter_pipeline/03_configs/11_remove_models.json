@@ -1,6 +1,6 @@
 {
   "description": "Models to remove from final database data with reasons",
-  "last_updated": "2025-01-15",
+  "last_updated": "2025-11-16",
   "models_to_remove": [
     {
       "canonical_slug": "cognitivecomputations/dolphin3.0-mistral-24b",
@@ -29,6 +29,14 @@
     {
       "canonical_slug": "openrouter/polaris-alpha",
       "reason": "Cloaked model"
+    },
+    {
+      "canonical_slug": "openrouter/sherlock-think-alpha",
+      "reason": "Cloaked model, unknown origin"
+    },
+    {
+      "canonical_slug": "openrouter/sherlock-dash-alpha",
+      "reason": "Cloaked model, unknown origin"
     }
   ]
 }
