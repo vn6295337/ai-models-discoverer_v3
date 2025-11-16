@@ -1,43 +1,10 @@
 {
   "metadata": {
-    "generated_at": "2025-11-15 07:08 AM IST",
-    "total_models": 5,
+    "generated_at": "2025-11-16 07:16 AM IST",
+    "total_models": 2,
     "pipeline_stage": "D_extract_meta_licenses"
   },
   "models": [
-    {
-      "id": "meta-llama/llama-3.3-8b-instruct:free",
-      "canonical_slug": "meta-llama/llama-3.3-8b-instruct",
-      "original_name": "Meta: Llama 3.3 8B Instruct (free)",
-      "hugging_face_id": "",
-      "clean_model_name": "Llama 3.3 8B Instruct",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "Llama-3.3",
-      "license_url": "https://www.llama.com/llama3_3/license/"
-    },
-    {
-      "id": "meta-llama/llama-4-maverick:free",
-      "canonical_slug": "meta-llama/llama-4-maverick-17b-128e-instruct",
-      "original_name": "Meta: Llama 4 Maverick (free)",
-      "hugging_face_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-      "clean_model_name": "Llama 4 Maverick",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "Llama-4",
-      "license_url": "https://www.llama.com/llama4/license/"
-    },
-    {
-      "id": "meta-llama/llama-4-scout:free",
-      "canonical_slug": "meta-llama/llama-4-scout-17b-16e-instruct",
-      "original_name": "Meta: Llama 4 Scout (free)",
-      "hugging_face_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-      "clean_model_name": "Llama 4 Scout",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "Llama-4",
-      "license_url": "https://www.llama.com/llama4/license/"
-    },
     {
       "id": "meta-llama/llama-3.3-70b-instruct:free",
       "canonical_slug": "meta-llama/llama-3.3-70b-instruct",

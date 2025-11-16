@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-15 07:08 AM IST
+Generated: 2025-11-16 07:16 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 344
+  Total models: 342
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  51 models
@@ -163,28 +163,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemma-3n-e4b-it
     - gemma-3n-e4b-it:free
 
-  Meta         :  20 models
-    - llama-3-70b-instruct
-    - llama-3-8b-instruct
-    - llama-3.1-405b
-    - llama-3.1-405b-instruct
-    - llama-3.1-70b-instruct
-    - llama-3.1-8b-instruct
-    - llama-3.2-11b-vision-instruct
-    - llama-3.2-1b-instruct
-    - llama-3.2-3b-instruct
-    - llama-3.2-3b-instruct:free
-    - llama-3.2-90b-vision-instruct
-    - llama-3.3-70b-instruct
-    - llama-3.3-70b-instruct:free
-    - llama-3.3-8b-instruct:free
-    - llama-4-maverick
-    - llama-4-maverick:free
-    - llama-4-scout
-    - llama-4-scout:free
-    - llama-guard-2-8b
-    - llama-guard-4-12b
-
   DeepSeek     :  19 models
     - deepseek-chat
     - deepseek-chat-v3-0324
@@ -206,13 +184,31 @@ PROVIDER BREAKDOWN (Descending Order):
     - deepseek-v3.1-terminus:exacto
     - deepseek-v3.2-exp
 
-  Anthropic    :  13 models
+  Meta         :  17 models
+    - llama-3-70b-instruct
+    - llama-3-8b-instruct
+    - llama-3.1-405b
+    - llama-3.1-405b-instruct
+    - llama-3.1-70b-instruct
+    - llama-3.1-8b-instruct
+    - llama-3.2-11b-vision-instruct
+    - llama-3.2-1b-instruct
+    - llama-3.2-3b-instruct
+    - llama-3.2-3b-instruct:free
+    - llama-3.2-90b-vision-instruct
+    - llama-3.3-70b-instruct
+    - llama-3.3-70b-instruct:free
+    - llama-4-maverick
+    - llama-4-scout
+    - llama-guard-2-8b
+    - llama-guard-4-12b
+
+  Anthropic    :  12 models
     - claude-3-haiku
     - claude-3-opus
     - claude-3.5-haiku
     - claude-3.5-haiku-20241022
     - claude-3.5-sonnet
-    - claude-3.5-sonnet-20240620
     - claude-3.7-sonnet
     - claude-3.7-sonnet:thinking
     - claude-haiku-4.5

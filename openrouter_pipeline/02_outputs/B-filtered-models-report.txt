@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-15 07:08 AM IST
+Generated: 2025-11-16 07:16 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 344
-  Models passed all filters: 43
-  Models excluded: 301
-  Success rate: 12.5%
+  Total models processed: 342
+  Models passed all filters: 42
+  Models excluded: 300
+  Success rate: 12.3%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 344 models
-    Excluded: 299 models (non-free pricing)
-    Remaining: 45 models
+    Input: 342 models
+    Excluded: 298 models (non-free pricing)
+    Remaining: 44 models
 
   Step 2 - Billing Description Filter:
-    Input: 45 models
+    Input: 44 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 45 models
+    Remaining: 44 models
 
   Step 3 - Keyword Filter:
-    Input: 45 models
+    Input: 44 models
     Excluded: 2 models (preview/experimental/beta)
-    Remaining: 43 models
+    Remaining: 42 models
 
   Step 4 - Deduplication Filter:
-    Input: 43 models
+    Input: 42 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 43 models
+    Final: 42 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 299 models with non-free pricing (details omitted due to volume)
+Excluded 298 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -160,26 +160,14 @@ PROVIDER: MISTRAL (5 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: META (5 models)
+PROVIDER: OPENROUTER (2 models)
 --------------------------------------------------
-   1. Meta: Llama 3.2 3B Instruct (free)
-      ID: meta-llama/llama-3.2-3b-instruct:free
+   1. Sherlock Dash Alpha
+      ID: openrouter/sherlock-dash-alpha
       Pricing: prompt=0, completion=0, request=0
 
-   2. Meta: Llama 3.3 70B Instruct (free)
-      ID: meta-llama/llama-3.3-70b-instruct:free
-      Pricing: prompt=0, completion=0, request=0
-
-   3. Meta: Llama 3.3 8B Instruct (free)
-      ID: meta-llama/llama-3.3-8b-instruct:free
-      Pricing: prompt=0, completion=0, request=0
-
-   4. Meta: Llama 4 Maverick (free)
-      ID: meta-llama/llama-4-maverick:free
-      Pricing: prompt=0, completion=0, request=0
-
-   5. Meta: Llama 4 Scout (free)
-      ID: meta-llama/llama-4-scout:free
+   2. Sherlock Think Alpha
+      ID: openrouter/sherlock-think-alpha
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -202,6 +190,17 @@ PROVIDER: TNG (2 models)
 
    2. TNG: DeepSeek R1T2 Chimera (free)
       ID: tngtech/deepseek-r1t2-chimera:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: META (2 models)
+--------------------------------------------------
+   1. Meta: Llama 3.2 3B Instruct (free)
+      ID: meta-llama/llama-3.2-3b-instruct:free
+      Pricing: prompt=0, completion=0, request=0
+
+   2. Meta: Llama 3.3 70B Instruct (free)
+      ID: meta-llama/llama-3.3-70b-instruct:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -288,11 +287,11 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 18
-  Total models passed all filters: 43
-  Models excluded by pricing: 299
+  Total providers: 19
+  Total models passed all filters: 42
+  Models excluded by pricing: 298
   Models excluded by billing description: 0
   Models excluded by keywords: 2
   Models excluded by deduplication: 0
-  Total exclusions: 301
+  Total exclusions: 300
   ✓ All filtered models accounted for
