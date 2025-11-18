@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-17 07:12 AM IST
+Generated: 2025-11-18 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 342
+  Total models: 340
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  51 models
@@ -339,10 +339,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - aion-1.0-mini
     - aion-rp-llama-3.1-8b
 
-  inclusionAI  :   2 models
-    - ling-1t
-    - ring-1t
-
   Meituan      :   2 models
     - longcat-flash-chat
     - longcat-flash-chat:free
@@ -419,4 +415,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer       :   1 models
     - weaver
 
-Total providers: 48
+Total providers: 47
