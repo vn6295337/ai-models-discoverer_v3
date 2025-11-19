@@ -1,51 +1,50 @@
 === GOOGLE MODELS FILTERING REPORT ===
-Generated: 2025-11-18 07:11:42 IST
+Generated: 2025-11-19 07:12:14 IST
 
 === SUMMARY ===
-Total Input Models: 62
+Total Input Models: 61
 Models Included: 24
-Models Excluded: 38
-Filtering Success Rate: 38.7%
+Models Excluded: 37
+Filtering Success Rate: 39.3%
 
 === EXCLUDED MODELS ===
  1. gemini-2.5-pro-preview-03-25
- 2. gemini-2.5-flash-preview-05-20
- 3. gemini-2.5-flash-lite-preview-06-17
- 4. gemini-2.5-pro-preview-05-06
- 5. gemini-2.5-pro-preview-06-05
- 6. gemini-2.0-flash-exp
- 7. gemini-2.0-flash-exp-image-generation
- 8. gemini-2.0-flash-lite-preview-02-05
- 9. gemini-2.0-flash-lite-preview
-10. gemini-2.0-pro-exp
-11. gemini-2.0-pro-exp-02-05
-12. gemini-exp-1206
-13. gemini-2.0-flash-thinking-exp-01-21
-14. gemini-2.0-flash-thinking-exp
-15. gemini-2.0-flash-thinking-exp-1219
-16. gemini-2.5-flash-preview-tts
-17. gemini-2.5-pro-preview-tts
-18. learnlm-2.0-flash-experimental
-19. gemini-flash-latest
-20. gemini-flash-lite-latest
-21. gemini-pro-latest
-22. gemini-2.5-flash-image-preview
-23. gemini-2.5-flash-image
-24. gemini-2.5-flash-preview-09-2025
-25. gemini-2.5-flash-lite-preview-09-2025
-26. gemini-robotics-er-1.5-preview
-27. gemini-2.5-computer-use-preview-10-2025
-28. gemini-embedding-exp-03-07
-29. gemini-embedding-exp
-30. imagen-4.0-generate-preview-06-06
-31. imagen-4.0-ultra-generate-preview-06-06
-32. veo-2.0-generate-001
-33. veo-3.1-generate-preview
-34. veo-3.1-fast-generate-preview
-35. gemini-live-2.5-flash-preview
-36. gemini-2.5-flash-live-preview
-37. gemini-2.5-flash-native-audio-latest
-38. gemini-2.5-flash-native-audio-preview-09-2025
+ 2. gemini-2.5-pro-preview-05-06
+ 3. gemini-2.5-pro-preview-06-05
+ 4. gemini-2.0-flash-exp
+ 5. gemini-2.0-flash-exp-image-generation
+ 6. gemini-2.0-flash-lite-preview-02-05
+ 7. gemini-2.0-flash-lite-preview
+ 8. gemini-2.0-pro-exp
+ 9. gemini-2.0-pro-exp-02-05
+10. gemini-exp-1206
+11. gemini-2.0-flash-thinking-exp-01-21
+12. gemini-2.0-flash-thinking-exp
+13. gemini-2.0-flash-thinking-exp-1219
+14. gemini-2.5-flash-preview-tts
+15. gemini-2.5-pro-preview-tts
+16. learnlm-2.0-flash-experimental
+17. gemini-flash-latest
+18. gemini-flash-lite-latest
+19. gemini-pro-latest
+20. gemini-2.5-flash-image-preview
+21. gemini-2.5-flash-image
+22. gemini-2.5-flash-preview-09-2025
+23. gemini-2.5-flash-lite-preview-09-2025
+24. gemini-3-pro-preview
+25. gemini-robotics-er-1.5-preview
+26. gemini-2.5-computer-use-preview-10-2025
+27. gemini-embedding-exp-03-07
+28. gemini-embedding-exp
+29. imagen-4.0-generate-preview-06-06
+30. imagen-4.0-ultra-generate-preview-06-06
+31. veo-2.0-generate-001
+32. veo-3.1-generate-preview
+33. veo-3.1-fast-generate-preview
+34. gemini-live-2.5-flash-preview
+35. gemini-2.5-flash-live-preview
+36. gemini-2.5-flash-native-audio-latest
+37. gemini-2.5-flash-native-audio-preview-09-2025
 
 === INCLUDED MODELS ===
  1. embedding-gecko-001
@@ -74,7 +73,7 @@ Filtering Success Rate: 38.7%
 24. gemini-2.0-flash-live-001
 
 === EXCLUSION BREAKDOWN ===
-33 models: Experimental/Preview model - production-ready models only
+32 models: Experimental/Preview model - production-ready models only
  1 models: Model requires billing/payment - free models only
  1 models: Preview model - gemini-2.5-flash-native-audio-preview-09-2025 (https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-live). Note: preview tag not mentioned in API response.
  1 models: Preview model - gemini-flash-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response.

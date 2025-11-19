@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-11-18 07:11:42 IST",
-    "total_models": 62,
+    "generated": "2025-11-19 07:12:14 IST",
+    "total_models": 61,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -37,48 +37,10 @@
       "thinking": true
     },
     {
-      "name": "models/gemini-2.5-flash-preview-05-20",
-      "version": "2.5-preview-05-20",
-      "displayName": "Gemini 2.5 Flash Preview 05-20",
-      "description": "Preview release (April 17th, 2025) of Gemini 2.5 Flash",
-      "inputTokenLimit": 1048576,
-      "outputTokenLimit": 65536,
-      "supportedGenerationMethods": [
-        "generateContent",
-        "countTokens",
-        "createCachedContent",
-        "batchGenerateContent"
-      ],
-      "temperature": 1,
-      "topP": 0.95,
-      "topK": 64,
-      "maxTemperature": 2,
-      "thinking": true
-    },
-    {
       "name": "models/gemini-2.5-flash",
       "version": "001",
       "displayName": "Gemini 2.5 Flash",
       "description": "Stable version of Gemini 2.5 Flash, our mid-size multimodal model that supports up to 1 million tokens, released in June of 2025.",
-      "inputTokenLimit": 1048576,
-      "outputTokenLimit": 65536,
-      "supportedGenerationMethods": [
-        "generateContent",
-        "countTokens",
-        "createCachedContent",
-        "batchGenerateContent"
-      ],
-      "temperature": 1,
-      "topP": 0.95,
-      "topK": 64,
-      "maxTemperature": 2,
-      "thinking": true
-    },
-    {
-      "name": "models/gemini-2.5-flash-lite-preview-06-17",
-      "version": "2.5-preview-06-17",
-      "displayName": "Gemini 2.5 Flash-Lite Preview 06-17",
-      "description": "Preview release (June 11th, 2025) of Gemini 2.5 Flash-Lite",
       "inputTokenLimit": 1048576,
       "outputTokenLimit": 65536,
       "supportedGenerationMethods": [
@@ -672,6 +634,25 @@
       "version": "2.5-preview-09-25",
       "displayName": "Gemini 2.5 Flash-Lite Preview Sep 2025",
       "description": "Preview release (Septempber 25th, 2025) of Gemini 2.5 Flash-Lite",
+      "inputTokenLimit": 1048576,
+      "outputTokenLimit": 65536,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "createCachedContent",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    {
+      "name": "models/gemini-3-pro-preview",
+      "version": "3-pro-preview-11-2025",
+      "displayName": "Gemini 3 Pro Preview",
+      "description": "Gemini 3 Pro Preview",
       "inputTokenLimit": 1048576,
       "outputTokenLimit": 65536,
       "supportedGenerationMethods": [
