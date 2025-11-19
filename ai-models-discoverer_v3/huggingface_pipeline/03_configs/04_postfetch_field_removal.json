@@ -1,0 +1,35 @@
+{
+  "description": "Post-fetch cleanup - Fields to remove from API responses at different pipeline stages to reduce data size and remove unnecessary metadata",
+  "common_exclude_keys": [
+    "spaces",
+    "siblings",
+    "widgetData",
+    "_id",
+    "likes",
+    "trendingScore",
+    "sha",
+    "downloads",
+    "createdAt"
+  ],
+  "additional_exclude_keys_for_detail_api": [
+    "lastModified",
+    "private"
+  ],
+  "usage": {
+    "fetch_stage": "Use 'common_exclude_keys' when fetching models list (A_fetch_api_models.py)",
+    "postfetch_stage": "Use 'common_exclude_keys' + 'additional_exclude_keys_for_detail_api' when fetching individual model details after post-fetch filtering"
+  },
+  "rationale": {
+    "spaces": "Not needed - reference to spaces using this model",
+    "siblings": "Not needed - list of related model files",
+    "widgetData": "Not needed - UI widget configuration data",
+    "_id": "Not needed - internal database ID",
+    "likes": "Not needed - social metric, not operational",
+    "trendingScore": "Not needed - social metric, not operational",
+    "sha": "Not needed - git commit hash",
+    "downloads": "Not needed - social metric, not operational",
+    "createdAt": "Not needed - creation timestamp, not operational",
+    "lastModified": "Not needed - modification timestamp, not operational",
+    "private": "Not needed - already filtered by gated=false"
+  }
+}

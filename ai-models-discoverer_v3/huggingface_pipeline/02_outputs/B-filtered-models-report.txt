@@ -1,0 +1,20 @@
+================================================================================
+HUGGINGFACE FILTERED MODELS REPORT
+Generated: 2025-10-05 12:58:44 UTC
+================================================================================
+
+SUMMARY:
+  Total models after filtering: 45741
+
+PIPELINE TAG DISTRIBUTION:
+  text-to-image: 41765
+  text-generation: 3963
+  text-to-video: 11
+  text-to-speech: 2
+
+Total pipeline tags: 4
+
+FILTERS APPLIED:
+  ✓ private = false
+
+NOTE: inference=warm filter applied at pre-fetch level (free serverless API only)

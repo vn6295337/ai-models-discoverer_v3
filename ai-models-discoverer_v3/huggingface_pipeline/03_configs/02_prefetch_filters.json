@@ -1,0 +1,41 @@
+{
+  "description": "Pre-fetch filters applied at HuggingFace API level (server-side filtering)",
+  "WARNING": "PIPELINE NOT VIABLE - HuggingFace free Inference API limited to ~100 requests/month ($0.10 credits). See ../PIPELINE_STATUS.txt for details.",
+  "benefits": [
+    "Less data transfer",
+    "Faster (API does the filtering)",
+    "More efficient"
+  ],
+  "references": {
+    "api_capabilities": "See ../HUGGINGFACE_API_REFERENCE.txt for complete API documentation",
+    "generative_modalities": "See ../GENERATIVE_MODALITIES.txt for all verified generative modalities and our selection criteria"
+  },
+  "active_filters": {
+    "pipeline_tag": {
+      "enabled": true,
+      "values": [
+        "text-generation",
+        "text-to-image",
+        "text-to-video",
+        "text-to-audio",
+        "text-to-speech"
+      ],
+      "description": "Filter for generative AI modalities only (see ../GENERATIVE_MODALITIES.txt for complete list)",
+      "api_parameter": "pipeline_tag",
+      "note": "Must fetch separately for each pipeline_tag value (API doesn't support multiple values in one call)"
+    },
+    "gated": {
+      "enabled": true,
+      "value": false,
+      "description": "Only ungated models (no access restrictions)",
+      "api_parameter": "gated"
+    },
+    "inference": {
+      "enabled": true,
+      "values": ["warm"],
+      "description": "Only models with free serverless Inference API currently active (warm=actively running)",
+      "api_parameter": "inference",
+      "note": "Using only 'warm' (not 'cold') - cold models cause 504 timeouts. This filters for FREE serverless API, not paid Inference Endpoints."
+    }
+  }
+}

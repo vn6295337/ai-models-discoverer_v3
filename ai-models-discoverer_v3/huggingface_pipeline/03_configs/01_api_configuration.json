@@ -1,0 +1,43 @@
+{
+  "api_endpoints": {
+    "base_url": "https://huggingface.co/api",
+    "models_list": "https://huggingface.co/api/models",
+    "model_info": "https://huggingface.co/api/models/{model_id}",
+    "inference_api": "https://api-inference.huggingface.co/models/{model_id}"
+  },
+  "authentication": {
+    "header_name": "Authorization",
+    "header_format": "Bearer {token}",
+    "token_env_var": "HUGGINGFACE_API_KEY"
+  },
+  "request_parameters": {
+    "timeout": 30,
+    "retry_attempts": 3,
+    "retry_delay": 1
+  },
+  "rate_limits": {
+    "free_tier": {
+      "requests_per_second": 1,
+      "requests_per_hour": 1000,
+      "note": "Conservative estimate for free tier"
+    },
+    "inference_api": {
+      "requests_per_day": 30000,
+      "note": "Free Inference API daily limit"
+    }
+  },
+  "pagination": {
+    "limit": 500,
+    "full": true
+  },
+  "sorting": {
+    "sort": "downloads",
+    "direction": -1,
+    "available_sort_fields": [
+      "downloads",
+      "likes",
+      "lastModified",
+      "trending"
+    ]
+  }
+}

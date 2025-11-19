@@ -1,0 +1,218 @@
+================================================================================
+HUGGINGFACE API REFERENCE
+================================================================================
+
+Complete documentation of available filter parameters and capabilities
+API Version: As of 2025-01
+Last Updated: 2025-10-05
+
+================================================================================
+API ENDPOINTS
+================================================================================
+
+Models List API:
+  https://huggingface.co/api/models
+
+Model Detail API:
+  https://huggingface.co/api/models/{model_id}
+
+Python Library:
+  Package: huggingface_hub
+  Method: HfApi.list_models()
+  Docs: https://huggingface.co/docs/huggingface_hub/package_reference/hf_api
+
+================================================================================
+AVAILABLE FILTER PARAMETERS
+================================================================================
+
+search
+  Description: Substring search in model names/descriptions
+  Type: string
+  Example: ?search=llama
+  Status: active
+
+author
+  Description: Filter by organization/user
+  Type: string
+  Example: ?author=meta-llama
+  Status: active
+
+filter
+  Description: General tag-based filtering
+  Type: string or comma-separated list
+  Example: ?filter=text-generation or ?filter=tag1,tag2
+  Status: active
+
+model_name
+  Description: Filter by complete/partial model name
+  Type: string
+  Example: ?model_name=gpt
+  Status: active
+
+pipeline_tag
+  Description: Filter by task type
+  Type: string
+  Example: ?pipeline_tag=text-generation
+  Common Values:
+    - text-generation
+    - text2text-generation
+    - conversational
+    - text-to-image
+    - text-to-video
+    - text-to-audio
+    - text-to-speech
+    - automatic-speech-recognition
+    - image-text-to-text
+    - feature-extraction
+    - fill-mask
+    - sentence-similarity
+  Status: active
+
+gated
+  Description: Filter gated/ungated models
+  Type: boolean
+  Example: ?gated=false
+  Status: active
+
+inference
+  Description: Filter by inference API availability
+  Type: string
+  Example: ?inference=warm
+  Possible Values: warm, cold, disabled
+  Status: active
+
+inference_provider
+  Description: Filter by specific model serving provider
+  Type: string
+  Example: ?inference_provider=huggingface
+  Status: active
+
+apps
+  Description: Filter by supported apps
+  Type: string
+  Example: ?apps=ollama
+  Status: active
+
+trained_dataset
+  Description: Filter by training dataset
+  Type: string
+  Example: ?trained_dataset=glue
+  Status: active
+
+emissions_thresholds
+  Description: Filter by carbon footprint
+  Type: string
+  Example: ?emissions_thresholds=low
+  Status: active
+
+license
+  Description: Filter by license type
+  Type: string
+  Example: ?license=mit
+  Status: active
+
+================================================================================
+DEPRECATED FILTER PARAMETERS
+================================================================================
+
+Note: Use 'filter' parameter instead of these
+
+language (DEPRECATED)
+  Description: Use filter with language tags
+  Replacement: ?filter=language:en
+  Status: deprecated
+
+library (DEPRECATED)
+  Description: Use filter with library tags
+  Replacement: ?filter=library:transformers
+  Status: deprecated
+
+task (DEPRECATED)
+  Description: Use pipeline_tag instead
+  Replacement: ?pipeline_tag=text-generation
+  Status: deprecated
+
+tags (DEPRECATED)
+  Description: Use filter instead
+  Replacement: ?filter=tag1,tag2
+  Status: deprecated
+
+================================================================================
+SORTING PARAMETERS
+================================================================================
+
+sort
+  Description: Sort by property
+  Type: string
+  Possible Values: downloads, likes, lastModified, trending
+  Example: ?sort=downloads
+
+direction
+  Description: Sort direction
+  Type: integer
+  Possible Values: -1 (descending/highest first), 1 (ascending/lowest first)
+  Example: ?direction=-1
+
+================================================================================
+PAGINATION PARAMETERS
+================================================================================
+
+limit
+  Description: Number of models to return per request
+  Type: integer
+  Default: 100
+  Maximum: 500
+  Example: ?limit=500
+
+skip
+  Description: Number of models to skip (for pagination)
+  Type: integer
+  Example: ?skip=500
+
+full
+  Description: Fetch comprehensive model data including all tags and files
+  Type: boolean
+  Default: false
+  Example: ?full=true
+
+config
+  Description: Fetch repository configuration
+  Type: boolean
+  Default: false
+  Example: ?config=true
+
+================================================================================
+FIELDS ONLY AVAILABLE IN DETAIL API
+================================================================================
+
+The following fields require individual model API calls (/api/models/{model_id})
+and are NOT available in the models list API (/api/models):
+
+  - disabled
+  - cardData
+  - config
+  - transformersInfo
+  - spaces
+  - siblings
+  - safetensors
+
+Note: This is why some filters must be applied post-fetch (client-side) rather
+than at the API level (server-side).
+
+================================================================================
+USAGE EXAMPLES
+================================================================================
+
+Fetch text-generation models only:
+  GET /api/models?pipeline_tag=text-generation
+
+Fetch ungated models with inference API:
+  GET /api/models?gated=false&inference=warm
+
+Fetch models by author, sorted by downloads:
+  GET /api/models?author=meta-llama&sort=downloads&direction=-1
+
+Search for models with full data:
+  GET /api/models?search=llama&full=true&limit=500
+
+================================================================================

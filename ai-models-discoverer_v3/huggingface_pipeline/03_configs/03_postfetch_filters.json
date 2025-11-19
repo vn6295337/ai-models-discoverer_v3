@@ -1,0 +1,21 @@
+{
+  "description": "Post-fetch filters applied after fetching models (client-side validation using metadata)",
+  "why_postfetch": "These filters use metadata fields from the fetched models for additional validation",
+  "note": "Inference API filtering is now done at pre-fetch level (inference=warm) to get FREE serverless API models only",
+  "required_filters": {
+    "not_private": {
+      "value": false,
+      "description": "Model must not be private (should already be filtered by API, but double-check)",
+      "data_source": "private field in model response",
+      "validation_method": "Check if 'private' field is false"
+    }
+  },
+  "validation_logic": {
+    "is_public": "private field must be false"
+  },
+  "final_filter": "is_public",
+  "notes": {
+    "inference_filtering": "Moved to pre-fetch level - using inference=warm API parameter to get only models with FREE serverless Inference API",
+    "endpoints_compatible_removed": "endpoints_compatible tag indicates compatibility with PAID Inference Endpoints service, not free serverless API, so removed from filters"
+  }
+}

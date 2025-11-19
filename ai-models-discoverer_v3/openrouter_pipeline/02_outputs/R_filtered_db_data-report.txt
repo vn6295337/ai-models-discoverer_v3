@@ -1,0 +1,74 @@
+================================================================================
+DATABASE DATA FINALIZATION REPORT
+Generated: 2025-11-16 10:41 AM IST
+================================================================================
+
+SUMMARY:
+  Input models         : 42
+  Models kept          : 40
+  Models removed       : 2
+  Input                : Q-created-db-data.json
+  Config               : 11_remove_models.json
+  Processor            : R_finalize_db_data.py
+  Output               : R_filtered_db_data.json
+
+REMOVAL REASONS DISTRIBUTION:
+   2 models: Cloaked model, unknown origin
+
+Total removal reasons: 1
+
+REMOVAL PROCESSING SUMMARY:
+  Configured for removal: 9 models
+  Successfully removed: 2 models
+  ⚠ 7 models not found (check canonical slugs)
+
+DETAILED REMOVED MODEL INFORMATION:
+================================================================================
+
+REMOVED MODEL 1: openrouter/sherlock-dash-alpha
+--------------------------------------------------
+  Provider ID: openrouter/sherlock-dash-alpha
+  Clean Model Name: Sherlock Dash Alpha
+  Canonical Slug: openrouter/sherlock-dash-alpha
+  Model Provider: Unknown
+  Model Family: Unknown
+  Removal Reason: Cloaked model, unknown origin
+
+================================================================================
+
+REMOVED MODEL 2: openrouter/sherlock-think-alpha
+--------------------------------------------------
+  Provider ID: openrouter/sherlock-think-alpha
+  Clean Model Name: Sherlock Think Alpha
+  Canonical Slug: openrouter/sherlock-think-alpha
+  Model Provider: Unknown
+  Model Family: Unknown
+  Removal Reason: Cloaked model, unknown origin
+
+FINALIZED DATABASE DATA SUMMARY:
+================================================================================
+
+PROVIDER DISTRIBUTION (FINALIZED DATA):
+   9 models: Alibaba Cloud
+   6 models: DeepSeek
+   5 models: Google
+   5 models: Mistral AI
+   2 models: Meta
+   2 models: NVIDIA
+   2 models: TNG Technology
+   1 models: ArliAI
+   1 models: Cognitive Computations
+   1 models: Kwaipilot
+   1 models: Meituan
+   1 models: Microsoft
+   1 models: Moonshot AI
+   1 models: Nous Research
+   1 models: OpenAI
+   1 models: Z.AI
+
+Total providers: 16
+
+FAMILY DISTRIBUTION (FINALIZED DATA):
+  40 models: Unknown
+
+Total families: 1
