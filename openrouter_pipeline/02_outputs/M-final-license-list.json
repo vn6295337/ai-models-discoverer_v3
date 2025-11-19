@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-18 07:11 AM IST",
-    "total_models": 41,
+    "generated_at": "2025-11-19 07:11 AM IST",
+    "total_models": 40,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -37,18 +37,6 @@
       "clean_model_name": "DeepSeek V3 0324",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3-0324/blob/main/LICENSE",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT",
-      "source_category": "opensource"
-    },
-    {
-      "id": "deepseek/deepseek-chat-v3.1:free",
-      "canonical_slug": "deepseek/deepseek-chat-v3.1",
-      "original_name": "DeepSeek: DeepSeek V3.1 (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
-      "clean_model_name": "DeepSeek V3.1",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE",
       "license_name": "MIT",
       "license_url": "https://opensource.org/licenses/MIT",
       "source_category": "opensource"

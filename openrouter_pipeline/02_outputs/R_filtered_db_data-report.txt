@@ -1,11 +1,11 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-11-18 07:11 AM IST
+Generated: 2025-11-19 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 42
-  Models kept          : 40
+  Input models         : 41
+  Models kept          : 39
   Models removed       : 2
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
@@ -50,7 +50,7 @@ FINALIZED DATABASE DATA SUMMARY:
 
 PROVIDER DISTRIBUTION (FINALIZED DATA):
    9 models: Alibaba Cloud
-   6 models: DeepSeek
+   5 models: DeepSeek
    5 models: Google
    5 models: Mistral AI
    2 models: Meta
@@ -69,6 +69,6 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
 Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  40 models: Unknown
+  39 models: Unknown
 
 Total families: 1

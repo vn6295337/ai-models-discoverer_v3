@@ -1,24 +1,24 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-11-18 07:11 AM IST
+Generated: 2025-11-19 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 32
+  Total models : 31
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
   Output       : G-standardized-other-license-names-from-hf.json
 
 STANDARDIZATION RESULTS:
-  Models with license transformations: 32
+  Models with license transformations: 31
   Models unchanged: 0
   Transformation rate: 100.0%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 16 models
   Llama-3.1: 1 models
-  MIT: 11 models
+  MIT: 10 models
   Modified MIT: 1 models
   NVIDIA: 2 models
   QWEN: 1 models
@@ -228,17 +228,7 @@ MODEL 19: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 20: deepseek/deepseek-chat-v3.1
---------------------------------------------------
-  ID                     : deepseek/deepseek-chat-v3.1:free
-  Canonical Slug         : deepseek/deepseek-chat-v3.1
-  HuggingFace ID         : deepseek-ai/DeepSeek-V3.1
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 21: deepseek/deepseek-r1
+MODEL 20: deepseek/deepseek-r1
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1:free
   Canonical Slug         : deepseek/deepseek-r1
@@ -248,7 +238,7 @@ MODEL 21: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 22: deepseek/deepseek-r1-0528
+MODEL 21: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1-0528:free
   Canonical Slug         : deepseek/deepseek-r1-0528
@@ -258,7 +248,7 @@ MODEL 22: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 23: deepseek/deepseek-r1-distill-llama-70b
+MODEL 22: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug         : deepseek/deepseek-r1-distill-llama-70b
@@ -268,7 +258,7 @@ MODEL 23: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 24: meituan/longcat-flash-chat
+MODEL 23: meituan/longcat-flash-chat
 --------------------------------------------------
   ID                     : meituan/longcat-flash-chat:free
   Canonical Slug         : meituan/longcat-flash-chat
@@ -278,7 +268,7 @@ MODEL 24: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 25: microsoft/mai-ds-r1
+MODEL 24: microsoft/mai-ds-r1
 --------------------------------------------------
   ID                     : microsoft/mai-ds-r1:free
   Canonical Slug         : microsoft/mai-ds-r1
@@ -288,7 +278,7 @@ MODEL 25: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 26: tngtech/deepseek-r1t-chimera
+MODEL 25: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t-chimera
@@ -298,7 +288,7 @@ MODEL 26: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 27: tngtech/deepseek-r1t2-chimera
+MODEL 26: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t2-chimera
@@ -308,7 +298,7 @@ MODEL 27: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 28: z-ai/glm-4.5-air
+MODEL 27: z-ai/glm-4.5-air
 --------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
   Canonical Slug         : z-ai/glm-4.5-air
@@ -318,7 +308,7 @@ MODEL 28: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 29: moonshotai/kimi-k2
+MODEL 28: moonshotai/kimi-k2
 --------------------------------------------------
   ID                     : moonshotai/kimi-k2:free
   Canonical Slug         : moonshotai/kimi-k2
@@ -328,7 +318,7 @@ MODEL 29: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 30: nvidia/nemotron-nano-12b-v2-vl
+MODEL 29: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-12b-v2-vl:free
   Canonical Slug         : nvidia/nemotron-nano-12b-v2-vl
@@ -338,7 +328,7 @@ MODEL 30: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 31: nvidia/nemotron-nano-9b-v2
+MODEL 30: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
@@ -348,7 +338,7 @@ MODEL 31: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 32: qwen/qwen-2.5-72b-instruct
+MODEL 31: qwen/qwen-2.5-72b-instruct
 --------------------------------------------------
   ID                     : qwen/qwen-2.5-72b-instruct:free
   Canonical Slug         : qwen/qwen-2.5-72b-instruct

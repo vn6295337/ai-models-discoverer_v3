@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-18 07:11 AM IST",
-    "total_models": 32,
+    "generated_at": "2025-11-19 07:11 AM IST",
+    "total_models": 31,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
@@ -32,13 +32,6 @@
       "name": "NVIDIA: Nemotron Nano 9B V2 (free)",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
       "license_info_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md"
-    },
-    {
-      "id": "deepseek/deepseek-chat-v3.1:free",
-      "canonical_slug": "deepseek/deepseek-chat-v3.1",
-      "name": "DeepSeek: DeepSeek V3.1 (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
-      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE"
     },
     {
       "id": "openai/gpt-oss-20b:free",

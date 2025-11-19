@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-18 07:11 AM IST",
-    "total_models": 42,
+    "generated_at": "2025-11-19 07:11 AM IST",
+    "total_models": 41,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -65,15 +65,6 @@
       "original_name": "NVIDIA: Nemotron Nano 9B V2 (free)",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
       "clean_model_name": "Nemotron Nano 9B V2",
-      "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "deepseek/deepseek-chat-v3.1:free",
-      "canonical_slug": "deepseek/deepseek-chat-v3.1",
-      "original_name": "DeepSeek: DeepSeek V3.1 (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
-      "clean_model_name": "DeepSeek V3.1",
       "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },

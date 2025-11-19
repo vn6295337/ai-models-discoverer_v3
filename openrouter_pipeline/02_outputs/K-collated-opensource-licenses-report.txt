@@ -1,22 +1,22 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-11-18 07:11 AM IST
+Generated: 2025-11-19 07:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 28
+  Total models        : 27
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 28 models
-  Stage H Opensource Names       : 28 models
-  Stage I Opensource URLs        : 28 models
+  Stage E (License Info URLs)    : 27 models
+  Stage H Opensource Names       : 27 models
+  Stage I Opensource URLs        : 27 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
   16 models: Apache-2.0
-  11 models: MIT
+  10 models: MIT
    1 models: Llama-3.1
 
 Total unique license types: 3
@@ -276,21 +276,7 @@ MODEL 18: deepseek/deepseek-chat-v3-0324
 
 ================================================================================
 
-MODEL 19: deepseek/deepseek-chat-v3.1
---------------------------------------------------
-  ID: deepseek/deepseek-chat-v3.1:free
-  Original Name: DeepSeek: DeepSeek V3.1 (free)
-  HuggingFace ID: deepseek-ai/DeepSeek-V3.1
-  Canonical Slug: deepseek/deepseek-chat-v3.1
-  Clean Model Name: DeepSeek V3.1
-  License Info Text: info
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-
-================================================================================
-
-MODEL 20: deepseek/deepseek-r1
+MODEL 19: deepseek/deepseek-r1
 --------------------------------------------------
   ID: deepseek/deepseek-r1:free
   Original Name: DeepSeek: R1 (free)
@@ -304,7 +290,7 @@ MODEL 20: deepseek/deepseek-r1
 
 ================================================================================
 
-MODEL 21: deepseek/deepseek-r1-0528
+MODEL 20: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -318,7 +304,7 @@ MODEL 21: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 22: deepseek/deepseek-r1-0528-qwen3-8b
+MODEL 21: deepseek/deepseek-r1-0528-qwen3-8b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528-qwen3-8b:free
   Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
@@ -332,7 +318,7 @@ MODEL 22: deepseek/deepseek-r1-0528-qwen3-8b
 
 ================================================================================
 
-MODEL 23: deepseek/deepseek-r1-distill-llama-70b
+MODEL 22: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -346,7 +332,7 @@ MODEL 23: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 24: meituan/longcat-flash-chat
+MODEL 23: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -360,7 +346,7 @@ MODEL 24: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 25: microsoft/mai-ds-r1
+MODEL 24: microsoft/mai-ds-r1
 --------------------------------------------------
   ID: microsoft/mai-ds-r1:free
   Original Name: Microsoft: MAI DS R1 (free)
@@ -374,7 +360,7 @@ MODEL 25: microsoft/mai-ds-r1
 
 ================================================================================
 
-MODEL 26: tngtech/deepseek-r1t-chimera
+MODEL 25: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -388,7 +374,7 @@ MODEL 26: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 27: tngtech/deepseek-r1t2-chimera
+MODEL 26: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -402,7 +388,7 @@ MODEL 27: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 28: z-ai/glm-4.5-air
+MODEL 27: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
