@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-20 07:10 AM IST
+Generated: 2025-11-20 01:51 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -297,8 +297,8 @@ input_modalities          | Text, Image               |
 output_modalities         | Text                      |                          
 license_info_text         |                           |                          
 license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
+license_name              | xAI                       |                          
+license_url               | https://x.ai/legal        |                          
 rate_limits               | 20 requests/min 50/day    |                          
 provider_api_access       | https://openrouter.ai/s.. |                          
 

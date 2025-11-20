@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-11-20 07:10 AM IST
+Generated: 2025-11-20 01:50 PM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -37,12 +37,6 @@ LICENSE INFO URL (12 models):
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
 
-LICENSE NAME (1 models):
-  - Grok 4.1 Fast
-
-LICENSE URL (1 models):
-  - Grok 4.1 Fast
-
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
 ✓ No unknown values found
@@ -52,8 +46,6 @@ DATA QUALITY SUMMARY:
 Total models: 40
 Missing license info text: 12 (30.0%)
 Missing license info url: 12 (30.0%)
-Missing license name: 1 (2.5%)
-Missing license url: 1 (2.5%)
 
 ================================================================================
 
@@ -453,9 +445,9 @@ COMPLETE MODEL RECORDS:
  40. Grok 4.1 Fast
      Provider           : xAI (United States)
      Modalities         : Text, Image → Text
-     License            : 
+     License            : xAI
      License Info       : 
-     License URL        : 
+     License URL        : https://x.ai/legal
      Official URL       : https://x.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys

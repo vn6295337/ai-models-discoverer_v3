@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-20 07:10 AM IST",
-    "total_models": 40,
+    "generated_at": "2025-11-20 01:50 PM IST",
+    "total_models": 41,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -467,6 +467,18 @@
       "original_name": "X Ai/Grok 4 Fast",
       "hugging_face_id": "",
       "clean_model_name": "Grok 4 Fast",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "xAI",
+      "license_url": "https://x.ai/legal",
+      "source_category": "proprietary"
+    },
+    {
+      "id": "x-ai/grok-4.1-fast:free",
+      "canonical_slug": "x-ai/grok-4.1-fast",
+      "original_name": "X Ai/Grok 4.1 Fast",
+      "hugging_face_id": "",
+      "clean_model_name": "Grok 4.1 Fast",
       "license_info_text": "",
       "license_info_url": "",
       "license_name": "xAI",

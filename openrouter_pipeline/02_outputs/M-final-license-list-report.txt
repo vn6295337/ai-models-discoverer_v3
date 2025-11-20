@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-11-20 07:10 AM IST
+Generated: 2025-11-20 01:50 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 40
+  Total models        : 41
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -14,19 +14,19 @@ SOURCE CATEGORY DISTRIBUTION:
   Google: 5 models
   Meta: 2 models
   Opensource: 27 models
-  Proprietary: 2 models
+  Proprietary: 3 models
 
 FINAL LICENSE DISTRIBUTION:
   17 models: Apache-2.0
   10 models: MIT
    5 models: Gemma
    2 models: NVIDIA
+   2 models: xAI
    1 models: Llama-3.1
    1 models: Llama-3.2
    1 models: Llama-3.3
    1 models: Modified MIT
    1 models: QWEN
-   1 models: xAI
 
 Total unique license types: 10
 
@@ -625,6 +625,21 @@ MODEL 40: x-ai/grok-4-fast
   HuggingFace ID: 
   Canonical Slug: x-ai/grok-4-fast
   Clean Model Name: Grok 4 Fast
+  License Info Text: 
+  License Info URL: 
+  License Name: xAI
+  License URL: https://x.ai/legal
+  Source Category: proprietary
+
+================================================================================
+
+MODEL 41: x-ai/grok-4.1-fast
+--------------------------------------------------
+  ID: x-ai/grok-4.1-fast:free
+  Original Name: X Ai/Grok 4.1 Fast
+  HuggingFace ID: 
+  Canonical Slug: x-ai/grok-4.1-fast
+  Clean Model Name: Grok 4.1 Fast
   License Info Text: 
   License Info URL: 
   License Name: xAI
