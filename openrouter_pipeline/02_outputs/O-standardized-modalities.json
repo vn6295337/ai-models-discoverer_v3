@@ -1,30 +1,16 @@
 {
   "metadata": {
-    "generated_at": "2025-11-19 07:11 AM IST",
-    "total_models": 41,
+    "generated_at": "2025-11-20 07:10 AM IST",
+    "total_models": 40,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
   "models": [
     {
-      "id": "openrouter/sherlock-dash-alpha",
-      "canonical_slug": "openrouter/sherlock-dash-alpha",
-      "original_name": "Sherlock Dash Alpha",
+      "id": "x-ai/grok-4.1-fast",
+      "canonical_slug": "x-ai/grok-4.1-fast",
+      "original_name": "xAI: Grok 4.1 Fast",
       "hugging_face_id": "",
-      "clean_model_name": "Sherlock Dash Alpha",
-      "raw_input_modalities": "text, image",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text, image",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text, Image",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model"
-    },
-    {
-      "id": "openrouter/sherlock-think-alpha",
-      "canonical_slug": "openrouter/sherlock-think-alpha",
-      "original_name": "Sherlock Think Alpha",
-      "hugging_face_id": "",
-      "clean_model_name": "Sherlock Think Alpha",
+      "clean_model_name": "Grok 4.1 Fast",
       "raw_input_modalities": "text, image",
       "raw_output_modalities": "text",
       "enhanced_input_modalities": "text, image",

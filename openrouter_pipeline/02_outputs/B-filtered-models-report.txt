@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-19 07:11 AM IST
+Generated: 2025-11-20 07:09 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
   Total models processed: 337
-  Models passed all filters: 41
-  Models excluded: 296
-  Success rate: 12.2%
+  Models passed all filters: 40
+  Models excluded: 297
+  Success rate: 11.9%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
     Input: 337 models
-    Excluded: 295 models (non-free pricing)
-    Remaining: 42 models
-
-  Step 2 - Billing Description Filter:
-    Input: 42 models
-    Excluded: 0 models (billing requirements in description)
-    Remaining: 42 models
-
-  Step 3 - Keyword Filter:
-    Input: 42 models
-    Excluded: 1 models (preview/experimental/beta)
+    Excluded: 296 models (non-free pricing)
     Remaining: 41 models
 
-  Step 4 - Deduplication Filter:
+  Step 2 - Billing Description Filter:
     Input: 41 models
+    Excluded: 0 models (billing requirements in description)
+    Remaining: 41 models
+
+  Step 3 - Keyword Filter:
+    Input: 41 models
+    Excluded: 1 models (preview/experimental/beta)
+    Remaining: 40 models
+
+  Step 4 - Deduplication Filter:
+    Input: 40 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 41 models
+    Final: 40 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 295 models with non-free pricing (details omitted due to volume)
+Excluded 296 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -152,17 +152,6 @@ PROVIDER: DEEPSEEK (5 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENROUTER (2 models)
---------------------------------------------------
-   1. Sherlock Dash Alpha
-      ID: openrouter/sherlock-dash-alpha
-      Pricing: prompt=0, completion=0, request=0
-
-   2. Sherlock Think Alpha
-      ID: openrouter/sherlock-think-alpha
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: NVIDIA (2 models)
 --------------------------------------------------
    1. NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -204,6 +193,13 @@ PROVIDER: QWEN (2 models)
 
    2. Qwen2.5 Coder 32B Instruct (free)
       ID: qwen/qwen-2.5-coder-32b-instruct:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: XAI (1 models)
+--------------------------------------------------
+   1. xAI: Grok 4.1 Fast
+      ID: x-ai/grok-4.1-fast
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -280,10 +276,10 @@ PROVIDER: NOUS (1 models)
 ================================================================================
 FINAL SUMMARY:
   Total providers: 19
-  Total models passed all filters: 41
-  Models excluded by pricing: 295
+  Total models passed all filters: 40
+  Models excluded by pricing: 296
   Models excluded by billing description: 0
   Models excluded by keywords: 1
   Models excluded by deduplication: 0
-  Total exclusions: 296
+  Total exclusions: 297
   ✓ All filtered models accounted for

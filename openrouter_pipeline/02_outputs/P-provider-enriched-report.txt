@@ -1,27 +1,16 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-11-19 07:11 AM IST
+Generated: 2025-11-20 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 41
+  Total models      : 40
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
   Output            : P-provider-enriched.json
 
-ACTION ITEMS - UNKNOWN MAPPINGS:
-==================================================
-UNKNOWN PROVIDERS (2 models):
-  Add these provider mappings to 08_provider_enrichment.json:
-    "openrouter": ["Provider Name", "Country"],
-    "openrouter": ["Provider Name", "Country"],
-
-UNKNOWN OFFICIAL URLS (2 unique families):
-  Add these URL mappings to family_official_urls:
-    "openrouter": "https://official-url-here",
-
-==================================================
+✓ ALL PROVIDERS AND FAMILIES MAPPED SUCCESSFULLY
 
 MODEL PROVIDER DISTRIBUTION:
    9 models: Alibaba Cloud
@@ -31,7 +20,6 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: Meta
    2 models: NVIDIA
    2 models: TNG Technology
-   2 models: Unknown
    1 models: ArliAI
    1 models: Cognitive Computations
    1 models: Kwaipilot
@@ -41,17 +29,17 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Nous Research
    1 models: OpenAI
    1 models: Z.AI
+   1 models: xAI
 
 Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   18 models: China
-  14 models: United States
+  15 models: United States
    5 models: France
    2 models: Germany
-   2 models: Unknown
 
-Total unique countries: 5
+Total unique countries: 4
 
 MODEL FAMILY DISTRIBUTION:
    9 models: alibaba cloud
@@ -60,7 +48,6 @@ MODEL FAMILY DISTRIBUTION:
    5 models: mistral ai
    2 models: meta
    2 models: nvidia
-   2 models: openrouter
    2 models: tng technology
    1 models: arliai
    1 models: cognitive computations
@@ -70,6 +57,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: moonshot ai
    1 models: nous research
    1 models: openai
+   1 models: xai
    1 models: z.ai
 
 Total unique model families: 17
@@ -581,35 +569,7 @@ MODEL 36: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 37: openrouter/sherlock-dash-alpha
---------------------------------------------------
-  ID: openrouter/sherlock-dash-alpha
-  Original Name: Sherlock Dash Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/sherlock-dash-alpha
-  Clean Model Name: Sherlock Dash Alpha
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: openrouter
-  Official URL: Unknown
-
-================================================================================
-
-MODEL 38: openrouter/sherlock-think-alpha
---------------------------------------------------
-  ID: openrouter/sherlock-think-alpha
-  Original Name: Sherlock Think Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/sherlock-think-alpha
-  Clean Model Name: Sherlock Think Alpha
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: openrouter
-  Official URL: Unknown
-
-================================================================================
-
-MODEL 39: tngtech/deepseek-r1t-chimera
+MODEL 37: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -623,7 +583,7 @@ MODEL 39: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 40: tngtech/deepseek-r1t2-chimera
+MODEL 38: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -637,7 +597,21 @@ MODEL 40: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 41: z-ai/glm-4.5-air
+MODEL 39: x-ai/grok-4.1-fast
+--------------------------------------------------
+  ID: x-ai/grok-4.1-fast
+  Original Name: xAI: Grok 4.1 Fast
+  HuggingFace ID: 
+  Canonical Slug: x-ai/grok-4.1-fast
+  Clean Model Name: Grok 4.1 Fast
+  Model Provider: xAI
+  Model Provider Country: United States
+  Model Family: xai
+  Official URL: https://x.ai/
+
+================================================================================
+
+MODEL 40: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

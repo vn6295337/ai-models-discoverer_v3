@@ -1,49 +1,23 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-11-19 07:11 AM IST
+Generated: 2025-11-20 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 41
-  Models kept          : 39
-  Models removed       : 2
+  Input models         : 40
+  Models kept          : 40
+  Models removed       : 0
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
   Output               : R_filtered_db_data.json
 
-REMOVAL REASONS DISTRIBUTION:
-   2 models: Cloaked model, unknown origin
-
-Total removal reasons: 1
+NO MODELS REMOVED
 
 REMOVAL PROCESSING SUMMARY:
   Configured for removal: 9 models
-  Successfully removed: 2 models
-  ⚠ 7 models not found (check canonical slugs)
-
-DETAILED REMOVED MODEL INFORMATION:
-================================================================================
-
-REMOVED MODEL 1: openrouter/sherlock-dash-alpha
---------------------------------------------------
-  Provider ID: openrouter/sherlock-dash-alpha
-  Clean Model Name: Sherlock Dash Alpha
-  Canonical Slug: openrouter/sherlock-dash-alpha
-  Model Provider: Unknown
-  Model Family: Unknown
-  Removal Reason: Cloaked model, unknown origin
-
-================================================================================
-
-REMOVED MODEL 2: openrouter/sherlock-think-alpha
---------------------------------------------------
-  Provider ID: openrouter/sherlock-think-alpha
-  Clean Model Name: Sherlock Think Alpha
-  Canonical Slug: openrouter/sherlock-think-alpha
-  Model Provider: Unknown
-  Model Family: Unknown
-  Removal Reason: Cloaked model, unknown origin
+  Successfully removed: 0 models
+  ⚠ 9 models not found (check canonical slugs)
 
 FINALIZED DATABASE DATA SUMMARY:
 ================================================================================
@@ -65,10 +39,11 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Nous Research
    1 models: OpenAI
    1 models: Z.AI
+   1 models: xAI
 
-Total providers: 16
+Total providers: 17
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  39 models: Unknown
+  40 models: Unknown
 
 Total families: 1

@@ -1,18 +1,18 @@
 {
   "metadata": {
-    "generated_at": "2025-11-19 07:11 AM IST",
-    "total_models": 41,
+    "generated_at": "2025-11-20 07:09 AM IST",
+    "total_models": 40,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
     {
-      "id": "openrouter/sherlock-dash-alpha",
-      "canonical_slug": "openrouter/sherlock-dash-alpha",
+      "id": "x-ai/grok-4.1-fast",
+      "canonical_slug": "x-ai/grok-4.1-fast",
       "hugging_face_id": "",
-      "name": "Sherlock Dash Alpha",
-      "created": 1763228989,
-      "description": "This is a cloaked model provided to the community to gather feedback. A frontier non-reasoning model that excels at tool calling, with a 1.8M context window and multimodal support.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
-      "context_length": 1840000,
+      "name": "xAI: Grok 4.1 Fast",
+      "created": 1763587502,
+      "description": "Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window.\n\nReasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)",
+      "context_length": 2000000,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -22,7 +22,7 @@
         "output_modalities": [
           "text"
         ],
-        "tokenizer": "Other",
+        "tokenizer": "Grok",
         "instruct_type": null
       },
       "pricing": {
@@ -34,70 +34,27 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 1840000,
-        "max_completion_tokens": 64000,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "structured_outputs",
-        "tool_choice",
-        "tools"
-      ],
-      "default_parameters": {
-        "temperature": 0.7,
-        "top_p": 0.95,
-        "frequency_penalty": null
-      }
-    },
-    {
-      "id": "openrouter/sherlock-think-alpha",
-      "canonical_slug": "openrouter/sherlock-think-alpha",
-      "hugging_face_id": "",
-      "name": "Sherlock Think Alpha",
-      "created": 1763228986,
-      "description": "This is a cloaked model provided to the community to gather feedback. A frontier reasoning model that excels at tool calling, with a 1.8M context window and multimodal support.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
-      "context_length": 1840000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 1840000,
-        "max_completion_tokens": 64000,
+        "context_length": 2000000,
+        "max_completion_tokens": 30000,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
         "include_reasoning",
+        "logprobs",
         "max_tokens",
         "reasoning",
         "response_format",
-        "structured_outputs",
+        "seed",
+        "temperature",
         "tool_choice",
-        "tools"
+        "tools",
+        "top_logprobs",
+        "top_p"
       ],
       "default_parameters": {
-        "temperature": 0.7,
-        "top_p": 0.95,
+        "temperature": null,
+        "top_p": null,
         "frequency_penalty": null
       }
     },
