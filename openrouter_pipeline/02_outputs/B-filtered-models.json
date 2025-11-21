@@ -1,15 +1,15 @@
 {
   "metadata": {
-    "generated_at": "2025-11-20 01:50 PM IST",
+    "generated_at": "2025-11-21 07:10 AM IST",
     "total_models": 40,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
     {
-      "id": "x-ai/grok-4.1-fast",
+      "id": "x-ai/grok-4.1-fast:free",
       "canonical_slug": "x-ai/grok-4.1-fast",
       "hugging_face_id": "",
-      "name": "xAI: Grok 4.1 Fast",
+      "name": "xAI: Grok 4.1 Fast (free)",
       "created": 1763587502,
       "description": "Grok 4.1 Fast is xAI's best agentic tool calling model that shines in real-world use cases like customer support and deep research. 2M context window.\n\nReasoning can be enabled/disabled using the `reasoning` `enabled` parameter in the API. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#controlling-reasoning-tokens)",
       "context_length": 2000000,
@@ -53,8 +53,8 @@
         "top_p"
       ],
       "default_parameters": {
-        "temperature": null,
-        "top_p": null,
+        "temperature": 0.7,
+        "top_p": 0.95,
         "frequency_penalty": null
       }
     },

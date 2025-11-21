@@ -1,6 +1,6 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-11-20 01:50 PM IST
+Generated: 2025-11-21 07:11 AM IST
 ================================================================================
 
 SUMMARY:
@@ -504,8 +504,8 @@ MODEL 33: google/gemma-3-4b-it
 
 MODEL 34: x-ai/grok-4.1-fast
 --------------------------------------------------
-  ID: x-ai/grok-4.1-fast
-  Original Name: xAI: Grok 4.1 Fast
+  ID: x-ai/grok-4.1-fast:free
+  Original Name: xAI: Grok 4.1 Fast (free)
   HuggingFace ID: 
   Canonical Slug: x-ai/grok-4.1-fast
   Clean Model Name: Grok 4.1 Fast

@@ -1,14 +1,14 @@
 {
   "metadata": {
-    "generated_at": "2025-11-20 01:50 PM IST",
+    "generated_at": "2025-11-21 07:11 AM IST",
     "total_models": 40,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
   "models": [
     {
-      "id": "x-ai/grok-4.1-fast",
+      "id": "x-ai/grok-4.1-fast:free",
       "canonical_slug": "x-ai/grok-4.1-fast",
-      "original_name": "xAI: Grok 4.1 Fast",
+      "original_name": "xAI: Grok 4.1 Fast (free)",
       "hugging_face_id": "",
       "clean_model_name": "Grok 4.1 Fast",
       "raw_input_modalities": "text, image",
