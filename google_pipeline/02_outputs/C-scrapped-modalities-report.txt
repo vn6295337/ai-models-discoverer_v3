@@ -1,10 +1,10 @@
 === GOOGLE MODELS MODALITY SCRAPING REPORT ===
-Generated: 2025-11-20 13:51:45 IST
+Generated: 2025-11-21 07:11:58 IST
 
 Total Models: 23
 
 gemini-3-pro: Text, Image, Video, Audio, PDF → Text
-gemini-3-pro-table: Text, Image, Video, Audio, PDF → Text
+gemini-3-pro-table: Image, Text → Image, Text
 gemini-2.5-pro: Audio, images, video, text, PDF → Text
 gemini-2.5-pro-table: Text → Audio
 gemini-2.5-flash: Text, images, video, audio → Text

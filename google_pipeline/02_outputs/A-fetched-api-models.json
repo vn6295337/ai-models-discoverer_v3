@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-11-20 13:51:41 IST",
-    "total_models": 61,
+    "generated": "2025-11-21 07:11:53 IST",
+    "total_models": 63,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -665,6 +665,42 @@
       "topP": 0.95,
       "topK": 64,
       "maxTemperature": 2,
+      "thinking": true
+    },
+    {
+      "name": "models/gemini-3-pro-image-preview",
+      "version": "3.0",
+      "displayName": "Nano Banana Pro",
+      "description": "Gemini 3 Pro Image Preview",
+      "inputTokenLimit": 131072,
+      "outputTokenLimit": 32768,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 1,
+      "thinking": true
+    },
+    {
+      "name": "models/nano-banana-pro-preview",
+      "version": "3.0",
+      "displayName": "Nano Banana Pro",
+      "description": "Gemini 3 Pro Image Preview",
+      "inputTokenLimit": 131072,
+      "outputTokenLimit": 32768,
+      "supportedGenerationMethods": [
+        "generateContent",
+        "countTokens",
+        "batchGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 1,
       "thinking": true
     },
     {
