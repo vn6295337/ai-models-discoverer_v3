@@ -11,9 +11,10 @@ import config from '../config.js';
  * @param {string} query - User query
  * @param {string} primaryProvider - Primary provider name
  * @param {string} queryType - Query classification type (for web search flag)
+ * @param {string} modelName - Optional model name from selector service
  * @returns {Promise<object>} Response from provider or error
  */
-export const executeWithFailover = async (query, primaryProvider, queryType = null) => {
+export const executeWithFailover = async (query, primaryProvider, queryType = null, modelName = null) => {
   try {
     const failoverChain = getFailoverChain(primaryProvider);
     const isNewsQuery = queryType === 'business_news';
@@ -23,7 +24,7 @@ export const executeWithFailover = async (query, primaryProvider, queryType = nu
 
       try {
         console.log(`[Failover] Attempting provider: ${provider}`);
-        const response = await executeProvider(provider, query, isNewsQuery, queryType);
+        const response = await executeProvider(provider, query, isNewsQuery, queryType, modelName);
 
         // Log which provider was used
         console.log(`[Failover] Success with ${provider}`);
@@ -77,22 +78,24 @@ export const executeWithFailover = async (query, primaryProvider, queryType = nu
  * @param {string} provider - Provider name
  * @param {string} query - User query
  * @param {boolean} enableWebSearch - Enable web search for news queries
+ * @param {string} queryType - Query classification type
+ * @param {string} modelName - Optional model name from selector service
  * @returns {Promise<object>} Provider response
  */
-const executeProvider = async (provider, query, enableWebSearch = false, queryType = null) => {
+const executeProvider = async (provider, query, enableWebSearch = false, queryType = null, modelName = null) => {
   switch (provider) {
     case config.providerNames.GEMINI:
-      return await callGemini(query);
+      return await callGemini(query, modelName);
     case config.providerNames.GROQ:
-      // Use compound model for news and financial queries, standard for others
-      let groqModel = null;
-      if (queryType === 'business_news' || queryType === 'financial_analysis') {
+      // Use dynamic model if provided, otherwise use compound model for news and financial queries
+      let groqModel = modelName;
+      if (!groqModel && (queryType === 'business_news' || queryType === 'financial_analysis')) {
         groqModel = config.models.groqCompound;
       }
       return callGroq(query, groqModel);
     case config.providerNames.OPENROUTER:
       // For fallback: use GPT-OSS models for news/financial with browser search
-      return await callOpenRouter(query, enableWebSearch, queryType);
+      return await callOpenRouter(query, enableWebSearch, queryType, modelName);
     default:
       throw new Error(`Unknown provider: ${provider}`);
   }

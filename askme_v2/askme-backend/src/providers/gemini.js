@@ -21,16 +21,19 @@ const initializeGemini = async () => {
 /**
  * Call Gemini API
  * @param {string} query - User query
+ * @param {string} modelName - Optional model name override (from selector service)
  * @returns {Promise<{response: string, model: string, usage: object}>}
  */
-export const callGemini = async (query) => {
+export const callGemini = async (query, modelName = null) => {
   try {
     if (!geminiClient) {
       await initializeGemini();
     }
 
+    const modelToUse = modelName || config.models.gemini;
+
     const model = geminiClient.getGenerativeModel({
-      model: config.models.gemini,
+      model: modelToUse,
     });
 
     const result = await model.generateContent(query);
@@ -42,7 +45,7 @@ export const callGemini = async (query) => {
 
     return {
       response,
-      model: config.models.gemini,
+      model: modelToUse,
       provider: 'gemini',
       usage: {
         promptTokens: result.response.usageMetadata?.promptTokenCount || 0,

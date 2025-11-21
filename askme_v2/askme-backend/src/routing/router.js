@@ -1,17 +1,63 @@
 import config from '../config.js';
+import {
+  selectModelWithFallback,
+  calculateComplexity,
+} from '../utils/modelSelectorClient.js';
 
 /**
  * Routing Engine
  * Selects primary LLM provider based on query classification
+ * Now uses intelligent_model_selector service for dynamic selection
  * Fallback chain: Primary → Groq → OpenRouter
  */
 
 /**
- * Select primary provider based on query classification
+ * Select provider and model using intelligent model selector
+ * @param {string} queryType - Query category
+ * @param {string} queryText - Query text
+ * @param {Array<string>} modalities - Required modalities (default: ['text'])
+ * @returns {Promise<Object>} Selection with provider, modelName, metadata
+ */
+export const selectModelDynamic = async (queryType, queryText, modalities = ['text']) => {
+  try {
+    // Calculate complexity score
+    const complexityScore = calculateComplexity(queryText, queryType);
+
+    // Call intelligent model selector
+    const selection = await selectModelWithFallback({
+      queryType,
+      queryText,
+      modalities,
+      complexityScore,
+    });
+
+    console.log('[Router] Dynamic selection:', {
+      provider: selection.provider,
+      model: selection.modelName,
+      score: selection.score,
+      complexity: complexityScore,
+      isFallback: selection.isFallback || false,
+    });
+
+    return selection;
+  } catch (error) {
+    console.error('[Router] Dynamic selection error:', error.message);
+    // Fall back to static selection
+    return {
+      provider: selectPrimaryProviderStatic(queryType),
+      modelName: null,
+      isFallback: true,
+      error: error.message,
+    };
+  }
+};
+
+/**
+ * Select primary provider based on query classification (STATIC - fallback only)
  * @param {string} queryType - Query category (business_news, creative, general_knowledge)
  * @returns {string} Provider name
  */
-export const selectPrimaryProvider = (queryType) => {
+export const selectPrimaryProviderStatic = (queryType) => {
   try {
     switch (queryType) {
       case config.queryCategories.BUSINESS_NEWS:
@@ -36,6 +82,16 @@ export const selectPrimaryProvider = (queryType) => {
     // Fallback to Gemini on error
     return config.providerNames.GEMINI;
   }
+};
+
+/**
+ * Select primary provider (wrapper for backward compatibility)
+ * Uses static selection if MODEL_SELECTOR_ENABLED=false
+ * @param {string} queryType - Query category
+ * @returns {string} Provider name
+ */
+export const selectPrimaryProvider = (queryType) => {
+  return selectPrimaryProviderStatic(queryType);
 };
 
 /**

@@ -1,7 +1,7 @@
 import express from 'express';
 import { validateQuery, validateBatchQueries } from '../middleware/validate.js';
 import { classifyQuery } from '../classification/classifier.js';
-import { selectPrimaryProvider } from '../routing/router.js';
+import { selectPrimaryProvider, selectModelDynamic } from '../routing/router.js';
 import { executeWithFailover } from '../failover/failover.js';
 import { checkRateLimit } from '../rate-limiting/limiter.js';
 import { normalizeResponse } from '../utils/normalize.js';
@@ -24,14 +24,22 @@ router.post('/query', validateQuery, async (req, res) => {
     const classification = classifyQuery(query);
     console.log(`[Query] Classified as: ${classification.type}`);
 
-    // Step 2: Select primary provider
-    const primaryProvider = selectPrimaryProvider(classification.type);
-    console.log(`[Query] Selected provider: ${primaryProvider}`);
+    // Step 2: Select optimal model using intelligent selector
+    let selection = null;
+    try {
+      selection = await selectModelDynamic(classification.type, query, ['text']);
+      console.log(`[Query] Dynamic selection: ${selection.provider} - ${selection.modelName}`);
+    } catch (error) {
+      console.warn(`[Query] Dynamic selection failed, using static fallback:`, error.message);
+      // Fallback to static selection
+      const primaryProvider = selectPrimaryProvider(classification.type);
+      selection = { provider: primaryProvider, modelName: null, isFallback: true };
+    }
 
     // Step 3: Check rate limit
-    const rateLimitCheck = checkRateLimit(primaryProvider);
+    const rateLimitCheck = checkRateLimit(selection.provider);
     if (!rateLimitCheck.allowed) {
-      console.warn(`[Query] Rate limit exceeded: ${primaryProvider}`);
+      console.warn(`[Query] Rate limit exceeded: ${selection.provider}`);
       return res.status(429).json({
         error: rateLimitCheck.error,
         status: 429,
@@ -40,7 +48,12 @@ router.post('/query', validateQuery, async (req, res) => {
     }
 
     // Step 4: Execute with failover
-    const result = await executeWithFailover(query, primaryProvider, classification.type);
+    const result = await executeWithFailover(
+      query,
+      selection.provider,
+      classification.type,
+      selection.modelName
+    );
 
     if (!result.success) {
       console.error(`[Query] All providers failed:`, result.error);
@@ -94,17 +107,26 @@ router.post('/queue/sync', validateBatchQueries, async (req, res) => {
 
         // Classify and route
         const classification = classifyQuery(query);
-        const primaryProvider = selectPrimaryProvider(classification.type);
+
+        // Select optimal model using intelligent selector
+        let selection = null;
+        try {
+          selection = await selectModelDynamic(classification.type, query, ['text']);
+        } catch (error) {
+          console.warn(`[Sync] Dynamic selection failed, using static fallback:`, error.message);
+          const primaryProvider = selectPrimaryProvider(classification.type);
+          selection = { provider: primaryProvider, modelName: null, isFallback: true };
+        }
 
         // Check rate limit before executing
-        const rateLimitCheck = checkRateLimit(primaryProvider);
+        const rateLimitCheck = checkRateLimit(selection.provider);
         if (!rateLimitCheck.allowed) {
-          console.warn(`[Sync] Rate limit for ${primaryProvider}, skipping queue ID ${id}`);
+          console.warn(`[Sync] Rate limit for ${selection.provider}, skipping queue ID ${id}`);
           responses.push({
             id: id,
             query: query,
             success: false,
-            error: `Rate limit exceeded for ${primaryProvider}`,
+            error: `Rate limit exceeded for ${selection.provider}`,
             llm_used: null,
             response_time: Date.now() - itemStartTime,
           });
@@ -112,7 +134,12 @@ router.post('/queue/sync', validateBatchQueries, async (req, res) => {
         }
 
         // Execute with failover
-        const result = await executeWithFailover(query, primaryProvider, classification.type);
+        const result = await executeWithFailover(
+          query,
+          selection.provider,
+          classification.type,
+          selection.modelName
+        );
         const itemResponseTime = Date.now() - itemStartTime;
 
         if (result.success) {

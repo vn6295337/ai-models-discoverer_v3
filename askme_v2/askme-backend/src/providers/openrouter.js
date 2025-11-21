@@ -8,21 +8,26 @@ import config from '../config.js';
  * @param {string} query - User query
  * @param {boolean} enableWebSearch - Enable web search for news queries
  * @param {string} queryType - Query classification type for model selection
+ * @param {string} modelName - Optional model name override (from selector service)
  * @returns {Promise<{response: string, model: string, usage: object}>}
  */
-export const callOpenRouter = async (query, enableWebSearch = false, queryType = null) => {
+export const callOpenRouter = async (query, enableWebSearch = false, queryType = null, modelName = null) => {
   try {
     const apiKey = await getApiKey('openrouter');
 
-    // Select model based on query type
-    let model = config.models.openrouter;
+    // Use dynamic model if provided, otherwise select based on query type
+    let model = modelName;
 
-    if (queryType === 'financial_analysis') {
-      // Use GPT-OSS 120B for financial analysis (web search + reasoning for market data)
-      model = config.models.openaiGptOss120b;
-    } else if (queryType === 'business_news') {
-      // Use GPT-OSS 20B for news (web search + fast inference)
-      model = config.models.openaiGptOss20b;
+    if (!model) {
+      model = config.models.openrouter;
+
+      if (queryType === 'financial_analysis') {
+        // Use GPT-OSS 120B for financial analysis (web search + reasoning for market data)
+        model = config.models.openaiGptOss120b;
+      } else if (queryType === 'business_news') {
+        // Use GPT-OSS 20B for news (web search + fast inference)
+        model = config.models.openaiGptOss20b;
+      }
     }
 
     // Build request body
@@ -69,7 +74,7 @@ export const callOpenRouter = async (query, enableWebSearch = false, queryType =
 
     return {
       response: responseText,
-      model: config.models.openrouter,
+      model: model,
       provider: 'openrouter',
       usage: {
         promptTokens: response.data.usage?.prompt_tokens || 0,

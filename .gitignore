@@ -19,3 +19,8 @@ yarn-error.log*
 *.tmp
 *.bak
 .cache/
+
+# Exclude from repository
+.gitignore
+.obsidian/
+.claude/
