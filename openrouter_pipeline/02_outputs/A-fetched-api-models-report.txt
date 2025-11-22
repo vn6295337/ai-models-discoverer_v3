@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-21 07:10 AM IST
+Generated: 2025-11-22 07:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 339
+  Total models: 342
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  51 models
@@ -302,6 +302,12 @@ PROVIDER BREAKDOWN (Descending Order):
     - spotlight
     - virtuoso-large
 
+  AllenAI      :   4 models
+    - olmo-2-0325-32b-instruct
+    - olmo-3-32b-think
+    - olmo-3-7b-instruct
+    - olmo-3-7b-think
+
   Deep Cogito  :   4 models
     - cogito-v2-preview-deepseek-671b
     - cogito-v2-preview-llama-405b
@@ -398,9 +404,6 @@ PROVIDER BREAKDOWN (Descending Order):
 
   AlfredPros   :   1 models
     - codellama-7b-instruct-solidity
-
-  AllenAI      :   1 models
-    - olmo-2-0325-32b-instruct
 
   NeverSleep   :   1 models
     - llama-3.1-lumimaid-8b
