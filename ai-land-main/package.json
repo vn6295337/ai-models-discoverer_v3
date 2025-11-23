@@ -4,6 +4,9 @@
   "version": "0.0.0",
   "homepage": "https://vn6295337.github.io/ai-land/",
   "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
