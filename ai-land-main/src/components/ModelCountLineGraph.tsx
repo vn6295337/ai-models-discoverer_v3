@@ -348,7 +348,7 @@ const ModelCountLineGraph: React.FC<ModelCountLineGraphProps> = ({ currentModels
           const dateStr = point.timestamp.toISOString().split('T')[0];
           const normalizedDate = new Date(dateStr + 'T00:00:00.000Z');
           return {
-            x: normalizedDate,
+            x: normalizedDate.getTime(), // Use timestamp (milliseconds) instead of Date object
             y: point.totalCount
           };
         }),
@@ -375,7 +375,7 @@ const ModelCountLineGraph: React.FC<ModelCountLineGraphProps> = ({ currentModels
           const dateStr = point.timestamp.toISOString().split('T')[0];
           const normalizedDate = new Date(dateStr + 'T00:00:00.000Z');
           return {
-            x: normalizedDate,
+            x: normalizedDate.getTime(), // Use timestamp (milliseconds) instead of Date object
             y: point.providerCounts.inferenceProviders[provider] || 0
           };
         }),
@@ -402,7 +402,7 @@ const ModelCountLineGraph: React.FC<ModelCountLineGraphProps> = ({ currentModels
           const dateStr = point.timestamp.toISOString().split('T')[0];
           const normalizedDate = new Date(dateStr + 'T00:00:00.000Z');
           return {
-            x: normalizedDate,
+            x: normalizedDate.getTime(), // Use timestamp (milliseconds) instead of Date object
             y: point.providerCounts.modelProviders[provider] || 0
           };
         }),
