@@ -511,10 +511,10 @@ const ModelCountLineGraph: React.FC<ModelCountLineGraphProps> = ({ currentModels
           title: (context: any) => {
             const date = new Date(context[0].parsed.x);
             return date.toLocaleDateString('en-GB', {
-              timeZone: 'UTC',
               year: 'numeric',
-              month: 'short', 
-              day: '2-digit'
+              month: 'short',
+              day: '2-digit',
+              timeZone: 'UTC'
             }).replace(/ /g, '-');
           },
           label: (context: any) => {
@@ -534,7 +534,8 @@ const ModelCountLineGraph: React.FC<ModelCountLineGraphProps> = ({ currentModels
           displayFormats: {
             day: 'dd-MMM-yyyy'
           },
-          tooltipFormat: 'dd-MMM-yyyy'
+          tooltipFormat: 'dd-MMM-yyyy',
+          parser: false
         },
         adapters: {
           date: {
@@ -552,7 +553,8 @@ const ModelCountLineGraph: React.FC<ModelCountLineGraphProps> = ({ currentModels
             return date.toLocaleDateString('en-GB', {
               day: '2-digit',
               month: 'short',
-              year: 'numeric'
+              year: 'numeric',
+              timeZone: 'UTC'
             }).replace(/ /g, '-');
           }
         }
