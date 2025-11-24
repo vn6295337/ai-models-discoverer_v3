@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-23 07:23 AM IST",
-    "total_models": 342,
+    "generated_at": "2025-11-24 07:18 AM IST",
+    "total_models": 341,
     "pipeline_stage": "A_fetch_api_models"
   },
   "models": [
@@ -3180,59 +3180,6 @@
         "temperature",
         "tool_choice",
         "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      }
-    },
-    {
-      "id": "arcee-ai/afm-4.5b",
-      "canonical_slug": "arcee-ai/afm-4.5b",
-      "hugging_face_id": "arcee-ai/AFM-4.5B",
-      "name": "Arcee AI: AFM 4.5B",
-      "created": 1758040484,
-      "description": "AFM-4.5B is a 4.5 billion parameter instruction-tuned language model developed by Arcee AI. The model was pretrained on approximately 8 trillion tokens, including 6.5 trillion tokens of general data and 1.5 trillion tokens with an emphasis on mathematical reasoning and code generation. ",
-      "context_length": 65536,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000000048",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 65536,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_k",
         "top_p"
       ],
       "default_parameters": {

@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-23 07:23 AM IST
+Generated: 2025-11-24 07:18 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 342
+  Total models: 341
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  51 models
@@ -295,13 +295,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - skyfall-36b-v2
     - unslopnemo-12b
 
-  Arcee AI     :   5 models
-    - afm-4.5b
-    - coder-large
-    - maestro-reasoning
-    - spotlight
-    - virtuoso-large
-
   AllenAI      :   4 models
     - olmo-2-0325-32b-instruct
     - olmo-3-32b-think
@@ -325,6 +318,12 @@ PROVIDER BREAKDOWN (Descending Order):
     - deepseek-r1t-chimera:free
     - deepseek-r1t2-chimera
     - deepseek-r1t2-chimera:free
+
+  Arcee AI     :   4 models
+    - coder-large
+    - maestro-reasoning
+    - spotlight
+    - virtuoso-large
 
   Cohere       :   4 models
     - command-a
