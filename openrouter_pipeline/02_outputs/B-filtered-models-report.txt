@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-24 07:18 AM IST
+Generated: 2025-11-25 07:12 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 341
-  Models passed all filters: 40
-  Models excluded: 301
-  Success rate: 11.7%
+  Total models processed: 343
+  Models passed all filters: 41
+  Models excluded: 302
+  Success rate: 12.0%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 341 models
-    Excluded: 299 models (non-free pricing)
-    Remaining: 42 models
+    Input: 343 models
+    Excluded: 300 models (non-free pricing)
+    Remaining: 43 models
 
   Step 2 - Billing Description Filter:
-    Input: 42 models
+    Input: 43 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 42 models
+    Remaining: 43 models
 
   Step 3 - Keyword Filter:
-    Input: 42 models
+    Input: 43 models
     Excluded: 1 models (preview/experimental/beta)
-    Remaining: 41 models
+    Remaining: 42 models
 
   Step 4 - Deduplication Filter:
-    Input: 41 models
+    Input: 42 models
     Excluded: 1 models (duplicates after (free) suffix normalization)
-    Final: 40 models
+    Final: 41 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 299 models with non-free pricing (details omitted due to volume)
+Excluded 300 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -199,6 +199,13 @@ PROVIDER: QWEN (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: OPENROUTER (1 models)
+--------------------------------------------------
+   1. Bert-Nebulon Alpha
+      ID: openrouter/bert-nebulon-alpha
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: XAI (1 models)
 --------------------------------------------------
    1. xAI: Grok 4.1 Fast (free)
@@ -278,11 +285,11 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 19
-  Total models passed all filters: 40
-  Models excluded by pricing: 299
+  Total providers: 20
+  Total models passed all filters: 41
+  Models excluded by pricing: 300
   Models excluded by billing description: 0
   Models excluded by keywords: 1
   Models excluded by deduplication: 1
-  Total exclusions: 301
+  Total exclusions: 302
   ✓ All filtered models accounted for

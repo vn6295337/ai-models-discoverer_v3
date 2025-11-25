@@ -1,10 +1,55 @@
 {
   "metadata": {
-    "generated_at": "2025-11-24 07:18 AM IST",
-    "total_models": 40,
+    "generated_at": "2025-11-25 07:12 AM IST",
+    "total_models": 41,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
+    {
+      "id": "openrouter/bert-nebulon-alpha",
+      "canonical_slug": "openrouter/bert-nebulon-alpha",
+      "hugging_face_id": "",
+      "name": "Bert-Nebulon Alpha",
+      "created": 1764005058,
+      "description": "This is a cloaked model provided to the community to gather feedback. A general-purpose multimodal model (text/image in, text out) designed for reliability, long-context comprehension, and adaptive logic. It is engineered for production-grade assistants, retrieval-augmented systems, science workloads, and complex agentic workflows.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
+      "context_length": 256000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 256000,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "response_format",
+        "structured_outputs"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
     {
       "id": "x-ai/grok-4.1-fast:free",
       "canonical_slug": "x-ai/grok-4.1-fast",

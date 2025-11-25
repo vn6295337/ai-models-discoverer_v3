@@ -1,16 +1,26 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-11-24 07:18 AM IST
+Generated: 2025-11-25 07:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 40
+  Total models      : 41
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
   Output            : P-provider-enriched.json
 
-✓ ALL PROVIDERS AND FAMILIES MAPPED SUCCESSFULLY
+ACTION ITEMS - UNKNOWN MAPPINGS:
+==================================================
+UNKNOWN PROVIDERS (1 models):
+  Add these provider mappings to 08_provider_enrichment.json:
+    "openrouter": ["Provider Name", "Country"],
+
+UNKNOWN OFFICIAL URLS (1 unique families):
+  Add these URL mappings to family_official_urls:
+    "openrouter": "https://official-url-here",
+
+==================================================
 
 MODEL PROVIDER DISTRIBUTION:
    9 models: Alibaba Cloud
@@ -28,18 +38,20 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Moonshot AI
    1 models: Nous Research
    1 models: OpenAI
+   1 models: Unknown
    1 models: Z.AI
    1 models: xAI
 
-Total unique model providers: 17
+Total unique model providers: 18
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   18 models: China
   15 models: United States
    5 models: France
    2 models: Germany
+   1 models: Unknown
 
-Total unique countries: 4
+Total unique countries: 5
 
 MODEL FAMILY DISTRIBUTION:
    9 models: alibaba cloud
@@ -57,10 +69,11 @@ MODEL FAMILY DISTRIBUTION:
    1 models: moonshot ai
    1 models: nous research
    1 models: openai
+   1 models: openrouter
    1 models: xai
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 18
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -569,7 +582,21 @@ MODEL 36: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 37: tngtech/deepseek-r1t-chimera
+MODEL 37: openrouter/bert-nebulon-alpha
+--------------------------------------------------
+  ID: openrouter/bert-nebulon-alpha
+  Original Name: Bert-Nebulon Alpha
+  HuggingFace ID: 
+  Canonical Slug: openrouter/bert-nebulon-alpha
+  Clean Model Name: Bert-Nebulon Alpha
+  Model Provider: Unknown
+  Model Provider Country: Unknown
+  Model Family: openrouter
+  Official URL: Unknown
+
+================================================================================
+
+MODEL 38: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -583,7 +610,7 @@ MODEL 37: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 38: tngtech/deepseek-r1t2-chimera
+MODEL 39: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -597,7 +624,7 @@ MODEL 38: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 39: x-ai/grok-4.1-fast
+MODEL 40: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: xAI: Grok 4.1 Fast (free)
@@ -611,7 +638,7 @@ MODEL 39: x-ai/grok-4.1-fast
 
 ================================================================================
 
-MODEL 40: z-ai/glm-4.5-air
+MODEL 41: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-24 07:18 AM IST
+Generated: 2025-11-25 07:13 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 40
-   • Total records in pipeline: 40
+   • Total unique model names: 41
+   • Total records in pipeline: 41
    • Total records in Supabase: 40
    • Models in both systems: 40
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 0
+   • Models in pipeline only (not in Supabase): 1
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -56,10 +56,32 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
+   • New models (pipeline only): 1
+     Models: Bert-Nebulon Alpha
    • Existing models with differences: 0
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
+================================================================================
+
+MODEL: Bert-Nebulon Alpha
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | Unknown                   |                          
+human_readable_name       | Bert-Nebulon Alpha        |                          
+model_provider_country    | Unknown                   |                          
+official_url              | Unknown                   |                          
+input_modalities          | Text, Image               |                          
+output_modalities         | Text                      |                          
+license_info_text         |                           |                          
+license_info_url          |                           |                          
+license_name              |                           |                          
+license_url               |                           |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
+
 ================================================================================
 
 MODEL: DeepSeek R1 0528 Qwen3 8B

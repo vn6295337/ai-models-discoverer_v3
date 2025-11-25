@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-11-24 07:18 AM IST
+Generated: 2025-11-25 07:13 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,7 +9,8 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (12 models):
+LICENSE INFO TEXT (13 models):
+  - Bert-Nebulon Alpha
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
@@ -23,7 +24,8 @@ LICENSE INFO TEXT (12 models):
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
 
-LICENSE INFO URL (12 models):
+LICENSE INFO URL (13 models):
+  - Bert-Nebulon Alpha
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
@@ -36,16 +38,27 @@ LICENSE INFO URL (12 models):
   - Nemotron Nano 12B 2 VL
   - Nemotron Nano 9B V2
   - Qwen2.5 72B Instruct
+
+LICENSE NAME (1 models):
+  - Bert-Nebulon Alpha
+
+LICENSE URL (1 models):
+  - Bert-Nebulon Alpha
 
 UNKNOWN OR 'NOT FOUND' VALUES:
 ------------------------------
-✓ No unknown values found
+
+MODEL PROVIDER (1 models):
+  - Bert-Nebulon Alpha
 
 DATA QUALITY SUMMARY:
 ------------------------------
-Total models: 40
-Missing license info text: 12 (30.0%)
-Missing license info url: 12 (30.0%)
+Total models: 41
+Missing license info text: 13 (31.7%)
+Missing license info url: 13 (31.7%)
+Missing license name: 1 (2.4%)
+Missing license url: 1 (2.4%)
+Unknown model provider: 1 (2.4%)
 
 ================================================================================
 
@@ -432,7 +445,17 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 39. GLM 4.5 Air
+ 39. Bert-Nebulon Alpha
+     Provider           : Unknown (Unknown)
+     Modalities         : Text, Image → Text
+     License            : 
+     License Info       : 
+     License URL        : 
+     Official URL       : Unknown
+     Rate Limits        : 20 requests/min 50/day
+     Provider API Access: https://openrouter.ai/settings/keys
+
+ 40. GLM 4.5 Air
      Provider           : Z.AI (China)
      Modalities         : Text → Text
      License            : MIT
@@ -442,7 +465,7 @@ COMPLETE MODEL RECORDS:
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys
 
- 40. Grok 4.1 Fast
+ 41. Grok 4.1 Fast
      Provider           : xAI (United States)
      Modalities         : Text, Image → Text
      License            : xAI

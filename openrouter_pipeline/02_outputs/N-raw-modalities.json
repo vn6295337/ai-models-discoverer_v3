@@ -1,10 +1,19 @@
 {
   "metadata": {
-    "generated_at": "2025-11-24 07:18 AM IST",
-    "total_models": 40,
+    "generated_at": "2025-11-25 07:13 AM IST",
+    "total_models": 41,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
+    {
+      "id": "openrouter/bert-nebulon-alpha",
+      "canonical_slug": "openrouter/bert-nebulon-alpha",
+      "original_name": "Bert-Nebulon Alpha",
+      "hugging_face_id": "",
+      "clean_model_name": "Bert-Nebulon Alpha",
+      "raw_input_modalities": "text, image",
+      "raw_output_modalities": "text"
+    },
     {
       "id": "x-ai/grok-4.1-fast:free",
       "canonical_slug": "x-ai/grok-4.1-fast",
