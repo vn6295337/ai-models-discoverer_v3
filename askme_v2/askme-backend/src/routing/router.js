@@ -3,6 +3,7 @@ import {
   selectModelWithFallback,
   calculateComplexity,
 } from '../utils/modelSelectorClient.js';
+import modelCache from '../services/modelCache.js';
 
 /**
  * Routing Engine
@@ -10,6 +11,59 @@ import {
  * Now uses intelligent_model_selector service for dynamic selection
  * Fallback chain: Primary → Groq → OpenRouter
  */
+
+/**
+ * Select best model from cache (based on Intelligence Index)
+ * Uses cached results from intelligent_model_selector /best-model endpoint
+ * @param {string} queryType - Query category
+ * @returns {Object} Selection with provider, modelName, metadata
+ */
+export const selectModelFromCache = (queryType) => {
+  try {
+    // Select provider based on query type
+    const provider = selectPrimaryProviderStatic(queryType);
+
+    // Get best model for this provider from cache
+    const model = modelCache.getModel(provider);
+
+    if (!model) {
+      console.warn('[Router] No cached model for provider:', provider);
+      throw new Error(`No cached model available for ${provider}`);
+    }
+
+    console.log('[Router] Cache selection:', {
+      provider: model.provider,
+      model: model.modelSlug,
+      humanName: model.humanReadableName,
+      intelligenceIndex: model.intelligenceIndex,
+      isFallback: model.isFallback,
+      cacheAge: model.cacheAge + 's',
+    });
+
+    return {
+      provider: model.provider,
+      modelName: model.modelSlug,
+      humanReadableName: model.humanReadableName,
+      intelligenceIndex: model.intelligenceIndex,
+      codingIndex: model.codingIndex,
+      mathIndex: model.mathIndex,
+      isFallback: model.isFallback,
+      cacheAge: model.cacheAge,
+      selectionMethod: 'intelligence_index_cached',
+    };
+  } catch (error) {
+    console.error('[Router] Cache selection error:', error.message);
+    // Fall back to static provider selection
+    const provider = selectPrimaryProviderStatic(queryType);
+    return {
+      provider,
+      modelName: null,
+      isFallback: true,
+      error: error.message,
+      selectionMethod: 'static_fallback',
+    };
+  }
+};
 
 /**
  * Select provider and model using intelligent model selector
@@ -168,6 +222,8 @@ export const testRouting = () => {
 
 export default {
   selectPrimaryProvider,
+  selectModelFromCache,
+  selectModelDynamic,
   getFailoverChain,
   testRouting,
 };

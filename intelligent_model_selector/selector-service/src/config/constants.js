@@ -24,19 +24,32 @@ export const COMPLEXITY_THRESHOLDS = {
   medium: 0.4      // Requires headroom > 0.3
 };
 
-// Rate limit defaults by provider
+// Rate limit defaults by provider (fallback when model-specific data unavailable)
+// Values based on median from rate_limits table
 export const RATE_LIMIT_DEFAULTS = {
   groq: {
-    limit: 30,
-    window: 60000    // 1 minute in milliseconds
+    rpm: 30,      // Median from database
+    rpd: 14400,   // Typical daily limit
+    tpm: 15000,   // Typical token/min
+    tpd: null     // Often unlimited
   },
   gemini: {
-    limit: 60,
-    window: 60000
+    rpm: 15,      // FIXED: Was 60, median is 15
+    rpd: 200,     // Typical daily limit
+    tpm: 250000,  // Typical token/min
+    tpd: null     // Often unlimited
+  },
+  google: {       // Alias for gemini
+    rpm: 15,
+    rpd: 200,
+    tpm: 250000,
+    tpd: null
   },
   openrouter: {
-    limit: 200,
-    window: 60000
+    rpm: 20,      // CRITICAL FIX: Was 200, actual is 20
+    rpd: 50,      // Typical daily limit
+    tpm: null,    // Varies by model
+    tpd: null
   }
 };
 

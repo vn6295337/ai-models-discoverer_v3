@@ -10,7 +10,8 @@ import morgan from 'morgan';
 import dotenv from 'dotenv';
 import { selectModel } from './services/modelSelector.js';
 import cacheManager from './services/cacheManager.js';
-import rateLimitTracker from './services/rateLimitTracker.js';
+import rateLimitTracker from './utils/rateLimitTracker.js';
+import { initializeScores } from './services/intelligenceIndex.js';
 import { fetchLatestModels, testConnection } from './utils/supabase.js';
 import { CACHE_TTLS } from './config/constants.js';
 
@@ -71,6 +72,117 @@ app.get('/models', async (req, res) => {
     res.status(500).json({
       error: 'Failed to fetch models',
       message: error.message
+    });
+  }
+});
+
+// MVP: Get best model by Intelligence Index
+app.get('/best-model', async (req, res) => {
+  try {
+    const { provider } = req.query;
+
+    // Use 3-table lookup: working_version → model_aa_mapping → aa_performance_metrics
+    const { createClient } = await import('@supabase/supabase-js');
+    const supabase = createClient(process.env.SUPABASE_URL, process.env.SUPABASE_KEY);
+
+    // Fetch working_version models
+    let modelsQuery = supabase
+      .from('working_version')
+      .select('inference_provider, human_readable_name');
+
+    if (provider) {
+      modelsQuery = modelsQuery.eq('inference_provider', provider);
+    }
+
+    const { data: models, error: modelsError } = await modelsQuery;
+
+    if (modelsError) {
+      throw new Error(`Database query failed: ${modelsError.message}`);
+    }
+
+    if (!models || models.length === 0) {
+      return res.status(404).json({
+        error: 'No models found matching criteria',
+        code: 'NO_MODELS_AVAILABLE',
+        criteria: { provider: provider || 'all' }
+      });
+    }
+
+    // Fetch model name → AA slug mappings
+    const { data: mappings, error: mappingsError } = await supabase
+      .from('model_aa_mapping')
+      .select('model_name, aa_slug');
+
+    if (mappingsError) {
+      throw new Error(`Database query failed: ${mappingsError.message}`);
+    }
+
+    // Fetch AA metrics
+    const { data: metrics, error: metricsError } = await supabase
+      .from('aa_performance_metrics')
+      .select('slug, intelligence_index, coding_index, math_index, name')
+      .not('intelligence_index', 'is', null);
+
+    if (metricsError) {
+      throw new Error(`Database query failed: ${metricsError.message}`);
+    }
+
+    // Create lookup maps
+    const mappingMap = {};
+    (mappings || []).forEach(m => {
+      mappingMap[m.model_name] = m.aa_slug;
+    });
+
+    const metricsMap = {};
+    (metrics || []).forEach(m => {
+      metricsMap[m.slug] = m;
+    });
+
+    // 3-table join and find best model
+    const modelsWithMetrics = models
+      .map(m => {
+        const aaSlug = mappingMap[m.human_readable_name];
+        const aaMetrics = aaSlug ? metricsMap[aaSlug] : null;
+        return {
+          ...m,
+          aaSlug,
+          metrics: aaMetrics
+        };
+      })
+      .filter(m => m.metrics && m.metrics.intelligence_index != null)
+      .sort((a, b) => b.metrics.intelligence_index - a.metrics.intelligence_index);
+
+    if (modelsWithMetrics.length === 0) {
+      return res.status(404).json({
+        error: 'No models found with intelligence index',
+        code: 'NO_MODELS_AVAILABLE',
+        criteria: { provider: provider || 'all' }
+      });
+    }
+
+    const modelData = modelsWithMetrics[0];
+
+    res.json({
+      model: {
+        provider: modelData.inference_provider,
+        modelSlug: modelData.aaSlug,
+        humanReadableName: modelData.human_readable_name,
+        intelligenceIndex: modelData.metrics.intelligence_index,
+        codingIndex: modelData.metrics.coding_index,
+        mathIndex: modelData.metrics.math_index
+      },
+      selectionCriteria: {
+        method: 'intelligence_index',
+        filterProvider: provider || 'all'
+      },
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('Best model selection error:', error);
+    res.status(500).json({
+      error: 'Failed to select best model',
+      message: error.message,
+      code: 'SELECTION_ERROR'
     });
   }
 });
@@ -222,6 +334,11 @@ async function startServer() {
     }
 
     console.log('✓ Supabase connection successful');
+
+    // Initialize Intelligence Index scores
+    console.log('Initializing Intelligence Index...');
+    await initializeScores();
+    console.log('✓ Intelligence Index initialized');
 
     // Pre-warm cache
     console.log('Pre-warming cache...');

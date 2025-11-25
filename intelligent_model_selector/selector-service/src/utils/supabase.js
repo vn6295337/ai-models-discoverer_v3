@@ -18,21 +18,83 @@ if (!supabaseUrl || !supabaseKey) {
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 /**
- * Fetch all models from ai_models_main table
+ * Fetch all models from working_version table with AA performance metrics and rate limits
+ * Uses 4-table lookup: working_version → model_aa_mapping → aa_performance_metrics
+ *                                      → rate_limits
  * @returns {Promise<Array>} Array of model objects
  */
 export async function fetchLatestModels() {
   try {
-    const { data, error } = await supabase
-      .from('ai_models_main')
+    // Fetch all models from working_version
+    const { data: models, error: modelsError } = await supabase
+      .from('working_version')
       .select('*')
       .order('updated_at', { ascending: false });
 
-    if (error) {
-      throw new Error(`Supabase query error: ${error.message}`);
+    if (modelsError) {
+      throw new Error(`Supabase query error: ${modelsError.message}`);
     }
 
-    return data || [];
+    // Fetch model name → AA slug mappings
+    const { data: mappings, error: mappingsError } = await supabase
+      .from('ims_10_model_aa_mapping')
+      .select('human_readable_name, aa_slug');
+
+    if (mappingsError) {
+      throw new Error(`Supabase query error: ${mappingsError.message}`);
+    }
+
+    // Fetch all AA performance metrics
+    const { data: metrics, error: metricsError } = await supabase
+      .schema('ims')
+      .from('20_aa_performance_metrics')
+      .select('aa_slug, intelligence_index, coding_index, math_index, name');
+
+    if (metricsError) {
+      throw new Error(`Supabase query error: ${metricsError.message}`);
+    }
+
+    // Fetch all rate limits
+    const { data: rateLimits, error: rateLimitsError } = await supabase
+      .schema('ims')
+      .from('30_rate_limits')
+      .select('human_readable_name, rpm, rpd, tpm, tpd, parseable');
+
+    if (rateLimitsError) {
+      throw new Error(`Supabase query error: ${rateLimitsError.message}`);
+    }
+
+    // Create lookup maps
+    const mappingMap = {};
+    (mappings || []).forEach(m => {
+      mappingMap[m.human_readable_name] = m.aa_slug;
+    });
+
+    const metricsMap = {};
+    (metrics || []).forEach(m => {
+      metricsMap[m.aa_slug] = m;
+    });
+
+    const rateLimitsMap = {};
+    (rateLimits || []).forEach(r => {
+      rateLimitsMap[r.human_readable_name] = r;
+    });
+
+    // 4-table join: working_version → model_aa_mapping → aa_performance_metrics
+    //                               → rate_limits
+    const modelsWithMetrics = (models || []).map(model => {
+      const aaSlug = mappingMap[model.human_readable_name];
+      const aaMetrics = aaSlug ? metricsMap[aaSlug] : null;
+      const rateLimitsData = rateLimitsMap[model.human_readable_name] || null;
+
+      return {
+        ...model,
+        aa_performance_metrics: aaMetrics || null,
+        rate_limits_normalized: rateLimitsData
+      };
+    });
+
+    return modelsWithMetrics;
   } catch (error) {
     console.error('Error fetching models from Supabase:', error);
     throw error;
@@ -129,7 +191,7 @@ export async function getModelsByLicense(licenses) {
 export async function testConnection() {
   try {
     const { data, error } = await supabase
-      .from('ai_models_main')
+      .from('working_version')
       .select('id')
       .limit(1);
 

@@ -4,6 +4,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import config from './config.js';
 import queryRoutes from './routes/query.js';
+import modelCache from './services/modelCache.js';
 
 const app = express();
 
@@ -80,9 +81,24 @@ app.use((err, req, res, next) => {
 const PORT = config.port;
 const NODE_ENV = config.nodeEnv;
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  console.log(`Environment: ${NODE_ENV}`);
-});
+async function startServer() {
+  try {
+    // Initialize model cache with best models from selector service
+    console.log('[Startup] Initializing model cache...');
+    await modelCache.initialize();
+    console.log('[Startup] Model cache initialized successfully');
+
+    // Start listening
+    app.listen(PORT, () => {
+      console.log(`Server running on http://localhost:${PORT}`);
+      console.log(`Environment: ${NODE_ENV}`);
+    });
+  } catch (error) {
+    console.error('[Startup] Failed to initialize server:', error);
+    process.exit(1);
+  }
+}
+
+startServer();
 
 export default app;

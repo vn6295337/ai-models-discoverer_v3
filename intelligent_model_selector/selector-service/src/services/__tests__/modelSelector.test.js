@@ -3,6 +3,16 @@
  */
 
 import { filterByModalities, calculateScores, matchComplexityToHeadroom, selectBestModel } from '../modelSelector.js';
+import rateLimitTracker from '../../utils/rateLimitTracker.js';
+
+// Mock rateLimitTracker
+jest.mock('../../utils/rateLimitTracker.js', () => ({
+  default: {
+    getHeadroom: jest.fn(),
+    recordUsage: jest.fn(),
+    initializeModel: jest.fn()
+  }
+}));
 
 describe('ModelSelector', () => {
   const mockModels = [
@@ -35,6 +45,18 @@ describe('ModelSelector', () => {
     }
   ];
 
+  beforeEach(() => {
+    jest.clearAllMocks();
+
+    // Mock getHeadroom to return different values for different models
+    rateLimitTracker.getHeadroom.mockImplementation((modelName) => {
+      if (modelName.includes('Llama')) return 0.9;
+      if (modelName.includes('Gemini')) return 0.7;
+      if (modelName.includes('DeepSeek')) return 0.5;
+      return 0.5;
+    });
+  });
+
   describe('filterByModalities', () => {
     it('should return all models for text modality', () => {
       const filtered = filterByModalities(mockModels, ['text']);
@@ -54,13 +76,13 @@ describe('ModelSelector', () => {
           inference_provider: 'openrouter',
           human_readable_name: 'Text Embedding Model',
           input_modalities: 'Text',
-          output_modalities: 'Text Embeddings',
+          output_modalities: 'Embeddings',
           license_name: 'MIT'
         }
       ];
 
       const filtered = filterByModalities(modelsWithEmbedding, ['text']);
-      // Should exclude embedding-only model
+      // Should exclude embedding-only model (Embeddings without Text)
       expect(filtered).toHaveLength(3);
     });
 
@@ -76,14 +98,14 @@ describe('ModelSelector', () => {
   });
 
   describe('calculateScores', () => {
-    const headroomData = {
-      groq: 0.9,
-      google: 0.7,
-      openrouter: 0.5
+    const intelligenceScores = {
+      'llama 3.3 70b versatile': 0.9,
+      'gemini 2.0 flash': 0.85,
+      'deepseek r1 8b': 0.5
     };
 
     it('should calculate scores for all models', () => {
-      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, headroomData);
+      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, intelligenceScores);
 
       expect(scored).toHaveLength(3);
       scored.forEach(model => {
@@ -94,7 +116,7 @@ describe('ModelSelector', () => {
     });
 
     it('should include scoring components', () => {
-      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, headroomData);
+      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, intelligenceScores);
 
       scored.forEach(model => {
         expect(model).toHaveProperty('intelligenceScore');
@@ -106,8 +128,8 @@ describe('ModelSelector', () => {
     });
 
     it('should apply query type preference boost', () => {
-      const businessScored = calculateScores(mockModels, 'business_news', 0.5, headroomData);
-      const generalScored = calculateScores(mockModels, 'general_knowledge', 0.5, headroomData);
+      const businessScored = calculateScores(mockModels, 'business_news', 0.5, intelligenceScores);
+      const generalScored = calculateScores(mockModels, 'general_knowledge', 0.5, intelligenceScores);
 
       // Groq should get boost for business_news
       const groqBusiness = businessScored.find(m => m.inference_provider === 'groq');
@@ -117,21 +139,50 @@ describe('ModelSelector', () => {
     });
 
     it('should score Groq higher for latency', () => {
-      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, headroomData);
+      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, intelligenceScores);
 
       const groq = scored.find(m => m.inference_provider === 'groq');
       const openrouter = scored.find(m => m.inference_provider === 'openrouter');
 
       expect(groq.latencyScore).toBeGreaterThan(openrouter.latencyScore);
     });
+
+    it('should use Intelligence Index scores when provided', () => {
+      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, intelligenceScores);
+
+      const llama = scored.find(m => m.human_readable_name === 'Llama 3.3 70B Versatile');
+      expect(llama.intelligenceScore).toBe(0.9);
+    });
+
+    it('should fall back to size-based scoring when Intelligence Index unavailable', () => {
+      const scored = calculateScores(mockModels, 'general_knowledge', 0.5, {});
+
+      const llama = scored.find(m => m.human_readable_name === 'Llama 3.3 70B Versatile');
+      // Should use fallback: 70B = 0.9
+      expect(llama.intelligenceScore).toBe(0.9);
+    });
+
+    it('should get headroom from tracker', () => {
+      calculateScores(mockModels, 'general_knowledge', 0.5, intelligenceScores);
+
+      // Should have called getHeadroom for each model
+      expect(rateLimitTracker.getHeadroom).toHaveBeenCalledTimes(3);
+      expect(rateLimitTracker.getHeadroom).toHaveBeenCalledWith('Llama 3.3 70B Versatile');
+      expect(rateLimitTracker.getHeadroom).toHaveBeenCalledWith('Gemini 2.0 Flash');
+      expect(rateLimitTracker.getHeadroom).toHaveBeenCalledWith('DeepSeek R1 8B');
+    });
   });
 
   describe('matchComplexityToHeadroom', () => {
-    const headroomData = {
-      groq: 0.9,
-      google: 0.4,
-      openrouter: 0.2
-    };
+    beforeEach(() => {
+      // Mock different headroom values for testing
+      rateLimitTracker.getHeadroom.mockImplementation((modelName) => {
+        if (modelName.includes('Llama')) return 0.9;   // High headroom
+        if (modelName.includes('Gemini')) return 0.4;  // Medium headroom
+        if (modelName.includes('DeepSeek')) return 0.2; // Low headroom
+        return 0.5;
+      });
+    });
 
     const scoredModels = mockModels.map((m, i) => ({
       ...m,
@@ -139,24 +190,24 @@ describe('ModelSelector', () => {
     }));
 
     it('should require high headroom for high complexity', () => {
-      const matched = matchComplexityToHeadroom(scoredModels, 0.8, headroomData);
+      const matched = matchComplexityToHeadroom(scoredModels, 0.8);
 
-      // Only groq should pass (headroom > 0.6)
+      // Only Llama should pass (headroom > 0.6)
       expect(matched).toHaveLength(1);
       expect(matched[0].inference_provider).toBe('groq');
     });
 
     it('should require medium headroom for medium complexity', () => {
-      const matched = matchComplexityToHeadroom(scoredModels, 0.5, headroomData);
+      const matched = matchComplexityToHeadroom(scoredModels, 0.5);
 
-      // Groq and google should pass (headroom > 0.3)
+      // Llama and Gemini should pass (headroom > 0.3)
       expect(matched).toHaveLength(2);
       expect(matched.map(m => m.inference_provider)).toContain('groq');
       expect(matched.map(m => m.inference_provider)).toContain('google');
     });
 
     it('should allow any headroom for low complexity', () => {
-      const matched = matchComplexityToHeadroom(scoredModels, 0.3, headroomData);
+      const matched = matchComplexityToHeadroom(scoredModels, 0.3);
 
       // All models should pass
       expect(matched).toHaveLength(3);
@@ -164,12 +215,6 @@ describe('ModelSelector', () => {
   });
 
   describe('selectBestModel', () => {
-    const headroomData = {
-      groq: 0.9,
-      google: 0.7,
-      openrouter: 0.5
-    };
-
     const scoredModels = [
       {
         ...mockModels[0],
@@ -187,15 +232,22 @@ describe('ModelSelector', () => {
       }
     ];
 
+    const queryText = 'test query for selection';
+
+    beforeEach(() => {
+      rateLimitTracker.getHeadroom.mockReturnValue(0.9);
+      rateLimitTracker.recordUsage.mockImplementation(() => {});
+    });
+
     it('should select model with highest score', () => {
-      const selected = selectBestModel(scoredModels, headroomData);
+      const selected = selectBestModel(scoredModels, queryText);
 
       expect(selected.provider).toBe('groq');
       expect(selected.score).toBe(0.9);
     });
 
     it('should return selection metadata', () => {
-      const selected = selectBestModel(scoredModels, headroomData);
+      const selected = selectBestModel(scoredModels, queryText);
 
       expect(selected).toHaveProperty('provider');
       expect(selected).toHaveProperty('modelName');
@@ -210,14 +262,14 @@ describe('ModelSelector', () => {
     });
 
     it('should include modality information', () => {
-      const selected = selectBestModel(scoredModels, headroomData);
+      const selected = selectBestModel(scoredModels, queryText);
 
       expect(selected.modalities).toHaveProperty('input');
       expect(selected.modalities).toHaveProperty('output');
     });
 
     it('should provide selection reason', () => {
-      const selected = selectBestModel(scoredModels, headroomData);
+      const selected = selectBestModel(scoredModels, queryText);
 
       expect(selected.selectionReason).toBeTruthy();
       expect(typeof selected.selectionReason).toBe('string');
@@ -225,15 +277,29 @@ describe('ModelSelector', () => {
 
     it('should throw error for empty model array', () => {
       expect(() => {
-        selectBestModel([], headroomData);
+        selectBestModel([], queryText);
       }).toThrow('No models available for selection');
     });
 
     it('should estimate latency correctly', () => {
-      const selected = selectBestModel(scoredModels, headroomData);
+      const selected = selectBestModel(scoredModels, queryText);
 
       // Groq should have low latency
       expect(selected.estimatedLatency).toBe('low');
+    });
+
+    it('should record usage with queryText', () => {
+      selectBestModel(scoredModels, queryText);
+
+      expect(rateLimitTracker.recordUsage).toHaveBeenCalledTimes(1);
+      expect(rateLimitTracker.recordUsage).toHaveBeenCalledWith('Llama 3.3 70B Versatile', queryText);
+    });
+
+    it('should get headroom from tracker', () => {
+      selectBestModel(scoredModels, queryText);
+
+      expect(rateLimitTracker.getHeadroom).toHaveBeenCalledTimes(1);
+      expect(rateLimitTracker.getHeadroom).toHaveBeenCalledWith('Llama 3.3 70B Versatile');
     });
   });
 });

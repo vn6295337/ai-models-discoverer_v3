@@ -3,7 +3,8 @@
  */
 
 import cacheManager from './cacheManager.js';
-import rateLimitTracker from './rateLimitTracker.js';
+import rateLimitTracker from '../utils/rateLimitTracker.js';
+import { fetchIntelligenceScores, getModelScore } from './intelligenceIndex.js';
 import { fetchLatestModels } from '../utils/supabase.js';
 import {
   SELECTION_WEIGHTS,
@@ -36,39 +37,48 @@ export async function selectModel(criteria) {
     throw new Error('No models available');
   }
 
-  // 2. Filter by modalities
+  // 2. Initialize rate limit tracker with per-model limits
+  models.forEach(model => {
+    const limits = model.rate_limits_normalized || {};
+    rateLimitTracker.initializeModel(
+      model.human_readable_name,
+      limits,
+      model.inference_provider
+    );
+  });
+
+  // 3. Fetch Intelligence Index scores
+  const intelligenceScores = await fetchIntelligenceScores();
+
+  // 4. Filter by modalities
   const filteredModels = filterByModalities(models, modalities);
 
   if (filteredModels.length === 0) {
     throw new Error('No models match required modalities');
   }
 
-  // 3. Get current headroom data
-  const headroomData = rateLimitTracker.getAllHeadroom();
-
-  // 4. Calculate scores for each model
+  // 5. Calculate scores for each model
   const scoredModels = calculateScores(
     filteredModels,
     queryType,
     complexityScore,
-    headroomData
+    intelligenceScores
   );
 
-  // 5. Apply complexity-headroom matching
+  // 6. Apply complexity-headroom matching
   const matchedModels = matchComplexityToHeadroom(
     scoredModels,
-    complexityScore,
-    headroomData
+    complexityScore
   );
 
   if (matchedModels.length === 0) {
     // Relax headroom requirements if no matches
     console.warn('No models match headroom requirements, relaxing constraints');
-    return selectBestModel(scoredModels, headroomData);
+    return selectBestModel(scoredModels, queryText);
   }
 
-  // 6. Select best model
-  return selectBestModel(matchedModels, headroomData);
+  // 7. Select best model and record usage
+  return selectBestModel(matchedModels, queryText);
 }
 
 /**
@@ -118,21 +128,21 @@ export function filterByModalities(models, requiredModalities = ['text']) {
  * @param {Array} models - Models to score
  * @param {string} queryType - Query type
  * @param {number} complexityScore - Complexity score
- * @param {Object} headroomData - Provider headroom
+ * @param {Object} intelligenceScores - Intelligence Index scores from API
  * @returns {Array} Models with scores
  */
-export function calculateScores(models, queryType, complexityScore, headroomData) {
+export function calculateScores(models, queryType, complexityScore, intelligenceScores = {}) {
   return models.map(model => {
     const provider = normalizeProviderName(model.inference_provider);
 
-    // Intelligence Index score (or fallback)
-    const intelligenceScore = getIntelligenceScore(model);
+    // Intelligence Index score (from API or fallback)
+    const intelligenceScore = getModelScore(model, intelligenceScores);
 
     // Latency score
     const latencyScore = LATENCY_SCORES[provider] || 0.5;
 
-    // Headroom score
-    const headroomScore = headroomData[provider] || 0;
+    // Headroom score (per-model from tracker)
+    const headroomScore = rateLimitTracker.getHeadroom(model.human_readable_name);
 
     // Geography score
     const geographyScore = getGeographyScore(model);
@@ -164,27 +174,6 @@ export function calculateScores(models, queryType, complexityScore, headroomData
   });
 }
 
-/**
- * Get intelligence score for a model (with fallback)
- * @param {Object} model - Model object
- * @returns {number} Intelligence score (0-1)
- */
-function getIntelligenceScore(model) {
-  // TODO: Integrate with Artificial Analysis API
-  // For now, use fallback based on model size
-
-  const modelName = model.human_readable_name.toLowerCase();
-
-  // Try to extract model size
-  for (const [size, score] of Object.entries(MODEL_SIZE_SCORES)) {
-    if (modelName.includes(size)) {
-      return score;
-    }
-  }
-
-  // Default moderate score
-  return 0.6;
-}
 
 /**
  * Get geography score for a model
@@ -224,10 +213,9 @@ function getLicenseScore(model) {
  * Match complexity score to headroom requirements
  * @param {Array} models - Scored models
  * @param {number} complexityScore - Query complexity
- * @param {Object} headroomData - Provider headroom
  * @returns {Array} Filtered models
  */
-export function matchComplexityToHeadroom(models, complexityScore, headroomData) {
+export function matchComplexityToHeadroom(models, complexityScore) {
   let requiredHeadroom = 0;
 
   if (complexityScore > COMPLEXITY_THRESHOLDS.high) {
@@ -237,8 +225,7 @@ export function matchComplexityToHeadroom(models, complexityScore, headroomData)
   }
 
   return models.filter(model => {
-    const provider = normalizeProviderName(model.inference_provider);
-    const headroom = headroomData[provider] || 0;
+    const headroom = rateLimitTracker.getHeadroom(model.human_readable_name);
     return headroom >= requiredHeadroom;
   });
 }
@@ -246,10 +233,10 @@ export function matchComplexityToHeadroom(models, complexityScore, headroomData)
 /**
  * Select the best model from scored models
  * @param {Array} models - Scored models
- * @param {Object} headroomData - Provider headroom
+ * @param {string} queryText - Query text for token estimation
  * @returns {Object} Selected model with metadata
  */
-export function selectBestModel(models, headroomData) {
+export function selectBestModel(models, queryText) {
   if (!models || models.length === 0) {
     throw new Error('No models available for selection');
   }
@@ -261,18 +248,21 @@ export function selectBestModel(models, headroomData) {
   const topModel = sorted[0];
   const provider = normalizeProviderName(topModel.inference_provider);
 
-  // Increment usage tracker
-  rateLimitTracker.incrementUsage(provider);
+  // Record usage with token estimation
+  rateLimitTracker.recordUsage(topModel.human_readable_name, queryText);
+
+  // Get current headroom for response
+  const headroom = rateLimitTracker.getHeadroom(topModel.human_readable_name);
 
   // Build selection reason
-  const selectionReason = buildSelectionReason(topModel, headroomData[provider]);
+  const selectionReason = buildSelectionReason(topModel, headroom);
 
   return {
     provider,
     modelName: extractModelName(topModel),
     humanReadableName: topModel.human_readable_name,
     score: Math.round(topModel.score * 100) / 100,
-    rateLimitHeadroom: Math.round(headroomData[provider] * 100) / 100,
+    rateLimitHeadroom: Math.round(headroom * 100) / 100,
     estimatedLatency: getLatencyEstimate(provider),
     intelligenceIndex: Math.round(topModel.intelligenceScore * 100) / 100,
     selectionReason,

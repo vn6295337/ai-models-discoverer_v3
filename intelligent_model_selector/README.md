@@ -1,12 +1,30 @@
 # Intelligent Model Selector
 
-**Version**: 1.0.0
-**Status**: ✅ 92% Complete - Fully Integrated with askme_v2
-**Timeline**: Phase 4 Complete, Phase 5 In Progress
+**Status:** ✅ 98% Complete - Fully Integrated with askme_v2
+**Version:** 1.0.0
 
-Dynamic, intelligent model selection service that queries ai_models_main table in Supabase to select optimal AI models based on query characteristics, performance metrics, rate limits, and geographic considerations.
+Dynamic, intelligent model selection service that selects optimal AI models from Supabase based on query characteristics, performance metrics, rate limits, and geographic considerations.
 
-**🎉 Latest Achievement**: Successfully integrated with askme_v2 backend with 2-20ms selection latency (50x faster than target)!
+---
+
+## Quick Start
+
+```bash
+cd selector-service
+npm install
+cp .env.example .env
+# Edit .env with your Supabase credentials
+npm run dev
+```
+
+**Endpoints:**
+- `http://localhost:3001/health` - Health check
+- `http://localhost:3001/best-model` - Get best model by Intelligence Index
+- `http://localhost:3001/select-model` - Full selection algorithm (POST)
+
+**Full setup guide:** [00_docs/02_getting_started.md](00_docs/02_getting_started.md)
+
+---
 
 ## System Architecture
 
@@ -15,93 +33,60 @@ Dynamic, intelligent model selection service that queries ai_models_main table i
 │   askme_v2      │
 │   Backend       │
 └────────┬────────┘
-         │ HTTP Request
-         │ (query, type, modalities)
+         │ POST /select-model
          ↓
 ┌─────────────────────────────┐
 │ Intelligent Model Selector  │
-│  ┌──────────────────────┐   │
-│  │ Selection Algorithm  │   │
-│  │  - Intelligence Index│   │
-│  │  - Rate Limit Tracker│   │
-│  │  - Latency Scoring   │   │
-│  │  - Geography Filter  │   │
-│  └──────────────────────┘   │
+│  - Multi-factor scoring     │
+│  - Rate limit tracking      │
+│  - Intelligence Index       │
 └────────┬────────────────────┘
          │
-         ├─→ Supabase (ai_models_main)
-         │   - Daily updated model data
-         │   - 75+ free models
+         ├─→ Supabase (3 tables)
+         │   - working_version (71 models)
+         │   - model_aa_mapping (35 mappings)
+         │   - aa_performance_metrics
          │
          └─→ Artificial Analysis API
              - Intelligence Index scores
-             - Performance benchmarks
 ```
 
-## Project Goals
+**Detailed architecture:** [00_docs/03_architecture.md](00_docs/03_architecture.md)
 
-- ✅ Real-time model selection from daily-updated ai_models_main table (70 models cached)
-- ✅ Multi-factor scoring algorithm (performance, latency, rate limits, geography)
-- ✅ Smart rate limit distribution across all providers
-- ✅ Modality-aware routing (text, image, audio, video)
-- ✅ Geographic compliance filtering
-- ⏳ Intelligence Index integration from Artificial Analysis (using fallback scoring)
-- ✅ Sub-100ms selection latency with caching (achieved 2-20ms!)
-- ✅ Seamless integration with askme_v2 backend
-
-**📊 Status**: 7/8 goals complete (87.5%)
-
-## Quick Start
-
-### Prerequisites
-
-- Node.js 18+ LTS
-- npm 9.6+
-- Supabase account with ai_models_main table access
-- (Optional) Artificial Analysis API key
-
-### Setup
-
-```bash
-cd selector-service
-npm install
-cp .env.example .env
-# Edit .env with your credentials
-npm run dev
-```
-
-### Testing
-
-```bash
-npm test              # Run all tests
-npm run test:watch    # Watch mode
-```
+---
 
 ## Key Features
 
-**Dynamic Model Discovery**
-- Queries ai_models_main table for latest available models
-- Adapts to daily model additions/removals automatically
-- No hardcoded model assumptions
+### Intelligent Selection
+- **Multi-factor scoring:** Intelligence Index (35%), Latency (25%), Rate Limit Headroom (25%), Geography (10%), License (5%)
+- **Complexity matching:** Routes complex queries to providers with high headroom
+- **Performance optimized:** 5-6ms selection latency with caching
 
-**Intelligent Selection Algorithm**
-- Intelligence Index scoring from Artificial Analysis
-- Provider latency considerations (Groq > Google > OpenRouter)
-- Rate limit headroom matching (complex queries → high headroom)
-- Geographic filtering by model_provider_country
-- Modality matching (text, image, audio, video inputs/outputs)
+### Data-Driven
+- **3-table architecture:** working_version (pipeline-managed) + model_aa_mapping + aa_performance_metrics
+- **Daily updates:** Automatic refresh from ai-models-discoverer_v3 pipeline
+- **24-hour cache:** Matches database update frequency
 
-**Rate Limit Intelligence**
-- Tracks API usage per provider
-- Distributes load strategically (not avoidance)
-- Simple queries use low-headroom providers
-- Complex queries routed to high-headroom providers
+### Rate Limit Intelligence
+- **Smart distribution:** Simple queries → low headroom, complex queries → high headroom
+- **Provider tracking:** In-memory counters for groq (30/min), google (60/min), openrouter (200/min)
+- **Load balancing:** Prevents single provider overload
 
-**Performance Optimizations**
-- 30-minute cache for ai_models_main snapshot
-- Background cache refresh (no query latency)
-- In-memory rate limit counters
-- Sub-100ms selection time
+---
+
+## Project Goals
+
+- ✅ Real-time model selection from daily-updated database (71 models)
+- ✅ Multi-factor scoring algorithm (5 weighted factors)
+- ✅ Smart rate limit distribution across providers
+- ✅ Modality-aware routing (text, image, audio, video)
+- ✅ Geographic compliance filtering
+- ✅ Sub-100ms selection latency (achieved 5-6ms)
+- ✅ Seamless integration with askme_v2 backend
+
+**Progress:** 98% complete (109/111 tasks)
+
+---
 
 ## Tech Stack
 
@@ -109,168 +94,160 @@ npm run test:watch    # Watch mode
 |-------|------------|-------|
 | Runtime | Node.js 18+ LTS | ES Modules, native watch mode |
 | Framework | Express 4.18+ | Lightweight HTTP API |
-| Database | Supabase (PostgreSQL) | ai_models_main table access |
-| Caching | Node.js in-memory | 30-min TTL, background refresh |
-| Testing | Jest 29 | Unit + integration tests |
+| Database | Supabase (PostgreSQL) | 3-table architecture |
+| Caching | Node.js in-memory | 24-hour TTL, background refresh |
+| Testing | Jest 29 | 69 tests, ~80% coverage |
 | External API | Artificial Analysis | Intelligence Index data |
+
+---
 
 ## API Endpoints
 
-### POST /select-model
+### GET /best-model
 
-Select optimal model based on query characteristics.
+Get best model by Intelligence Index (optionally filtered by provider).
 
-**Request:**
+```bash
+curl "http://localhost:3001/best-model?provider=groq"
+```
+
+**Response:**
 ```json
 {
-  "queryType": "financial_analysis",
-  "queryText": "Analyze the Q4 earnings...",
-  "modalities": ["text"],
-  "complexityScore": 0.8
+  "model": {
+    "provider": "groq",
+    "modelSlug": "gpt-oss-20b",
+    "humanReadableName": "GPT OSS 20B",
+    "intelligenceIndex": 52.4
+  }
 }
+```
+
+### POST /select-model
+
+Full selection algorithm with multi-factor scoring.
+
+```bash
+curl -X POST http://localhost:3001/select-model \
+  -H "Content-Type: application/json" \
+  -d '{
+    "queryType": "general_knowledge",
+    "queryText": "What is the capital of France?",
+    "modalities": ["text"],
+    "complexityScore": 0.3
+  }'
 ```
 
 **Response:**
 ```json
 {
   "provider": "groq",
-  "modelName": "llama-3.3-70b-versatile",
-  "humanReadableName": "Llama 3.3 70B Versatile",
-  "score": 0.92,
-  "rateLimitHeadroom": 0.85,
-  "estimatedLatency": "low",
-  "intelligenceIndex": 0.89,
-  "selectionReason": "High Intelligence Index, excellent rate limit headroom, optimized for complex queries"
+  "modelName": "gpt-oss-20b",
+  "score": 0.87,
+  "rateLimitHeadroom": 1.0,
+  "intelligenceIndex": 52.4,
+  "selectionDuration": 5
 }
 ```
 
-## Selection Criteria Priority
-
-1. **Model availability** (from latest ai_models_main data)
-2. **Modality match** (filter by required input/output modalities)
-3. **Intelligence Index** (performance score from Artificial Analysis)
-4. **Query complexity + rate limit headroom**:
-   - Simple query + low headroom = OK
-   - Complex query + low headroom = deprioritize
-   - Complex query + high headroom = prioritize
-5. **Latency** (Groq fastest, then Google, then OpenRouter)
-6. **Geographic compliance** (configurable filtering)
-7. **License preference** (configurable, not mandatory)
+---
 
 ## Integration with askme_v2
 
-The selector service integrates with askme_v2 backend at the routing layer:
+The selector service integrates at the routing layer:
 
-**Current (askme_v2):**
+**Before (hardcoded):**
 ```javascript
-// Hardcoded model selection
 const model = MODELS.groq; // 'llama-3.1-8b-instant'
 ```
 
-**New (with selector):**
+**After (dynamic):**
 ```javascript
-// Dynamic model selection
 const selection = await selectModel({
   queryType: category,
   queryText: query,
-  modalities: ['text']
+  modalities: ['text'],
+  complexityScore: calculateComplexity(query)
 });
-const { provider, modelName } = selection;
+const {provider, modelName} = selection;
 ```
 
-Integration points:
-- `askme-backend/src/routing/router.js` - Replace selectPrimaryProvider()
-- `askme-backend/src/failover/failover.js` - Use dynamic model names
-- `askme-backend/src/utils/supabase.js` - Add selector API client
+**Integration points:**
+- `askme-backend/src/routing/router.js` - Primary selection
+- `askme-backend/src/failover/failover.js` - Uses dynamic model names
+- `askme-backend/src/utils/modelSelectorClient.js` - HTTP client
 
-## Data Privacy
-
-✅ **What we do:**
-- Query ai_models_main table for model metadata
-- Track aggregate rate limit usage (no user data)
-- Cache model lists temporarily (30 minutes)
-
-❌ **What we don't do:**
-- Store user queries or responses
-- Log personally identifiable information
-- Share data with third parties (except Artificial Analysis API)
+---
 
 ## Documentation
 
-Organized by topic with serial numbering (MECE):
+All documentation consolidated in **`00_docs/`** directory:
 
-- **00_project/** - Project planning, charter, checklists
-- **01_getting_started/** - Setup and installation guides
-- **03_architecture/** - System design and data flows
-- **05_database/** - Database schema documentation
-- **06_testing/** - Testing strategies and guides
-- **08_operations/** - Configuration and troubleshooting
+1. **[01_project_overview.md](00_docs/01_project_overview.md)** - Mission, goals, technical decisions
+2. **[02_getting_started.md](00_docs/02_getting_started.md)** - Installation and setup
+3. **[03_architecture.md](00_docs/03_architecture.md)** - System design and algorithms
+4. **[04_database_schema.md](00_docs/04_database_schema.md)** - 3-table architecture
+5. **[05_testing_strategy.md](00_docs/05_testing_strategy.md)** - Testing approach
+6. **[06_configuration.md](00_docs/06_configuration.md)** - Environment variables and config
+7. **[07_implementation_status.md](00_docs/07_implementation_status.md)** - Progress tracking
+8. **[08_migration_history.md](00_docs/08_migration_history.md)** - Migration to working_version
 
-Start with [INDEX.md](INDEX.md) for navigation.
+**Navigation:** See [INDEX.md](INDEX.md) for complete documentation map
 
-## Implementation Status
-
-**📋 Detailed Summary**: See [05_implementation_summary.md](00_project/05_implementation_summary.md) for complete implementation details.
-
-**📊 Progress**: 92% complete (89/97 tasks)
-- ✅ Phase 1: Foundation & Infrastructure (100%)
-- 🟡 Phase 2: Selection Algorithm (94%)
-- ✅ Phase 3: Rate Limit Intelligence (100%)
-- ✅ Phase 4: API & Integration (96%)
-- 🟡 Phase 5: Testing & Operations (75%)
-
-**🎯 Key Metrics**:
-- 2-20ms selection latency (50x faster than 100ms target)
-- 70 models cached from Supabase
-- 45 unit tests (~85% coverage)
-- 2,534 lines of code across 18 files
-
-**🔗 Integration**:
-- ✅ Selector service running on port 3001
-- ✅ askme_v2 backend integrated on port 3000
-- ✅ Dynamic model selection working end-to-end
-- ✅ Provider name normalization (Google→gemini)
+---
 
 ## Development
-
-### Service Commands
 
 ```bash
 npm run dev          # Start with hot reload
 npm start            # Production mode
 npm test             # Run tests with coverage
-npm run lint         # Check code style
-npm run lint:fix     # Auto-fix style issues
+npm run test:watch   # Watch mode for TDD
 ```
 
 ### Environment Variables
 
-Required:
+**Required:**
 - `SUPABASE_URL` - Supabase project URL
 - `SUPABASE_KEY` - Supabase anon key
 
-Optional:
+**Optional:**
 - `ARTIFICIAL_ANALYSIS_API_KEY` - Intelligence Index API key
 - `PORT` - Service port (default: 3001)
-- `CACHE_TTL` - Cache duration in ms (default: 1800000)
+- `NODE_ENV` - Environment (default: development)
+- `LOG_LEVEL` - Logging verbosity (default: info)
 
-## Troubleshooting
+---
 
-**Selection returns no models:**
-- Check Supabase connection and ai_models_main table access
-- Verify modality filters aren't too restrictive
-- Review logs for database query errors
+## Current Status
 
-**Slow selection times:**
-- Ensure cache is enabled and working
-- Check Supabase query performance
-- Verify network latency to Supabase
+**Deployment:**
+- Selector service running on port 3001 ✅
+- askme_v2 backend integrated on port 3000 ✅
+- 71 models cached from Supabase ✅
+- 35 models mapped to Intelligence Index (49% coverage) ✅
 
-**Rate limit tracking inaccurate:**
-- Counters reset on service restart (in-memory)
-- Consider Redis for persistent tracking in production
-- Check counter reset logic matches provider windows
+**Performance:**
+- Selection latency: 5-6ms (20x better than 100ms target) ⚡
+- Cache hit rate: > 95% ✅
+- Rate limit tracking: Active ✅
+
+**Testing:**
+- 69 unit tests across 4 suites ✅
+- Coverage: ~80% ✅
+- Integration: End-to-end tested ✅
+
+**Remaining Work:**
+- Deployment configuration (render.yaml) ⏳
+- OpenAPI/Swagger documentation ⏳
+
+---
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) file for details.
+MIT License - see [LICENSE](LICENSE) file for details
+
+---
+
+**For detailed information, see [00_docs/](00_docs/) directory**
+**AI Assistant Guide:** [CLAUDE.md](CLAUDE.md)

@@ -1,77 +1,52 @@
 # Configuration Reference
 
-**Last Updated:** 2025-11-19
+**Last Updated:** 2025-11-24
 **Purpose:** Environment variables and configuration options
 
 ---
 
 ## Environment Variables
 
-### Required Variables
+### Required
 
 **SUPABASE_URL**
-- Description: Supabase project URL
+- Supabase project URL
 - Format: `https://your-project.supabase.co`
-- Example: `https://abcdefghijklmnop.supabase.co`
-- Required: Yes
-- Default: None
+- Example: `https://atilxlecbaqcksnrgzav.supabase.co`
 
 **SUPABASE_KEY**
-- Description: Supabase anon/public API key
-- Format: Long JWT string
-- Example: `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...`
-- Required: Yes
-- Default: None
+- Supabase anon/public API key
 - Note: Use anon key, NOT service_role key
+- Format: Long JWT string
 
----
-
-### Optional Variables
+### Optional
 
 **ARTIFICIAL_ANALYSIS_API_KEY**
-- Description: API key for Intelligence Index data
-- Format: String
-- Required: No
-- Default: None
+- API key for Intelligence Index data
 - Fallback: Heuristic scoring if not provided
 
 **PORT**
-- Description: HTTP server port
-- Format: Integer (1024-65535)
-- Required: No
+- HTTP server port
 - Default: `3001`
-- Example: `3002`
-
-**CACHE_TTL**
-- Description: Cache time-to-live in milliseconds
-- Format: Integer
-- Required: No
-- Default: `1800000` (30 minutes)
-- Example: `3600000` (1 hour)
 
 **NODE_ENV**
-- Description: Node environment
-- Format: `development` | `production` | `test`
-- Required: No
+- Node environment: `development` | `production` | `test`
 - Default: `development`
 
 **LOG_LEVEL**
-- Description: Logging verbosity
-- Format: `error` | `warn` | `info` | `debug`
-- Required: No
+- Logging verbosity: `error` | `warn` | `info` | `debug`
 - Default: `info`
 - Development: `debug`
 - Production: `warn`
 
 ---
 
-## Configuration Files
+## Configuration Constants
 
-### constants.js
+### Selection Weights
 
 **File:** `src/config/constants.js`
 
-**Selection Weights:**
 ```javascript
 export const SELECTION_WEIGHTS = {
   intelligenceIndex: 0.35,
@@ -82,7 +57,10 @@ export const SELECTION_WEIGHTS = {
 }
 ```
 
-**Latency Scores:**
+**Note:** Weights must sum to 1.0
+
+### Latency Scores
+
 ```javascript
 export const LATENCY_SCORES = {
   groq: 1.0,      // Fastest
@@ -91,7 +69,8 @@ export const LATENCY_SCORES = {
 }
 ```
 
-**Complexity Thresholds:**
+### Complexity Thresholds
+
 ```javascript
 export const COMPLEXITY_THRESHOLDS = {
   high: 0.7,      // Requires headroom > 0.6
@@ -99,29 +78,22 @@ export const COMPLEXITY_THRESHOLDS = {
 }
 ```
 
-**Rate Limit Defaults:**
+### Rate Limit Defaults
+
 ```javascript
 export const RATE_LIMIT_DEFAULTS = {
-  groq: {
-    limit: 30,
-    window: 60000  // 1 minute
-  },
-  google: {
-    limit: 60,
-    window: 60000
-  },
-  openrouter: {
-    limit: 200,
-    window: 60000
-  }
+  groq: {limit: 30, window: 60000},
+  google: {limit: 60, window: 60000},
+  openrouter: {limit: 200, window: 60000}
 }
 ```
 
-**Cache TTLs:**
+### Cache TTLs
+
 ```javascript
 export const CACHE_TTLS = {
-  models: process.env.CACHE_TTL || 1800000,      // 30 min
-  intelligenceIndex: 604800000                    // 7 days
+  models: 86400000,      // 24 hours (matches daily DB updates)
+  intelligenceIndex: 604800000  // 7 days
 }
 ```
 
@@ -130,8 +102,6 @@ export const CACHE_TTLS = {
 ## Runtime Configuration
 
 ### Modifying Selection Weights
-
-To adjust scoring factors:
 
 1. Edit `src/config/constants.js`
 2. Ensure weights sum to 1.0
@@ -142,40 +112,21 @@ Example:
 ```javascript
 // Prioritize latency over intelligence
 export const SELECTION_WEIGHTS = {
-  intelligenceIndex: 0.25,  // Reduced from 0.35
-  latency: 0.35,            // Increased from 0.25
+  intelligenceIndex: 0.25,
+  latency: 0.35,
   rateLimitHeadroom: 0.25,
   geography: 0.10,
   license: 0.05
 }
 ```
 
-### Adjusting Cache Duration
-
-**Via Environment Variable:**
-```bash
-CACHE_TTL=3600000 npm start  # 1 hour cache
-```
-
-**Via Configuration File:**
-```javascript
-// src/config/constants.js
-export const CACHE_TTLS = {
-  models: 3600000,           // 1 hour
-  intelligenceIndex: 604800000
-}
-```
-
-### Modifying Rate Limits
+### Adjusting Rate Limits
 
 Update `RATE_LIMIT_DEFAULTS` to match actual provider limits:
 
 ```javascript
 export const RATE_LIMIT_DEFAULTS = {
-  groq: {
-    limit: 50,     // Updated from 30
-    window: 60000
-  }
+  groq: {limit: 50, window: 60000}  // Updated from 30
 }
 ```
 
@@ -183,7 +134,7 @@ export const RATE_LIMIT_DEFAULTS = {
 
 ## Deployment Configuration
 
-### Render (Recommended)
+### Render
 
 **render.yaml:**
 ```yaml
@@ -205,8 +156,6 @@ services:
       - key: ARTIFICIAL_ANALYSIS_API_KEY
         sync: false
 ```
-
-Set environment variables in Render dashboard.
 
 ### Docker
 
@@ -243,31 +192,9 @@ services:
 
 ---
 
-## Monitoring Configuration
+## Monitoring
 
-### Logging
-
-**Structured Logging Format:**
-```javascript
-{
-  "timestamp": "2025-11-19T12:00:00.000Z",
-  "level": "info",
-  "message": "Model selected",
-  "provider": "groq",
-  "modelName": "llama-3.3-70b-versatile",
-  "score": 0.89,
-  "headroom": 0.85,
-  "duration": 45
-}
-```
-
-**Log Levels:**
-- `error`: Critical failures
-- `warn`: Degraded mode, fallbacks
-- `info`: Selection events, cache refreshes
-- `debug`: Detailed scoring, filter steps
-
-### Health Check Configuration
+### Health Check
 
 **Endpoint:** `GET /health`
 
@@ -275,23 +202,31 @@ services:
 ```json
 {
   "status": "ok",
-  "timestamp": "2025-11-19T12:00:00.000Z",
-  "uptime": 3600.5,
+  "timestamp": "2025-11-24T...",
   "cache": {
-    "models": {
-      "status": "valid",
-      "age": 600
-    },
-    "intelligenceIndex": {
-      "status": "valid",
-      "age": 86400
-    }
+    "modelsCount": 71,
+    "lastRefresh": "2025-11-24T..."
   },
   "rateLimits": {
-    "groq": { "headroom": 0.9 },
-    "google": { "headroom": 0.7 },
-    "openrouter": { "headroom": 0.85 }
+    "groq": {"headroom": 1.0},
+    "google": {"headroom": 1.0},
+    "openrouter": {"headroom": 1.0}
   }
+}
+```
+
+### Logging Format
+
+```javascript
+{
+  "timestamp": "2025-11-24T...",
+  "level": "info",
+  "message": "Model selected",
+  "provider": "groq",
+  "modelName": "gpt-oss-20b",
+  "score": 0.89,
+  "headroom": 0.85,
+  "duration": 5
 }
 ```
 
@@ -303,29 +238,20 @@ services:
 
 **Missing Environment Variables:**
 ```bash
-# Check all required vars are set
 env | grep SUPABASE
-```
-
-**Invalid Cache TTL:**
-```bash
-# Must be positive integer
-CACHE_TTL=invalid npm start  # Error
-CACHE_TTL=1800000 npm start  # OK
 ```
 
 **Port Conflicts:**
 ```bash
-# Change port if 3001 in use
 PORT=3002 npm start
 ```
 
 ### Performance Tuning
 
 **High Cache Miss Rate:**
-- Increase CACHE_TTL
+- CACHE_TTL is 24 hours (matches DB update frequency)
 - Check refresh logic
-- Monitor ai_models_main update frequency
+- Monitor working_version update frequency
 
 **Slow Selection Times:**
 - Verify Supabase query performance
@@ -346,7 +272,6 @@ Before deployment:
 - [ ] SUPABASE_URL configured
 - [ ] SUPABASE_KEY configured (anon key)
 - [ ] PORT available and accessible
-- [ ] CACHE_TTL appropriate for use case
 - [ ] NODE_ENV set to production
 - [ ] LOG_LEVEL set to warn or error
 - [ ] Selection weights reviewed
@@ -355,5 +280,4 @@ Before deployment:
 
 ---
 
-**Document Status:** ✅ Complete
 **Document Owner:** Development Team

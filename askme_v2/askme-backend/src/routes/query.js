@@ -1,7 +1,7 @@
 import express from 'express';
 import { validateQuery, validateBatchQueries } from '../middleware/validate.js';
 import { classifyQuery } from '../classification/classifier.js';
-import { selectPrimaryProvider, selectModelDynamic } from '../routing/router.js';
+import { selectPrimaryProvider, selectModelFromCache } from '../routing/router.js';
 import { executeWithFailover } from '../failover/failover.js';
 import { checkRateLimit } from '../rate-limiting/limiter.js';
 import { normalizeResponse } from '../utils/normalize.js';
@@ -24,13 +24,13 @@ router.post('/query', validateQuery, async (req, res) => {
     const classification = classifyQuery(query);
     console.log(`[Query] Classified as: ${classification.type}`);
 
-    // Step 2: Select optimal model using intelligent selector
+    // Step 2: Select optimal model from cache (Intelligence Index based)
     let selection = null;
     try {
-      selection = await selectModelDynamic(classification.type, query, ['text']);
-      console.log(`[Query] Dynamic selection: ${selection.provider} - ${selection.modelName}`);
+      selection = selectModelFromCache(classification.type);
+      console.log(`[Query] Cache selection: ${selection.provider} - ${selection.modelName} (Index: ${selection.intelligenceIndex})`);
     } catch (error) {
-      console.warn(`[Query] Dynamic selection failed, using static fallback:`, error.message);
+      console.warn(`[Query] Cache selection failed, using static fallback:`, error.message);
       // Fallback to static selection
       const primaryProvider = selectPrimaryProvider(classification.type);
       selection = { provider: primaryProvider, modelName: null, isFallback: true };
@@ -108,12 +108,12 @@ router.post('/queue/sync', validateBatchQueries, async (req, res) => {
         // Classify and route
         const classification = classifyQuery(query);
 
-        // Select optimal model using intelligent selector
+        // Select optimal model from cache
         let selection = null;
         try {
-          selection = await selectModelDynamic(classification.type, query, ['text']);
+          selection = selectModelFromCache(classification.type);
         } catch (error) {
-          console.warn(`[Sync] Dynamic selection failed, using static fallback:`, error.message);
+          console.warn(`[Sync] Cache selection failed, using static fallback:`, error.message);
           const primaryProvider = selectPrimaryProvider(classification.type);
           selection = { provider: primaryProvider, modelName: null, isFallback: true };
         }
