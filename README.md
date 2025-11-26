@@ -1,6 +1,6 @@
 # AI Models Discoverer v3
 
-Automated multi-pipeline system for discovering, enriching, and managing AI model metadata from OpenRouter, Google AI, and Groq. Deploys curated datasets to Supabase database for production use by [askme](https://github.com/vn6295337/askme) and [ai-land](https://github.com/vn6295337/ai-land).
+Automated multi-pipeline system for discovering, enriching, and managing AI model metadata from OpenRouter, Google AI, and Groq. Deploys curated datasets to Supabase database for production use by [askme](https://github.com/vn6295337/askme_v2) and [ai-land](https://github.com/vn6295337/ai-land).
 
 ## 🏗️ System Architecture
 
