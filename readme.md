@@ -1,7 +1,5 @@
 # ai_portfolio
 
-> **AI Transformation Strategist** with 22+ years building production AI solutions driving $30M+ value
-
 Portfolio demonstrating end-to-end AI system capabilities: automated data pipelines, multi-provider integration, and real-time visualization.
 
 ---
