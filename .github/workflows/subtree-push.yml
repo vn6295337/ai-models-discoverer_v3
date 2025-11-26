@@ -25,7 +25,7 @@ jobs:
 
     - name: Add ai-land remote
       run: |
-        git remote add ai-land https://x-access-token:${{secrets.GITHUB_TOKEN}}@github.com/vn6295337/ai-land.git || true
+        git remote add ai-land https://x-access-token:${{secrets.PORTFOLIO_SYNC_TOKEN}}@github.com/vn6295337/ai-land.git || true
 
     - name: Push ai-land subtree
       run: |
