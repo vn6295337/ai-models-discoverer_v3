@@ -26,7 +26,7 @@ An interactive React dashboard that visualizes AI models from multiple providers
   - **[ai-models-discoverer_v3](https://github.com/vn6295337/ai-models-discoverer_v3)** - Automated discovery pipeline 
   - **[ai-land](https://github.com/vn6295337/ai-land)** - Decision intelligence dashboard *(you are 
   here)*
-  - **[askme-cli](https://github.com/vn6295337/askme)** - Unified API gateway
+  - **[askme-cli](https://github.com/vn6295337/askme_v2)** - Unified API gateway
 
   **📊 Data Flow:**
   Discovery Pipeline → Supabase (`ai_models_main` table) → Dashboard + API Gateway
