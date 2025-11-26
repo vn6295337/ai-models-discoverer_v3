@@ -1,4 +1,4 @@
-name: Sync from Individual Repos (Phase 2 - ai-land + ai-models)
+name: Sync from Individual Repos (Phase 3 - Complete)
 
 on:
   schedule:
@@ -31,10 +31,15 @@ jobs:
       run: |
         git remote add ai-models https://github.com/vn6295337/ai-models-discoverer_v3.git || true
 
+    - name: Add askme remote
+      run: |
+        git remote add askme https://github.com/vn6295337/askme_v2.git || true
+
     - name: Fetch remotes
       run: |
         git fetch ai-land
         git fetch ai-models
+        git fetch askme
 
     - name: Pull ai-land changes
       run: |
@@ -43,6 +48,10 @@ jobs:
     - name: Pull ai-models changes
       run: |
         git subtree pull --prefix=ai-models-discoverer_v3 ai-models main --squash -m "Sync ai-models from upstream [skip ci]" || echo "No changes in ai-models"
+
+    - name: Pull askme_v2 changes
+      run: |
+        git subtree pull --prefix=askme_v2 askme main --squash -m "Sync askme_v2 from upstream [skip ci]" || echo "No changes in askme_v2"
 
     - name: Push to portfolio
       run: |

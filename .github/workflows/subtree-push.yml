@@ -1,9 +1,9 @@
-name: Sync to Individual Repos (Phase 2 - ai-land + ai-models)
+name: Sync to Individual Repos (Phase 3 - Complete)
 
 on:
   push:
     branches: [main]
-    paths: ['ai-land/**', 'ai-models-discoverer_v3/**']
+    paths: ['ai-land/**', 'ai-models-discoverer_v3/**', 'askme_v2/**']
   workflow_dispatch:
 
 jobs:
@@ -32,6 +32,10 @@ jobs:
       run: |
         git remote add ai-models https://${{ github.actor }}:${{ secrets.PORTFOLIO_SYNC_TOKEN }}@github.com/vn6295337/ai-models-discoverer_v3.git || true
 
+    - name: Add askme remote
+      run: |
+        git remote add askme https://${{ github.actor }}:${{ secrets.PORTFOLIO_SYNC_TOKEN }}@github.com/vn6295337/askme_v2.git || true
+
     - name: Push ai-land subtree
       run: |
         git subtree push --prefix=ai-land ai-land main
@@ -39,3 +43,7 @@ jobs:
     - name: Push ai-models subtree
       run: |
         git subtree push --prefix=ai-models-discoverer_v3 ai-models main
+
+    - name: Push askme_v2 subtree
+      run: |
+        git subtree push --prefix=askme_v2 askme main
