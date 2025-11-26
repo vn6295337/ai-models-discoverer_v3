@@ -175,8 +175,18 @@ GROQ_API_KEY=your_groq_key
 ```bash
 python3.11 -m venv venv
 source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
+
+# Install OpenRouter pipeline dependencies
+pip install -r openrouter_pipeline/requirements.txt
+
+# Install Google pipeline dependencies (if using Google pipeline)
+pip install -r google_pipeline/03_configs/requirements.txt
+
+# Install Groq pipeline dependencies (if using Groq pipeline)
+pip install -r groq_pipeline/requirements.txt
 ```
+
+**Note:** The root `requirements.txt` file references pipeline-specific requirements. Each pipeline has its own dependencies.
 
 ### 4. Initialize Supabase tables
 
@@ -192,17 +202,24 @@ Ensure your Supabase database has:
 # OpenRouter pipeline
 cd openrouter_pipeline/01_scripts
 python Z_run_A_to_S.py
+# In automated/CI environments: python Z_run_A_to_S.py --no-venv --auto-all
 
 # Google pipeline
 cd google_pipeline/01_scripts
 python Z_run_A_to_F.py
+# In automated/CI environments: python Z_run_A_to_F.py --auto-all
 
 # Groq pipeline
 cd groq_pipeline/01_scripts
 python Z_run_A_to_H.py
+# In automated/CI environments: python Z_run_A_to_H.py --auto-all
 ```
 
 ### Automated Runs (GitHub Actions)
+
+✅ **Production Validated:** These pipelines run automatically daily via GitHub Actions in a clean Ubuntu environment, proving the setup instructions work correctly.
+
+**[View Workflow Runs →](https://github.com/vn6295337/ai-models-discoverer_v3/actions)**
 
 Pipelines run automatically:
 - **Daily**: Midnight UTC

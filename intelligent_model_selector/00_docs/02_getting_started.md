@@ -1,6 +1,6 @@
 # Getting Started
 
-**Last Updated:** 2025-11-24
+**Last Updated:** 2025-11-25
 **Purpose:** Installation, configuration, and verification guide
 
 ---
@@ -265,6 +265,116 @@ Service operates with fallback scoring if Artificial Analysis API is unavailable
 ```
 
 This is expected behavior if `ARTIFICIAL_ANALYSIS_API_KEY` is not provided.
+
+---
+
+## Deployment to Render.com
+
+The service includes a `render.yaml` configuration for one-click deployment to Render's free tier.
+
+### Prerequisites
+
+- GitHub account (for repository hosting)
+- Render.com account (free tier available)
+- Supabase credentials (URL + anon key)
+
+### Deployment Steps
+
+**1. Push to GitHub:**
+```bash
+# Ensure code is committed
+git add .
+git commit -m "Add intelligent_model_selector service"
+git push origin main
+```
+
+**2. Create New Web Service on Render:**
+- Go to [Render Dashboard](https://dashboard.render.com/)
+- Click "New +" → "Web Service"
+- Connect your GitHub repository
+- Select branch: `main`
+- Render will auto-detect `render.yaml` configuration
+
+**3. Configure Environment Variables:**
+
+In Render dashboard, add these environment variables:
+
+**Required:**
+- `SUPABASE_URL` - Your Supabase project URL
+- `SUPABASE_KEY` - Your Supabase anon key
+
+**Optional:**
+- `ARTIFICIALANALYSIS_API_KEY` - Intelligence Index API key
+
+**Note:** `NODE_ENV`, `PORT`, `CACHE_TTL`, and `LOG_LEVEL` are already configured in `render.yaml`.
+
+**4. Deploy:**
+- Click "Create Web Service"
+- Render will:
+  - Run `npm install` (build command)
+  - Start service with `npm start`
+  - Assign a public URL: `https://selector-service-xxxx.onrender.com`
+
+**5. Verify Deployment:**
+```bash
+# Health check
+curl https://selector-service-xxxx.onrender.com/health
+
+# Test model selection
+curl -X POST https://selector-service-xxxx.onrender.com/select-model \
+  -H "Content-Type: application/json" \
+  -d '{
+    "queryType": "general_knowledge",
+    "queryText": "What is the capital of France?",
+    "modalities": ["text"],
+    "complexityScore": 0.3
+  }'
+```
+
+### Render Configuration Details
+
+**From `selector-service/render.yaml`:**
+```yaml
+- Service: Web
+- Runtime: Node.js (18+)
+- Region: Oregon
+- Plan: Free tier
+- Health check: /health (every 5 minutes)
+- Auto-deploy: Enabled (on git push)
+- Instances: 1 (min/max)
+```
+
+**Free Tier Limitations:**
+- 0.5 CPU, 512 MB RAM
+- Service spins down after 15 minutes of inactivity
+- First request after idle may take 30-60 seconds (cold start)
+- 750 hours/month free (sufficient for 24/7 operation)
+
+### Post-Deployment Integration
+
+**Update askme_v2 backend:**
+
+Edit `askme-backend/src/config.js`:
+```javascript
+const SELECTOR_SERVICE_URL = process.env.SELECTOR_SERVICE_URL
+  || 'https://selector-service-xxxx.onrender.com';
+```
+
+Add to Render environment variables for askme-backend:
+```
+SELECTOR_SERVICE_URL=https://selector-service-xxxx.onrender.com
+```
+
+### Monitoring
+
+**View logs:**
+- Render Dashboard → selector-service → Logs tab
+- Real-time streaming logs
+- Filter by log level (INFO, WARN, ERROR)
+
+**Health monitoring:**
+- Render automatically monitors `/health` endpoint
+- Email alerts on service failures (configure in Render settings)
 
 ---
 

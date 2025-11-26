@@ -2,6 +2,12 @@
 
 An interactive React dashboard that visualizes AI models from multiple providers, helping developers discover and compare available models for their projects.
 
+## 🌐 Live Demo
+
+**[View Live Dashboard →](https://vn6295337.github.io/ai-land/)**
+
+✅ **Production Validated:** This dashboard is live and updated in real-time from the ai-models-discoverer_v3 pipeline, proving the build and deployment process works.
+
 ## 🏗️ System Architecture
 
   This repository is part of a 3-tier AI Intelligence System:
@@ -39,12 +45,17 @@ An interactive React dashboard that visualizes AI models from multiple providers
 - **Responsive Design**: Works on desktop and mobile devices
 - **Task Type Filtering**: Groups small categories for cleaner visualization
 
+## Prerequisites
+
+- **Node.js** 18.0.0 or higher
+- **npm** (comes with Node.js)
+
 ## Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/vn6295337/llm-status-beacon.git
-   cd llm-status-beacon
+   git clone https://github.com/vn6295337/ai-land.git
+   cd ai-land
    ```
 
 2. **Install dependencies**
@@ -63,14 +74,27 @@ An interactive React dashboard that visualizes AI models from multiple providers
    npm run dev
    ```
 
+5. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+6. **Deploy to GitHub Pages** (for maintainers)
+   ```bash
+   npm run deploy
+   ```
+   This will build the project and deploy to https://vn6295337.github.io/ai-land/
+
 ## Environment Variables
 
-Create a `.env` file with the following variables:
+For local development, create a `.env` file with the following variables:
 
 ```env
 VITE_SUPABASE_URL=your_supabase_project_url
 VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 ```
+
+**Note:** For production deployment to GitHub Pages, environment variables are built into the application at build time.
 
 ## Technology Stack
 
@@ -79,7 +103,7 @@ VITE_SUPABASE_ANON_KEY=your_supabase_anon_key
 - **Styling**: Tailwind CSS, shadcn/ui
 - **Charts**: Chart.js with react-chartjs-2
 - **Database**: Supabase (PostgreSQL)
-- **Deployment**: Compatible with Vercel, Netlify, GitHub Pages
+- **Deployment**: GitHub Pages (currently deployed) - also compatible with Vercel, Netlify
 
 ## Data Sources
 

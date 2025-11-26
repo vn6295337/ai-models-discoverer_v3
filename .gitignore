@@ -27,3 +27,4 @@ yarn-error.log*
 
 # Supabase temp files
 .temp/
+03_audits/ARCHIVE/
