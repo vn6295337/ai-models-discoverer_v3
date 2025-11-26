@@ -1,4 +1,4 @@
-name: Sync from Individual Repos (Phase 3 - Complete)
+name: Sync from Individual Repos (Phase 4 - All Projects)
 
 on:
   schedule:
@@ -35,11 +35,16 @@ jobs:
       run: |
         git remote add askme https://github.com/vn6295337/askme_v2.git || true
 
+    - name: Add intelligent-model-selector remote
+      run: |
+        git remote add intelligent-model-selector https://github.com/vn6295337/intelligent-model-selector.git || true
+
     - name: Fetch remotes
       run: |
         git fetch ai-land
         git fetch ai-models
         git fetch askme
+        git fetch intelligent-model-selector
 
     - name: Pull ai-land changes
       run: |
@@ -52,6 +57,10 @@ jobs:
     - name: Pull askme_v2 changes
       run: |
         git subtree pull --prefix=askme_v2 askme main --squash -m "Sync askme_v2 from upstream [skip ci]" || echo "No changes in askme_v2"
+
+    - name: Pull intelligent-model-selector changes
+      run: |
+        git subtree pull --prefix=intelligent-model-selector intelligent-model-selector main --squash -m "Sync intelligent-model-selector from upstream [skip ci]" || echo "No changes in intelligent-model-selector"
 
     - name: Push to portfolio
       run: |

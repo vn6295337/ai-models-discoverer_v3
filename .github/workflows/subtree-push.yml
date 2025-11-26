@@ -1,9 +1,9 @@
-name: Sync to Individual Repos (Phase 3 - Complete)
+name: Sync to Individual Repos (Phase 4 - All Projects)
 
 on:
   push:
     branches: [main]
-    paths: ['ai-land/**', 'ai-models-discoverer_v3/**', 'askme_v2/**']
+    paths: ['ai-land/**', 'ai-models-discoverer_v3/**', 'askme_v2/**', 'intelligent-model-selector/**']
   workflow_dispatch:
 
 jobs:
@@ -36,6 +36,10 @@ jobs:
       run: |
         git remote add askme https://${{ github.actor }}:${{ secrets.PORTFOLIO_SYNC_TOKEN }}@github.com/vn6295337/askme_v2.git || true
 
+    - name: Add intelligent-model-selector remote
+      run: |
+        git remote add intelligent-model-selector https://${{ github.actor }}:${{ secrets.PORTFOLIO_SYNC_TOKEN }}@github.com/vn6295337/intelligent-model-selector.git || true
+
     - name: Push ai-land subtree
       run: |
         git subtree push --prefix=ai-land ai-land main
@@ -47,3 +51,7 @@ jobs:
     - name: Push askme_v2 subtree
       run: |
         git subtree push --prefix=askme_v2 askme main
+
+    - name: Push intelligent-model-selector subtree
+      run: |
+        git subtree push --prefix=intelligent-model-selector intelligent-model-selector main
