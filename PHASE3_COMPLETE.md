@@ -140,7 +140,7 @@ ai_portfolio_v2 (Central Portfolio)
 ├── ai-land/                    ←→  github.com/vn6295337/ai-land
 ├── ai-models-discoverer_v3/    ←→  github.com/vn6295337/ai-models-discoverer_v3
 ├── askme_v2/                   ←→  github.com/vn6295337/askme_v2
-└── intelligent-model-selector/ (standalone, not synced)
+└── intelligent-model-selector/ ←→  github.com/vn6295337/intelligent-model-selector (added in Phase 4)
 
 Sync Mechanism:
 - Push: Automatic via GitHub Actions (on file changes)
