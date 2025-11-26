@@ -1,3 +1,4 @@
 workflow test
 PAT configured
 secret test
+secret test
