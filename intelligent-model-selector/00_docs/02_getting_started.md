@@ -26,7 +26,7 @@
 ### 1. Navigate to Service Directory
 
 ```bash
-cd intelligent_model_selector/selector-service
+cd intelligent-model-selector/selector-service
 ```
 
 ### 2. Install Dependencies
@@ -284,7 +284,7 @@ The service includes a `render.yaml` configuration for one-click deployment to R
 ```bash
 # Ensure code is committed
 git add .
-git commit -m "Add intelligent_model_selector service"
+git commit -m "Add intelligent-model-selector service"
 git push origin main
 ```
 

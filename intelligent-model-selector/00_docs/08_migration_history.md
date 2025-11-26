@@ -7,7 +7,7 @@
 
 ## Overview
 
-Successfully migrated intelligent_model_selector from using a custom `models` table to using the `working_version` table (output from ai-models-discoverer_v3) as the authoritative source for model metadata.
+Successfully migrated intelligent-model-selector from using a custom `models` table to using the `working_version` table (output from ai-models-discoverer_v3) as the authoritative source for model metadata.
 
 **Key Decision:** Create separate `model_aa_mapping` table to link models to Artificial Analysis API slugs, keeping `working_version` read-only (pipeline-managed).
 

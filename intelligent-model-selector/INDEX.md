@@ -163,7 +163,7 @@
 ## File Organization
 
 ```
-intelligent_model_selector/
+intelligent-model-selector/
 ├── 00_docs/                  # All documentation (8 consolidated files)
 │   ├── 01_project_overview.md
 │   ├── 02_getting_started.md

@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-**intelligent_model_selector** is a microservice that dynamically selects optimal AI models from the ai_models_main Supabase table based on query characteristics, performance metrics, rate limits, and geographic considerations.
+**intelligent-model-selector** is a microservice that dynamically selects optimal AI models from the ai_models_main Supabase table based on query characteristics, performance metrics, rate limits, and geographic considerations.
 
 **Core Purpose:** Replace hardcoded model selection in askme_v2 with intelligent, data-driven routing.
 

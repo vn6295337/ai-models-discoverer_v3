@@ -211,7 +211,7 @@ Microservice that dynamically selects optimal AI models from Supabase based on q
 
 ### ✅ All MVP Tasks Complete!
 
-The intelligent_model_selector microservice is now production-ready with:
+The intelligent-model-selector microservice is now production-ready with:
 - Complete 4-table architecture (working_version + mappings + metrics + rate limits)
 - 4-metric per-model rate limit tracking (RPM, RPD, TPM, TPD)
 - 92 unit tests with high coverage (~85%)
@@ -259,7 +259,7 @@ ai-models-discoverer_v3 pipeline (daily)
     ↓
 public.working_version table (71 models)
     ↓
-intelligent_model_selector (4-table JOIN)
+intelligent-model-selector (4-table JOIN)
     ├─→ ims.10_model_aa_mapping (35 mappings)
     ├─→ ims.20_aa_performance_metrics (Intelligence Index)
     └─→ ims.30_rate_limits (56 models - rpm, rpd, tpm, tpd)

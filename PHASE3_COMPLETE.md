@@ -140,7 +140,7 @@ ai_portfolio_v2 (Central Portfolio)
 ├── ai-land/                    ←→  github.com/vn6295337/ai-land
 ├── ai-models-discoverer_v3/    ←→  github.com/vn6295337/ai-models-discoverer_v3
 ├── askme_v2/                   ←→  github.com/vn6295337/askme_v2
-└── intelligent_model_selector/ (standalone, not synced)
+└── intelligent-model-selector/ (standalone, not synced)
 
 Sync Mechanism:
 - Push: Automatic via GitHub Actions (on file changes)
@@ -173,7 +173,7 @@ Monitor for 7 days:
 2. **Set up deployment previews** for portfolio changes
 3. **Add automated testing** before sync
 4. **Create sync status dashboard**
-5. **Add intelligent_model_selector** to sync system (if needed)
+5. **Add intelligent-model-selector** to sync system (if needed)
 
 ### Maintenance
 - Review workflow logs weekly
