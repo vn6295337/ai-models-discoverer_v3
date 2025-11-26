@@ -1,33 +1,33 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-11-25 07:12 AM IST
+Generated: 2025-11-26 07:12 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 343
+  Total models processed: 342
   Models passed all filters: 41
-  Models excluded: 302
+  Models excluded: 301
   Success rate: 12.0%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 343 models
+    Input: 342 models
     Excluded: 300 models (non-free pricing)
-    Remaining: 43 models
-
-  Step 2 - Billing Description Filter:
-    Input: 43 models
-    Excluded: 0 models (billing requirements in description)
-    Remaining: 43 models
-
-  Step 3 - Keyword Filter:
-    Input: 43 models
-    Excluded: 1 models (preview/experimental/beta)
     Remaining: 42 models
 
-  Step 4 - Deduplication Filter:
+  Step 2 - Billing Description Filter:
     Input: 42 models
-    Excluded: 1 models (duplicates after (free) suffix normalization)
+    Excluded: 0 models (billing requirements in description)
+    Remaining: 42 models
+
+  Step 3 - Keyword Filter:
+    Input: 42 models
+    Excluded: 1 models (preview/experimental/beta)
+    Remaining: 41 models
+
+  Step 4 - Deduplication Filter:
+    Input: 41 models
+    Excluded: 0 models (duplicates after (free) suffix normalization)
     Final: 41 models
 
 ================================================================================
@@ -50,10 +50,7 @@ EXCLUDED FOR: EXPERIMENTAL VERSION (1 models)
 ================================================================================
 STEP 4 - DEDUPLICATION FILTER RESULTS (DETAILED)
 ================================================================================
-Found 1 duplicate models after (free) suffix normalization:
-
-   1. xAI: Grok 4.1 Fast
-      Reason: Duplicate model after (free) suffix normalization
+No duplicate models found.
 
 ================================================================================
 FINAL FILTERED MODELS (PASSED ALL FILTERS)
@@ -290,6 +287,6 @@ FINAL SUMMARY:
   Models excluded by pricing: 300
   Models excluded by billing description: 0
   Models excluded by keywords: 1
-  Models excluded by deduplication: 1
-  Total exclusions: 302
+  Models excluded by deduplication: 0
+  Total exclusions: 301
   ✓ All filtered models accounted for

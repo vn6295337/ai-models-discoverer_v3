@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-25 07:12 AM IST
+Generated: 2025-11-26 07:12 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 343
+  Total models: 342
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  51 models
@@ -218,14 +218,13 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-sonnet-4
     - claude-sonnet-4.5
 
-  xAI          :   9 models
+  xAI          :   8 models
     - grok-3
     - grok-3-beta
     - grok-3-mini
     - grok-3-mini-beta
     - grok-4
     - grok-4-fast
-    - grok-4.1-fast
     - grok-4.1-fast:free
     - grok-code-fast-1
 
