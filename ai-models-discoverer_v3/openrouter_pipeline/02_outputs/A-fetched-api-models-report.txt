@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-26 07:12 AM IST
+Generated: 2025-11-27 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 342
+  Total models: 330
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI       :  51 models
@@ -60,7 +60,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - o4-mini-deep-research
     - o4-mini-high
 
-  Qwen         :  42 models
+  Qwen         :  39 models
     - qwen-2.5-7b-instruct
     - qwen-2.5-vl-7b-instruct
     - qwen-max
@@ -72,10 +72,8 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen-vl-plus
     - qwen2.5-coder-7b-instruct
     - qwen2.5-vl-32b-instruct
-    - qwen2.5-vl-32b-instruct:free
     - qwen2.5-vl-72b-instruct
     - qwen3-14b
-    - qwen3-14b:free
     - qwen3-235b-a22b
     - qwen3-235b-a22b-2507
     - qwen3-235b-a22b-thinking-2507
@@ -83,7 +81,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-30b-a3b
     - qwen3-30b-a3b-instruct-2507
     - qwen3-30b-a3b-thinking-2507
-    - qwen3-30b-a3b:free
     - qwen3-32b
     - qwen3-4b:free
     - qwen3-8b
@@ -104,7 +101,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-8b-thinking
     - qwq-32b
 
-  Mistral      :  31 models
+  Mistral      :  28 models
     - codestral-2501
     - codestral-2508
     - devstral-medium
@@ -123,14 +120,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - mistral-medium-3
     - mistral-medium-3.1
     - mistral-nemo
-    - mistral-nemo:free
     - mistral-saba
     - mistral-small-24b-instruct-2501
-    - mistral-small-24b-instruct-2501:free
     - mistral-small-3.1-24b-instruct
     - mistral-small-3.1-24b-instruct:free
     - mistral-small-3.2-24b-instruct
-    - mistral-small-3.2-24b-instruct:free
     - mixtral-8x22b-instruct
     - mixtral-8x7b-instruct
     - pixtral-12b
@@ -164,26 +158,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemma-3n-e4b-it
     - gemma-3n-e4b-it:free
 
-  DeepSeek     :  18 models
-    - deepseek-chat
-    - deepseek-chat-v3-0324
-    - deepseek-chat-v3-0324:free
-    - deepseek-chat-v3.1
-    - deepseek-prover-v2
-    - deepseek-r1
-    - deepseek-r1-0528
-    - deepseek-r1-0528-qwen3-8b
-    - deepseek-r1-0528-qwen3-8b:free
-    - deepseek-r1-0528:free
-    - deepseek-r1-distill-llama-70b
-    - deepseek-r1-distill-llama-70b:free
-    - deepseek-r1-distill-qwen-14b
-    - deepseek-r1-distill-qwen-32b
-    - deepseek-r1:free
-    - deepseek-v3.1-terminus
-    - deepseek-v3.1-terminus:exacto
-    - deepseek-v3.2-exp
-
   Meta         :  17 models
     - llama-3-70b-instruct
     - llama-3-8b-instruct
@@ -202,6 +176,22 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-4-scout
     - llama-guard-2-8b
     - llama-guard-4-12b
+
+  DeepSeek     :  14 models
+    - deepseek-chat
+    - deepseek-chat-v3-0324
+    - deepseek-chat-v3.1
+    - deepseek-prover-v2
+    - deepseek-r1
+    - deepseek-r1-0528
+    - deepseek-r1-0528-qwen3-8b
+    - deepseek-r1-distill-llama-70b
+    - deepseek-r1-distill-llama-70b:free
+    - deepseek-r1-distill-qwen-14b
+    - deepseek-r1-distill-qwen-32b
+    - deepseek-v3.1-terminus
+    - deepseek-v3.1-terminus:exacto
+    - deepseek-v3.2-exp
 
   Anthropic    :  13 models
     - claude-3-haiku
@@ -227,16 +217,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4-fast
     - grok-4.1-fast:free
     - grok-code-fast-1
-
-  Microsoft    :   8 models
-    - mai-ds-r1
-    - mai-ds-r1:free
-    - phi-3-medium-128k-instruct
-    - phi-3-mini-128k-instruct
-    - phi-3.5-mini-128k-instruct
-    - phi-4
-    - phi-4-multimodal-instruct
-    - phi-4-reasoning-plus
 
   MoonshotAI   :   7 models
     - kimi-dev-72b
@@ -264,6 +244,23 @@ PROVIDER BREAKDOWN (Descending Order):
     - glm-4.5v
     - glm-4.6
     - glm-4.6:exacto
+
+  Microsoft    :   7 models
+    - mai-ds-r1
+    - phi-3-medium-128k-instruct
+    - phi-3-mini-128k-instruct
+    - phi-3.5-mini-128k-instruct
+    - phi-4
+    - phi-4-multimodal-instruct
+    - phi-4-reasoning-plus
+
+  TNG          :   6 models
+    - deepseek-r1t-chimera
+    - deepseek-r1t-chimera:free
+    - deepseek-r1t2-chimera
+    - deepseek-r1t2-chimera:free
+    - tng-r1t-chimera
+    - tng-r1t-chimera:free
 
   Perplexity   :   6 models
     - sonar
@@ -313,12 +310,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - nova-premier-v1
     - nova-pro-v1
 
-  TNG          :   4 models
-    - deepseek-r1t-chimera
-    - deepseek-r1t-chimera:free
-    - deepseek-r1t2-chimera
-    - deepseek-r1t2-chimera:free
-
   Arcee AI     :   4 models
     - coder-large
     - maestro-reasoning
@@ -363,10 +354,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - mercury
     - mercury-coder
 
-  ArliAI       :   2 models
-    - qwq-32b-arliai-rpr-v1
-    - qwq-32b-arliai-rpr-v1:free
-
   Inflection   :   2 models
     - inflection-3-pi
     - inflection-3-productivity
@@ -403,6 +390,9 @@ PROVIDER BREAKDOWN (Descending Order):
 
   AlfredPros   :   1 models
     - codellama-7b-instruct-solidity
+
+  ArliAI       :   1 models
+    - qwq-32b-arliai-rpr-v1
 
   NeverSleep   :   1 models
     - llama-3.1-lumimaid-8b
