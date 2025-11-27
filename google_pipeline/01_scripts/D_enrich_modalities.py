@@ -405,6 +405,7 @@ class ModalityEnrichment:
             hardcoded_data, hardcoded_priority, hardcoded_matched_id = self.find_hardcoded_modality_match(stage2_api_id)
             if hardcoded_data:
                 enriched_model = model.copy()
+                enriched_model['provider_slug'] = model.get('name', '')
                 input_modalities = hardcoded_data.get('input_modalities', 'Text')
                 output_modalities = hardcoded_data.get('output_modalities', 'Text')
                 enriched_model['input_modalities'] = self.standardize_modalities(input_modalities)
@@ -432,6 +433,7 @@ class ModalityEnrichment:
             unique_data, unique_priority, unique_matched_id = self.find_unique_model_match(stage2_api_id)
             if unique_data:
                 enriched_model = model.copy()
+                enriched_model['provider_slug'] = model.get('name', '')
                 input_modalities = unique_data.get('input_modalities', 'Text')
                 output_modalities = unique_data.get('output_modalities', 'Text')
                 enriched_model['input_modalities'] = self.standardize_modalities(input_modalities)
@@ -460,6 +462,7 @@ class ModalityEnrichment:
                 # Handle embedding model
                 embedding_modalities = self.get_embedding_modalities()
                 enriched_model = model.copy()
+                enriched_model['provider_slug'] = model.get('name', '')
                 enriched_model['input_modalities'] = embedding_modalities['input_modalities']
                 enriched_model['output_modalities'] = embedding_modalities['output_modalities']
                 enriched_model['modality_source'] = 'embedding_config'
@@ -485,6 +488,7 @@ class ModalityEnrichment:
             gemma_data, gemma_priority, gemma_pattern = self.find_gemma_modality_match(stage2_api_id)
             if gemma_data:
                 enriched_model = model.copy()
+                enriched_model['provider_slug'] = model.get('name', '')
                 input_modalities = gemma_data.get('input_modalities', 'Unknown')
                 output_modalities = gemma_data.get('output_modalities', 'Unknown')
                 enriched_model['input_modalities'] = self.standardize_modalities(input_modalities)
@@ -511,10 +515,11 @@ class ModalityEnrichment:
             
             # Find matching modality data
             modality_data, priority, matched_api_id = self.find_modality_match(stage2_api_id)
-            
+
             # Create enriched model (copy original + add modality data)
             enriched_model = model.copy()
-            
+            enriched_model['provider_slug'] = model.get('name', '')
+
             if modality_data:
                 # Add modality information and standardize
                 input_modalities = modality_data.get('input_modalities', 'Unknown')

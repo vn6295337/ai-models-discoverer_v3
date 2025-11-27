@@ -151,6 +151,7 @@ def enrich_provider_info(models: List[Dict[str, Any]], config: Dict[str, Any]) -
         enriched_model = {
             'id': model.get('id', ''),
             'canonical_slug': canonical_slug,
+            'provider_slug': canonical_slug,
             'original_name': model.get('original_name', ''),
             'hugging_face_id': model.get('hugging_face_id', ''),
             'clean_model_name': model.get('clean_model_name', ''),
