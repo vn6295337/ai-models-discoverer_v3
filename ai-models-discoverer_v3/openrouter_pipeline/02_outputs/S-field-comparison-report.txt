@@ -1,18 +1,18 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-27 12:08 PM IST
+Generated: 2025-11-27 02:59 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 40
+   • Total unique model names: 26
    • Total records in pipeline: 26
-   • Total records in Supabase: 40
+   • Total records in Supabase: 26
    • Models in both systems: 26
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 14
+   • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
@@ -57,31 +57,9 @@ SUMMARY STATISTICS
 
 3. CATEGORIZED BREAKDOWN:
    • Existing models with differences: 0
-   • Deprecated models (Supabase only): 14
-     Models: DeepSeek R1 0528 Qwen3 8B, DeepSeek V3 0324, MAI DS R1, Mistral Nemo, Mistral Small 3, Mistral Small 3.2 24B, QwQ 32B RpR v1, Qwen2.5 72B Instruct, Qwen2.5 Coder 32B Instruct, Qwen2.5 VL 32B Instruct, Qwen3 14B, Qwen3 30B A3B, R1, R1 0528
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
-================================================================================
-
-MODEL: DeepSeek R1 0528 Qwen3 8B
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | DeepSeek                 
-human_readable_name       |                           | DeepSeek R1 0528 Qwen3 8B
-model_provider_country    |                           | China                    
-official_url              |                           | https://deepseek.com/    
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | MIT                      
-license_url               |                           | https://opensource.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
 ================================================================================
 
 MODEL: DeepSeek R1T Chimera
@@ -121,26 +99,6 @@ license_name              | MIT                       | MIT
 license_url               | https://opensource.org/.. | https://opensource.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: DeepSeek V3 0324
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | DeepSeek                 
-human_readable_name       |                           | DeepSeek V3 0324         
-model_provider_country    |                           | China                    
-official_url              |                           | https://deepseek.com/    
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | MIT                      
-license_url               |                           | https://opensource.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -424,26 +382,6 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
-MODEL: MAI DS R1
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Microsoft                
-human_readable_name       |                           | MAI DS R1                
-model_provider_country    |                           | United States            
-official_url              |                           | https://microsoft.com    
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | MIT                      
-license_url               |                           | https://opensource.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
 MODEL: Mistral 7B Instruct
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
@@ -464,46 +402,6 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
-MODEL: Mistral Nemo
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Mistral AI               
-human_readable_name       |                           | Mistral Nemo             
-model_provider_country    |                           | France                   
-official_url              |                           | https://mistral.ai/      
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Mistral Small 3
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Mistral AI               
-human_readable_name       |                           | Mistral Small 3          
-model_provider_country    |                           | France                   
-official_url              |                           | https://mistral.ai/      
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
 MODEL: Mistral Small 3.1 24B
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
@@ -521,26 +419,6 @@ license_name              | Apache-2.0                | Apache-2.0
 license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Mistral Small 3.2 24B
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Mistral AI               
-human_readable_name       |                           | Mistral Small 3.2 24B    
-model_provider_country    |                           | France                   
-official_url              |                           | https://mistral.ai/      
-input_modalities          |                           | Text, Image              
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -584,106 +462,6 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
-MODEL: QwQ 32B RpR v1
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | ArliAI                   
-human_readable_name       |                           | QwQ 32B RpR v1           
-model_provider_country    |                           | United States            
-official_url              |                           | https://arliai.com       
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Qwen2.5 72B Instruct
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Alibaba Cloud            
-human_readable_name       |                           | Qwen2.5 72B Instruct     
-model_provider_country    |                           | China                    
-official_url              |                           | https://alibabacloud.com/
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | None                     
-license_info_url          |                           | None                     
-license_name              |                           | QWEN                     
-license_url               |                           | https://huggingface.co/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Qwen2.5 Coder 32B Instruct
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Alibaba Cloud            
-human_readable_name       |                           | Qwen2.5 Coder 32B Instr..
-model_provider_country    |                           | China                    
-official_url              |                           | https://alibabacloud.com/
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Qwen2.5 VL 32B Instruct
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Alibaba Cloud            
-human_readable_name       |                           | Qwen2.5 VL 32B Instruct  
-model_provider_country    |                           | China                    
-official_url              |                           | https://alibabacloud.com/
-input_modalities          |                           | Text, Image              
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Qwen3 14B
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Alibaba Cloud            
-human_readable_name       |                           | Qwen3 14B                
-model_provider_country    |                           | China                    
-official_url              |                           | https://alibabacloud.com/
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
 MODEL: Qwen3 235B A22B
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
@@ -701,26 +479,6 @@ license_name              | Apache-2.0                | Apache-2.0
 license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Qwen3 30B A3B
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Alibaba Cloud            
-human_readable_name       |                           | Qwen3 30B A3B            
-model_provider_country    |                           | China                    
-official_url              |                           | https://alibabacloud.com/
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | Apache-2.0               
-license_url               |                           | https://www.apache.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -761,46 +519,6 @@ license_name              | Apache-2.0                | Apache-2.0
 license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: R1
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | DeepSeek                 
-human_readable_name       |                           | R1                       
-model_provider_country    |                           | China                    
-official_url              |                           | https://deepseek.com/    
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | MIT                      
-license_url               |                           | https://opensource.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: R1 0528
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | DeepSeek                 
-human_readable_name       |                           | R1 0528                  
-model_provider_country    |                           | China                    
-official_url              |                           | https://deepseek.com/    
-input_modalities          |                           | Text                     
-output_modalities         |                           | Text                     
-license_info_text         |                           | info                     
-license_info_url          |                           | https://huggingface.co/..
-license_name              |                           | MIT                      
-license_url               |                           | https://opensource.org/..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 
