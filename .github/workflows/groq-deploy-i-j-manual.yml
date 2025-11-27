@@ -55,7 +55,7 @@ jobs:
         if [[ "${{ inputs.script_choice }}" == "compare_with_supabase" ]]; then
           echo "Will execute: 01_scripts/H_compare_pipeline_with_supabase.py (Compare Pipeline with Supabase)"
         elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
-          echo "Will execute: 01_scripts/I_refresh_supabase_working_version.py (Refresh Working Version)"
+          echo "Will execute: 01_scripts/I_refresh_supabase_working_version.py (Refresh Working Version + Rate Limits)"
         elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
           echo "Will execute: 01_scripts/J_deploy_to_ai_models_main.py (Deploy to Production)"
         else
@@ -82,6 +82,7 @@ jobs:
       run: |
         echo "🔄 Running 01_scripts/I_refresh_supabase_working_version.py..."
         echo "⚠️  This will refresh the Supabase working_version_v3 table with Groq pipeline data"
+        echo "📊 This will also update ims.30_rate_limits table with parsed rate limits"
         python3 -u 01_scripts/I_refresh_supabase_working_version.py
 
     - name: Run J_deploy_to_ai_models_main.py
@@ -117,6 +118,7 @@ jobs:
           echo "✅ Pipeline vs Supabase comparison completed"
         elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
           echo "✅ Working version table refreshed with Groq data"
+          echo "✅ Rate limits table updated with parsed rate limits"
         elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
           echo "✅ Data deployed to main ai_models table"
         else
