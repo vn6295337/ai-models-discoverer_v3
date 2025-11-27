@@ -262,14 +262,17 @@ def delete_rate_limits(conn, table_name: str, inference_provider: str) -> bool:
     """Delete all rate limit records for a specific inference provider."""
     try:
         with conn.cursor() as cur:
-            cur.execute(
-                f"DELETE FROM {table_name} WHERE inference_provider = %s",
-                (inference_provider,)
-            )
+            query = f"DELETE FROM {table_name} WHERE inference_provider = %s"
+            logger.info(f"Executing: {query} with provider={inference_provider}")
+            cur.execute(query, (inference_provider,))
+            deleted_count = cur.rowcount
         conn.commit()
+        logger.info(f"Deleted {deleted_count} rate limit records for {inference_provider}")
         return True
     except Exception as e:
         logger.error(f"Failed to delete rate limits: {str(e)}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
         conn.rollback()
         return False
 
@@ -287,9 +290,13 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
         bool: True if successful
     """
     if not rate_limit_records:
+        logger.warning("No rate limit records to upsert")
         return True
 
     try:
+        logger.info(f"Upserting {len(rate_limit_records)} rate limit records to {table_name}")
+        logger.info(f"Sample record: {rate_limit_records[0]}")
+
         # Define columns for rate limits table
         columns = ['human_readable_name', 'inference_provider', 'rpm', 'rpd', 'tpm', 'tpd', 'raw_string', 'parseable']
         placeholders = ', '.join(['%s'] * len(columns))
@@ -307,6 +314,8 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
             DO UPDATE SET {update_str}
         """
 
+        logger.info(f"SQL: {upsert_sql}")
+
         # Convert records to tuples
         values = [tuple(record.get(col) for col in columns) for record in rate_limit_records]
 
@@ -314,9 +323,12 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
             execute_batch(cur, upsert_sql, values, page_size=100)
 
         conn.commit()
+        logger.info(f"Successfully upserted {len(rate_limit_records)} rate limit records")
         return True
 
     except Exception as e:
         logger.error(f"Failed to upsert rate limits: {str(e)}")
+        import traceback
+        logger.error(f"Traceback: {traceback.format_exc()}")
         conn.rollback()
         return False
