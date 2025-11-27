@@ -272,14 +272,29 @@ def main():
         logger.info(f"✅ Successfully inserted {len(prepared_models)} models")
 
         # Insert rate limits (best-effort, non-blocking)
+        logger.info(f"📊 Attempting to update rate limits table...")
+        logger.info(f"📊 Rate limit records prepared: {len(rate_limit_records)}")
         if rate_limit_records:
             try:
                 from db_utils import delete_rate_limits, upsert_rate_limits
-                delete_rate_limits(conn, 'ims.30_rate_limits', INFERENCE_PROVIDER)
-                upsert_rate_limits(conn, 'ims.30_rate_limits', rate_limit_records)
-                logger.info(f"✅ Updated {len(rate_limit_records)} rate limit records")
+                logger.info(f"📊 Deleting existing {INFERENCE_PROVIDER} rate limits from ims.30_rate_limits...")
+                delete_result = delete_rate_limits(conn, 'ims.30_rate_limits', INFERENCE_PROVIDER)
+                logger.info(f"📊 Delete result: {delete_result}")
+
+                logger.info(f"📊 Upserting {len(rate_limit_records)} rate limits to ims.30_rate_limits...")
+                upsert_result = upsert_rate_limits(conn, 'ims.30_rate_limits', rate_limit_records)
+                logger.info(f"📊 Upsert result: {upsert_result}")
+
+                if delete_result and upsert_result:
+                    logger.info(f"✅ Updated {len(rate_limit_records)} rate limit records")
+                else:
+                    logger.warning(f"⚠️ Rate limits update partially failed")
             except Exception as e:
                 logger.warning(f"⚠️ Rate limits update failed (non-critical): {str(e)}")
+                import traceback
+                logger.warning(f"Traceback: {traceback.format_exc()}")
+        else:
+            logger.warning("⚠️ No rate limit records to update")
 
         # Step 8: Verify results
         logger.info("🔍 Verifying insertion results...")
