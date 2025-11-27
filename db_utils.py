@@ -291,7 +291,7 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
 
     try:
         # Define columns for rate limits table
-        columns = ['model_name', 'inference_provider', 'rpm', 'rpd', 'tpm', 'tpd', 'raw_string', 'parseable']
+        columns = ['human_readable_name', 'inference_provider', 'rpm', 'rpd', 'tpm', 'tpd', 'raw_string', 'parseable']
         placeholders = ', '.join(['%s'] * len(columns))
         columns_str = ', '.join(columns)
 
@@ -303,7 +303,7 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
         upsert_sql = f"""
             INSERT INTO {table_name} ({columns_str})
             VALUES ({placeholders})
-            ON CONFLICT (model_name)
+            ON CONFLICT (human_readable_name)
             DO UPDATE SET {update_str}
         """
 
