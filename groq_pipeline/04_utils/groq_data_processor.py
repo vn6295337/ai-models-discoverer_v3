@@ -464,6 +464,7 @@ class GroqDataProcessor:
                 'inference_provider': 'Groq',
                 'model_provider': model_provider,
                 'human_readable_name': self.clean_model_name(model_id, standardization),
+                'provider_slug': model_id,
                 'model_provider_country': country,
                 'official_url': official_url,
                 'input_modalities': input_mods,
