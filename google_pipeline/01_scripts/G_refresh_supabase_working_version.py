@@ -210,6 +210,27 @@ def main():
         logger.info(f"✅ Successfully deleted {initial_count} {INFERENCE_PROVIDER} records")
 
         logger.info(f"📤 Inserting {len(prepared_models)} models into {TABLE_NAME}...")
+
+        # Prepare rate limit records in parallel
+        rate_limit_records = []
+        try:
+            from rate_limit_parser import parse_rate_limits
+            for model in prepared_models:
+                parsed = parse_rate_limits(model.get('rate_limits', ''), INFERENCE_PROVIDER)
+                rate_limit_records.append({
+                    'model_name': model.get('human_readable_name'),
+                    'inference_provider': INFERENCE_PROVIDER,
+                    'rpm': parsed['rpm'],
+                    'rpd': parsed['rpd'],
+                    'tpm': parsed['tpm'],
+                    'tpd': parsed['tpd'],
+                    'raw_string': model.get('rate_limits', ''),
+                    'parseable': parsed['parseable']
+                })
+        except Exception as e:
+            logger.warning(f"⚠️ Rate limit parsing failed: {str(e)}")
+
+        # Insert working_version data (critical operation)
         if not insert_records_batch(conn, TABLE_NAME, prepared_models, batch_size=100):
             logger.error("❌ REFRESH FAILED: Data insertion failed - INITIATING ROLLBACK")
             if restore_backup_data(conn, backup_data):
@@ -219,6 +240,16 @@ def main():
             return False
 
         logger.info(f"✅ Successfully inserted {len(prepared_models)} models")
+
+        # Insert rate limits (best-effort, non-blocking)
+        if rate_limit_records:
+            try:
+                from db_utils import delete_rate_limits, upsert_rate_limits
+                delete_rate_limits(conn, 'ims.30_rate_limits', INFERENCE_PROVIDER)
+                upsert_rate_limits(conn, 'ims.30_rate_limits', rate_limit_records)
+                logger.info(f"✅ Updated {len(rate_limit_records)} rate limit records")
+            except Exception as e:
+                logger.warning(f"⚠️ Rate limits update failed (non-critical): {str(e)}")
 
         logger.info("🔍 Verifying insertion results...")
         final_count = get_record_count(conn, TABLE_NAME, INFERENCE_PROVIDER)

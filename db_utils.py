@@ -256,3 +256,67 @@ def load_staging_data(conn, staging_table: str, inference_provider: str) -> Opti
     except Exception as e:
         logger.error(f"Failed to load staging data: {str(e)}")
         return None
+
+
+def delete_rate_limits(conn, table_name: str, inference_provider: str) -> bool:
+    """Delete all rate limit records for a specific inference provider."""
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                f"DELETE FROM {table_name} WHERE inference_provider = %s",
+                (inference_provider,)
+            )
+        conn.commit()
+        return True
+    except Exception as e:
+        logger.error(f"Failed to delete rate limits: {str(e)}")
+        conn.rollback()
+        return False
+
+
+def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str, Any]]) -> bool:
+    """
+    Upsert rate limit records using ON CONFLICT strategy.
+
+    Args:
+        conn: Database connection
+        table_name: Target table (should be ims.30_rate_limits)
+        rate_limit_records: List of dictionaries with rate limit data
+
+    Returns:
+        bool: True if successful
+    """
+    if not rate_limit_records:
+        return True
+
+    try:
+        # Define columns for rate limits table
+        columns = ['model_name', 'inference_provider', 'rpm', 'rpd', 'tpm', 'tpd', 'raw_string', 'parseable']
+        placeholders = ', '.join(['%s'] * len(columns))
+        columns_str = ', '.join(columns)
+
+        # ON CONFLICT clause for upsert
+        update_columns = ['rpm', 'rpd', 'tpm', 'tpd', 'raw_string', 'parseable', 'updated_at']
+        update_str = ', '.join([f"{col} = EXCLUDED.{col}" for col in update_columns[:-1]])
+        update_str += ', updated_at = CURRENT_TIMESTAMP'
+
+        upsert_sql = f"""
+            INSERT INTO {table_name} ({columns_str})
+            VALUES ({placeholders})
+            ON CONFLICT (model_name)
+            DO UPDATE SET {update_str}
+        """
+
+        # Convert records to tuples
+        values = [tuple(record.get(col) for col in columns) for record in rate_limit_records]
+
+        with conn.cursor() as cur:
+            execute_batch(cur, upsert_sql, values, page_size=100)
+
+        conn.commit()
+        return True
+
+    except Exception as e:
+        logger.error(f"Failed to upsert rate limits: {str(e)}")
+        conn.rollback()
+        return False
