@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-11-27 07:10 AM IST
+Generated: 2025-11-27 12:08 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 42
-   • Total records in pipeline: 28
+   • Total unique model names: 40
+   • Total records in pipeline: 26
    • Total records in Supabase: 40
    • Models in both systems: 26
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 2
+   • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 14
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -56,34 +56,12 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 2
-     Models: Bert-Nebulon Alpha, R1T Chimera
    • Existing models with differences: 0
    • Deprecated models (Supabase only): 14
      Models: DeepSeek R1 0528 Qwen3 8B, DeepSeek V3 0324, MAI DS R1, Mistral Nemo, Mistral Small 3, Mistral Small 3.2 24B, QwQ 32B RpR v1, Qwen2.5 72B Instruct, Qwen2.5 Coder 32B Instruct, Qwen2.5 VL 32B Instruct, Qwen3 14B, Qwen3 30B A3B, R1, R1 0528
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
-================================================================================
-
-MODEL: Bert-Nebulon Alpha
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
-human_readable_name       | Bert-Nebulon Alpha        |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
-
 ================================================================================
 
 MODEL: DeepSeek R1 0528 Qwen3 8B
@@ -843,26 +821,6 @@ license_name              | MIT                       | MIT
 license_url               | https://opensource.org/.. | https://opensource.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: R1T Chimera
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | TNG Technology            |                          
-human_readable_name       | R1T Chimera               |                          
-model_provider_country    | Germany                   |                          
-official_url              | https://tngtech.com       |                          
-input_modalities          | Text                      |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
 
 ================================================================================
 
