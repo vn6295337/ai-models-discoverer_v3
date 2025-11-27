@@ -166,11 +166,27 @@ class GroqWebScraper:
             for row_num, row in enumerate(data_rows, 1):
                 cells = row.find_all(['td', 'th'])
                 if len(cells) > model_col:
-                    model_id = cells[model_col].get_text().strip()
+                    # Extract slug from code element if present, otherwise use text
+                    cell = cells[model_col]
+                    code_elem = cell.find('code')
+                    if code_elem:
+                        model_slug = code_elem.get_text().strip()
+                    else:
+                        # Fallback: try to extract from full text
+                        full_text = cell.get_text().strip()
+                        # Pattern: "Display NameSlug" - extract after last uppercase sequence
+                        parts = full_text.split()
+                        model_slug = parts[-1] if parts else full_text
 
-                    if model_id and model_id.lower() not in ['model', 'model id', '']:
+                    # Get display name from cell text (before code element)
+                    model_display_name = cell.get_text().strip()
+                    if code_elem:
+                        model_display_name = model_display_name.replace(code_elem.get_text(), '').strip()
+
+                    if model_slug and model_slug.lower() not in ['model', 'model id', '']:
                         model_data = {
-                            'model_id': model_id,
+                            'model_id': model_slug,
+                            'model_display_name': model_display_name,
                             'object': 'model',
                             'created': int(time.time()),
                             'model_provider': cells[developer_col].get_text().strip() if len(cells) > developer_col else 'Groq',
@@ -182,7 +198,7 @@ class GroqWebScraper:
                         }
 
                         models.append(model_data)
-                        print(f"   ✅ Row {row_num}: {model_data['model_id']} ({model_data['model_provider']})")
+                        print(f"   ✅ Row {row_num}: {model_data['model_id']} / {model_display_name} ({model_data['model_provider']})")
 
             break  # Only process first valid table
 
@@ -235,11 +251,27 @@ class GroqWebScraper:
             for row_num, row in enumerate(data_rows, 1):
                 cells = row.find_all(['td', 'th'])
                 if len(cells) > model_col:
-                    model_id = cells[model_col].get_text().strip()
+                    # Extract slug from code element if present, otherwise use text
+                    cell = cells[model_col]
+                    code_elem = cell.find('code')
+                    if code_elem:
+                        model_slug = code_elem.get_text().strip()
+                    else:
+                        # Fallback: try to extract from full text
+                        full_text = cell.get_text().strip()
+                        # Pattern: "Display NameSlug" - extract after last uppercase sequence
+                        parts = full_text.split()
+                        model_slug = parts[-1] if parts else full_text
 
-                    if model_id and model_id.lower() not in ['model', 'model id', '']:
+                    # Get display name from cell text (before code element)
+                    model_display_name = cell.get_text().strip()
+                    if code_elem:
+                        model_display_name = model_display_name.replace(code_elem.get_text(), '').strip()
+
+                    if model_slug and model_slug.lower() not in ['model', 'model id', '']:
                         model_data = {
-                            'model_id': model_id,
+                            'model_id': model_slug,
+                            'model_display_name': model_display_name,
                             'object': 'model',
                             'created': int(time.time()),
                             'model_provider': cells[developer_col].get_text().strip() if len(cells) > developer_col else 'Groq',
@@ -251,7 +283,7 @@ class GroqWebScraper:
                         }
 
                         models.append(model_data)
-                        print(f"   ✅ Row {row_num}: {model_data['model_id']} ({model_data['model_provider']}) [SYSTEMS]")
+                        print(f"   ✅ Row {row_num}: {model_data['model_id']} / {model_display_name} ({model_data['model_provider']}) [SYSTEMS]")
 
             break  # Only process first valid table
 
