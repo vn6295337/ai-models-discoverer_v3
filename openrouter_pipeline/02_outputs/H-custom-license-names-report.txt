@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE MODELS REPORT
-Generated: 2025-11-26 07:12 AM IST
+Generated: 2025-11-27 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 4
+  Total models : 3
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -13,9 +13,8 @@ SUMMARY:
 CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
   NVIDIA: 2 models
-  QWEN: 1 models
 
-Total license types: 3
+Total license types: 2
 
 DETAILED CUSTOM LICENSE MODEL LISTINGS:
 ================================================================================
@@ -44,13 +43,4 @@ MODEL 3: nvidia/nemotron-nano-9b-v2
   Canonical Slug  : nvidia/nemotron-nano-9b-v2
   HuggingFace ID  : nvidia/NVIDIA-Nemotron-Nano-9B-v2
   License Name    : NVIDIA
-
-================================================================================
-
-MODEL 4: qwen/qwen-2.5-72b-instruct
---------------------------------------------------
-  ID              : qwen/qwen-2.5-72b-instruct:free
-  Canonical Slug  : qwen/qwen-2.5-72b-instruct
-  HuggingFace ID  : Qwen/Qwen2.5-72B-Instruct
-  License Name    : QWEN
 
