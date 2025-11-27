@@ -259,10 +259,14 @@ def load_staging_data(conn, staging_table: str, inference_provider: str) -> Opti
 
 
 def delete_rate_limits(conn, table_name: str, inference_provider: str) -> bool:
-    """Delete all rate limit records for a specific inference provider."""
+    """Delete all rate limit records for a specific inference provider.
+
+    Args:
+        table_name: Fully qualified table name (e.g., 'ims."30_rate_limits"')
+    """
     try:
         with conn.cursor() as cur:
-            query = f"DELETE FROM {table_name} WHERE inference_provider = %s"
+            query = f'DELETE FROM {table_name} WHERE inference_provider = %s'
             logger.info(f"Executing: {query} with provider={inference_provider}")
             cur.execute(query, (inference_provider,))
             deleted_count = cur.rowcount
@@ -283,7 +287,7 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
 
     Args:
         conn: Database connection
-        table_name: Target table (should be ims.30_rate_limits)
+        table_name: Fully qualified table name (e.g., 'ims."30_rate_limits"')
         rate_limit_records: List of dictionaries with rate limit data
 
     Returns:
