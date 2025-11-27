@@ -218,7 +218,7 @@ def main():
             for model in prepared_models:
                 parsed = parse_rate_limits(model.get('rate_limits', ''), INFERENCE_PROVIDER)
                 rate_limit_records.append({
-                    'model_name': model.get('human_readable_name'),
+                    'human_readable_name': model.get('human_readable_name'),
                     'inference_provider': INFERENCE_PROVIDER,
                     'rpm': parsed['rpm'],
                     'rpd': parsed['rpd'],
