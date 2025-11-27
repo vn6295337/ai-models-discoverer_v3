@@ -37,6 +37,14 @@
     {
       "canonical_slug": "openrouter/sherlock-dash-alpha",
       "reason": "Cloaked model, unknown origin"
+    },
+    {
+      "canonical_slug": "tngtech/tng-r1t-chimera",
+      "reason": "Experimental model"
+    },
+    {
+      "canonical_slug": "openrouter/bert-nebulon-alpha",
+      "reason": "Cloaked model"
     }
   ]
 }
