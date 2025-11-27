@@ -1,34 +1,33 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-11-26 07:12 AM IST
+Generated: 2025-11-27 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 41
+  Total models        : 27
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
 
 SOURCE CATEGORY DISTRIBUTION:
-  Custom: 4 models
+  Custom: 3 models
   Google: 5 models
   Meta: 2 models
-  Opensource: 27 models
+  Opensource: 14 models
   Proprietary: 3 models
 
 FINAL LICENSE DISTRIBUTION:
-  17 models: Apache-2.0
-  10 models: MIT
+   9 models: Apache-2.0
    5 models: Gemma
+   5 models: MIT
    2 models: NVIDIA
    2 models: xAI
    1 models: Llama-3.1
    1 models: Llama-3.2
    1 models: Llama-3.3
    1 models: Modified MIT
-   1 models: QWEN
 
-Total unique license types: 10
+Total unique license types: 9
 
 DETAILED FINAL MODEL INFORMATION:
 ================================================================================
@@ -78,22 +77,7 @@ MODEL 3: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 4: qwen/qwen-2.5-72b-instruct
---------------------------------------------------
-  ID: qwen/qwen-2.5-72b-instruct:free
-  Original Name: Qwen2.5 72B Instruct (free)
-  HuggingFace ID: Qwen/Qwen2.5-72B-Instruct
-  Canonical Slug: qwen/qwen-2.5-72b-instruct
-  Clean Model Name: Qwen2.5 72B Instruct
-  License Info Text: 
-  License Info URL: 
-  License Name: QWEN
-  License URL: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
-  Source Category: custom
-
-================================================================================
-
-MODEL 5: google/gemma-3-12b-it
+MODEL 4: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -108,7 +92,7 @@ MODEL 5: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 6: google/gemma-3-27b-it
+MODEL 5: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -123,7 +107,7 @@ MODEL 6: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 7: google/gemma-3-4b-it
+MODEL 6: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -138,7 +122,7 @@ MODEL 7: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 8: google/gemma-3n-e2b-it
+MODEL 7: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -153,7 +137,7 @@ MODEL 8: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 9: google/gemma-3n-e4b-it
+MODEL 8: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)
@@ -168,7 +152,7 @@ MODEL 9: google/gemma-3n-e4b-it
 
 ================================================================================
 
-MODEL 10: meta-llama/llama-3.2-3b-instruct
+MODEL 9: meta-llama/llama-3.2-3b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.2-3b-instruct:free
   Original Name: Meta: Llama 3.2 3B Instruct (free)
@@ -183,7 +167,7 @@ MODEL 10: meta-llama/llama-3.2-3b-instruct
 
 ================================================================================
 
-MODEL 11: meta-llama/llama-3.3-70b-instruct
+MODEL 10: meta-llama/llama-3.3-70b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-70b-instruct:free
   Original Name: Meta: Llama 3.3 70B Instruct (free)
@@ -198,7 +182,7 @@ MODEL 11: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 12: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 11: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -213,22 +197,7 @@ MODEL 12: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 13: arliai/qwq-32b-arliai-rpr-v1
---------------------------------------------------
-  ID: arliai/qwq-32b-arliai-rpr-v1:free
-  Original Name: ArliAI: QwQ 32B RpR v1 (free)
-  HuggingFace ID: ArliAI/QwQ-32B-ArliAI-RpR-v1
-  Canonical Slug: arliai/qwq-32b-arliai-rpr-v1
-  Clean Model Name: QwQ 32B RpR v1
-  License Info Text: info
-  License Info URL: https://huggingface.co/ArliAI/QwQ-32B-ArliAI-RpR-v1/blob/main/README.md
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 14: mistralai/mistral-7b-instruct
+MODEL 12: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -243,37 +212,7 @@ MODEL 14: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 15: mistralai/mistral-nemo
---------------------------------------------------
-  ID: mistralai/mistral-nemo:free
-  Original Name: Mistral: Mistral Nemo (free)
-  HuggingFace ID: mistralai/Mistral-Nemo-Instruct-2407
-  Canonical Slug: mistralai/mistral-nemo
-  Clean Model Name: Mistral Nemo
-  License Info Text: info
-  License Info URL: https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407/blob/main/README.md
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 16: mistralai/mistral-small-24b-instruct-2501
---------------------------------------------------
-  ID: mistralai/mistral-small-24b-instruct-2501:free
-  Original Name: Mistral: Mistral Small 3 (free)
-  HuggingFace ID: mistralai/Mistral-Small-24B-Instruct-2501
-  Canonical Slug: mistralai/mistral-small-24b-instruct-2501
-  Clean Model Name: Mistral Small 3
-  License Info Text: info
-  License Info URL: https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501/blob/main/README.md
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 17: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 13: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -288,22 +227,7 @@ MODEL 17: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 18: mistralai/mistral-small-3.2-24b-instruct-2506
---------------------------------------------------
-  ID: mistralai/mistral-small-3.2-24b-instruct:free
-  Original Name: Mistral: Mistral Small 3.2 24B (free)
-  HuggingFace ID: mistralai/Mistral-Small-3.2-24B-Instruct-2506
-  Canonical Slug: mistralai/mistral-small-3.2-24b-instruct-2506
-  Clean Model Name: Mistral Small 3.2 24B
-  License Info Text: info
-  License Info URL: https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506/blob/main/README.md
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 19: openai/gpt-oss-20b
+MODEL 14: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -318,52 +242,7 @@ MODEL 19: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 20: qwen/qwen-2.5-coder-32b-instruct
---------------------------------------------------
-  ID: qwen/qwen-2.5-coder-32b-instruct:free
-  Original Name: Qwen2.5 Coder 32B Instruct (free)
-  HuggingFace ID: Qwen/Qwen2.5-Coder-32B-Instruct
-  Canonical Slug: qwen/qwen-2.5-coder-32b-instruct
-  Clean Model Name: Qwen2.5 Coder 32B Instruct
-  License Info Text: info
-  License Info URL: https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/blob/main/LICENSE
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 21: qwen/qwen2.5-vl-32b-instruct
---------------------------------------------------
-  ID: qwen/qwen2.5-vl-32b-instruct:free
-  Original Name: Qwen: Qwen2.5 VL 32B Instruct (free)
-  HuggingFace ID: Qwen/Qwen2.5-VL-32B-Instruct
-  Canonical Slug: qwen/qwen2.5-vl-32b-instruct
-  Clean Model Name: Qwen2.5 VL 32B Instruct
-  License Info Text: info
-  License Info URL: https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct/blob/main/README.md
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 22: qwen/qwen3-14b-04-28
---------------------------------------------------
-  ID: qwen/qwen3-14b:free
-  Original Name: Qwen: Qwen3 14B (free)
-  HuggingFace ID: Qwen/Qwen3-14B
-  Canonical Slug: qwen/qwen3-14b-04-28
-  Clean Model Name: Qwen3 14B
-  License Info Text: info
-  License Info URL: https://huggingface.co/Qwen/Qwen3-14B/blob/main/LICENSE
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 23: qwen/qwen3-235b-a22b-04-28
+MODEL 15: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -378,22 +257,7 @@ MODEL 23: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 24: qwen/qwen3-30b-a3b-04-28
---------------------------------------------------
-  ID: qwen/qwen3-30b-a3b:free
-  Original Name: Qwen: Qwen3 30B A3B (free)
-  HuggingFace ID: Qwen/Qwen3-30B-A3B
-  Canonical Slug: qwen/qwen3-30b-a3b-04-28
-  Clean Model Name: Qwen3 30B A3B
-  License Info Text: info
-  License Info URL: https://huggingface.co/Qwen/Qwen3-30B-A3B/blob/main/LICENSE
-  License Name: Apache-2.0
-  License URL: https://www.apache.org/licenses/LICENSE-2.0
-  Source Category: opensource
-
-================================================================================
-
-MODEL 25: qwen/qwen3-4b-04-28
+MODEL 16: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -408,7 +272,7 @@ MODEL 25: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 26: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 17: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -423,7 +287,7 @@ MODEL 26: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 27: venice/uncensored
+MODEL 18: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -438,7 +302,7 @@ MODEL 27: venice/uncensored
 
 ================================================================================
 
-MODEL 28: nousresearch/hermes-3-llama-3.1-405b
+MODEL 19: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -453,67 +317,7 @@ MODEL 28: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 29: deepseek/deepseek-chat-v3-0324
---------------------------------------------------
-  ID: deepseek/deepseek-chat-v3-0324:free
-  Original Name: DeepSeek: DeepSeek V3 0324 (free)
-  HuggingFace ID: deepseek-ai/DeepSeek-V3-0324
-  Canonical Slug: deepseek/deepseek-chat-v3-0324
-  Clean Model Name: DeepSeek V3 0324
-  License Info Text: info
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 30: deepseek/deepseek-r1
---------------------------------------------------
-  ID: deepseek/deepseek-r1:free
-  Original Name: DeepSeek: R1 (free)
-  HuggingFace ID: deepseek-ai/DeepSeek-R1
-  Canonical Slug: deepseek/deepseek-r1
-  Clean Model Name: R1
-  License Info Text: info
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-R1/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 31: deepseek/deepseek-r1-0528
---------------------------------------------------
-  ID: deepseek/deepseek-r1-0528:free
-  Original Name: DeepSeek: R1 0528 (free)
-  HuggingFace ID: deepseek-ai/DeepSeek-R1-0528
-  Canonical Slug: deepseek/deepseek-r1-0528
-  Clean Model Name: R1 0528
-  License Info Text: info
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 32: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID: deepseek/deepseek-r1-0528-qwen3-8b:free
-  Original Name: DeepSeek: DeepSeek R1 0528 Qwen3 8B (free)
-  HuggingFace ID: deepseek-ai/deepseek-r1-0528-qwen3-8b
-  Canonical Slug: deepseek/deepseek-r1-0528-qwen3-8b
-  Clean Model Name: DeepSeek R1 0528 Qwen3 8B
-  License Info Text: info
-  License Info URL: https://huggingface.co/deepseek-ai/deepseek-r1-0528-qwen3-8b/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 33: deepseek/deepseek-r1-distill-llama-70b
+MODEL 20: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID: deepseek/deepseek-r1-distill-llama-70b:free
   Original Name: DeepSeek: R1 Distill Llama 70B (free)
@@ -528,7 +332,7 @@ MODEL 33: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 34: meituan/longcat-flash-chat
+MODEL 21: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -543,22 +347,7 @@ MODEL 34: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 35: microsoft/mai-ds-r1
---------------------------------------------------
-  ID: microsoft/mai-ds-r1:free
-  Original Name: Microsoft: MAI DS R1 (free)
-  HuggingFace ID: microsoft/MAI-DS-R1
-  Canonical Slug: microsoft/mai-ds-r1
-  Clean Model Name: MAI DS R1
-  License Info Text: info
-  License Info URL: https://huggingface.co/microsoft/MAI-DS-R1/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
-  Source Category: opensource
-
-================================================================================
-
-MODEL 36: tngtech/deepseek-r1t-chimera
+MODEL 22: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -573,7 +362,7 @@ MODEL 36: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 37: tngtech/deepseek-r1t2-chimera
+MODEL 23: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -588,7 +377,7 @@ MODEL 37: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 38: z-ai/glm-4.5-air
+MODEL 24: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -603,7 +392,7 @@ MODEL 38: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 39: kwaipilot/kat-coder-pro-v1
+MODEL 25: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -618,7 +407,7 @@ MODEL 39: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 40: x-ai/grok-4-fast
+MODEL 26: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast
@@ -633,7 +422,7 @@ MODEL 40: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 41: x-ai/grok-4.1-fast
+MODEL 27: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: X Ai/Grok 4.1 Fast

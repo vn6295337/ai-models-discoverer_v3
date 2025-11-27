@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-26 07:12 AM IST",
-    "total_models": 4,
+    "generated_at": "2025-11-27 07:10 AM IST",
+    "total_models": 3,
     "pipeline_stage": "L_collate_custom_licenses"
   },
   "models": [
@@ -37,17 +37,6 @@
       "license_info_url": "",
       "license_name": "Modified MIT",
       "license_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE"
-    },
-    {
-      "id": "qwen/qwen-2.5-72b-instruct:free",
-      "canonical_slug": "qwen/qwen-2.5-72b-instruct",
-      "original_name": "Qwen2.5 72B Instruct (free)",
-      "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
-      "clean_model_name": "Qwen2.5 72B Instruct",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "QWEN",
-      "license_url": "https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE"
     }
   ]
 }
