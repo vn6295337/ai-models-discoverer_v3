@@ -262,7 +262,8 @@ def delete_rate_limits(conn, table_name: str, inference_provider: str) -> bool:
     """Delete all rate limit records for a specific inference provider."""
     try:
         with conn.cursor() as cur:
-            query = f"DELETE FROM {table_name} WHERE inference_provider = %s"
+            # Quote table name to handle names starting with numbers (e.g., "30_rate_limits")
+            query = f'DELETE FROM "{table_name}" WHERE inference_provider = %s'
             logger.info(f"Executing: {query} with provider={inference_provider}")
             cur.execute(query, (inference_provider,))
             deleted_count = cur.rowcount
@@ -307,8 +308,9 @@ def upsert_rate_limits(conn, table_name: str, rate_limit_records: List[Dict[str,
         update_str = ', '.join([f"{col} = EXCLUDED.{col}" for col in update_columns[:-1]])
         update_str += ', updated_at = CURRENT_TIMESTAMP'
 
+        # Quote table name to handle names starting with numbers (e.g., "30_rate_limits")
         upsert_sql = f"""
-            INSERT INTO {table_name} ({columns_str})
+            INSERT INTO "{table_name}" ({columns_str})
             VALUES ({placeholders})
             ON CONFLICT (human_readable_name)
             DO UPDATE SET {update_str}
