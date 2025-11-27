@@ -1,60 +1,24 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-11-26 07:12 AM IST
+Generated: 2025-11-27 07:10 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 31
+  Total models : 17
   Input        : B-filtered-models.json
   Processor    : E_fetch_other_license_info_urls_from_hf.py
   Output       : E-other-license-info-urls-from-hf.json
 
 LICENSE INFO URL BREAKDOWN:
-  16 models: LICENSE file
-  15 models: README.md file
+  10 models: README.md file
+   7 models: LICENSE file
 
 Total categories: 2
 
 DETAILED MODEL LICENSE INFO URLS:
 ================================================================================
 
-MODEL 1: deepseek/deepseek-r1-0528-qwen3-8b
---------------------------------------------------
-  ID              : deepseek/deepseek-r1-0528-qwen3-8b:free
-  Canonical Slug  : deepseek/deepseek-r1-0528-qwen3-8b
-  HuggingFace ID  : deepseek-ai/deepseek-r1-0528-qwen3-8b
-  License Info URL: https://huggingface.co/deepseek-ai/deepseek-r1-0528-qwen3-8b/blob/main/LICENSE
-
-================================================================================
-
-MODEL 2: deepseek/deepseek-chat-v3-0324
---------------------------------------------------
-  ID              : deepseek/deepseek-chat-v3-0324:free
-  Canonical Slug  : deepseek/deepseek-chat-v3-0324
-  HuggingFace ID  : deepseek-ai/DeepSeek-V3-0324
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-V3-0324/blob/main/LICENSE
-
-================================================================================
-
-MODEL 3: deepseek/deepseek-r1
---------------------------------------------------
-  ID              : deepseek/deepseek-r1:free
-  Canonical Slug  : deepseek/deepseek-r1
-  HuggingFace ID  : deepseek-ai/DeepSeek-R1
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-R1/blob/main/LICENSE
-
-================================================================================
-
-MODEL 4: deepseek/deepseek-r1-0528
---------------------------------------------------
-  ID              : deepseek/deepseek-r1-0528:free
-  Canonical Slug  : deepseek/deepseek-r1-0528
-  HuggingFace ID  : deepseek-ai/DeepSeek-R1-0528
-  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/LICENSE
-
-================================================================================
-
-MODEL 5: deepseek/deepseek-r1-distill-llama-70b
+MODEL 1: deepseek/deepseek-r1-distill-llama-70b
 --------------------------------------------------
   ID              : deepseek/deepseek-r1-distill-llama-70b:free
   Canonical Slug  : deepseek/deepseek-r1-distill-llama-70b
@@ -63,7 +27,7 @@ MODEL 5: deepseek/deepseek-r1-distill-llama-70b
 
 ================================================================================
 
-MODEL 6: meituan/longcat-flash-chat
+MODEL 2: meituan/longcat-flash-chat
 --------------------------------------------------
   ID              : meituan/longcat-flash-chat:free
   Canonical Slug  : meituan/longcat-flash-chat
@@ -72,16 +36,7 @@ MODEL 6: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 7: microsoft/mai-ds-r1
---------------------------------------------------
-  ID              : microsoft/mai-ds-r1:free
-  Canonical Slug  : microsoft/mai-ds-r1
-  HuggingFace ID  : microsoft/MAI-DS-R1
-  License Info URL: https://huggingface.co/microsoft/MAI-DS-R1/blob/main/LICENSE
-
-================================================================================
-
-MODEL 8: moonshotai/kimi-k2
+MODEL 3: moonshotai/kimi-k2
 --------------------------------------------------
   ID              : moonshotai/kimi-k2:free
   Canonical Slug  : moonshotai/kimi-k2
@@ -90,7 +45,7 @@ MODEL 8: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 9: openai/gpt-oss-20b
+MODEL 4: openai/gpt-oss-20b
 --------------------------------------------------
   ID              : openai/gpt-oss-20b:free
   Canonical Slug  : openai/gpt-oss-20b
@@ -99,34 +54,7 @@ MODEL 9: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 10: qwen/qwen-2.5-72b-instruct
---------------------------------------------------
-  ID              : qwen/qwen-2.5-72b-instruct:free
-  Canonical Slug  : qwen/qwen-2.5-72b-instruct
-  HuggingFace ID  : Qwen/Qwen2.5-72B-Instruct
-  License Info URL: https://huggingface.co/Qwen/Qwen2.5-72B-Instruct/blob/main/LICENSE
-
-================================================================================
-
-MODEL 11: qwen/qwen-2.5-coder-32b-instruct
---------------------------------------------------
-  ID              : qwen/qwen-2.5-coder-32b-instruct:free
-  Canonical Slug  : qwen/qwen-2.5-coder-32b-instruct
-  HuggingFace ID  : Qwen/Qwen2.5-Coder-32B-Instruct
-  License Info URL: https://huggingface.co/Qwen/Qwen2.5-Coder-32B-Instruct/blob/main/LICENSE
-
-================================================================================
-
-MODEL 12: qwen/qwen3-14b-04-28
---------------------------------------------------
-  ID              : qwen/qwen3-14b:free
-  Canonical Slug  : qwen/qwen3-14b-04-28
-  HuggingFace ID  : Qwen/Qwen3-14B
-  License Info URL: https://huggingface.co/Qwen/Qwen3-14B/blob/main/LICENSE
-
-================================================================================
-
-MODEL 13: qwen/qwen3-235b-a22b-04-28
+MODEL 5: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID              : qwen/qwen3-235b-a22b:free
   Canonical Slug  : qwen/qwen3-235b-a22b-04-28
@@ -135,16 +63,7 @@ MODEL 13: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 14: qwen/qwen3-30b-a3b-04-28
---------------------------------------------------
-  ID              : qwen/qwen3-30b-a3b:free
-  Canonical Slug  : qwen/qwen3-30b-a3b-04-28
-  HuggingFace ID  : Qwen/Qwen3-30B-A3B
-  License Info URL: https://huggingface.co/Qwen/Qwen3-30B-A3B/blob/main/LICENSE
-
-================================================================================
-
-MODEL 15: qwen/qwen3-4b-04-28
+MODEL 6: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID              : qwen/qwen3-4b:free
   Canonical Slug  : qwen/qwen3-4b-04-28
@@ -153,7 +72,7 @@ MODEL 15: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 16: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 7: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID              : qwen/qwen3-coder:free
   Canonical Slug  : qwen/qwen3-coder-480b-a35b-07-25
@@ -162,16 +81,7 @@ MODEL 16: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 17: arliai/qwq-32b-arliai-rpr-v1
---------------------------------------------------
-  ID              : arliai/qwq-32b-arliai-rpr-v1:free
-  Canonical Slug  : arliai/qwq-32b-arliai-rpr-v1
-  HuggingFace ID  : ArliAI/QwQ-32B-ArliAI-RpR-v1
-  License Info URL: https://huggingface.co/ArliAI/QwQ-32B-ArliAI-RpR-v1/blob/main/README.md
-
-================================================================================
-
-MODEL 18: mistralai/mistral-7b-instruct
+MODEL 8: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID              : mistralai/mistral-7b-instruct:free
   Canonical Slug  : mistralai/mistral-7b-instruct
@@ -180,25 +90,7 @@ MODEL 18: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 19: mistralai/mistral-nemo
---------------------------------------------------
-  ID              : mistralai/mistral-nemo:free
-  Canonical Slug  : mistralai/mistral-nemo
-  HuggingFace ID  : mistralai/Mistral-Nemo-Instruct-2407
-  License Info URL: https://huggingface.co/mistralai/Mistral-Nemo-Instruct-2407/blob/main/README.md
-
-================================================================================
-
-MODEL 20: mistralai/mistral-small-24b-instruct-2501
---------------------------------------------------
-  ID              : mistralai/mistral-small-24b-instruct-2501:free
-  Canonical Slug  : mistralai/mistral-small-24b-instruct-2501
-  HuggingFace ID  : mistralai/Mistral-Small-24B-Instruct-2501
-  License Info URL: https://huggingface.co/mistralai/Mistral-Small-24B-Instruct-2501/blob/main/README.md
-
-================================================================================
-
-MODEL 21: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 9: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID              : mistralai/mistral-small-3.1-24b-instruct:free
   Canonical Slug  : mistralai/mistral-small-3.1-24b-instruct-2503
@@ -207,16 +99,7 @@ MODEL 21: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 22: mistralai/mistral-small-3.2-24b-instruct-2506
---------------------------------------------------
-  ID              : mistralai/mistral-small-3.2-24b-instruct:free
-  Canonical Slug  : mistralai/mistral-small-3.2-24b-instruct-2506
-  HuggingFace ID  : mistralai/Mistral-Small-3.2-24B-Instruct-2506
-  License Info URL: https://huggingface.co/mistralai/Mistral-Small-3.2-24B-Instruct-2506/blob/main/README.md
-
-================================================================================
-
-MODEL 23: nvidia/nemotron-nano-12b-v2-vl
+MODEL 10: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID              : nvidia/nemotron-nano-12b-v2-vl:free
   Canonical Slug  : nvidia/nemotron-nano-12b-v2-vl
@@ -225,7 +108,7 @@ MODEL 23: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 24: nvidia/nemotron-nano-9b-v2
+MODEL 11: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID              : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug  : nvidia/nemotron-nano-9b-v2
@@ -234,7 +117,7 @@ MODEL 24: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 25: nousresearch/hermes-3-llama-3.1-405b
+MODEL 12: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID              : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
@@ -243,16 +126,7 @@ MODEL 25: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 26: qwen/qwen2.5-vl-32b-instruct
---------------------------------------------------
-  ID              : qwen/qwen2.5-vl-32b-instruct:free
-  Canonical Slug  : qwen/qwen2.5-vl-32b-instruct
-  HuggingFace ID  : Qwen/Qwen2.5-VL-32B-Instruct
-  License Info URL: https://huggingface.co/Qwen/Qwen2.5-VL-32B-Instruct/blob/main/README.md
-
-================================================================================
-
-MODEL 27: tngtech/deepseek-r1t-chimera
+MODEL 13: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -261,7 +135,7 @@ MODEL 27: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 28: tngtech/deepseek-r1t2-chimera
+MODEL 14: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -270,7 +144,7 @@ MODEL 28: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 29: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 15: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID              : alibaba/tongyi-deepresearch-30b-a3b:free
   Canonical Slug  : alibaba/tongyi-deepresearch-30b-a3b
@@ -279,7 +153,7 @@ MODEL 29: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 30: venice/uncensored
+MODEL 16: venice/uncensored
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug  : venice/uncensored
@@ -288,7 +162,7 @@ MODEL 30: venice/uncensored
 
 ================================================================================
 
-MODEL 31: z-ai/glm-4.5-air
+MODEL 17: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air
