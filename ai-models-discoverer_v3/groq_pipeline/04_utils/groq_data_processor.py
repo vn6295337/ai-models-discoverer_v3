@@ -21,6 +21,7 @@ import json
 import csv
 import os
 import sys
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import List, Dict, Any, Optional, Tuple
@@ -35,6 +36,44 @@ class GroqDataProcessor:
     def __init__(self):
         """Initialize data processor with configuration"""
         self.config = get_config()
+
+    def extract_final_model_slug(self, model_id: str) -> str:
+        """
+        Extracts the final clean model slug by:
+        1. Using a regex to dynamically identify and strip the non-standard
+           Groq prefix (e.g., '8B', 'Whisper', 'Turbo'). This fulfills the
+           programmatic breakpoint identification requirement.
+        2. Splitting by the forward slash '/' to remove upstream provider
+           prefixes (e.g., 'meta-llama/' or 'openai/').
+
+        Args:
+            model_id: Raw model ID from scraper (e.g., "8Bllama-3.1-8b-instant")
+
+        Returns:
+            Clean model slug (e.g., "llama-3.1-8b-instant")
+        """
+        # Step 1: Dynamically Strip the Groq-specific prefix
+        # Regex:
+        #   Group 1: (\d+[B]?|[A-Z][A-Za-z]*) - Matches the prefix:
+        #            - \d+[B]?        (e.g., 8B, 70B, 120B)
+        #            - [A-Z][A-Za-z]* (e.g., Whisper, Turbo)
+        #   Group 2: ([a-z].*$) - Captures the slug: The remainder of the string
+        #            must start with a lowercase letter.
+        match = re.search(r'(\d+[B]?|[A-Z][A-Za-z]*)([a-z].*$)', model_id)
+
+        intermediate_slug = model_id
+        if match:
+            # Group 2 is the actual model slug (e.g., 'llama-3.1-8b-instant', 'openai/gpt-oss-120b')
+            intermediate_slug = match.group(2)
+
+        # Step 2: Check for a forward slash delimiter and extract the final model name
+        # This is your final check to get the model name after the provider prefix (e.g., 'meta-llama/')
+        if '/' in intermediate_slug:
+            # Capture only the portion AFTER the LAST forward slash (the actual model name)
+            return intermediate_slug.split('/')[-1]
+
+        # Step 3: If no slash is found, return the intermediate slug
+        return intermediate_slug
 
     def load_json_file(self, filename: str) -> Dict[str, Any]:
         """
@@ -464,7 +503,7 @@ class GroqDataProcessor:
                 'inference_provider': 'Groq',
                 'model_provider': model_provider,
                 'human_readable_name': self.clean_model_name(model_id, standardization),
-                'provider_slug': model_id,
+                'provider_slug': self.extract_final_model_slug(model_id),
                 'model_provider_country': country,
                 'official_url': official_url,
                 'input_modalities': input_mods,
