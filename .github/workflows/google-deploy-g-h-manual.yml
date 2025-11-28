@@ -81,12 +81,12 @@ jobs:
 
     - name: Auto-refresh ims.10_model_aa_mapping
       if: ${{ inputs.script_choice == 'run_g' }}
-      working-directory: ../intelligent-model-selector/selector-service
+      working-directory: google_pipeline
       env:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
       run: |
-        echo "⚙️ Installing selector service dependencies..."
-        pip install -r requirements.txt
+        echo "⚙️ Installing psycopg2 for database operations..."
+        pip install psycopg2-binary
         echo "🔄 Auto-refreshing ims.10_model_aa_mapping from working_version..."
         python3 refresh_model_aa_mapping.py
 
