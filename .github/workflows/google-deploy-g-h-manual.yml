@@ -79,18 +79,14 @@ jobs:
         echo "⚠️  This will deploy from working_version_v3 to ai_models_main_v3"
         python3 -u 01_scripts/H_deploy_to_supabase_ai_models_main.py
 
-    - name: Install Selector Service Dependencies
-      if: ${{ inputs.script_choice == 'run_g' }}
-      working-directory: ../intelligent-model-selector/selector-service
-      run: |
-        pip install -r requirements.txt
-
     - name: Auto-refresh ims.10_model_aa_mapping
       if: ${{ inputs.script_choice == 'run_g' }}
       working-directory: ../intelligent-model-selector/selector-service
       env:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
       run: |
+        echo "⚙️ Installing selector service dependencies..."
+        pip install -r requirements.txt
         echo "🔄 Auto-refreshing ims.10_model_aa_mapping from working_version..."
         python3 refresh_model_aa_mapping.py
 
