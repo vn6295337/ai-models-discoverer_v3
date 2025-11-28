@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-27T12:33:14.272989+00:00",
+    "generated_at": "2025-11-28T03:55:21.030311+00:00",
     "consolidation_processor": "F_consolidate_all_licenses.py",
     "source_files": [
       "stage-4-meta-licensing.json",
@@ -38,7 +38,7 @@
   },
   "provider_license_mappings": {
     "250K TPM1K RPM": {
-      "Llama 3.1 8Bllama-3.1-8b-instant": {
+      "8Bllama-3.1-8b-instant": {
         "license_info_text": "",
         "license_info_url": "",
         "license_name": "Llama-3.1",
@@ -58,7 +58,7 @@
       }
     },
     "300K TPM1K RPM": {
-      "Llama 3.3 70Bllama-3.3-70b-versatile": {
+      "70Bllama-3.3-70b-versatile": {
         "license_info_text": "",
         "license_info_url": "",
         "license_name": "Llama-3.3",
