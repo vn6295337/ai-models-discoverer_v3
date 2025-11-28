@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-11-28 11:18 AM IST
+Generated: 2025-11-28 08:37 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 331
+  Total models: 330
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  51 models
@@ -177,22 +177,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-guard-2-8b
     - llama-guard-4-12b
 
-  DeepSeek        :  14 models
-    - deepseek-chat
-    - deepseek-chat-v3-0324
-    - deepseek-chat-v3.1
-    - deepseek-prover-v2
-    - deepseek-r1
-    - deepseek-r1-0528
-    - deepseek-r1-0528-qwen3-8b
-    - deepseek-r1-distill-llama-70b
-    - deepseek-r1-distill-llama-70b:free
-    - deepseek-r1-distill-qwen-14b
-    - deepseek-r1-distill-qwen-32b
-    - deepseek-v3.1-terminus
-    - deepseek-v3.1-terminus:exacto
-    - deepseek-v3.2-exp
-
   Anthropic       :  13 models
     - claude-3-haiku
     - claude-3-opus
@@ -207,6 +191,21 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-opus-4.5
     - claude-sonnet-4
     - claude-sonnet-4.5
+
+  DeepSeek        :  13 models
+    - deepseek-chat
+    - deepseek-chat-v3-0324
+    - deepseek-chat-v3.1
+    - deepseek-prover-v2
+    - deepseek-r1
+    - deepseek-r1-0528
+    - deepseek-r1-0528-qwen3-8b
+    - deepseek-r1-distill-llama-70b
+    - deepseek-r1-distill-qwen-14b
+    - deepseek-r1-distill-qwen-32b
+    - deepseek-v3.1-terminus
+    - deepseek-v3.1-terminus:exacto
+    - deepseek-v3.2-exp
 
   xAI             :   8 models
     - grok-3
