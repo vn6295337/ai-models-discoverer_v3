@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 11:18 AM IST",
-    "total_models": 28,
+    "generated_at": "2025-11-28 08:37 PM IST",
+    "total_models": 27,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -210,15 +210,6 @@
       "hugging_face_id": "",
       "clean_model_name": "Gemma 3 27B IT",
       "raw_input_modalities": "text, image",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "deepseek/deepseek-r1-distill-llama-70b:free",
-      "canonical_slug": "deepseek/deepseek-r1-distill-llama-70b",
-      "original_name": "DeepSeek: R1 Distill Llama 70B (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-      "clean_model_name": "R1 Distill Llama 70B",
-      "raw_input_modalities": "text",
       "raw_output_modalities": "text"
     },
     {

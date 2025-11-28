@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 11:18 AM IST",
-    "total_models": 17,
+    "generated_at": "2025-11-28 08:37 PM IST",
+    "total_models": 16,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
@@ -102,13 +102,6 @@
       "name": "Mistral: Mistral Small 3.1 24B (free)",
       "hugging_face_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
       "license_info_url": "https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503/blob/main/README.md"
-    },
-    {
-      "id": "deepseek/deepseek-r1-distill-llama-70b:free",
-      "canonical_slug": "deepseek/deepseek-r1-distill-llama-70b",
-      "name": "DeepSeek: R1 Distill Llama 70B (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-Distill-Llama-70B/blob/main/LICENSE"
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",

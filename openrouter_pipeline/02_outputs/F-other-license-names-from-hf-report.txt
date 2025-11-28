@@ -1,10 +1,10 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-11-28 11:18 AM IST
+Generated: 2025-11-28 08:37 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 17
+  Total models : 16
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
@@ -12,7 +12,7 @@ SUMMARY:
 LICENSE DISTRIBUTION:
   apache-2.0: 8
   llama3: 1
-  mit: 5
+  mit: 4
   modified-mit: 1
   nvidia-open-model-license: 2
 
@@ -147,16 +147,7 @@ MODEL 14: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 15: deepseek/deepseek-r1-distill-llama-70b
---------------------------------------------------
-  ID               : deepseek/deepseek-r1-distill-llama-70b:free
-  Canonical Slug   : deepseek/deepseek-r1-distill-llama-70b
-  HuggingFace ID   : deepseek-ai/DeepSeek-R1-Distill-Llama-70B
-  Extracted License: mit
-
-================================================================================
-
-MODEL 16: nousresearch/hermes-3-llama-3.1-405b
+MODEL 15: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID               : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug   : nousresearch/hermes-3-llama-3.1-405b
@@ -165,7 +156,7 @@ MODEL 16: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 17: mistralai/mistral-7b-instruct
+MODEL 16: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct
