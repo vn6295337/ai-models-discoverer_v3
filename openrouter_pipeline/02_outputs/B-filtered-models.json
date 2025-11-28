@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 11:18 AM IST",
-    "total_models": 28,
+    "generated_at": "2025-11-28 08:37 PM IST",
+    "total_models": 27,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
@@ -1128,55 +1128,6 @@
       "default_parameters": {}
     },
     {
-      "id": "deepseek/deepseek-r1-distill-llama-70b:free",
-      "canonical_slug": "deepseek/deepseek-r1-distill-llama-70b",
-      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-      "name": "DeepSeek: R1 Distill Llama 70B (free)",
-      "created": 1737663169,
-      "description": "DeepSeek R1 Distill Llama 70B is a distilled large language model based on [Llama-3.3-70B-Instruct](/meta-llama/llama-3.3-70b-instruct), using outputs from [DeepSeek R1](/deepseek/deepseek-r1). The model combines advanced distillation techniques to achieve high performance across multiple benchmarks, including:\n\n- AIME 2024 pass@1: 70.0\n- MATH-500 pass@1: 94.5\n- CodeForces Rating: 1633\n\nThe model leverages fine-tuning from DeepSeek R1's outputs, enabling competitive performance comparable to larger frontier models.",
-      "context_length": 8192,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "deepseek-r1"
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 4096,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "stop",
-        "temperature",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {}
-    },
-    {
       "id": "meta-llama/llama-3.3-70b-instruct:free",
       "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
       "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct",
@@ -1211,9 +1162,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "stop",
