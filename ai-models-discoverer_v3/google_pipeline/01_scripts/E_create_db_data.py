@@ -551,6 +551,7 @@ class GoogleNormalizationPipeline:
                     'inference_provider': 'Google',
                     'model_provider': 'Google',
                     'human_readable_name': clean_model_name(model.get('name', '')),
+                    'provider_slug': model.get('provider_slug', ''),
                     'model_provider_country': standardize_provider_data('', 'United States'),
                     'official_url': get_official_url_google(model.get('name', '')),
                     'input_modalities': standardize_modalities(model.get('input_modalities', 'Text')),
