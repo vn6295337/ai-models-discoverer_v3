@@ -1,7 +1,7 @@
 GROQ PRODUCTION MODELS EXTRACTION REPORT
 ================================================================================
 
-Generated: 2025-11-27T12:31:46.538546
+Generated: 2025-11-28T04:03:32.228211
 Total Models: 14
 
 MODELS BY SOURCE:

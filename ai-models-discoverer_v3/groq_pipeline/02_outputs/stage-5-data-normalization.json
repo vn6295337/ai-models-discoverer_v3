@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-27T12:33:16.311913",
+    "generated_at": "2025-11-28T04:05:00.918354",
     "total_models": 14,
     "pipeline_stage": "stage-5-data-normalization",
     "source_files": [
@@ -15,7 +15,8 @@
       "id": 1,
       "inference_provider": "Groq",
       "model_provider": "250K TPM1K RPM",
-      "human_readable_name": "Llama 3.1 8bllama 3.1 8b Instant",
+      "human_readable_name": "8bllama 3.1 8b Instant",
+      "provider_slug": "8Bllama-3.1-8b-instant",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -26,14 +27,15 @@
       "license_url": "https://www.llama.com/llama3_1/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 2,
       "inference_provider": "Groq",
       "model_provider": "300K TPM1K RPM",
-      "human_readable_name": "Llama 3.3 70bllama 3.3 70b Versatile",
+      "human_readable_name": "70bllama 3.3 70b Versatile",
+      "provider_slug": "70Bllama-3.3-70b-versatile",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -44,14 +46,15 @@
       "license_url": "https://www.llama.com/llama3_3/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 3,
       "inference_provider": "Groq",
       "model_provider": "30K TPM100 RPM",
       "human_readable_name": "Llama Guard 4 12b",
+      "provider_slug": "12Bmeta-llama/llama-guard-4-12b",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text, Image",
@@ -62,14 +65,15 @@
       "license_url": "https://www.llama.com/llama4/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 4,
       "inference_provider": "Groq",
       "model_provider": "250K TPM1K RPM",
       "human_readable_name": "GPT OSS 120B",
+      "provider_slug": "120Bopenai/gpt-oss-120b",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -80,14 +84,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 5,
       "inference_provider": "Groq",
       "model_provider": "250K TPM1K RPM",
       "human_readable_name": "GPT OSS 20B",
+      "provider_slug": "20Bopenai/gpt-oss-20b",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -98,14 +103,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 6,
       "inference_provider": "Groq",
       "model_provider": "200K ASH300 RPM",
       "human_readable_name": "Whisperwhisper Large V3",
+      "provider_slug": "Whisperwhisper-large-v3",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Audio",
@@ -116,14 +122,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 7,
       "inference_provider": "Groq",
       "model_provider": "400K ASH400 RPM",
-      "human_readable_name": "Whisper Large V3 Turbowhisper Large V3 Turbo",
+      "human_readable_name": "Turbowhisper Large V3 Turbo",
+      "provider_slug": "Turbowhisper-large-v3-turbo",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Audio",
@@ -134,14 +141,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 8,
       "inference_provider": "Groq",
       "model_provider": "250K TPM1K RPM",
-      "human_readable_name": "Llama 3.1 8bllama 3.1 8b Instant",
+      "human_readable_name": "8bllama 3.1 8b Instant",
+      "provider_slug": "8Bllama-3.1-8b-instant",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -152,14 +160,15 @@
       "license_url": "https://www.llama.com/llama3_1/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 9,
       "inference_provider": "Groq",
       "model_provider": "300K TPM1K RPM",
-      "human_readable_name": "Llama 3.3 70bllama 3.3 70b Versatile",
+      "human_readable_name": "70bllama 3.3 70b Versatile",
+      "provider_slug": "70Bllama-3.3-70b-versatile",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -170,14 +179,15 @@
       "license_url": "https://www.llama.com/llama3_3/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 10,
       "inference_provider": "Groq",
       "model_provider": "30K TPM100 RPM",
       "human_readable_name": "Llama Guard 4 12b",
+      "provider_slug": "12Bmeta-llama/llama-guard-4-12b",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text, Image",
@@ -188,14 +198,15 @@
       "license_url": "https://www.llama.com/llama4/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 11,
       "inference_provider": "Groq",
       "model_provider": "250K TPM1K RPM",
       "human_readable_name": "GPT OSS 120B",
+      "provider_slug": "120Bopenai/gpt-oss-120b",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -206,14 +217,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 12,
       "inference_provider": "Groq",
       "model_provider": "250K TPM1K RPM",
       "human_readable_name": "GPT OSS 20B",
+      "provider_slug": "20Bopenai/gpt-oss-20b",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Text",
@@ -224,14 +236,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 13,
       "inference_provider": "Groq",
       "model_provider": "200K ASH300 RPM",
       "human_readable_name": "Whisperwhisper Large V3",
+      "provider_slug": "Whisperwhisper-large-v3",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Audio",
@@ -242,14 +255,15 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 14,
       "inference_provider": "Groq",
       "model_provider": "400K ASH400 RPM",
-      "human_readable_name": "Whisper Large V3 Turbowhisper Large V3 Turbo",
+      "human_readable_name": "Turbowhisper Large V3 Turbo",
+      "provider_slug": "Turbowhisper-large-v3-turbo",
       "model_provider_country": "Unknown",
       "official_url": "",
       "input_modalities": "Audio",
@@ -260,8 +274,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-27T12:31:46+00:00",
-      "updated_at": "2025-11-27T12:33:16.311547+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     }
   ]
 }
