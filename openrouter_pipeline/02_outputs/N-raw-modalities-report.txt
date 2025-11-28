@@ -1,28 +1,28 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-11-28 11:18 AM IST
+Generated: 2025-11-28 08:37 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 28
+  Total models : 27
   Input        : B-filtered-models.json
   Processor    : N_extract_raw_modalities.py
   Output       : N-raw-modalities.json
 
 RAW INPUT MODALITIES DISTRIBUTION:
-  21 models: text
+  20 models: text
    6 models: text, image
    1 models: image, text, video
 
 Total unique input types: 3
 
 RAW OUTPUT MODALITIES DISTRIBUTION:
-  28 models: text
+  27 models: text
 
 Total unique output types: 1
 
 RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
-  21 models: text → text
+  20 models: text → text
    6 models: text, image → text
    1 models: image, text, video → text
 
@@ -247,19 +247,7 @@ MODEL 18: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 19: deepseek/deepseek-r1-distill-llama-70b
---------------------------------------------------
-  ID: deepseek/deepseek-r1-distill-llama-70b:free
-  Original Name: DeepSeek: R1 Distill Llama 70B (free)
-  HuggingFace ID: deepseek-ai/DeepSeek-R1-Distill-Llama-70B
-  Canonical Slug: deepseek/deepseek-r1-distill-llama-70b
-  Clean Model Name: R1 Distill Llama 70B
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-
-================================================================================
-
-MODEL 20: tngtech/tng-r1t-chimera
+MODEL 19: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -271,7 +259,7 @@ MODEL 20: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 21: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 20: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -283,7 +271,7 @@ MODEL 21: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 22: venice/uncensored
+MODEL 21: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -295,7 +283,7 @@ MODEL 22: venice/uncensored
 
 ================================================================================
 
-MODEL 23: openrouter/bert-nebulon-alpha
+MODEL 22: openrouter/bert-nebulon-alpha
 --------------------------------------------------
   ID: openrouter/bert-nebulon-alpha
   Original Name: Bert-Nebulon Alpha
@@ -307,7 +295,7 @@ MODEL 23: openrouter/bert-nebulon-alpha
 
 ================================================================================
 
-MODEL 24: google/gemma-3-12b-it
+MODEL 23: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -319,7 +307,7 @@ MODEL 24: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 25: google/gemma-3-27b-it
+MODEL 24: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -331,7 +319,7 @@ MODEL 25: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 26: google/gemma-3-4b-it
+MODEL 25: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -343,7 +331,7 @@ MODEL 26: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 27: x-ai/grok-4.1-fast
+MODEL 26: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: xAI: Grok 4.1 Fast (free)
@@ -355,7 +343,7 @@ MODEL 27: x-ai/grok-4.1-fast
 
 ================================================================================
 
-MODEL 28: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 27: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)

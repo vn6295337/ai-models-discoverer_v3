@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 11:18 AM IST",
-    "total_models": 17,
+    "generated_at": "2025-11-28 08:37 PM IST",
+    "total_models": 16,
     "pipeline_stage": "G_standardize_other_license_names_from_hf"
   },
   "models": [
@@ -116,14 +116,6 @@
       "hugging_face_id": "mistralai/Mistral-Small-3.1-24B-Instruct-2503",
       "raw_extracted_license": "apache-2.0",
       "standardized_license_name": "Apache-2.0"
-    },
-    {
-      "id": "deepseek/deepseek-r1-distill-llama-70b:free",
-      "canonical_slug": "deepseek/deepseek-r1-distill-llama-70b",
-      "name": "DeepSeek: R1 Distill Llama 70B (free)",
-      "hugging_face_id": "deepseek-ai/DeepSeek-R1-Distill-Llama-70B",
-      "raw_extracted_license": "mit",
-      "standardized_license_name": "MIT"
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",
