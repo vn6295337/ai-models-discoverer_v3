@@ -159,11 +159,12 @@ def create_database_record(provider_model: Dict[str, Any],
     db_record = {
         # Database managed field
         'id': '',  # Database will auto-generate
-        
+
         # Provider information (from Stage P)
         'inference_provider': provider_model.get('inference_provider', ''),
         'model_provider': provider_model.get('model_provider', ''),
         'human_readable_name': provider_model.get('clean_model_name', ''),
+        'provider_slug': provider_model.get('provider_slug', ''),
         'model_provider_country': provider_model.get('model_provider_country', ''),
         'official_url': provider_model.get('official_url', ''),
         
