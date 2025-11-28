@@ -148,10 +148,13 @@ def enrich_provider_info(models: List[Dict[str, Any]], config: Dict[str, Any]) -
             unmapped_families.add(canonical_slug)
         
         # Create enriched model record
+        # Extract provider_slug: everything after the provider prefix (e.g., "x-ai/grok-4.1-fast" -> "grok-4.1-fast")
+        provider_slug_value = canonical_slug.split('/', 1)[1] if '/' in canonical_slug else canonical_slug
+
         enriched_model = {
             'id': model.get('id', ''),
             'canonical_slug': canonical_slug,
-            'provider_slug': canonical_slug,
+            'provider_slug': provider_slug_value,
             'original_name': model.get('original_name', ''),
             'hugging_face_id': model.get('hugging_face_id', ''),
             'clean_model_name': model.get('clean_model_name', ''),
