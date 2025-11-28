@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28T03:55:23.068144",
+    "generated_at": "2025-11-28T04:05:00.918354",
     "total_models": 14,
     "pipeline_stage": "stage-5-data-normalization",
     "source_files": [
@@ -27,8 +27,8 @@
       "license_url": "https://www.llama.com/llama3_1/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 2,
@@ -46,8 +46,8 @@
       "license_url": "https://www.llama.com/llama3_3/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 3,
@@ -65,8 +65,8 @@
       "license_url": "https://www.llama.com/llama4/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 4,
@@ -84,8 +84,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 5,
@@ -103,8 +103,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 6,
@@ -122,8 +122,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 7,
@@ -141,8 +141,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:31+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 8,
@@ -160,8 +160,8 @@
       "license_url": "https://www.llama.com/llama3_1/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 9,
@@ -179,8 +179,8 @@
       "license_url": "https://www.llama.com/llama3_3/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 10,
@@ -198,8 +198,8 @@
       "license_url": "https://www.llama.com/llama4/license/",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 11,
@@ -217,8 +217,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 12,
@@ -236,8 +236,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 13,
@@ -255,8 +255,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     },
     {
       "id": 14,
@@ -274,8 +274,8 @@
       "license_url": "",
       "rate_limits": "",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-11-28T03:53:54+00:00",
-      "updated_at": "2025-11-28T03:55:23.067788+00:00"
+      "created_at": "2025-11-28T04:03:32+00:00",
+      "updated_at": "2025-11-28T04:05:00.918039+00:00"
     }
   ]
 }
