@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 08:37 PM IST",
+    "generated_at": "2025-11-28 08:56 PM IST",
     "total_models": 27,
     "pipeline_stage": "Q_create_db_data"
   },
@@ -21,8 +21,8 @@
       "license_url": "",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338401+00:00",
-      "updated_at": "2025-11-28T15:07:33.338401+00:00"
+      "created_at": "2025-11-28T15:26:48.453153+00:00",
+      "updated_at": "2025-11-28T15:26:48.453153+00:00"
     },
     {
       "id": "",
@@ -40,8 +40,8 @@
       "license_url": "",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338409+00:00",
-      "updated_at": "2025-11-28T15:07:33.338409+00:00"
+      "created_at": "2025-11-28T15:26:48.453161+00:00",
+      "updated_at": "2025-11-28T15:26:48.453161+00:00"
     },
     {
       "id": "",
@@ -59,8 +59,8 @@
       "license_url": "https://x.ai/legal",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338413+00:00",
-      "updated_at": "2025-11-28T15:07:33.338413+00:00"
+      "created_at": "2025-11-28T15:26:48.453165+00:00",
+      "updated_at": "2025-11-28T15:26:48.453165+00:00"
     },
     {
       "id": "",
@@ -78,8 +78,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338432+00:00",
-      "updated_at": "2025-11-28T15:07:33.338432+00:00"
+      "created_at": "2025-11-28T15:26:48.453169+00:00",
+      "updated_at": "2025-11-28T15:26:48.453169+00:00"
     },
     {
       "id": "",
@@ -97,8 +97,8 @@
       "license_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-12B-v2-VL-BF16/blob/main/README.md",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338436+00:00",
-      "updated_at": "2025-11-28T15:07:33.338436+00:00"
+      "created_at": "2025-11-28T15:26:48.453172+00:00",
+      "updated_at": "2025-11-28T15:26:48.453172+00:00"
     },
     {
       "id": "",
@@ -116,8 +116,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338439+00:00",
-      "updated_at": "2025-11-28T15:07:33.338439+00:00"
+      "created_at": "2025-11-28T15:26:48.453175+00:00",
+      "updated_at": "2025-11-28T15:26:48.453175+00:00"
     },
     {
       "id": "",
@@ -135,8 +135,8 @@
       "license_url": "https://opensource.org/licenses/MIT",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338442+00:00",
-      "updated_at": "2025-11-28T15:07:33.338442+00:00"
+      "created_at": "2025-11-28T15:26:48.453178+00:00",
+      "updated_at": "2025-11-28T15:26:48.453178+00:00"
     },
     {
       "id": "",
@@ -154,8 +154,8 @@
       "license_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338448+00:00",
-      "updated_at": "2025-11-28T15:07:33.338448+00:00"
+      "created_at": "2025-11-28T15:26:48.453184+00:00",
+      "updated_at": "2025-11-28T15:26:48.453184+00:00"
     },
     {
       "id": "",
@@ -173,8 +173,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338452+00:00",
-      "updated_at": "2025-11-28T15:07:33.338452+00:00"
+      "created_at": "2025-11-28T15:26:48.453190+00:00",
+      "updated_at": "2025-11-28T15:26:48.453190+00:00"
     },
     {
       "id": "",
@@ -192,8 +192,8 @@
       "license_url": "https://opensource.org/licenses/MIT",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338456+00:00",
-      "updated_at": "2025-11-28T15:07:33.338456+00:00"
+      "created_at": "2025-11-28T15:26:48.453193+00:00",
+      "updated_at": "2025-11-28T15:26:48.453193+00:00"
     },
     {
       "id": "",
@@ -211,8 +211,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338461+00:00",
-      "updated_at": "2025-11-28T15:07:33.338461+00:00"
+      "created_at": "2025-11-28T15:26:48.453199+00:00",
+      "updated_at": "2025-11-28T15:26:48.453199+00:00"
     },
     {
       "id": "",
@@ -230,8 +230,8 @@
       "license_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338464+00:00",
-      "updated_at": "2025-11-28T15:07:33.338464+00:00"
+      "created_at": "2025-11-28T15:26:48.453202+00:00",
+      "updated_at": "2025-11-28T15:26:48.453202+00:00"
     },
     {
       "id": "",
@@ -249,8 +249,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338467+00:00",
-      "updated_at": "2025-11-28T15:07:33.338467+00:00"
+      "created_at": "2025-11-28T15:26:48.453205+00:00",
+      "updated_at": "2025-11-28T15:26:48.453205+00:00"
     },
     {
       "id": "",
@@ -268,8 +268,8 @@
       "license_url": "https://ai.google.dev/gemma/terms",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338470+00:00",
-      "updated_at": "2025-11-28T15:07:33.338470+00:00"
+      "created_at": "2025-11-28T15:26:48.453207+00:00",
+      "updated_at": "2025-11-28T15:26:48.453207+00:00"
     },
     {
       "id": "",
@@ -287,8 +287,8 @@
       "license_url": "https://opensource.org/licenses/MIT",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338472+00:00",
-      "updated_at": "2025-11-28T15:07:33.338472+00:00"
+      "created_at": "2025-11-28T15:26:48.453210+00:00",
+      "updated_at": "2025-11-28T15:26:48.453210+00:00"
     },
     {
       "id": "",
@@ -306,8 +306,8 @@
       "license_url": "https://ai.google.dev/gemma/terms",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338474+00:00",
-      "updated_at": "2025-11-28T15:07:33.338474+00:00"
+      "created_at": "2025-11-28T15:26:48.453212+00:00",
+      "updated_at": "2025-11-28T15:26:48.453212+00:00"
     },
     {
       "id": "",
@@ -325,8 +325,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338477+00:00",
-      "updated_at": "2025-11-28T15:07:33.338477+00:00"
+      "created_at": "2025-11-28T15:26:48.453215+00:00",
+      "updated_at": "2025-11-28T15:26:48.453215+00:00"
     },
     {
       "id": "",
@@ -344,8 +344,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338479+00:00",
-      "updated_at": "2025-11-28T15:07:33.338479+00:00"
+      "created_at": "2025-11-28T15:26:48.453217+00:00",
+      "updated_at": "2025-11-28T15:26:48.453217+00:00"
     },
     {
       "id": "",
@@ -363,8 +363,8 @@
       "license_url": "https://opensource.org/licenses/MIT",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338482+00:00",
-      "updated_at": "2025-11-28T15:07:33.338482+00:00"
+      "created_at": "2025-11-28T15:26:48.453220+00:00",
+      "updated_at": "2025-11-28T15:26:48.453220+00:00"
     },
     {
       "id": "",
@@ -382,8 +382,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338484+00:00",
-      "updated_at": "2025-11-28T15:07:33.338484+00:00"
+      "created_at": "2025-11-28T15:26:48.453222+00:00",
+      "updated_at": "2025-11-28T15:26:48.453222+00:00"
     },
     {
       "id": "",
@@ -401,8 +401,8 @@
       "license_url": "https://ai.google.dev/gemma/terms",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338489+00:00",
-      "updated_at": "2025-11-28T15:07:33.338489+00:00"
+      "created_at": "2025-11-28T15:26:48.453227+00:00",
+      "updated_at": "2025-11-28T15:26:48.453227+00:00"
     },
     {
       "id": "",
@@ -420,8 +420,8 @@
       "license_url": "https://ai.google.dev/gemma/terms",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338491+00:00",
-      "updated_at": "2025-11-28T15:07:33.338491+00:00"
+      "created_at": "2025-11-28T15:26:48.453230+00:00",
+      "updated_at": "2025-11-28T15:26:48.453230+00:00"
     },
     {
       "id": "",
@@ -439,8 +439,8 @@
       "license_url": "https://ai.google.dev/gemma/terms",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338493+00:00",
-      "updated_at": "2025-11-28T15:07:33.338493+00:00"
+      "created_at": "2025-11-28T15:26:48.453233+00:00",
+      "updated_at": "2025-11-28T15:26:48.453233+00:00"
     },
     {
       "id": "",
@@ -458,8 +458,8 @@
       "license_url": "https://www.llama.com/llama3_3/license/",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338497+00:00",
-      "updated_at": "2025-11-28T15:07:33.338497+00:00"
+      "created_at": "2025-11-28T15:26:48.453237+00:00",
+      "updated_at": "2025-11-28T15:26:48.453237+00:00"
     },
     {
       "id": "",
@@ -477,8 +477,8 @@
       "license_url": "https://www.llama.com/llama3_2/license/",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338500+00:00",
-      "updated_at": "2025-11-28T15:07:33.338500+00:00"
+      "created_at": "2025-11-28T15:26:48.453240+00:00",
+      "updated_at": "2025-11-28T15:26:48.453240+00:00"
     },
     {
       "id": "",
@@ -496,8 +496,8 @@
       "license_url": "https://www.llama.com/llama3_1/license/",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338502+00:00",
-      "updated_at": "2025-11-28T15:07:33.338502+00:00"
+      "created_at": "2025-11-28T15:26:48.453243+00:00",
+      "updated_at": "2025-11-28T15:26:48.453243+00:00"
     },
     {
       "id": "",
@@ -515,8 +515,8 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "rate_limits": "20 requests/min 50/day",
       "provider_api_access": "https://openrouter.ai/settings/keys",
-      "created_at": "2025-11-28T15:07:33.338505+00:00",
-      "updated_at": "2025-11-28T15:07:33.338505+00:00"
+      "created_at": "2025-11-28T15:26:48.453245+00:00",
+      "updated_at": "2025-11-28T15:26:48.453245+00:00"
     }
   ]
 }
