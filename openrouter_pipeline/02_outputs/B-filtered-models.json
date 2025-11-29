@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 08:56 PM IST",
+    "generated_at": "2025-11-29 07:09 AM IST",
     "total_models": 27,
     "pipeline_stage": "B_filter_models"
   },
@@ -98,7 +98,9 @@
       "supported_parameters": [
         "max_tokens",
         "response_format",
-        "structured_outputs"
+        "structured_outputs",
+        "tool_choice",
+        "tools"
       ],
       "default_parameters": {
         "temperature": 0.0645,
