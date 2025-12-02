@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER PIPELINE EXECUTION REPORT
-Generated: 2025-11-28 15:07:35
+Generated: 2025-12-02 14:41:27
 ================================================================================
 
 EXECUTION SUMMARY:
-  Total execution time : 16.0 seconds (0.3 minutes)
+  Total execution time : 13.0 seconds (0.2 minutes)
   Total stages         : 19
   Successful stages    : 19
   Failed stages        : 0
@@ -14,7 +14,7 @@ STAGE-BY-STAGE RESULTS:
 ================================================================================
 Stage  1: A_fetch_api_models.py
   Status: ✅ SUCCESS
-  Details: Success in 2.1s
+  Details: Success in 2.2s
 
 Stage  2: B_filter_models.py
   Status: ✅ SUCCESS
@@ -30,11 +30,11 @@ Stage  4: D_extract_meta_licenses.py
 
 Stage  5: E_fetch_other_license_info_urls_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 6.0s
+  Details: Success in 4.5s
 
 Stage  6: F_fetch_other_license_names_from_hf.py
   Status: ✅ SUCCESS
-  Details: Success in 4.2s
+  Details: Success in 3.1s
 
 Stage  7: G_standardize_other_license_names_from_hf.py
   Status: ✅ SUCCESS
@@ -50,7 +50,7 @@ Stage  9: I_opensource_license_urls.py
 
 Stage 10: J_custom_license_urls.py
   Status: ✅ SUCCESS
-  Details: Success in 1.0s
+  Details: Success in 0.8s
 
 Stage 11: K_collate_opensource_licenses.py
   Status: ✅ SUCCESS
@@ -86,7 +86,7 @@ Stage 18: R_filter_db_data.py
 
 Stage 19: S_compare_pipeline_with_supabase.py
   Status: ✅ SUCCESS
-  Details: Success in 2.2s
+  Details: Success in 1.9s
 
 PIPELINE FLOW DIAGRAM:
 ================================================================================

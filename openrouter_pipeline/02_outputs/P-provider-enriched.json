@@ -1,10 +1,30 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 08:37 PM IST",
-    "total_models": 27,
+    "generated_at": "2025-12-02 08:11 PM IST",
+    "total_models": 28,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
+    {
+      "id": "arcee-ai/trinity-mini:free",
+      "canonical_slug": "arcee-ai/trinity-mini-20251201",
+      "provider_slug": "trinity-mini-20251201",
+      "original_name": "Arcee AI: Trinity Mini (free)",
+      "hugging_face_id": "arcee-ai/Trinity-Mini",
+      "clean_model_name": "Trinity Mini",
+      "raw_input_modalities": "text",
+      "raw_output_modalities": "text",
+      "enhanced_input_modalities": "text",
+      "enhanced_output_modalities": "text",
+      "standardized_input_modalities": "Text",
+      "standardized_output_modalities": "Text",
+      "google_enhancement_status": "no_google_model",
+      "inference_provider": "OpenRouter",
+      "model_provider": "Unknown",
+      "model_provider_country": "Unknown",
+      "model_family": "arcee-ai",
+      "official_url": "Unknown"
+    },
     {
       "id": "tngtech/tng-r1t-chimera:free",
       "canonical_slug": "tngtech/tng-r1t-chimera",
