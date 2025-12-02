@@ -1,0 +1,1 @@
+This Week - OpenRouter free tier: Removed DeepSeek-R1-0528-Qwen3-8B, DeepSeek-V3-0324, MAI-DS-R1, Mistral-Nemo, Mistral-Small-3, Mistral-Small-3.2-24B, QwQ-32B-RpR-v1, Qwen2.5-72B-Instruct, Qwen2.5-Coder-32B-Instruct, Qwen2.5-VL-32B-Instruct, Qwen3-14B, Qwen3-30B-A3B, R1, R1-0528
