@@ -22,7 +22,7 @@ try:
     # Check for .env in multiple possible locations
     env_paths = [
         Path(__file__).parent.parent.parent / ".env.local",  # Project root .env.local (FIRST priority)
-        Path("/home/km_project/.env"),  # Home directory
+        Path("/home/vn6295337/.env"),  # Home directory
         Path(__file__).parent.parent / ".env",  # openrouter_pipeline directory
         Path(__file__).parent / ".env"  # 01_scripts directory
     ]

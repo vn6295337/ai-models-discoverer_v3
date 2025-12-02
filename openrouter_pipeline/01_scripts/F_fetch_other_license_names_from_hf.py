@@ -22,7 +22,7 @@ try:
     from dotenv import load_dotenv
     # Check multiple .env locations
     env_paths = [
-        Path("/home/km_project/.env"),  # Home directory
+        Path("/home/vn6295337/.env"),  # Home directory
         Path(__file__).parent.parent / ".env",  # openrouter_pipeline directory
         Path(__file__).parent / ".env"  # 01_scripts directory
     ]
