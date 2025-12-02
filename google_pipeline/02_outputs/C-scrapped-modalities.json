@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-11-28 20:38:10 IST",
+    "generated": "2025-12-02 20:12:06 IST",
     "total_models": 23,
     "scraping_source": "Google Documentation Web Scraper"
   },
@@ -12,14 +12,6 @@
     "gemini-3-pro-table": {
       "input_modalities": "Image, Text",
       "output_modalities": "Image, Text"
-    },
-    "gemini-2.5-pro": {
-      "input_modalities": "Audio, images, video, text, PDF",
-      "output_modalities": "Text"
-    },
-    "gemini-2.5-pro-table": {
-      "input_modalities": "Text",
-      "output_modalities": "Audio"
     },
     "gemini-2.5-flash": {
       "input_modalities": "Text, images, video, audio",
@@ -36,6 +28,14 @@
     "gemini-2.5-flash-lite-table": {
       "input_modalities": "Text, image, video, audio, PDF",
       "output_modalities": "Text"
+    },
+    "gemini-2.5-pro": {
+      "input_modalities": "Audio, images, video, text, PDF",
+      "output_modalities": "Text"
+    },
+    "gemini-2.5-pro-table": {
+      "input_modalities": "Text",
+      "output_modalities": "Audio"
     },
     "gemini-2.0-flash": {
       "input_modalities": "Audio, images, video, text",
