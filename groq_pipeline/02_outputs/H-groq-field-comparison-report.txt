@@ -1,0 +1,23 @@
+GROQ FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
+Generated: 2025-11-28 06:02 PM IST
+================================================================================
+
+SUMMARY STATISTICS
+--------------------------------------------------------------------------------
+
+Pipeline Models: 14
+Supabase Models: 0
+Models in Both Systems: 0
+Models with Field Differences: 0
+Models Only in Pipeline: 7
+Models Only in Supabase: 0
+
+FIELD-BY-FIELD COMPARISON
+--------------------------------------------------------------------------------
+
+MODELS ONLY IN PIPELINE
+--------------------------------------------------------------------------------
+
+Count: 7
+     Models: 70bllama 3.3 70b Versatile, 8bllama 3.1 8b Instant, GPT OSS 120B, GPT OSS 20B, Llama Guard 4 12b, Turbowhisper Large V3 Turbo, Whisperwhisper Large V3
+
