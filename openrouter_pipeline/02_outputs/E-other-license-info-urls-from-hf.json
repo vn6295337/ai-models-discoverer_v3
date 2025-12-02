@@ -1,10 +1,17 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 08:37 PM IST",
-    "total_models": 16,
+    "generated_at": "2025-12-02 08:11 PM IST",
+    "total_models": 17,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
+    {
+      "id": "arcee-ai/trinity-mini:free",
+      "canonical_slug": "arcee-ai/trinity-mini-20251201",
+      "name": "Arcee AI: Trinity Mini (free)",
+      "hugging_face_id": "arcee-ai/Trinity-Mini",
+      "license_info_url": "https://huggingface.co/arcee-ai/Trinity-Mini/blob/main/README.md"
+    },
     {
       "id": "nvidia/nemotron-nano-12b-v2-vl:free",
       "canonical_slug": "nvidia/nemotron-nano-12b-v2-vl",
