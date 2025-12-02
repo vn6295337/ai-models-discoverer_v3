@@ -43,7 +43,7 @@ class GroqEnvironment:
         """Load environment variables from multiple possible .env locations"""
         # Check for .env in multiple possible locations following OpenRouter pattern
         env_paths = [
-            Path("/home/km_project/.env"),  # Home directory
+            Path("/home/vn6295337/.env"),  # Home directory
             Path(__file__).parent.parent / ".env",  # groq_pipeline directory
             Path(__file__).parent / ".env"  # 04_utils directory
         ]
@@ -131,7 +131,7 @@ class GroqEnvironment:
         print("Please add GROQ_API_KEY to:")
         print("  1. Supabase secrets table")
         print("  2. Environment variable")
-        print("  3. /home/km_project/.env file")
+        print("  3. /home/vn6295337/.env file")
         return None
 
     def get_supabase_config(self) -> Dict[str, Optional[str]]:
@@ -252,7 +252,7 @@ class GroqEnvironment:
             "supabase_url_configured": bool(supabase_config["url"]),
             "supabase_key_configured": bool(supabase_config["key"]),
             "environment_files_checked": [
-                "/home/km_project/.env",
+                "/home/vn6295337/.env",
                 str(Path(__file__).parent.parent / ".env"),
                 str(Path(__file__).parent / ".env")
             ]

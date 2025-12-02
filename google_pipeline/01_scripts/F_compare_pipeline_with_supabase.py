@@ -34,7 +34,7 @@ try:
     # Look for .env file in multiple locations
     env_paths = [
         Path(__file__).parent.parent.parent / ".env.local",  # Project root .env.local (FIRST priority)
-        Path(__file__).parent.parent.parent.parent / ".env",  # /home/km_project/.env
+        Path("/home/vn6295337/.env"),  # /home/vn6295337/.env
         Path(__file__).parent.parent / ".env",               # google_pipeline/.env
         Path(__file__).parent / ".env"                       # 01_scripts/.env
     ]

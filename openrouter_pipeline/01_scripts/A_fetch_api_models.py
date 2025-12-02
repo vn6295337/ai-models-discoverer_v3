@@ -29,7 +29,7 @@ try:
     from dotenv import load_dotenv
     # Check for .env in multiple possible locations
     env_paths = [
-        Path("/home/km_project/.env"),  # Home directory
+        Path("/home/vn6295337/.env"),  # Home directory
         Path(__file__).parent.parent / ".env",  # openrouter_pipeline directory
         Path(__file__).parent / ".env"  # 01_scripts directory
     ]
@@ -90,7 +90,7 @@ def get_api_key(service):
         # No key found
         print("ERROR: OpenRouter API key not found")
         print("The key is stored in Supabase Edge Functions secrets, but cannot be accessed from here.")
-        print("Please add OPENROUTER_API_KEY to your /home/km_project/.env file")
+        print("Please add OPENROUTER_API_KEY to your /home/vn6295337/.env file")
         print("You can copy the key value from your Supabase Edge Functions secrets")
         return None
     return None

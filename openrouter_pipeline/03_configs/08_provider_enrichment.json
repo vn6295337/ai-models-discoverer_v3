@@ -31,7 +31,8 @@
     "meituan": ["Meituan", "China"],
     "nousresearch": ["Nous Research", "United States"],
     "minimax": ["MiniMax", "Singapore"],
-    "kwaipilot": ["Kwaipilot", "China"]
+    "kwaipilot": ["Kwaipilot", "China"],
+    "arcee-ai": ["Arcee", "United States"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -91,6 +92,8 @@
     "nous research": "https://nousresearch.com/",
     "nousresearch": "https://nousresearch.com/",
     "minimax": "https://www.minimax.io/",
-    "kwaipilot": "https://kwaipilot.ai/"
+    "kwaipilot": "https://kwaipilot.ai/",
+    "arcee": "https://www.arcee.ai/",
+    "arcee-ai": "https://www.arcee.ai/"
   }
 }
