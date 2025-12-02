@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-11-28 08:37 PM IST",
-    "total_models": 13,
+    "generated_at": "2025-12-02 08:11 PM IST",
+    "total_models": 14,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -13,6 +13,17 @@
       "clean_model_name": "Tongyi DeepResearch 30B A3B",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B/blob/main/README.md",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "id": "arcee-ai/trinity-mini:free",
+      "canonical_slug": "arcee-ai/trinity-mini-20251201",
+      "original_name": "Arcee AI: Trinity Mini (free)",
+      "hugging_face_id": "arcee-ai/Trinity-Mini",
+      "clean_model_name": "Trinity Mini",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/arcee-ai/Trinity-Mini/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
