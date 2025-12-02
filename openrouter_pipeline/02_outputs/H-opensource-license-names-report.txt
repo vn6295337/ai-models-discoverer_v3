@@ -1,0 +1,137 @@
+================================================================================
+OPENSOURCE LICENSE MODELS REPORT
+Generated: 2025-11-28 08:37 PM IST
+================================================================================
+
+SUMMARY:
+  Total models : 13
+  Input        : G-standardized-other-license-names-from-hf.json
+  Reference    : 05_opensource_license_urls.json
+  Processor    : H_bucketize_other_license_names.py
+  Output       : H-opensource-license-names.json
+
+OPENSOURCE LICENSE DISTRIBUTION:
+  Apache-2.0: 8 models
+  Llama-3.1: 1 models
+  MIT: 4 models
+
+Total license types: 3
+
+DETAILED OPENSOURCE MODEL LISTINGS:
+================================================================================
+
+MODEL 1: alibaba/tongyi-deepresearch-30b-a3b
+--------------------------------------------------
+  ID              : alibaba/tongyi-deepresearch-30b-a3b:free
+  Canonical Slug  : alibaba/tongyi-deepresearch-30b-a3b
+  HuggingFace ID  : Alibaba-NLP/Tongyi-DeepResearch-30B-A3B
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 2: mistralai/mistral-7b-instruct
+--------------------------------------------------
+  ID              : mistralai/mistral-7b-instruct:free
+  Canonical Slug  : mistralai/mistral-7b-instruct
+  HuggingFace ID  : mistralai/Mistral-7B-Instruct-v0.3
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 3: mistralai/mistral-small-3.1-24b-instruct-2503
+--------------------------------------------------
+  ID              : mistralai/mistral-small-3.1-24b-instruct:free
+  Canonical Slug  : mistralai/mistral-small-3.1-24b-instruct-2503
+  HuggingFace ID  : mistralai/Mistral-Small-3.1-24B-Instruct-2503
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 4: openai/gpt-oss-20b
+--------------------------------------------------
+  ID              : openai/gpt-oss-20b:free
+  Canonical Slug  : openai/gpt-oss-20b
+  HuggingFace ID  : openai/gpt-oss-20b
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 5: qwen/qwen3-235b-a22b-04-28
+--------------------------------------------------
+  ID              : qwen/qwen3-235b-a22b:free
+  Canonical Slug  : qwen/qwen3-235b-a22b-04-28
+  HuggingFace ID  : Qwen/Qwen3-235B-A22B
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 6: qwen/qwen3-4b-04-28
+--------------------------------------------------
+  ID              : qwen/qwen3-4b:free
+  Canonical Slug  : qwen/qwen3-4b-04-28
+  HuggingFace ID  : Qwen/Qwen3-4B
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 7: qwen/qwen3-coder-480b-a35b-07-25
+--------------------------------------------------
+  ID              : qwen/qwen3-coder:free
+  Canonical Slug  : qwen/qwen3-coder-480b-a35b-07-25
+  HuggingFace ID  : Qwen/Qwen3-Coder-480B-A35B-Instruct
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 8: venice/uncensored
+--------------------------------------------------
+  ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
+  Canonical Slug  : venice/uncensored
+  HuggingFace ID  : cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition
+  License Name    : Apache-2.0
+
+================================================================================
+
+MODEL 9: nousresearch/hermes-3-llama-3.1-405b
+--------------------------------------------------
+  ID              : nousresearch/hermes-3-llama-3.1-405b:free
+  Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
+  HuggingFace ID  : NousResearch/Hermes-3-Llama-3.1-405B
+  License Name    : Llama-3.1
+
+================================================================================
+
+MODEL 10: meituan/longcat-flash-chat
+--------------------------------------------------
+  ID              : meituan/longcat-flash-chat:free
+  Canonical Slug  : meituan/longcat-flash-chat
+  HuggingFace ID  : meituan-longcat/LongCat-Flash-Chat
+  License Name    : MIT
+
+================================================================================
+
+MODEL 11: tngtech/deepseek-r1t-chimera
+--------------------------------------------------
+  ID              : tngtech/deepseek-r1t-chimera:free
+  Canonical Slug  : tngtech/deepseek-r1t-chimera
+  HuggingFace ID  : tngtech/DeepSeek-R1T-Chimera
+  License Name    : MIT
+
+================================================================================
+
+MODEL 12: tngtech/deepseek-r1t2-chimera
+--------------------------------------------------
+  ID              : tngtech/deepseek-r1t2-chimera:free
+  Canonical Slug  : tngtech/deepseek-r1t2-chimera
+  HuggingFace ID  : tngtech/DeepSeek-TNG-R1T2-Chimera
+  License Name    : MIT
+
+================================================================================
+
+MODEL 13: z-ai/glm-4.5-air
+--------------------------------------------------
+  ID              : z-ai/glm-4.5-air:free
+  Canonical Slug  : z-ai/glm-4.5-air
+  HuggingFace ID  : zai-org/GLM-4.5-Air
+  License Name    : MIT
+
