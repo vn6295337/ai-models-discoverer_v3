@@ -56,6 +56,7 @@ try:
     from dotenv import load_dotenv
     env_paths = [
         Path(__file__).parent.parent.parent / ".env.local",
+        Path("/home/vn6295337/.env"),
         Path(__file__).parent.parent / ".env"
     ]
     for env_path in env_paths:
@@ -68,7 +69,7 @@ except ImportError:
 
 # Configuration
 SCRIPT_DIR = Path(__file__).parent
-JSON_FILE = SCRIPT_DIR / "../02_outputs" / "stage-5-data-normalization.json"
+JSON_FILE = SCRIPT_DIR / "../02_outputs" / "F-normalize-data.json"
 LOG_FILE = SCRIPT_DIR / "../02_outputs/H-refresh-supabase-working-version-report.txt"
 
 # Database configuration
