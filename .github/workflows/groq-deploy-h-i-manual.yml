@@ -1,4 +1,4 @@
-name: Groq Pipeline (HGroq Pipeline (HI&JI Scripts)I Scripts)
+name: Groq Pipeline (H&I Scripts)
 
 on:
   workflow_dispatch:  # Manual trigger only
