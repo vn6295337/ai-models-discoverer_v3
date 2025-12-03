@@ -66,3 +66,8 @@ Thumbs.db
 openrouter_envclear
 openrouter_env
 google_envclear
+
+# H&I scripts should only run in GitHub Actions
+# Do not commit their report files
+groq_pipeline/02_outputs/H-refresh-supabase-working-version-report.txt
+groq_pipeline/02_outputs/I-deploy-to-ai-models-main-report.txt
