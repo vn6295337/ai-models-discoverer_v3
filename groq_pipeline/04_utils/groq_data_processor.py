@@ -459,11 +459,10 @@ class GroqDataProcessor:
 
         # Load all data files
         print("Loading data files...")
-        production_models = self.load_json_file('stage-1-scrape-production-models.json')
-        rate_limits = self.load_json_file('stage-2-scrape-rate-limits.json')
-        modalities = self.load_json_file('stage-3-scrape-modalities.json')
+        production_models = self.load_json_file('A-scrape-production-models.json')
+        modalities = self.load_json_file('B-scrape-modalities.json')
         provider_mappings = self.config.get_provider_mappings()
-        license_mappings = self.load_json_file('stage-4-license-mappings.json')
+        license_mappings = self.load_json_file('E-consolidate-all-licenses.json')
         database_schema = self.config.get_database_schema()
 
         # Get standardization rules
@@ -494,8 +493,8 @@ class GroqDataProcessor:
             # Get license info
             license_text, license_url_info, license_name, license_url = self.get_license_info(model_id, model_provider, license_mappings)
 
-            # Get rate limits
-            rate_limits_str = self.format_rate_limits(model_id, rate_limits)
+            # Get rate limits directly from model (now stored in production models JSON)
+            rate_limits_str = model.get('rate_limits', '')
 
             # Create normalized record
             record = {
@@ -521,7 +520,7 @@ class GroqDataProcessor:
             normalized_data.append(record)
 
         # Save as JSON
-        json_filename = 'stage-5-data-normalization.json'
+        json_filename = 'F-normalize-data.json'
         json_path = get_output_path(json_filename)
         print(f"Writing to {json_path}...")
 
@@ -529,12 +528,11 @@ class GroqDataProcessor:
             'metadata': {
                 'generated_at': datetime.now().isoformat(),
                 'total_models': len(normalized_data),
-                'pipeline_stage': 'stage-5-data-normalization',
+                'pipeline_stage': 'F-normalize-data',
                 'source_files': [
-                    'stage-1-scrape-production-models.json',
-                    'stage-2-scrape-rate-limits.json',
-                    'stage-3-scrape-modalities.json',
-                    'stage-4-license-mappings.json'
+                    'A-scrape-production-models.json',
+                    'B-scrape-modalities.json',
+                    'E-consolidate-all-licenses.json'
                 ]
             },
             'models': normalized_data

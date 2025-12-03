@@ -8,10 +8,10 @@
     "api_keys": "https://console.groq.com/keys"
   },
   "timeouts": {
-    "page_load": 15,
-    "element_wait": 10,
-    "request_timeout": 30,
-    "selenium_implicit": 5,
+    "page_load": 240,
+    "element_wait": 30,
+    "request_timeout": 120,
+    "selenium_implicit": 10,
     "retry_delay": 3,
     "max_retries": 5,
     "model_scraping_delay": 1
@@ -29,8 +29,8 @@
   "selenium_settings": {
     "webdriver_manager_cache": true,
     "page_load_strategy": "normal",
-    "implicit_wait": 5,
-    "script_timeout": 30
+    "implicit_wait": 10,
+    "script_timeout": 120
   },
   "scraping_patterns": {
     "table_selector": "table",

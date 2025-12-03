@@ -35,7 +35,7 @@ def main():
         return False
 
     # Save the results
-    filename = '../02_outputs/stage-1-scrape-production-models.json'
+    filename = '../02_outputs/A-scrape-production-models.json'
 
     # Count models by source section
     production_models_count = sum(1 for m in production_models if m.get('source_section') == 'production-models')
