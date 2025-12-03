@@ -1,0 +1,107 @@
+{
+  "metadata": {
+    "extraction_timestamp": "2025-12-03T14:59:26.651830",
+    "source_urls": [
+      "https://console.groq.com/docs/models#production-models",
+      "https://console.groq.com/docs/models#production-systems"
+    ],
+    "total_models": 7,
+    "models_by_source": {
+      "production-models": 7,
+      "production-systems": 0
+    }
+  },
+  "production_models": [
+    {
+      "model_id": "llama-3.1-8b-instant",
+      "model_display_name": "Llama 3.1 8B",
+      "object": "model",
+      "created": 1764754161,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "250K TPM\n1K RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    },
+    {
+      "model_id": "llama-3.3-70b-versatile",
+      "model_display_name": "Llama 3.3 70B",
+      "object": "model",
+      "created": 1764754162,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "300K TPM\n1K RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    },
+    {
+      "model_id": "meta-llama/llama-guard-4-12b",
+      "model_display_name": "Llama Guard 4 12B",
+      "object": "model",
+      "created": 1764754163,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "30K TPM\n100 RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    },
+    {
+      "model_id": "openai/gpt-oss-120b",
+      "model_display_name": "GPT OSS 120B",
+      "object": "model",
+      "created": 1764754163,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "250K TPM\n1K RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    },
+    {
+      "model_id": "openai/gpt-oss-20b",
+      "model_display_name": "GPT OSS 20B",
+      "object": "model",
+      "created": 1764754164,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "250K TPM\n1K RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    },
+    {
+      "model_id": "whisper-large-v3",
+      "model_display_name": "Whisper",
+      "object": "model",
+      "created": 1764754164,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "200K ASH\n300 RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    },
+    {
+      "model_id": "whisper-large-v3-turbo",
+      "model_display_name": "Whisper Large V3 Turbo",
+      "object": "model",
+      "created": 1764754165,
+      "model_provider": "Groq",
+      "active": true,
+      "rate_limits": "400K ASH\n400 RPM",
+      "context_window": "",
+      "max_completion_tokens": "",
+      "public_apps": true,
+      "source_section": "production-models"
+    }
+  ]
+}

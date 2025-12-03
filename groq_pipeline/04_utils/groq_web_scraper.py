@@ -73,11 +73,12 @@ class GroqWebScraper:
 
         # Configure Chrome options
         options = Options()
+        options.binary_location = "/usr/bin/chromium"  # Explicitly set Chromium path
         for option in self.chrome_options:
             options.add_argument(option)
 
-        # Create service
-        service = Service(ChromeDriverManager().install())
+        # Create service with ChromeDriverManager for automatic version matching
+        service = Service(ChromeDriverManager(chrome_type="chromium").install())
 
         # Create and configure driver
         driver = webdriver.Chrome(service=service, options=options)
@@ -103,13 +104,13 @@ class GroqWebScraper:
         production_models = []
 
         try:
-            # Extract from production-models section
+            # Extract from production-models section only
             models_from_production = self._scrape_production_models_section()
             production_models.extend(models_from_production)
 
-            # Extract from production-systems section
-            models_from_systems = self._scrape_production_systems_section()
-            production_models.extend(models_from_systems)
+            # Skipping production-systems section per user requirements
+            # models_from_systems = self._scrape_production_systems_section()
+            # production_models.extend(models_from_systems)
 
         except Exception as error:
             print(f"❌ Error during production models scraping: {error}")
@@ -122,7 +123,7 @@ class GroqWebScraper:
         return production_models
 
     def _scrape_production_models_section(self) -> List[Dict[str, Any]]:
-        """Scrape models from production-models section"""
+        """Scrape models from production-models section using XPath"""
         url = self.endpoints["production_models"]
         print(f"🔍 Extracting production models from: {url}")
 
@@ -134,74 +135,89 @@ class GroqWebScraper:
         )
         print("✅ Page content loaded")
 
-        soup = BeautifulSoup(self.driver.page_source, 'html.parser')
-        tables = soup.find_all('table')
-        print(f"📊 Found {len(tables)} tables in production-models section")
-
         models = []
 
-        for i, table in enumerate(tables):
-            print(f"✅ Processing production models table {i+1}")
+        # Base XPath for the table
+        base_xpath = "/html/body/div[1]/div[2]/div/div/div/div/div/div[1]/div/div[3]/div/div/table/tbody"
 
-            header_row = table.find('tr')
-            if not header_row:
-                continue
+        # Count total rows
+        try:
+            rows = self.driver.find_elements(By.XPATH, f"{base_xpath}/tr")
+            total_rows = len(rows)
+            print(f"📊 Found {total_rows} data rows in tbody")
 
-            headers = [th.get_text().strip() for th in header_row.find_all(['th', 'td'])]
-            print(f"📋 Production Models headers: {headers}")
+            # Iterate through ALL data rows in tbody (header is in thead, not tbody)
+            for row_num in range(1, total_rows + 1):
+                try:
+                    # XPath patterns for each data point
+                    provider_slug_xpath = f"{base_xpath}/tr[{row_num}]/td[1]/div/div/div/span"
+                    human_name_xpath = f"{base_xpath}/tr[{row_num}]/td[1]/div/div/div/a"
+                    rate_limit_1_xpath = f"{base_xpath}/tr[{row_num}]/td[4]/div/div/div/span[1]"
+                    rate_limit_2_xpath = f"{base_xpath}/tr[{row_num}]/td[4]/div/div/div/span[2]"
 
-            if not ('MODEL ID' in [h.upper() for h in headers]):
-                continue
+                    # Extract provider_slug (model_id)
+                    try:
+                        model_slug = self.driver.find_element(By.XPATH, provider_slug_xpath).text.strip()
+                    except:
+                        print(f"   ⚠️ Row {row_num-1}: Could not find model slug, skipping")
+                        continue
 
-            # Find column indices
-            model_col = next((i for i, h in enumerate(headers) if 'model' in h.lower()), 0)
-            developer_col = next((i for i, h in enumerate(headers) if 'developer' in h.lower()), 1)
-            context_col = next((i for i, h in enumerate(headers) if 'context' in h.lower()), 2)
-            completion_col = next((i for i, h in enumerate(headers) if 'completion' in h.lower()), 3)
+                    # Extract human_readable_name from link
+                    try:
+                        link_element = self.driver.find_element(By.XPATH, human_name_xpath)
+                        link_text = link_element.text.strip()
+                        # Extract name from double quotes if present
+                        if '"' in link_text:
+                            parts = link_text.split('"')
+                            model_display_name = parts[1] if len(parts) > 1 else link_text
+                        else:
+                            model_display_name = link_text
+                    except:
+                        model_display_name = model_slug
 
-            # Parse data rows
-            data_rows = table.find_all('tr')[1:]  # Skip header
-            print(f"📊 Found {len(data_rows)} data rows in Production Models")
+                    # Extract rate limits
+                    try:
+                        rate_limit_1 = self.driver.find_element(By.XPATH, rate_limit_1_xpath).text.strip()
+                    except:
+                        rate_limit_1 = ''
 
-            for row_num, row in enumerate(data_rows, 1):
-                cells = row.find_all(['td', 'th'])
-                if len(cells) > model_col:
-                    # Extract slug from code element if present, otherwise use text
-                    cell = cells[model_col]
-                    code_elem = cell.find('code')
-                    if code_elem:
-                        model_slug = code_elem.get_text().strip()
-                    else:
-                        # Fallback: try to extract from full text
-                        full_text = cell.get_text().strip()
-                        # Pattern: "Display NameSlug" - extract after last uppercase sequence
-                        parts = full_text.split()
-                        model_slug = parts[-1] if parts else full_text
+                    try:
+                        rate_limit_2 = self.driver.find_element(By.XPATH, rate_limit_2_xpath).text.strip()
+                    except:
+                        rate_limit_2 = ''
 
-                    # Get display name from cell text (before code element)
-                    model_display_name = cell.get_text().strip()
-                    if code_elem:
-                        model_display_name = model_display_name.replace(code_elem.get_text(), '').strip()
+                    # Combine rate limits into single field with newline separator
+                    rate_limits_combined = f"{rate_limit_1}\n{rate_limit_2}" if rate_limit_1 and rate_limit_2 else ''
 
-                    if model_slug and model_slug.lower() not in ['model', 'model id', '']:
-                        model_data = {
-                            'model_id': model_slug,
-                            'model_display_name': model_display_name,
-                            'object': 'model',
-                            'created': int(time.time()),
-                            'model_provider': cells[developer_col].get_text().strip() if len(cells) > developer_col else 'Groq',
-                            'active': True,
-                            'context_window': cells[context_col].get_text().strip().replace(',', '') if len(cells) > context_col else '',
-                            'max_completion_tokens': cells[completion_col].get_text().strip().replace(',', '') if len(cells) > completion_col else '',
-                            'public_apps': True,
-                            'source_section': 'production-models'
-                        }
+                    # Skip invalid rows
+                    if not model_slug or model_slug.lower() in ['model', 'model id', '']:
+                        continue
 
-                        models.append(model_data)
-                        print(f"   ✅ Row {row_num}: {model_data['model_id']} / {model_display_name} ({model_data['model_provider']})")
+                    model_data = {
+                        'model_id': model_slug,
+                        'model_display_name': model_display_name,
+                        'object': 'model',
+                        'created': int(time.time()),
+                        'model_provider': 'Groq',  # Will be enriched later
+                        'active': True,
+                        'rate_limits': rate_limits_combined,
+                        'context_window': '',  # Will be enriched from API
+                        'max_completion_tokens': '',  # Will be enriched from API
+                        'public_apps': True,
+                        'source_section': 'production-models'
+                    }
 
-            break  # Only process first valid table
+                    models.append(model_data)
+                    print(f"   ✅ Row {row_num}: {model_slug} / {model_display_name} (Rate: {rate_limit_1}, {rate_limit_2})")
 
+                except Exception as row_error:
+                    print(f"   ⚠️ Row {row_num}: Error processing row - {row_error}")
+                    continue
+
+        except Exception as error:
+            print(f"❌ Error finding table rows: {error}")
+
+        print(f"✅ Extracted {len(models)} production models")
         return models
 
     def _scrape_production_systems_section(self) -> List[Dict[str, Any]]:

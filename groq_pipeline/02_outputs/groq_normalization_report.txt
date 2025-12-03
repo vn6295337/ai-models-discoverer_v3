@@ -1,103 +1,75 @@
 ================================================================================
 GROQ PIPELINE NORMALIZATION REPORT
-Generated: 2025-11-28 12:32:23
+Generated: 2025-12-03 15:09:47
 ================================================================================
 
 SUMMARY:
-  Total models extracted: 14
+  Total models extracted: 7
   Models filtered out: 0
-  Models normalized: 14
+  Models normalized: 7
   Models unchanged: 0
   Success rate: 100.0%
 
-MODELS NORMALIZED: 14
+MODELS NORMALIZED: 7
 ----------------------------------------
-   1. 250K TPM1K RPM - 8bllama 3.1 8b Instant
-      Model Name: 8Bllama-3.1-8b-instant -> 8bllama 3.1 8b Instant
+   1. GROQ - Llama 3.1 8b Instant
+      Model Name: llama-3.1-8b-instant -> Llama 3.1 8b Instant
       Input Modalities: Text
       Output Modalities: Text
       License:  -> Llama-3.1
+      Rate Limits: 250K TPM
+1K RPM
 
-   2. 300K TPM1K RPM - 70bllama 3.3 70b Versatile
-      Model Name: 70Bllama-3.3-70b-versatile -> 70bllama 3.3 70b Versatile
+   2. GROQ - Llama 3.3 70b Versatile
+      Model Name: llama-3.3-70b-versatile -> Llama 3.3 70b Versatile
       Input Modalities: Text
       Output Modalities: Text
       License:  -> Llama-3.3
+      Rate Limits: 300K TPM
+1K RPM
 
-   3. 30K TPM100 RPM - Llama Guard 4 12b
-      Model Name: 12Bmeta-llama/llama-guard-4-12b -> Llama Guard 4 12b
+   3. GROQ - Llama Guard 4 12b
+      Model Name: meta-llama/llama-guard-4-12b -> Llama Guard 4 12b
       Input Modalities: Text, Image
       Output Modalities: Text
       License:  -> Llama-4
+      Rate Limits: 30K TPM
+100 RPM
 
-   4. 250K TPM1K RPM - GPT OSS 120B
-      Model Name: 120Bopenai/gpt-oss-120b -> GPT OSS 120B
+   4. GROQ - GPT OSS 120B
+      Model Name: openai/gpt-oss-120b -> GPT OSS 120B
       Input Modalities: Text
       Output Modalities: Text
-      License:  -> HTTP 401
+      License: info -> Apache-2.0
+      Rate Limits: 250K TPM
+1K RPM
 
-   5. 250K TPM1K RPM - GPT OSS 20B
-      Model Name: 20Bopenai/gpt-oss-20b -> GPT OSS 20B
+   5. GROQ - GPT OSS 20B
+      Model Name: openai/gpt-oss-20b -> GPT OSS 20B
       Input Modalities: Text
       Output Modalities: Text
-      License:  -> HTTP 401
+      License: info -> Apache-2.0
+      Rate Limits: 250K TPM
+1K RPM
 
-   6. 200K ASH300 RPM - Whisperwhisper Large V3
-      Model Name: Whisperwhisper-large-v3 -> Whisperwhisper Large V3
+   6. GROQ - Whisper Large V3
+      Model Name: whisper-large-v3 -> Whisper Large V3
       Input Modalities: Audio
       Output Modalities: Text
+      License: info -> Apache-2.0
+      Rate Limits: 200K ASH
+300 RPM
 
-   7. 400K ASH400 RPM - Turbowhisper Large V3 Turbo
-      Model Name: Turbowhisper-large-v3-turbo -> Turbowhisper Large V3 Turbo
+   7. GROQ - Whisper Large V3 Turbo
+      Model Name: whisper-large-v3-turbo -> Whisper Large V3 Turbo
       Input Modalities: Audio
       Output Modalities: Text
-
-   8. 250K TPM1K RPM - 8bllama 3.1 8b Instant
-      Model Name: 8Bllama-3.1-8b-instant -> 8bllama 3.1 8b Instant
-      Input Modalities: Text
-      Output Modalities: Text
-      License:  -> Llama-3.1
-
-   9. 300K TPM1K RPM - 70bllama 3.3 70b Versatile
-      Model Name: 70Bllama-3.3-70b-versatile -> 70bllama 3.3 70b Versatile
-      Input Modalities: Text
-      Output Modalities: Text
-      License:  -> Llama-3.3
-
-   10. 30K TPM100 RPM - Llama Guard 4 12b
-      Model Name: 12Bmeta-llama/llama-guard-4-12b -> Llama Guard 4 12b
-      Input Modalities: Text, Image
-      Output Modalities: Text
-      License:  -> Llama-4
-
-   11. 250K TPM1K RPM - GPT OSS 120B
-      Model Name: 120Bopenai/gpt-oss-120b -> GPT OSS 120B
-      Input Modalities: Text
-      Output Modalities: Text
-      License:  -> HTTP 401
-
-   12. 250K TPM1K RPM - GPT OSS 20B
-      Model Name: 20Bopenai/gpt-oss-20b -> GPT OSS 20B
-      Input Modalities: Text
-      Output Modalities: Text
-      License:  -> HTTP 401
-
-   13. 200K ASH300 RPM - Whisperwhisper Large V3
-      Model Name: Whisperwhisper-large-v3 -> Whisperwhisper Large V3
-      Input Modalities: Audio
-      Output Modalities: Text
-
-   14. 400K ASH400 RPM - Turbowhisper Large V3 Turbo
-      Model Name: Turbowhisper-large-v3-turbo -> Turbowhisper Large V3 Turbo
-      Input Modalities: Audio
-      Output Modalities: Text
+      License: info -> MIT
+      Rate Limits: 400K ASH
+400 RPM
 
 PROVIDER SUMMARY:
 ----------------------------------------
-  200K ASH300 RPM: 2 models
-  250K TPM1K RPM: 6 models
-  300K TPM1K RPM: 2 models
-  30K TPM100 RPM: 2 models
-  400K ASH400 RPM: 2 models
+  Groq: 7 models
 
-Total providers: 5
+Total providers: 1
