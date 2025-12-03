@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-03 07:12 PM IST",
+    "generated_at": "2025-12-03 08:47 PM IST",
     "total_models": 29,
     "pipeline_stage": "P_enrich_provider_info"
   },
@@ -20,10 +20,10 @@
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "no_google_model",
       "inference_provider": "OpenRouter",
-      "model_provider": "Unknown",
-      "model_provider_country": "Unknown",
+      "model_provider": "Amazon",
+      "model_provider_country": "United States",
       "model_family": "amazon",
-      "official_url": "Unknown"
+      "official_url": "https://aws.amazon.com/nova/models/"
     },
     {
       "id": "arcee-ai/trinity-mini:free",
@@ -80,10 +80,10 @@
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "no_google_model",
       "inference_provider": "OpenRouter",
-      "model_provider": "Unknown",
-      "model_provider_country": "Unknown",
-      "model_family": "allenai",
-      "official_url": "Unknown"
+      "model_provider": "Ai2",
+      "model_provider_country": "United States",
+      "model_family": "ai2",
+      "official_url": "https://allenai.org/"
     },
     {
       "id": "x-ai/grok-4.1-fast:free",

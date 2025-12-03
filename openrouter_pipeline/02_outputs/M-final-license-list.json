@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-03 07:12 PM IST",
-    "total_models": 28,
+    "generated_at": "2025-12-03 08:47 PM IST",
+    "total_models": 29,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -28,6 +28,18 @@
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "source_category": "opensource"
+    },
+    {
+      "id": "amazon/nova-2-lite-v1:free",
+      "canonical_slug": "amazon/nova-2-lite-v1",
+      "original_name": "Amazon/Nova 2 Lite V1",
+      "hugging_face_id": "",
+      "clean_model_name": "Nova 2 Lite V1",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "AWS",
+      "license_url": "https://docs.aws.amazon.com/ai/responsible-ai/nova-2-lite/overview.html",
+      "source_category": "proprietary"
     },
     {
       "id": "arcee-ai/trinity-mini:free",
