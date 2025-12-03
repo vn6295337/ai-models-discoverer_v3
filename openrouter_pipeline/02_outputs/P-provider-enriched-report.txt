@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-12-02 08:11 PM IST
+Generated: 2025-12-03 03:56 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 28
+  Total models      : 29
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -14,13 +14,13 @@ ACTION ITEMS - UNKNOWN MAPPINGS:
 ==================================================
 UNKNOWN PROVIDERS (2 models):
   Add these provider mappings to 08_provider_enrichment.json:
-    "arcee-ai": ["Provider Name", "Country"],
-    "openrouter": ["Provider Name", "Country"],
+    "allenai": ["Provider Name", "Country"],
+    "amazon": ["Provider Name", "Country"],
 
 UNKNOWN OFFICIAL URLS (2 unique families):
   Add these URL mappings to family_official_urls:
-    "arcee-ai": "https://official-url-here",
-    "openrouter": "https://official-url-here",
+    "allenai": "https://official-url-here",
+    "amazon": "https://official-url-here",
 
 ==================================================
 
@@ -32,6 +32,7 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: Mistral AI
    2 models: NVIDIA
    2 models: Unknown
+   1 models: Arcee
    1 models: Cognitive Computations
    1 models: Kwaipilot
    1 models: Meituan
@@ -41,10 +42,10 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Z.AI
    1 models: xAI
 
-Total unique model providers: 15
+Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  13 models: United States
+  14 models: United States
    8 models: China
    3 models: Germany
    2 models: France
@@ -59,18 +60,19 @@ MODEL FAMILY DISTRIBUTION:
    2 models: meta
    2 models: mistral ai
    2 models: nvidia
-   1 models: arcee-ai
+   1 models: allenai
+   1 models: amazon
+   1 models: arcee
    1 models: cognitive computations
    1 models: kwaipilot
    1 models: meituan
    1 models: moonshot ai
    1 models: nous research
    1 models: openai
-   1 models: openrouter
    1 models: xai
    1 models: z.ai
 
-Total unique model families: 16
+Total unique model families: 17
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -131,21 +133,49 @@ MODEL 4: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 5: arcee-ai/trinity-mini-20251201
+MODEL 5: allenai/olmo-3-32b-think-20251121
+--------------------------------------------------
+  ID: allenai/olmo-3-32b-think:free
+  Original Name: AllenAI: Olmo 3 32B Think (free)
+  HuggingFace ID: allenai/Olmo-3-32B-Think
+  Canonical Slug: allenai/olmo-3-32b-think-20251121
+  Clean Model Name: Olmo 3 32B Think
+  Model Provider: Unknown
+  Model Provider Country: Unknown
+  Model Family: allenai
+  Official URL: Unknown
+
+================================================================================
+
+MODEL 6: amazon/nova-2-lite-v1
+--------------------------------------------------
+  ID: amazon/nova-2-lite-v1:free
+  Original Name: Amazon: Nova 2 Lite (free)
+  HuggingFace ID: 
+  Canonical Slug: amazon/nova-2-lite-v1
+  Clean Model Name: Nova 2 Lite
+  Model Provider: Unknown
+  Model Provider Country: Unknown
+  Model Family: amazon
+  Official URL: Unknown
+
+================================================================================
+
+MODEL 7: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
   HuggingFace ID: arcee-ai/Trinity-Mini
   Canonical Slug: arcee-ai/trinity-mini-20251201
   Clean Model Name: Trinity Mini
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: arcee-ai
-  Official URL: Unknown
+  Model Provider: Arcee
+  Model Provider Country: United States
+  Model Family: arcee
+  Official URL: https://www.arcee.ai/
 
 ================================================================================
 
-MODEL 6: venice/uncensored
+MODEL 8: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -159,7 +189,7 @@ MODEL 6: venice/uncensored
 
 ================================================================================
 
-MODEL 7: google/gemma-3-12b-it
+MODEL 9: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -173,7 +203,7 @@ MODEL 7: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 8: google/gemma-3-27b-it
+MODEL 10: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -187,7 +217,7 @@ MODEL 8: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 9: google/gemma-3-4b-it
+MODEL 11: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -201,7 +231,7 @@ MODEL 9: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 10: google/gemma-3n-e2b-it
+MODEL 12: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -215,7 +245,7 @@ MODEL 10: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 11: google/gemma-3n-e4b-it
+MODEL 13: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)
@@ -229,7 +259,7 @@ MODEL 11: google/gemma-3n-e4b-it
 
 ================================================================================
 
-MODEL 12: kwaipilot/kat-coder-pro-v1
+MODEL 14: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro:free
   Original Name: Kwaipilot: KAT-Coder-Pro V1 (free)
@@ -243,7 +273,7 @@ MODEL 12: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 13: meituan/longcat-flash-chat
+MODEL 15: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -257,7 +287,7 @@ MODEL 13: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 14: meta-llama/llama-3.2-3b-instruct
+MODEL 16: meta-llama/llama-3.2-3b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.2-3b-instruct:free
   Original Name: Meta: Llama 3.2 3B Instruct (free)
@@ -271,7 +301,7 @@ MODEL 14: meta-llama/llama-3.2-3b-instruct
 
 ================================================================================
 
-MODEL 15: meta-llama/llama-3.3-70b-instruct
+MODEL 17: meta-llama/llama-3.3-70b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-70b-instruct:free
   Original Name: Meta: Llama 3.3 70B Instruct (free)
@@ -285,7 +315,7 @@ MODEL 15: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 16: mistralai/mistral-7b-instruct
+MODEL 18: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -299,7 +329,7 @@ MODEL 16: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 17: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 19: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -313,7 +343,7 @@ MODEL 17: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 18: moonshotai/kimi-k2
+MODEL 20: moonshotai/kimi-k2
 --------------------------------------------------
   ID: moonshotai/kimi-k2:free
   Original Name: MoonshotAI: Kimi K2 0711 (free)
@@ -327,7 +357,7 @@ MODEL 18: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 19: nousresearch/hermes-3-llama-3.1-405b
+MODEL 21: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -341,7 +371,7 @@ MODEL 19: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 20: nvidia/nemotron-nano-12b-v2-vl
+MODEL 22: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -355,7 +385,7 @@ MODEL 20: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 21: nvidia/nemotron-nano-9b-v2
+MODEL 23: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -369,7 +399,7 @@ MODEL 21: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 22: openai/gpt-oss-20b
+MODEL 24: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -383,21 +413,7 @@ MODEL 22: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 23: openrouter/bert-nebulon-alpha
---------------------------------------------------
-  ID: openrouter/bert-nebulon-alpha
-  Original Name: Bert-Nebulon Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/bert-nebulon-alpha
-  Clean Model Name: Bert-Nebulon Alpha
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: openrouter
-  Official URL: Unknown
-
-================================================================================
-
-MODEL 24: tngtech/deepseek-r1t-chimera
+MODEL 25: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -411,7 +427,7 @@ MODEL 24: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 25: tngtech/deepseek-r1t2-chimera
+MODEL 26: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -425,7 +441,7 @@ MODEL 25: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 26: tngtech/tng-r1t-chimera
+MODEL 27: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -439,7 +455,7 @@ MODEL 26: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 27: x-ai/grok-4.1-fast
+MODEL 28: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: xAI: Grok 4.1 Fast (free)
@@ -453,7 +469,7 @@ MODEL 27: x-ai/grok-4.1-fast
 
 ================================================================================
 
-MODEL 28: z-ai/glm-4.5-air
+MODEL 29: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

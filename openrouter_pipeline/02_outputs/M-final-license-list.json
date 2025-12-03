@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-02 08:11 PM IST",
-    "total_models": 27,
+    "generated_at": "2025-12-03 03:56 PM IST",
+    "total_models": 28,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -13,6 +13,18 @@
       "clean_model_name": "Tongyi DeepResearch 30B A3B",
       "license_info_text": "info",
       "license_info_url": "https://huggingface.co/Alibaba-NLP/Tongyi-DeepResearch-30B-A3B/blob/main/README.md",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "opensource"
+    },
+    {
+      "id": "allenai/olmo-3-32b-think:free",
+      "canonical_slug": "allenai/olmo-3-32b-think-20251121",
+      "original_name": "AllenAI: Olmo 3 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3-32B-Think",
+      "clean_model_name": "Olmo 3 32B Think",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/allenai/Olmo-3-32B-Think/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "source_category": "opensource"

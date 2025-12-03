@@ -1,10 +1,167 @@
 {
   "metadata": {
-    "generated_at": "2025-12-02 08:11 PM IST",
-    "total_models": 333,
+    "generated_at": "2025-12-03 03:56 PM IST",
+    "total_models": 335,
     "pipeline_stage": "A_fetch_api_models"
   },
   "models": [
+    {
+      "id": "amazon/nova-2-lite-v1:free",
+      "canonical_slug": "amazon/nova-2-lite-v1",
+      "hugging_face_id": "",
+      "name": "Amazon: Nova 2 Lite (free)",
+      "created": 1764696672,
+      "description": "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text. \n\nNova 2 Lite demonstrates standout capabilities in processing documents, extracting information from videos, generating code, providing accurate grounded answers, and automating multi-step agentic workflows.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Nova",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "amazon/nova-2-lite-v1",
+      "canonical_slug": "amazon/nova-2-lite-v1",
+      "hugging_face_id": "",
+      "name": "Amazon: Nova 2 Lite",
+      "created": 1764696672,
+      "description": "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text. \n\nNova 2 Lite demonstrates standout capabilities in processing documents, extracting information from videos, generating code, providing accurate grounded answers, and automating multi-step agentic workflows.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Nova",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000003",
+        "completion": "0.0000025",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": null,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
+    {
+      "id": "mistralai/mistral-large-2512",
+      "canonical_slug": "mistralai/mistral-large-2512",
+      "hugging_face_id": "",
+      "name": "Mistral: Mistral Large 3 2512",
+      "created": 1764624472,
+      "description": "Mistral Large 3 2512 is Mistral\u2019s most capable model to date, featuring a sparse mixture-of-experts architecture with 41B active parameters (675B total), and released under the Apache 2.0 license.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Mistral",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000005",
+        "completion": "0.0000015",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.0645,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
     {
       "id": "arcee-ai/trinity-mini:free",
       "canonical_slug": "arcee-ai/trinity-mini-20251201",
@@ -184,16 +341,17 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000028",
+        "prompt": "0.00000027",
         "completion": "0.0000004",
         "request": "0",
         "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0"
+        "internal_reasoning": "0",
+        "input_cache_read": "0.000000216"
       },
       "top_provider": {
         "context_length": 163840,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -202,6 +360,7 @@
         "include_reasoning",
         "logprobs",
         "max_tokens",
+        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -448,57 +607,10 @@
       }
     },
     {
-      "id": "openrouter/bert-nebulon-alpha",
-      "canonical_slug": "openrouter/bert-nebulon-alpha",
-      "hugging_face_id": "",
-      "name": "Bert-Nebulon Alpha",
-      "created": 1764005058,
-      "description": "This is a cloaked model provided to the community to gather feedback. A general-purpose multimodal model (text/image in, text out) designed for reliability, long-context comprehension, and adaptive logic. It is engineered for production-grade assistants, retrieval-augmented systems, science workloads, and complex agentic workflows.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
-      "context_length": 256000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Other",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 256000,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "structured_outputs",
-        "tool_choice",
-        "tools"
-      ],
-      "default_parameters": {
-        "temperature": 0.0645,
-        "top_p": null,
-        "frequency_penalty": null
-      }
-    },
-    {
-      "id": "allenai/olmo-3-32b-think",
+      "id": "allenai/olmo-3-32b-think:free",
       "canonical_slug": "allenai/olmo-3-32b-think-20251121",
       "hugging_face_id": "allenai/Olmo-3-32B-Think",
-      "name": "AllenAI: Olmo 3 32B Think",
+      "name": "AllenAI: Olmo 3 32B Think (free)",
       "created": 1763758276,
       "description": "Olmo 3 32B Think is a large-scale, 32-billion-parameter model purpose-built for deep reasoning, complex logic chains and advanced instruction-following scenarios. Its capacity enables strong performance on demanding evaluation tasks and highly nuanced conversational reasoning. Developed by Ai2 under the Apache 2.0 license, Olmo 3 32B Think embodies the Olmo initiative\u2019s commitment to openness, offering full transparency across weights, code and training methodology.",
       "context_length": 65536,
@@ -514,8 +626,8 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.0000003",
-        "completion": "0.00000055",
+        "prompt": "0",
+        "completion": "0",
         "request": "0",
         "image": "0",
         "web_search": "0",
@@ -2645,7 +2757,7 @@
       "name": "Z.AI: GLM 4.6 (exacto)",
       "created": 1759235576,
       "description": "Compared with GLM-4.5, this generation brings several key improvements:\n\nLonger context window: The context window has been expanded from 128K to 200K tokens, enabling the model to handle more complex agentic tasks.\nSuperior coding performance: The model achieves higher scores on code benchmarks and demonstrates better real-world performance in applications such as Claude Code\u3001Cline\u3001Roo Code and Kilo Code, including improvements in generating visually polished front-end pages.\nAdvanced reasoning: GLM-4.6 shows a clear improvement in reasoning performance and supports tool use during inference, leading to stronger overall capability.\nMore capable agents: GLM-4.6 exhibits stronger performance in tool using and search-based agents, and integrates more effectively within agent frameworks.\nRefined writing: Better aligns with human preferences in style and readability, and performs more naturally in role-playing scenarios.",
-      "context_length": 204800,
+      "context_length": 202752,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -2658,16 +2770,17 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000044",
-        "completion": "0.00000176",
+        "prompt": "0.00000043",
+        "completion": "0.00000175",
         "request": "0",
         "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0"
+        "internal_reasoning": "0",
+        "input_cache_read": "0.0000000799999993"
       },
       "top_provider": {
-        "context_length": 204800,
-        "max_completion_tokens": 131072,
+        "context_length": 202752,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3086,7 +3199,7 @@
       "name": "Qwen: Qwen3 VL 235B A22B Instruct",
       "created": 1758668687,
       "description": "Qwen3-VL-235B-A22B Instruct is an open-weight multimodal model that unifies strong text generation with visual understanding across images and video. The Instruct model targets general vision-language use (VQA, document parsing, chart/table extraction, multilingual OCR). The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.\n\nBeyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows\u2014turning sketches or mockups into code and assisting with UI debugging\u2014while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.",
-      "context_length": 131072,
+      "context_length": 262144,
       "architecture": {
         "modality": "text+image->text",
         "input_modalities": [
@@ -3100,16 +3213,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.00000021",
-        "completion": "0.0000019",
+        "prompt": "0.0000002",
+        "completion": "0.0000012",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 32768,
+        "context_length": 262144,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3291,10 +3404,10 @@
       }
     },
     {
-      "id": "deepseek/deepseek-v3.1-terminus",
+      "id": "deepseek/deepseek-v3.1-terminus:exacto",
       "canonical_slug": "deepseek/deepseek-v3.1-terminus",
       "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
-      "name": "DeepSeek: DeepSeek V3.1 Terminus",
+      "name": "DeepSeek: DeepSeek V3.1 Terminus (exacto)",
       "created": 1758548275,
       "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's performance in coding and search agents. It is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. ",
       "context_length": 163840,
@@ -3349,13 +3462,13 @@
       }
     },
     {
-      "id": "deepseek/deepseek-v3.1-terminus:exacto",
+      "id": "deepseek/deepseek-v3.1-terminus",
       "canonical_slug": "deepseek/deepseek-v3.1-terminus",
       "hugging_face_id": "deepseek-ai/DeepSeek-V3.1-Terminus",
-      "name": "DeepSeek: DeepSeek V3.1 Terminus (exacto)",
+      "name": "DeepSeek: DeepSeek V3.1 Terminus",
       "created": 1758548275,
       "description": "DeepSeek-V3.1 Terminus is an update to [DeepSeek V3.1](/deepseek/deepseek-chat-v3.1) that maintains the model's original capabilities while addressing issues reported by users, including language consistency and agent capabilities, further optimizing the model's performance in coding and search agents. It is a large hybrid reasoning model (671B parameters, 37B active) that supports both thinking and non-thinking modes. It extends the DeepSeek-V3 base with a two-phase long-context training process, reaching up to 128K tokens, and uses FP8 microscaling for efficient inference. Users can control the reasoning behaviour with the `reasoning` `enabled` boolean. [Learn more in our docs](https://openrouter.ai/docs/use-cases/reasoning-tokens#enable-reasoning-with-default-config)\n\nThe model improves tool use, code generation, and reasoning efficiency, achieving performance comparable to DeepSeek-R1 on difficult benchmarks while responding more quickly. It supports structured tool calling, code agents, and search agents, making it suitable for research, coding, and agentic workflows. ",
-      "context_length": 131072,
+      "context_length": 163840,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -3368,16 +3481,17 @@
         "instruct_type": "deepseek-v3.1"
       },
       "pricing": {
-        "prompt": "0.000000216",
-        "completion": "0.0000008",
+        "prompt": "0.00000021",
+        "completion": "0.00000079",
         "request": "0",
         "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0"
+        "internal_reasoning": "0",
+        "input_cache_read": "0.000000168"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 65536,
+        "context_length": 163840,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6214,7 +6328,7 @@
       "name": "Qwen: Qwen3 235B A22B Instruct 2507",
       "created": 1753119555,
       "description": "Qwen3-235B-A22B-Instruct-2507 is a multilingual, instruction-tuned mixture-of-experts language model based on the Qwen3-235B architecture, with 22B active parameters per forward pass. It is optimized for general-purpose text generation, including instruction following, logical reasoning, math, code, and tool usage. The model supports a native 262K context length and does not implement \"thinking mode\" (<think> blocks).\n\nCompared to its base variant, this version delivers significant gains in knowledge coverage, long-context reasoning, coding benchmarks, and alignment with open-ended tasks. It is particularly strong on multilingual understanding, math reasoning (e.g., AIME, HMMT), and alignment evaluations like Arena-Hard and WritingBench.",
-      "context_length": 131072,
+      "context_length": 262144,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -6227,16 +6341,16 @@
         "instruct_type": null
       },
       "pricing": {
-        "prompt": "0.000000072",
-        "completion": "0.000000464",
+        "prompt": "0.000000071",
+        "completion": "0.000000463",
         "request": "0",
         "image": "0",
         "web_search": "0",
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 16384,
+        "context_length": 262144,
+        "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -12555,12 +12669,14 @@
         "instruct_type": "llama3"
       },
       "pricing": {
-        "prompt": "0.000000104",
-        "completion": "0.000000312",
+        "prompt": "0.000000108",
+        "completion": "0.00000032",
         "request": "0",
         "image": "0",
         "web_search": "0",
-        "internal_reasoning": "0"
+        "internal_reasoning": "0",
+        "input_cache_read": "0",
+        "input_cache_write": "0"
       },
       "top_provider": {
         "context_length": 131072,

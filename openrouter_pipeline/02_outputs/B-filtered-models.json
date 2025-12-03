@@ -1,10 +1,62 @@
 {
   "metadata": {
-    "generated_at": "2025-12-02 08:11 PM IST",
-    "total_models": 28,
+    "generated_at": "2025-12-03 03:56 PM IST",
+    "total_models": 29,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
+    {
+      "id": "amazon/nova-2-lite-v1:free",
+      "canonical_slug": "amazon/nova-2-lite-v1",
+      "hugging_face_id": "",
+      "name": "Amazon: Nova 2 Lite (free)",
+      "created": 1764696672,
+      "description": "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text. \n\nNova 2 Lite demonstrates standout capabilities in processing documents, extracting information from videos, generating code, providing accurate grounded answers, and automating multi-step agentic workflows.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Nova",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0",
+        "request": "0",
+        "image": "0",
+        "web_search": "0",
+        "internal_reasoning": "0"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "seed",
+        "stop",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      }
+    },
     {
       "id": "arcee-ai/trinity-mini:free",
       "canonical_slug": "arcee-ai/trinity-mini-20251201",
@@ -113,18 +165,17 @@
       }
     },
     {
-      "id": "openrouter/bert-nebulon-alpha",
-      "canonical_slug": "openrouter/bert-nebulon-alpha",
-      "hugging_face_id": "",
-      "name": "Bert-Nebulon Alpha",
-      "created": 1764005058,
-      "description": "This is a cloaked model provided to the community to gather feedback. A general-purpose multimodal model (text/image in, text out) designed for reliability, long-context comprehension, and adaptive logic. It is engineered for production-grade assistants, retrieval-augmented systems, science workloads, and complex agentic workflows.\n\n**Note:** All prompts and completions for this model are logged by the provider and may be used to improve the model.",
-      "context_length": 256000,
+      "id": "allenai/olmo-3-32b-think:free",
+      "canonical_slug": "allenai/olmo-3-32b-think-20251121",
+      "hugging_face_id": "allenai/Olmo-3-32B-Think",
+      "name": "AllenAI: Olmo 3 32B Think (free)",
+      "created": 1763758276,
+      "description": "Olmo 3 32B Think is a large-scale, 32-billion-parameter model purpose-built for deep reasoning, complex logic chains and advanced instruction-following scenarios. Its capacity enables strong performance on demanding evaluation tasks and highly nuanced conversational reasoning. Developed by Ai2 under the Apache 2.0 license, Olmo 3 32B Think embodies the Olmo initiative\u2019s commitment to openness, offering full transparency across weights, code and training methodology.",
+      "context_length": 65536,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text->text",
         "input_modalities": [
-          "text",
-          "image"
+          "text"
         ],
         "output_modalities": [
           "text"
@@ -141,21 +192,31 @@
         "internal_reasoning": "0"
       },
       "top_provider": {
-        "context_length": 256000,
-        "max_completion_tokens": null,
+        "context_length": 65536,
+        "max_completion_tokens": 65536,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
         "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
         "response_format",
+        "seed",
+        "stop",
         "structured_outputs",
-        "tool_choice",
-        "tools"
+        "temperature",
+        "top_k",
+        "top_p"
       ],
       "default_parameters": {
-        "temperature": 0.0645,
-        "top_p": null,
+        "temperature": 0.6,
+        "top_p": 0.95,
         "frequency_penalty": null
       }
     },

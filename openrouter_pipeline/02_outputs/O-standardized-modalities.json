@@ -1,10 +1,24 @@
 {
   "metadata": {
-    "generated_at": "2025-12-02 08:11 PM IST",
-    "total_models": 28,
+    "generated_at": "2025-12-03 03:56 PM IST",
+    "total_models": 29,
     "pipeline_stage": "O_standardize_raw_modalities"
   },
   "models": [
+    {
+      "id": "amazon/nova-2-lite-v1:free",
+      "canonical_slug": "amazon/nova-2-lite-v1",
+      "original_name": "Amazon: Nova 2 Lite (free)",
+      "hugging_face_id": "",
+      "clean_model_name": "Nova 2 Lite",
+      "raw_input_modalities": "text, image, video",
+      "raw_output_modalities": "text",
+      "enhanced_input_modalities": "text, image, video",
+      "enhanced_output_modalities": "text",
+      "standardized_input_modalities": "Text, Image, Video",
+      "standardized_output_modalities": "Text",
+      "google_enhancement_status": "no_google_model"
+    },
     {
       "id": "arcee-ai/trinity-mini:free",
       "canonical_slug": "arcee-ai/trinity-mini-20251201",
@@ -34,16 +48,16 @@
       "google_enhancement_status": "no_google_model"
     },
     {
-      "id": "openrouter/bert-nebulon-alpha",
-      "canonical_slug": "openrouter/bert-nebulon-alpha",
-      "original_name": "Bert-Nebulon Alpha",
-      "hugging_face_id": "",
-      "clean_model_name": "Bert-Nebulon Alpha",
-      "raw_input_modalities": "text, image",
+      "id": "allenai/olmo-3-32b-think:free",
+      "canonical_slug": "allenai/olmo-3-32b-think-20251121",
+      "original_name": "AllenAI: Olmo 3 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3-32B-Think",
+      "clean_model_name": "Olmo 3 32B Think",
+      "raw_input_modalities": "text",
       "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text, image",
+      "enhanced_input_modalities": "text",
       "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text, Image",
+      "standardized_input_modalities": "Text",
       "standardized_output_modalities": "Text",
       "google_enhancement_status": "no_google_model"
     },
