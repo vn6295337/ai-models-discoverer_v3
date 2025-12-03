@@ -32,7 +32,9 @@
     "nousresearch": ["Nous Research", "United States"],
     "minimax": ["MiniMax", "Singapore"],
     "kwaipilot": ["Kwaipilot", "China"],
-    "arcee-ai": ["Arcee", "United States"]
+    "arcee-ai": ["Arcee", "United States"],
+    "amazon": ["Amazon", "United States"],
+    "ai2": ["Ai2", "United States"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -48,7 +50,9 @@
     "kimi": ["kimi"],
     "claude": ["claude"],
     "reka": ["reka"],
-    "Dolphin": ["uncensored"]
+    "Dolphin": ["uncensored"],
+    "nova": ["nova"],
+    "olmo": ["olmo"]
   },
   "special_mappings": {
     "oss_models": {
@@ -94,6 +98,10 @@
     "minimax": "https://www.minimax.io/",
     "kwaipilot": "https://kwaipilot.ai/",
     "arcee": "https://www.arcee.ai/",
-    "arcee-ai": "https://www.arcee.ai/"
+    "arcee-ai": "https://www.arcee.ai/",
+    "amazon": "https://aws.amazon.com/nova/models/",
+    "nova": "https://aws.amazon.com/nova/models/",
+    "ai2": "https://allenai.org/",
+    "olmo": "https://allenai.org/"
   }
 }
