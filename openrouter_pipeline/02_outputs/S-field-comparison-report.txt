@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-03 07:12 PM IST
+Generated: 2025-12-03 08:47 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -469,16 +469,16 @@ MODEL: Nova 2 Lite
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
 inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
+model_provider            | Amazon                    |                          
 human_readable_name       | Nova 2 Lite               |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
+model_provider_country    | United States             |                          
+official_url              | https://aws.amazon.com/.. |                          
 input_modalities          | Text, Image, Video        |                          
 output_modalities         | Text                      |                          
 license_info_text         |                           |                          
 license_info_url          |                           |                          
-license_name              |                           |                          
-license_url               |                           |                          
+license_name              | AWS                       |                          
+license_url               | https://docs.aws.amazon.. |                          
 rate_limits               | 20 requests/min 50/day    |                          
 provider_api_access       | https://openrouter.ai/s.. |                          
 
@@ -489,10 +489,10 @@ MODEL: Olmo 3 32B Think
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
 inference_provider        | OpenRouter                |                          
-model_provider            | Unknown                   |                          
+model_provider            | Ai2                       |                          
 human_readable_name       | Olmo 3 32B Think          |                          
-model_provider_country    | Unknown                   |                          
-official_url              | Unknown                   |                          
+model_provider_country    | United States             |                          
+official_url              | https://allenai.org/      |                          
 input_modalities          | Text                      |                          
 output_modalities         | Text                      |                          
 license_info_text         | info                      |                          

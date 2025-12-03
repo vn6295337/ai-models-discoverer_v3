@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-12-03 07:12 PM IST
+Generated: 2025-12-03 08:47 PM IST
 ================================================================================
 
 SUMMARY:
@@ -44,7 +44,8 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    2 models: Mistral AI
    2 models: NVIDIA
    2 models: TNG Technology
-   2 models: Unknown
+   1 models: Ai2
+   1 models: Amazon
    1 models: Arcee
    1 models: Cognitive Computations
    1 models: Kwaipilot
@@ -55,7 +56,7 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Z.AI
    1 models: xAI
 
-Total providers: 16
+Total providers: 17
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
   28 models: Unknown
