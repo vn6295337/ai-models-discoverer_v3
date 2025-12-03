@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-12-03 07:12 PM IST
+Generated: 2025-12-03 08:47 PM IST
 ================================================================================
 
 SUMMARY:
@@ -10,19 +10,7 @@ SUMMARY:
   Processor         : P_enrich_provider_info.py
   Output            : P-provider-enriched.json
 
-ACTION ITEMS - UNKNOWN MAPPINGS:
-==================================================
-UNKNOWN PROVIDERS (2 models):
-  Add these provider mappings to 08_provider_enrichment.json:
-    "allenai": ["Provider Name", "Country"],
-    "amazon": ["Provider Name", "Country"],
-
-UNKNOWN OFFICIAL URLS (2 unique families):
-  Add these URL mappings to family_official_urls:
-    "allenai": "https://official-url-here",
-    "amazon": "https://official-url-here",
-
-==================================================
+✓ ALL PROVIDERS AND FAMILIES MAPPED SUCCESSFULLY
 
 MODEL PROVIDER DISTRIBUTION:
    5 models: Google
@@ -31,7 +19,8 @@ MODEL PROVIDER DISTRIBUTION:
    2 models: Meta
    2 models: Mistral AI
    2 models: NVIDIA
-   2 models: Unknown
+   1 models: Ai2
+   1 models: Amazon
    1 models: Arcee
    1 models: Cognitive Computations
    1 models: Kwaipilot
@@ -42,16 +31,15 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Z.AI
    1 models: xAI
 
-Total unique model providers: 16
+Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  14 models: United States
+  16 models: United States
    8 models: China
    3 models: Germany
    2 models: France
-   2 models: Unknown
 
-Total unique countries: 5
+Total unique countries: 4
 
 MODEL FAMILY DISTRIBUTION:
    5 models: gemma
@@ -60,7 +48,7 @@ MODEL FAMILY DISTRIBUTION:
    2 models: meta
    2 models: mistral ai
    2 models: nvidia
-   1 models: allenai
+   1 models: ai2
    1 models: amazon
    1 models: arcee
    1 models: cognitive computations
@@ -77,7 +65,21 @@ Total unique model families: 17
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
 
-MODEL 1: qwen/qwen3-235b-a22b-04-28
+MODEL 1: allenai/olmo-3-32b-think-20251121
+--------------------------------------------------
+  ID: allenai/olmo-3-32b-think:free
+  Original Name: AllenAI: Olmo 3 32B Think (free)
+  HuggingFace ID: allenai/Olmo-3-32B-Think
+  Canonical Slug: allenai/olmo-3-32b-think-20251121
+  Clean Model Name: Olmo 3 32B Think
+  Model Provider: Ai2
+  Model Provider Country: United States
+  Model Family: ai2
+  Official URL: https://allenai.org/
+
+================================================================================
+
+MODEL 2: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -91,7 +93,7 @@ MODEL 1: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 2: qwen/qwen3-4b-04-28
+MODEL 3: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -105,7 +107,7 @@ MODEL 2: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 3: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 4: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -119,7 +121,7 @@ MODEL 3: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 4: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 5: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -133,20 +135,6 @@ MODEL 4: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 5: allenai/olmo-3-32b-think-20251121
---------------------------------------------------
-  ID: allenai/olmo-3-32b-think:free
-  Original Name: AllenAI: Olmo 3 32B Think (free)
-  HuggingFace ID: allenai/Olmo-3-32B-Think
-  Canonical Slug: allenai/olmo-3-32b-think-20251121
-  Clean Model Name: Olmo 3 32B Think
-  Model Provider: Unknown
-  Model Provider Country: Unknown
-  Model Family: allenai
-  Official URL: Unknown
-
-================================================================================
-
 MODEL 6: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
@@ -154,10 +142,10 @@ MODEL 6: amazon/nova-2-lite-v1
   HuggingFace ID: 
   Canonical Slug: amazon/nova-2-lite-v1
   Clean Model Name: Nova 2 Lite
-  Model Provider: Unknown
-  Model Provider Country: Unknown
+  Model Provider: Amazon
+  Model Provider Country: United States
   Model Family: amazon
-  Official URL: Unknown
+  Official URL: https://aws.amazon.com/nova/models/
 
 ================================================================================
 

@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-12-03 07:12 PM IST
+Generated: 2025-12-03 08:47 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 28
+  Total models        : 29
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -14,7 +14,7 @@ SOURCE CATEGORY DISTRIBUTION:
   Google: 5 models
   Meta: 2 models
   Opensource: 15 models
-  Proprietary: 3 models
+  Proprietary: 4 models
 
 FINAL LICENSE DISTRIBUTION:
   11 models: Apache-2.0
@@ -22,12 +22,13 @@ FINAL LICENSE DISTRIBUTION:
    4 models: MIT
    2 models: NVIDIA
    2 models: xAI
+   1 models: AWS
    1 models: Llama-3.1
    1 models: Llama-3.2
    1 models: Llama-3.3
    1 models: Modified MIT
 
-Total unique license types: 9
+Total unique license types: 10
 
 DETAILED FINAL MODEL INFORMATION:
 ================================================================================
@@ -407,7 +408,22 @@ MODEL 25: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 26: kwaipilot/kat-coder-pro-v1
+MODEL 26: amazon/nova-2-lite-v1
+--------------------------------------------------
+  ID: amazon/nova-2-lite-v1:free
+  Original Name: Amazon/Nova 2 Lite V1
+  HuggingFace ID: 
+  Canonical Slug: amazon/nova-2-lite-v1
+  Clean Model Name: Nova 2 Lite V1
+  License Info Text: 
+  License Info URL: 
+  License Name: AWS
+  License URL: https://docs.aws.amazon.com/ai/responsible-ai/nova-2-lite/overview.html
+  Source Category: proprietary
+
+================================================================================
+
+MODEL 27: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -422,7 +438,7 @@ MODEL 26: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 27: x-ai/grok-4-fast
+MODEL 28: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast
@@ -437,7 +453,7 @@ MODEL 27: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 28: x-ai/grok-4.1-fast
+MODEL 29: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: X Ai/Grok 4.1 Fast
