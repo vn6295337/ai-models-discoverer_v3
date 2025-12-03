@@ -1,43 +1,31 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-12-02 08:11 PM IST
+Generated: 2025-12-03 03:56 PM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 28
-  Models kept          : 26
-  Models removed       : 2
+  Input models         : 29
+  Models kept          : 28
+  Models removed       : 1
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
   Processor            : R_finalize_db_data.py
   Output               : R_filtered_db_data.json
 
 REMOVAL REASONS DISTRIBUTION:
-   1 models: Cloaked model
    1 models: Experimental model
 
-Total removal reasons: 2
+Total removal reasons: 1
 
 REMOVAL PROCESSING SUMMARY:
   Configured for removal: 11 models
-  Successfully removed: 2 models
-  ⚠ 9 models not found (check canonical slugs)
+  Successfully removed: 1 models
+  ⚠ 10 models not found (check canonical slugs)
 
 DETAILED REMOVED MODEL INFORMATION:
 ================================================================================
 
-REMOVED MODEL 1: openrouter/bert-nebulon-alpha
---------------------------------------------------
-  Provider ID: openrouter/bert-nebulon-alpha
-  Clean Model Name: Bert-Nebulon Alpha
-  Canonical Slug: openrouter/bert-nebulon-alpha
-  Model Provider: Unknown
-  Model Family: Unknown
-  Removal Reason: Cloaked model
-
-================================================================================
-
-REMOVED MODEL 2: tngtech/tng-r1t-chimera
+REMOVED MODEL 1: tngtech/tng-r1t-chimera
 --------------------------------------------------
   Provider ID: tngtech/tng-r1t-chimera:free
   Clean Model Name: R1T Chimera
@@ -56,19 +44,20 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    2 models: Mistral AI
    2 models: NVIDIA
    2 models: TNG Technology
+   2 models: Unknown
+   1 models: Arcee
    1 models: Cognitive Computations
    1 models: Kwaipilot
    1 models: Meituan
    1 models: Moonshot AI
    1 models: Nous Research
    1 models: OpenAI
-   1 models: Unknown
    1 models: Z.AI
    1 models: xAI
 
-Total providers: 15
+Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  26 models: Unknown
+  28 models: Unknown
 
 Total families: 1

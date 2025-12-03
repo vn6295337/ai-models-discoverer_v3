@@ -1,39 +1,39 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-12-02 08:11 PM IST
+Generated: 2025-12-03 03:56 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 28
+  Total models : 29
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
   Output       : O-standardized-modalities.json
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
-  19 models: Text
-   6 models: Text, Image
+  20 models: Text
+   5 models: Text, Image
    2 models: Text, Image, Audio, Video
-   1 models: Text, Image, Video
+   2 models: Text, Image, Video
 
 Total unique input types: 4
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  28 models: Text
+  29 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
-  19 models: Text → Text
-   6 models: Text, Image → Text
+  20 models: Text → Text
+   5 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
-   1 models: Text, Image, Video → Text
+   2 models: Text, Image, Video → Text
 
 Total unique combinations: 4
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 28 models
-  Output modalities changed: 28 models
+  Input modalities changed: 29 models
+  Output modalities changed: 29 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
@@ -208,7 +208,21 @@ MODEL 12: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 13: qwen/qwen3-235b-a22b-04-28
+MODEL 13: allenai/olmo-3-32b-think-20251121
+--------------------------------------------------
+  ID: allenai/olmo-3-32b-think:free
+  Original Name: AllenAI: Olmo 3 32B Think (free)
+  HuggingFace ID: allenai/Olmo-3-32B-Think
+  Canonical Slug: allenai/olmo-3-32b-think-20251121
+  Clean Model Name: Olmo 3 32B Think
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 14: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -222,7 +236,7 @@ MODEL 13: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 14: qwen/qwen3-4b-04-28
+MODEL 15: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -236,7 +250,7 @@ MODEL 14: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 15: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 16: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -250,7 +264,7 @@ MODEL 15: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 16: tngtech/tng-r1t-chimera
+MODEL 17: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -264,7 +278,7 @@ MODEL 16: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 17: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 18: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -278,7 +292,7 @@ MODEL 17: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 18: arcee-ai/trinity-mini-20251201
+MODEL 19: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -292,7 +306,7 @@ MODEL 18: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 19: venice/uncensored
+MODEL 20: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -302,20 +316,6 @@ MODEL 19: venice/uncensored
   Raw Input Modalities: text
   Raw Output Modalities: text
   Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 20: openrouter/bert-nebulon-alpha
---------------------------------------------------
-  ID: openrouter/bert-nebulon-alpha
-  Original Name: Bert-Nebulon Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/bert-nebulon-alpha
-  Clean Model Name: Bert-Nebulon Alpha
-  Raw Input Modalities: text, image
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image
   Standardized Output Modalities: Text
 
 ================================================================================
@@ -426,6 +426,20 @@ MODEL 28: nvidia/nemotron-nano-12b-v2-vl
   Canonical Slug: nvidia/nemotron-nano-12b-v2-vl
   Clean Model Name: Nemotron Nano 12B 2 VL
   Raw Input Modalities: image, text, video
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image, Video
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 29: amazon/nova-2-lite-v1
+--------------------------------------------------
+  ID: amazon/nova-2-lite-v1:free
+  Original Name: Amazon: Nova 2 Lite (free)
+  HuggingFace ID: 
+  Canonical Slug: amazon/nova-2-lite-v1
+  Clean Model Name: Nova 2 Lite
+  Raw Input Modalities: text, image, video
   Raw Output Modalities: text
   Standardized Input Modalities: Text, Image, Video
   Standardized Output Modalities: Text
