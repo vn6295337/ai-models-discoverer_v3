@@ -34,7 +34,8 @@
     "kwaipilot": ["Kwaipilot", "China"],
     "arcee-ai": ["Arcee", "United States"],
     "amazon": ["Amazon", "United States"],
-    "ai2": ["Ai2", "United States"]
+    "ai2": ["Ai2", "United States"],
+    "allenai": ["Ai2", "United States"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -102,6 +103,7 @@
     "amazon": "https://aws.amazon.com/nova/models/",
     "nova": "https://aws.amazon.com/nova/models/",
     "ai2": "https://allenai.org/",
+    "allenai": "https://allenai.org/",
     "olmo": "https://allenai.org/"
   }
 }
