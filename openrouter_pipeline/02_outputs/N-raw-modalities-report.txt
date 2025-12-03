@@ -1,32 +1,34 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-12-02 08:11 PM IST
+Generated: 2025-12-03 03:56 PM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 28
+  Total models : 29
   Input        : B-filtered-models.json
   Processor    : N_extract_raw_modalities.py
   Output       : N-raw-modalities.json
 
 RAW INPUT MODALITIES DISTRIBUTION:
-  21 models: text
-   6 models: text, image
+  22 models: text
+   5 models: text, image
    1 models: image, text, video
+   1 models: text, image, video
 
-Total unique input types: 3
+Total unique input types: 4
 
 RAW OUTPUT MODALITIES DISTRIBUTION:
-  28 models: text
+  29 models: text
 
 Total unique output types: 1
 
 RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
-  21 models: text → text
-   6 models: text, image → text
+  22 models: text → text
+   5 models: text, image → text
    1 models: image, text, video → text
+   1 models: text, image, video → text
 
-Total unique combinations: 3
+Total unique combinations: 4
 
 DETAILED RAW MODALITY MODEL INFORMATION:
 ================================================================================
@@ -211,7 +213,19 @@ MODEL 15: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 16: qwen/qwen3-235b-a22b-04-28
+MODEL 16: allenai/olmo-3-32b-think-20251121
+--------------------------------------------------
+  ID: allenai/olmo-3-32b-think:free
+  Original Name: AllenAI: Olmo 3 32B Think (free)
+  HuggingFace ID: allenai/Olmo-3-32B-Think
+  Canonical Slug: allenai/olmo-3-32b-think-20251121
+  Clean Model Name: Olmo 3 32B Think
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+
+================================================================================
+
+MODEL 17: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -223,7 +237,7 @@ MODEL 16: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 17: qwen/qwen3-4b-04-28
+MODEL 18: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -235,7 +249,7 @@ MODEL 17: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 18: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 19: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -247,7 +261,7 @@ MODEL 18: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 19: tngtech/tng-r1t-chimera
+MODEL 20: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -259,7 +273,7 @@ MODEL 19: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 20: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 21: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -271,7 +285,7 @@ MODEL 20: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 21: arcee-ai/trinity-mini-20251201
+MODEL 22: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -283,7 +297,7 @@ MODEL 21: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 22: venice/uncensored
+MODEL 23: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -291,18 +305,6 @@ MODEL 22: venice/uncensored
   Canonical Slug: venice/uncensored
   Clean Model Name: Uncensored
   Raw Input Modalities: text
-  Raw Output Modalities: text
-
-================================================================================
-
-MODEL 23: openrouter/bert-nebulon-alpha
---------------------------------------------------
-  ID: openrouter/bert-nebulon-alpha
-  Original Name: Bert-Nebulon Alpha
-  HuggingFace ID: 
-  Canonical Slug: openrouter/bert-nebulon-alpha
-  Clean Model Name: Bert-Nebulon Alpha
-  Raw Input Modalities: text, image
   Raw Output Modalities: text
 
 ================================================================================
@@ -363,5 +365,17 @@ MODEL 28: mistralai/mistral-small-3.1-24b-instruct-2503
   Canonical Slug: mistralai/mistral-small-3.1-24b-instruct-2503
   Clean Model Name: Mistral Small 3.1 24B
   Raw Input Modalities: text, image
+  Raw Output Modalities: text
+
+================================================================================
+
+MODEL 29: amazon/nova-2-lite-v1
+--------------------------------------------------
+  ID: amazon/nova-2-lite-v1:free
+  Original Name: Amazon: Nova 2 Lite (free)
+  HuggingFace ID: 
+  Canonical Slug: amazon/nova-2-lite-v1
+  Clean Model Name: Nova 2 Lite
+  Raw Input Modalities: text, image, video
   Raw Output Modalities: text
 

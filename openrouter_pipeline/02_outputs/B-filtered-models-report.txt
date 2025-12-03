@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-12-02 08:11 PM IST
+Generated: 2025-12-03 03:56 PM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 333
-  Models passed all filters: 28
-  Models excluded: 305
-  Success rate: 8.4%
+  Total models processed: 335
+  Models passed all filters: 29
+  Models excluded: 306
+  Success rate: 8.7%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 333 models
-    Excluded: 304 models (non-free pricing)
-    Remaining: 29 models
+    Input: 335 models
+    Excluded: 305 models (non-free pricing)
+    Remaining: 30 models
 
   Step 2 - Billing Description Filter:
-    Input: 29 models
+    Input: 30 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 29 models
+    Remaining: 30 models
 
   Step 3 - Keyword Filter:
-    Input: 29 models
+    Input: 30 models
     Excluded: 1 models (preview/experimental/beta)
-    Remaining: 28 models
+    Remaining: 29 models
 
   Step 4 - Deduplication Filter:
-    Input: 28 models
+    Input: 29 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 28 models
+    Final: 29 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 304 models with non-free pricing (details omitted due to volume)
+Excluded 305 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -142,6 +142,13 @@ PROVIDER: META (2 models)
       Pricing: prompt=0, completion=0, request=0
 
 
+PROVIDER: AMAZON (1 models)
+--------------------------------------------------
+   1. Amazon: Nova 2 Lite (free)
+      ID: amazon/nova-2-lite-v1:free
+      Pricing: prompt=0, completion=0, request=0
+
+
 PROVIDER: ARCEE AI (1 models)
 --------------------------------------------------
    1. Arcee AI: Trinity Mini (free)
@@ -149,10 +156,10 @@ PROVIDER: ARCEE AI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: OPENROUTER (1 models)
+PROVIDER: ALLENAI (1 models)
 --------------------------------------------------
-   1. Bert-Nebulon Alpha
-      ID: openrouter/bert-nebulon-alpha
+   1. AllenAI: Olmo 3 32B Think (free)
+      ID: allenai/olmo-3-32b-think:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -221,11 +228,11 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 17
-  Total models passed all filters: 28
-  Models excluded by pricing: 304
+  Total providers: 18
+  Total models passed all filters: 29
+  Models excluded by pricing: 305
   Models excluded by billing description: 0
   Models excluded by keywords: 1
   Models excluded by deduplication: 0
-  Total exclusions: 305
+  Total exclusions: 306
   ✓ All filtered models accounted for
