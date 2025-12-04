@@ -60,9 +60,11 @@ def main():
         print("")
 
         # Call shared utility
+        output_dir = Path(__file__).parent / "02_outputs"
         success = refresh_model_aa_mapping(
             conn,
             inference_provider=INFERENCE_PROVIDER,
+            output_dir=str(output_dir),
             logger=None  # Uses print() for output
         )
 

@@ -300,9 +300,11 @@ def main():
         # Refresh model-AA mappings (best-effort, non-blocking)
         logger.info(f"🔗 Attempting to refresh model-AA mappings for {INFERENCE_PROVIDER}...")
         try:
+            output_dir = LOG_FILE.parent  # Same directory as log file
             mapping_success = refresh_model_aa_mapping(
                 conn,
                 inference_provider=INFERENCE_PROVIDER,
+                output_dir=str(output_dir),
                 logger=logger
             )
             if mapping_success:

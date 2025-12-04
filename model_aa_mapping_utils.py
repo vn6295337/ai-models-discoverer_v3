@@ -395,9 +395,78 @@ def upsert_mappings(
         return False
 
 
+def write_comparison_report(
+    unmatched_by_provider: Dict[str, List[Tuple[str, List[Tuple[str, float]]]]],
+    output_file: str
+) -> bool:
+    """
+    Write unmatched models comparison report to a file.
+
+    Args:
+        unmatched_by_provider: Dictionary mapping provider to list of (slug, nearest_matches)
+        output_file: Path to output file
+
+    Returns:
+        True if successful, False otherwise
+    """
+    try:
+        with open(output_file, 'w', encoding='utf-8') as f:
+            f.write(f"Slug Comparison Report\n")
+            f.write(f"Generated: {datetime.now().isoformat()}\n")
+            f.write("=" * 120 + "\n\n")
+
+            if not unmatched_by_provider:
+                f.write("✅ All models successfully matched to AA performance metrics!\n")
+                f.write("No unmatched models to report.\n")
+                return True
+
+            f.write("UNMATCHED MODELS WITH NEAREST AA_SLUG CANDIDATES\n")
+            f.write("=" * 120 + "\n\n")
+            f.write("The following models from working_version could not be automatically\n")
+            f.write("mapped to AA performance metrics. Review the nearest candidates below:\n\n")
+
+            # Table header
+            f.write("=" * 120 + "\n")
+            f.write(f"{'PROVIDER':<20} | {'PROVIDER_SLUG':<35} | {'NEAREST AA_SLUG CANDIDATES (Top 5)'}\n")
+            f.write("=" * 120 + "\n")
+
+            for provider in sorted(unmatched_by_provider.keys()):
+                unmatched_models = unmatched_by_provider[provider]
+
+                for provider_slug, nearest_matches in sorted(unmatched_models, key=lambda x: x[0]):
+                    # First row with provider and slug
+                    if nearest_matches:
+                        # First candidate on same line as provider and slug
+                        aa_slug, score = nearest_matches[0]
+                        f.write(f"{provider:<20} | {provider_slug:<35} | • {aa_slug:<40} (similarity: {score*100:.1f}%)\n")
+
+                        # Remaining candidates on subsequent lines
+                        for aa_slug, score in nearest_matches[1:]:
+                            f.write(f"{'':<20} | {'':<35} | • {aa_slug:<40} (similarity: {score*100:.1f}%)\n")
+                    else:
+                        f.write(f"{provider:<20} | {provider_slug:<35} | (no similar candidates found)\n")
+
+                    # Separator between models
+                    f.write(f"{'-'*20}-|-{'-'*35}-|-{'-'*60}\n")
+
+                # Extra spacing between providers
+                f.write("\n")
+
+            f.write("=" * 120 + "\n")
+            f.write("END OF COMPARISON REPORT\n")
+            f.write("=" * 120 + "\n")
+
+        return True
+
+    except Exception as e:
+        print(f"ERROR: Failed to write comparison report: {e}")
+        return False
+
+
 def refresh_model_aa_mapping(
     conn,
     inference_provider: Optional[str] = None,
+    output_dir: Optional[str] = None,
     logger: Optional[logging.Logger] = None
 ) -> bool:
     """
@@ -409,10 +478,12 @@ def refresh_model_aa_mapping(
     3. Matches provider models to AA slugs using smart matching
     4. Upserts mappings with ON CONFLICT handling
     5. Provides enhanced reporting for unmatched models
+    6. Writes comparison report to slugs_comparison.txt
 
     Args:
         conn: Database connection (must be open)
         inference_provider: Optional provider filter (e.g., "Groq")
+        output_dir: Optional directory for slugs_comparison.txt (default: current dir)
         logger: Optional logger for structured output
 
     Returns:
@@ -453,6 +524,16 @@ def refresh_model_aa_mapping(
         # Step 4: Upsert mappings to database
         if not upsert_mappings(conn, mappings, logger):
             return False
+
+        # Step 5: Write comparison report to file
+        if output_dir:
+            from pathlib import Path
+            output_file = Path(output_dir) / "slugs_comparison.txt"
+            log(f"📄 Writing comparison report to: {output_file}")
+            if write_comparison_report(unmatched_by_provider, str(output_file)):
+                log(f"✅ Comparison report saved: {output_file}")
+            else:
+                log(f"⚠️  Failed to write comparison report (non-critical)")
 
         log("")
         log("=" * 70)
