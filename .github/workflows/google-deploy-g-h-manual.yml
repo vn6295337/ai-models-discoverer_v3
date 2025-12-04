@@ -97,9 +97,7 @@ jobs:
         name: google-deployment-logs
         path: |
           google_pipeline/02_outputs/*.log
-          google_pipeline/02_outputs/*-deployment-*.txt
-          google_pipeline/02_outputs/G-*.txt
-          google_pipeline/02_outputs/H-*.txt
+          google_pipeline/02_outputs/*.txt
         retention-days: 7
 
     - name: Show completion summary

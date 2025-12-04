@@ -97,9 +97,7 @@ jobs:
         name: openrouter-deployment-logs
         path: |
           openrouter_pipeline/02_outputs/*.log
-          openrouter_pipeline/02_outputs/*-deployment-*.txt
-          openrouter_pipeline/02_outputs/T-*.txt
-          openrouter_pipeline/02_outputs/U-*.txt
+          openrouter_pipeline/02_outputs/*.txt
         retention-days: 7
 
     - name: Show completion summary

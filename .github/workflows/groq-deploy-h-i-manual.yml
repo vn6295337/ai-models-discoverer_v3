@@ -114,10 +114,7 @@ jobs:
         name: groq-deployment-logs
         path: |
           groq_pipeline/*.log
-          groq_pipeline/02_outputs/*-report.txt
-          groq_pipeline/02_outputs/G-*.txt
-          groq_pipeline/02_outputs/H-*.txt
-          groq_pipeline/02_outputs/I-*.txt
+          groq_pipeline/02_outputs/*.txt
         retention-days: 7
 
     - name: Show completion summary
