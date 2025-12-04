@@ -24,9 +24,46 @@ import logging
 try:
     import psycopg2
     from psycopg2.extras import execute_values
+    import re
 except ImportError:
     print("Error: psycopg2 package not found. Install with: pip install psycopg2-binary")
     sys.exit(1)
+
+
+def normalize_slug(slug: str) -> str:
+    """
+    Normalize provider_slug to match aa_slug format.
+
+    Converts special characters (periods, spaces, underscores) to hyphens
+    to maintain consistency with aa_slug naming convention.
+
+    Examples:
+        "gpt-4.0" -> "gpt-4-0"
+        "llama 3.1" -> "llama-3-1"
+        "model_name_v2" -> "model-name-v2"
+
+    Args:
+        slug: Original provider_slug from working_version
+
+    Returns:
+        Normalized slug with special characters converted to hyphens
+    """
+    if not slug:
+        return slug
+
+    # Replace periods, spaces, and underscores with hyphens
+    normalized = re.sub(r'[.\s_]+', '-', slug)
+
+    # Remove consecutive hyphens
+    normalized = re.sub(r'-+', '-', normalized)
+
+    # Remove leading/trailing hyphens
+    normalized = normalized.strip('-')
+
+    # Convert to lowercase for consistency
+    normalized = normalized.lower()
+
+    return normalized
 
 
 def fetch_working_version_models(
@@ -106,34 +143,38 @@ def match_provider_slug_to_aa_slug(
     """
     Attempt to match provider_slug to aa_slug using multiple strategies.
 
+    Normalizes provider_slug first to match aa_slug format (converts special
+    characters like periods, spaces, underscores to hyphens).
+
     Matching strategies (in order):
-    1. Exact match: provider_slug == aa_slug
-    2. Suffix match: aa_slug ends with provider_slug
-    3. Contains match: provider_slug in aa_slug
+    1. Exact match: normalized_provider_slug == aa_slug
+    2. Suffix match: aa_slug ends with normalized_provider_slug
+    3. Contains match: normalized_provider_slug in aa_slug
 
     Args:
-        provider_slug: The model slug from provider
+        provider_slug: The model slug from provider (will be normalized)
         inference_provider: The provider name (for logging)
         aa_slugs: List of available aa_slug values
 
     Returns:
         Matched aa_slug or None if no match found
     """
-    provider_slug_lower = provider_slug.lower()
+    # Normalize provider_slug to match aa_slug format
+    normalized_slug = normalize_slug(provider_slug)
 
-    # Strategy 1: Exact match (case-insensitive)
+    # Strategy 1: Exact match
     for aa_slug in aa_slugs:
-        if aa_slug.lower() == provider_slug_lower:
+        if aa_slug.lower() == normalized_slug:
             return aa_slug
 
-    # Strategy 2: Suffix match (e.g., "llama-3.1-8b-instant" matches "meta-llama-3.1-8b-instant")
+    # Strategy 2: Suffix match (e.g., "llama-3-1-8b-instant" matches "meta-llama-3-1-8b-instant")
     for aa_slug in aa_slugs:
-        if aa_slug.lower().endswith(provider_slug_lower):
+        if aa_slug.lower().endswith(normalized_slug):
             return aa_slug
 
     # Strategy 3: Contains match (e.g., "gpt-4o" in "gpt-4o-2024-05-13")
     for aa_slug in aa_slugs:
-        if provider_slug_lower in aa_slug.lower():
+        if normalized_slug in aa_slug.lower():
             return aa_slug
 
     return None
@@ -170,9 +211,12 @@ def create_mappings(
         aa_slug = match_provider_slug_to_aa_slug(provider_slug, inference_provider, aa_slugs)
 
         if aa_slug:
+            # Normalize provider_slug to match aa_slug format (convert special chars to hyphens)
+            normalized_provider_slug = normalize_slug(provider_slug)
+
             mappings.append((
                 inference_provider,
-                provider_slug,
+                normalized_provider_slug,
                 aa_slug,
                 datetime.utcnow(),
                 datetime.utcnow()
