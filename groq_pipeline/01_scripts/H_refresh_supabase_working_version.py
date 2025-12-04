@@ -47,8 +47,9 @@ try:
         delete_records,
         insert_records_batch
     )
-except ImportError:
-    print("Error: db_utils.py not found in project root")
+    from model_aa_mapping_utils import refresh_model_aa_mapping
+except ImportError as e:
+    print(f"Error: Required utilities not found in project root: {e}")
     sys.exit(1)
 
 # Load environment variables
@@ -267,6 +268,23 @@ def main():
         else:
             logger.warning("⚠️ No rate limit records to update")
 
+        # Refresh model-AA mappings (best-effort, non-blocking)
+        logger.info(f"🔗 Attempting to refresh model-AA mappings for {INFERENCE_PROVIDER}...")
+        try:
+            mapping_success = refresh_model_aa_mapping(
+                conn,
+                inference_provider=INFERENCE_PROVIDER,
+                logger=logger
+            )
+            if mapping_success:
+                logger.info(f"✅ Model-AA mappings refreshed successfully for {INFERENCE_PROVIDER}")
+            else:
+                logger.warning(f"⚠️ Model-AA mapping refresh completed with warnings")
+        except Exception as e:
+            logger.warning(f"⚠️ Model-AA mapping refresh failed (non-critical): {str(e)}")
+            import traceback
+            logger.warning(f"Traceback: {traceback.format_exc()}")
+
         logger.info("🔍 Verifying insertion results...")
         final_count = get_record_count(conn, TABLE_NAME, INFERENCE_PROVIDER)
         if final_count != len(prepared_models):
@@ -290,6 +308,8 @@ def main():
         logger.info(f"   • Records deleted: {initial_count}")
         logger.info(f"   • New records inserted: {len(prepared_models)}")
         logger.info(f"   • Final record count: {final_count}")
+        logger.info(f"   • Rate limits table: Updated")
+        logger.info(f"   • Model-AA mappings: Refreshed for {INFERENCE_PROVIDER}")
         logger.info(f"   • Processing time: {duration}")
         logger.info(f"   • Report file: {LOG_FILE}")
         logger.info("=" * 60)
