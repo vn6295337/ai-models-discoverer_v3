@@ -161,11 +161,12 @@ def insert_mappings(conn, mappings):
                 INSERT INTO ims."10_model_aa_mapping"
                 (human_readable_name, provider_slug, aa_slug, inference_provider, created_at, updated_at)
                 VALUES %s
+                ON CONFLICT (human_readable_name) DO NOTHING
                 """,
                 mappings
             )
             conn.commit()
-            print(f"✓ Inserted {len(mappings)} mappings into ims.10_model_aa_mapping")
+            print(f"✓ Inserted {len(mappings)} mappings into ims.10_model_aa_mapping (duplicates skipped)")
             return True
     except Exception as e:
         conn.rollback()
