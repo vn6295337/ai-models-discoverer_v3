@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-12-03 09:24 PM IST
+Generated: 2025-12-04 06:13 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -9,13 +9,12 @@ DATA QUALITY ISSUES:
 MISSING OR EMPTY VALUES:
 ------------------------------
 
-LICENSE INFO TEXT (13 models):
+LICENSE INFO TEXT (12 models):
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
   - Gemma 3n E2B IT
   - Gemma 3n E4B IT
-  - Grok 4.1 Fast
   - Kimi K2 0711
   - Llama 3.2 3B Instruct
   - Llama 3.3 70B Instruct
@@ -24,13 +23,12 @@ LICENSE INFO TEXT (13 models):
   - Nova 2 Lite
   - R1T Chimera
 
-LICENSE INFO URL (13 models):
+LICENSE INFO URL (12 models):
   - Gemma 3 12B IT
   - Gemma 3 27B IT
   - Gemma 3 4B IT
   - Gemma 3n E2B IT
   - Gemma 3n E4B IT
-  - Grok 4.1 Fast
   - Kimi K2 0711
   - Llama 3.2 3B Instruct
   - Llama 3.3 70B Instruct
@@ -51,11 +49,11 @@ UNKNOWN OR 'NOT FOUND' VALUES:
 
 DATA QUALITY SUMMARY:
 ------------------------------
-Total models: 29
-Missing license info text: 13 (44.8%)
-Missing license info url: 13 (44.8%)
-Missing license name: 1 (3.4%)
-Missing license url: 1 (3.4%)
+Total models: 28
+Missing license info text: 12 (42.9%)
+Missing license info url: 12 (42.9%)
+Missing license name: 1 (3.6%)
+Missing license url: 1 (3.6%)
 
 ================================================================================
 
@@ -339,15 +337,5 @@ COMPLETE MODEL RECORDS:
      License Info       : info
      License URL        : https://opensource.org/licenses/MIT
      Official URL       : https://zhipuai.cn/en/
-     Rate Limits        : 20 requests/min 50/day
-     Provider API Access: https://openrouter.ai/settings/keys
-
- 29. Grok 4.1 Fast
-     Provider           : xAI (United States)
-     Modalities         : Text, Image → Text
-     License            : xAI
-     License Info       : 
-     License URL        : https://x.ai/legal
-     Official URL       : https://x.ai/
      Rate Limits        : 20 requests/min 50/day
      Provider API Access: https://openrouter.ai/settings/keys

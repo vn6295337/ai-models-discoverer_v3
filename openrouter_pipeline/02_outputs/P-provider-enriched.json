@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-03 09:24 PM IST",
-    "total_models": 29,
+    "generated_at": "2025-12-04 06:13 AM IST",
+    "total_models": 28,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
@@ -84,26 +84,6 @@
       "model_provider_country": "United States",
       "model_family": "ai2",
       "official_url": "https://allenai.org/"
-    },
-    {
-      "id": "x-ai/grok-4.1-fast:free",
-      "canonical_slug": "x-ai/grok-4.1-fast",
-      "provider_slug": "grok-4.1-fast",
-      "original_name": "xAI: Grok 4.1 Fast (free)",
-      "hugging_face_id": "",
-      "clean_model_name": "Grok 4.1 Fast",
-      "raw_input_modalities": "text, image",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text, image",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text, Image",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "xAI",
-      "model_provider_country": "United States",
-      "model_family": "xai",
-      "official_url": "https://x.ai/"
     },
     {
       "id": "kwaipilot/kat-coder-pro:free",

@@ -1,30 +1,30 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-12-03 09:24 PM IST
+Generated: 2025-12-04 06:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 29
+  Total models : 28
   Input        : B-filtered-models.json
   Processor    : N_extract_raw_modalities.py
   Output       : N-raw-modalities.json
 
 RAW INPUT MODALITIES DISTRIBUTION:
   22 models: text
-   5 models: text, image
+   4 models: text, image
    1 models: image, text, video
    1 models: text, image, video
 
 Total unique input types: 4
 
 RAW OUTPUT MODALITIES DISTRIBUTION:
-  29 models: text
+  28 models: text
 
 Total unique output types: 1
 
 RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
   22 models: text → text
-   5 models: text, image → text
+   4 models: text, image → text
    1 models: image, text, video → text
    1 models: text, image, video → text
 
@@ -345,19 +345,7 @@ MODEL 26: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 27: x-ai/grok-4.1-fast
---------------------------------------------------
-  ID: x-ai/grok-4.1-fast:free
-  Original Name: xAI: Grok 4.1 Fast (free)
-  HuggingFace ID: 
-  Canonical Slug: x-ai/grok-4.1-fast
-  Clean Model Name: Grok 4.1 Fast
-  Raw Input Modalities: text, image
-  Raw Output Modalities: text
-
-================================================================================
-
-MODEL 28: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 27: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -369,7 +357,7 @@ MODEL 28: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 29: amazon/nova-2-lite-v1
+MODEL 28: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon: Nova 2 Lite (free)
