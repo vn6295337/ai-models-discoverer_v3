@@ -1,11 +1,11 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-12-03 09:24 PM IST
+Generated: 2025-12-04 06:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 29
-  Models kept          : 28
+  Input models         : 28
+  Models kept          : 27
   Models removed       : 1
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
@@ -54,11 +54,10 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Nous Research
    1 models: OpenAI
    1 models: Z.AI
-   1 models: xAI
 
-Total providers: 17
+Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  28 models: Unknown
+  27 models: Unknown
 
 Total families: 1
