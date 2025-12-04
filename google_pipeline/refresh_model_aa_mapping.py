@@ -53,10 +53,12 @@ def fetch_working_version_models(conn):
             cur.execute("""
                 SELECT DISTINCT
                     inference_provider,
-                    provider_slug
+                    provider_slug,
+                    human_readable_name
                 FROM public.working_version
                 WHERE provider_slug IS NOT NULL
                   AND provider_slug != ''
+                  AND human_readable_name IS NOT NULL
                 ORDER BY inference_provider, provider_slug
             """)
             models = cur.fetchall()
@@ -116,11 +118,12 @@ def create_mappings(conn, models, aa_slugs):
 
     print("\n=== Matching provider_slug to aa_slug ===")
 
-    for inference_provider, provider_slug in models:
+    for inference_provider, provider_slug, human_readable_name in models:
         aa_slug = match_provider_slug_to_aa_slug(provider_slug, inference_provider, aa_slugs)
 
         if aa_slug:
             mappings.append((
+                human_readable_name,
                 provider_slug,
                 aa_slug,
                 inference_provider,
@@ -156,7 +159,7 @@ def insert_mappings(conn, mappings):
                 cur,
                 """
                 INSERT INTO ims."10_model_aa_mapping"
-                (provider_slug, aa_slug, inference_provider, created_at, updated_at)
+                (human_readable_name, provider_slug, aa_slug, inference_provider, created_at, updated_at)
                 VALUES %s
                 """,
                 mappings
