@@ -25,6 +25,7 @@ try:
     import psycopg2
     from psycopg2.extras import execute_values
     import re
+    from difflib import SequenceMatcher
 except ImportError:
     print("Error: psycopg2 package not found. Install with: pip install psycopg2-binary")
     sys.exit(1)
@@ -64,6 +65,50 @@ def normalize_slug(slug: str) -> str:
     normalized = normalized.lower()
 
     return normalized
+
+
+def calculate_similarity(str1: str, str2: str) -> float:
+    """
+    Calculate similarity ratio between two strings using SequenceMatcher.
+
+    Args:
+        str1: First string
+        str2: Second string
+
+    Returns:
+        Similarity ratio between 0.0 and 1.0 (1.0 = identical)
+    """
+    return SequenceMatcher(None, str1.lower(), str2.lower()).ratio()
+
+
+def find_nearest_aa_slugs(
+    provider_slug: str,
+    aa_slugs: List[str],
+    top_n: int = 5
+) -> List[Tuple[str, float]]:
+    """
+    Find the top N nearest aa_slugs for a given provider_slug using similarity scoring.
+
+    Args:
+        provider_slug: The provider slug to match
+        aa_slugs: List of available aa_slug values
+        top_n: Number of top matches to return (default: 5)
+
+    Returns:
+        List of (aa_slug, similarity_score) tuples, sorted by similarity (highest first)
+    """
+    # Normalize provider_slug for comparison
+    normalized_provider = normalize_slug(provider_slug)
+
+    # Calculate similarity scores for all aa_slugs
+    similarities = []
+    for aa_slug in aa_slugs:
+        score = calculate_similarity(normalized_provider, aa_slug)
+        similarities.append((aa_slug, score))
+
+    # Sort by similarity score (descending) and return top N
+    similarities.sort(key=lambda x: x[1], reverse=True)
+    return similarities[:top_n]
 
 
 def fetch_working_version_models(
@@ -184,7 +229,7 @@ def create_mappings(
     models: List[Tuple[str, str]],
     aa_slugs: List[str],
     logger: Optional[logging.Logger] = None
-) -> Tuple[List[Tuple], Dict[str, List[str]]]:
+) -> Tuple[List[Tuple], Dict[str, List[Tuple[str, List[Tuple[str, float]]]]]]:
     """
     Create mappings between provider_slug and aa_slug with enhanced reporting.
 
@@ -194,12 +239,14 @@ def create_mappings(
         logger: Optional logger for output
 
     Returns:
-        Tuple of (mappings_list, unmatched_by_provider_dict)
+        Tuple of (mappings_list, unmatched_with_nearest_dict)
+        where unmatched_with_nearest_dict maps provider to list of
+        (provider_slug, nearest_matches) tuples
     """
     log = logger.info if logger else print
 
     mappings = []
-    unmatched_by_provider: Dict[str, List[str]] = {}
+    unmatched_by_provider: Dict[str, List[Tuple[str, List[Tuple[str, float]]]]] = {}
     matched_by_provider: Dict[str, int] = {}
 
     log("")
@@ -223,9 +270,12 @@ def create_mappings(
             ))
             matched_by_provider[inference_provider] = matched_by_provider.get(inference_provider, 0) + 1
         else:
+            # Find nearest aa_slugs for unmatched models
+            nearest_matches = find_nearest_aa_slugs(provider_slug, aa_slugs, top_n=5)
+
             if inference_provider not in unmatched_by_provider:
                 unmatched_by_provider[inference_provider] = []
-            unmatched_by_provider[inference_provider].append(provider_slug)
+            unmatched_by_provider[inference_provider].append((provider_slug, nearest_matches))
 
     # Calculate statistics
     total_models = len(models)
@@ -249,27 +299,46 @@ def create_mappings(
             log(f"  • {provider}: {matched_by_provider[provider]} models")
         log("")
 
-    # Enhanced unmatched reporting - PROMINENT display
+    # Enhanced unmatched reporting - TABULAR display with nearest matches
     if unmatched_by_provider:
         log("⚠️" * 35)
-        log("UNMATCHED MODELS REQUIRING MANUAL REVIEW")
+        log("UNMATCHED MODELS WITH NEAREST AA_SLUG CANDIDATES")
         log("⚠️" * 35)
         log("")
         log("The following models from working_version could not be automatically")
-        log("mapped to AA performance metrics. These may need manual investigation:")
+        log("mapped to AA performance metrics. Review the nearest candidates below:")
         log("")
 
+        # Table header
+        log("=" * 120)
+        log(f"{'PROVIDER':<20} | {'PROVIDER_SLUG':<35} | {'NEAREST AA_SLUG CANDIDATES (Top 5)'}")
+        log("=" * 120)
+
         for provider in sorted(unmatched_by_provider.keys()):
-            slugs = unmatched_by_provider[provider]
-            log(f"📋 {provider} ({len(slugs)} unmatched):")
-            log(f"   {'-' * 65}")
-            for slug in sorted(slugs):
-                log(f"   • {slug}")
+            unmatched_models = unmatched_by_provider[provider]
+
+            for provider_slug, nearest_matches in sorted(unmatched_models, key=lambda x: x[0]):
+                # First row with provider and slug
+                if nearest_matches:
+                    # First candidate on same line as provider and slug
+                    aa_slug, score = nearest_matches[0]
+                    log(f"{provider:<20} | {provider_slug:<35} | • {aa_slug:<40} (similarity: {score*100:.1f}%)")
+
+                    # Remaining candidates on subsequent lines
+                    for aa_slug, score in nearest_matches[1:]:
+                        log(f"{'':<20} | {'':<35} | • {aa_slug:<40} (similarity: {score*100:.1f}%)")
+                else:
+                    log(f"{provider:<20} | {provider_slug:<35} | (no similar candidates found)")
+
+                # Separator between models
+                log(f"{'-'*20}-|-{'-'*35}-|-{'-'*60}")
+
+            # Extra spacing between providers
             log("")
 
-        log("⚠️" * 35)
+        log("=" * 120)
         log("END OF UNMATCHED MODELS REPORT")
-        log("⚠️" * 35)
+        log("=" * 120)
         log("")
 
     return mappings, unmatched_by_provider
