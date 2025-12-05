@@ -1,6 +1,6 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-12-04 12:57 PM IST
+Generated: 2025-12-05 06:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -13,7 +13,7 @@ RAW INPUT MODALITIES DISTRIBUTION:
   22 models: text
    4 models: text, image
    1 models: image, text, video
-   1 models: text, image, video
+   1 models: text, image, video, file
 
 Total unique input types: 4
 
@@ -26,7 +26,7 @@ RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
   22 models: text → text
    4 models: text, image → text
    1 models: image, text, video → text
-   1 models: text, image, video → text
+   1 models: text, image, video, file → text
 
 Total unique combinations: 4
 
@@ -364,6 +364,6 @@ MODEL 28: amazon/nova-2-lite-v1
   HuggingFace ID: 
   Canonical Slug: amazon/nova-2-lite-v1
   Clean Model Name: Nova 2 Lite
-  Raw Input Modalities: text, image, video
+  Raw Input Modalities: text, image, video, file
   Raw Output Modalities: text
 

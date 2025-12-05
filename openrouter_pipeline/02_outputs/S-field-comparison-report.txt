@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-04 12:57 PM IST
+Generated: 2025-12-05 06:13 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -10,7 +10,7 @@ SUMMARY STATISTICS
    • Total records in pipeline: 27
    • Total records in Supabase: 27
    • Models in both systems: 27
-   • Models with differences: 0
+   • Models with differences: 1
    • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 0
 
@@ -31,8 +31,10 @@ SUMMARY STATISTICS
      - Exact matches: 27
      - Differences: 0
    • input_modalities:
-     - Exact matches: 27
-     - Differences: 0
+     - Exact matches: 26
+     - Differences: 1
+     - Specific differences:
+       * Nova 2 Lite: Pipeline='Text, Image, Video, ...' vs Supabase='Text, Image, Video'
    • output_modalities:
      - Exact matches: 27
      - Differences: 0
@@ -56,7 +58,8 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • Existing models with differences: 0
+   • Existing models with differences: 1
+     Models: Nova 2 Lite
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -451,7 +454,7 @@ model_provider            | Amazon                    | Amazon
 human_readable_name       | Nova 2 Lite               | Nova 2 Lite              
 model_provider_country    | United States             | United States            
 official_url              | https://aws.amazon.com/.. | https://aws.amazon.com/..
-input_modalities          | Text, Image, Video        | Text, Image, Video       
+input_modalities          | Text, Image, Video, File  | Text, Image, Video       
 output_modalities         | Text                      | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     

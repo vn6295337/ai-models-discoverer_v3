@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-04 12:57 PM IST",
+    "generated_at": "2025-12-05 06:13 AM IST",
     "total_models": 28,
     "pipeline_stage": "B_filter_models"
   },
@@ -18,7 +18,8 @@
         "input_modalities": [
           "text",
           "image",
-          "video"
+          "video",
+          "file"
         ],
         "output_modalities": [
           "text"
@@ -103,8 +104,8 @@
         "top_p"
       ],
       "default_parameters": {
-        "temperature": null,
-        "top_p": null,
+        "temperature": 0.15,
+        "top_p": 0.75,
         "frequency_penalty": null
       }
     },
