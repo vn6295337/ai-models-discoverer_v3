@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-04 12:57 PM IST",
+    "generated_at": "2025-12-05 06:13 AM IST",
     "total_models": 28,
     "pipeline_stage": "N_extract_raw_modalities"
   },
@@ -11,7 +11,7 @@
       "original_name": "Amazon: Nova 2 Lite (free)",
       "hugging_face_id": "",
       "clean_model_name": "Nova 2 Lite",
-      "raw_input_modalities": "text, image, video",
+      "raw_input_modalities": "text, image, video, file",
       "raw_output_modalities": "text"
     },
     {

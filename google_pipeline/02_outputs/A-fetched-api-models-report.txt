@@ -1,8 +1,8 @@
 GOOGLE API MODELS FETCH REPORT
 ==================================================
 
-Generated: 2025-12-04 17:06:35 IST
-Total Models: 57
+Generated: 2025-12-05 06:14:08 IST
+Total Models: 56
 
 MODELS LIST:
 --------------------
@@ -22,44 +22,43 @@ MODELS LIST:
 14. models/gemini-exp-1206
 15. models/gemini-2.5-flash-preview-tts
 16. models/gemini-2.5-pro-preview-tts
-17. models/learnlm-2.0-flash-experimental
-18. models/gemma-3-1b-it
-19. models/gemma-3-4b-it
-20. models/gemma-3-12b-it
-21. models/gemma-3-27b-it
-22. models/gemma-3n-e4b-it
-23. models/gemma-3n-e2b-it
-24. models/gemini-flash-latest
-25. models/gemini-flash-lite-latest
-26. models/gemini-pro-latest
-27. models/gemini-2.5-flash-lite
-28. models/gemini-2.5-flash-image-preview
-29. models/gemini-2.5-flash-image
-30. models/gemini-2.5-flash-preview-09-2025
-31. models/gemini-2.5-flash-lite-preview-09-2025
-32. models/gemini-3-pro-preview
-33. models/gemini-3-pro-image-preview
-34. models/nano-banana-pro-preview
-35. models/gemini-robotics-er-1.5-preview
-36. models/gemini-2.5-computer-use-preview-10-2025
-37. models/embedding-001
-38. models/text-embedding-004
-39. models/gemini-embedding-exp-03-07
-40. models/gemini-embedding-exp
-41. models/gemini-embedding-001
-42. models/aqa
-43. models/imagen-4.0-generate-preview-06-06
-44. models/imagen-4.0-ultra-generate-preview-06-06
-45. models/imagen-4.0-generate-001
-46. models/imagen-4.0-ultra-generate-001
-47. models/imagen-4.0-fast-generate-001
-48. models/veo-2.0-generate-001
-49. models/veo-3.0-generate-001
-50. models/veo-3.0-fast-generate-001
-51. models/veo-3.1-generate-preview
-52. models/veo-3.1-fast-generate-preview
-53. models/gemini-2.0-flash-live-001
-54. models/gemini-live-2.5-flash-preview
-55. models/gemini-2.5-flash-live-preview
-56. models/gemini-2.5-flash-native-audio-latest
-57. models/gemini-2.5-flash-native-audio-preview-09-2025
+17. models/gemma-3-1b-it
+18. models/gemma-3-4b-it
+19. models/gemma-3-12b-it
+20. models/gemma-3-27b-it
+21. models/gemma-3n-e4b-it
+22. models/gemma-3n-e2b-it
+23. models/gemini-flash-latest
+24. models/gemini-flash-lite-latest
+25. models/gemini-pro-latest
+26. models/gemini-2.5-flash-lite
+27. models/gemini-2.5-flash-image-preview
+28. models/gemini-2.5-flash-image
+29. models/gemini-2.5-flash-preview-09-2025
+30. models/gemini-2.5-flash-lite-preview-09-2025
+31. models/gemini-3-pro-preview
+32. models/gemini-3-pro-image-preview
+33. models/nano-banana-pro-preview
+34. models/gemini-robotics-er-1.5-preview
+35. models/gemini-2.5-computer-use-preview-10-2025
+36. models/embedding-001
+37. models/text-embedding-004
+38. models/gemini-embedding-exp-03-07
+39. models/gemini-embedding-exp
+40. models/gemini-embedding-001
+41. models/aqa
+42. models/imagen-4.0-generate-preview-06-06
+43. models/imagen-4.0-ultra-generate-preview-06-06
+44. models/imagen-4.0-generate-001
+45. models/imagen-4.0-ultra-generate-001
+46. models/imagen-4.0-fast-generate-001
+47. models/veo-2.0-generate-001
+48. models/veo-3.0-generate-001
+49. models/veo-3.0-fast-generate-001
+50. models/veo-3.1-generate-preview
+51. models/veo-3.1-fast-generate-preview
+52. models/gemini-2.0-flash-live-001
+53. models/gemini-live-2.5-flash-preview
+54. models/gemini-2.5-flash-live-preview
+55. models/gemini-2.5-flash-native-audio-latest
+56. models/gemini-2.5-flash-native-audio-preview-09-2025

@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-04 12:57 PM IST
+Generated: 2025-12-05 06:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 336
+  Total models: 335
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  51 models
@@ -102,16 +102,16 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwq-32b
 
   Mistral         :  29 models
-    - codestral-2501
     - codestral-2508
     - devstral-medium
     - devstral-small
     - devstral-small-2505
-    - magistral-medium-2506
     - magistral-medium-2506:thinking
-    - magistral-small-2506
+    - ministral-14b-2512
     - ministral-3b
+    - ministral-3b-2512
     - ministral-8b
+    - ministral-8b-2512
     - mistral-7b-instruct
     - mistral-7b-instruct-v0.1
     - mistral-7b-instruct-v0.2

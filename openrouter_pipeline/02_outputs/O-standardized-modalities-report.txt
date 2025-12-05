@@ -1,6 +1,6 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-12-04 12:57 PM IST
+Generated: 2025-12-05 06:13 AM IST
 ================================================================================
 
 SUMMARY:
@@ -14,9 +14,10 @@ STANDARDIZED INPUT MODALITIES DISTRIBUTION:
   20 models: Text
    4 models: Text, Image
    2 models: Text, Image, Audio, Video
-   2 models: Text, Image, Video
+   1 models: Text, Image, Video
+   1 models: Text, Image, Video, File
 
-Total unique input types: 4
+Total unique input types: 5
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
   28 models: Text
@@ -27,9 +28,10 @@ STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
   20 models: Text → Text
    4 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
-   2 models: Text, Image, Video → Text
+   1 models: Text, Image, Video → Text
+   1 models: Text, Image, Video, File → Text
 
-Total unique combinations: 4
+Total unique combinations: 5
 
 STANDARDIZATION IMPACT ANALYSIS:
   Input modalities changed: 28 models
@@ -425,8 +427,8 @@ MODEL 28: amazon/nova-2-lite-v1
   HuggingFace ID: 
   Canonical Slug: amazon/nova-2-lite-v1
   Clean Model Name: Nova 2 Lite
-  Raw Input Modalities: text, image, video
+  Raw Input Modalities: text, image, video, file
   Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image, Video
+  Standardized Input Modalities: Text, Image, Video, File
   Standardized Output Modalities: Text
 
