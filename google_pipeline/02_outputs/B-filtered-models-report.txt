@@ -1,11 +1,11 @@
 === GOOGLE MODELS FILTERING REPORT ===
-Generated: 2025-12-04 17:06:35 IST
+Generated: 2025-12-05 06:14:08 IST
 
 === SUMMARY ===
-Total Input Models: 57
+Total Input Models: 56
 Models Included: 24
-Models Excluded: 33
-Filtering Success Rate: 42.1%
+Models Excluded: 32
+Filtering Success Rate: 42.9%
 
 === EXCLUDED MODELS ===
  1. gemini-2.0-flash-exp
@@ -17,30 +17,29 @@ Filtering Success Rate: 42.1%
  7. gemini-exp-1206
  8. gemini-2.5-flash-preview-tts
  9. gemini-2.5-pro-preview-tts
-10. learnlm-2.0-flash-experimental
-11. gemini-flash-latest
-12. gemini-flash-lite-latest
-13. gemini-pro-latest
-14. gemini-2.5-flash-image-preview
-15. gemini-2.5-flash-image
-16. gemini-2.5-flash-preview-09-2025
-17. gemini-2.5-flash-lite-preview-09-2025
-18. gemini-3-pro-preview
-19. gemini-3-pro-image-preview
-20. nano-banana-pro-preview
-21. gemini-robotics-er-1.5-preview
-22. gemini-2.5-computer-use-preview-10-2025
-23. gemini-embedding-exp-03-07
-24. gemini-embedding-exp
-25. imagen-4.0-generate-preview-06-06
-26. imagen-4.0-ultra-generate-preview-06-06
-27. veo-2.0-generate-001
-28. veo-3.1-generate-preview
-29. veo-3.1-fast-generate-preview
-30. gemini-live-2.5-flash-preview
-31. gemini-2.5-flash-live-preview
-32. gemini-2.5-flash-native-audio-latest
-33. gemini-2.5-flash-native-audio-preview-09-2025
+10. gemini-flash-latest
+11. gemini-flash-lite-latest
+12. gemini-pro-latest
+13. gemini-2.5-flash-image-preview
+14. gemini-2.5-flash-image
+15. gemini-2.5-flash-preview-09-2025
+16. gemini-2.5-flash-lite-preview-09-2025
+17. gemini-3-pro-preview
+18. gemini-3-pro-image-preview
+19. nano-banana-pro-preview
+20. gemini-robotics-er-1.5-preview
+21. gemini-2.5-computer-use-preview-10-2025
+22. gemini-embedding-exp-03-07
+23. gemini-embedding-exp
+24. imagen-4.0-generate-preview-06-06
+25. imagen-4.0-ultra-generate-preview-06-06
+26. veo-2.0-generate-001
+27. veo-3.1-generate-preview
+28. veo-3.1-fast-generate-preview
+29. gemini-live-2.5-flash-preview
+30. gemini-2.5-flash-live-preview
+31. gemini-2.5-flash-native-audio-latest
+32. gemini-2.5-flash-native-audio-preview-09-2025
 
 === INCLUDED MODELS ===
  1. embedding-gecko-001
@@ -69,7 +68,7 @@ Filtering Success Rate: 42.1%
 24. gemini-2.0-flash-live-001
 
 === EXCLUSION BREAKDOWN ===
-28 models: Experimental/Preview model - production-ready models only
+27 models: Experimental/Preview model - production-ready models only
  1 models: Model requires billing/payment - free models only
  1 models: Preview model - gemini-2.5-flash-native-audio-preview-09-2025 (https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-live). Note: preview tag not mentioned in API response.
  1 models: Preview model - gemini-flash-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response.
