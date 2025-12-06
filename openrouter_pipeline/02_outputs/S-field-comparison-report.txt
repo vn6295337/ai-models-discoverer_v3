@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-05 06:13 AM IST
+Generated: 2025-12-06 06:11 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 27
-   • Total records in pipeline: 27
+   • Total unique model names: 28
+   • Total records in pipeline: 28
    • Total records in Supabase: 27
    • Models in both systems: 27
-   • Models with differences: 1
-   • Models in pipeline only (not in Supabase): 0
+   • Models with differences: 0
+   • Models in pipeline only (not in Supabase): 1
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -31,10 +31,8 @@ SUMMARY STATISTICS
      - Exact matches: 27
      - Differences: 0
    • input_modalities:
-     - Exact matches: 26
-     - Differences: 1
-     - Specific differences:
-       * Nova 2 Lite: Pipeline='Text, Image, Video, ...' vs Supabase='Text, Image, Video'
+     - Exact matches: 27
+     - Differences: 0
    • output_modalities:
      - Exact matches: 27
      - Differences: 0
@@ -58,8 +56,9 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • Existing models with differences: 1
-     Models: Nova 2 Lite
+   • New models (pipeline only): 1
+     Models: GPT OSS 120B
+   • Existing models with differences: 0
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -122,6 +121,26 @@ license_name              | MIT                       | MIT
 license_url               | https://opensource.org/.. | https://opensource.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+
+================================================================================
+
+MODEL: GPT OSS 120B
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | OpenAI                    |                          
+human_readable_name       | GPT OSS 120B              |                          
+model_provider_country    | United States             |                          
+official_url              | https://openai.com/       |                          
+input_modalities          | Text                      |                          
+output_modalities         | Text                      |                          
+license_info_text         | info                      |                          
+license_info_url          | https://huggingface.co/.. |                          
+license_name              | Apache-2.0                |                          
+license_url               | https://www.apache.org/.. |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
 
 ================================================================================
 
@@ -454,7 +473,7 @@ model_provider            | Amazon                    | Amazon
 human_readable_name       | Nova 2 Lite               | Nova 2 Lite              
 model_provider_country    | United States             | United States            
 official_url              | https://aws.amazon.com/.. | https://aws.amazon.com/..
-input_modalities          | Text, Image, Video, File  | Text, Image, Video       
+input_modalities          | Text, Image, Video, File  | Text, Image, Video, File 
 output_modalities         | Text                      | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     

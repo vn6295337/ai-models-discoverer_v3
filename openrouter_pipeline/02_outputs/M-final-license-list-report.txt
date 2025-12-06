@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-12-05 06:13 AM IST
+Generated: 2025-12-06 06:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 29
+  Total models        : 30
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,11 +13,11 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 3 models
   Google: 5 models
   Meta: 2 models
-  Opensource: 15 models
+  Opensource: 16 models
   Proprietary: 4 models
 
 FINAL LICENSE DISTRIBUTION:
-  11 models: Apache-2.0
+  12 models: Apache-2.0
    5 models: Gemma
    4 models: MIT
    2 models: NVIDIA
@@ -258,7 +258,22 @@ MODEL 15: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 16: openai/gpt-oss-20b
+MODEL 16: openai/gpt-oss-120b
+--------------------------------------------------
+  ID: openai/gpt-oss-120b:free
+  Original Name: OpenAI: gpt-oss-120b (free)
+  HuggingFace ID: openai/gpt-oss-120b
+  Canonical Slug: openai/gpt-oss-120b
+  Clean Model Name: GPT OSS 120B
+  License Info Text: info
+  License Info URL: https://huggingface.co/openai/gpt-oss-120b/blob/main/LICENSE
+  License Name: Apache-2.0
+  License URL: https://www.apache.org/licenses/LICENSE-2.0
+  Source Category: opensource
+
+================================================================================
+
+MODEL 17: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -273,7 +288,7 @@ MODEL 16: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 17: qwen/qwen3-235b-a22b-04-28
+MODEL 18: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -288,7 +303,7 @@ MODEL 17: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 18: qwen/qwen3-4b-04-28
+MODEL 19: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -303,7 +318,7 @@ MODEL 18: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 19: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 20: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -318,7 +333,7 @@ MODEL 19: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 20: venice/uncensored
+MODEL 21: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -333,7 +348,7 @@ MODEL 20: venice/uncensored
 
 ================================================================================
 
-MODEL 21: nousresearch/hermes-3-llama-3.1-405b
+MODEL 22: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -348,7 +363,7 @@ MODEL 21: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 22: meituan/longcat-flash-chat
+MODEL 23: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -363,7 +378,7 @@ MODEL 22: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 23: tngtech/deepseek-r1t-chimera
+MODEL 24: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -378,7 +393,7 @@ MODEL 23: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 24: tngtech/deepseek-r1t2-chimera
+MODEL 25: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -393,7 +408,7 @@ MODEL 24: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 25: z-ai/glm-4.5-air
+MODEL 26: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -408,7 +423,7 @@ MODEL 25: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 26: amazon/nova-2-lite-v1
+MODEL 27: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon/Nova 2 Lite V1
@@ -423,7 +438,7 @@ MODEL 26: amazon/nova-2-lite-v1
 
 ================================================================================
 
-MODEL 27: kwaipilot/kat-coder-pro-v1
+MODEL 28: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -438,7 +453,7 @@ MODEL 27: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 28: x-ai/grok-4-fast
+MODEL 29: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast
@@ -453,7 +468,7 @@ MODEL 28: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 29: x-ai/grok-4.1-fast
+MODEL 30: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: X Ai/Grok 4.1 Fast
