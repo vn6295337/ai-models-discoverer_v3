@@ -1,6 +1,6 @@
 GROQ PIPELINE EXECUTION REPORT (A to H)
 ================================================================================
-Generated: 2025-12-05 05:50:48 PM IST
+Generated: 2025-12-06 05:47:40 PM IST
 Total Execution Time: 1.1m
 
 EXECUTION SUMMARY
@@ -15,13 +15,13 @@ DETAILED RESULTS
 1. Production Models & Rate Limits Extraction
    Script: A_scrape_production_models.py
    Status: ✅ SUCCESS (REQUIRED)
-   Duration: 30.5s
+   Duration: 18.7s
    Description: Extract production models and rate limits from Groq docs
 
 2. Modalities Extraction
    Script: B_scrape_modalities.py
    Status: ✅ SUCCESS (OPTIONAL)
-   Duration: 31.2s
+   Duration: 31.8s
    Description: Extract input/output modalities for each model
 
 3. Meta/Llama License Extraction
@@ -33,7 +33,7 @@ DETAILED RESULTS
 4. HuggingFace & Google License Extraction
    Script: D_extract_opensource_licenses.py
    Status: ✅ SUCCESS (REQUIRED)
-   Duration: 6.4s
+   Duration: 13.7s
    Description: Extract HF-scraped and Google model licenses
 
 5. License Consolidation
