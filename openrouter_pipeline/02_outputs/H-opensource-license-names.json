@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-05 06:13 AM IST",
-    "total_models": 15,
+    "generated_at": "2025-12-06 06:10 AM IST",
+    "total_models": 16,
     "pipeline_stage": "H_bucketize_other_license_names"
   },
   "models": [
@@ -32,6 +32,13 @@
       "name": "Meituan: LongCat Flash Chat (free)",
       "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
       "license_name": "MIT"
+    },
+    {
+      "id": "openai/gpt-oss-120b:free",
+      "canonical_slug": "openai/gpt-oss-120b",
+      "name": "OpenAI: gpt-oss-120b (free)",
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "license_name": "Apache-2.0"
     },
     {
       "id": "openai/gpt-oss-20b:free",
