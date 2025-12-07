@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-12-06 06:11 AM IST
+Generated: 2025-12-07 06:17 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 30
+  Total models        : 31
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,13 +13,13 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 3 models
   Google: 5 models
   Meta: 2 models
-  Opensource: 16 models
+  Opensource: 17 models
   Proprietary: 4 models
 
 FINAL LICENSE DISTRIBUTION:
   12 models: Apache-2.0
    5 models: Gemma
-   4 models: MIT
+   5 models: MIT
    2 models: NVIDIA
    2 models: xAI
    1 models: AWS
@@ -363,7 +363,22 @@ MODEL 22: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 23: meituan/longcat-flash-chat
+MODEL 23: deepseek/deepseek-chat-v3.1
+--------------------------------------------------
+  ID: deepseek/deepseek-chat-v3.1
+  Original Name: DeepSeek: DeepSeek V3.1
+  HuggingFace ID: deepseek-ai/DeepSeek-V3.1
+  Canonical Slug: deepseek/deepseek-chat-v3.1
+  Clean Model Name: DeepSeek V3.1
+  License Info Text: info
+  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE
+  License Name: MIT
+  License URL: https://opensource.org/licenses/MIT
+  Source Category: opensource
+
+================================================================================
+
+MODEL 24: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -378,7 +393,7 @@ MODEL 23: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 24: tngtech/deepseek-r1t-chimera
+MODEL 25: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -393,7 +408,7 @@ MODEL 24: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 25: tngtech/deepseek-r1t2-chimera
+MODEL 26: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -408,7 +423,7 @@ MODEL 25: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 26: z-ai/glm-4.5-air
+MODEL 27: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -423,7 +438,7 @@ MODEL 26: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 27: amazon/nova-2-lite-v1
+MODEL 28: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon/Nova 2 Lite V1
@@ -438,7 +453,7 @@ MODEL 27: amazon/nova-2-lite-v1
 
 ================================================================================
 
-MODEL 28: kwaipilot/kat-coder-pro-v1
+MODEL 29: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -453,7 +468,7 @@ MODEL 28: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 29: x-ai/grok-4-fast
+MODEL 30: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast
@@ -468,7 +483,7 @@ MODEL 29: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 30: x-ai/grok-4.1-fast
+MODEL 31: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: X Ai/Grok 4.1 Fast

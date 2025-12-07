@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-06 06:10 AM IST",
-    "total_models": 16,
+    "generated_at": "2025-12-07 06:17 AM IST",
+    "total_models": 17,
     "pipeline_stage": "I_opensource_license_urls"
   },
   "models": [
@@ -34,6 +34,14 @@
       "canonical_slug": "meituan/longcat-flash-chat",
       "name": "Meituan: LongCat Flash Chat (free)",
       "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
+      "license_name": "MIT",
+      "official_license_url": "https://opensource.org/licenses/MIT"
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "canonical_slug": "deepseek/deepseek-chat-v3.1",
+      "name": "DeepSeek: DeepSeek V3.1",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
       "license_name": "MIT",
       "official_license_url": "https://opensource.org/licenses/MIT"
     },
