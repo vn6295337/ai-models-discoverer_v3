@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-06 06:11 AM IST",
-    "total_models": 30,
+    "generated_at": "2025-12-07 06:17 AM IST",
+    "total_models": 31,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -51,6 +51,18 @@
       "license_info_url": "https://huggingface.co/arcee-ai/Trinity-Mini/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "opensource"
+    },
+    {
+      "id": "deepseek/deepseek-chat-v3.1",
+      "canonical_slug": "deepseek/deepseek-chat-v3.1",
+      "original_name": "DeepSeek: DeepSeek V3.1",
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.1",
+      "clean_model_name": "DeepSeek V3.1",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.1/blob/main/LICENSE",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT",
       "source_category": "opensource"
     },
     {

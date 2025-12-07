@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-06 06:10 AM IST
+Generated: 2025-12-07 06:17 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 338
+  Total models: 337
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  53 models
