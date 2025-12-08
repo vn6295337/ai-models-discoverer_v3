@@ -1,11 +1,11 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-12-07 06:17 AM IST
+Generated: 2025-12-08 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Input models         : 30
-  Models kept          : 29
+  Input models         : 29
+  Models kept          : 28
   Models removed       : 1
   Input                : Q-created-db-data.json
   Config               : 11_remove_models.json
@@ -49,16 +49,15 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Amazon
    1 models: Arcee
    1 models: Cognitive Computations
-   1 models: DeepSeek
    1 models: Kwaipilot
    1 models: Meituan
    1 models: Moonshot AI
    1 models: Nous Research
    1 models: Z.AI
 
-Total providers: 17
+Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
-  29 models: Unknown
+  28 models: Unknown
 
 Total families: 1

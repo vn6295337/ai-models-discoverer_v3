@@ -1,10 +1,10 @@
 ================================================================================
 OPENSOURCE LICENSE MODELS REPORT
-Generated: 2025-12-07 06:17 AM IST
+Generated: 2025-12-08 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 17
+  Total models : 16
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
@@ -13,7 +13,7 @@ SUMMARY:
 OPENSOURCE LICENSE DISTRIBUTION:
   Apache-2.0: 11 models
   Llama-3.1: 1 models
-  MIT: 5 models
+  MIT: 4 models
 
 Total license types: 3
 
@@ -128,16 +128,7 @@ MODEL 12: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 13: deepseek/deepseek-chat-v3.1
---------------------------------------------------
-  ID              : deepseek/deepseek-chat-v3.1
-  Canonical Slug  : deepseek/deepseek-chat-v3.1
-  HuggingFace ID  : deepseek-ai/DeepSeek-V3.1
-  License Name    : MIT
-
-================================================================================
-
-MODEL 14: meituan/longcat-flash-chat
+MODEL 13: meituan/longcat-flash-chat
 --------------------------------------------------
   ID              : meituan/longcat-flash-chat:free
   Canonical Slug  : meituan/longcat-flash-chat
@@ -146,7 +137,7 @@ MODEL 14: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 15: tngtech/deepseek-r1t-chimera
+MODEL 14: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -155,7 +146,7 @@ MODEL 15: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 16: tngtech/deepseek-r1t2-chimera
+MODEL 15: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -164,7 +155,7 @@ MODEL 16: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 17: z-ai/glm-4.5-air
+MODEL 16: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air
