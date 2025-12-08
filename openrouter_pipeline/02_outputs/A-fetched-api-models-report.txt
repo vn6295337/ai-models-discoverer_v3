@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-07 06:17 AM IST
+Generated: 2025-12-08 06:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 337
+  Total models: 335
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  53 models
@@ -103,12 +103,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-8b-thinking
     - qwq-32b
 
-  Mistral         :  29 models
+  Mistral         :  28 models
     - codestral-2508
     - devstral-medium
     - devstral-small
     - devstral-small-2505
-    - magistral-medium-2506:thinking
     - ministral-14b-2512
     - ministral-3b
     - ministral-3b-2512
@@ -318,12 +317,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - olmo-3-7b-instruct
     - olmo-3-7b-think
 
-  Deep Cogito     :   4 models
-    - cogito-v2-preview-deepseek-671b
-    - cogito-v2-preview-llama-405b
-    - cogito-v2-preview-llama-70b
-    - cogito-v2.1-671b
-
   Cohere          :   4 models
     - command-a
     - command-r-08-2024
@@ -335,6 +328,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - l3.1-70b-hanami-x1
     - l3.1-euryale-70b
     - l3.3-euryale-70b
+
+  Deep Cogito     :   3 models
+    - cogito-v2-preview-llama-405b
+    - cogito-v2-preview-llama-70b
+    - cogito-v2.1-671b
 
   MiniMax         :   3 models
     - minimax-01

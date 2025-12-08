@@ -1,10 +1,10 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-12-07 06:17 AM IST
+Generated: 2025-12-08 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 20
+  Total models : 19
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
@@ -12,7 +12,7 @@ SUMMARY:
 LICENSE DISTRIBUTION:
   apache-2.0: 11
   llama3: 1
-  mit: 5
+  mit: 4
   modified-mit: 1
   nvidia-open-model-license: 2
 
@@ -75,16 +75,7 @@ MODEL 6: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 7: deepseek/deepseek-chat-v3.1
---------------------------------------------------
-  ID               : deepseek/deepseek-chat-v3.1
-  Canonical Slug   : deepseek/deepseek-chat-v3.1
-  HuggingFace ID   : deepseek-ai/DeepSeek-V3.1
-  Extracted License: mit
-
-================================================================================
-
-MODEL 8: openai/gpt-oss-120b
+MODEL 7: openai/gpt-oss-120b
 --------------------------------------------------
   ID               : openai/gpt-oss-120b:free
   Canonical Slug   : openai/gpt-oss-120b
@@ -93,7 +84,7 @@ MODEL 8: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 9: openai/gpt-oss-20b
+MODEL 8: openai/gpt-oss-20b
 --------------------------------------------------
   ID               : openai/gpt-oss-20b:free
   Canonical Slug   : openai/gpt-oss-20b
@@ -102,7 +93,7 @@ MODEL 9: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 10: z-ai/glm-4.5-air
+MODEL 9: z-ai/glm-4.5-air
 --------------------------------------------------
   ID               : z-ai/glm-4.5-air:free
   Canonical Slug   : z-ai/glm-4.5-air
@@ -111,7 +102,7 @@ MODEL 10: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 11: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 10: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID               : qwen/qwen3-coder:free
   Canonical Slug   : qwen/qwen3-coder-480b-a35b-07-25
@@ -120,7 +111,7 @@ MODEL 11: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 12: moonshotai/kimi-k2
+MODEL 11: moonshotai/kimi-k2
 --------------------------------------------------
   ID               : moonshotai/kimi-k2:free
   Canonical Slug   : moonshotai/kimi-k2
@@ -129,7 +120,7 @@ MODEL 12: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 13: venice/uncensored
+MODEL 12: venice/uncensored
 --------------------------------------------------
   ID               : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug   : venice/uncensored
@@ -138,7 +129,7 @@ MODEL 13: venice/uncensored
 
 ================================================================================
 
-MODEL 14: tngtech/deepseek-r1t2-chimera
+MODEL 13: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID               : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug   : tngtech/deepseek-r1t2-chimera
@@ -147,7 +138,7 @@ MODEL 14: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 15: qwen/qwen3-4b-04-28
+MODEL 14: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID               : qwen/qwen3-4b:free
   Canonical Slug   : qwen/qwen3-4b-04-28
@@ -156,7 +147,7 @@ MODEL 15: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 16: qwen/qwen3-235b-a22b-04-28
+MODEL 15: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID               : qwen/qwen3-235b-a22b:free
   Canonical Slug   : qwen/qwen3-235b-a22b-04-28
@@ -165,7 +156,7 @@ MODEL 16: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 17: tngtech/deepseek-r1t-chimera
+MODEL 16: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID               : tngtech/deepseek-r1t-chimera:free
   Canonical Slug   : tngtech/deepseek-r1t-chimera
@@ -174,7 +165,7 @@ MODEL 17: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 18: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 17: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID               : mistralai/mistral-small-3.1-24b-instruct:free
   Canonical Slug   : mistralai/mistral-small-3.1-24b-instruct-2503
@@ -183,7 +174,7 @@ MODEL 18: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 19: nousresearch/hermes-3-llama-3.1-405b
+MODEL 18: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID               : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug   : nousresearch/hermes-3-llama-3.1-405b
@@ -192,7 +183,7 @@ MODEL 19: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 20: mistralai/mistral-7b-instruct
+MODEL 19: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct
