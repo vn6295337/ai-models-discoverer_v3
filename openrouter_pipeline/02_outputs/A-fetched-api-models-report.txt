@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-08 06:13 AM IST
+Generated: 2025-12-09 06:13 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 335
+  Total models: 339
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  53 models
@@ -211,6 +211,16 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-sonnet-4
     - claude-sonnet-4.5
 
+  Z.AI            :   8 models
+    - glm-4-32b
+    - glm-4.5
+    - glm-4.5-air
+    - glm-4.5-air:free
+    - glm-4.5v
+    - glm-4.6
+    - glm-4.6:exacto
+    - glm-4.6v
+
   xAI             :   8 models
     - grok-3
     - grok-3-beta
@@ -238,15 +248,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - nemotron-nano-12b-v2-vl:free
     - nemotron-nano-9b-v2
     - nemotron-nano-9b-v2:free
-
-  Z.AI            :   7 models
-    - glm-4-32b
-    - glm-4.5
-    - glm-4.5-air
-    - glm-4.5-air:free
-    - glm-4.5v
-    - glm-4.6
-    - glm-4.6:exacto
 
   Microsoft       :   7 models
     - mai-ds-r1
@@ -344,6 +345,10 @@ PROVIDER BREAKDOWN (Descending Order):
     - aion-1.0-mini
     - aion-rp-llama-3.1-8b
 
+  Relace          :   2 models
+    - relace-apply-3
+    - relace-search
+
   Meituan         :   2 models
     - longcat-flash-chat
     - longcat-flash-chat:free
@@ -364,6 +369,9 @@ PROVIDER BREAKDOWN (Descending Order):
     - inflection-3-pi
     - inflection-3-productivity
 
+  EssentialAI     :   1 models
+    - rnj-1-instruct
+
   Prime Intellect :   1 models
     - intellect-3
 
@@ -372,9 +380,6 @@ PROVIDER BREAKDOWN (Descending Order):
 
   IBM             :   1 models
     - granite-4.0-h-micro
-
-  Relace          :   1 models
-    - relace-apply-3
 
   OpenGVLab       :   1 models
     - internvl3-78b
@@ -415,4 +420,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer          :   1 models
     - weaver
 
-Total providers: 47
+Total providers: 48
