@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-12-09 06:13 AM IST
+Generated: 2025-12-10 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 19
+  Total models : 20
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
@@ -12,8 +12,8 @@ SUMMARY:
 
 STANDARDIZATION RESULTS:
   Models with license transformations: 19
-  Models unchanged: 0
-  Transformation rate: 100.0%
+  Models unchanged: 1
+  Transformation rate: 95.0%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 11 models
@@ -21,8 +21,9 @@ STANDARDIZED LICENSE DISTRIBUTION:
   MIT: 4 models
   Modified MIT: 1 models
   NVIDIA: 2 models
+  other: 1 models
 
-Total license types: 5
+Total license types: 6
 
 LICENSE NAME TRANSFORMATIONS:
   'apache-2.0' → 'Apache-2.0'
@@ -32,6 +33,9 @@ LICENSE NAME TRANSFORMATIONS:
   'nvidia-open-model-license' → 'NVIDIA'
 
 Total unique transformations: 5
+
+MODELS WITH NO LICENSE CHANGES (1 models):
+  Mistral: Devstral 2 2512 (free): 'other'
 
 DETAILED MODEL STANDARDIZATION RESULTS:
 ================================================================================

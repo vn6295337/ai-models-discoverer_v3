@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-09 06:13 AM IST",
-    "total_models": 30,
+    "generated_at": "2025-12-10 06:14 AM IST",
+    "total_models": 31,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -160,6 +160,18 @@
       "license_name": "Llama-3.3",
       "license_url": "https://www.llama.com/llama3_3/license/",
       "source_category": "meta"
+    },
+    {
+      "id": "mistralai/devstral-2512:free",
+      "canonical_slug": "mistralai/devstral-2512",
+      "original_name": "Mistral: Devstral 2 2512 (free)",
+      "hugging_face_id": "mistralai/Devstral-2-123B-Instruct-2512",
+      "clean_model_name": "Devstral 2 2512",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "other",
+      "license_url": "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512/blob/main/LICENSE",
+      "source_category": "custom"
     },
     {
       "id": "mistralai/mistral-7b-instruct:free",
