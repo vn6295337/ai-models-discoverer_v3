@@ -1,6 +1,6 @@
 ================================================================================
 CREATED DATABASE SCHEMA - DATA QUALITY REPORT
-Generated: 2025-12-10 06:14 AM IST
+Generated: 2025-12-10 11:25 AM IST
 ================================================================================
 
 DATA QUALITY ISSUES:
@@ -235,7 +235,7 @@ COMPLETE MODEL RECORDS:
  18. Devstral 2 2512
      Provider           : Mistral AI (France)
      Modalities         : Text → Text
-     License            : other
+     License            : Modified MIT
      License Info       : 
      License URL        : https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512/blob/main/LICENSE
      Official URL       : https://mistral.ai/

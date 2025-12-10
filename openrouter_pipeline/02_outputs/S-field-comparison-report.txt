@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-10 06:14 AM IST
+Generated: 2025-12-10 11:25 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -8,57 +8,58 @@ SUMMARY STATISTICS
 1. OVERALL STATISTICS:
    • Total unique model names: 29
    • Total records in pipeline: 29
-   • Total records in Supabase: 28
-   • Models in both systems: 28
-   • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 1
+   • Total records in Supabase: 29
+   • Models in both systems: 29
+   • Models with differences: 1
+   • Models in pipeline only (not in Supabase): 0
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • model_provider:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • official_url:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • input_modalities:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • output_modalities:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • license_info_text:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • license_info_url:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • license_name:
      - Exact matches: 28
-     - Differences: 0
+     - Differences: 1
+     - Specific differences:
+       * Devstral 2 2512: Pipeline='Modified MIT' vs Supabase='other'
    • license_url:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • rate_limits:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 28
+     - Exact matches: 29
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 1
+   • Existing models with differences: 1
      Models: Devstral 2 2512
-   • Existing models with differences: 0
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -108,19 +109,19 @@ MODEL: Devstral 2 2512
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Mistral AI                |                          
-human_readable_name       | Devstral 2 2512           |                          
-model_provider_country    | France                    |                          
-official_url              | https://mistral.ai/       |                          
-input_modalities          | Text                      |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              | other                     |                          
-license_url               | https://huggingface.co/.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | Mistral AI                | Mistral AI               
+human_readable_name       | Devstral 2 2512           | Devstral 2 2512          
+model_provider_country    | France                    | France                   
+official_url              | https://mistral.ai/       | https://mistral.ai/      
+input_modalities          | Text                      | Text                     
+output_modalities         | Text                      | Text                     
+license_info_text         |                           | None                     
+license_info_url          |                           | None                     
+license_name              | Modified MIT              | other                    
+license_url               | https://huggingface.co/.. | https://huggingface.co/..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 
