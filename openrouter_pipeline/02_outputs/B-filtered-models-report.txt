@@ -1,34 +1,34 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-12-09 06:13 AM IST
+Generated: 2025-12-10 06:14 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
-  Total models processed: 339
-  Models passed all filters: 29
+  Total models processed: 340
+  Models passed all filters: 30
   Models excluded: 310
-  Success rate: 8.6%
+  Success rate: 8.8%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
-    Input: 339 models
+    Input: 340 models
     Excluded: 309 models (non-free pricing)
-    Remaining: 30 models
+    Remaining: 31 models
 
   Step 2 - Billing Description Filter:
-    Input: 30 models
+    Input: 31 models
     Excluded: 0 models (billing requirements in description)
-    Remaining: 30 models
+    Remaining: 31 models
 
   Step 3 - Keyword Filter:
-    Input: 30 models
+    Input: 31 models
     Excluded: 1 models (preview/experimental/beta)
-    Remaining: 29 models
+    Remaining: 30 models
 
   Step 4 - Deduplication Filter:
-    Input: 29 models
+    Input: 30 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 29 models
+    Final: 30 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
@@ -76,6 +76,21 @@ PROVIDER: GOOGLE (5 models)
 
    5. Google: Gemma 3n 4B (free)
       ID: google/gemma-3n-e4b-it:free
+      Pricing: prompt=0, completion=0, request=0
+
+
+PROVIDER: MISTRAL (3 models)
+--------------------------------------------------
+   1. Mistral: Devstral 2 2512 (free)
+      ID: mistralai/devstral-2512:free
+      Pricing: prompt=0, completion=0, request=0
+
+   2. Mistral: Mistral 7B Instruct (free)
+      ID: mistralai/mistral-7b-instruct:free
+      Pricing: prompt=0, completion=0, request=0
+
+   3. Mistral: Mistral Small 3.1 24B (free)
+      ID: mistralai/mistral-small-3.1-24b-instruct:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -128,17 +143,6 @@ PROVIDER: OPENAI (2 models)
 
    2. OpenAI: gpt-oss-20b (free)
       ID: openai/gpt-oss-20b:free
-      Pricing: prompt=0, completion=0, request=0
-
-
-PROVIDER: MISTRAL (2 models)
---------------------------------------------------
-   1. Mistral: Mistral 7B Instruct (free)
-      ID: mistralai/mistral-7b-instruct:free
-      Pricing: prompt=0, completion=0, request=0
-
-   2. Mistral: Mistral Small 3.1 24B (free)
-      ID: mistralai/mistral-small-3.1-24b-instruct:free
       Pricing: prompt=0, completion=0, request=0
 
 
@@ -226,7 +230,7 @@ PROVIDER: NOUS (1 models)
 ================================================================================
 FINAL SUMMARY:
   Total providers: 17
-  Total models passed all filters: 29
+  Total models passed all filters: 30
   Models excluded by pricing: 309
   Models excluded by billing description: 0
   Models excluded by keywords: 1

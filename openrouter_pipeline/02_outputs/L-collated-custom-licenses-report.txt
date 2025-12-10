@@ -1,10 +1,10 @@
 ================================================================================
 COLLATED CUSTOM LICENSE INFORMATION REPORT
-Generated: 2025-12-09 06:13 AM IST
+Generated: 2025-12-10 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 3
+  Total models        : 4
   Input sources       : J-custom-license-urls.json + E-other-license-info-urls-from-hf.json
   Processor           : L_collate_custom_licenses.py
   Output              : L-collated-custom-licenses.json
@@ -12,11 +12,12 @@ SUMMARY:
 CUSTOM LICENSE DISTRIBUTION:
    2 models: NVIDIA
    1 models: Modified MIT
+   1 models: other
 
-Total unique license types: 2
+Total unique license types: 3
 
 LICENSE URL TYPE DISTRIBUTION:
-   1 models: LICENSE file
+   2 models: LICENSE file
    2 models: README.md file
 
 Total URL types: 2
@@ -63,4 +64,18 @@ MODEL 3: nvidia/nemotron-nano-9b-v2
   License Info URL: 
   License Name: NVIDIA
   License URL: https://huggingface.co/nvidia/NVIDIA-Nemotron-Nano-9B-v2/blob/main/README.md
+
+================================================================================
+
+MODEL 4: mistralai/devstral-2512
+--------------------------------------------------
+  ID: mistralai/devstral-2512:free
+  Original Name: Mistral: Devstral 2 2512 (free)
+  HuggingFace ID: mistralai/Devstral-2-123B-Instruct-2512
+  Canonical Slug: mistralai/devstral-2512
+  Clean Model Name: Devstral 2 2512
+  License Info Text: 
+  License Info URL: 
+  License Name: other
+  License URL: https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512/blob/main/LICENSE
 
