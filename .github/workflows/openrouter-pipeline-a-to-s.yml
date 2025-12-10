@@ -43,7 +43,7 @@ jobs:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
         HUGGINGFACE_API_KEY: ${{ secrets.HUGGINGFACE_API_KEY }}
       run: |
-        python Z_run_A_to_S.py --no-venv --auto-all
+        python Z_run_A_to_S.py --auto-all
 
     - name: Upload pipeline report
       uses: actions/upload-artifact@v4
@@ -109,4 +109,5 @@ jobs:
         echo "  - Specific script that failed"
         echo "  - Detailed error messages"
         echo "  - Stage-by-stage execution status"
+
         echo "  - Timing information"
