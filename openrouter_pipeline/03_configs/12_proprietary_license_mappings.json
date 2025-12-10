@@ -25,6 +25,12 @@
       "license_info_url": "",
       "license_name": "AWS",
       "license_url": "https://docs.aws.amazon.com/ai/responsible-ai/nova-2-lite/overview.html"
+    },
+    "mistralai/devstral-2512": {
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "Modified MIT",
+      "license_url": "https://huggingface.co/mistralai/Devstral-2-123B-Instruct-2512/blob/main/LICENSE"
     }
   }
 }

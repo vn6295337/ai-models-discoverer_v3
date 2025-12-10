@@ -310,11 +310,11 @@ def main():
             if mapping_success:
                 logger.info(f"✅ Model-AA mappings refreshed successfully for {INFERENCE_PROVIDER}")
             else:
-                logger.warning(f"⚠️ Model-AA mapping refresh completed with warnings")
+                logger.error(f"❌ Model-AA mapping refresh completed with warnings for {INFERENCE_PROVIDER}")
         except Exception as e:
-            logger.warning(f"⚠️ Model-AA mapping refresh failed (non-critical): {str(e)}")
+            logger.error(f"❌ Model-AA mapping refresh FAILED for {INFERENCE_PROVIDER}: {str(e)}")
             import traceback
-            logger.warning(f"Traceback: {traceback.format_exc()}")
+            logger.error(f"Traceback: {traceback.format_exc()}")
 
         # Step 8: Verify results
         logger.info("🔍 Verifying insertion results...")

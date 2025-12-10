@@ -50,7 +50,7 @@ def create_canonical_slug_index(models: List[Dict[str, Any]]) -> Dict[str, Dict[
 
 def load_proprietary_license_mappings() -> Dict[str, Dict[str, str]]:
     """Load proprietary license mappings from config file"""
-    config_file = '../03_configs/12_proprietary_license_mappings.json'
+    config_file = os.path.join(os.path.dirname(__file__), '..', '03_configs', '12_proprietary_license_mappings.json')
 
     try:
         with open(config_file, 'r', encoding='utf-8') as f:
@@ -185,14 +185,15 @@ def consolidate_all_licenses() -> List[Dict[str, Any]]:
                                 proprietary_data.get('license_info_url', '') or
                                 ''),
             
-            'license_name': (google_data.get('license_name') or
+            'license_name': (proprietary_data.get('license_name') or
+                            google_data.get('license_name') or
                             meta_data.get('license_name') or
                             opensource_data.get('license_name') or
                             custom_data.get('license_name') or
-                            proprietary_data.get('license_name') or
                             'Unknown'),
-            
-            'license_url': (google_data.get('license_url') or
+
+            'license_url': (proprietary_data.get('license_url') or
+                           google_data.get('license_url') or
                            meta_data.get('license_url') or
                            opensource_data.get('license_url') or
                            custom_data.get('license_url') or

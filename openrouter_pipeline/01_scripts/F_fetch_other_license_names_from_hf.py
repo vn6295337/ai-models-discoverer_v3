@@ -41,12 +41,10 @@ except ImportError:
 import sys; import os; sys.path.append(os.path.join(os.path.dirname(__file__), "..", "04_utils")); from output_utils import get_output_file_path, get_input_file_path, ensure_output_dir_exists, get_ist_timestamp
 
 
-def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
-    """Extract license from HuggingFace page with web scraping (fallback for 'other' licenses)"""
-    if not hf_id:
+def extract_license_from_url(url: str, source_label: str = "URL", max_retries: int = 3) -> str:
+    """Extract license from a given URL with web scraping"""
+    if not url:
         return "Unknown"
-
-    url = f"https://huggingface.co/{hf_id}"
 
     for attempt in range(max_retries):
         try:
@@ -61,7 +59,7 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
             if response.status_code == 429:
                 if attempt < max_retries - 1:
                     wait_time = (2 ** attempt) * 5  # 5, 10, 20 seconds
-                    print(f"Rate limited for {hf_id}, waiting {wait_time}s (attempt {attempt + 1}/{max_retries})")
+                    print(f"    Rate limited for {source_label}, waiting {wait_time}s (attempt {attempt + 1}/{max_retries})")
                     time.sleep(wait_time)
                     continue
                 else:
@@ -92,7 +90,7 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
 
         except requests.RequestException as e:
             if attempt < max_retries - 1:
-                print(f"Request failed for {hf_id}, retrying in 3s (attempt {attempt + 1}/{max_retries}): {str(e)}")
+                print(f"    Request failed for {source_label}, retrying in 3s (attempt {attempt + 1}/{max_retries}): {str(e)}")
                 time.sleep(3)
                 continue
             return f"Error: {str(e)}"
@@ -102,7 +100,16 @@ def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
     return "Unknown"
 
 
-def extract_license_from_hf_api(hf_id: str) -> str:
+def extract_license_from_hf_page(hf_id: str, max_retries: int = 3) -> str:
+    """Extract license from HuggingFace base repo page with web scraping (fallback for 'other' licenses)"""
+    if not hf_id:
+        return "Unknown"
+
+    url = f"https://huggingface.co/{hf_id}"
+    return extract_license_from_url(url, f"base repo page ({hf_id})", max_retries)
+
+
+def extract_license_from_hf_api(hf_id: str, license_info_url: str = None) -> str:
     """Extract license from HuggingFace using official Hub API, with web scraping fallback for 'other' licenses"""
     if not hf_id:
         return "Unknown"
@@ -116,7 +123,20 @@ def extract_license_from_hf_api(hf_id: str) -> str:
 
             # If license is 'other', use web scraping to get the actual license name
             if license_value.lower() == 'other':
-                print(f"  License is 'other', using web scraping for {hf_id}")
+                print(f"  License is 'other', attempting web scraping for {hf_id}")
+
+                # Try license file URL first (from script E's output)
+                if license_info_url:
+                    print(f"    Trying license file URL: {license_info_url}")
+                    scraped_license = extract_license_from_url(license_info_url, f"license file ({hf_id})")
+                    if scraped_license not in ["Unknown", "HTTP 404", "HTTP 429 (Rate Limited after 3 attempts)"]:
+                        print(f"    Successfully extracted from license file: {scraped_license}")
+                        return scraped_license
+                    else:
+                        print(f"    License file scraping failed ({scraped_license}), falling back to base repo page")
+
+                # Fallback to base repo page
+                print(f"    Trying base repo page scraping")
                 scraped_license = extract_license_from_hf_page(hf_id)
                 return scraped_license if scraped_license != "Unknown" else license_value
 
@@ -159,13 +179,16 @@ def main():
         raise ValueError("Unexpected data format in input file")
 
     # Filter models with HuggingFace IDs, excluding Google/Meta
+    # Also create a mapping of hf_id to license_info_url
     target_models = []
+    hf_id_to_license_url = {}
 
     for model in models:
         primary_key = model.get('canonical_slug', '')  # Primary identifier
         name = model.get('name', '')                   # Practical for skip detection
         hf_id = model.get('hugging_face_id', '')       # Practical for HF API calls
-        
+        license_info_url = model.get('license_info_url', '')  # License file URL from script E
+
         if hf_id and not should_skip_model(name):
             target_models.append({
                 'id': model.get('id', ''),
@@ -173,17 +196,25 @@ def main():
                 'name': name,
                 'hugging_face_id': hf_id
             })
-    
+            # Store mapping for license URL lookup
+            if license_info_url:
+                hf_id_to_license_url[hf_id] = license_info_url
+
     print(f"Found {len(target_models)} models to process (excluding Google/Meta)")
-    
+    print(f"Found {len(hf_id_to_license_url)} license file URLs from script E")
+
     # Extract licenses
     results = []
-    
+
     for i, model in enumerate(target_models, 1):
         print(f"Processing {i}/{len(target_models)}: {model['name'][:60]}...")
-        
-        license_info = extract_license_from_hf_api(model['hugging_face_id'])
-        
+
+        # Get license_info_url from mapping if available
+        hf_id = model['hugging_face_id']
+        license_info_url = hf_id_to_license_url.get(hf_id)
+
+        license_info = extract_license_from_hf_api(hf_id, license_info_url)
+
         results.append({
             'id': model['id'],
             'canonical_slug': model['canonical_slug'],     # Primary identifier
@@ -191,7 +222,7 @@ def main():
             'hugging_face_id': model['hugging_face_id'],
             'extracted_license': license_info
         })
-        
+
         # Small delay to be respectful to the API
         time.sleep(0.1)  # 100ms delay between API calls
     

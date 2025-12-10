@@ -354,18 +354,13 @@ def parse_arguments():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-  python Z_run_A_to_F.py                    # Interactive mode with virtual environment
+  python Z_run_A_to_F.py                    # Interactive mode with system-wide aienv
   python Z_run_A_to_F.py --auto-all        # Run all scripts automatically
-  python Z_run_A_to_F.py --no-venv         # Skip virtual environment setup
   python Z_run_A_to_F.py --scripts A B C   # Run specific scripts
   python Z_run_A_to_F.py --range C E       # Run script range C to E
         """
     )
 
-    parser.add_argument(
-        '--no-venv', action='store_true',
-        help='Skip virtual environment setup (for CI/CD environments)'
-    )
     parser.add_argument(
         '--auto-all', action='store_true',
         help='Automatically run all scripts without user interaction'
@@ -388,10 +383,7 @@ def main():
     print("=" * 80)
     print("🚀 GOOGLE PIPELINE ORCHESTRATOR")
     print(f"Started at: {get_ist_timestamp()}")
-    if args.no_venv or os.getenv('GITHUB_ACTIONS') == 'true':
-        print("Mode: CI/CD (No virtual environment)")
-    else:
-        print("Mode: Local development (With virtual environment)")
+    print("Mode: System-wide aienv")
     print("=" * 80)
 
     # ===============================================
@@ -477,7 +469,7 @@ def main():
         original_idx = pipeline_scripts.index(script) + 1
         letter = chr(64 + original_idx)  # A, B, C, etc.
         print(f"\n📍 STAGE {i:2d}/{total_stages}: {letter} - {script}")
-        success, message = run_script(script, use_venv=not args.no_venv)
+        success, message = run_script(script, use_venv=False)
         execution_log.append((script, success, message))
         if not success:
             print(f"💥 Pipeline stopped due to failure in {script}")
