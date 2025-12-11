@@ -390,7 +390,7 @@ def main():
     # ENVIRONMENT SETUP SECTION
     # ===============================================
     print("\n🔧 Setting up development environment...")
-    if not setup_environment(skip_venv=args.no_venv):
+    if not setup_environment(skip_venv=False):
         print("💥 Pipeline aborted due to environment setup failure")
         return False
 
