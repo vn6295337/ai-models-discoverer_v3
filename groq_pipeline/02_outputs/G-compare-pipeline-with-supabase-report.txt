@@ -1,5 +1,5 @@
 GROQ FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-11 03:14 PM IST
+Generated: 2025-12-11 03:27 PM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -8,7 +8,7 @@ SUMMARY STATISTICS
 Pipeline Models: 7
 Supabase Models: 7
 Models in Both Systems: 7
-Models with Field Differences: 7
+Models with Field Differences: 0
 Models Only in Pipeline: 0
 Models Only in Supabase: 0
 
@@ -82,8 +82,8 @@ Field: license_url
   Supabase Missing: 0
 
 Field: rate_limits
-  Exact Matches: 0 (0.0%)
-  Differences: 7
+  Exact Matches: 7 (100.0%)
+  Differences: 0
   Pipeline Missing: 0
   Supabase Missing: 0
 
@@ -104,53 +104,6 @@ Field: max_completion_tokens
   Differences: 0
   Pipeline Missing: 0
   Supabase Missing: 0
-
-DETAILED FIELD DIFFERENCES
---------------------------------------------------------------------------------
-
-Field: rate_limits
-----------------------------------------
-Model: Whisper Large V3
-  Pipeline Value: '200K ASH
-ASH
-300 RPM
-RPM'
-  Supabase Value: '200K ASH
-300 RPM'
-
-Model: GPT OSS 20B
-  Pipeline Value: '250K TPM
-TPM
-1K RPM
-RPM'
-  Supabase Value: '250K TPM
-1K RPM'
-
-Model: Llama 3.3 70b Versatile
-  Pipeline Value: '300K TPM
-TPM
-1K RPM
-RPM'
-  Supabase Value: '300K TPM
-1K RPM'
-
-Model: Whisper Large V3 Turbo
-  Pipeline Value: '400K ASH
-ASH
-400 RPM
-RPM'
-  Supabase Value: '400K ASH
-400 RPM'
-
-Model: Llama Guard 4 12b
-  Pipeline Value: '30K TPM
-TPM
-100 RPM
-RPM'
-  Supabase Value: '30K TPM
-100 RPM'
-
-... and 2 more differences
 
 SAMPLE MODEL COMPARISONS
 --------------------------------------------------------------------------------
@@ -174,7 +127,9 @@ rate_limits               | 250K TPM
 TPM
 1K RPM
 RPM   | 250K TPM
-1K RPM          
+TPM
+1K RPM
+RPM  
 provider_api_access       | https://console.groq.c... | https://console.groq.c...
 context_window            |                           |                          
 max_completion_tokens     |                           |                          
@@ -198,7 +153,9 @@ rate_limits               | 250K TPM
 TPM
 1K RPM
 RPM   | 250K TPM
-1K RPM          
+TPM
+1K RPM
+RPM  
 provider_api_access       | https://console.groq.c... | https://console.groq.c...
 context_window            |                           |                          
 max_completion_tokens     |                           |                          
@@ -222,7 +179,9 @@ rate_limits               | 250K TPM
 TPM
 1K RPM
 RPM   | 250K TPM
-1K RPM          
+TPM
+1K RPM
+RPM  
 provider_api_access       | https://console.groq.c... | https://console.groq.c...
 context_window            |                           |                          
 max_completion_tokens     |                           |                          
