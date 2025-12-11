@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-10 11:25 AM IST
+Generated: 2025-12-11 06:14 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 29
-   • Total records in pipeline: 29
+   • Total unique model names: 30
+   • Total records in pipeline: 30
    • Total records in Supabase: 29
    • Models in both systems: 29
-   • Models with differences: 1
-   • Models in pipeline only (not in Supabase): 0
+   • Models with differences: 0
+   • Models in pipeline only (not in Supabase): 1
    • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
@@ -43,10 +43,8 @@ SUMMARY STATISTICS
      - Exact matches: 29
      - Differences: 0
    • license_name:
-     - Exact matches: 28
-     - Differences: 1
-     - Specific differences:
-       * Devstral 2 2512: Pipeline='Modified MIT' vs Supabase='other'
+     - Exact matches: 29
+     - Differences: 0
    • license_url:
      - Exact matches: 29
      - Differences: 0
@@ -58,8 +56,9 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • Existing models with differences: 1
-     Models: Devstral 2 2512
+   • New models (pipeline only): 1
+     Models: DeepSeek V3.1 Nex N1
+   • Existing models with differences: 0
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -105,6 +104,26 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
+MODEL: DeepSeek V3.1 Nex N1
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | Unknown                   |                          
+human_readable_name       | DeepSeek V3.1 Nex N1      |                          
+model_provider_country    | Unknown                   |                          
+official_url              | Unknown                   |                          
+input_modalities          | Text                      |                          
+output_modalities         | Text                      |                          
+license_info_text         | info                      |                          
+license_info_url          | https://huggingface.co/.. |                          
+license_name              | Apache-2.0                |                          
+license_url               | https://www.apache.org/.. |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
+
+================================================================================
+
 MODEL: Devstral 2 2512
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
@@ -118,7 +137,7 @@ input_modalities          | Text                      | Text
 output_modalities         | Text                      | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
-license_name              | Modified MIT              | other                    
+license_name              | Modified MIT              | Modified MIT             
 license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..

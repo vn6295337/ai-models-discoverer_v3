@@ -1,10 +1,10 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-12-10 11:25 AM IST
+Generated: 2025-12-11 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 31
+  Total models        : 32
   Input sources       : 4 pipeline stage files
   Processor           : M_final_list_of_licenses.py
   Output              : M-final-license-list.json
@@ -13,11 +13,11 @@ SOURCE CATEGORY DISTRIBUTION:
   Custom: 4 models
   Google: 5 models
   Meta: 2 models
-  Opensource: 16 models
+  Opensource: 17 models
   Proprietary: 4 models
 
 FINAL LICENSE DISTRIBUTION:
-  12 models: Apache-2.0
+  13 models: Apache-2.0
    5 models: Gemma
    4 models: MIT
    2 models: Modified MIT
@@ -273,7 +273,22 @@ MODEL 16: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 17: openai/gpt-oss-120b
+MODEL 17: nex-agi/deepseek-v3.1-nex-n1
+--------------------------------------------------
+  ID: nex-agi/deepseek-v3.1-nex-n1:free
+  Original Name: Nex AGI: DeepSeek V3.1 Nex N1 (free)
+  HuggingFace ID: nex-agi/DeepSeek-V3.1-Nex-N1
+  Canonical Slug: nex-agi/deepseek-v3.1-nex-n1
+  Clean Model Name: DeepSeek V3.1 Nex N1
+  License Info Text: info
+  License Info URL: https://huggingface.co/nex-agi/DeepSeek-V3.1-Nex-N1/blob/main/README.md
+  License Name: Apache-2.0
+  License URL: https://www.apache.org/licenses/LICENSE-2.0
+  Source Category: opensource
+
+================================================================================
+
+MODEL 18: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -288,7 +303,7 @@ MODEL 17: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 18: openai/gpt-oss-20b
+MODEL 19: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -303,7 +318,7 @@ MODEL 18: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 19: qwen/qwen3-235b-a22b-04-28
+MODEL 20: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -318,7 +333,7 @@ MODEL 19: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 20: qwen/qwen3-4b-04-28
+MODEL 21: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -333,7 +348,7 @@ MODEL 20: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 21: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 22: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -348,7 +363,7 @@ MODEL 21: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 22: venice/uncensored
+MODEL 23: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -363,7 +378,7 @@ MODEL 22: venice/uncensored
 
 ================================================================================
 
-MODEL 23: nousresearch/hermes-3-llama-3.1-405b
+MODEL 24: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -378,7 +393,7 @@ MODEL 23: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 24: meituan/longcat-flash-chat
+MODEL 25: meituan/longcat-flash-chat
 --------------------------------------------------
   ID: meituan/longcat-flash-chat:free
   Original Name: Meituan: LongCat Flash Chat (free)
@@ -393,7 +408,7 @@ MODEL 24: meituan/longcat-flash-chat
 
 ================================================================================
 
-MODEL 25: tngtech/deepseek-r1t-chimera
+MODEL 26: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -408,7 +423,7 @@ MODEL 25: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 26: tngtech/deepseek-r1t2-chimera
+MODEL 27: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -423,7 +438,7 @@ MODEL 26: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 27: z-ai/glm-4.5-air
+MODEL 28: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
@@ -438,7 +453,7 @@ MODEL 27: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 28: amazon/nova-2-lite-v1
+MODEL 29: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon/Nova 2 Lite V1
@@ -453,7 +468,7 @@ MODEL 28: amazon/nova-2-lite-v1
 
 ================================================================================
 
-MODEL 29: kwaipilot/kat-coder-pro-v1
+MODEL 30: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro-v1:free
   Original Name: Kwaipilot/Kat Coder Pro V1
@@ -468,7 +483,7 @@ MODEL 29: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 30: x-ai/grok-4-fast
+MODEL 31: x-ai/grok-4-fast
 --------------------------------------------------
   ID: x-ai/grok-4-fast:free
   Original Name: X Ai/Grok 4 Fast
@@ -483,7 +498,7 @@ MODEL 30: x-ai/grok-4-fast
 
 ================================================================================
 
-MODEL 31: x-ai/grok-4.1-fast
+MODEL 32: x-ai/grok-4.1-fast
 --------------------------------------------------
   ID: x-ai/grok-4.1-fast:free
   Original Name: X Ai/Grok 4.1 Fast

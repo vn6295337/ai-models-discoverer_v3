@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-10 11:25 AM IST",
-    "total_models": 31,
+    "generated_at": "2025-12-11 06:14 AM IST",
+    "total_models": 32,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -208,6 +208,18 @@
       "license_name": "Modified MIT",
       "license_url": "https://huggingface.co/moonshotai/Kimi-K2-Instruct/blob/main/LICENSE",
       "source_category": "custom"
+    },
+    {
+      "id": "nex-agi/deepseek-v3.1-nex-n1:free",
+      "canonical_slug": "nex-agi/deepseek-v3.1-nex-n1",
+      "original_name": "Nex AGI: DeepSeek V3.1 Nex N1 (free)",
+      "hugging_face_id": "nex-agi/DeepSeek-V3.1-Nex-N1",
+      "clean_model_name": "DeepSeek V3.1 Nex N1",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/nex-agi/DeepSeek-V3.1-Nex-N1/blob/main/README.md",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "opensource"
     },
     {
       "id": "nousresearch/hermes-3-llama-3.1-405b:free",

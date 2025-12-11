@@ -1,16 +1,26 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-12-10 11:25 AM IST
+Generated: 2025-12-11 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 30
+  Total models      : 31
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
   Output            : P-provider-enriched.json
 
-✓ ALL PROVIDERS AND FAMILIES MAPPED SUCCESSFULLY
+ACTION ITEMS - UNKNOWN MAPPINGS:
+==================================================
+UNKNOWN PROVIDERS (1 models):
+  Add these provider mappings to 08_provider_enrichment.json:
+    "nex-agi": ["Provider Name", "Country"],
+
+UNKNOWN OFFICIAL URLS (1 unique families):
+  Add these URL mappings to family_official_urls:
+    "nex-agi": "https://official-url-here",
+
+==================================================
 
 MODEL PROVIDER DISTRIBUTION:
    5 models: Google
@@ -28,17 +38,19 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Meituan
    1 models: Moonshot AI
    1 models: Nous Research
+   1 models: Unknown
    1 models: Z.AI
 
-Total unique model providers: 16
+Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
   16 models: United States
    8 models: China
    3 models: France
    3 models: Germany
+   1 models: Unknown
 
-Total unique countries: 4
+Total unique countries: 5
 
 MODEL FAMILY DISTRIBUTION:
    5 models: gemma
@@ -55,10 +67,11 @@ MODEL FAMILY DISTRIBUTION:
    1 models: kwaipilot
    1 models: meituan
    1 models: moonshot ai
+   1 models: nex-agi
    1 models: nous research
    1 models: z.ai
 
-Total unique model families: 16
+Total unique model families: 17
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -357,7 +370,21 @@ MODEL 21: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 22: nousresearch/hermes-3-llama-3.1-405b
+MODEL 22: nex-agi/deepseek-v3.1-nex-n1
+--------------------------------------------------
+  ID: nex-agi/deepseek-v3.1-nex-n1:free
+  Original Name: Nex AGI: DeepSeek V3.1 Nex N1 (free)
+  HuggingFace ID: nex-agi/DeepSeek-V3.1-Nex-N1
+  Canonical Slug: nex-agi/deepseek-v3.1-nex-n1
+  Clean Model Name: DeepSeek V3.1 Nex N1
+  Model Provider: Unknown
+  Model Provider Country: Unknown
+  Model Family: nex-agi
+  Official URL: Unknown
+
+================================================================================
+
+MODEL 23: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -371,7 +398,7 @@ MODEL 22: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 23: nvidia/nemotron-nano-12b-v2-vl
+MODEL 24: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -385,7 +412,7 @@ MODEL 23: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 24: nvidia/nemotron-nano-9b-v2
+MODEL 25: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -399,7 +426,7 @@ MODEL 24: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 25: openai/gpt-oss-120b
+MODEL 26: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -413,7 +440,7 @@ MODEL 25: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 26: openai/gpt-oss-20b
+MODEL 27: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -427,7 +454,7 @@ MODEL 26: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 27: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -441,7 +468,7 @@ MODEL 27: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 28: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -455,7 +482,7 @@ MODEL 28: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 29: tngtech/tng-r1t-chimera
+MODEL 30: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -469,7 +496,7 @@ MODEL 29: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 30: z-ai/glm-4.5-air
+MODEL 31: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

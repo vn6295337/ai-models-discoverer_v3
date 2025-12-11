@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-10 11:25 AM IST",
-    "total_models": 20,
+    "generated_at": "2025-12-11 06:14 AM IST",
+    "total_models": 21,
     "pipeline_stage": "F_fetch_other_license_names_from_hf"
   },
   "models": [
@@ -11,6 +11,13 @@
       "name": "Mistral: Devstral 2 2512 (free)",
       "hugging_face_id": "mistralai/Devstral-2-123B-Instruct-2512",
       "extracted_license": "other"
+    },
+    {
+      "id": "nex-agi/deepseek-v3.1-nex-n1:free",
+      "canonical_slug": "nex-agi/deepseek-v3.1-nex-n1",
+      "name": "Nex AGI: DeepSeek V3.1 Nex N1 (free)",
+      "hugging_face_id": "nex-agi/DeepSeek-V3.1-Nex-N1",
+      "extracted_license": "apache-2.0"
     },
     {
       "id": "arcee-ai/trinity-mini:free",

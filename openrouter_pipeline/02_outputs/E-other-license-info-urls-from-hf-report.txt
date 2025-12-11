@@ -1,16 +1,16 @@
 ================================================================================
 OTHER LICENSE INFO URLS REPORT
-Generated: 2025-12-10 11:25 AM IST
+Generated: 2025-12-11 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 20
+  Total models : 21
   Input        : B-filtered-models.json
   Processor    : E_fetch_other_license_info_urls_from_hf.py
   Output       : E-other-license-info-urls-from-hf.json
 
 LICENSE INFO URL BREAKDOWN:
-  12 models: README.md file
+  13 models: README.md file
    8 models: LICENSE file
 
 Total categories: 2
@@ -144,7 +144,16 @@ MODEL 14: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 15: nousresearch/hermes-3-llama-3.1-405b
+MODEL 15: nex-agi/deepseek-v3.1-nex-n1
+--------------------------------------------------
+  ID              : nex-agi/deepseek-v3.1-nex-n1:free
+  Canonical Slug  : nex-agi/deepseek-v3.1-nex-n1
+  HuggingFace ID  : nex-agi/DeepSeek-V3.1-Nex-N1
+  License Info URL: https://huggingface.co/nex-agi/DeepSeek-V3.1-Nex-N1/blob/main/README.md
+
+================================================================================
+
+MODEL 16: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID              : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
@@ -153,7 +162,7 @@ MODEL 15: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 16: tngtech/deepseek-r1t-chimera
+MODEL 17: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -162,7 +171,7 @@ MODEL 16: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 17: tngtech/deepseek-r1t2-chimera
+MODEL 18: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -171,7 +180,7 @@ MODEL 17: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 18: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 19: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID              : alibaba/tongyi-deepresearch-30b-a3b:free
   Canonical Slug  : alibaba/tongyi-deepresearch-30b-a3b
@@ -180,7 +189,7 @@ MODEL 18: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 19: venice/uncensored
+MODEL 20: venice/uncensored
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug  : venice/uncensored
@@ -189,7 +198,7 @@ MODEL 19: venice/uncensored
 
 ================================================================================
 
-MODEL 20: z-ai/glm-4.5-air
+MODEL 21: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air

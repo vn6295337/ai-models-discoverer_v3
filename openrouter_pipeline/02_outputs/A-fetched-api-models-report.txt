@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-10 11:25 AM IST
+Generated: 2025-12-11 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 340
+  Total models: 342
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  53 models
@@ -103,8 +103,9 @@ PROVIDER BREAKDOWN (Descending Order):
     - qwen3-vl-8b-thinking
     - qwq-32b
 
-  Mistral         :  29 models
+  Mistral         :  30 models
     - codestral-2508
+    - devstral-2512
     - devstral-2512:free
     - devstral-medium
     - devstral-small
@@ -370,6 +371,9 @@ PROVIDER BREAKDOWN (Descending Order):
     - inflection-3-pi
     - inflection-3-productivity
 
+  Nex AGI         :   1 models
+    - deepseek-v3.1-nex-n1:free
+
   EssentialAI     :   1 models
     - rnj-1-instruct
 
@@ -421,4 +425,4 @@ PROVIDER BREAKDOWN (Descending Order):
   Mancer          :   1 models
     - weaver
 
-Total providers: 48
+Total providers: 49
