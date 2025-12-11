@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-08T12:20:06.407166",
+    "generated_at": "2025-12-11T09:44:23.101785",
     "total_models": 7,
     "pipeline_stage": "F-normalize-data",
     "source_files": [
@@ -15,7 +15,7 @@
       "inference_provider": "Groq",
       "model_provider": "Groq",
       "human_readable_name": "Llama 3.1 8b Instant",
-      "provider_slug": "b-instant",
+      "provider_slug": "llama-3.1-8b-instant",
       "model_provider_country": "United States",
       "official_url": "https://groq.com/",
       "input_modalities": "Text",
@@ -24,17 +24,17 @@
       "license_info_url": "",
       "license_name": "Llama-3.1",
       "license_url": "https://www.llama.com/llama3_1/license/",
-      "rate_limits": "250K TPM\n1K RPM",
+      "rate_limits": "250K TPM\nTPM\n1K RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     },
     {
       "id": 2,
       "inference_provider": "Groq",
       "model_provider": "Groq",
       "human_readable_name": "Llama 3.3 70b Versatile",
-      "provider_slug": "b-versatile",
+      "provider_slug": "llama-3.3-70b-versatile",
       "model_provider_country": "United States",
       "official_url": "https://groq.com/",
       "input_modalities": "Text",
@@ -43,17 +43,17 @@
       "license_info_url": "",
       "license_name": "Llama-3.3",
       "license_url": "https://www.llama.com/llama3_3/license/",
-      "rate_limits": "300K TPM\n1K RPM",
+      "rate_limits": "300K TPM\nTPM\n1K RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     },
     {
       "id": 3,
       "inference_provider": "Groq",
       "model_provider": "Groq",
       "human_readable_name": "Llama Guard 4 12b",
-      "provider_slug": "b",
+      "provider_slug": "llama-guard-4-12b",
       "model_provider_country": "United States",
       "official_url": "https://groq.com/",
       "input_modalities": "Text, Image",
@@ -62,17 +62,17 @@
       "license_info_url": "",
       "license_name": "Llama-4",
       "license_url": "https://www.llama.com/llama4/license/",
-      "rate_limits": "30K TPM\n100 RPM",
+      "rate_limits": "30K TPM\nTPM\n100 RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     },
     {
       "id": 4,
       "inference_provider": "Groq",
       "model_provider": "Groq",
       "human_readable_name": "GPT OSS 120B",
-      "provider_slug": "b",
+      "provider_slug": "gpt-oss-120b",
       "model_provider_country": "United States",
       "official_url": "https://groq.com/",
       "input_modalities": "Text",
@@ -81,17 +81,17 @@
       "license_info_url": "https://huggingface.co/openai/gpt-oss-120b/blob/main/LICENSE",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
-      "rate_limits": "250K TPM\n1K RPM",
+      "rate_limits": "250K TPM\nTPM\n1K RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     },
     {
       "id": 5,
       "inference_provider": "Groq",
       "model_provider": "Groq",
       "human_readable_name": "GPT OSS 20B",
-      "provider_slug": "b",
+      "provider_slug": "gpt-oss-20b",
       "model_provider_country": "United States",
       "official_url": "https://groq.com/",
       "input_modalities": "Text",
@@ -100,10 +100,10 @@
       "license_info_url": "https://huggingface.co/openai/gpt-oss-20b/blob/main/LICENSE",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
-      "rate_limits": "250K TPM\n1K RPM",
+      "rate_limits": "250K TPM\nTPM\n1K RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     },
     {
       "id": 6,
@@ -119,10 +119,10 @@
       "license_info_url": "https://huggingface.co/openai/whisper-large-v3/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
-      "rate_limits": "200K ASH\n300 RPM",
+      "rate_limits": "200K ASH\nASH\n300 RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     },
     {
       "id": 7,
@@ -138,10 +138,10 @@
       "license_info_url": "https://huggingface.co/openai/whisper-large-v3-turbo/blob/main/README.md",
       "license_name": "MIT",
       "license_url": "https://opensource.org/licenses/MIT",
-      "rate_limits": "400K ASH\n400 RPM",
+      "rate_limits": "400K ASH\nASH\n400 RPM\nRPM",
       "provider_api_access": "https://console.groq.com/keys",
-      "created_at": "2025-12-08T12:19:18+00:00",
-      "updated_at": "2025-12-08T12:20:06.406716+00:00"
+      "created_at": "2025-12-11T09:43:36+00:00",
+      "updated_at": "2025-12-11T09:44:23.101392+00:00"
     }
   ]
 }
