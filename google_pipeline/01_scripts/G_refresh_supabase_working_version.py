@@ -47,7 +47,6 @@ try:
         delete_records,
         insert_records_batch
     )
-    from model_aa_mapping_utils import refresh_model_aa_mapping
 except ImportError as e:
     print(f"Error: Required utilities not found in project root: {e}")
     sys.exit(1)
@@ -267,24 +266,7 @@ def main():
         else:
             logger.warning("⚠️ No rate limit records to update")
 
-        # Refresh model-AA mappings (best-effort, non-blocking)
-        logger.info(f"🔗 Attempting to refresh model-AA mappings for {INFERENCE_PROVIDER}...")
-        try:
-            output_dir = SCRIPT_DIR / "../02_outputs"
-            mapping_success = refresh_model_aa_mapping(
-                conn,
-                inference_provider=INFERENCE_PROVIDER,
-                output_dir=str(output_dir),
-                logger=logger
-            )
-            if mapping_success:
-                logger.info(f"✅ Model-AA mappings refreshed successfully for {INFERENCE_PROVIDER}")
-            else:
-                logger.error(f"❌ Model-AA mapping refresh completed with warnings for {INFERENCE_PROVIDER}")
-        except Exception as e:
-            logger.error(f"❌ Model-AA mapping refresh FAILED for {INFERENCE_PROVIDER}: {str(e)}")
-            import traceback
-            logger.error(f"Traceback: {traceback.format_exc()}")
+        # Note: Model-AA mappings are refreshed by workflow as a separate step
 
         logger.info("🔍 Verifying insertion results...")
         final_count = get_record_count(conn, TABLE_NAME, INFERENCE_PROVIDER)
