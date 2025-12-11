@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-12-10 06:14:57 IST",
-    "total_models": 24,
+    "generated": "2025-12-11 11:17:11 IST",
+    "total_models": 23,
     "enrichment_source": "Google Pipeline D-Enrich"
   },
   "models": [
@@ -449,27 +449,6 @@
       "output_modalities": "Audio, Video",
       "modality_source": "scraped",
       "match_priority": 1
-    },
-    {
-      "name": "models/gemini-2.0-flash-live-001",
-      "version": "001",
-      "displayName": "Gemini 2.0 Flash 001",
-      "description": "Gemini 2.0 Flash 001",
-      "inputTokenLimit": 131072,
-      "outputTokenLimit": 8192,
-      "supportedGenerationMethods": [
-        "bidiGenerateContent",
-        "countTokens"
-      ],
-      "temperature": 1,
-      "topP": 0.95,
-      "topK": 64,
-      "maxTemperature": 2,
-      "provider_slug": "gemini-2.0-flash-live-001",
-      "input_modalities": "Text, Audio, Video",
-      "output_modalities": "Text, Audio",
-      "modality_source": "hardcoded_config",
-      "match_priority": 6
     }
   ]
 }

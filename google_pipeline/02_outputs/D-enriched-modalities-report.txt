@@ -1,16 +1,16 @@
 === GOOGLE MODELS MODALITY ENRICHMENT REPORT ===
 
-Generated: 2025-12-10 06:14:57 IST
+Generated: 2025-12-11 11:17:11 IST
 
 === SUMMARY ===
-Total Models: 24
+Total Models: 23
 Priority 1 Matches (Exact): 7
 Priority 2 Matches (Normalized): 5
 Embedding Matches: 4
 Gemma Pattern Matches: 6
 Unique Model Matches: 1
 No Matches: 0
-Overall Match Rate: 95.8%
+Overall Match Rate: 100.0%
 
 === PRIORITY 1 MATCHES (EXACT) ===
 
