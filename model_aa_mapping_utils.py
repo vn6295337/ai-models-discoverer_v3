@@ -480,6 +480,120 @@ def write_comparison_report(
         return False
 
 
+def backup_provider_mappings(
+    conn,
+    inference_provider: str,
+    logger: Optional[logging.Logger] = None
+) -> Optional[List[Tuple]]:
+    """
+    Backup all mappings for a specific provider.
+
+    Args:
+        conn: Database connection
+        inference_provider: Provider to backup (e.g., "Groq")
+        logger: Optional logger
+
+    Returns:
+        List of tuples (inference_provider, provider_slug, aa_slug, created_at, updated_at)
+        or None on error
+    """
+    log = logger.info if logger else print
+
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                SELECT inference_provider, provider_slug, aa_slug, created_at, updated_at
+                FROM ims."10_model_aa_mapping"
+                WHERE inference_provider = %s
+                """,
+                (inference_provider,)
+            )
+            return cur.fetchall()
+    except Exception as e:
+        log(f"❌ ERROR: Failed to backup mappings: {e}")
+        return None
+
+
+def delete_provider_mappings(
+    conn,
+    inference_provider: str,
+    logger: Optional[logging.Logger] = None
+) -> bool:
+    """
+    Delete all mappings for a specific provider.
+
+    Args:
+        conn: Database connection
+        inference_provider: Provider to delete (e.g., "Groq")
+        logger: Optional logger
+
+    Returns:
+        True if successful, False otherwise
+    """
+    log = logger.info if logger else print
+
+    try:
+        with conn.cursor() as cur:
+            cur.execute(
+                """
+                DELETE FROM ims."10_model_aa_mapping"
+                WHERE inference_provider = %s
+                """,
+                (inference_provider,)
+            )
+            deleted_count = cur.rowcount
+            conn.commit()
+            log(f"Deleted {deleted_count} mappings for {inference_provider}")
+            return True
+    except Exception as e:
+        conn.rollback()
+        log(f"❌ ERROR: Failed to delete mappings: {e}")
+        return False
+
+
+def restore_provider_mappings(
+    conn,
+    backup_mappings: List[Tuple],
+    logger: Optional[logging.Logger] = None
+) -> bool:
+    """
+    Restore mappings from backup.
+
+    Args:
+        conn: Database connection
+        backup_mappings: List of tuples from backup
+        logger: Optional logger
+
+    Returns:
+        True if successful, False otherwise
+    """
+    log = logger.info if logger else print
+
+    if not backup_mappings:
+        log("No backup mappings to restore")
+        return True
+
+    try:
+        with conn.cursor() as cur:
+            execute_values(
+                cur,
+                """
+                INSERT INTO ims."10_model_aa_mapping"
+                (inference_provider, provider_slug, aa_slug, created_at, updated_at)
+                VALUES %s
+                """,
+                backup_mappings
+            )
+            conn.commit()
+            log(f"✅ Restored {len(backup_mappings)} mappings from backup")
+            return True
+    except Exception as e:
+        conn.rollback()
+        log(f"❌ ERROR: Failed to restore mappings: {e}")
+        return False
+
+
 def refresh_model_aa_mapping(
     conn,
     inference_provider: Optional[str] = None,
@@ -538,8 +652,39 @@ def refresh_model_aa_mapping(
         # Step 3: Create mappings with enhanced reporting
         mappings, unmatched_by_provider = create_mappings(models, aa_slugs, logger)
 
-        # Step 4: Upsert mappings to database
+        # Step 4: Complete refresh with backup/delete/insert pattern
+        # (similar to working_version refresh)
+        if inference_provider:
+            log(f"🔄 Performing complete refresh for {inference_provider}...")
+
+            # Step 4a: Backup existing mappings
+            log(f"💾 Backing up existing mappings for {inference_provider}...")
+            backup_mappings = backup_provider_mappings(conn, inference_provider, logger)
+            if backup_mappings is None:
+                log("⚠️  Backup failed, but continuing with refresh...")
+            else:
+                log(f"✅ Backed up {len(backup_mappings)} existing mappings")
+
+            # Step 4b: Delete existing mappings for this provider
+            log(f"🗑️  Deleting existing mappings for {inference_provider}...")
+            if not delete_provider_mappings(conn, inference_provider, logger):
+                log(f"❌ Failed to delete existing mappings, attempting rollback...")
+                if backup_mappings and restore_provider_mappings(conn, backup_mappings, logger):
+                    log("✅ Rollback successful - restored original mappings")
+                else:
+                    log("❌ Rollback failed - manual intervention may be required")
+                return False
+            log(f"✅ Deleted existing mappings for {inference_provider}")
+
+        # Step 4c: Insert new mappings
         if not upsert_mappings(conn, mappings, logger):
+            # Rollback on failure
+            if inference_provider and backup_mappings:
+                log(f"❌ Insert failed, attempting rollback...")
+                if restore_provider_mappings(conn, backup_mappings, logger):
+                    log("✅ Rollback successful - restored original mappings")
+                else:
+                    log("❌ Rollback failed - manual intervention may be required")
             return False
 
         # Step 5: Write comparison report to file
