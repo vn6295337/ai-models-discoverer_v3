@@ -73,12 +73,39 @@ class GroqWebScraper:
 
         # Configure Chrome options
         options = Options()
-        options.binary_location = "/usr/bin/chromium"  # Explicitly set Chromium path
+
+        # Detect available Chrome binary (Google Chrome or Chromium)
+        chrome_binary = None
+        chrome_type = "chromium"
+
+        possible_binaries = [
+            ("/usr/bin/google-chrome", "chrome"),
+            ("/usr/bin/google-chrome-stable", "chrome"),
+            ("/usr/bin/chromium", "chromium"),
+            ("/usr/bin/chromium-browser", "chromium")
+        ]
+
+        for binary_path, binary_type in possible_binaries:
+            if Path(binary_path).exists():
+                chrome_binary = binary_path
+                chrome_type = binary_type
+                print(f"✅ Found Chrome binary: {chrome_binary}")
+                break
+
+        if chrome_binary:
+            options.binary_location = chrome_binary
+        else:
+            print("⚠️ No Chrome binary found, using system default")
+
         for option in self.chrome_options:
             options.add_argument(option)
 
         # Create service with ChromeDriverManager for automatic version matching
-        service = Service(ChromeDriverManager(chrome_type="chromium").install())
+        try:
+            service = Service(ChromeDriverManager(chrome_type=chrome_type).install())
+        except Exception as e:
+            print(f"⚠️ ChromeDriverManager failed ({e}), trying default chrome type")
+            service = Service(ChromeDriverManager().install())
 
         # Create and configure driver
         driver = webdriver.Chrome(service=service, options=options)
@@ -98,12 +125,12 @@ class GroqWebScraper:
         print("=" * 80)
         print(f"🕒 Started at: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-        self.driver = self.setup_chrome_driver()
-        print("✅ ChromeDriver configured from settings")
-
         production_models = []
 
         try:
+            self.driver = self.setup_chrome_driver()
+            print("✅ ChromeDriver configured from settings")
+
             # Extract from production-models section only
             models_from_production = self._scrape_production_models_section()
             production_models.extend(models_from_production)
@@ -114,6 +141,8 @@ class GroqWebScraper:
 
         except Exception as error:
             print(f"❌ Error during production models scraping: {error}")
+            import traceback
+            traceback.print_exc()
         finally:
             if self.driver:
                 self.driver.quit()
@@ -317,12 +346,12 @@ class GroqWebScraper:
         print("=" * 80)
         print(f"🕒 Started at: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
 
-        self.driver = self.setup_chrome_driver()
-        print("✅ ChromeDriver configured from settings")
-
         rate_limits = {}
 
         try:
+            self.driver = self.setup_chrome_driver()
+            print("✅ ChromeDriver configured from settings")
+
             url = self.endpoints["rate_limits"]
             print(f"🔍 Extracting rate limits from: {url}")
 
@@ -338,6 +367,8 @@ class GroqWebScraper:
 
         except Exception as error:
             print(f"❌ Error scraping rate limits: {error}")
+            import traceback
+            traceback.print_exc()
         finally:
             if self.driver:
                 self.driver.quit()
@@ -433,12 +464,12 @@ class GroqWebScraper:
 
         print(f"📋 Found {len(production_models)} production models to process")
 
-        self.driver = self.setup_chrome_driver()
-        print("✅ ChromeDriver configured from settings")
-
         all_modalities = {}
 
         try:
+            self.driver = self.setup_chrome_driver()
+            print("✅ ChromeDriver configured from settings")
+
             # Process each model
             for i, model in enumerate(production_models, 1):
                 model_id = model.get('model_id')
@@ -457,6 +488,8 @@ class GroqWebScraper:
 
         except Exception as error:
             print(f"❌ Error in modalities extraction: {error}")
+            import traceback
+            traceback.print_exc()
         finally:
             if self.driver:
                 self.driver.quit()

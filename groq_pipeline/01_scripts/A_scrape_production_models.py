@@ -25,13 +25,19 @@ def main():
     print("GROQ PRODUCTION MODELS SCRAPER")
     print("=" * 80)
 
-    scraper = GroqWebScraper()
+    try:
+        scraper = GroqWebScraper()
 
-    # Scrape production models
-    production_models = scraper.scrape_production_models()
+        # Scrape production models
+        production_models = scraper.scrape_production_models()
 
-    if not production_models:
-        print("❌ No production models extracted")
+        if not production_models:
+            print("❌ No production models extracted")
+            return False
+    except Exception as e:
+        print(f"❌ FATAL ERROR during scraping: {e}")
+        import traceback
+        traceback.print_exc()
         return False
 
     # Save the results
