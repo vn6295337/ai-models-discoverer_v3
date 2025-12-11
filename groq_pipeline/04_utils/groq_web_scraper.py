@@ -101,11 +101,20 @@ class GroqWebScraper:
             options.add_argument(option)
 
         # Create service with ChromeDriverManager for automatic version matching
-        try:
-            service = Service(ChromeDriverManager(chrome_type=chrome_type).install())
-        except Exception as e:
-            print(f"⚠️ ChromeDriverManager failed ({e}), trying default chrome type")
-            service = Service(ChromeDriverManager().install())
+        # Check if chromedriver is already in PATH (e.g., from CI setup)
+        import shutil
+        system_chromedriver = shutil.which('chromedriver')
+
+        if system_chromedriver:
+            print(f"✅ Using system ChromeDriver: {system_chromedriver}")
+            service = Service(system_chromedriver)
+        else:
+            print("⚙️ Downloading ChromeDriver via webdriver-manager...")
+            try:
+                service = Service(ChromeDriverManager(chrome_type=chrome_type).install())
+            except Exception as e:
+                print(f"⚠️ ChromeDriverManager failed ({e}), trying default chrome type")
+                service = Service(ChromeDriverManager().install())
 
         # Create and configure driver
         driver = webdriver.Chrome(service=service, options=options)
