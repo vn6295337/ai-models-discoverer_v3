@@ -1,17 +1,17 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-12-11 11:17:13 IST
+Generated: 2025-12-11 12:07:45 IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total models processed: 24
+   • Total models processed: 23
    • Models in both systems: 23
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 1
+   • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
@@ -56,8 +56,6 @@ SUMMARY STATISTICS
 
 3. CATEGORIZED BREAKDOWN:
    • Existing models with differences: 0
-   • Deprecated models (Supabase only): 1
-     Models: Gemini 2.0 Flash Live 001
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -160,26 +158,6 @@ license_name              | Gemini                                             |
 license_url               | https://ai.google.dev/gemini-api/terms             | https://ai.google.dev/gemini-api/terms            
 rate_limits               | 15 requests/min, 1M tokens/min, 200 requests/day   | 15 requests/min, 1M tokens/min, 200 requests/day  
 provider_api_access       | https://aistudio.google.com/apikey                 | https://aistudio.google.com/apikey                
-
-==================================================================================================================================
-
-MODEL: Gemini 2.0 Flash Live 001
-----------------------------------------------------------------------------------------------------------------------------------
-Field Name                | Pipeline Value                                     | Supabase Value                                    
-----------------------------------------------------------------------------------------------------------------------------------
-inference_provider        |                                                    | Google                                            
-model_provider            |                                                    | Google                                            
-human_readable_name       |                                                    | Gemini 2.0 Flash Live 001                         
-model_provider_country    |                                                    | United States                                     
-official_url              |                                                    | https://deepmind.google/models/gemini/            
-input_modalities          |                                                    | Text, Audio, Video                                
-output_modalities         |                                                    | Text, Audio                                       
-license_info_text         |                                                    | Google                                            
-license_info_url          |                                                    | https://developers.google.com/terms               
-license_name              |                                                    | Gemini                                            
-license_url               |                                                    | https://ai.google.dev/gemini-api/terms            
-rate_limits               |                                                    | 15 requests/min, 1M tokens/min, 200 requests/day  
-provider_api_access       |                                                    | https://aistudio.google.com/apikey                
 
 ==================================================================================================================================
 
