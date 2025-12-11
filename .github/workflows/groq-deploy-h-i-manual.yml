@@ -10,9 +10,8 @@ on:
         type: choice
         options:
         - 'none'
-        - 'compare_with_supabase'
-        - 'refresh_working_version'
-        - 'deploy_to_main'
+        - 'run_h'
+        - 'run_i'
 
 jobs:
   groq-deploy:
@@ -52,29 +51,16 @@ jobs:
       run: |
         echo "🎯 Groq Pipeline Deployment Plan:"
         echo "Selected option: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "compare_with_supabase" ]]; then
-          echo "Will execute: 01_scripts/G_compare_pipeline_with_supabase.py (Compare Pipeline with Supabase)"
-        elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "run_h" ]]; then
           echo "Will execute: 01_scripts/H_refresh_supabase_working_version.py (Refresh Working Version + Rate Limits)"
-        elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
+        elif [[ "${{ inputs.script_choice }}" == "run_i" ]]; then
           echo "Will execute: 01_scripts/I_deploy_to_ai_models_main.py (Deploy to Production)"
         else
           echo "No script will be executed (none selected)"
         fi
 
-    - name: Run G_compare_pipeline_with_supabase.py
-      if: ${{ inputs.script_choice == 'compare_with_supabase' }}
-      working-directory: groq_pipeline
-      env:
-        PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
-        GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-      run: |
-        echo "🔍 Running 01_scripts/G_compare_pipeline_with_supabase.py..."
-        echo "⚠️  This will compare pipeline data with Supabase working_version_v3 table"
-        python3 -u 01_scripts/G_compare_pipeline_with_supabase.py
-
     - name: Run H_refresh_supabase_working_version.py
-      if: ${{ inputs.script_choice == 'refresh_working_version' }}
+      if: ${{ inputs.script_choice == 'run_h' }}
       working-directory: groq_pipeline
       env:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
@@ -86,7 +72,7 @@ jobs:
         python3 -u 01_scripts/H_refresh_supabase_working_version.py
 
     - name: Run I_deploy_to_ai_models_main.py
-      if: ${{ inputs.script_choice == 'deploy_to_main' }}
+      if: ${{ inputs.script_choice == 'run_i' }}
       working-directory: groq_pipeline
       env:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
@@ -97,7 +83,7 @@ jobs:
         python3 -u 01_scripts/I_deploy_to_ai_models_main.py
 
     - name: Auto-refresh ims.10_model_aa_mapping
-      if: ${{ inputs.script_choice == 'refresh_working_version' }}
+      if: ${{ inputs.script_choice == 'run_h' }}
       working-directory: groq_pipeline
       env:
         PIPELINE_SUPABASE_URL: ${{ secrets.PIPELINE_SUPABASE_URL }}
@@ -122,12 +108,10 @@ jobs:
       run: |
         echo "✅ Groq pipeline deployment completed successfully"
         echo "Script executed: ${{ inputs.script_choice }}"
-        if [[ "${{ inputs.script_choice }}" == "compare_with_supabase" ]]; then
-          echo "✅ Pipeline vs Supabase comparison completed"
-        elif [[ "${{ inputs.script_choice }}" == "refresh_working_version" ]]; then
+        if [[ "${{ inputs.script_choice }}" == "run_h" ]]; then
           echo "✅ Working version table refreshed with Groq data"
           echo "✅ Rate limits table updated with parsed rate limits"
-        elif [[ "${{ inputs.script_choice }}" == "deploy_to_main" ]]; then
+        elif [[ "${{ inputs.script_choice }}" == "run_i" ]]; then
           echo "✅ Data deployed to main ai_models table"
         else
           echo "ℹ️  No script was executed"
