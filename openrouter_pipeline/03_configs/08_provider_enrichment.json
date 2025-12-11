@@ -35,7 +35,8 @@
     "arcee-ai": ["Arcee", "United States"],
     "amazon": ["Amazon", "United States"],
     "ai2": ["Ai2", "United States"],
-    "allenai": ["Ai2", "United States"]
+    "allenai": ["Ai2", "United States"],
+    "nex-agi": ["Nex AGI", "China"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -104,6 +105,8 @@
     "nova": "https://aws.amazon.com/nova/models/",
     "ai2": "https://allenai.org/",
     "allenai": "https://allenai.org/",
-    "olmo": "https://allenai.org/"
+    "olmo": "https://allenai.org/",
+    "nex agi": "https://nex.sii.edu.cn/en/",
+    "nex-agi": "https://nex.sii.edu.cn/en/"
   }
 }
