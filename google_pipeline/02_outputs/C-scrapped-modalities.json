@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated": "2025-12-10 06:14:57 IST",
+    "generated": "2025-12-11 11:17:11 IST",
     "total_models": 23,
     "scraping_source": "Google Documentation Web Scraper"
   },
@@ -42,8 +42,8 @@
       "output_modalities": "Text"
     },
     "gemini-2.0-flash-table": {
-      "input_modalities": "Audio, video, text",
-      "output_modalities": "Text, audio"
+      "input_modalities": "Audio, images, video, text",
+      "output_modalities": "Text, images"
     },
     "gemini-2.0-flash-lite": {
       "input_modalities": "Audio, images, video, text",

@@ -1,6 +1,6 @@
 FIELD COMPARISON REPORT: GOOGLE PIPELINE vs SUPABASE
 ================================================================================
-Generated: 2025-12-10 06:14:59 IST
+Generated: 2025-12-11 11:17:13 IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -8,54 +8,56 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total models processed: 24
-   • Models in both systems: 24
+   • Models in both systems: 23
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 0
+   • Models in Supabase only (not in pipeline): 1
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • model_provider:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • official_url:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • input_modalities:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • output_modalities:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • license_info_text:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • license_info_url:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • license_name:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • license_url:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • rate_limits:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 24
+     - Exact matches: 23
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
    • Existing models with differences: 0
+   • Deprecated models (Supabase only): 1
+     Models: Gemini 2.0 Flash Live 001
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -165,19 +167,19 @@ MODEL: Gemini 2.0 Flash Live 001
 ----------------------------------------------------------------------------------------------------------------------------------
 Field Name                | Pipeline Value                                     | Supabase Value                                    
 ----------------------------------------------------------------------------------------------------------------------------------
-inference_provider        | Google                                             | Google                                            
-model_provider            | Google                                             | Google                                            
-human_readable_name       | Gemini 2.0 Flash Live 001                          | Gemini 2.0 Flash Live 001                         
-model_provider_country    | United States                                      | United States                                     
-official_url              | https://deepmind.google/models/gemini/             | https://deepmind.google/models/gemini/            
-input_modalities          | Text, Audio, Video                                 | Text, Audio, Video                                
-output_modalities         | Text, Audio                                        | Text, Audio                                       
-license_info_text         | Google                                             | Google                                            
-license_info_url          | https://developers.google.com/terms                | https://developers.google.com/terms               
-license_name              | Gemini                                             | Gemini                                            
-license_url               | https://ai.google.dev/gemini-api/terms             | https://ai.google.dev/gemini-api/terms            
-rate_limits               | 15 requests/min, 1M tokens/min, 200 requests/day   | 15 requests/min, 1M tokens/min, 200 requests/day  
-provider_api_access       | https://aistudio.google.com/apikey                 | https://aistudio.google.com/apikey                
+inference_provider        |                                                    | Google                                            
+model_provider            |                                                    | Google                                            
+human_readable_name       |                                                    | Gemini 2.0 Flash Live 001                         
+model_provider_country    |                                                    | United States                                     
+official_url              |                                                    | https://deepmind.google/models/gemini/            
+input_modalities          |                                                    | Text, Audio, Video                                
+output_modalities         |                                                    | Text, Audio                                       
+license_info_text         |                                                    | Google                                            
+license_info_url          |                                                    | https://developers.google.com/terms               
+license_name              |                                                    | Gemini                                            
+license_url               |                                                    | https://ai.google.dev/gemini-api/terms            
+rate_limits               |                                                    | 15 requests/min, 1M tokens/min, 200 requests/day  
+provider_api_access       |                                                    | https://aistudio.google.com/apikey                
 
 ==================================================================================================================================
 
