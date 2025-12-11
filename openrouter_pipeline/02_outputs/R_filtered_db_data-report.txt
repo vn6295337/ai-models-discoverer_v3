@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-12-11 06:14 AM IST
+Generated: 2025-12-11 11:09 AM IST
 ================================================================================
 
 SUMMARY:
@@ -52,8 +52,8 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Kwaipilot
    1 models: Meituan
    1 models: Moonshot AI
+   1 models: Nex AGI
    1 models: Nous Research
-   1 models: Unknown
    1 models: Z.AI
 
 Total providers: 17
