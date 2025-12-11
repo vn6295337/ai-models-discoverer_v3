@@ -186,7 +186,7 @@ class GroqWebScraper:
         return production_models
 
     def _scrape_production_models_section(self) -> List[Dict[str, Any]]:
-        """Scrape models from production-models section using XPath"""
+        """Scrape models from production-models section using robust selectors"""
         url = self.endpoints["production_models"]
         print(f"🔍 Extracting production models from: {url}")
 
@@ -200,85 +200,133 @@ class GroqWebScraper:
 
         models = []
 
-        # Base XPath for the table
-        base_xpath = "/html/body/div[1]/div[2]/div/div/div/div/div/div[1]/div/div[3]/div/div/table/tbody"
-
-        # Count total rows
+        # Find the production-models section by anchor/heading
+        # The URL has #production-models anchor, find that section's table
         try:
-            rows = self.driver.find_elements(By.XPATH, f"{base_xpath}/tr")
+            # Try to find element with id="production-models" or heading containing "Production Models"
+            production_section = None
+            try:
+                production_section = self.driver.find_element(By.ID, 'production-models')
+                print("✅ Found section by id='production-models'")
+            except:
+                # Try finding by heading text
+                headings = self.driver.find_elements(By.TAG_NAME, 'h2')
+                for heading in headings:
+                    if 'production models' in heading.text.lower():
+                        production_section = heading
+                        print(f"✅ Found section by heading: {heading.text}")
+                        break
+
+            if not production_section:
+                print("⚠️ Could not find production-models section, trying all tables")
+                tables = self.driver.find_elements(By.TAG_NAME, 'table')
+            else:
+                # Find table after the section heading
+                parent = production_section.find_element(By.XPATH, './ancestor::div[1]')
+                tables = parent.find_elements(By.TAG_NAME, 'table')
+                if not tables:
+                    # Try looking in following siblings
+                    tables = production_section.find_elements(By.XPATH, './following::table')
+
+            # Find the right table (contains Model ID, Context Window, etc.)
+            target_table = None
+            for table in tables[:3]:  # Check first 3 tables only
+                header_text = table.text.lower()
+                if 'model id' in header_text and 'context window' in header_text:
+                    target_table = table
+                    print(f"✅ Found target table with production models")
+                    break
+
+            if not target_table:
+                print("❌ Could not find production models table")
+                return []
+
+            tbody = target_table.find_element(By.TAG_NAME, 'tbody')
+            rows = tbody.find_elements(By.TAG_NAME, 'tr')
             total_rows = len(rows)
             print(f"📊 Found {total_rows} data rows in tbody")
 
-            # Iterate through ALL data rows in tbody (header is in thead, not tbody)
-            for row_num in range(1, total_rows + 1):
+            # Iterate through ALL data rows in tbody
+            for row_idx, row in enumerate(rows, 1):
                 try:
-                    # XPath patterns for each data point
-                    provider_slug_xpath = f"{base_xpath}/tr[{row_num}]/td[1]/div/div/div/span"
-                    human_name_xpath = f"{base_xpath}/tr[{row_num}]/td[1]/div/div/div/a"
-                    rate_limit_1_xpath = f"{base_xpath}/tr[{row_num}]/td[4]/div/div/div/span[1]"
-                    rate_limit_2_xpath = f"{base_xpath}/tr[{row_num}]/td[4]/div/div/div/span[2]"
-
-                    # Extract provider_slug (model_id)
-                    try:
-                        model_slug = self.driver.find_element(By.XPATH, provider_slug_xpath).text.strip()
-                    except:
-                        print(f"   ⚠️ Row {row_num-1}: Could not find model slug, skipping")
+                    # Get all cells in the row
+                    cells = row.find_elements(By.TAG_NAME, 'td')
+                    if len(cells) < 4:
+                        print(f"   ⚠️ Row {row_idx}: Not enough columns, skipping")
                         continue
+
+                    # Column 1: Model ID (provider_slug) and name
+                    # Try to extract model slug from span
+                    try:
+                        model_slug = cells[0].find_element(By.TAG_NAME, 'span').text.strip()
+                    except:
+                        # Fallback: try getting text from the cell
+                        try:
+                            cell_text = cells[0].text.strip()
+                            # Model slug is usually the first line
+                            model_slug = cell_text.split('\n')[0].strip()
+                        except:
+                            print(f"   ⚠️ Row {row_idx}: Could not find model slug, skipping")
+                            continue
 
                     # Extract human_readable_name from link
                     try:
-                        link_element = self.driver.find_element(By.XPATH, human_name_xpath)
-                        link_text = link_element.text.strip()
-                        # Extract name from double quotes if present
-                        if '"' in link_text:
-                            parts = link_text.split('"')
-                            model_display_name = parts[1] if len(parts) > 1 else link_text
-                        else:
-                            model_display_name = link_text
+                        human_name = cells[0].find_element(By.TAG_NAME, 'a').text.strip()
                     except:
-                        model_display_name = model_slug
+                        # Fallback to model slug
+                        human_name = model_slug
 
-                    # Extract rate limits
+                    # Column 4: Rate limits (may have multiple spans)
+                    rate_limits_parts = []
                     try:
-                        rate_limit_1 = self.driver.find_element(By.XPATH, rate_limit_1_xpath).text.strip()
+                        rate_limit_spans = cells[3].find_elements(By.TAG_NAME, 'span')
+                        for span in rate_limit_spans:
+                            text = span.text.strip()
+                            if text:
+                                rate_limits_parts.append(text)
                     except:
-                        rate_limit_1 = ''
+                        pass
 
-                    try:
-                        rate_limit_2 = self.driver.find_element(By.XPATH, rate_limit_2_xpath).text.strip()
-                    except:
-                        rate_limit_2 = ''
+                    # Fallback: try getting all text from rate limit cell
+                    if not rate_limits_parts:
+                        try:
+                            rate_limit_text = cells[3].text.strip()
+                            if rate_limit_text:
+                                rate_limits_parts = [rate_limit_text]
+                        except:
+                            pass
 
-                    # Combine rate limits into single field with newline separator
-                    rate_limits_combined = f"{rate_limit_1}\n{rate_limit_2}" if rate_limit_1 and rate_limit_2 else ''
+                    rate_limits_str = "\n".join(rate_limits_parts) if rate_limits_parts else ""
 
                     # Skip invalid rows
                     if not model_slug or model_slug.lower() in ['model', 'model id', '']:
                         continue
 
                     model_data = {
-                        'model_id': model_slug,
-                        'model_display_name': model_display_name,
-                        'object': 'model',
-                        'created': int(time.time()),
-                        'model_provider': 'Groq',  # Will be enriched later
-                        'active': True,
-                        'rate_limits': rate_limits_combined,
-                        'context_window': '',  # Will be enriched from API
-                        'max_completion_tokens': '',  # Will be enriched from API
-                        'public_apps': True,
-                        'source_section': 'production-models'
+                        "model_id": model_slug,
+                        "model_display_name": human_name,
+                        "object": "model",
+                        "created": int(datetime.datetime.now().timestamp()),
+                        "model_provider": "Groq",
+                        "active": True,
+                        "rate_limits": rate_limits_str,
+                        "context_window": "",
+                        "max_completion_tokens": "",
+                        "public_apps": True,
+                        "source_section": "production-models"
                     }
 
                     models.append(model_data)
-                    print(f"   ✅ Row {row_num}: {model_slug} / {model_display_name} (Rate: {rate_limit_1}, {rate_limit_2})")
+                    print(f"   ✅ Row {row_idx}: {model_slug} - {human_name}")
 
-                except Exception as row_error:
-                    print(f"   ⚠️ Row {row_num}: Error processing row - {row_error}")
+                except Exception as e:
+                    print(f"   ❌ Row {row_idx}: Error extracting data - {e}")
                     continue
 
-        except Exception as error:
-            print(f"❌ Error finding table rows: {error}")
+        except Exception as e:
+            print(f"❌ Error finding table or rows: {e}")
+            import traceback
+            traceback.print_exc()
 
         print(f"✅ Extracted {len(models)} production models")
         return models
