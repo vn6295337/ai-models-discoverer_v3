@@ -46,6 +46,13 @@ jobs:
         chrome-version: stable
         install-chromedriver: true
 
+    - name: Verify Chrome and ChromeDriver versions
+      run: |
+        echo "🔍 Checking Chrome and ChromeDriver versions:"
+        google-chrome --version || echo "Chrome not found"
+        chromedriver --version || echo "ChromeDriver not found"
+        which chromedriver || echo "ChromeDriver not in PATH"
+
     - name: Install Python dependencies
       working-directory: groq_pipeline
       run: |

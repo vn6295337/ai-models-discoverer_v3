@@ -97,8 +97,22 @@ class GroqWebScraper:
         else:
             print("⚠️ No Chrome binary found, using system default")
 
+        # Add standard headless Chrome options
+        options.add_argument("--headless=new")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--disable-gpu")
+
+        # Apply custom options from config
         for option in self.chrome_options:
             options.add_argument(option)
+
+        # Set explicit Chrome binary location
+        if chrome_binary:
+            options.binary_location = chrome_binary
+        else:
+            # Default location on Ubuntu/Debian
+            options.binary_location = "/usr/bin/google-chrome"
 
         # Create service with ChromeDriverManager for automatic version matching
         # Check if chromedriver is already in PATH (e.g., from CI setup)
@@ -111,10 +125,21 @@ class GroqWebScraper:
         else:
             print("⚙️ Downloading ChromeDriver via webdriver-manager...")
             try:
-                service = Service(ChromeDriverManager(chrome_type=chrome_type).install())
+                # ChromeDriverManager will choose a chromedriver compatible with installed Chrome
+                driver_path = ChromeDriverManager(chrome_type=chrome_type).install()
+                service = Service(driver_path)
+                print(f"✅ Downloaded ChromeDriver: {driver_path}")
             except Exception as e:
-                print(f"⚠️ ChromeDriverManager failed ({e}), trying default chrome type")
-                service = Service(ChromeDriverManager().install())
+                try:
+                    print(f"⚠️ ChromeDriverManager with chrome_type={chrome_type} failed, trying default")
+                    driver_path = ChromeDriverManager().install()
+                    service = Service(driver_path)
+                    print(f"✅ Downloaded ChromeDriver (default): {driver_path}")
+                except Exception as e2:
+                    raise RuntimeError(
+                        f"ChromeDriver not available and webdriver-manager failed to download "
+                        f"a matching binary. Chrome type: {chrome_type}, Errors: {e}, {e2}"
+                    )
 
         # Create and configure driver
         driver = webdriver.Chrome(service=service, options=options)
