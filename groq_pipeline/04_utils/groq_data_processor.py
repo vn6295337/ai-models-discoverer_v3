@@ -59,7 +59,8 @@ class GroqDataProcessor:
         #            - [A-Z][A-Za-z]* (e.g., Whisper, Turbo)
         #   Group 2: ([a-z].*$) - Captures the slug: The remainder of the string
         #            must start with a lowercase letter.
-        match = re.search(r'(\d+[B]?|[A-Z][A-Za-z]*)([a-z].*$)', model_id)
+        # IMPORTANT: Anchor to start with ^ to prevent mid-string matching
+        match = re.search(r'^(\d+[B]?|[A-Z][A-Za-z]*)([a-z].*$)', model_id)
 
         intermediate_slug = model_id
         if match:

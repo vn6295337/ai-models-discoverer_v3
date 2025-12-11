@@ -37,11 +37,13 @@ def normalize_slug(slug: str) -> str:
 
     Converts special characters (periods, spaces, underscores) to hyphens
     to maintain consistency with aa_slug naming convention.
+    Also strips common suffixes like -it, -instruct, -chat.
 
     Examples:
         "gpt-4.0" -> "gpt-4-0"
         "llama 3.1" -> "llama-3-1"
         "model_name_v2" -> "model-name-v2"
+        "gemma-3-12b-it" -> "gemma-3-12b"
 
     Args:
         slug: Original provider_slug from working_version
@@ -63,6 +65,21 @@ def normalize_slug(slug: str) -> str:
 
     # Convert to lowercase for consistency
     normalized = normalized.lower()
+
+    # Strip common model suffixes for better matching
+    # Order matters: strip longer suffixes first
+    suffixes_to_strip = [
+        '-instruct',
+        '-chat',
+        '-it',
+        '-turbo',
+        '-preview',
+        '-exp'
+    ]
+    for suffix in suffixes_to_strip:
+        if normalized.endswith(suffix):
+            normalized = normalized[:-len(suffix)]
+            break  # Only strip one suffix
 
     return normalized
 
