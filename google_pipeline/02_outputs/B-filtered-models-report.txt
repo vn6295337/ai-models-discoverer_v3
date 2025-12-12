@@ -1,11 +1,11 @@
 === GOOGLE MODELS FILTERING REPORT ===
-Generated: 2025-12-11 17:02:28 IST
+Generated: 2025-12-12 06:14:48 IST
 
 === SUMMARY ===
-Total Input Models: 51
+Total Input Models: 52
 Models Included: 23
-Models Excluded: 28
-Filtering Success Rate: 45.1%
+Models Excluded: 29
+Filtering Success Rate: 44.2%
 
 === EXCLUDED MODELS ===
  1. gemini-2.0-flash-exp
@@ -27,15 +27,16 @@ Filtering Success Rate: 45.1%
 17. nano-banana-pro-preview
 18. gemini-robotics-er-1.5-preview
 19. gemini-2.5-computer-use-preview-10-2025
-20. gemini-embedding-exp-03-07
-21. gemini-embedding-exp
-22. imagen-4.0-generate-preview-06-06
-23. imagen-4.0-ultra-generate-preview-06-06
-24. veo-2.0-generate-001
-25. veo-3.1-generate-preview
-26. veo-3.1-fast-generate-preview
-27. gemini-2.5-flash-native-audio-latest
-28. gemini-2.5-flash-native-audio-preview-09-2025
+20. deep-research-pro-preview-12-2025
+21. gemini-embedding-exp-03-07
+22. gemini-embedding-exp
+23. imagen-4.0-generate-preview-06-06
+24. imagen-4.0-ultra-generate-preview-06-06
+25. veo-2.0-generate-001
+26. veo-3.1-generate-preview
+27. veo-3.1-fast-generate-preview
+28. gemini-2.5-flash-native-audio-latest
+29. gemini-2.5-flash-native-audio-preview-09-2025
 
 === INCLUDED MODELS ===
  1. embedding-gecko-001
@@ -63,7 +64,7 @@ Filtering Success Rate: 45.1%
 23. veo-3.0-fast-generate-001
 
 === EXCLUSION BREAKDOWN ===
-23 models: Experimental/Preview model - production-ready models only
+24 models: Experimental/Preview model - production-ready models only
  1 models: Model requires billing/payment - free models only
  1 models: Preview model - gemini-2.5-flash-native-audio-preview-09-2025 (https://ai.google.dev/gemini-api/docs/models#gemini-2.5-flash-live). Note: preview tag not mentioned in API response.
  1 models: Preview model - gemini-flash-latest is a preview pointer per Sep 25 2025 Google update (https://developers.googleblog.com/en/continuing-to-bring-you-our-latest-models-with-an-improved-gemini-2-5-flash-and-flash-lite-release/). Note: preview tag not mentioned in API response.
