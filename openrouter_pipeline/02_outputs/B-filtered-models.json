@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-11 05:01 PM IST",
+    "generated_at": "2025-12-12 06:13 AM IST",
     "total_models": 31,
     "pipeline_stage": "B_filter_models"
   },
@@ -94,8 +94,6 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "include_reasoning",
-        "reasoning",
         "response_format",
         "structured_outputs",
         "temperature",
@@ -417,9 +415,13 @@
       "per_request_limits": null,
       "supported_parameters": [
         "include_reasoning",
+        "max_tokens",
         "reasoning",
+        "seed",
+        "temperature",
         "tool_choice",
-        "tools"
+        "tools",
+        "top_p"
       ],
       "default_parameters": {
         "temperature": null,
@@ -568,11 +570,15 @@
       "per_request_limits": null,
       "supported_parameters": [
         "include_reasoning",
+        "max_tokens",
         "reasoning",
         "response_format",
+        "seed",
         "structured_outputs",
+        "temperature",
         "tool_choice",
-        "tools"
+        "tools",
+        "top_p"
       ],
       "default_parameters": {}
     },
