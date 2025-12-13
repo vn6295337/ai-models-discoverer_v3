@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-12-12 06:14:48 IST",
-    "total_models": 52,
+    "generated": "2025-12-13 06:11:58 IST",
+    "total_models": 53,
     "api_source": "Google Generative Language API"
   },
   "models": [
@@ -794,6 +794,23 @@
       "version": "gemini-2.5-flash-preview-native-audio-dialog-2025-05-19",
       "displayName": "Gemini 2.5 Flash Native Audio Preview 09-2025",
       "description": "Gemini 2.5 Flash Native Audio Preview 09-2025",
+      "inputTokenLimit": 131072,
+      "outputTokenLimit": 8192,
+      "supportedGenerationMethods": [
+        "countTokens",
+        "bidiGenerateContent"
+      ],
+      "temperature": 1,
+      "topP": 0.95,
+      "topK": 64,
+      "maxTemperature": 2,
+      "thinking": true
+    },
+    {
+      "name": "models/gemini-2.5-flash-native-audio-preview-12-2025",
+      "version": "12-2025",
+      "displayName": "Gemini 2.5 Flash Native Audio Preview 12-2025",
+      "description": "Gemini 2.5 Flash Native Audio Preview 12-2025",
       "inputTokenLimit": 131072,
       "outputTokenLimit": 8192,
       "supportedGenerationMethods": [
