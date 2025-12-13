@@ -1,6 +1,6 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-12-12 06:14 AM IST
+Generated: 2025-12-13 06:11 AM IST
 ================================================================================
 
 SUMMARY:
@@ -15,9 +15,9 @@ SUMMARY:
 MODEL PROVIDER DISTRIBUTION:
    5 models: Google
    4 models: Alibaba Cloud
+   3 models: Meta
    3 models: Mistral AI
    3 models: TNG Technology
-   2 models: Meta
    2 models: NVIDIA
    2 models: OpenAI
    1 models: Ai2
@@ -25,17 +25,16 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Arcee
    1 models: Cognitive Computations
    1 models: Kwaipilot
-   1 models: Meituan
    1 models: Moonshot AI
    1 models: Nex AGI
    1 models: Nous Research
    1 models: Z.AI
 
-Total unique model providers: 17
+Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  16 models: United States
-   9 models: China
+  17 models: United States
+   8 models: China
    3 models: France
    3 models: Germany
 
@@ -44,9 +43,9 @@ Total unique countries: 4
 MODEL FAMILY DISTRIBUTION:
    5 models: gemma
    4 models: alibaba cloud
+   3 models: meta
    3 models: mistral ai
    3 models: tng technology
-   2 models: meta
    2 models: nvidia
    2 models: openai
    1 models: ai2
@@ -54,13 +53,12 @@ MODEL FAMILY DISTRIBUTION:
    1 models: arcee
    1 models: cognitive computations
    1 models: kwaipilot
-   1 models: meituan
    1 models: moonshot ai
    1 models: nex agi
    1 models: nous research
    1 models: z.ai
 
-Total unique model families: 17
+Total unique model families: 16
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -261,21 +259,7 @@ MODEL 14: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 15: meituan/longcat-flash-chat
---------------------------------------------------
-  ID: meituan/longcat-flash-chat:free
-  Original Name: Meituan: LongCat Flash Chat (free)
-  HuggingFace ID: meituan-longcat/LongCat-Flash-Chat
-  Canonical Slug: meituan/longcat-flash-chat
-  Clean Model Name: LongCat Flash Chat
-  Model Provider: Meituan
-  Model Provider Country: China
-  Model Family: meituan
-  Official URL: https://longcat.chat/
-
-================================================================================
-
-MODEL 16: meta-llama/llama-3.2-3b-instruct
+MODEL 15: meta-llama/llama-3.2-3b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.2-3b-instruct:free
   Original Name: Meta: Llama 3.2 3B Instruct (free)
@@ -289,13 +273,27 @@ MODEL 16: meta-llama/llama-3.2-3b-instruct
 
 ================================================================================
 
-MODEL 17: meta-llama/llama-3.3-70b-instruct
+MODEL 16: meta-llama/llama-3.3-70b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-70b-instruct:free
   Original Name: Meta: Llama 3.3 70B Instruct (free)
   HuggingFace ID: meta-llama/Llama-3.3-70B-Instruct
   Canonical Slug: meta-llama/llama-3.3-70b-instruct
   Clean Model Name: Llama 3.3 70B Instruct
+  Model Provider: Meta
+  Model Provider Country: United States
+  Model Family: meta
+  Official URL: https://llama.meta.com/
+
+================================================================================
+
+MODEL 17: meta-llama/llama-guard-4-12b
+--------------------------------------------------
+  ID: meta-llama/llama-guard-4-12b:free
+  Original Name: Meta: Llama Guard 4 12B (free)
+  HuggingFace ID: meta-llama/Llama-Guard-4-12B
+  Canonical Slug: meta-llama/llama-guard-4-12b
+  Clean Model Name: Llama Guard 4 12B
   Model Provider: Meta
   Model Provider Country: United States
   Model Family: meta

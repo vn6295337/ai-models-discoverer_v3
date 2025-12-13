@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-12 06:14 AM IST",
-    "total_models": 17,
+    "generated_at": "2025-12-13 06:11 AM IST",
+    "total_models": 16,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -37,17 +37,6 @@
       "license_info_url": "https://huggingface.co/arcee-ai/Trinity-Mini/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
-    },
-    {
-      "id": "meituan/longcat-flash-chat:free",
-      "canonical_slug": "meituan/longcat-flash-chat",
-      "original_name": "Meituan: LongCat Flash Chat (free)",
-      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
-      "clean_model_name": "LongCat Flash Chat",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT"
     },
     {
       "id": "mistralai/mistral-7b-instruct:free",

@@ -1,6 +1,6 @@
 ================================================================================
 FINAL CONSOLIDATED LICENSE LIST REPORT
-Generated: 2025-12-12 06:14 AM IST
+Generated: 2025-12-13 06:11 AM IST
 ================================================================================
 
 SUMMARY:
@@ -12,14 +12,14 @@ SUMMARY:
 SOURCE CATEGORY DISTRIBUTION:
   Custom: 4 models
   Google: 5 models
-  Meta: 2 models
-  Opensource: 17 models
+  Meta: 3 models
+  Opensource: 16 models
   Proprietary: 4 models
 
 FINAL LICENSE DISTRIBUTION:
   13 models: Apache-2.0
    5 models: Gemma
-   4 models: MIT
+   3 models: MIT
    2 models: Modified MIT
    2 models: NVIDIA
    2 models: xAI
@@ -27,8 +27,9 @@ FINAL LICENSE DISTRIBUTION:
    1 models: Llama-3.1
    1 models: Llama-3.2
    1 models: Llama-3.3
+   1 models: Llama-4
 
-Total unique license types: 10
+Total unique license types: 11
 
 DETAILED FINAL MODEL INFORMATION:
 ================================================================================
@@ -198,7 +199,22 @@ MODEL 11: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 12: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 12: meta-llama/llama-guard-4-12b
+--------------------------------------------------
+  ID: meta-llama/llama-guard-4-12b:free
+  Original Name: Meta: Llama Guard 4 12B (free)
+  HuggingFace ID: meta-llama/Llama-Guard-4-12B
+  Canonical Slug: meta-llama/llama-guard-4-12b
+  Clean Model Name: Llama Guard 4 12B
+  License Info Text: 
+  License Info URL: 
+  License Name: Llama-4
+  License URL: https://www.llama.com/llama4/license/
+  Source Category: meta
+
+================================================================================
+
+MODEL 13: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -213,7 +229,7 @@ MODEL 12: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 13: allenai/olmo-3-32b-think-20251121
+MODEL 14: allenai/olmo-3-32b-think-20251121
 --------------------------------------------------
   ID: allenai/olmo-3-32b-think:free
   Original Name: AllenAI: Olmo 3 32B Think (free)
@@ -228,7 +244,7 @@ MODEL 13: allenai/olmo-3-32b-think-20251121
 
 ================================================================================
 
-MODEL 14: arcee-ai/trinity-mini-20251201
+MODEL 15: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -243,7 +259,7 @@ MODEL 14: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 15: mistralai/mistral-7b-instruct
+MODEL 16: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -258,7 +274,7 @@ MODEL 15: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 16: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 17: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -273,7 +289,7 @@ MODEL 16: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 17: nex-agi/deepseek-v3.1-nex-n1
+MODEL 18: nex-agi/deepseek-v3.1-nex-n1
 --------------------------------------------------
   ID: nex-agi/deepseek-v3.1-nex-n1:free
   Original Name: Nex AGI: DeepSeek V3.1 Nex N1 (free)
@@ -288,7 +304,7 @@ MODEL 17: nex-agi/deepseek-v3.1-nex-n1
 
 ================================================================================
 
-MODEL 18: openai/gpt-oss-120b
+MODEL 19: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -303,7 +319,7 @@ MODEL 18: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 19: openai/gpt-oss-20b
+MODEL 20: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -318,7 +334,7 @@ MODEL 19: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 20: qwen/qwen3-235b-a22b-04-28
+MODEL 21: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -333,7 +349,7 @@ MODEL 20: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 21: qwen/qwen3-4b-04-28
+MODEL 22: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -348,7 +364,7 @@ MODEL 21: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 22: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 23: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -363,7 +379,7 @@ MODEL 22: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 23: venice/uncensored
+MODEL 24: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -378,7 +394,7 @@ MODEL 23: venice/uncensored
 
 ================================================================================
 
-MODEL 24: nousresearch/hermes-3-llama-3.1-405b
+MODEL 25: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -389,21 +405,6 @@ MODEL 24: nousresearch/hermes-3-llama-3.1-405b
   License Info URL: https://huggingface.co/NousResearch/Hermes-3-Llama-3.1-405B/blob/main/README.md
   License Name: Llama-3.1
   License URL: https://www.llama.com/llama3_1/license/
-  Source Category: opensource
-
-================================================================================
-
-MODEL 25: meituan/longcat-flash-chat
---------------------------------------------------
-  ID: meituan/longcat-flash-chat:free
-  Original Name: Meituan: LongCat Flash Chat (free)
-  HuggingFace ID: meituan-longcat/LongCat-Flash-Chat
-  Canonical Slug: meituan/longcat-flash-chat
-  Clean Model Name: LongCat Flash Chat
-  License Info Text: info
-  License Info URL: https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE
-  License Name: MIT
-  License URL: https://opensource.org/licenses/MIT
   Source Category: opensource
 
 ================================================================================

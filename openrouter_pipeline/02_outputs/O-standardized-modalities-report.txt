@@ -1,6 +1,6 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-12-12 06:14 AM IST
+Generated: 2025-12-13 06:11 AM IST
 ================================================================================
 
 SUMMARY:
@@ -11,8 +11,8 @@ SUMMARY:
   Output       : O-standardized-modalities.json
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
-  23 models: Text
-   4 models: Text, Image
+  22 models: Text
+   5 models: Text, Image
    2 models: Text, Image, Audio, Video
    1 models: Text, Image, Video
    1 models: Text, Image, Video, File
@@ -25,8 +25,8 @@ STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
-  23 models: Text → Text
-   4 models: Text, Image → Text
+  22 models: Text → Text
+   5 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
    1 models: Text, Image, Video → Text
    1 models: Text, Image, Video, File → Text
@@ -210,21 +210,7 @@ MODEL 12: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 13: meituan/longcat-flash-chat
---------------------------------------------------
-  ID: meituan/longcat-flash-chat:free
-  Original Name: Meituan: LongCat Flash Chat (free)
-  HuggingFace ID: meituan-longcat/LongCat-Flash-Chat
-  Canonical Slug: meituan/longcat-flash-chat
-  Clean Model Name: LongCat Flash Chat
-  Raw Input Modalities: text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 14: mistralai/mistral-7b-instruct
+MODEL 13: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -238,7 +224,7 @@ MODEL 14: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 15: nvidia/nemotron-nano-9b-v2
+MODEL 14: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -252,7 +238,7 @@ MODEL 15: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 16: allenai/olmo-3-32b-think-20251121
+MODEL 15: allenai/olmo-3-32b-think-20251121
 --------------------------------------------------
   ID: allenai/olmo-3-32b-think:free
   Original Name: AllenAI: Olmo 3 32B Think (free)
@@ -266,7 +252,7 @@ MODEL 16: allenai/olmo-3-32b-think-20251121
 
 ================================================================================
 
-MODEL 17: qwen/qwen3-235b-a22b-04-28
+MODEL 16: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -280,7 +266,7 @@ MODEL 17: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 18: qwen/qwen3-4b-04-28
+MODEL 17: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -294,7 +280,7 @@ MODEL 18: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 19: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 18: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -308,7 +294,7 @@ MODEL 19: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 20: tngtech/tng-r1t-chimera
+MODEL 19: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -322,7 +308,7 @@ MODEL 20: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 21: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 20: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -336,7 +322,7 @@ MODEL 21: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 22: arcee-ai/trinity-mini-20251201
+MODEL 21: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -350,7 +336,7 @@ MODEL 22: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 23: venice/uncensored
+MODEL 22: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -364,7 +350,7 @@ MODEL 23: venice/uncensored
 
 ================================================================================
 
-MODEL 24: google/gemma-3-12b-it
+MODEL 23: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -378,7 +364,7 @@ MODEL 24: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 25: google/gemma-3-27b-it
+MODEL 24: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -392,7 +378,7 @@ MODEL 25: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 26: google/gemma-3-4b-it
+MODEL 25: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -400,6 +386,20 @@ MODEL 26: google/gemma-3-4b-it
   Canonical Slug: google/gemma-3-4b-it
   Clean Model Name: Gemma 3 4B IT
   Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 26: meta-llama/llama-guard-4-12b
+--------------------------------------------------
+  ID: meta-llama/llama-guard-4-12b:free
+  Original Name: Meta: Llama Guard 4 12B (free)
+  HuggingFace ID: meta-llama/Llama-Guard-4-12B
+  Canonical Slug: meta-llama/llama-guard-4-12b
+  Clean Model Name: Llama Guard 4 12B
+  Raw Input Modalities: image, text
   Raw Output Modalities: text
   Standardized Input Modalities: Text, Image
   Standardized Output Modalities: Text

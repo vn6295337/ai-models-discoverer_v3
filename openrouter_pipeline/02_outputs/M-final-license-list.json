@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-12 06:14 AM IST",
+    "generated_at": "2025-12-13 06:11 AM IST",
     "total_models": 32,
     "pipeline_stage": "M_final_list_of_licenses"
   },
@@ -126,18 +126,6 @@
       "source_category": "proprietary"
     },
     {
-      "id": "meituan/longcat-flash-chat:free",
-      "canonical_slug": "meituan/longcat-flash-chat",
-      "original_name": "Meituan: LongCat Flash Chat (free)",
-      "hugging_face_id": "meituan-longcat/LongCat-Flash-Chat",
-      "clean_model_name": "LongCat Flash Chat",
-      "license_info_text": "info",
-      "license_info_url": "https://huggingface.co/meituan-longcat/LongCat-Flash-Chat/blob/main/LICENSE",
-      "license_name": "MIT",
-      "license_url": "https://opensource.org/licenses/MIT",
-      "source_category": "opensource"
-    },
-    {
       "id": "meta-llama/llama-3.2-3b-instruct:free",
       "canonical_slug": "meta-llama/llama-3.2-3b-instruct",
       "original_name": "Meta: Llama 3.2 3B Instruct (free)",
@@ -159,6 +147,18 @@
       "license_info_url": "",
       "license_name": "Llama-3.3",
       "license_url": "https://www.llama.com/llama3_3/license/",
+      "source_category": "meta"
+    },
+    {
+      "id": "meta-llama/llama-guard-4-12b:free",
+      "canonical_slug": "meta-llama/llama-guard-4-12b",
+      "original_name": "Meta: Llama Guard 4 12B (free)",
+      "hugging_face_id": "meta-llama/Llama-Guard-4-12B",
+      "clean_model_name": "Llama Guard 4 12B",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "Llama-4",
+      "license_url": "https://www.llama.com/llama4/license/",
       "source_category": "meta"
     },
     {

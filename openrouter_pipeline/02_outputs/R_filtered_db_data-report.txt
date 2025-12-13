@@ -1,6 +1,6 @@
 ================================================================================
 DATABASE DATA FINALIZATION REPORT
-Generated: 2025-12-12 06:14 AM IST
+Generated: 2025-12-13 06:11 AM IST
 ================================================================================
 
 SUMMARY:
@@ -40,8 +40,8 @@ FINALIZED DATABASE DATA SUMMARY:
 PROVIDER DISTRIBUTION (FINALIZED DATA):
    5 models: Google
    4 models: Alibaba Cloud
+   3 models: Meta
    3 models: Mistral AI
-   2 models: Meta
    2 models: NVIDIA
    2 models: OpenAI
    2 models: TNG Technology
@@ -50,13 +50,12 @@ PROVIDER DISTRIBUTION (FINALIZED DATA):
    1 models: Arcee
    1 models: Cognitive Computations
    1 models: Kwaipilot
-   1 models: Meituan
    1 models: Moonshot AI
    1 models: Nex AGI
    1 models: Nous Research
    1 models: Z.AI
 
-Total providers: 17
+Total providers: 16
 
 FAMILY DISTRIBUTION (FINALIZED DATA):
   30 models: Unknown

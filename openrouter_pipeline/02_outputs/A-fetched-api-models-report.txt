@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-12 06:13 AM IST
+Generated: 2025-12-13 06:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 345
+  Total models: 342
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  56 models
@@ -165,7 +165,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - gemma-3n-e4b-it
     - gemma-3n-e4b-it:free
 
-  Meta            :  17 models
+  Meta            :  18 models
     - llama-3-70b-instruct
     - llama-3-8b-instruct
     - llama-3.1-405b
@@ -183,6 +183,7 @@ PROVIDER BREAKDOWN (Descending Order):
     - llama-4-scout
     - llama-guard-2-8b
     - llama-guard-4-12b
+    - llama-guard-4-12b:free
 
   DeepSeek        :  15 models
     - deepseek-chat
@@ -236,15 +237,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - grok-4.1-fast
     - grok-code-fast-1
 
-  MoonshotAI      :   7 models
-    - kimi-dev-72b
-    - kimi-k2
-    - kimi-k2-0905
-    - kimi-k2-0905:exacto
-    - kimi-k2-thinking
-    - kimi-k2:free
-    - kimi-linear-48b-a3b-instruct
-
   NVIDIA          :   7 models
     - llama-3.1-nemotron-70b-instruct
     - llama-3.1-nemotron-ultra-253b-v1
@@ -253,15 +245,6 @@ PROVIDER BREAKDOWN (Descending Order):
     - nemotron-nano-12b-v2-vl:free
     - nemotron-nano-9b-v2
     - nemotron-nano-9b-v2:free
-
-  Microsoft       :   7 models
-    - mai-ds-r1
-    - phi-3-medium-128k-instruct
-    - phi-3-mini-128k-instruct
-    - phi-3.5-mini-128k-instruct
-    - phi-4
-    - phi-4-multimodal-instruct
-    - phi-4-reasoning-plus
 
   Amazon          :   6 models
     - nova-2-lite-v1
@@ -287,6 +270,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - tng-r1t-chimera
     - tng-r1t-chimera:free
 
+  MoonshotAI      :   6 models
+    - kimi-dev-72b
+    - kimi-k2
+    - kimi-k2-0905
+    - kimi-k2-0905:exacto
+    - kimi-k2-thinking
+    - kimi-k2:free
+
   Perplexity      :   6 models
     - sonar
     - sonar-deep-research
@@ -303,6 +294,14 @@ PROVIDER BREAKDOWN (Descending Order):
     - hermes-4-405b
     - hermes-4-70b
 
+  Microsoft       :   6 models
+    - phi-3-medium-128k-instruct
+    - phi-3-mini-128k-instruct
+    - phi-3.5-mini-128k-instruct
+    - phi-4
+    - phi-4-multimodal-instruct
+    - phi-4-reasoning-plus
+
   Baidu           :   5 models
     - ernie-4.5-21b-a3b
     - ernie-4.5-21b-a3b-thinking
@@ -310,18 +309,17 @@ PROVIDER BREAKDOWN (Descending Order):
     - ernie-4.5-vl-28b-a3b
     - ernie-4.5-vl-424b-a47b
 
-  TheDrummer      :   5 models
-    - anubis-70b-v1.1
-    - cydonia-24b-v4.1
-    - rocinante-12b
-    - skyfall-36b-v2
-    - unslopnemo-12b
-
   AllenAI         :   4 models
     - olmo-2-0325-32b-instruct
     - olmo-3-32b-think:free
     - olmo-3-7b-instruct
     - olmo-3-7b-think
+
+  TheDrummer      :   4 models
+    - cydonia-24b-v4.1
+    - rocinante-12b
+    - skyfall-36b-v2
+    - unslopnemo-12b
 
   Cohere          :   4 models
     - command-a
@@ -353,10 +351,6 @@ PROVIDER BREAKDOWN (Descending Order):
   Relace          :   2 models
     - relace-apply-3
     - relace-search
-
-  Meituan         :   2 models
-    - longcat-flash-chat
-    - longcat-flash-chat:free
 
   AI21            :   2 models
     - jamba-large-1.7
@@ -391,6 +385,9 @@ PROVIDER BREAKDOWN (Descending Order):
 
   OpenGVLab       :   1 models
     - internvl3-78b
+
+  Meituan         :   1 models
+    - longcat-flash-chat
 
   StepFun         :   1 models
     - step3

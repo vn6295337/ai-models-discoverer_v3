@@ -1,24 +1,24 @@
 ================================================================================
 STANDARDIZED OTHER LICENSE NAMES REPORT
-Generated: 2025-12-12 06:14 AM IST
+Generated: 2025-12-13 06:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 21
+  Total models : 20
   Input        : F-other-license-names-from-hf.json
   Config       : 04_license_standardization_rules.json
   Processor    : G_standardize_other_license_names_from_hf.py
   Output       : G-standardized-other-license-names-from-hf.json
 
 STANDARDIZATION RESULTS:
-  Models with license transformations: 20
+  Models with license transformations: 19
   Models unchanged: 1
-  Transformation rate: 95.2%
+  Transformation rate: 95.0%
 
 STANDARDIZED LICENSE DISTRIBUTION:
   Apache-2.0: 12 models
   Llama-3.1: 1 models
-  MIT: 4 models
+  MIT: 3 models
   Modified MIT: 1 models
   NVIDIA: 2 models
   other: 1 models
@@ -170,17 +170,7 @@ MODEL 13: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 14: meituan/longcat-flash-chat
---------------------------------------------------
-  ID                     : meituan/longcat-flash-chat:free
-  Canonical Slug         : meituan/longcat-flash-chat
-  HuggingFace ID         : meituan-longcat/LongCat-Flash-Chat
-  Raw License            : mit
-  Standardized License   : MIT
-
-================================================================================
-
-MODEL 15: tngtech/deepseek-r1t-chimera
+MODEL 14: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t-chimera
@@ -190,7 +180,7 @@ MODEL 15: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 16: tngtech/deepseek-r1t2-chimera
+MODEL 15: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t2-chimera
@@ -200,7 +190,7 @@ MODEL 16: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 17: z-ai/glm-4.5-air
+MODEL 16: z-ai/glm-4.5-air
 --------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
   Canonical Slug         : z-ai/glm-4.5-air
@@ -210,7 +200,7 @@ MODEL 17: z-ai/glm-4.5-air
 
 ================================================================================
 
-MODEL 18: moonshotai/kimi-k2
+MODEL 17: moonshotai/kimi-k2
 --------------------------------------------------
   ID                     : moonshotai/kimi-k2:free
   Canonical Slug         : moonshotai/kimi-k2
@@ -220,7 +210,7 @@ MODEL 18: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 19: nvidia/nemotron-nano-12b-v2-vl
+MODEL 18: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-12b-v2-vl:free
   Canonical Slug         : nvidia/nemotron-nano-12b-v2-vl
@@ -230,7 +220,7 @@ MODEL 19: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 20: nvidia/nemotron-nano-9b-v2
+MODEL 19: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2
