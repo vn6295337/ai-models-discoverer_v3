@@ -1,7 +1,7 @@
 GROQ PIPELINE EXECUTION REPORT (A to H)
 ================================================================================
-Generated: 2025-12-13 06:14:02 AM IST
-Total Execution Time: 51.4s
+Generated: 2025-12-14 06:21:03 AM IST
+Total Execution Time: 48.8s
 
 EXECUTION SUMMARY
 --------------------------------------------------------------------------------
@@ -15,13 +15,13 @@ DETAILED RESULTS
 1. Production Models & Rate Limits Extraction
    Script: A_scrape_production_models.py
    Status: ✅ SUCCESS (REQUIRED)
-   Duration: 11.5s
+   Duration: 9.6s
    Description: Extract production models and rate limits from Groq docs
 
 2. Modalities Extraction
    Script: B_scrape_modalities.py
    Status: ✅ SUCCESS (OPTIONAL)
-   Duration: 31.0s
+   Duration: 30.3s
    Description: Extract input/output modalities for each model
 
 3. Meta/Llama License Extraction
@@ -51,7 +51,7 @@ DETAILED RESULTS
 7. Pipeline vs Supabase Comparison
    Script: G_compare_pipeline_with_supabase.py
    Status: ✅ SUCCESS (OPTIONAL)
-   Duration: 2.1s
+   Duration: 2.2s
    Description: Compare pipeline output with Supabase data
 
 RECOMMENDATIONS
