@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-14 06:18 AM IST",
-    "total_models": 32,
+    "generated_at": "2025-12-15 06:16 AM IST",
+    "total_models": 31,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -147,18 +147,6 @@
       "license_info_url": "",
       "license_name": "Llama-3.3",
       "license_url": "https://www.llama.com/llama3_3/license/",
-      "source_category": "meta"
-    },
-    {
-      "id": "meta-llama/llama-guard-4-12b:free",
-      "canonical_slug": "meta-llama/llama-guard-4-12b",
-      "original_name": "Meta: Llama Guard 4 12B (free)",
-      "hugging_face_id": "meta-llama/Llama-Guard-4-12B",
-      "clean_model_name": "Llama Guard 4 12B",
-      "license_info_text": "",
-      "license_info_url": "",
-      "license_name": "Llama-4",
-      "license_url": "https://www.llama.com/llama4/license/",
       "source_category": "meta"
     },
     {

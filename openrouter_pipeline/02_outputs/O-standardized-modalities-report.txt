@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-12-14 06:18 AM IST
+Generated: 2025-12-15 06:16 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 31
+  Total models : 30
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
@@ -12,7 +12,7 @@ SUMMARY:
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
   22 models: Text
-   5 models: Text, Image
+   4 models: Text, Image
    2 models: Text, Image, Audio, Video
    1 models: Text, Image, Video
    1 models: Text, Image, Video, File
@@ -20,13 +20,13 @@ STANDARDIZED INPUT MODALITIES DISTRIBUTION:
 Total unique input types: 5
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  31 models: Text
+  30 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
   22 models: Text → Text
-   5 models: Text, Image → Text
+   4 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
    1 models: Text, Image, Video → Text
    1 models: Text, Image, Video, File → Text
@@ -34,8 +34,8 @@ STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
 Total unique combinations: 5
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 31 models
-  Output modalities changed: 31 models
+  Input modalities changed: 30 models
+  Output modalities changed: 30 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
@@ -392,21 +392,7 @@ MODEL 25: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 26: meta-llama/llama-guard-4-12b
---------------------------------------------------
-  ID: meta-llama/llama-guard-4-12b:free
-  Original Name: Meta: Llama Guard 4 12B (free)
-  HuggingFace ID: meta-llama/Llama-Guard-4-12B
-  Canonical Slug: meta-llama/llama-guard-4-12b
-  Clean Model Name: Llama Guard 4 12B
-  Raw Input Modalities: image, text
-  Raw Output Modalities: text
-  Standardized Input Modalities: Text, Image
-  Standardized Output Modalities: Text
-
-================================================================================
-
-MODEL 27: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 26: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -420,7 +406,7 @@ MODEL 27: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 28: google/gemma-3n-e2b-it
+MODEL 27: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -434,7 +420,7 @@ MODEL 28: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 29: google/gemma-3n-e4b-it
+MODEL 28: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)
@@ -448,7 +434,7 @@ MODEL 29: google/gemma-3n-e4b-it
 
 ================================================================================
 
-MODEL 30: nvidia/nemotron-nano-12b-v2-vl
+MODEL 29: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -462,7 +448,7 @@ MODEL 30: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 31: amazon/nova-2-lite-v1
+MODEL 30: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon: Nova 2 Lite (free)
