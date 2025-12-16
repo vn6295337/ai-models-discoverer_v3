@@ -1,10 +1,10 @@
 ================================================================================
 CUSTOM LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-12-15 06:16 AM IST
+Generated: 2025-12-16 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 4
+  Total models : 5
   Input        : H-custom-license-names.json
   Priority     : LICENSE → README.md → Base repository
   Processor    : J_custom_license_urls.py
@@ -12,18 +12,18 @@ SUMMARY:
 
 LICENSE URL TYPE DISTRIBUTION:
   LICENSE file: 2 models
-  README.md file: 2 models
+  README.md file: 3 models
 
 Total URL types: 2
 
 URL RESOLUTION STATISTICS:
-  Successful URL resolutions: 4
+  Successful URL resolutions: 5
   Failed URL resolutions: 0
   Success rate: 100.0%
 
 CUSTOM LICENSE DISTRIBUTION:
   Modified MIT: 1 models
-  NVIDIA: 2 models
+  NVIDIA: 3 models
   other: 1 models
 
 Total license types: 3
@@ -53,7 +53,18 @@ MODEL 2: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 3: nvidia/nemotron-nano-12b-v2-vl
+MODEL 3: nvidia/nemotron-3-nano-30b-a3b
+--------------------------------------------------
+  ID                     : nvidia/nemotron-3-nano-30b-a3b:free
+  Canonical Slug         : nvidia/nemotron-3-nano-30b-a3b
+  HuggingFace ID         : nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  License Name           : NVIDIA
+  License URL            : https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/blob/main/README.md
+  License URL Type       : README.md file
+
+================================================================================
+
+MODEL 4: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-12b-v2-vl:free
   Canonical Slug         : nvidia/nemotron-nano-12b-v2-vl
@@ -64,7 +75,7 @@ MODEL 3: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 4: nvidia/nemotron-nano-9b-v2
+MODEL 5: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID                     : nvidia/nemotron-nano-9b-v2:free
   Canonical Slug         : nvidia/nemotron-nano-9b-v2

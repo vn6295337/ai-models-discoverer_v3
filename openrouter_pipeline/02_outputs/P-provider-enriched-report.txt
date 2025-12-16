@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-12-15 06:16 AM IST
+Generated: 2025-12-16 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 30
+  Total models      : 31
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -16,9 +16,9 @@ MODEL PROVIDER DISTRIBUTION:
    5 models: Google
    4 models: Alibaba Cloud
    3 models: Mistral AI
+   3 models: NVIDIA
    3 models: TNG Technology
    2 models: Meta
-   2 models: NVIDIA
    2 models: OpenAI
    1 models: Ai2
    1 models: Amazon
@@ -33,7 +33,7 @@ MODEL PROVIDER DISTRIBUTION:
 Total unique model providers: 16
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  16 models: United States
+  17 models: United States
    8 models: China
    3 models: France
    3 models: Germany
@@ -44,9 +44,9 @@ MODEL FAMILY DISTRIBUTION:
    5 models: gemma
    4 models: alibaba cloud
    3 models: mistral ai
+   3 models: nvidia
    3 models: tng technology
    2 models: meta
-   2 models: nvidia
    2 models: openai
    1 models: ai2
    1 models: amazon
@@ -371,7 +371,21 @@ MODEL 22: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 23: nvidia/nemotron-nano-12b-v2-vl
+MODEL 23: nvidia/nemotron-3-nano-30b-a3b
+--------------------------------------------------
+  ID: nvidia/nemotron-3-nano-30b-a3b:free
+  Original Name: NVIDIA: Nemotron 3 Nano 30B A3B (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  Canonical Slug: nvidia/nemotron-3-nano-30b-a3b
+  Clean Model Name: Nemotron 3 Nano 30B A3B
+  Model Provider: NVIDIA
+  Model Provider Country: United States
+  Model Family: nvidia
+  Official URL: https://build.nvidia.com/
+
+================================================================================
+
+MODEL 24: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -385,7 +399,7 @@ MODEL 23: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 24: nvidia/nemotron-nano-9b-v2
+MODEL 25: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -399,7 +413,7 @@ MODEL 24: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 25: openai/gpt-oss-120b
+MODEL 26: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -413,7 +427,7 @@ MODEL 25: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 26: openai/gpt-oss-20b
+MODEL 27: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -427,7 +441,7 @@ MODEL 26: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 27: tngtech/deepseek-r1t-chimera
+MODEL 28: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -441,7 +455,7 @@ MODEL 27: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 28: tngtech/deepseek-r1t2-chimera
+MODEL 29: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -455,7 +469,7 @@ MODEL 28: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 29: tngtech/tng-r1t-chimera
+MODEL 30: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -469,7 +483,7 @@ MODEL 29: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 30: z-ai/glm-4.5-air
+MODEL 31: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

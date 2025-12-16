@@ -1,16 +1,16 @@
 ================================================================================
 RAW MODALITIES EXTRACTION REPORT
-Generated: 2025-12-15 06:16 AM IST
+Generated: 2025-12-16 06:14 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 30
+  Total models : 31
   Input        : B-filtered-models.json
   Processor    : N_extract_raw_modalities.py
   Output       : N-raw-modalities.json
 
 RAW INPUT MODALITIES DISTRIBUTION:
-  24 models: text
+  25 models: text
    4 models: text, image
    1 models: image, text, video
    1 models: text, image, video, file
@@ -18,12 +18,12 @@ RAW INPUT MODALITIES DISTRIBUTION:
 Total unique input types: 4
 
 RAW OUTPUT MODALITIES DISTRIBUTION:
-  30 models: text
+  31 models: text
 
 Total unique output types: 1
 
 RAW MODALITY COMBINATIONS (INPUT → OUTPUT):
-  24 models: text → text
+  25 models: text → text
    4 models: text, image → text
    1 models: image, text, video → text
    1 models: text, image, video, file → text
@@ -225,7 +225,19 @@ MODEL 16: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 17: nvidia/nemotron-nano-9b-v2
+MODEL 17: nvidia/nemotron-3-nano-30b-a3b
+--------------------------------------------------
+  ID: nvidia/nemotron-3-nano-30b-a3b:free
+  Original Name: NVIDIA: Nemotron 3 Nano 30B A3B (free)
+  HuggingFace ID: nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16
+  Canonical Slug: nvidia/nemotron-3-nano-30b-a3b
+  Clean Model Name: Nemotron 3 Nano 30B A3B
+  Raw Input Modalities: text
+  Raw Output Modalities: text
+
+================================================================================
+
+MODEL 18: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -237,7 +249,7 @@ MODEL 17: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 18: allenai/olmo-3-32b-think-20251121
+MODEL 19: allenai/olmo-3-32b-think-20251121
 --------------------------------------------------
   ID: allenai/olmo-3-32b-think:free
   Original Name: AllenAI: Olmo 3 32B Think (free)
@@ -249,7 +261,7 @@ MODEL 18: allenai/olmo-3-32b-think-20251121
 
 ================================================================================
 
-MODEL 19: qwen/qwen3-235b-a22b-04-28
+MODEL 20: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -261,7 +273,7 @@ MODEL 19: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 20: qwen/qwen3-4b-04-28
+MODEL 21: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -273,7 +285,7 @@ MODEL 20: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 21: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 22: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -285,7 +297,7 @@ MODEL 21: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 22: tngtech/tng-r1t-chimera
+MODEL 23: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -297,7 +309,7 @@ MODEL 22: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 23: alibaba/tongyi-deepresearch-30b-a3b
+MODEL 24: alibaba/tongyi-deepresearch-30b-a3b
 --------------------------------------------------
   ID: alibaba/tongyi-deepresearch-30b-a3b:free
   Original Name: Tongyi DeepResearch 30B A3B (free)
@@ -309,7 +321,7 @@ MODEL 23: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 24: arcee-ai/trinity-mini-20251201
+MODEL 25: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -321,7 +333,7 @@ MODEL 24: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 25: venice/uncensored
+MODEL 26: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -333,7 +345,7 @@ MODEL 25: venice/uncensored
 
 ================================================================================
 
-MODEL 26: google/gemma-3-12b-it
+MODEL 27: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -345,7 +357,7 @@ MODEL 26: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 27: google/gemma-3-27b-it
+MODEL 28: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -357,7 +369,7 @@ MODEL 27: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 28: google/gemma-3-4b-it
+MODEL 29: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -369,7 +381,7 @@ MODEL 28: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 29: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 30: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -381,7 +393,7 @@ MODEL 29: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 30: amazon/nova-2-lite-v1
+MODEL 31: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon: Nova 2 Lite (free)

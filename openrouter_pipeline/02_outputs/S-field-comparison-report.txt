@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-15 06:16 AM IST
+Generated: 2025-12-16 06:14 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -7,12 +7,12 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total unique model names: 30
-   • Total records in pipeline: 29
-   • Total records in Supabase: 30
+   • Total records in pipeline: 30
+   • Total records in Supabase: 29
    • Models in both systems: 29
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 1
+   • Models in pipeline only (not in Supabase): 1
+   • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
@@ -56,9 +56,9 @@ SUMMARY STATISTICS
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
+   • New models (pipeline only): 1
+     Models: Nemotron 3 Nano 30B A3B
    • Existing models with differences: 0
-   • Deprecated models (Supabase only): 1
-     Models: Llama Guard 4 12B
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -404,26 +404,6 @@ provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s.
 
 ================================================================================
 
-MODEL: Llama Guard 4 12B
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Meta                     
-human_readable_name       |                           | Llama Guard 4 12B        
-model_provider_country    |                           | United States            
-official_url              |                           | https://llama.meta.com/  
-input_modalities          |                           | Text, Image              
-output_modalities         |                           | Text                     
-license_info_text         |                           | None                     
-license_info_url          |                           | None                     
-license_name              |                           | Llama-4                  
-license_url               |                           | https://www.llama.com/l..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
-
-================================================================================
-
 MODEL: Mistral 7B Instruct
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
@@ -461,6 +441,26 @@ license_name              | Apache-2.0                | Apache-2.0
 license_url               | https://www.apache.org/.. | https://www.apache.org/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+
+================================================================================
+
+MODEL: Nemotron 3 Nano 30B A3B
+--------------------------------------------------------------------------------
+Field Name                | Pipeline Value            | Supabase Value           
+--------------------------------------------------------------------------------
+inference_provider        | OpenRouter                |                          
+model_provider            | NVIDIA                    |                          
+human_readable_name       | Nemotron 3 Nano 30B A3B   |                          
+model_provider_country    | United States             |                          
+official_url              | https://build.nvidia.com/ |                          
+input_modalities          | Text                      |                          
+output_modalities         | Text                      |                          
+license_info_text         |                           |                          
+license_info_url          |                           |                          
+license_name              | NVIDIA                    |                          
+license_url               | https://huggingface.co/.. |                          
+rate_limits               | 20 requests/min 50/day    |                          
+provider_api_access       | https://openrouter.ai/s.. |                          
 
 ================================================================================
 
