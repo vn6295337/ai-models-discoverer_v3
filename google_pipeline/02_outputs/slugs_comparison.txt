@@ -1,0 +1,83 @@
+Slug Comparison Report
+Generated: 2025-12-16T17:54:48.788486
+========================================================================================================================
+
+UNMATCHED MODELS WITH NEAREST AA_SLUG CANDIDATES
+========================================================================================================================
+
+The following models from working_version could not be automatically
+mapped to AA performance metrics. Review the nearest candidates below:
+
+========================================================================================================================
+PROVIDER             | PROVIDER_SLUG                       | NEAREST AA_SLUG CANDIDATES (Top 5)
+========================================================================================================================
+Google               | aqa                                 | • command-a                                (similarity: 33.3%)
+                     |                                     | • llama-65b                                (similarity: 33.3%)
+                     |                                     | • reka-flash                               (similarity: 30.8%)
+                     |                                     | • mistral-saba                             (similarity: 26.7%)
+                     |                                     | • reka-flash-3                             (similarity: 26.7%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | embedding-001                       | • ling-1t                                  (similarity: 50.0%)
+                     |                                     | • ring-1t                                  (similarity: 50.0%)
+                     |                                     | • jamba-reasoning-3b                       (similarity: 45.2%)
+                     |                                     | • gemini-1-0-pro                           (similarity: 44.4%)
+                     |                                     | • gemini-1-5-pro                           (similarity: 44.4%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | embedding-gecko-001                 | • gemini-2-5-pro-05-06                     (similarity: 46.2%)
+                     |                                     | • gemini-2-0-flash-lite-001                (similarity: 45.5%)
+                     |                                     | • kimi-k2-0905                             (similarity: 45.2%)
+                     |                                     | • gemini-1-0-pro                           (similarity: 42.4%)
+                     |                                     | • gemini-2-5-pro-03-25                     (similarity: 41.0%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | gemini-2.0-flash-001                | • gemini-2-0-flash                         (similarity: 88.9%)
+                     |                                     | • gemini-2-0-flash-lite-001                (similarity: 88.9%)
+                     |                                     | • gemini-2-5-flash                         (similarity: 83.3%)
+                     |                                     | • gemini-2-5-flash-04-2025                 (similarity: 81.8%)
+                     |                                     | • gemini-2-5-flash-lite                    (similarity: 78.0%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | gemini-embedding-001                | • gpt-5-mini-medium                        (similarity: 54.1%)
+                     |                                     | • gemini-2-0-flash-lite-001                (similarity: 53.3%)
+                     |                                     | • gemma-3n-e4b-preview-0520                (similarity: 53.3%)
+                     |                                     | • gemini-1-0-pro                           (similarity: 52.9%)
+                     |                                     | • gemini-2-5-flash-reasoning-04-2025       (similarity: 51.9%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | imagen-4.0-fast-generate-001        | • gemini-2-0-flash-lite-001                (similarity: 64.2%)
+                     |                                     | • gemini-2-0-flash-thinking-exp-0121       (similarity: 51.6%)
+                     |                                     | • gemini-2-0-flash-experimental            (similarity: 49.1%)
+                     |                                     | • gemini-2-0-flash-lite-preview            (similarity: 49.1%)
+                     |                                     | • gemini-2-5-flash-lite                    (similarity: 49.0%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | imagen-4.0-generate-001             | • gemini-2-0-flash-lite-001                (similarity: 58.3%)
+                     |                                     | • granite-4-0-nano-1b                      (similarity: 52.4%)
+                     |                                     | • granite-4-0-h-nano-1b                    (similarity: 50.0%)
+                     |                                     | • gemini-2-0-pro-experimental-02-05        (similarity: 46.4%)
+                     |                                     | • gemini-1-0-ultra                         (similarity: 46.2%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | imagen-4.0-ultra-generate-001       | • gemini-2-0-flash-lite-001                (similarity: 59.3%)
+                     |                                     | • gemini-1-0-ultra                         (similarity: 53.3%)
+                     |                                     | • gemini-2-0-pro-experimental-02-05        (similarity: 48.4%)
+                     |                                     | • gemini-2-0-flash-lite-preview            (similarity: 44.8%)
+                     |                                     | • gemini-2-0-flash-thinking-exp-0121       (similarity: 44.4%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | text-embedding-004                  | • gemma-3n-e4b-preview-0520                (similarity: 41.9%)
+                     |                                     | • mistral-medium-3                         (similarity: 41.2%)
+                     |                                     | • magistral-medium-2509                    (similarity: 41.0%)
+                     |                                     | • gpt-5-medium                             (similarity: 40.0%)
+                     |                                     | • gpt-5-1-codex-mini                       (similarity: 38.9%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | veo-3.0-fast-generate-001           | • gemini-2-0-flash-lite-001                (similarity: 60.0%)
+                     |                                     | • gemini-2-0-flash-thinking-exp-0121       (similarity: 47.5%)
+                     |                                     | • gemini-2-0-flash-experimental            (similarity: 44.4%)
+                     |                                     | • gemini-2-0-flash-lite-preview            (similarity: 44.4%)
+                     |                                     | • gemini-2-0-flash-thinking-exp-1219       (similarity: 44.1%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Google               | veo-3.0-generate-001                | • gemini-2-0-flash-lite-001                (similarity: 53.3%)
+                     |                                     | • granite-4-0-nano-1b                      (similarity: 46.2%)
+                     |                                     | • granite-4-0-h-nano-1b                    (similarity: 43.9%)
+                     |                                     | • llama-3-2-instruct-1b                    (similarity: 43.9%)
+                     |                                     | • claude-3-7-sonnet                        (similarity: 43.2%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+
+========================================================================================================================
+END OF COMPARISON REPORT
+========================================================================================================================

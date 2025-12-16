@@ -1,0 +1,47 @@
+Slug Comparison Report
+Generated: 2025-12-16T17:57:55.930028
+========================================================================================================================
+
+UNMATCHED MODELS WITH NEAREST AA_SLUG CANDIDATES
+========================================================================================================================
+
+The following models from working_version could not be automatically
+mapped to AA performance metrics. Review the nearest candidates below:
+
+========================================================================================================================
+PROVIDER             | PROVIDER_SLUG                       | NEAREST AA_SLUG CANDIDATES (Top 5)
+========================================================================================================================
+Groq                 | llama-3.1-8b-instant                | • llama-3-1-instruct-8b                    (similarity: 73.2%)
+                     |                                     | • llama-3-1-instruct-70b                   (similarity: 71.4%)
+                     |                                     | • llama-3-1-instruct-405b                  (similarity: 69.8%)
+                     |                                     | • llama-3-2-instruct-1b                    (similarity: 68.3%)
+                     |                                     | • llama-3-2-instruct-3b                    (similarity: 68.3%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Groq                 | llama-3.3-70b-versatile             | • hermes-4-llama-3-1-70b-reasoning         (similarity: 58.2%)
+                     |                                     | • llama-3-3-instruct-70b                   (similarity: 57.8%)
+                     |                                     | • llama-3-2-instruct-90b-vision            (similarity: 57.7%)
+                     |                                     | • llama-2-chat-70b                         (similarity: 56.4%)
+                     |                                     | • llama-4-maverick                         (similarity: 56.4%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Groq                 | llama-guard-4-12b                   | • llama-2-chat-13b                         (similarity: 60.6%)
+                     |                                     | • llama-2-chat-7b                          (similarity: 56.2%)
+                     |                                     | • llama-2-chat-70b                         (similarity: 54.5%)
+                     |                                     | • llama-65b                                (similarity: 53.8%)
+                     |                                     | • llama-4-scout                            (similarity: 53.3%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Groq                 | whisper-large-v3                    | • mistral-large-3                          (similarity: 71.0%)
+                     |                                     | • mistral-large-2                          (similarity: 64.5%)
+                     |                                     | • mistral-large                            (similarity: 62.1%)
+                     |                                     | • mistral-large-2407                       (similarity: 58.8%)
+                     |                                     | • pixtral-large-2411                       (similarity: 52.9%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+Groq                 | whisper-large-v3-turbo              | • mistral-large-3                          (similarity: 71.0%)
+                     |                                     | • mistral-large-2                          (similarity: 64.5%)
+                     |                                     | • mistral-large                            (similarity: 62.1%)
+                     |                                     | • mistral-large-2407                       (similarity: 58.8%)
+                     |                                     | • pixtral-large-2411                       (similarity: 52.9%)
+---------------------|-------------------------------------|-------------------------------------------------------------
+
+========================================================================================================================
+END OF COMPARISON REPORT
+========================================================================================================================
