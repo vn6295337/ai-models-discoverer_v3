@@ -1,15 +1,12 @@
 name: OpenRouter Pipeline (A-S)
 
 on:
-  schedule:
-    - cron: '0 0 * * *'  # Run daily at midnight UTC
-  workflow_dispatch:  # Allow manual trigger
-  push:
+  workflow_dispatch:  # Manual trigger
+  workflow_run:  # Sequential trigger from Groq pipeline
+    workflows: ["Groq Pipeline (A-G)"]
+    types:
+      - completed
     branches: [ main ]
-    paths:
-      - 'openrouter_pipeline/**.py'
-      - 'openrouter_pipeline/requirements.txt'
-      - '.github/workflows/**'
 
 jobs:
   run-pipeline:
@@ -17,8 +14,18 @@ jobs:
     timeout-minutes: 180  # 3 hours max
     permissions:
       contents: write  # Allow writing to repository
+    # Only run if manually triggered or if Groq pipeline succeeded
+    if: ${{ github.event_name == 'workflow_dispatch' || (github.event_name == 'workflow_run' && github.event.workflow_run.conclusion == 'success') }}
 
     steps:
+    - name: Show trigger information
+      run: |
+        echo "🚀 OpenRouter Pipeline triggered by: ${{ github.event_name }}"
+        if [[ "${{ github.event_name }}" == "workflow_run" ]]; then
+          echo "📋 Groq pipeline status: ${{ github.event.workflow_run.conclusion }}"
+          echo "🔗 Groq run URL: ${{ github.event.workflow_run.html_url }}"
+        fi
+
     - name: Checkout repository
       uses: actions/checkout@v4
 
@@ -97,8 +104,6 @@ jobs:
         name: pipeline-outputs
         path: openrouter_pipeline/02_outputs/
         retention-days: 30
-
-    # Google pipeline trigger removed - handle manually
 
     - name: Show failure summary
       if: failure()
