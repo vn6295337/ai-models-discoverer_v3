@@ -1,10 +1,10 @@
 ================================================================================
 STANDARDIZED MODALITIES REPORT
-Generated: 2025-12-17 06:11 AM IST
+Generated: 2025-12-17 10:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 35
+  Total models : 36
   Input        : N-raw-modalities.json
   Config       : 06_modality_standardization.json
   Processor    : O_standardize_raw_modalities.py
@@ -12,7 +12,7 @@ SUMMARY:
 
 STANDARDIZED INPUT MODALITIES DISTRIBUTION:
   27 models: Text
-   4 models: Text, Image
+   5 models: Text, Image
    2 models: Text, Image, Audio, Video
    1 models: Text, Image, Video
    1 models: Text, Image, Video, File
@@ -20,13 +20,13 @@ STANDARDIZED INPUT MODALITIES DISTRIBUTION:
 Total unique input types: 5
 
 STANDARDIZED OUTPUT MODALITIES DISTRIBUTION:
-  35 models: Text
+  36 models: Text
 
 Total unique output types: 1
 
 STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
   27 models: Text → Text
-   4 models: Text, Image → Text
+   5 models: Text, Image → Text
    2 models: Text, Image, Audio, Video → Text
    1 models: Text, Image, Video → Text
    1 models: Text, Image, Video, File → Text
@@ -34,8 +34,8 @@ STANDARDIZED MODALITY COMBINATIONS (INPUT → OUTPUT):
 Total unique combinations: 5
 
 STANDARDIZATION IMPACT ANALYSIS:
-  Input modalities changed: 35 models
-  Output modalities changed: 35 models
+  Input modalities changed: 36 models
+  Output modalities changed: 36 models
   Input modalities unchanged: 0 models
   Output modalities unchanged: 0 models
 
@@ -476,7 +476,21 @@ MODEL 31: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 32: google/gemma-3n-e2b-it
+MODEL 32: qwen/qwen-2-vl-7b-instruct
+--------------------------------------------------
+  ID: qwen/qwen-2.5-vl-7b-instruct:free
+  Original Name: Qwen: Qwen2.5-VL 7B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-VL-7B-Instruct
+  Canonical Slug: qwen/qwen-2-vl-7b-instruct
+  Clean Model Name: Qwen2.5-VL 7B Instruct
+  Raw Input Modalities: text, image
+  Raw Output Modalities: text
+  Standardized Input Modalities: Text, Image
+  Standardized Output Modalities: Text
+
+================================================================================
+
+MODEL 33: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -490,7 +504,7 @@ MODEL 32: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 33: google/gemma-3n-e4b-it
+MODEL 34: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)
@@ -504,7 +518,7 @@ MODEL 33: google/gemma-3n-e4b-it
 
 ================================================================================
 
-MODEL 34: nvidia/nemotron-nano-12b-v2-vl
+MODEL 35: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -518,7 +532,7 @@ MODEL 34: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 35: amazon/nova-2-lite-v1
+MODEL 36: amazon/nova-2-lite-v1
 --------------------------------------------------
   ID: amazon/nova-2-lite-v1:free
   Original Name: Amazon: Nova 2 Lite (free)

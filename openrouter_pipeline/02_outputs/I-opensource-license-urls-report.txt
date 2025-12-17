@@ -1,22 +1,22 @@
 ================================================================================
 OPENSOURCE LICENSE URLS ENRICHMENT REPORT
-Generated: 2025-12-17 06:11 AM IST
+Generated: 2025-12-17 10:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 19
+  Total models : 20
   Input        : H-opensource-license-names.json
   Reference    : 05_opensource_license_urls.json
   Processor    : I_opensource_license_urls.py
   Output       : I-opensource-license-urls.json
 
 URL MAPPING STATISTICS:
-  Successful URL mappings: 19
+  Successful URL mappings: 20
   Failed URL mappings: 0
   Success rate: 100.0%
 
 LICENSE URL DISTRIBUTION:
-  Apache-2.0 → https://www.apache.org/licenses/LICENSE-2.0: 13 models
+  Apache-2.0 → https://www.apache.org/licenses/LICENSE-2.0: 14 models
   Llama-3.1 → https://www.llama.com/llama3_1/license/: 1 models
   MIT → https://opensource.org/licenses/MIT: 5 models
 
@@ -115,7 +115,17 @@ MODEL 9: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 10: qwen/qwen3-235b-a22b-04-28
+MODEL 10: qwen/qwen-2-vl-7b-instruct
+--------------------------------------------------
+  ID                     : qwen/qwen-2.5-vl-7b-instruct:free
+  Canonical Slug         : qwen/qwen-2-vl-7b-instruct
+  HuggingFace ID         : Qwen/Qwen2.5-VL-7B-Instruct
+  License Name           : Apache-2.0
+  Official License URL   : https://www.apache.org/licenses/LICENSE-2.0
+
+================================================================================
+
+MODEL 11: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID                     : qwen/qwen3-235b-a22b:free
   Canonical Slug         : qwen/qwen3-235b-a22b-04-28
@@ -125,7 +135,7 @@ MODEL 10: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 11: qwen/qwen3-4b-04-28
+MODEL 12: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID                     : qwen/qwen3-4b:free
   Canonical Slug         : qwen/qwen3-4b-04-28
@@ -135,7 +145,7 @@ MODEL 11: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 12: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 13: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID                     : qwen/qwen3-coder:free
   Canonical Slug         : qwen/qwen3-coder-480b-a35b-07-25
@@ -145,7 +155,7 @@ MODEL 12: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 13: venice/uncensored
+MODEL 14: venice/uncensored
 --------------------------------------------------
   ID                     : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug         : venice/uncensored
@@ -155,7 +165,7 @@ MODEL 13: venice/uncensored
 
 ================================================================================
 
-MODEL 14: nousresearch/hermes-3-llama-3.1-405b
+MODEL 15: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID                     : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug         : nousresearch/hermes-3-llama-3.1-405b
@@ -165,7 +175,7 @@ MODEL 14: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 15: deepseek/deepseek-r1-0528
+MODEL 16: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID                     : deepseek/deepseek-r1-0528:free
   Canonical Slug         : deepseek/deepseek-r1-0528
@@ -175,7 +185,7 @@ MODEL 15: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 16: tngtech/deepseek-r1t-chimera
+MODEL 17: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t-chimera
@@ -185,7 +195,7 @@ MODEL 16: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 17: tngtech/deepseek-r1t2-chimera
+MODEL 18: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID                     : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug         : tngtech/deepseek-r1t2-chimera
@@ -195,7 +205,7 @@ MODEL 17: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 18: xiaomi/mimo-v2-flash-20251210
+MODEL 19: xiaomi/mimo-v2-flash-20251210
 --------------------------------------------------
   ID                     : xiaomi/mimo-v2-flash:free
   Canonical Slug         : xiaomi/mimo-v2-flash-20251210
@@ -205,7 +215,7 @@ MODEL 18: xiaomi/mimo-v2-flash-20251210
 
 ================================================================================
 
-MODEL 19: z-ai/glm-4.5-air
+MODEL 20: z-ai/glm-4.5-air
 --------------------------------------------------
   ID                     : z-ai/glm-4.5-air:free
   Canonical Slug         : z-ai/glm-4.5-air

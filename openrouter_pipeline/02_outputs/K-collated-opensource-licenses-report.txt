@@ -1,21 +1,21 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-12-17 06:11 AM IST
+Generated: 2025-12-17 10:07 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 19
+  Total models        : 20
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 19 models
-  Stage H Opensource Names       : 19 models
-  Stage I Opensource URLs        : 19 models
+  Stage E (License Info URLs)    : 20 models
+  Stage H Opensource Names       : 20 models
+  Stage I Opensource URLs        : 20 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
-  13 models: Apache-2.0
+  14 models: Apache-2.0
    5 models: MIT
    1 models: Llama-3.1
 
@@ -150,7 +150,21 @@ MODEL 9: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 10: qwen/qwen3-235b-a22b-04-28
+MODEL 10: qwen/qwen-2-vl-7b-instruct
+--------------------------------------------------
+  ID: qwen/qwen-2.5-vl-7b-instruct:free
+  Original Name: Qwen: Qwen2.5-VL 7B Instruct (free)
+  HuggingFace ID: Qwen/Qwen2.5-VL-7B-Instruct
+  Canonical Slug: qwen/qwen-2-vl-7b-instruct
+  Clean Model Name: Qwen2.5-VL 7B Instruct
+  License Info Text: info
+  License Info URL: https://huggingface.co/Qwen/Qwen2.5-VL-7B-Instruct/blob/main/README.md
+  License Name: Apache-2.0
+  License URL: https://www.apache.org/licenses/LICENSE-2.0
+
+================================================================================
+
+MODEL 11: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -164,7 +178,7 @@ MODEL 10: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 11: qwen/qwen3-4b-04-28
+MODEL 12: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -178,7 +192,7 @@ MODEL 11: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 12: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 13: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -192,7 +206,7 @@ MODEL 12: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 13: venice/uncensored
+MODEL 14: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -206,7 +220,7 @@ MODEL 13: venice/uncensored
 
 ================================================================================
 
-MODEL 14: nousresearch/hermes-3-llama-3.1-405b
+MODEL 15: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -220,7 +234,7 @@ MODEL 14: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 15: deepseek/deepseek-r1-0528
+MODEL 16: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -234,7 +248,7 @@ MODEL 15: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 16: tngtech/deepseek-r1t-chimera
+MODEL 17: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -248,7 +262,7 @@ MODEL 16: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 17: tngtech/deepseek-r1t2-chimera
+MODEL 18: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -262,7 +276,7 @@ MODEL 17: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 18: xiaomi/mimo-v2-flash-20251210
+MODEL 19: xiaomi/mimo-v2-flash-20251210
 --------------------------------------------------
   ID: xiaomi/mimo-v2-flash:free
   Original Name: Xiaomi: MiMo-V2-Flash (free)
@@ -276,7 +290,7 @@ MODEL 18: xiaomi/mimo-v2-flash-20251210
 
 ================================================================================
 
-MODEL 19: z-ai/glm-4.5-air
+MODEL 20: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)
