@@ -1,10 +1,26 @@
 {
   "metadata": {
-    "generated_at": "2025-12-16 06:14 AM IST",
-    "total_models": 21,
+    "generated_at": "2025-12-17 06:11 AM IST",
+    "total_models": 24,
     "pipeline_stage": "G_standardize_other_license_names_from_hf"
   },
   "models": [
+    {
+      "id": "allenai/olmo-3.1-32b-think:free",
+      "canonical_slug": "allenai/olmo-3.1-32b-think-20251215",
+      "name": "AllenAI: Olmo 3.1 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Think",
+      "raw_extracted_license": "apache-2.0",
+      "standardized_license_name": "Apache-2.0"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash:free",
+      "canonical_slug": "xiaomi/mimo-v2-flash-20251210",
+      "name": "Xiaomi: MiMo-V2-Flash (free)",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2-Flash",
+      "raw_extracted_license": "mit",
+      "standardized_license_name": "MIT"
+    },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b:free",
       "canonical_slug": "nvidia/nemotron-3-nano-30b-a3b",
@@ -122,6 +138,14 @@
       "canonical_slug": "tngtech/deepseek-r1t2-chimera",
       "name": "TNG: DeepSeek R1T2 Chimera (free)",
       "hugging_face_id": "tngtech/DeepSeek-TNG-R1T2-Chimera",
+      "raw_extracted_license": "mit",
+      "standardized_license_name": "MIT"
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528:free",
+      "canonical_slug": "deepseek/deepseek-r1-0528",
+      "name": "DeepSeek: R1 0528 (free)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528",
       "raw_extracted_license": "mit",
       "standardized_license_name": "MIT"
     },

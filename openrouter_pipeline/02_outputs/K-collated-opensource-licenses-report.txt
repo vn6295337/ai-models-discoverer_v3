@@ -1,22 +1,22 @@
 ================================================================================
 COLLATED OPENSOURCE LICENSE INFORMATION REPORT
-Generated: 2025-12-16 06:14 AM IST
+Generated: 2025-12-17 06:11 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models        : 16
+  Total models        : 19
   Input sources       : 3 pipeline stage files
   Processor           : K_collate_opensource_licenses.py
   Output              : K-collated-opensource-licenses.json
 
 PIPELINE STAGE COVERAGE:
-  Stage E (License Info URLs)    : 16 models
-  Stage H Opensource Names       : 16 models
-  Stage I Opensource URLs        : 16 models
+  Stage E (License Info URLs)    : 19 models
+  Stage H Opensource Names       : 19 models
+  Stage I Opensource URLs        : 19 models
 
 OPENSOURCE LICENSE DISTRIBUTION:
-  12 models: Apache-2.0
-   3 models: MIT
+  13 models: Apache-2.0
+   5 models: MIT
    1 models: Llama-3.1
 
 Total unique license types: 3
@@ -52,7 +52,21 @@ MODEL 2: allenai/olmo-3-32b-think-20251121
 
 ================================================================================
 
-MODEL 3: arcee-ai/trinity-mini-20251201
+MODEL 3: allenai/olmo-3.1-32b-think-20251215
+--------------------------------------------------
+  ID: allenai/olmo-3.1-32b-think:free
+  Original Name: AllenAI: Olmo 3.1 32B Think (free)
+  HuggingFace ID: allenai/Olmo-3.1-32B-Think
+  Canonical Slug: allenai/olmo-3.1-32b-think-20251215
+  Clean Model Name: Olmo 3.1 32B Think
+  License Info Text: info
+  License Info URL: https://huggingface.co/allenai/Olmo-3.1-32B-Think/blob/main/README.md
+  License Name: Apache-2.0
+  License URL: https://www.apache.org/licenses/LICENSE-2.0
+
+================================================================================
+
+MODEL 4: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -66,7 +80,7 @@ MODEL 3: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 4: mistralai/mistral-7b-instruct
+MODEL 5: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -80,7 +94,7 @@ MODEL 4: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 5: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 6: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -94,7 +108,7 @@ MODEL 5: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 6: nex-agi/deepseek-v3.1-nex-n1
+MODEL 7: nex-agi/deepseek-v3.1-nex-n1
 --------------------------------------------------
   ID: nex-agi/deepseek-v3.1-nex-n1:free
   Original Name: Nex AGI: DeepSeek V3.1 Nex N1 (free)
@@ -108,7 +122,7 @@ MODEL 6: nex-agi/deepseek-v3.1-nex-n1
 
 ================================================================================
 
-MODEL 7: openai/gpt-oss-120b
+MODEL 8: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -122,7 +136,7 @@ MODEL 7: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 8: openai/gpt-oss-20b
+MODEL 9: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -136,7 +150,7 @@ MODEL 8: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 9: qwen/qwen3-235b-a22b-04-28
+MODEL 10: qwen/qwen3-235b-a22b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-235b-a22b:free
   Original Name: Qwen: Qwen3 235B A22B (free)
@@ -150,7 +164,7 @@ MODEL 9: qwen/qwen3-235b-a22b-04-28
 
 ================================================================================
 
-MODEL 10: qwen/qwen3-4b-04-28
+MODEL 11: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID: qwen/qwen3-4b:free
   Original Name: Qwen: Qwen3 4B (free)
@@ -164,7 +178,7 @@ MODEL 10: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 11: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 12: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID: qwen/qwen3-coder:free
   Original Name: Qwen: Qwen3 Coder 480B A35B (free)
@@ -178,7 +192,7 @@ MODEL 11: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 12: venice/uncensored
+MODEL 13: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -192,7 +206,7 @@ MODEL 12: venice/uncensored
 
 ================================================================================
 
-MODEL 13: nousresearch/hermes-3-llama-3.1-405b
+MODEL 14: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -206,7 +220,21 @@ MODEL 13: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 14: tngtech/deepseek-r1t-chimera
+MODEL 15: deepseek/deepseek-r1-0528
+--------------------------------------------------
+  ID: deepseek/deepseek-r1-0528:free
+  Original Name: DeepSeek: R1 0528 (free)
+  HuggingFace ID: deepseek-ai/DeepSeek-R1-0528
+  Canonical Slug: deepseek/deepseek-r1-0528
+  Clean Model Name: R1 0528
+  License Info Text: info
+  License Info URL: https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/LICENSE
+  License Name: MIT
+  License URL: https://opensource.org/licenses/MIT
+
+================================================================================
+
+MODEL 16: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -220,7 +248,7 @@ MODEL 14: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 15: tngtech/deepseek-r1t2-chimera
+MODEL 17: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -234,7 +262,21 @@ MODEL 15: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 16: z-ai/glm-4.5-air
+MODEL 18: xiaomi/mimo-v2-flash-20251210
+--------------------------------------------------
+  ID: xiaomi/mimo-v2-flash:free
+  Original Name: Xiaomi: MiMo-V2-Flash (free)
+  HuggingFace ID: XiaomiMiMo/MiMo-V2-Flash
+  Canonical Slug: xiaomi/mimo-v2-flash-20251210
+  Clean Model Name: MiMo-V2-Flash
+  License Info Text: info
+  License Info URL: https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/blob/main/README.md
+  License Name: MIT
+  License URL: https://opensource.org/licenses/MIT
+
+================================================================================
+
+MODEL 19: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

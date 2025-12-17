@@ -1,10 +1,26 @@
 {
   "metadata": {
-    "generated_at": "2025-12-16 06:14 AM IST",
-    "total_models": 16,
+    "generated_at": "2025-12-17 06:11 AM IST",
+    "total_models": 19,
     "pipeline_stage": "I_opensource_license_urls"
   },
   "models": [
+    {
+      "id": "allenai/olmo-3.1-32b-think:free",
+      "canonical_slug": "allenai/olmo-3.1-32b-think-20251215",
+      "name": "AllenAI: Olmo 3.1 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Think",
+      "license_name": "Apache-2.0",
+      "official_license_url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash:free",
+      "canonical_slug": "xiaomi/mimo-v2-flash-20251210",
+      "name": "Xiaomi: MiMo-V2-Flash (free)",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2-Flash",
+      "license_name": "MIT",
+      "official_license_url": "https://opensource.org/licenses/MIT"
+    },
     {
       "id": "nex-agi/deepseek-v3.1-nex-n1:free",
       "canonical_slug": "nex-agi/deepseek-v3.1-nex-n1",
@@ -82,6 +98,14 @@
       "canonical_slug": "tngtech/deepseek-r1t2-chimera",
       "name": "TNG: DeepSeek R1T2 Chimera (free)",
       "hugging_face_id": "tngtech/DeepSeek-TNG-R1T2-Chimera",
+      "license_name": "MIT",
+      "official_license_url": "https://opensource.org/licenses/MIT"
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528:free",
+      "canonical_slug": "deepseek/deepseek-r1-0528",
+      "name": "DeepSeek: R1 0528 (free)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528",
       "license_name": "MIT",
       "official_license_url": "https://opensource.org/licenses/MIT"
     },

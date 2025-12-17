@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-16 06:14 AM IST",
-    "total_models": 16,
+    "generated_at": "2025-12-17 06:11 AM IST",
+    "total_models": 19,
     "pipeline_stage": "K_collate_opensource_licenses"
   },
   "models": [
@@ -28,6 +28,17 @@
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
     },
     {
+      "id": "allenai/olmo-3.1-32b-think:free",
+      "canonical_slug": "allenai/olmo-3.1-32b-think-20251215",
+      "original_name": "AllenAI: Olmo 3.1 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Think",
+      "clean_model_name": "Olmo 3.1 32B Think",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/allenai/Olmo-3.1-32B-Think/blob/main/README.md",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
       "id": "arcee-ai/trinity-mini:free",
       "canonical_slug": "arcee-ai/trinity-mini-20251201",
       "original_name": "Arcee AI: Trinity Mini (free)",
@@ -37,6 +48,17 @@
       "license_info_url": "https://huggingface.co/arcee-ai/Trinity-Mini/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528:free",
+      "canonical_slug": "deepseek/deepseek-r1-0528",
+      "original_name": "DeepSeek: R1 0528 (free)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528",
+      "clean_model_name": "R1 0528",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/LICENSE",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT"
     },
     {
       "id": "mistralai/mistral-7b-instruct:free",
@@ -169,6 +191,17 @@
       "license_info_url": "https://huggingface.co/cognitivecomputations/Dolphin-Mistral-24B-Venice-Edition/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash:free",
+      "canonical_slug": "xiaomi/mimo-v2-flash-20251210",
+      "original_name": "Xiaomi: MiMo-V2-Flash (free)",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2-Flash",
+      "clean_model_name": "MiMo-V2-Flash",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/blob/main/README.md",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT"
     },
     {
       "id": "z-ai/glm-4.5-air:free",

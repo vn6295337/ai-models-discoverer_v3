@@ -1,10 +1,24 @@
 {
   "metadata": {
-    "generated_at": "2025-12-16 06:14 AM IST",
-    "total_models": 21,
+    "generated_at": "2025-12-17 06:11 AM IST",
+    "total_models": 24,
     "pipeline_stage": "E_fetch_other_license_info_urls_from_hf"
   },
   "models": [
+    {
+      "id": "allenai/olmo-3.1-32b-think:free",
+      "canonical_slug": "allenai/olmo-3.1-32b-think-20251215",
+      "name": "AllenAI: Olmo 3.1 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Think",
+      "license_info_url": "https://huggingface.co/allenai/Olmo-3.1-32B-Think/blob/main/README.md"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash:free",
+      "canonical_slug": "xiaomi/mimo-v2-flash-20251210",
+      "name": "Xiaomi: MiMo-V2-Flash (free)",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2-Flash",
+      "license_info_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/blob/main/README.md"
+    },
     {
       "id": "nvidia/nemotron-3-nano-30b-a3b:free",
       "canonical_slug": "nvidia/nemotron-3-nano-30b-a3b",
@@ -109,6 +123,13 @@
       "name": "TNG: DeepSeek R1T2 Chimera (free)",
       "hugging_face_id": "tngtech/DeepSeek-TNG-R1T2-Chimera",
       "license_info_url": "https://huggingface.co/tngtech/DeepSeek-TNG-R1T2-Chimera/blob/main/README.md"
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528:free",
+      "canonical_slug": "deepseek/deepseek-r1-0528",
+      "name": "DeepSeek: R1 0528 (free)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528",
+      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/LICENSE"
     },
     {
       "id": "qwen/qwen3-4b:free",

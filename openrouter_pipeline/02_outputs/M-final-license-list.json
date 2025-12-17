@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-16 06:14 AM IST",
-    "total_models": 32,
+    "generated_at": "2025-12-17 06:11 AM IST",
+    "total_models": 36,
     "pipeline_stage": "M_final_list_of_licenses"
   },
   "models": [
@@ -30,6 +30,18 @@
       "source_category": "opensource"
     },
     {
+      "id": "allenai/olmo-3.1-32b-think:free",
+      "canonical_slug": "allenai/olmo-3.1-32b-think-20251215",
+      "original_name": "AllenAI: Olmo 3.1 32B Think (free)",
+      "hugging_face_id": "allenai/Olmo-3.1-32B-Think",
+      "clean_model_name": "Olmo 3.1 32B Think",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/allenai/Olmo-3.1-32B-Think/blob/main/README.md",
+      "license_name": "Apache-2.0",
+      "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "opensource"
+    },
+    {
       "id": "amazon/nova-2-lite-v1:free",
       "canonical_slug": "amazon/nova-2-lite-v1",
       "original_name": "Amazon/Nova 2 Lite V1",
@@ -51,6 +63,18 @@
       "license_info_url": "https://huggingface.co/arcee-ai/Trinity-Mini/blob/main/README.md",
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
+      "source_category": "opensource"
+    },
+    {
+      "id": "deepseek/deepseek-r1-0528:free",
+      "canonical_slug": "deepseek/deepseek-r1-0528",
+      "original_name": "DeepSeek: R1 0528 (free)",
+      "hugging_face_id": "deepseek-ai/DeepSeek-R1-0528",
+      "clean_model_name": "R1 0528",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/deepseek-ai/DeepSeek-R1-0528/blob/main/LICENSE",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT",
       "source_category": "opensource"
     },
     {
@@ -124,6 +148,18 @@
       "license_name": "Apache-2.0",
       "license_url": "https://www.apache.org/licenses/LICENSE-2.0",
       "source_category": "proprietary"
+    },
+    {
+      "id": "meta-llama/llama-3.1-405b-instruct:free",
+      "canonical_slug": "meta-llama/llama-3.1-405b-instruct",
+      "original_name": "Meta: Llama 3.1 405B Instruct (free)",
+      "hugging_face_id": "meta-llama/Meta-Llama-3.1-405B-Instruct",
+      "clean_model_name": "Llama 3.1 405B Instruct",
+      "license_info_text": "",
+      "license_info_url": "",
+      "license_name": "Llama-3.1",
+      "license_url": "https://www.llama.com/llama3_1/license/",
+      "source_category": "meta"
     },
     {
       "id": "meta-llama/llama-3.2-3b-instruct:free",
@@ -376,6 +412,18 @@
       "license_name": "xAI",
       "license_url": "https://x.ai/legal",
       "source_category": "proprietary"
+    },
+    {
+      "id": "xiaomi/mimo-v2-flash:free",
+      "canonical_slug": "xiaomi/mimo-v2-flash-20251210",
+      "original_name": "Xiaomi: MiMo-V2-Flash (free)",
+      "hugging_face_id": "XiaomiMiMo/MiMo-V2-Flash",
+      "clean_model_name": "MiMo-V2-Flash",
+      "license_info_text": "info",
+      "license_info_url": "https://huggingface.co/XiaomiMiMo/MiMo-V2-Flash/blob/main/README.md",
+      "license_name": "MIT",
+      "license_url": "https://opensource.org/licenses/MIT",
+      "source_category": "opensource"
     },
     {
       "id": "z-ai/glm-4.5-air:free",
