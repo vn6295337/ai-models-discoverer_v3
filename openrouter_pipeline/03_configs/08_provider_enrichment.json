@@ -36,7 +36,8 @@
     "amazon": ["Amazon", "United States"],
     "ai2": ["Ai2", "United States"],
     "allenai": ["Ai2", "United States"],
-    "nex-agi": ["Nex AGI", "China"]
+    "nex-agi": ["Nex AGI", "China"],
+    "xiaomi": ["Xiaomi", "China"]
   },
   "model_family_patterns": {
     "gemma": ["gemma", "gemma-2", "gemma-3", "gemma-3n"],
@@ -54,7 +55,8 @@
     "reka": ["reka"],
     "Dolphin": ["uncensored"],
     "nova": ["nova"],
-    "olmo": ["olmo"]
+    "olmo": ["olmo"],
+    "mimo": ["mimo"]
   },
   "special_mappings": {
     "oss_models": {
@@ -107,6 +109,8 @@
     "allenai": "https://allenai.org/",
     "olmo": "https://allenai.org/",
     "nex agi": "https://nex.sii.edu.cn/en/",
-    "nex-agi": "https://nex.sii.edu.cn/en/"
+    "nex-agi": "https://nex.sii.edu.cn/en/",
+    "xiaomi": "https://mimo.xiaomi.com/",
+    "mimo": "https://mimo.xiaomi.com/"
   }
 }
