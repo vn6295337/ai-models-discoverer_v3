@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-17 10:07 AM IST",
-    "total_models": 36,
+    "generated_at": "2025-12-18 07:29 AM IST",
+    "total_models": 35,
     "pipeline_stage": "P_enrich_provider_info"
   },
   "models": [
@@ -104,26 +104,6 @@
       "model_provider_country": "China",
       "model_family": "nex agi",
       "official_url": "https://nex.sii.edu.cn/en/"
-    },
-    {
-      "id": "amazon/nova-2-lite-v1:free",
-      "canonical_slug": "amazon/nova-2-lite-v1",
-      "provider_slug": "nova-2-lite-v1",
-      "original_name": "Amazon: Nova 2 Lite (free)",
-      "hugging_face_id": "",
-      "clean_model_name": "Nova 2 Lite",
-      "raw_input_modalities": "text, image, video, file",
-      "raw_output_modalities": "text",
-      "enhanced_input_modalities": "text, image, video, file",
-      "enhanced_output_modalities": "text",
-      "standardized_input_modalities": "Text, Image, Video, File",
-      "standardized_output_modalities": "Text",
-      "google_enhancement_status": "no_google_model",
-      "inference_provider": "OpenRouter",
-      "model_provider": "Amazon",
-      "model_provider_country": "United States",
-      "model_family": "amazon",
-      "official_url": "https://aws.amazon.com/nova/models/"
     },
     {
       "id": "arcee-ai/trinity-mini:free",

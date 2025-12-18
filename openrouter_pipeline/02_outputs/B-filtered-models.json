@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-17 10:07 AM IST",
-    "total_models": 36,
+    "generated_at": "2025-12-18 07:29 AM IST",
+    "total_models": 35,
     "pipeline_stage": "B_filter_models"
   },
   "models": [
@@ -257,59 +257,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      }
-    },
-    {
-      "id": "amazon/nova-2-lite-v1:free",
-      "canonical_slug": "amazon/nova-2-lite-v1",
-      "hugging_face_id": "",
-      "name": "Amazon: Nova 2 Lite (free)",
-      "created": 1764696672,
-      "description": "Nova 2 Lite is a fast, cost-effective reasoning model for everyday workloads that can process text, images, and videos to generate text. \n\nNova 2 Lite demonstrates standout capabilities in processing documents, extracting information from videos, generating code, providing accurate grounded answers, and automating multi-step agentic workflows.",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "video",
-          "file"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Nova",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 65535,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "seed",
-        "stop",
-        "temperature",
-        "tool_choice",
-        "tools",
         "top_p"
       ],
       "default_parameters": {

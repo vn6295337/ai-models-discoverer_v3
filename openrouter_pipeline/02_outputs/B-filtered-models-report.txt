@@ -1,39 +1,39 @@
 ================================================================================
 OPENROUTER MODELS SEQUENTIAL FILTER REPORT
-Generated: 2025-12-17 10:07 AM IST
+Generated: 2025-12-18 07:29 AM IST
 ================================================================================
 
 SEQUENTIAL FILTERING SUMMARY:
   Total models processed: 349
-  Models passed all filters: 36
-  Models excluded: 313
-  Success rate: 10.3%
+  Models passed all filters: 35
+  Models excluded: 314
+  Success rate: 10.0%
 
 STEP-BY-STEP FILTERING BREAKDOWN:
   Step 1 - Free Pricing Filter:
     Input: 349 models
-    Excluded: 312 models (non-free pricing)
-    Remaining: 37 models
-
-  Step 2 - Billing Description Filter:
-    Input: 37 models
-    Excluded: 0 models (billing requirements in description)
-    Remaining: 37 models
-
-  Step 3 - Keyword Filter:
-    Input: 37 models
-    Excluded: 1 models (preview/experimental/beta)
+    Excluded: 313 models (non-free pricing)
     Remaining: 36 models
 
-  Step 4 - Deduplication Filter:
+  Step 2 - Billing Description Filter:
     Input: 36 models
+    Excluded: 0 models (billing requirements in description)
+    Remaining: 36 models
+
+  Step 3 - Keyword Filter:
+    Input: 36 models
+    Excluded: 1 models (preview/experimental/beta)
+    Remaining: 35 models
+
+  Step 4 - Deduplication Filter:
+    Input: 35 models
     Excluded: 0 models (duplicates after (free) suffix normalization)
-    Final: 36 models
+    Final: 35 models
 
 ================================================================================
 STEP 1 - FREE PRICING FILTER RESULTS
 ================================================================================
-Excluded 312 models with non-free pricing (details omitted due to volume)
+Excluded 313 models with non-free pricing (details omitted due to volume)
 
 ================================================================================
 STEP 2 - BILLING DESCRIPTION FILTER RESULTS (DETAILED)
@@ -194,13 +194,6 @@ PROVIDER: NEX AGI (1 models)
       Pricing: prompt=0, completion=0, request=0
 
 
-PROVIDER: AMAZON (1 models)
---------------------------------------------------
-   1. Amazon: Nova 2 Lite (free)
-      ID: amazon/nova-2-lite-v1:free
-      Pricing: prompt=0, completion=0, request=0
-
-
 PROVIDER: ARCEE AI (1 models)
 --------------------------------------------------
    1. Arcee AI: Trinity Mini (free)
@@ -259,11 +252,11 @@ PROVIDER: NOUS (1 models)
 
 ================================================================================
 FINAL SUMMARY:
-  Total providers: 19
-  Total models passed all filters: 36
-  Models excluded by pricing: 312
+  Total providers: 18
+  Total models passed all filters: 35
+  Models excluded by pricing: 313
   Models excluded by billing description: 0
   Models excluded by keywords: 1
   Models excluded by deduplication: 0
-  Total exclusions: 313
+  Total exclusions: 314
   ✓ All filtered models accounted for

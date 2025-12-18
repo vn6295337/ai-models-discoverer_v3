@@ -1,10 +1,10 @@
 ================================================================================
 PROVIDER ENRICHED MODELS REPORT
-Generated: 2025-12-17 10:07 AM IST
+Generated: 2025-12-18 07:29 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models      : 36
+  Total models      : 35
   Input             : O-standardized-modalities.json
   Config            : 08_provider_enrichment.json
   Processor         : P_enrich_provider_info.py
@@ -21,7 +21,6 @@ MODEL PROVIDER DISTRIBUTION:
    3 models: TNG Technology
    2 models: Ai2
    2 models: OpenAI
-   1 models: Amazon
    1 models: Arcee
    1 models: Cognitive Computations
    1 models: DeepSeek
@@ -32,10 +31,10 @@ MODEL PROVIDER DISTRIBUTION:
    1 models: Xiaomi
    1 models: Z.AI
 
-Total unique model providers: 18
+Total unique model providers: 17
 
 MODEL PROVIDER COUNTRY DISTRIBUTION:
-  19 models: United States
+  18 models: United States
   11 models: China
    3 models: France
    3 models: Germany
@@ -51,7 +50,6 @@ MODEL FAMILY DISTRIBUTION:
    3 models: tng technology
    2 models: ai2
    2 models: openai
-   1 models: amazon
    1 models: arcee
    1 models: cognitive computations
    1 models: deepseek
@@ -62,7 +60,7 @@ MODEL FAMILY DISTRIBUTION:
    1 models: xiaomi
    1 models: z.ai
 
-Total unique model families: 18
+Total unique model families: 17
 
 DETAILED PROVIDER ENRICHED MODEL INFORMATION:
 ================================================================================
@@ -165,21 +163,7 @@ MODEL 7: alibaba/tongyi-deepresearch-30b-a3b
 
 ================================================================================
 
-MODEL 8: amazon/nova-2-lite-v1
---------------------------------------------------
-  ID: amazon/nova-2-lite-v1:free
-  Original Name: Amazon: Nova 2 Lite (free)
-  HuggingFace ID: 
-  Canonical Slug: amazon/nova-2-lite-v1
-  Clean Model Name: Nova 2 Lite
-  Model Provider: Amazon
-  Model Provider Country: United States
-  Model Family: amazon
-  Official URL: https://aws.amazon.com/nova/models/
-
-================================================================================
-
-MODEL 9: arcee-ai/trinity-mini-20251201
+MODEL 8: arcee-ai/trinity-mini-20251201
 --------------------------------------------------
   ID: arcee-ai/trinity-mini:free
   Original Name: Arcee AI: Trinity Mini (free)
@@ -193,7 +177,7 @@ MODEL 9: arcee-ai/trinity-mini-20251201
 
 ================================================================================
 
-MODEL 10: venice/uncensored
+MODEL 9: venice/uncensored
 --------------------------------------------------
   ID: cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Original Name: Venice: Uncensored (free)
@@ -207,7 +191,7 @@ MODEL 10: venice/uncensored
 
 ================================================================================
 
-MODEL 11: deepseek/deepseek-r1-0528
+MODEL 10: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID: deepseek/deepseek-r1-0528:free
   Original Name: DeepSeek: R1 0528 (free)
@@ -221,7 +205,7 @@ MODEL 11: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 12: google/gemma-3-12b-it
+MODEL 11: google/gemma-3-12b-it
 --------------------------------------------------
   ID: google/gemma-3-12b-it:free
   Original Name: Google: Gemma 3 12B (free)
@@ -235,7 +219,7 @@ MODEL 12: google/gemma-3-12b-it
 
 ================================================================================
 
-MODEL 13: google/gemma-3-27b-it
+MODEL 12: google/gemma-3-27b-it
 --------------------------------------------------
   ID: google/gemma-3-27b-it:free
   Original Name: Google: Gemma 3 27B (free)
@@ -249,7 +233,7 @@ MODEL 13: google/gemma-3-27b-it
 
 ================================================================================
 
-MODEL 14: google/gemma-3-4b-it
+MODEL 13: google/gemma-3-4b-it
 --------------------------------------------------
   ID: google/gemma-3-4b-it:free
   Original Name: Google: Gemma 3 4B (free)
@@ -263,7 +247,7 @@ MODEL 14: google/gemma-3-4b-it
 
 ================================================================================
 
-MODEL 15: google/gemma-3n-e2b-it
+MODEL 14: google/gemma-3n-e2b-it
 --------------------------------------------------
   ID: google/gemma-3n-e2b-it:free
   Original Name: Google: Gemma 3n 2B (free)
@@ -277,7 +261,7 @@ MODEL 15: google/gemma-3n-e2b-it
 
 ================================================================================
 
-MODEL 16: google/gemma-3n-e4b-it
+MODEL 15: google/gemma-3n-e4b-it
 --------------------------------------------------
   ID: google/gemma-3n-e4b-it:free
   Original Name: Google: Gemma 3n 4B (free)
@@ -291,7 +275,7 @@ MODEL 16: google/gemma-3n-e4b-it
 
 ================================================================================
 
-MODEL 17: kwaipilot/kat-coder-pro-v1
+MODEL 16: kwaipilot/kat-coder-pro-v1
 --------------------------------------------------
   ID: kwaipilot/kat-coder-pro:free
   Original Name: Kwaipilot: KAT-Coder-Pro V1 (free)
@@ -305,7 +289,7 @@ MODEL 17: kwaipilot/kat-coder-pro-v1
 
 ================================================================================
 
-MODEL 18: meta-llama/llama-3.1-405b-instruct
+MODEL 17: meta-llama/llama-3.1-405b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.1-405b-instruct:free
   Original Name: Meta: Llama 3.1 405B Instruct (free)
@@ -319,7 +303,7 @@ MODEL 18: meta-llama/llama-3.1-405b-instruct
 
 ================================================================================
 
-MODEL 19: meta-llama/llama-3.2-3b-instruct
+MODEL 18: meta-llama/llama-3.2-3b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.2-3b-instruct:free
   Original Name: Meta: Llama 3.2 3B Instruct (free)
@@ -333,7 +317,7 @@ MODEL 19: meta-llama/llama-3.2-3b-instruct
 
 ================================================================================
 
-MODEL 20: meta-llama/llama-3.3-70b-instruct
+MODEL 19: meta-llama/llama-3.3-70b-instruct
 --------------------------------------------------
   ID: meta-llama/llama-3.3-70b-instruct:free
   Original Name: Meta: Llama 3.3 70B Instruct (free)
@@ -347,7 +331,7 @@ MODEL 20: meta-llama/llama-3.3-70b-instruct
 
 ================================================================================
 
-MODEL 21: mistralai/devstral-2512
+MODEL 20: mistralai/devstral-2512
 --------------------------------------------------
   ID: mistralai/devstral-2512:free
   Original Name: Mistral: Devstral 2 2512 (free)
@@ -361,7 +345,7 @@ MODEL 21: mistralai/devstral-2512
 
 ================================================================================
 
-MODEL 22: mistralai/mistral-7b-instruct
+MODEL 21: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID: mistralai/mistral-7b-instruct:free
   Original Name: Mistral: Mistral 7B Instruct (free)
@@ -375,7 +359,7 @@ MODEL 22: mistralai/mistral-7b-instruct
 
 ================================================================================
 
-MODEL 23: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 22: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID: mistralai/mistral-small-3.1-24b-instruct:free
   Original Name: Mistral: Mistral Small 3.1 24B (free)
@@ -389,7 +373,7 @@ MODEL 23: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 24: moonshotai/kimi-k2
+MODEL 23: moonshotai/kimi-k2
 --------------------------------------------------
   ID: moonshotai/kimi-k2:free
   Original Name: MoonshotAI: Kimi K2 0711 (free)
@@ -403,7 +387,7 @@ MODEL 24: moonshotai/kimi-k2
 
 ================================================================================
 
-MODEL 25: nex-agi/deepseek-v3.1-nex-n1
+MODEL 24: nex-agi/deepseek-v3.1-nex-n1
 --------------------------------------------------
   ID: nex-agi/deepseek-v3.1-nex-n1:free
   Original Name: Nex AGI: DeepSeek V3.1 Nex N1 (free)
@@ -417,7 +401,7 @@ MODEL 25: nex-agi/deepseek-v3.1-nex-n1
 
 ================================================================================
 
-MODEL 26: nousresearch/hermes-3-llama-3.1-405b
+MODEL 25: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID: nousresearch/hermes-3-llama-3.1-405b:free
   Original Name: Nous: Hermes 3 405B Instruct (free)
@@ -431,7 +415,7 @@ MODEL 26: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 27: nvidia/nemotron-3-nano-30b-a3b
+MODEL 26: nvidia/nemotron-3-nano-30b-a3b
 --------------------------------------------------
   ID: nvidia/nemotron-3-nano-30b-a3b:free
   Original Name: NVIDIA: Nemotron 3 Nano 30B A3B (free)
@@ -445,7 +429,7 @@ MODEL 27: nvidia/nemotron-3-nano-30b-a3b
 
 ================================================================================
 
-MODEL 28: nvidia/nemotron-nano-12b-v2-vl
+MODEL 27: nvidia/nemotron-nano-12b-v2-vl
 --------------------------------------------------
   ID: nvidia/nemotron-nano-12b-v2-vl:free
   Original Name: NVIDIA: Nemotron Nano 12B 2 VL (free)
@@ -459,7 +443,7 @@ MODEL 28: nvidia/nemotron-nano-12b-v2-vl
 
 ================================================================================
 
-MODEL 29: nvidia/nemotron-nano-9b-v2
+MODEL 28: nvidia/nemotron-nano-9b-v2
 --------------------------------------------------
   ID: nvidia/nemotron-nano-9b-v2:free
   Original Name: NVIDIA: Nemotron Nano 9B V2 (free)
@@ -473,7 +457,7 @@ MODEL 29: nvidia/nemotron-nano-9b-v2
 
 ================================================================================
 
-MODEL 30: openai/gpt-oss-120b
+MODEL 29: openai/gpt-oss-120b
 --------------------------------------------------
   ID: openai/gpt-oss-120b:free
   Original Name: OpenAI: gpt-oss-120b (free)
@@ -487,7 +471,7 @@ MODEL 30: openai/gpt-oss-120b
 
 ================================================================================
 
-MODEL 31: openai/gpt-oss-20b
+MODEL 30: openai/gpt-oss-20b
 --------------------------------------------------
   ID: openai/gpt-oss-20b:free
   Original Name: OpenAI: gpt-oss-20b (free)
@@ -501,7 +485,7 @@ MODEL 31: openai/gpt-oss-20b
 
 ================================================================================
 
-MODEL 32: tngtech/deepseek-r1t-chimera
+MODEL 31: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t-chimera:free
   Original Name: TNG: DeepSeek R1T Chimera (free)
@@ -515,7 +499,7 @@ MODEL 32: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 33: tngtech/deepseek-r1t2-chimera
+MODEL 32: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID: tngtech/deepseek-r1t2-chimera:free
   Original Name: TNG: DeepSeek R1T2 Chimera (free)
@@ -529,7 +513,7 @@ MODEL 33: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 34: tngtech/tng-r1t-chimera
+MODEL 33: tngtech/tng-r1t-chimera
 --------------------------------------------------
   ID: tngtech/tng-r1t-chimera:free
   Original Name: TNG: R1T Chimera (free)
@@ -543,7 +527,7 @@ MODEL 34: tngtech/tng-r1t-chimera
 
 ================================================================================
 
-MODEL 35: xiaomi/mimo-v2-flash-20251210
+MODEL 34: xiaomi/mimo-v2-flash-20251210
 --------------------------------------------------
   ID: xiaomi/mimo-v2-flash:free
   Original Name: Xiaomi: MiMo-V2-Flash (free)
@@ -557,7 +541,7 @@ MODEL 35: xiaomi/mimo-v2-flash-20251210
 
 ================================================================================
 
-MODEL 36: z-ai/glm-4.5-air
+MODEL 35: z-ai/glm-4.5-air
 --------------------------------------------------
   ID: z-ai/glm-4.5-air:free
   Original Name: Z.AI: GLM 4.5 Air (free)

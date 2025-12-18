@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated_at": "2025-12-17 10:07 AM IST",
-    "total_models": 36,
+    "generated_at": "2025-12-18 07:29 AM IST",
+    "total_models": 35,
     "pipeline_stage": "N_extract_raw_modalities"
   },
   "models": [
@@ -48,15 +48,6 @@
       "hugging_face_id": "nex-agi/DeepSeek-V3.1-Nex-N1",
       "clean_model_name": "DeepSeek V3.1 Nex N1",
       "raw_input_modalities": "text",
-      "raw_output_modalities": "text"
-    },
-    {
-      "id": "amazon/nova-2-lite-v1:free",
-      "canonical_slug": "amazon/nova-2-lite-v1",
-      "original_name": "Amazon: Nova 2 Lite (free)",
-      "hugging_face_id": "",
-      "clean_model_name": "Nova 2 Lite",
-      "raw_input_modalities": "text, image, video, file",
       "raw_output_modalities": "text"
     },
     {

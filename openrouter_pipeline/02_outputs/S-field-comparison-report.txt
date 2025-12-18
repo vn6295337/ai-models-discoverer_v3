@@ -1,5 +1,5 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-17 10:07 AM IST
+Generated: 2025-12-18 07:29 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
@@ -7,58 +7,58 @@ SUMMARY STATISTICS
 
 1. OVERALL STATISTICS:
    • Total unique model names: 35
-   • Total records in pipeline: 35
-   • Total records in Supabase: 30
-   • Models in both systems: 30
+   • Total records in pipeline: 34
+   • Total records in Supabase: 35
+   • Models in both systems: 34
    • Models with differences: 0
-   • Models in pipeline only (not in Supabase): 5
-   • Models in Supabase only (not in pipeline): 0
+   • Models in pipeline only (not in Supabase): 0
+   • Models in Supabase only (not in pipeline): 1
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • model_provider:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • human_readable_name:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • model_provider_country:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • official_url:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • input_modalities:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • output_modalities:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • license_info_text:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • license_info_url:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • license_name:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • license_url:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • rate_limits:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
    • provider_api_access:
-     - Exact matches: 30
+     - Exact matches: 34
      - Differences: 0
 
 3. CATEGORIZED BREAKDOWN:
-   • New models (pipeline only): 5
-     Models: Llama 3.1 405B Instruct, MiMo-V2-Flash, Olmo 3.1 32B Think, Qwen2.5-VL 7B Instruct, R1 0528
    • Existing models with differences: 0
+   • Deprecated models (Supabase only): 1
+     Models: Nova 2 Lite
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -368,19 +368,19 @@ MODEL: Llama 3.1 405B Instruct
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Meta                      |                          
-human_readable_name       | Llama 3.1 405B Instruct   |                          
-model_provider_country    | United States             |                          
-official_url              | https://llama.meta.com/   |                          
-input_modalities          | Text                      |                          
-output_modalities         | Text                      |                          
-license_info_text         |                           |                          
-license_info_url          |                           |                          
-license_name              | Llama-3.1                 |                          
-license_url               | https://www.llama.com/l.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | Meta                      | Meta                     
+human_readable_name       | Llama 3.1 405B Instruct   | Llama 3.1 405B Instruct  
+model_provider_country    | United States             | United States            
+official_url              | https://llama.meta.com/   | https://llama.meta.com/  
+input_modalities          | Text                      | Text                     
+output_modalities         | Text                      | Text                     
+license_info_text         |                           | None                     
+license_info_url          |                           | None                     
+license_name              | Llama-3.1                 | Llama-3.1                
+license_url               | https://www.llama.com/l.. | https://www.llama.com/l..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -428,19 +428,19 @@ MODEL: MiMo-V2-Flash
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Xiaomi                    |                          
-human_readable_name       | MiMo-V2-Flash             |                          
-model_provider_country    | China                     |                          
-official_url              | https://mimo.xiaomi.com/  |                          
-input_modalities          | Text                      |                          
-output_modalities         | Text                      |                          
-license_info_text         | info                      |                          
-license_info_url          | https://huggingface.co/.. |                          
-license_name              | MIT                       |                          
-license_url               | https://opensource.org/.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | Xiaomi                    | Xiaomi                   
+human_readable_name       | MiMo-V2-Flash             | MiMo-V2-Flash            
+model_provider_country    | China                     | China                    
+official_url              | https://mimo.xiaomi.com/  | https://mimo.xiaomi.com/ 
+input_modalities          | Text                      | Text                     
+output_modalities         | Text                      | Text                     
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | MIT                       | MIT                      
+license_url               | https://opensource.org/.. | https://opensource.org/..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -548,19 +548,19 @@ MODEL: Nova 2 Lite
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                | OpenRouter               
-model_provider            | Amazon                    | Amazon                   
-human_readable_name       | Nova 2 Lite               | Nova 2 Lite              
-model_provider_country    | United States             | United States            
-official_url              | https://aws.amazon.com/.. | https://aws.amazon.com/..
-input_modalities          | Text, Image, Video, File  | Text, Image, Video, File 
-output_modalities         | Text                      | Text                     
+inference_provider        |                           | OpenRouter               
+model_provider            |                           | Amazon                   
+human_readable_name       |                           | Nova 2 Lite              
+model_provider_country    |                           | United States            
+official_url              |                           | https://aws.amazon.com/..
+input_modalities          |                           | Text, Image, Video, File 
+output_modalities         |                           | Text                     
 license_info_text         |                           | None                     
 license_info_url          |                           | None                     
-license_name              | AWS                       | AWS                      
-license_url               | https://docs.aws.amazon.. | https://docs.aws.amazon..
-rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
-provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
+license_name              |                           | AWS                      
+license_url               |                           | https://docs.aws.amazon..
+rate_limits               |                           | 20 requests/min 50/day   
+provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -588,19 +588,19 @@ MODEL: Olmo 3.1 32B Think
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Ai2                       |                          
-human_readable_name       | Olmo 3.1 32B Think        |                          
-model_provider_country    | United States             |                          
-official_url              | https://allenai.org/      |                          
-input_modalities          | Text                      |                          
-output_modalities         | Text                      |                          
-license_info_text         | info                      |                          
-license_info_url          | https://huggingface.co/.. |                          
-license_name              | Apache-2.0                |                          
-license_url               | https://www.apache.org/.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | Ai2                       | Ai2                      
+human_readable_name       | Olmo 3.1 32B Think        | Olmo 3.1 32B Think       
+model_provider_country    | United States             | United States            
+official_url              | https://allenai.org/      | https://allenai.org/     
+input_modalities          | Text                      | Text                     
+output_modalities         | Text                      | Text                     
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | Apache-2.0                | Apache-2.0               
+license_url               | https://www.apache.org/.. | https://www.apache.org/..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -608,19 +608,19 @@ MODEL: Qwen2.5-VL 7B Instruct
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | Alibaba Cloud             |                          
-human_readable_name       | Qwen2.5-VL 7B Instruct    |                          
-model_provider_country    | China                     |                          
-official_url              | https://alibabacloud.com/ |                          
-input_modalities          | Text, Image               |                          
-output_modalities         | Text                      |                          
-license_info_text         | info                      |                          
-license_info_url          | https://huggingface.co/.. |                          
-license_name              | Apache-2.0                |                          
-license_url               | https://www.apache.org/.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | Alibaba Cloud             | Alibaba Cloud            
+human_readable_name       | Qwen2.5-VL 7B Instruct    | Qwen2.5-VL 7B Instruct   
+model_provider_country    | China                     | China                    
+official_url              | https://alibabacloud.com/ | https://alibabacloud.com/
+input_modalities          | Text, Image               | Text, Image              
+output_modalities         | Text                      | Text                     
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | Apache-2.0                | Apache-2.0               
+license_url               | https://www.apache.org/.. | https://www.apache.org/..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 
@@ -688,19 +688,19 @@ MODEL: R1 0528
 --------------------------------------------------------------------------------
 Field Name                | Pipeline Value            | Supabase Value           
 --------------------------------------------------------------------------------
-inference_provider        | OpenRouter                |                          
-model_provider            | DeepSeek                  |                          
-human_readable_name       | R1 0528                   |                          
-model_provider_country    | China                     |                          
-official_url              | https://deepseek.com/     |                          
-input_modalities          | Text                      |                          
-output_modalities         | Text                      |                          
-license_info_text         | info                      |                          
-license_info_url          | https://huggingface.co/.. |                          
-license_name              | MIT                       |                          
-license_url               | https://opensource.org/.. |                          
-rate_limits               | 20 requests/min 50/day    |                          
-provider_api_access       | https://openrouter.ai/s.. |                          
+inference_provider        | OpenRouter                | OpenRouter               
+model_provider            | DeepSeek                  | DeepSeek                 
+human_readable_name       | R1 0528                   | R1 0528                  
+model_provider_country    | China                     | China                    
+official_url              | https://deepseek.com/     | https://deepseek.com/    
+input_modalities          | Text                      | Text                     
+output_modalities         | Text                      | Text                     
+license_info_text         | info                      | info                     
+license_info_url          | https://huggingface.co/.. | https://huggingface.co/..
+license_name              | MIT                       | MIT                      
+license_url               | https://opensource.org/.. | https://opensource.org/..
+rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
+provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
 
 ================================================================================
 
