@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generated": "2025-12-17 10:08:11 IST",
-    "total_models": 23,
+    "generated": "2025-12-18 07:26:49 IST",
+    "total_models": 25,
     "scraping_source": "Google Documentation Web Scraper"
   },
   "modalities": {
@@ -12,6 +12,14 @@
     "gemini-3-pro-table": {
       "input_modalities": "Image, Text",
       "output_modalities": "Image, Text"
+    },
+    "gemini-3-flash": {
+      "input_modalities": "Text, Image, Video, Audio, PDF",
+      "output_modalities": "Text"
+    },
+    "gemini-3-flash-table": {
+      "input_modalities": "Text, Image, Video, Audio, PDF",
+      "output_modalities": "Text"
     },
     "gemini-2.5-flash": {
       "input_modalities": "Text, images, video, audio",
