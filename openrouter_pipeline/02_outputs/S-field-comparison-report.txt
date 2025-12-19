@@ -1,18 +1,18 @@
 FIELD COMPARISON REPORT: PIPELINE vs SUPABASE
-Generated: 2025-12-18 07:29 AM IST
+Generated: 2025-12-19 07:32 AM IST
 ================================================================================
 
 SUMMARY STATISTICS
 --------------------------------------------------------------------------------
 
 1. OVERALL STATISTICS:
-   • Total unique model names: 35
+   • Total unique model names: 34
    • Total records in pipeline: 34
-   • Total records in Supabase: 35
+   • Total records in Supabase: 34
    • Models in both systems: 34
    • Models with differences: 0
    • Models in pipeline only (not in Supabase): 0
-   • Models in Supabase only (not in pipeline): 1
+   • Models in Supabase only (not in pipeline): 0
 
 2. FIELD-BY-FIELD ANALYSIS (for models in both systems):
    • inference_provider:
@@ -57,8 +57,6 @@ SUMMARY STATISTICS
 
 3. CATEGORIZED BREAKDOWN:
    • Existing models with differences: 0
-   • Deprecated models (Supabase only): 1
-     Models: Nova 2 Lite
 
 ================================================================================
 DETAILED COMPARISON BY MODEL
@@ -541,26 +539,6 @@ license_name              | NVIDIA                    | NVIDIA
 license_url               | https://huggingface.co/.. | https://huggingface.co/..
 rate_limits               | 20 requests/min 50/day    | 20 requests/min 50/day   
 provider_api_access       | https://openrouter.ai/s.. | https://openrouter.ai/s..
-
-================================================================================
-
-MODEL: Nova 2 Lite
---------------------------------------------------------------------------------
-Field Name                | Pipeline Value            | Supabase Value           
---------------------------------------------------------------------------------
-inference_provider        |                           | OpenRouter               
-model_provider            |                           | Amazon                   
-human_readable_name       |                           | Nova 2 Lite              
-model_provider_country    |                           | United States            
-official_url              |                           | https://aws.amazon.com/..
-input_modalities          |                           | Text, Image, Video, File 
-output_modalities         |                           | Text                     
-license_info_text         |                           | None                     
-license_info_url          |                           | None                     
-license_name              |                           | AWS                      
-license_url               |                           | https://docs.aws.amazon..
-rate_limits               |                           | 20 requests/min 50/day   
-provider_api_access       |                           | https://openrouter.ai/s..
 
 ================================================================================
 

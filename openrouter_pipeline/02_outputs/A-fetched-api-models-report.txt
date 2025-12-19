@@ -1,10 +1,10 @@
 ================================================================================
 OPENROUTER API MODELS REPORT
-Generated: 2025-12-18 07:29 AM IST
+Generated: 2025-12-19 07:32 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models: 349
+  Total models: 350
 
 PROVIDER BREAKDOWN (Descending Order):
   OpenAI          :  56 models
@@ -222,10 +222,11 @@ PROVIDER BREAKDOWN (Descending Order):
     - claude-sonnet-4
     - claude-sonnet-4.5
 
-  NVIDIA          :   8 models
+  NVIDIA          :   9 models
     - llama-3.1-nemotron-70b-instruct
     - llama-3.1-nemotron-ultra-253b-v1
     - llama-3.3-nemotron-super-49b-v1.5
+    - nemotron-3-nano-30b-a3b
     - nemotron-3-nano-30b-a3b:free
     - nemotron-nano-12b-v2-vl
     - nemotron-nano-12b-v2-vl:free
