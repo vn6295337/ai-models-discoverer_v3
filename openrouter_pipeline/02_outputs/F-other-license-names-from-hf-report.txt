@@ -1,16 +1,16 @@
 ================================================================================
 OTHER MODEL LICENSE NAME EXTRACTIONS REPORT
-Generated: 2025-12-20 07:26 AM IST
+Generated: 2025-12-21 07:39 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 25
+  Total models : 24
   Input        : E-other-license-info-urls-from-hf.json
   Processor    : F_fetch_other_license_names_from_hf.py
   Output       : F-other-license-names-from-hf.json
 
 LICENSE DISTRIBUTION:
-  apache-2.0: 14
+  apache-2.0: 13
   llama3: 1
   mit: 5
   modified-mit: 1
@@ -193,16 +193,7 @@ MODEL 19: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 20: qwen/qwen3-235b-a22b-04-28
---------------------------------------------------
-  ID               : qwen/qwen3-235b-a22b:free
-  Canonical Slug   : qwen/qwen3-235b-a22b-04-28
-  HuggingFace ID   : Qwen/Qwen3-235B-A22B
-  Extracted License: apache-2.0
-
-================================================================================
-
-MODEL 21: tngtech/deepseek-r1t-chimera
+MODEL 20: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID               : tngtech/deepseek-r1t-chimera:free
   Canonical Slug   : tngtech/deepseek-r1t-chimera
@@ -211,7 +202,7 @@ MODEL 21: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 22: mistralai/mistral-small-3.1-24b-instruct-2503
+MODEL 21: mistralai/mistral-small-3.1-24b-instruct-2503
 --------------------------------------------------
   ID               : mistralai/mistral-small-3.1-24b-instruct:free
   Canonical Slug   : mistralai/mistral-small-3.1-24b-instruct-2503
@@ -220,7 +211,7 @@ MODEL 22: mistralai/mistral-small-3.1-24b-instruct-2503
 
 ================================================================================
 
-MODEL 23: qwen/qwen-2-vl-7b-instruct
+MODEL 22: qwen/qwen-2-vl-7b-instruct
 --------------------------------------------------
   ID               : qwen/qwen-2.5-vl-7b-instruct:free
   Canonical Slug   : qwen/qwen-2-vl-7b-instruct
@@ -229,7 +220,7 @@ MODEL 23: qwen/qwen-2-vl-7b-instruct
 
 ================================================================================
 
-MODEL 24: nousresearch/hermes-3-llama-3.1-405b
+MODEL 23: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID               : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug   : nousresearch/hermes-3-llama-3.1-405b
@@ -238,7 +229,7 @@ MODEL 24: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 25: mistralai/mistral-7b-instruct
+MODEL 24: mistralai/mistral-7b-instruct
 --------------------------------------------------
   ID               : mistralai/mistral-7b-instruct:free
   Canonical Slug   : mistralai/mistral-7b-instruct

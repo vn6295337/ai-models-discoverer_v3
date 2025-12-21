@@ -1,17 +1,17 @@
 ================================================================================
 OPENSOURCE LICENSE MODELS REPORT
-Generated: 2025-12-20 07:26 AM IST
+Generated: 2025-12-21 07:39 AM IST
 ================================================================================
 
 SUMMARY:
-  Total models : 20
+  Total models : 19
   Input        : G-standardized-other-license-names-from-hf.json
   Reference    : 05_opensource_license_urls.json
   Processor    : H_bucketize_other_license_names.py
   Output       : H-opensource-license-names.json
 
 OPENSOURCE LICENSE DISTRIBUTION:
-  Apache-2.0: 14 models
+  Apache-2.0: 13 models
   Llama-3.1: 1 models
   MIT: 5 models
 
@@ -110,16 +110,7 @@ MODEL 10: qwen/qwen-2-vl-7b-instruct
 
 ================================================================================
 
-MODEL 11: qwen/qwen3-235b-a22b-04-28
---------------------------------------------------
-  ID              : qwen/qwen3-235b-a22b:free
-  Canonical Slug  : qwen/qwen3-235b-a22b-04-28
-  HuggingFace ID  : Qwen/Qwen3-235B-A22B
-  License Name    : Apache-2.0
-
-================================================================================
-
-MODEL 12: qwen/qwen3-4b-04-28
+MODEL 11: qwen/qwen3-4b-04-28
 --------------------------------------------------
   ID              : qwen/qwen3-4b:free
   Canonical Slug  : qwen/qwen3-4b-04-28
@@ -128,7 +119,7 @@ MODEL 12: qwen/qwen3-4b-04-28
 
 ================================================================================
 
-MODEL 13: qwen/qwen3-coder-480b-a35b-07-25
+MODEL 12: qwen/qwen3-coder-480b-a35b-07-25
 --------------------------------------------------
   ID              : qwen/qwen3-coder:free
   Canonical Slug  : qwen/qwen3-coder-480b-a35b-07-25
@@ -137,7 +128,7 @@ MODEL 13: qwen/qwen3-coder-480b-a35b-07-25
 
 ================================================================================
 
-MODEL 14: venice/uncensored
+MODEL 13: venice/uncensored
 --------------------------------------------------
   ID              : cognitivecomputations/dolphin-mistral-24b-venice-edition:free
   Canonical Slug  : venice/uncensored
@@ -146,7 +137,7 @@ MODEL 14: venice/uncensored
 
 ================================================================================
 
-MODEL 15: nousresearch/hermes-3-llama-3.1-405b
+MODEL 14: nousresearch/hermes-3-llama-3.1-405b
 --------------------------------------------------
   ID              : nousresearch/hermes-3-llama-3.1-405b:free
   Canonical Slug  : nousresearch/hermes-3-llama-3.1-405b
@@ -155,7 +146,7 @@ MODEL 15: nousresearch/hermes-3-llama-3.1-405b
 
 ================================================================================
 
-MODEL 16: deepseek/deepseek-r1-0528
+MODEL 15: deepseek/deepseek-r1-0528
 --------------------------------------------------
   ID              : deepseek/deepseek-r1-0528:free
   Canonical Slug  : deepseek/deepseek-r1-0528
@@ -164,7 +155,7 @@ MODEL 16: deepseek/deepseek-r1-0528
 
 ================================================================================
 
-MODEL 17: tngtech/deepseek-r1t-chimera
+MODEL 16: tngtech/deepseek-r1t-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t-chimera
@@ -173,7 +164,7 @@ MODEL 17: tngtech/deepseek-r1t-chimera
 
 ================================================================================
 
-MODEL 18: tngtech/deepseek-r1t2-chimera
+MODEL 17: tngtech/deepseek-r1t2-chimera
 --------------------------------------------------
   ID              : tngtech/deepseek-r1t2-chimera:free
   Canonical Slug  : tngtech/deepseek-r1t2-chimera
@@ -182,7 +173,7 @@ MODEL 18: tngtech/deepseek-r1t2-chimera
 
 ================================================================================
 
-MODEL 19: xiaomi/mimo-v2-flash-20251210
+MODEL 18: xiaomi/mimo-v2-flash-20251210
 --------------------------------------------------
   ID              : xiaomi/mimo-v2-flash:free
   Canonical Slug  : xiaomi/mimo-v2-flash-20251210
@@ -191,7 +182,7 @@ MODEL 19: xiaomi/mimo-v2-flash-20251210
 
 ================================================================================
 
-MODEL 20: z-ai/glm-4.5-air
+MODEL 19: z-ai/glm-4.5-air
 --------------------------------------------------
   ID              : z-ai/glm-4.5-air:free
   Canonical Slug  : z-ai/glm-4.5-air
