@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generated_at": "2025-12-23T02:03:06.731018+00:00",
+    "generated_at": "2025-12-24T09:12:37.432516+00:00",
     "source_file": "../02_outputs/A-scrape-production-models.json",
     "processor": "A_extract_meta_licenses.py",
     "total_models": 3,
